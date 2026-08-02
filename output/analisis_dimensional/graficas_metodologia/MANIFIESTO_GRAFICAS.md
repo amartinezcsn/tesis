@@ -1,6 +1,6 @@
 # Manifiesto explicativo de gráficas del flujo metodológico
 
-**Fecha de generación:** 2026-08-02T08:16:53
+**Fecha de generación:** 2026-08-02T10:01:20
 **Directorio de datos intermedios:** `C:\Python\tesis\input`
 **Directorio de resultados:** `C:\Python\tesis\output\analisis_dimensional`
 **Gráficas generadas:** 12
