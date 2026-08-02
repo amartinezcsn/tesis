@@ -29,7 +29,7 @@ from config_metodologia import DATE_COLUMN, TARGET_COLUMNS, ensure_output_dir, l
 # "completo": usa C:/Python/tesis/output/dataset_modelado_diario.xlsx
 # "reducido": usa 03_dataset_reducido_por_seleccion.xlsx
 # "pca": usa 04_dataset_pca_componentes.xlsx
-DATASET_TO_USE = "completo"
+DATASET_TO_USE = "pca"
 ROLLING_INITIAL_DAYS = 730
 ROLLING_STEP_DAYS = 30
 FORECAST_HORIZON_DAYS = 30

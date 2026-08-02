@@ -1,0 +1,7 @@
+pandas
+numpy
+openpyxl
+scikit-learn
+statsmodels
+# TensorFlow solo es obligatorio para ejecutar la etapa RNN/LSTM:
+tensorflow

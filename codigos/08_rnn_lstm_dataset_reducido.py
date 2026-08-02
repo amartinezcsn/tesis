@@ -23,7 +23,7 @@ import pandas as pd
 from config_metodologia import DATE_COLUMN, TARGET_COLUMNS, ensure_output_dir, load_model_dataset
 
 
-DATASET_TO_USE = "reducido"
+DATASET_TO_USE = "pca"
 LOOKBACK_DAYS = 28
 TEST_DAYS = 90
 EPOCHS = 80

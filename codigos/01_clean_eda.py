@@ -8,7 +8,7 @@ import pandas as pd
 
 
 BASE_DIR = Path(r"C:/Python/tesis/datasets/xlsx")
-OUT_DIR = Path(r"C:/Users/ramartinez/Documents/Codex/2026-06-26/ana/outputs")
+OUT_DIR = Path(r"C:/Python/tesis/input")
 
 START_DATE = pd.Timestamp("2022-01-01")
 END_DATE = pd.Timestamp("2026-05-31")

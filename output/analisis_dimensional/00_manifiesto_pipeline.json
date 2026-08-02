@@ -1,0 +1,174 @@
+{
+  "producto": "Pipeline metodológico integrado de tesis",
+  "fecha_ejecucion": "2026-08-01T23:56:38",
+  "configuracion": {
+    "scripts_dir": "C:\\Python\\tesis\\codigos",
+    "raw_dir": "C:\\Python\\tesis\\datasets\\xlsx",
+    "input_dir": "C:\\Python\\tesis\\input",
+    "output_dir": "C:\\Python\\tesis\\output\\analisis_dimensional",
+    "desde": "limpieza",
+    "hasta": "rnn",
+    "variantes_modelos": [
+      "completo",
+      "reducido",
+      "pca"
+    ],
+    "variantes_rnn": [
+      "reducido",
+      "pca"
+    ]
+  },
+  "resultados": [
+    {
+      "etapa": "limpieza",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:18:52",
+      "fin": "2026-08-01T23:18:58",
+      "duracion_segundos": 5.673,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "ingenieria",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:18:58",
+      "fin": "2026-08-01T23:19:07",
+      "duracion_segundos": 8.922,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "perfil",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:19:07",
+      "fin": "2026-08-01T23:19:10",
+      "duracion_segundos": 3.5,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "multicolinealidad",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:19:10",
+      "fin": "2026-08-01T23:19:18",
+      "duracion_segundos": 8.174,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "seleccion",
+      "variante": "reducido",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:19:18",
+      "fin": "2026-08-01T23:20:21",
+      "duracion_segundos": 62.806,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "pca",
+      "variante": "pca",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:20:21",
+      "fin": "2026-08-01T23:20:29",
+      "duracion_segundos": 7.823,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "modelos_rolling_origin",
+      "variante": "completo",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:20:29",
+      "fin": "2026-08-01T23:29:01",
+      "duracion_segundos": 512.444,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "modelos_rolling_origin",
+      "variante": "reducido",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:29:01",
+      "fin": "2026-08-01T23:37:26",
+      "duracion_segundos": 504.657,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "modelos_rolling_origin",
+      "variante": "pca",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:37:26",
+      "fin": "2026-08-01T23:54:07",
+      "duracion_segundos": 1001.395,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "rnn_lstm",
+      "variante": "reducido",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:54:07",
+      "fin": "2026-08-01T23:55:33",
+      "duracion_segundos": 85.365,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "rnn_lstm",
+      "variante": "pca",
+      "estado": "correcto",
+      "inicio": "2026-08-01T23:55:33",
+      "fin": "2026-08-01T23:56:38",
+      "duracion_segundos": 65.181,
+      "mensaje": "Etapa finalizada sin errores."
+    }
+  ],
+  "archivos_generados": [
+    {
+      "archivo": "01_perfil_dataset_y_dimensiones.xlsx",
+      "tamano_bytes": 30708,
+      "fecha_modificacion": "2026-08-01T23:19:10"
+    },
+    {
+      "archivo": "02_diagnostico_multicolinealidad.xlsx",
+      "tamano_bytes": 35497,
+      "fecha_modificacion": "2026-08-01T23:19:18"
+    },
+    {
+      "archivo": "03_dataset_reducido_por_seleccion.xlsx",
+      "tamano_bytes": 1908550,
+      "fecha_modificacion": "2026-08-01T23:20:21"
+    },
+    {
+      "archivo": "04_dataset_pca_componentes.xlsx",
+      "tamano_bytes": 3182843,
+      "fecha_modificacion": "2026-08-01T23:20:29"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_completo.xlsx",
+      "tamano_bytes": 50702,
+      "fecha_modificacion": "2026-08-01T23:29:01"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_pca.xlsx",
+      "tamano_bytes": 51086,
+      "fecha_modificacion": "2026-08-01T23:54:07"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_reducido.xlsx",
+      "tamano_bytes": 50705,
+      "fecha_modificacion": "2026-08-01T23:37:26"
+    },
+    {
+      "archivo": "06_rnn_lstm_pca.xlsx",
+      "tamano_bytes": 5483,
+      "fecha_modificacion": "2026-08-01T23:56:38"
+    },
+    {
+      "archivo": "06_rnn_lstm_reducido.xlsx",
+      "tamano_bytes": 5483,
+      "fecha_modificacion": "2026-08-01T23:55:33"
+    },
+    {
+      "archivo": "pipeline_tesis.log",
+      "tamano_bytes": 3354,
+      "fecha_modificacion": "2026-08-01T23:56:38"
+    }
+  ]
+}
