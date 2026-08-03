@@ -1,0 +1,10 @@
+2026-08-02 13:16:51,756 | INFO | Generando figura 01: graph_source_coverage
+2026-08-02 13:16:51,756 | ERROR | No fue posible generar graph_source_coverage
+Traceback (most recent call last):
+  File "c:\Python\tesis\codigos\09_generar_graficas_manifiesto_pca.py", line 2572, in generate_all
+    records.append(function(ctx))
+  File "c:\Python\tesis\codigos\09_generar_graficas_manifiesto_pca.py", line 202, in graph_source_coverage
+    df = to_date(load(ctx, key))
+  File "c:\Python\tesis\codigos\09_generar_graficas_manifiesto_pca.py", line 134, in load
+    raise FileNotFoundError(f"No existe {path}")
+FileNotFoundError: No existe C:\Python\tesis\imagenes\inpc_limpio.xlsx

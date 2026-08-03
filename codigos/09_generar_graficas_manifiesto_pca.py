@@ -2562,7 +2562,8 @@ def write_manifest(ctx: Context, records: list[GraphicRecord]) -> None:
 def generate_all(input_dir: Path, graphics_dir: Path | None = None, dpi: int = 220,
                  top_n: int = 12, continue_missing: bool = True,
                  analysis_dir: Path | None = None) -> list[GraphicRecord]:
-    graphics_dir = graphics_dir or (input_dir / "graficas_metodologia_pca")
+    repo_root = Path(__file__).resolve().parents[1]
+    graphics_dir = graphics_dir or (repo_root / "imagenes")
     ctx = Context(input_dir=input_dir, graphics_dir=graphics_dir, dpi=dpi, top_n=top_n, analysis_dir=analysis_dir)
     configure_logging(graphics_dir)
     records: list[GraphicRecord] = []
@@ -2589,7 +2590,8 @@ def generate_all(input_dir: Path, graphics_dir: Path | None = None, dpi: int = 2
 
 def main() -> None:
     args = parse_args()
-    graphics_dir = args.graphics_dir or (args.input_dir / "graficas_metodologia_pca")
+    repo_root = Path(__file__).resolve().parents[1]
+    graphics_dir = args.graphics_dir or (repo_root / "imagenes")
     generate_all(args.input_dir, graphics_dir, args.dpi, args.top_n, args.continuar_con_faltantes, args.analysis_dir)
     print(f"Gráficas académicas y manifiesto generados en: {graphics_dir.resolve()}")
 
