@@ -1,0 +1,192 @@
+\documentclass[12pt]{book}
+
+% Configuración básica del documento
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,american]{babel}
+\usepackage[letterpaper,left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+% Paquetes de apariencia y funcionalidad
+\usepackage{bookmark}                % <--- add this
+\usepackage{graphicx}
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{csquotes}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{lipsum}
+\usepackage{subfiles}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xstring}
+
+% Configuración de bibliografía
+\usepackage[
+    backend=biber,
+    style=apa,
+    language=american,
+    sorting=nyt,
+    giveninits=true,
+    uniquename=init
+]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\addbibresource{bibliography.bib}
+
+% Hyperref siempre al final de los paquetes
+\usepackage[hidelinks]{hyperref}
+\usepackage{silence}
+\WarningFilter{latex}{You have requested}
+\WarningFilter{latex}{Math version}
+\WarningFilter{latex}{Missing}
+
+\newcommand{\parenpagcite}[2]{%
+  \IfSubStr{#2}{-}{%
+    \parencite[pp.~#2]{#1}%
+  }{%
+    \IfSubStr{#2}{,}{%
+      \parencite[pp.~#2]{#1}%
+    }{%
+      \parencite[p.~#2]{#1}%
+    }%
+  }%
+}
+
+
+% Configuración de capítulos: números romanos, negritas, mayúsculas, sin punto final
+\titleformat{\chapter}[hang]
+  {\normalfont\bfseries\Large}{\MakeUppercase{\thechapter}}{1em}{\MakeUppercase}
+\raggedbottom
+
+\pagestyle{plain} % Estilo de páginas con numeración al centro del pie de página
+%\setlength{\parindent}{0pt} % Quitar sangria al inicio del texto
+
+\begin{document}
+\frontmatter
+\begin{titlepage}
+  \begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{assets/letras.png}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.8\textwidth}
+    \centering
+    \textsc{\Large Universidad politécnica metropolitana de hidalgo}\\[0.3cm]
+    {
+    \color{violet}
+    \hrule height2pt
+    \vspace{0.1cm}
+    \hrule height1pt
+    \vspace{0.3cm}
+    }
+    \textsc{\Large Maestría en inteligencia artificial}\\[0.5cm]
+  \end{minipage}
+  \begin{minipage}[c]{0.15\textwidth}
+    \color{violet}
+    \vspace{0.3cm}
+    \hspace{0.5cm}
+    \vrule width2pt height16cm
+    \hspace{0.05cm}
+    \vrule width1pt height16cm
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.8\textwidth}
+    \centering
+    \vspace{1cm}
+    \textbf{\Large ``DE LA INTUICIÓN A LA INTELIGENCIA ARTIFICIAL: TRANSFORMACIÓN PREDICTIVA DE LA PLANEACIÓN FINANCIERA Y LA CADENA DE SUMINISTRO EN UNA MICROEMPRESA MEDIANTE MODELOS AVANZADOS APRENDIZAJE AUTOMÁTICO''}\\[1cm]
+    \huge TESIS\\[0.3cm]
+    \textit{\large Para obtener el grado de maestro en:}\\
+    \textbf{\Large Inteligencia Artificial}\\[1cm]
+    \large Presenta:\\[0.5cm]
+    \Large Rodrigo Adrián Martínez Flores\\[1cm]
+  \large Director: \\[0.2cm]
+  \large Dr. Luis Eduardo Urban Rivero\\[0.3cm]
+  \large Tolcayuca, Hidalgo, 28 agosto 2025 \the\year\par
+  \end{minipage}
+\end{titlepage}
+\pagenumbering{roman}
+\chapter*{Dedicatoria}
+A mi esposa e hijos, a mis padres y mentores
+\chapter*{Agradecimientos}
+A la Universidad Politécnica Metropolitana de Hidalgo
+\tableofcontents
+\mainmatter
+% Interlineado 1.5
+\onehalfspacing{}
+\pagenumbering{arabic}
+\chapter{RESUMEN}
+Las microempresas enfrentan importantes desafíos en la planeación financiera y en la gestión de la cadena de suministro, derivados principalmente de la alta variabilidad de la demanda, la limitación de recursos analíticos y la dependencia de la intuición del empresario para la toma de decisiones. Esta situación se intensifica en contextos de expansión, donde una planeación inadecuada incrementa la incertidumbre financiera y el riesgo operativo. En este escenario, la Inteligencia Artificial (IA) y el aprendizaje automático emergen como herramientas con alto potencial para transformar los procesos de gestión empresarial mediante el uso de modelos predictivos avanzados.
+La presente investigación demuestra que la aplicación de modelos avanzados de aprendizaje automático transforma la planeación financiera y optimiza la gestión de la cadena de suministro en una microempresa. El estudio se desarrolla a partir de un caso de estudio en la empresa Cup&Cake, dedicada a la repostería creativa, utilizando datos históricos de ingresos, ventas e inventarios. Se construye un conjunto de datos analítico que incorpora variables temporales y exógenas, el cual es empleado para diseñar, entrenar y optimizar diversos modelos de aprendizaje automático supervisado orientados al pronóstico de ingresos.
+El desempeño de los modelos es evaluado mediante métricas estadísticas como MAE, RMSE y MAPE, permitiendo una comparación rigurosa entre algoritmos y frente a un enfoque tradicional basado en la experiencia empírica. Los resultados evidencian que los modelos predictivos basados en aprendizaje automático mejoran significativamente la precisión del pronóstico de ingresos, reducen la incertidumbre asociada a la planeación financiera y contribuyen a una gestión más eficiente del inventario y de la cadena de suministro.
+Se concluye que la adopción de enfoques predictivos sustentados en Inteligencia Artificial representa una alternativa viable y estratégica para microempresas que buscan consolidar su operación y expandirse de manera controlada. Asimismo, la investigación aporta un referente metodológico replicable para la implementación de modelos de aprendizaje automático en contextos empresariales de pequeña escala.
+
+\chapter{INTRODUCCIÓN}
+Las microempresas representan el núcleo del aparato productivo en México y América Latina. De acuerdo con el Instituto Nacional de Estadística y Geografía (INEGI), en México existen más de 4.9 millones de micro, pequeñas y medianas empresas, de las cuales el 95 % corresponde a microempresas, generando aproximadamente el 41.8 % del empleo nacional (INEGI, 2023). A pesar de su relevancia económica y social, estas organizaciones enfrentan serias limitaciones estructurales, particularmente en materia de planeación financiera, gestión de inventarios y administración de la cadena de suministro.
+Uno de los principales retos que enfrentan las microempresas es la escasa adopción de tecnologías avanzadas para la toma de decisiones. Según la Organización para la Cooperación y el Desarrollo Económicos (OCDE, 2022), menos del 25 % de las microempresas en países en desarrollo utilizan herramientas analíticas avanzadas, lo que las obliga a basar sus decisiones estratégicas en la experiencia empírica del propietario, en promedios históricos simples o en la intuición. Este enfoque incrementa la incertidumbre financiera, dificulta la previsión de ingresos y eleva el riesgo de sobre inventarios o desabasto, especialmente en sectores con alta variabilidad de la demanda. En el sector alimentario y de productos perecederos, como la repostería, estos desafíos se intensifican. 
+Estudios recientes señalan que una planeación inadecuada de la demanda puede generar niveles de merma superiores al 20%, afectando directamente la rentabilidad del negocio (Hübner et al., 2024). Asimismo, la falta de pronósticos confiables limita la capacidad de las microempresas para diseñar estrategias de crecimiento, expandirse a nuevos mercados o realizar inversiones con menor riesgo financiero.
+Frente a este escenario, el aprendizaje automático (ML por sus siglas en inglés, Machine Learning) como subconjunto de la IA ha emergido como herramienta clave para transformar la planeación financiera y la gestión de la cadena de suministro. 
+La literatura reciente destaca que los modelos predictivos basados en aprendizaje automático superan consistentemente a los métodos tradicionales en problemas de pronóstico de ventas e ingresos, al capturar patrones no lineales, estacionalidades y efectos de variables externas (Makridakis et al., 2018; Spiliotis et al., 2025). En particular, el uso de modelos avanzados ha permitido mejorar la precisión de los pronósticos hasta en un 30%, reduciendo costos operativos y mejorando la toma de decisiones estratégicas (Cao et al., 2025).
+
+\chapter{Antecedentes}
+El uso de la IA en la cadena de suministro ha demostrado ser una herramienta eficaz para mejorar la eficiencia operativa y la toma de decisiones, especialmente en industrias con productos perecederos como la repostería. Distintos estudios han explorado su aplicación desde enfoques variados, ofreciendo evidencia empírica, conceptual y técnica que fundamenta su utilidad en contextos como el de la repostería creativa.
+Uno de los estudios más relevantes es el de Hübner et al. (2024), que analiza la implementación de un servicio en la nube de aprendizaje automático (ML) llamado Foodforecast en panaderías en Berlín, Alemania. 
+Este estudio evidenció una reducción significativa en el desperdicio de productos y una mejora en la precisión de los pronósticos, subrayando la importancia de la IA para una gestión sostenible del inventario. Aunque se trata de un caso único, aporta una visión concreta de los beneficios ambientales y operativos del ML.
+Asimismo, investigaciones como la de Huber & Stuckenschmidt (2020) y PraveenaSri et al. (2023) examinan el uso de ML para la predicción diaria de la demanda en cadenas de panaderías y reposterías, mostrando que estos modelos pueden adaptarse a eventos especiales y estacionalidades con gran eficacia. Estos hallazgos son especialmente pertinentes para empresas como Cup&Cake, que enfrentan variabilidad significativa en la demanda por motivos estacionales o de marketing. En el estudio mencionado en este párrafo se obtuvieron pronósticos más precisos en festividades y eventos especiales, por lo que concluye que ML supera métodos tradicionales para la gestión de la cadena de abastecimiento (SCM por sus siglas en inglés, Supply Chain Management) diario, lo cual está ligado a cadenas de producción y no necesariamente a PYMEs.     
+Por otro lado, estudios avanzados como el de Abrar et al. (2024) presentan modelos híbridos (CNN+LSTM+GRU) con capacidad explicativa (XAI) para el pronóstico de demanda, logrando una alta precisión (RMSE ≈ 4.85). Este tipo de soluciones, aunque demandan gran volumen de datos y arquitectura técnica compleja, ofrecen un camino prometedor para pequeñas empresas que buscan mayor control y precisión en sus procesos operativos.
+Estos antecedentes motivan el presente estudio de caso, el cual busca explorar la implementación efectiva de herramientas de IA en la optimización de procesos clave en una empresa de repostería creativa
+
+\chapter{El planteamiento del problema}
+Las microempresas operan en entornos caracterizados por alta incertidumbre financiera, variabilidad en la demanda y limitaciones en recursos tecnológicos y analíticos. En la mayoría de los casos, la planeación financiera y la gestión de la cadena de suministro se sustentan en la experiencia empírica del propietario, en estimaciones intuitivas o en el análisis retrospectivo de resultados históricos, sin el apoyo de modelos predictivos formales que permitan anticipar escenarios futuros con mayor precisión (Gongora, 2023)
+Esta situación resulta especialmente crítica en microempresas del sector alimentario, donde la demanda presenta fuertes componentes estacionales y donde una planeación inadecuada impacta directamente en el control de inventarios, la gestión de ingresos y la rentabilidad del negocio. Hyndman y Athanasopoulos (2021) explican que la calidad de los pronósticos impacta directamente en la planificación estratégica, la gestión de inventarios y la toma de decisiones financieras, señalando que errores sistemáticos generan sobrecostos y desabastecimientos
+A pesar de la creciente disponibilidad de soluciones basadas en Inteligencia Artificial (IA) y analítica avanzada, su adopción en micro y pequeñas empresas continúa siendo limitada. Diversos estudios evidencian que estas organizaciones enfrentan barreras estructurales asociadas a restricciones financieras y limitaciones en infraestructura tecnológica, lo que dificulta la implementación de herramientas digitales avanzadas (Alekseeva et al., 2021).
+Asimismo, la literatura señala que la carencia de capital humano especializado y de capacidades analíticas internas reduce significativamente la posibilidad de integrar soluciones basadas en datos en los procesos estratégicos empresariales (Mikalef et al., 2019). Esta limitación se vincula directamente con la baja capacidad de absorción tecnológica característica de las empresas de menor tamaño.
+En el ámbito de la gestión operativa y de la cadena de suministro, se ha identificado que la incorporación de tecnologías de analítica avanzada e IA depende del desarrollo de capacidades dinámicas y de una orientación estratégica clara hacia la innovación, condiciones que no siempre están presentes en microempresas (Dubey et al., 2021).
+Asimismo, la literatura evidencia que la mayoría de las investigaciones sobre analítica avanzada e Inteligencia Artificial se han desarrollado en organizaciones medianas y grandes o en entornos industriales altamente estructurados, lo que limita la comprensión de su aplicabilidad en microempresas (Mikalef et al., 2020; Alekseeva et al., 2021). Esta concentración ha generado un vacío en el análisis empírico acerca de cómo los modelos avanzados de aprendizaje automático pueden incidir en la planeación financiera y operativa de empresas de menor escala.
+Dicho vacío se profundiza cuando se examina la integración simultánea del pronóstico de ingresos y la gestión de inventarios como procesos interdependientes dentro de la cadena de suministro, dimensión que la literatura reconoce como crítica para el desempeño organizacional, pero escasamente abordada en microempresas (Dubey et al., 2021; Hyndman & Athanasopoulos, 2021).
+En el contexto de las micro, pequeñas y medianas empresas (MIPYMES), la toma de decisiones suele caracterizarse por una fuerte dependencia del conocimiento tácito, la experiencia acumulada del propietario o directivo y prácticas organizacionales poco formalizadas. Este enfoque, predominantemente empírico, si bien aporta flexibilidad y rapidez en entornos de alta incertidumbre, limita la estructuración sistemática del conocimiento y la consolidación de procesos estratégicos basados en información analítica (García-Pérez et al., 2020).
+Cup&Cake, es una empresa fundada en 2014, con más de 10 de operación el crecimiento orgánico le ha permitido subsistir gracias a las predicciones que actualmente se realizan con base en el empirismo del empresario ya que lo único que conoce son las fechas de eventos importantes como el Día de San Valentín (14 de febrero), el día del niño (30 de abril), el día de la madre (10 de mayo), entre otros que son los picos de venta que año con año se repiten. El reto de Cup&Cake es mejorar su capacidad de predicción de consumo de materia prima, predecir el volumen de venta orgánica y de fechas clave para anticipar la compra de insumos. 
+Adicionalmente al pronosticar metodológicamente con un alto grado de certeza, el emprendedor pretende conocer anticipadamente la inversión para la apertura de nuevos puntos de venta, sin comprometer la operación actual. Todo lo anterior permitirá a los dueños aumentar la utilidad operativa del negocio aumentando ingresos y reduciendo costos, reduciendo la incertidumbre del empresario y logrando los mejores resultados con el mayor grado de certeza.
+
+\chapter{Pregunta de investigación}
+¿De qué manera la aplicación de modelos avanzados de aprendizaje automático optimizan la planeación financiera y la gestión de la cadena de suministro, al mejorar la precisión del pronóstico de ingresos y apoyar la toma de decisiones estratégicas en una microempresa repostería creativa en Tizayuca, Hidalgo?
+
+\chapter{Objetivo}
+
+\section{Objetivo general}
+Demostrar que la aplicación de modelos avanzados de aprendizaje automático optimiza la planeación financiera y la gestión de la cadena de suministro, al mejorar la precisión del pronóstico de ingresos y apoya la toma de decisiones estratégicas en una microempresa repostería creativa en Tizayuca, Hidalgo
+
+\section{Objetivos específicos}
+\begin{enumerate}
+\item Construir un conjunto de datos analítico a partir de información histórica de ingresos, ventas e inventarios, aplicando técnicas de limpieza, transformación y generación de variables temporales y exógenas. 
+\item Emplear modelos avanzados de aprendizaje automático supervisado, incluyendo modelos de regresión, ensambles y redes neuronales artificiales, orientados al pronóstico de ingresos. 
+\item Seleccionar los modelos predictivos mediante técnicas de ajuste de hiperparámetros, selección de características y procesos de validación, garantizando su robustez y capacidad de generalización.
+\item Evaluar el desempeño de los modelos, utilizando métricas estadísticas como MAE, RMSE y MAPE, con el fin de identificar el modelo más adecuado para la planeación financiera. 
+\item Simular el impacto del enfoque predictivo en la planeación financiera y en la gestión de inventarios y de la cadena de suministro en la microempresa
+Comparar el enfoque tradicional con el basado en Inteligencia Artificial.
+\end{enumerate}
+
+\section*{Justificación}
+\begin{enumerate}
+\item Relevancia Social
+La relevancia social de esta investigación radica en su potencial para contribuir al fortalecimiento y sostenibilidad de las microempresas, las cuales representan una fuente importante de empleo y desarrollo económico local. La falta de acceso a herramientas analíticas avanzadas limita la capacidad de estos negocios para crecer, competir y adaptarse a entornos cada vez más dinámicos.
+Al demostrar la viabilidad de aplicar modelos de aprendizaje automático en una microempresa como Cup&Cake, el estudio promueve la democratización del uso de la Inteligencia Artificial, mostrando que estas tecnologías no son exclusivas de grandes corporaciones. De esta manera, se genera un referente que puede ser replicado por otros emprendedores, reduciendo la brecha tecnológica y fomentando una toma de decisiones más informada y responsable.
+\item Conveniencia
+La presente investigación resulta conveniente debido a que aborda una problemática real y vigente en el contexto de las microempresas, particularmente aquellas que se encuentran en una etapa de crecimiento y expansión. Cup&Cake, empresa fundada en 2014, ha logrado consolidar procesos operativos que le permiten atender la demanda actual de sus clientes; sin embargo, el objetivo estratégico de sus propietarios es ampliar su presencia geográfica mediante la apertura de nuevos puntos de venta, lo cual incrementa la complejidad de la planeación financiera y de la gestión de la cadena de suministro.
+En este escenario, la toma de decisiones basada únicamente en la experiencia previa o en estimaciones empíricas resulta insuficiente para evaluar la factibilidad de expansión, ya que incrementa la incertidumbre financiera y el riesgo operativo. Por ello, la aplicación de modelos avanzados de aprendizaje automático para el pronóstico de ingresos se presenta como una alternativa conveniente, al permitir anticipar escenarios futuros y apoyar decisiones estratégicas con base en evidencia cuantitativa, reduciendo tiempos de análisis y márgenes de error.
+\item Valor teórico
+Desde el punto de vista teórico, la investigación aporta al cuerpo de conocimiento relacionado con la aplicación de la Inteligencia Artificial mediante algoritmos de aprendizaje automático en microempresas, un segmento que ha sido menos estudiado en comparación con grandes organizaciones. La mayoría de los estudios existentes se concentran en entornos industriales o corporativos con altos volúmenes de datos y recursos tecnológicos avanzados, lo que limita su transferencia directa a contextos de menor escala.
+Este trabajo contribuye al análisis de cómo modelos avanzados de aprendizaje automático pueden adaptarse a datos reales de una microempresa, integrando variables temporales y exógenas para el pronóstico de ingresos, y vinculando dichos resultados con la planeación financiera y la gestión de la cadena de suministro. Asimismo, el estudio permite contrastar la planeación empírica tradicional con un enfoque predictivo basado en Inteligencia Artificial, fortaleciendo la discusión teórica sobre la transformación digital en pequeñas unidades económicas.
+\item Implicaciones prácticas
+En términos prácticos, la investigación tiene implicaciones directas para Cup&Cake, ya que la implementación de modelos predictivos permitirá mejorar la planeación financiera, anticipar el comportamiento de los ingresos y optimizar la gestión de inventarios, elementos críticos para el éxito de un proceso de expansión. La capacidad de predecir con mayor precisión la demanda y los ingresos facilitará la evaluación de la factibilidad de nuevos puntos de venta, contribuyendo al incremento de la utilidad operativa y a la reducción de la incertidumbre del empresario.
+Adicionalmente, el estudio proporciona una metodología práctica para integrar herramientas de Inteligencia Artificial en los procesos operativos y financieros de una microempresa, sirviendo como guía para organizaciones similares que buscan obtener mejores resultados en menor tiempo. De este modo, la investigación trasciende el ámbito académico y se posiciona como una propuesta aplicada con impacto real en la gestión empresarial.
+\end{enumerate}
+
+\section*{Hipótesis}
+\begin{itemize}
+    \item[Hipótesis de investigación (H1):] La aplicación de modelos avanzados de aprendizaje automático optimiza la planeación financiera y la gestión de la cadena de suministro en una microempresa, al mejorar en un N\% la precisión del pronóstico de ingresos y apoyar la toma de decisiones estratégicas en una microempresa repostería creativa en Tizayuca, Hidalgo.
+\end{itemize}
+
+\section*{Marco teórico}
+
+\section*{Referencias}
+\printbibliography[heading=none]
+\end{document}

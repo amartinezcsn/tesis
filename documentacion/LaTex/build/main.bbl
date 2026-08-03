@@ -1,0 +1,627 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/apasortcite//global/global}
+    \entry{abrar2024}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=18b0c937f4780f692ceeac17e83ec315}{%
+           family={Abrar},
+           familyi={A\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef70c08c68e7febba67f9d90ac32b5c5}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Syed},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4e0228e5ed6ae9192b816c25d377fe10}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Imran},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=901b27a5d616f41f26fc373350e41ec2}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Atta\bibnamedelima Ur},
+           giveni={A\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{462c9690cb233252e1f28dcddfd0f948}
+      \strng{fullhash}{1836ad0e4cde0b61b484d5df516309b7}
+      \strng{bibnamehash}{1836ad0e4cde0b61b484d5df516309b7}
+      \strng{authorbibnamehash}{1836ad0e4cde0b61b484d5df516309b7}
+      \strng{authornamehash}{462c9690cb233252e1f28dcddfd0f948}
+      \strng{authorfullhash}{1836ad0e4cde0b61b484d5df516309b7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv}
+      \field{title}{Machine Learning Based Food Demand Forecasting via an Explainable Multi-Channel Data Fusion Network Model}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2405.15598
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2405.15598
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2405.15598
+      \endverb
+    \endentry
+    \entry{antuit2023}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3f174daa1df4f5082935d9169138e8e3}{%
+           family={{Antuit AI Labs}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Antuit.ai}%
+      }
+      \strng{namehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{fullhash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{bibnamehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{authorbibnamehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{authornamehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{authorfullhash}{3f174daa1df4f5082935d9169138e8e3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Machine Learning Applications in Retail Demand Forecasting}
+      \field{type}{techreport}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.antuit.ai/resources/whitepapers/ml-retail-demand-forecasting
+      \endverb
+      \verb{url}
+      \verb https://www.antuit.ai/resources/whitepapers/ml-retail-demand-forecasting
+      \endverb
+    \endentry
+    \entry{elson2021}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5e484521e5592199321b82d6045d13a5}{%
+           family={Elson},
+           familyi={E\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cca64f3b37e5f2eb269a390d22b8aef6}{%
+           family={Rozsa},
+           familyi={R\bibinitperiod},
+           given={Balint},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dec3ed61453b8abfe49cedec7254b1cb}{%
+           family={Toth},
+           familyi={T\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{763aa6bb53299ad359f009e7d9be2680}
+      \strng{fullhash}{e8739b0466f143986889d9adbdf23ac2}
+      \strng{bibnamehash}{e8739b0466f143986889d9adbdf23ac2}
+      \strng{authorbibnamehash}{e8739b0466f143986889d9adbdf23ac2}
+      \strng{authornamehash}{763aa6bb53299ad359f009e7d9be2680}
+      \strng{authorfullhash}{e8739b0466f143986889d9adbdf23ac2}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv}
+      \field{title}{Neural Network-Based Dynamic Demand Forecasting for Realistic Supply Chain Safety Stock Optimisation}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2107.00913
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2107.00913
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2107.00913
+      \endverb
+    \endentry
+    \entry{huber2020}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=980730da19b479273100a543291c1da7}{%
+           family={Huber},
+           familyi={H\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=67a777e05b3ad37dc28c16812626e986}{%
+           family={Gossmann},
+           familyi={G\bibinitperiod},
+           given={Arnulf},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=da5c0f18267ebdbc630a55398b0e88fa}{%
+           family={Stuckenschmidt},
+           familyi={S\bibinitperiod},
+           given={Heiner},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{74aaaa549988c6c26fca0b0fbb99a2f0}
+      \strng{fullhash}{cea0f53e892bf18a83fccdaae25e0314}
+      \strng{bibnamehash}{cea0f53e892bf18a83fccdaae25e0314}
+      \strng{authorbibnamehash}{cea0f53e892bf18a83fccdaae25e0314}
+      \strng{authornamehash}{74aaaa549988c6c26fca0b0fbb99a2f0}
+      \strng{authorfullhash}{cea0f53e892bf18a83fccdaae25e0314}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{title}{Cluster-based hierarchical demand forecasting for perishable goods}
+      \field{volume}{141}
+      \field{year}{2020}
+      \field{pages}{112918}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2019.112918
+      \endverb
+    \endentry
+    \entry{hubner2024}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=4d3960013d751b6cf819bc2320720dcd}{%
+           family={Hübner},
+           familyi={H\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ba70a85ca140d4bbbcabf7a5390a7c4}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Heinrich},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5a0a2516f42d36346d6a1fcd1a29fb6}{%
+           family={Sternbeck},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c65567148fb114fda644e2d0d16f5097}
+      \strng{fullhash}{e43c4eb42c40acf764747d65308a8735}
+      \strng{bibnamehash}{e43c4eb42c40acf764747d65308a8735}
+      \strng{authorbibnamehash}{e43c4eb42c40acf764747d65308a8735}
+      \strng{authornamehash}{c65567148fb114fda644e2d0d16f5097}
+      \strng{authorfullhash}{e43c4eb42c40acf764747d65308a8735}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Retailing and Consumer Services}
+      \field{title}{Demand forecasting in food retail: A comparison of dynamic and static neural networks}
+      \field{volume}{76}
+      \field{year}{2024}
+      \field{pages}{103333}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jretconser.2023.103333
+      \endverb
+    \endentry
+    \entry{praveenasri2023}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fac52c187312f77fb7e74e7de4b551fa}{%
+           family={Praveenasri},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de330b10132d7544aa13308b40d9b03f}{%
+           family={Umarani},
+           familyi={U\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{fullhash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{bibnamehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{authorbibnamehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{authornamehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{authorfullhash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Advanced Research in Computer Science}
+      \field{number}{3}
+      \field{title}{Deep Learning Models for Food Demand Forecasting: A Comprehensive Survey}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{pages}{18\bibrangedash 25}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.26483/ijarcs.v14i3.6937
+      \endverb
+    \endentry
+    \entry{viteri2022}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9554b21f865c9f8e247ca21c8742aa61}{%
+           family={Viteri-Mera},
+           familyi={V\bibinithyphendelim M\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8717a236bf5f50c0ca2c48d97dac885a}{%
+           family={Méndez-Fernández},
+           familyi={M\bibinithyphendelim F\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06dca5d59ad29e4bd2146d2c7474ace2}{%
+           family={Yépez-García},
+           familyi={Y\bibinithyphendelim G\bibinitperiod},
+           given={Carmen},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a1c70b673e080b47d8066e54f5ac428a}
+      \strng{fullhash}{e0975971163e31c34aac928380df576c}
+      \strng{bibnamehash}{e0975971163e31c34aac928380df576c}
+      \strng{authorbibnamehash}{e0975971163e31c34aac928380df576c}
+      \strng{authornamehash}{a1c70b673e080b47d8066e54f5ac428a}
+      \strng{authorfullhash}{e0975971163e31c34aac928380df576c}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Ibérica de Sistemas e Tecnologias de Informação}
+      \field{number}{E48}
+      \field{title}{Business Intelligence en la Planificación del Inventario: Una Revisión Sistemática}
+      \field{year}{2022}
+      \field{pages}{252\bibrangedash 265}
+      \range{pages}{14}
+    \endentry
+  \enddatalist
+  \datalist[entry]{nyt/global//global/global}
+    \entry{abrar2024}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=18b0c937f4780f692ceeac17e83ec315}{%
+           family={Abrar},
+           familyi={A\bibinitperiod},
+           given={Muhammad},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef70c08c68e7febba67f9d90ac32b5c5}{%
+           family={Ali},
+           familyi={A\bibinitperiod},
+           given={Syed},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4e0228e5ed6ae9192b816c25d377fe10}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Imran},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=901b27a5d616f41f26fc373350e41ec2}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Atta\bibnamedelima Ur},
+           giveni={A\bibinitperiod\bibinitdelim U\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{462c9690cb233252e1f28dcddfd0f948}
+      \strng{fullhash}{1836ad0e4cde0b61b484d5df516309b7}
+      \strng{bibnamehash}{1836ad0e4cde0b61b484d5df516309b7}
+      \strng{authorbibnamehash}{1836ad0e4cde0b61b484d5df516309b7}
+      \strng{authornamehash}{462c9690cb233252e1f28dcddfd0f948}
+      \strng{authorfullhash}{1836ad0e4cde0b61b484d5df516309b7}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv}
+      \field{title}{Machine Learning Based Food Demand Forecasting via an Explainable Multi-Channel Data Fusion Network Model}
+      \field{year}{2024}
+      \verb{eprint}
+      \verb 2405.15598
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2405.15598
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2405.15598
+      \endverb
+    \endentry
+    \entry{antuit2023}{report}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=3f174daa1df4f5082935d9169138e8e3}{%
+           family={{Antuit AI Labs}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Antuit.ai}%
+      }
+      \strng{namehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{fullhash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{bibnamehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{authorbibnamehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{authornamehash}{3f174daa1df4f5082935d9169138e8e3}
+      \strng{authorfullhash}{3f174daa1df4f5082935d9169138e8e3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Machine Learning Applications in Retail Demand Forecasting}
+      \field{type}{techreport}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.antuit.ai/resources/whitepapers/ml-retail-demand-forecasting
+      \endverb
+      \verb{url}
+      \verb https://www.antuit.ai/resources/whitepapers/ml-retail-demand-forecasting
+      \endverb
+    \endentry
+    \entry{elson2021}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5e484521e5592199321b82d6045d13a5}{%
+           family={Elson},
+           familyi={E\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=cca64f3b37e5f2eb269a390d22b8aef6}{%
+           family={Rozsa},
+           familyi={R\bibinitperiod},
+           given={Balint},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=dec3ed61453b8abfe49cedec7254b1cb}{%
+           family={Toth},
+           familyi={T\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{763aa6bb53299ad359f009e7d9be2680}
+      \strng{fullhash}{e8739b0466f143986889d9adbdf23ac2}
+      \strng{bibnamehash}{e8739b0466f143986889d9adbdf23ac2}
+      \strng{authorbibnamehash}{e8739b0466f143986889d9adbdf23ac2}
+      \strng{authornamehash}{763aa6bb53299ad359f009e7d9be2680}
+      \strng{authorfullhash}{e8739b0466f143986889d9adbdf23ac2}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv}
+      \field{title}{Neural Network-Based Dynamic Demand Forecasting for Realistic Supply Chain Safety Stock Optimisation}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2107.00913
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2107.00913
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2107.00913
+      \endverb
+    \endentry
+    \entry{huber2020}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=980730da19b479273100a543291c1da7}{%
+           family={Huber},
+           familyi={H\bibinitperiod},
+           given={Jakob},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=67a777e05b3ad37dc28c16812626e986}{%
+           family={Gossmann},
+           familyi={G\bibinitperiod},
+           given={Arnulf},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=da5c0f18267ebdbc630a55398b0e88fa}{%
+           family={Stuckenschmidt},
+           familyi={S\bibinitperiod},
+           given={Heiner},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{74aaaa549988c6c26fca0b0fbb99a2f0}
+      \strng{fullhash}{cea0f53e892bf18a83fccdaae25e0314}
+      \strng{bibnamehash}{cea0f53e892bf18a83fccdaae25e0314}
+      \strng{authorbibnamehash}{cea0f53e892bf18a83fccdaae25e0314}
+      \strng{authornamehash}{74aaaa549988c6c26fca0b0fbb99a2f0}
+      \strng{authorfullhash}{cea0f53e892bf18a83fccdaae25e0314}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Expert Systems with Applications}
+      \field{title}{Cluster-based hierarchical demand forecasting for perishable goods}
+      \field{volume}{141}
+      \field{year}{2020}
+      \field{pages}{112918}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.eswa.2019.112918
+      \endverb
+    \endentry
+    \entry{hubner2024}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=4d3960013d751b6cf819bc2320720dcd}{%
+           family={Hübner},
+           familyi={H\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=0ba70a85ca140d4bbbcabf7a5390a7c4}{%
+           family={Kuhn},
+           familyi={K\bibinitperiod},
+           given={Heinrich},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f5a0a2516f42d36346d6a1fcd1a29fb6}{%
+           family={Sternbeck},
+           familyi={S\bibinitperiod},
+           given={Michael\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c65567148fb114fda644e2d0d16f5097}
+      \strng{fullhash}{e43c4eb42c40acf764747d65308a8735}
+      \strng{bibnamehash}{e43c4eb42c40acf764747d65308a8735}
+      \strng{authorbibnamehash}{e43c4eb42c40acf764747d65308a8735}
+      \strng{authornamehash}{c65567148fb114fda644e2d0d16f5097}
+      \strng{authorfullhash}{e43c4eb42c40acf764747d65308a8735}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Retailing and Consumer Services}
+      \field{title}{Demand forecasting in food retail: A comparison of dynamic and static neural networks}
+      \field{volume}{76}
+      \field{year}{2024}
+      \field{pages}{103333}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jretconser.2023.103333
+      \endverb
+    \endentry
+    \entry{praveenasri2023}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=fac52c187312f77fb7e74e7de4b551fa}{%
+           family={Praveenasri},
+           familyi={P\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=de330b10132d7544aa13308b40d9b03f}{%
+           family={Umarani},
+           familyi={U\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{fullhash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{bibnamehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{authorbibnamehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{authornamehash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \strng{authorfullhash}{4edce85dd8ed6dd15870f6de90e56a13}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Advanced Research in Computer Science}
+      \field{number}{3}
+      \field{title}{Deep Learning Models for Food Demand Forecasting: A Comprehensive Survey}
+      \field{volume}{14}
+      \field{year}{2023}
+      \field{pages}{18\bibrangedash 25}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.26483/ijarcs.v14i3.6937
+      \endverb
+    \endentry
+    \entry{viteri2022}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=9554b21f865c9f8e247ca21c8742aa61}{%
+           family={Viteri-Mera},
+           familyi={V\bibinithyphendelim M\bibinitperiod},
+           given={Cristina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8717a236bf5f50c0ca2c48d97dac885a}{%
+           family={Méndez-Fernández},
+           familyi={M\bibinithyphendelim F\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=06dca5d59ad29e4bd2146d2c7474ace2}{%
+           family={Yépez-García},
+           familyi={Y\bibinithyphendelim G\bibinitperiod},
+           given={Carmen},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a1c70b673e080b47d8066e54f5ac428a}
+      \strng{fullhash}{e0975971163e31c34aac928380df576c}
+      \strng{bibnamehash}{e0975971163e31c34aac928380df576c}
+      \strng{authorbibnamehash}{e0975971163e31c34aac928380df576c}
+      \strng{authornamehash}{a1c70b673e080b47d8066e54f5ac428a}
+      \strng{authorfullhash}{e0975971163e31c34aac928380df576c}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Revista Ibérica de Sistemas e Tecnologias de Informação}
+      \field{number}{E48}
+      \field{title}{Business Intelligence en la Planificación del Inventario: Una Revisión Sistemática}
+      \field{year}{2022}
+      \field{pages}{252\bibrangedash 265}
+      \range{pages}{14}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

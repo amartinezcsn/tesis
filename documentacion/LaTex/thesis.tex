@@ -1,0 +1,108 @@
+\documentclass[hidelinks,12pt]{book}
+\usepackage[letterpaper,left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{graphicx} % Insertar imagenes
+\usepackage[table,xcdraw,dvipsnames]{xcolor} % Colores personalizados para tablas
+\usepackage[utf8]{inputenc} % Codificación de caracteres
+\usepackage[spanish]{babel} % Configuración de idioma español
+\usepackage{csquotes} % Citas
+\usepackage{newtxtext,newtxmath} % Para usar times new roman
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{subfiles}
+\usepackage{xstring}
+
+% Bibliography with biblatex
+\usepackage[backend=biber, style=apa]{biblatex}
+\addbibresource{bibliography.bib}
+
+\newcommand{\parenpagcite}[2]{%
+  \IfSubStr{#2}{-}{%
+    \parencite[pp.~#2]{#1}%
+  }{%
+    \IfSubStr{#2}{,}{%
+      \parencite[pp.~#2]{#1}%
+    }{%
+      \parencite[p.~#2]{#1}%
+    }%
+  }%
+}
+
+
+% Configuración de capítulos: números romanos, negritas, mayúsculas, sin punto final
+\titleformat{\chapter}[hang]
+  {\normalfont\bfseries\Large}{\MakeUppercase{\thechapter}}{1em}{\MakeUppercase}
+\raggedbottom
+
+\pagestyle{plain} % Estilo de páginas con numeración al centro del pie de página
+%\setlength{\parindent}{0pt} % Quitar sangria al inicio del texto
+
+\begin{document}
+\frontmatter
+\begin{titlepage}
+  \begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{assets/letras.png}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.8\textwidth}
+    \centering
+    \textsc{\Large Universidad politécnica metropolitana de hidalgo}\\[0.3cm]
+    {
+    \color{violet}
+    \hrule height2pt
+    \vspace{0.1cm}
+    \hrule height1pt
+    \vspace{0.3cm}
+    }
+    \textsc{\Large Maestría en inteligencia artificial}\\[0.5cm]
+  \end{minipage}
+  \begin{minipage}[c]{0.15\textwidth}
+    \color{violet}
+    \vspace{0.5cm}
+    \hspace{0.5cm}
+    \vrule width2pt height17cm
+    \hspace{0.05cm}
+    \vrule width1pt height17cm
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.8\textwidth}
+    \centering
+    \vspace{2cm}
+    \textbf{\Large Modelo de clasificación de llamadas en materia de delincuencia organizada a partir de técnicas de aprendizaje autónomo
+    }\\[2cm]
+    \huge TESIS\\
+    \textit{\large Para optar el grado de maestro en:}\\
+    \textbf{\Large Inteligencia Artificial}\\[2cm]
+    \large Presenta:\\[1cm]
+    \Large González Rodríguez Alfredo Rafael\\[3cm]
+    \large Director:\\
+    \large Dr. Xeno (temporal)\\[2cm]
+  \end{minipage}
+  \\[0.5cm]
+  \begin{minipage}[c]{0.15\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{assets/logo_bis.png}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.8\textwidth}
+    \centering
+    \mdseries{\large Tolcayuca, Hidalgo, \the\year}
+  \end{minipage}
+\end{titlepage}
+\pagenumbering{roman}
+\chapter*{Dedicatoria}
+\chapter*{Agradecimientos}
+\tableofcontents
+\mainmatter
+% Interlineado 1.5
+\onehalfspacing
+\pagenumbering{arabic}
+% \part{Preámbulo}
+\subfile{preamble/index.tex}
+% \part{Desarrollo}
+% \chapter{Marco teórico}
+% \lipsum[1-10]
+\printbibliography[heading=bibintoc,title={Referencias}]% Incluir bibliografía en el índice
+\end{document}
