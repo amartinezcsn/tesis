@@ -57,8 +57,8 @@ MODEL_LABELS = {
     "regresion_lineal_multivariable": "Regresión lineal",
     "arbol_decision": "Árbol de decisión",
     "random_forest": "Random Forest",
-    "arima_111": "ARIMA(1,1,1)",
-    "sarima_semanal": "SARIMA semanal",
+    "arima_111": "ARIMA optimizado",
+    "sarima_semanal": "SARIMA semanal optimizado",
 }
 
 DATASET_LABELS = {

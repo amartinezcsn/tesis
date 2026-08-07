@@ -36,8 +36,15 @@ Para la tesis, si es necesario reducir dimensionalidad, pero no debe hacerse a c
 
 5. `05_modelos_estadisticos_ml_rolling_origin.py`
    - Compara metodo empirico, ARIMA/SARIMA, regresion lineal, arboles y random forest.
+   - Ajusta hiperparametros por objetivo mediante origenes temporales anteriores.
+   - Reserva los ultimos origenes para evaluar combinaciones no vistas durante el ajuste.
    - Usa validacion Rolling-Origin.
    - Reporta MAE, RMSE y MAPE.
+
+La busqueda se ejecuta desde el pipeline maestro de forma predeterminada. Su costo
+puede controlarse con `--origenes-ajuste 4 --origenes-evaluacion 3`, o puede
+omitirse con `--sin-ajuste-hiperparametros`. Cada archivo de resultados agrega
+las hojas `mejores_hiperparametros`, `resumen_ajuste` y `detalle_ajuste`.
 
 6. `06_rnn_lstm_dataset_reducido.py`
    - Entrena RNN y LSTM con ventanas temporales.

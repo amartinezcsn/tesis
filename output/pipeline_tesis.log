@@ -1,0 +1,18 @@
+2026-08-06 22:03:51,594 | INFO | Etapas solicitadas: limpieza, ingenieria, perfil, multicolinealidad, seleccion, pca, modelos, rnn
+2026-08-06 22:03:51,599 | INFO | INICIO | limpieza | general
+2026-08-06 22:03:57,363 | INFO | FIN CORRECTO | limpieza | general
+2026-08-06 22:03:57,391 | INFO | INICIO | ingenieria | general
+2026-08-06 22:04:05,710 | INFO | FIN CORRECTO | ingenieria | general
+2026-08-06 22:04:05,734 | INFO | INICIO | perfil | general
+2026-08-06 22:04:09,462 | INFO | FIN CORRECTO | perfil | general
+2026-08-06 22:04:09,462 | INFO | INICIO | multicolinealidad | general
+2026-08-06 22:04:18,219 | INFO | FIN CORRECTO | multicolinealidad | general
+2026-08-06 22:04:18,219 | INFO | INICIO | seleccion | reducido
+2026-08-06 22:05:22,284 | INFO | FIN CORRECTO | seleccion | reducido
+2026-08-06 22:05:22,312 | INFO | INICIO | pca | pca
+2026-08-06 22:05:30,226 | INFO | FIN CORRECTO | pca | pca
+2026-08-06 22:05:30,254 | INFO | INICIO | modelos_rolling_origin | completo
+2026-08-06 22:08:59,450 | INFO | FIN CORRECTO | modelos_rolling_origin | completo
+2026-08-06 22:08:59,450 | INFO | INICIO | modelos_rolling_origin | reducido
+2026-08-06 22:12:32,673 | INFO | FIN CORRECTO | modelos_rolling_origin | reducido
+2026-08-06 22:12:32,673 | INFO | INICIO | modelos_rolling_origin | pca

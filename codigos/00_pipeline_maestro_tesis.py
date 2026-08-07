@@ -158,6 +158,23 @@ def parse_args() -> argparse.Namespace:
         help="Omite RNN/LSTM, útil cuando TensorFlow no está instalado.",
     )
     parser.add_argument(
+        "--sin-ajuste-hiperparametros",
+        action="store_true",
+        help="Usa los hiperparámetros base sin ejecutar la búsqueda temporal.",
+    )
+    parser.add_argument(
+        "--origenes-ajuste",
+        type=int,
+        default=4,
+        help="Número máximo de orígenes recientes usados para ajustar cada candidato.",
+    )
+    parser.add_argument(
+        "--origenes-evaluacion",
+        type=int,
+        default=3,
+        help="Orígenes finales reservados y no usados durante el ajuste.",
+    )
+    parser.add_argument(
         "--continuar-con-error",
         action="store_true",
         help="Continúa con etapas independientes después de un error.",
@@ -352,6 +369,9 @@ def write_execution_products(
             "hasta": args.hasta,
             "variantes_modelos": args.variantes_modelos,
             "variantes_rnn": [] if args.sin_rnn else args.variantes_rnn,
+            "ajuste_hiperparametros": not args.sin_ajuste_hiperparametros,
+            "origenes_ajuste": args.origenes_ajuste,
+            "origenes_evaluacion": args.origenes_evaluacion,
         },
         "resultados": result_rows,
         "archivos_generados": generated_files,
@@ -378,6 +398,8 @@ def main() -> int:
 
     try:
         stages = validate_stage_range(args.desde, args.hasta)
+        if args.origenes_ajuste < 1 or args.origenes_evaluacion < 1:
+            raise PipelineError("--origenes-ajuste y --origenes-evaluacion deben ser mayores que cero.")
         logging.info("Etapas solicitadas: %s", ", ".join(stages))
 
         # Carga y redirecciona la configuración común antes de importar los análisis.
@@ -460,6 +482,9 @@ def main() -> int:
         # 7) Comparación Rolling-Origin para cada variante
         if "modelos" in stages:
             module = load_module("tesis_modelos", args.scripts_dir / SCRIPT_FILES["modelos"])
+            module.ENABLE_HYPERPARAMETER_TUNING = not args.sin_ajuste_hiperparametros
+            module.TUNING_MAX_ORIGINS = args.origenes_ajuste
+            module.FINAL_EVALUATION_ORIGINS = args.origenes_evaluacion
             for variant in args.variantes_modelos:
                 module.DATASET_TO_USE = variant
                 ok = run_tracked("modelos_rolling_origin", variant, module.main, results)
