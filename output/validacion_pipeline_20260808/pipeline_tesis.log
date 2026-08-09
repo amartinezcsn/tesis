@@ -1,0 +1,7 @@
+2026-08-08 10:50:28,755 | INFO | Etapas solicitadas: graficas_modelos, graficas_rnn
+2026-08-08 10:50:29,061 | INFO | INICIO | graficas_modelos | general
+2026-08-08 10:50:43,061 | INFO | FIN CORRECTO | graficas_modelos | general
+2026-08-08 10:50:43,063 | INFO | INICIO | graficas_rnn | general
+2026-08-08 10:51:11,056 | INFO | FIN CORRECTO | graficas_rnn | general
+2026-08-08 10:51:11,284 | INFO | Pipeline terminado. Errores registrados: 0
+2026-08-08 10:51:11,284 | INFO | Resumen: tesis\output\validacion_pipeline_20260808\00_resumen_ejecucion_pipeline.xlsx

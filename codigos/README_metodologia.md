@@ -10,6 +10,22 @@ Para la tesis, si es necesario reducir dimensionalidad, pero no debe hacerse a c
 2. Interpretabilidad financiera y operativa para Cup&Cake.
 3. Validacion temporal sin fuga de informacion.
 
+## Alineación con la pregunta de investigación
+
+La metodología está diseñada para responder la pregunta de investigación sobre la mejora del pronóstico de demanda y la planeación financiera y de abastecimiento de Cup&Cake. La relación entre los objetivos y las etapas del pipeline es la siguiente:
+
+| Objetivo específico | Etapa del pipeline | Evidencia esperada |
+| --- | --- | --- |
+| Describir el registro actual de ventas, compras y planeación empírica | Limpieza y dataset maestro | Dataset maestro con trazabilidad de ventas, compras y variables de negocio |
+| Construir un dataset maestro con variables exógenas | Ingeniería de características y perfilado | Dataset modelable con variables calendáricas, comerciales y operativas |
+| Predecir demanda, ingresos y compras | Modelos estadísticos, ML y RNN/LSTM | Reportes de MAE, RMSE y MAPE por objetivo |
+| Comparar desempeño con partición temporal | Rolling-Origin y validación temporal | Resultados por origen de prueba y estabilidad predictiva |
+| Seleccionar modelos robustos | Selección de características, PCA y ajuste de hiperparámetros | Mejores configuraciones por objetivo |
+| Probar frente al método empírico | Métricas MAE, RMSE y MAPE | Comparación explícita con la línea base empírica |
+| Integrar resultados en inteligencia de negocios | Gráficas y reportes consolidados | Tableros y archivos de evidencia reproducibles |
+| Estimar impacto financiero y operativo | Análisis de resultados y reporte de alineación | Interpretación del impacto sobre abastecimiento y planeación financiera |
+| Traducir resultados a escenarios de planeación | Pipeline y salidas futuras de simulación | Insumos para compras, inventarios y expansión comercial |
+
 ## Orden recomendado de ejecucion
 
 0. `config_metodologia.py`
@@ -47,8 +63,25 @@ omitirse con `--sin-ajuste-hiperparametros`. Cada archivo de resultados agrega
 las hojas `mejores_hiperparametros`, `resumen_ajuste` y `detalle_ajuste`.
 
 6. `06_rnn_lstm_dataset_reducido.py`
-   - Entrena RNN y LSTM con ventanas temporales.
+   - Ajusta RNN y LSTM con un bloque de validacion temporal anterior a la prueba.
+   - Reentrena cada configuracion ganadora con todo el historial de desarrollo.
+   - Exporta resultados, detalle del ajuste, mejores hiperparametros, predicciones y la mejor configuracion.
    - Se recomienda usar el dataset reducido o PCA por el numero limitado de observaciones.
+
+7. `09_generar_graficas_manifiesto_pca.py`
+   - Genera la evidencia visual de limpieza, ingenieria, perfil, seleccion y PCA.
+
+8. `10_generar_graficas_rolling_origin.py`
+   - Consolida los tres datasets y genera 16 graficas de evaluacion temporal.
+
+9. `11_generar_graficas_rnn_lstm.py`
+   - Genera 16 graficas comparativas de RNN/LSTM.
+
+El pipeline maestro ejecuta tambien estas tres etapas y guarda todas las
+graficas en `C:/Python/tesis/imagenes`. Los archivos
+`00_mejores_configuraciones_globales_modelos.xlsx` y
+`00_mejores_configuraciones_globales_rnn_lstm.xlsx` identifican la mejor
+combinacion de dataset, modelo e hiperparametros para cada objetivo.
 
 ## Recomendacion para la tesis
 

@@ -1,0 +1,17 @@
+2026-08-08 10:50:31,264 | INFO | Generada: 01_esquema_validacion_rolling_origin.png
+2026-08-08 10:50:31,685 | INFO | Generada: 02_cobertura_origenes_por_objetivo.png
+2026-08-08 10:50:32,806 | INFO | Generada: 03_ranking_rmse_por_objetivo.png
+2026-08-08 10:50:33,602 | INFO | Generada: 04_mejor_modelo_por_dataset_objetivo.png
+2026-08-08 10:50:34,110 | INFO | Generada: 05_mejora_frente_linea_base_empirica.png
+2026-08-08 10:50:35,448 | INFO | Generada: 06_relacion_mae_rmse_modelos.png
+2026-08-08 10:50:36,002 | INFO | Generada: 07_concordancia_rankings_metricas.png
+2026-08-08 10:50:37,424 | INFO | Generada: 08_evolucion_temporal_rmse_ganadores.png
+2026-08-08 10:50:37,850 | INFO | Generada: 09_distribucion_rmse_por_modelo.png
+2026-08-08 10:50:38,350 | INFO | Generada: 10_estabilidad_modelos_cv_rmse.png
+2026-08-08 10:50:38,680 | INFO | Generada: 11_ventanas_ganadas_por_modelo.png
+2026-08-08 10:50:39,486 | INFO | Generada: 12_sensibilidad_modelos_dataset.png
+2026-08-08 10:50:40,158 | INFO | Generada: 13_empirico_vs_modelos_avanzados.png
+2026-08-08 10:50:41,317 | INFO | Generada: 14_diagnostico_mape_por_objetivo.png
+2026-08-08 10:50:41,854 | INFO | Generada: 15_origenes_temporales_mas_dificiles.png
+2026-08-08 10:50:42,447 | INFO | Generada: 16_score_multicriterio_modelos.png
+2026-08-08 10:50:42,915 | INFO | Proceso terminado. Figuras generadas: 16

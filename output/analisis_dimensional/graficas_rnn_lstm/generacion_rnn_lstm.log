@@ -1,0 +1,17 @@
+2026-08-08 11:27:52,448 | INFO | Generada: 01_particion_temporal_rnn_lstm.png
+2026-08-08 11:27:52,796 | INFO | Generada: 02_ventana_supervisada_28_dias.png
+2026-08-08 11:27:52,998 | INFO | Generada: 03_arquitectura_rnn_lstm.png
+2026-08-08 11:27:57,093 | INFO | Generada: 04_dimensionalidad_entrada_recurrente.png
+2026-08-08 11:27:57,847 | INFO | Generada: 05_comparacion_rmse_rnn_lstm.png
+2026-08-08 11:27:58,643 | INFO | Generada: 06_comparacion_mae_rnn_lstm.png
+2026-08-08 11:27:59,443 | INFO | Generada: 07_diagnostico_mape_rnn_lstm.png
+2026-08-08 11:27:59,998 | INFO | Generada: 08_arquitectura_ganadora_por_objetivo.png
+2026-08-08 11:28:00,385 | INFO | Generada: 09_mejora_lstm_vs_rnn.png
+2026-08-08 11:28:00,714 | INFO | Generada: 10_efecto_dataset_reducido_vs_pca.png
+2026-08-08 11:28:01,237 | INFO | Generada: 11_relacion_mae_rmse_redes.png
+2026-08-08 11:28:02,041 | INFO | Generada: 12_score_multicriterio_rnn_lstm.png
+2026-08-08 11:28:02,442 | INFO | Generada: 13_configuracion_entrenamiento_redes.png
+2026-08-08 11:28:06,032 | INFO | Generada: 14_complejidad_parametros_vs_muestra.png
+2026-08-08 11:28:09,554 | INFO | Generada: 15_intermitencia_objetivos_periodo_prueba.png
+2026-08-08 11:28:09,853 | INFO | Generada: 16_resumen_experimento_rnn_lstm.png
+2026-08-08 11:28:09,933 | INFO | Proceso terminado. Gráficas generadas: 16

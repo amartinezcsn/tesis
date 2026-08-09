@@ -38,10 +38,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-LOOKBACK_DAYS = 28
+LOOKBACK_DAYS = 28  # maxima ventana de la rejilla; tambien se evalua 14
 TEST_DAYS = 90
-EPOCHS = 80
+EPOCHS = 60
 BATCH_SIZE = 16
+PATIENCE = 8
 TARGETS = [
     "target_ventas_importe_real_2026_05",
     "target_compras_total_real_2026_05",
@@ -215,15 +216,15 @@ def graph_temporal_partition(ctx: Context, results: pd.DataFrame) -> GraphicReco
 
 
 def graph_sequence_window(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
-    fig, ax = plt.subplots(figsize=(12, 5.5))
+    fig, ax = plt.subplots(figsize=(12, 4.8))
     x = np.arange(1, LOOKBACK_DAYS + 2)
     ax.scatter(x[:-1], np.zeros(LOOKBACK_DAYS), s=55, label="Observaciones de entrada")
     ax.scatter([x[-1]], [0], s=90, marker="*", label="Objetivo a predecir")
     for i in range(LOOKBACK_DAYS):
         ax.plot([x[i], x[-1]], [0, 0], alpha=0.08)
     ax.axvspan(0.5, LOOKBACK_DAYS + 0.5, alpha=0.12)
-    ax.text((LOOKBACK_DAYS + 1) / 2, 0.12, "Ventana histórica de 28 días", ha="center")
-    ax.text(x[-1], -0.13, "día t", ha="center")
+    ax.text(0.5, 0.82, "Ventana máxima: 28 días (rejilla: 14 y 28)", ha="center", transform=ax.transAxes)
+    ax.set_ylim(-0.45, 0.45)
     ax.set_yticks([])
     ax.set_xticks([1, 7, 14, 21, 28, 29], ["t-28", "t-22", "t-15", "t-8", "t-1", "t"])
     ax.set_title("Conversión de la serie temporal en secuencias supervisadas")
@@ -232,11 +233,11 @@ def graph_sequence_window(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
     fig.tight_layout()
     filename = "02_ventana_supervisada_28_dias.png"
     save(fig, ctx, filename)
-    return rec(2, "Ventana supervisada de 28 días", filename, "08_rnn_lstm_dataset_reducido.py", "make_sequences",
-               "x[i-28:i], y[i]", "Ilustrar cómo cada ejemplo de entrenamiento utiliza 28 días previos para estimar el valor del día siguiente.",
+    return rec(2, "Ventanas supervisadas de 14 y 28 días", filename, "08_rnn_lstm_dataset_reducido.py", "make_sequences",
+               "x[i-L:i], y[i], L en {14, 28}", "Ilustrar cómo cada ejemplo utiliza la ventana candidata ganadora para estimar el valor del día siguiente.",
                "La red recibe un tensor temporal y aprende dependencias entre posiciones consecutivas.",
                "Cada ventana termina en t-1; el objetivo corresponde a t, evitando incluir el valor futuro dentro de la entrada.",
-               r"X_t=[x_{t-28},\ldots,x_{t-1}],\quad y_t=y(t)",
+               r"X_t=[x_{t-L},\ldots,x_{t-1}],\quad L\in\{14,28\}",
                "Explicación de la preparación supervisada de datos para RNN y LSTM.",
                "El horizonte efectivo es de un día; el código evalúa 90 predicciones de un paso construidas sobre el contexto final.")
 
@@ -245,9 +246,9 @@ def graph_architecture(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
     fig, ax = plt.subplots(figsize=(12, 6.2))
     ax.axis("off")
     boxes = [
-        (0.04, 0.38, 0.18, 0.25, "Entrada\n28 × p"),
-        (0.28, 0.38, 0.18, 0.25, "RNN simple o LSTM\n32 unidades"),
-        (0.52, 0.38, 0.16, 0.25, "Dense\n16 ReLU"),
+        (0.04, 0.38, 0.18, 0.25, "Entrada\n14/28 × p"),
+        (0.28, 0.38, 0.18, 0.25, "RNN simple o LSTM\n24/32 unidades"),
+        (0.52, 0.38, 0.16, 0.25, "Dense\n12/16 ReLU"),
         (0.74, 0.38, 0.14, 0.25, "Salida\n1 valor"),
     ]
     for x, y, w, h, txt in boxes:
@@ -258,17 +259,17 @@ def graph_architecture(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
         x1 = boxes[i][0] + boxes[i][2]
         x2 = boxes[i+1][0]
         ax.annotate("", xy=(x2, 0.505), xytext=(x1, 0.505), arrowprops=dict(arrowstyle="->", lw=1.5))
-    ax.text(0.5, 0.78, "Arquitectura base evaluada", ha="center", fontsize=15)
-    ax.text(0.5, 0.20, "Optimizador: Adam | Función de pérdida: MAE | EarlyStopping: paciencia 10", ha="center", fontsize=10)
+    ax.text(0.5, 0.78, "Arquitecturas candidatas evaluadas", ha="center", fontsize=15)
+    ax.text(0.5, 0.20, "Adam | pérdida MAE | EarlyStopping: paciencia 8 | selección por RMSE temporal", ha="center", fontsize=10)
     filename = "03_arquitectura_rnn_lstm.png"
     save(fig, ctx, filename)
     return rec(3, "Arquitectura de las redes recurrentes", filename, "08_rnn_lstm_dataset_reducido.py", "Sequential",
-               "entrada, capa recurrente, Dense(16), Dense(1)", "Representar la arquitectura común utilizada para comparar RNN simple y LSTM.",
+               "entrada, capa recurrente, capa densa, Dense(1)", "Representar las arquitecturas candidatas utilizadas para comparar RNN simple y LSTM.",
                "La única diferencia estructural entre modelos es el tipo de capa recurrente; las capas densas y la salida son equivalentes.",
                "La comparación es más controlada porque mantiene constante el resto de la arquitectura.",
                r"\hat y_t=W_2\,ReLU(W_1h_t+b_1)+b_2",
                "Configuración del experimento de aprendizaje profundo.",
-               "No se realizó búsqueda exhaustiva de hiperparámetros; los resultados corresponden a una arquitectura base.")
+               "La rejilla es compacta y no constituye una búsqueda exhaustiva.")
 
 
 def graph_input_dimensions(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
@@ -283,7 +284,7 @@ def graph_input_dimensions(ctx: Context, results: pd.DataFrame) -> GraphicRecord
     fig, ax=plt.subplots(figsize=(9.5,6.2))
     x=np.arange(len(data)); width=.36
     ax.bar(x-width/2,data.predictores,width,label="Predictores")
-    ax.bar(x+width/2,data.valores_por_secuencia,width,label="Valores por secuencia (28×p)")
+    ax.bar(x+width/2,data.valores_por_secuencia,width,label="Valores por secuencia máxima (28×p)")
     ax.set_yscale("log")
     ax.set_xticks(x,[dataset_label(v) for v in data.dataset])
     ax.set_ylabel("Cantidad (escala logarítmica)")
@@ -307,7 +308,7 @@ def graph_rmse(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
         ax.set_title(target_label(target)); ax.set_ylabel("RMSE"); ax.grid(axis="y",alpha=.2)
     fig.suptitle("Comparación de RMSE entre RNN simple y LSTM",fontsize=15); fig.tight_layout()
     filename="05_comparacion_rmse_rnn_lstm.png"; save(fig,ctx,filename)
-    return rec(5,"Comparación de RMSE",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","Sheet1",
+    return rec(5,"Comparación de RMSE",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","resultados",
                "dataset, target, modelo, rmse","Comparar la penalización de errores grandes entre arquitecturas y representaciones.",
                "Una barra menor representa mejor ajuste predictivo para el objetivo correspondiente.",
                "La comparación debe hacerse dentro de cada objetivo, no entre unidades monetarias y conteos.",
@@ -324,7 +325,7 @@ def graph_mae(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
         ax.set_title(target_label(target)); ax.set_ylabel("MAE"); ax.grid(axis="y",alpha=.2)
     fig.suptitle("Comparación de MAE entre RNN simple y LSTM",fontsize=15); fig.tight_layout()
     filename="06_comparacion_mae_rnn_lstm.png"; save(fig,ctx,filename)
-    return rec(6,"Comparación de MAE",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","Sheet1",
+    return rec(6,"Comparación de MAE",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","resultados",
                "dataset, target, modelo, mae","Comparar la magnitud promedio de los errores en las unidades originales.",
                "MAE resume el error típico sin penalizar cuadráticamente los valores extremos.",
                "Una menor barra significa menor desviación absoluta promedio.",
@@ -341,7 +342,7 @@ def graph_mape(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
         ax.set_title(target_label(target)); ax.set_ylabel("MAPE (%)"); ax.grid(axis="y",alpha=.2)
     fig.suptitle("Diagnóstico del MAPE en RNN y LSTM",fontsize=15); fig.tight_layout()
     filename="07_diagnostico_mape_rnn_lstm.png"; save(fig,ctx,filename)
-    return rec(7,"Diagnóstico del MAPE",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","Sheet1",
+    return rec(7,"Diagnóstico del MAPE",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","resultados",
                "dataset, target, modelo, mape","Mostrar la inestabilidad del error porcentual cuando existen valores reales pequeños o iguales a cero.",
                "MAPE muy elevado no necesariamente implica el mismo deterioro observado en MAE o RMSE; puede estar dominado por denominadores pequeños.",
                "Debe interpretarse junto con la tasa de ceros de cada objetivo.",
@@ -359,10 +360,13 @@ def graph_winners(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
     for i,target in enumerate(pivot.index):
         for j,dataset in enumerate(pivot.columns):
             row=winners[(winners.target==target)&(winners.dataset==dataset)]
-            if not row.empty: ax.text(j,i,f"{model_label(row.iloc[0].modelo)}\nRMSE={row.iloc[0].rmse:.2f}",ha="center",va="center",fontsize=8)
+            if not row.empty:
+                value=float(row.iloc[0].rmse)
+                color="white" if im.norm(value)<0.45 else "black"
+                ax.text(j,i,f"{model_label(row.iloc[0].modelo)}\nRMSE={value:.2f}",ha="center",va="center",fontsize=8,color=color)
     fig.colorbar(im,ax=ax,label="RMSE"); ax.set_title("Arquitectura ganadora por dataset y objetivo"); fig.tight_layout()
     filename="08_arquitectura_ganadora_por_objetivo.png"; save(fig,ctx,filename)
-    return rec(8,"Arquitectura ganadora por objetivo",filename,"06_rnn_lstm_*.xlsx","Sheet1",
+    return rec(8,"Arquitectura ganadora por objetivo",filename,"06_rnn_lstm_*.xlsx","resultados",
                "dataset, target, modelo, rmse","Identificar si RNN simple o LSTM obtiene el menor RMSE en cada combinación.",
                "La etiqueta muestra el modelo ganador y su error absoluto.",
                "El ganador se determina de forma independiente para cada dataset y objetivo.",
@@ -379,7 +383,7 @@ def graph_lstm_gain(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
     ax.barh(np.arange(len(p)),p.mejora_pct); ax.set_yticks(np.arange(len(p)),wrap(labels,42)); ax.axvline(0,linewidth=1)
     ax.set_xlabel("Mejora de LSTM respecto a RNN simple en RMSE (%)"); ax.set_title("Ganancia relativa de LSTM frente a RNN simple"); ax.grid(axis="x",alpha=.2)
     fig.tight_layout(); filename="09_mejora_lstm_vs_rnn.png"; save(fig,ctx,filename)
-    return rec(9,"Mejora relativa de LSTM",filename,"06_rnn_lstm_*.xlsx","Sheet1",
+    return rec(9,"Mejora relativa de LSTM",filename,"06_rnn_lstm_*.xlsx","resultados",
                "rmse de rnn_simple y lstm","Cuantificar si la memoria controlada de LSTM produce una mejora práctica frente a una RNN simple.",
                "Valores positivos favorecen LSTM; valores negativos favorecen RNN simple.",
                "La magnitud porcentual permite comparar objetivos con escalas distintas.",
@@ -397,7 +401,7 @@ def graph_dataset_effect(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
     ax.barh(np.arange(len(p)),p.diferencia_pct); ax.set_yticks(np.arange(len(p)),wrap(labels,42)); ax.axvline(0,linewidth=1)
     ax.set_xlabel("Cambio de RMSE de PCA respecto al reducido (%)"); ax.set_title("Efecto de la representación de entrada sobre RNN/LSTM"); ax.grid(axis="x",alpha=.2)
     fig.tight_layout(); filename="10_efecto_dataset_reducido_vs_pca.png"; save(fig,ctx,filename)
-    return rec(10,"Efecto del dataset reducido frente a PCA",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","Sheet1",
+    return rec(10,"Efecto del dataset reducido frente a PCA",filename,"06_rnn_lstm_reducido.xlsx y 06_rnn_lstm_pca.xlsx","resultados",
                "dataset, modelo, target, rmse","Evaluar si la compacidad PCA mejora o deteriora el desempeño respecto a variables seleccionadas interpretables.",
                "Valores negativos indican que PCA reduce el RMSE; positivos indican que el dataset reducido fue mejor.",
                "La comparación se realiza para la misma arquitectura y objetivo.",
@@ -415,7 +419,7 @@ def graph_mae_rmse_gap(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
     lim=max(data.rmse.max(),data.mae.max())*1.05; ax.plot([0,lim],[0,lim],linestyle="--",linewidth=1)
     ax.set_xlabel("MAE"); ax.set_ylabel("RMSE"); ax.set_title("Separación entre error medio y penalización de errores grandes"); ax.legend(); ax.grid(alpha=.2)
     fig.tight_layout(); filename="11_relacion_mae_rmse_redes.png"; save(fig,ctx,filename)
-    return rec(11,"Relación entre MAE y RMSE",filename,"06_rnn_lstm_*.xlsx","Sheet1",
+    return rec(11,"Relación entre MAE y RMSE",filename,"06_rnn_lstm_*.xlsx","resultados",
                "mae, rmse","Detectar combinaciones donde algunos errores grandes elevan sustancialmente el RMSE.",
                "Cuanto más alejado se encuentre un punto por encima de la diagonal, mayor es la influencia de errores extremos.",
                "La diagonal representa igualdad teórica entre ambas métricas.",
@@ -436,7 +440,7 @@ def graph_multicriteria(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
         ax.bar(np.arange(len(sub)),sub.score); ax.set_xticks(np.arange(len(sub)),wrap(labels,18),rotation=30,ha="right"); ax.set_title(target_label(target)); ax.set_ylabel("Score normalizado"); ax.grid(axis="y",alpha=.2)
     fig.suptitle("Score multicriterio de RNN y LSTM",fontsize=15); fig.tight_layout()
     filename="12_score_multicriterio_rnn_lstm.png"; save(fig,ctx,filename)
-    return rec(12,"Score multicriterio",filename,"06_rnn_lstm_*.xlsx","Sheet1",
+    return rec(12,"Score multicriterio",filename,"06_rnn_lstm_*.xlsx","resultados",
                "mae, rmse, mape","Sintetizar el desempeño conjunto de las tres métricas después de normalizarlas por objetivo.",
                "Un score menor representa mejor equilibrio relativo.",
                "La normalización evita mezclar escalas monetarias y de conteo.",
@@ -446,17 +450,17 @@ def graph_multicriteria(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
 
 
 def graph_training_configuration(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
-    values=pd.Series({"Lookback":LOOKBACK_DAYS,"Prueba":TEST_DAYS,"Épocas máximas":EPOCHS,"Batch size":BATCH_SIZE,"Unidades recurrentes":32,"Neuronas densas":16,"Paciencia":10})
+    values=pd.Series({"Lookback máximo":LOOKBACK_DAYS,"Prueba":TEST_DAYS,"Épocas máximas":EPOCHS,"Batch size":BATCH_SIZE,"Unidades máximas":32,"Neuronas densas máximas":16,"Paciencia":PATIENCE})
     fig,ax=plt.subplots(figsize=(10.5,6.5)); ax.barh(values.index,values.values); ax.set_title("Configuración base del entrenamiento RNN/LSTM"); ax.set_xlabel("Valor del hiperparámetro"); ax.grid(axis="x",alpha=.2)
     for i,v in enumerate(values.values): ax.text(v,i,f" {int(v)}",va="center")
     fig.tight_layout(); filename="13_configuracion_entrenamiento_redes.png"; save(fig,ctx,filename)
     return rec(13,"Configuración de entrenamiento",filename,"08_rnn_lstm_dataset_reducido.py","Constantes y model.fit",
                "LOOKBACK_DAYS, TEST_DAYS, EPOCHS, BATCH_SIZE, unidades, paciencia","Resumir los principales hiperparámetros que controlan la capacidad y el proceso de ajuste.",
-               "La figura documenta una configuración base reproducible.",
-               "EarlyStopping puede detener el entrenamiento antes de las 80 épocas.",
+               "La figura documenta los límites superiores de la rejilla reproducible.",
+               "EarlyStopping puede detener el ajuste antes de las 60 épocas; la mejor época queda registrada en el Excel.",
                r"\theta^*=\arg\min_\theta MAE_{val}(\theta)",
                "Tabla o figura de configuración experimental.",
-               "El output actual no conserva el número real de épocas ejecutadas ni la historia de pérdida.")
+               "El detalle conserva la mejor época, pero no la historia completa de pérdida.")
 
 
 def graph_sample_parameter_ratio(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
@@ -492,7 +496,15 @@ def graph_target_zero_rate(ctx: Context, results: pd.DataFrame) -> GraphicRecord
         if df is None: continue
         for target in TARGETS:
             if target in df:
-                s=pd.to_numeric(df[target],errors="coerce").fillna(0).iloc[-TEST_DAYS:]
+                effective=results.loc[
+                    (results.dataset==variant)&(results.target==target),
+                    "fecha_fin_efectiva_objetivo",
+                ] if "fecha_fin_efectiva_objetivo" in results else pd.Series(dtype=object)
+                target_df=df.copy()
+                if not effective.empty and "fecha" in target_df:
+                    target_df["fecha"]=pd.to_datetime(target_df["fecha"])
+                    target_df=target_df[target_df.fecha<=pd.to_datetime(effective.iloc[0])]
+                s=pd.to_numeric(target_df[target],errors="coerce").fillna(0).iloc[-TEST_DAYS:]
                 rows.append({"dataset":variant,"target":target,"ceros":(s==0).mean()*100})
     d=pd.DataFrame(rows)
     if d.empty: raise ValueError("No se pudieron calcular ceros")
@@ -524,7 +536,7 @@ def graph_summary(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
     fig,ax=plt.subplots(figsize=(10,6.5)); ax.barh(metrics.index,metrics.values); ax.set_title("Síntesis cuantitativa del experimento RNN/LSTM"); ax.set_xlabel("Cantidad"); ax.grid(axis="x",alpha=.2)
     for i,v in enumerate(metrics.values): ax.text(v,i,f" {int(v)}",va="center")
     fig.tight_layout(); filename="16_resumen_experimento_rnn_lstm.png"; save(fig,ctx,filename)
-    return rec(16,"Resumen del experimento RNN/LSTM",filename,"06_rnn_lstm_*.xlsx","Sheet1",
+    return rec(16,"Resumen del experimento RNN/LSTM",filename,"06_rnn_lstm_*.xlsx","resultados",
                "combinaciones, datasets, objetivos, arquitecturas y ganadores","Cerrar la etapa con una síntesis de alcance experimental.",
                "El número de victorias muestra qué arquitectura obtuvo menor RMSE en más combinaciones.",
                "Debe leerse junto con la magnitud de las diferencias, no solo con el conteo de ganadores.",
@@ -536,7 +548,7 @@ def graph_summary(ctx: Context, results: pd.DataFrame) -> GraphicRecord:
 def build_manifest(records: list[GraphicRecord], ctx: Context, results: pd.DataFrame) -> None:
     df=pd.DataFrame([asdict(r) for r in records])
     df.to_csv(ctx.graphics_dir/"INDICE_GRAFICAS_RNN_LSTM.csv",index=False,encoding="utf-8-sig")
-    payload={"generado":datetime.now().isoformat(),"configuracion":{"lookback":LOOKBACK_DAYS,"test_days":TEST_DAYS,"epochs":EPOCHS,"batch_size":BATCH_SIZE},"graficas":[asdict(r) for r in records]}
+    payload={"generado":datetime.now().isoformat(),"configuracion":{"lookbacks":[14,28],"test_days":TEST_DAYS,"epochs_maximas":EPOCHS,"batch_size":BATCH_SIZE,"patience":PATIENCE},"graficas":[asdict(r) for r in records]}
     (ctx.graphics_dir/"MANIFIESTO_RNN_LSTM.json").write_text(json.dumps(payload,ensure_ascii=False,indent=2),encoding="utf-8")
     lines=["# Manifiesto académico de gráficas RNN/LSTM","",f"Generado: {datetime.now():%Y-%m-%d %H:%M}","",
            "## Alcance metodológico","",
@@ -554,7 +566,7 @@ def build_manifest(records: list[GraphicRecord], ctx: Context, results: pd.DataF
 
 def main() -> None:
     args=parse_args()
-    graphics_dir=args.graphics_dir or args.analysis_dir/"graficas_rnn_lstm"
+    graphics_dir=args.graphics_dir or Path(__file__).resolve().parents[1]/"imagenes"
     ctx=Context(args.analysis_dir,graphics_dir,args.dpi,args.top_n,args.continuar_con_faltantes)
     configure_logging(graphics_dir)
     results=load_results(ctx)

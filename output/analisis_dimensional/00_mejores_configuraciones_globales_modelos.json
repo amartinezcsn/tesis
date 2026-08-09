@@ -1,0 +1,50 @@
+[
+  {
+    "criterio_seleccion":"menor_rmse_promedio_evaluacion_final",
+    "dataset":"reducido",
+    "target":"target_compras_registros",
+    "modelo":"random_forest",
+    "hiperparametros":"{\"max_depth\": null, \"max_features\": \"sqrt\", \"min_samples_leaf\": 5, \"n_estimators\": 150}",
+    "origenes_evaluados":3,
+    "mae_promedio":1.7269382192,
+    "rmse_promedio":2.5932184678,
+    "rmse_desviacion":0.6503005524,
+    "mape_promedio":61.1434552725
+  },
+  {
+    "criterio_seleccion":"menor_rmse_promedio_evaluacion_final",
+    "dataset":"reducido",
+    "target":"target_compras_total_real_2026_05",
+    "modelo":"random_forest",
+    "hiperparametros":"{\"max_depth\": null, \"max_features\": \"sqrt\", \"min_samples_leaf\": 5, \"n_estimators\": 150}",
+    "origenes_evaluados":3,
+    "mae_promedio":116.9614403809,
+    "rmse_promedio":213.014385452,
+    "rmse_desviacion":117.4526137036,
+    "mape_promedio":120.7439082004
+  },
+  {
+    "criterio_seleccion":"menor_rmse_promedio_evaluacion_final",
+    "dataset":"completo",
+    "target":"target_ventas_importe_real_2026_05",
+    "modelo":"arima_111",
+    "hiperparametros":"{\"order\": [1, 1, 2]}",
+    "origenes_evaluados":3,
+    "mae_promedio":101.9505810728,
+    "rmse_promedio":161.1493409507,
+    "rmse_desviacion":16.5504187641,
+    "mape_promedio":1147.7116365864
+  },
+  {
+    "criterio_seleccion":"menor_rmse_promedio_evaluacion_final",
+    "dataset":"completo",
+    "target":"target_ventas_registros",
+    "modelo":"arima_111",
+    "hiperparametros":"{\"order\": [1, 1, 1]}",
+    "origenes_evaluados":3,
+    "mae_promedio":0.3624651077,
+    "rmse_promedio":0.5250513025,
+    "rmse_desviacion":0.0786737368,
+    "mape_promedio":82.2897487467
+  }
+]

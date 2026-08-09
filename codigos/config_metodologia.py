@@ -9,12 +9,15 @@ LA PLANEACION FINANCIERA EN UNA MICROEMPRESA MEDIANTE INTELIGENCIA DE
 NEGOCIOS CON MODELOS DE APRENDIZAJE AUTOMATICO.
 
 La metodologia mantiene particion temporal para evitar fuga de informacion:
-las fechas antiguas entrenan y las fechas recientes validan/prueban.
+las fechas antiguas entrenan y las fechas recientes validan/prueban. Estos
+objetivos de modelado apoyan la pregunta de investigación sobre demanda,
+ingresos, abastecimiento y planeación financiera de Cup&Cake.
 """
 
 from pathlib import Path
 import re
 
+import numpy as np
 import pandas as pd
 
 
@@ -30,6 +33,12 @@ TARGET_COLUMNS = [
     "target_ventas_registros",
     "target_compras_registros",
 ]
+RESEARCH_TARGET_DOMAINS = {
+    "target_ventas_importe_real_2026_05": "ingresos y demanda",
+    "target_compras_total_real_2026_05": "abastecimiento y compras",
+    "target_ventas_registros": "demanda operacional",
+    "target_compras_registros": "operación de abastecimiento",
+}
 
 # Ultimos dias reservados para prueba final. Ajustable segun la tesis.
 TEST_DAYS = 90
@@ -66,6 +75,27 @@ def temporal_split(df: pd.DataFrame, test_days: int = TEST_DAYS) -> tuple[pd.Dat
     train = df.iloc[:-test_days].copy()
     test = df.iloc[-test_days:].copy()
     return train, test
+
+
+def trim_trailing_inactive_target(
+    df: pd.DataFrame,
+    target: str,
+    minimum_trailing_days: int,
+) -> tuple[pd.DataFrame, int]:
+    """Excluye una cola larga sin observaciones activas para un objetivo.
+
+    Los ceros cortos se conservan porque forman parte de la intermitencia real.
+    Solo se recorta cuando la cola de ceros es al menos tan larga como el tramo
+    de evaluacion, una senal de cobertura terminada y no de demanda ordinaria.
+    """
+    values = pd.to_numeric(df[target], errors="coerce").fillna(0).abs()
+    active_positions = np.flatnonzero(values.to_numpy() >= 1e-8)
+    if not len(active_positions):
+        raise ValueError(f"El objetivo '{target}' no contiene observaciones activas.")
+    trailing_days = len(df) - int(active_positions[-1]) - 1
+    if trailing_days >= minimum_trailing_days:
+        return df.iloc[: int(active_positions[-1]) + 1].copy(), trailing_days
+    return df.copy(), 0
 
 
 def classify_feature(column: str) -> str:

@@ -331,7 +331,11 @@ def graph_best_model_matrix(ctx: Context, ranking: pd.DataFrame) -> GraphicRecor
     ax.set_title("Mejor modelo por objetivo y variante del dataset")
     for i in range(len(targets)):
         for j in range(len(datasets)):
-            ax.text(j, i, annotations[i, j], ha="center", va="center", fontsize=8)
+            text_color = "white" if np.isfinite(norm[i, j]) and norm[i, j] < 0.45 else "black"
+            ax.text(
+                j, i, annotations[i, j], ha="center", va="center", fontsize=8,
+                color=text_color,
+            )
     fig.colorbar(im, ax=ax, label="RMSE relativo dentro del objetivo")
     fig.tight_layout()
     filename = "04_mejor_modelo_por_dataset_objetivo.png"
@@ -782,7 +786,7 @@ def write_summary(ctx: Context, results: pd.DataFrame, ranking: pd.DataFrame, re
 
 def main() -> None:
     args = parse_args()
-    graphics_dir = args.graphics_dir or (args.analysis_dir / "graficas_rolling_origin")
+    graphics_dir = args.graphics_dir or (Path(__file__).resolve().parents[1] / "imagenes")
     ctx = Context(args.analysis_dir, graphics_dir, args.dpi, args.top_n)
     configure_logging(graphics_dir)
     results, ranking, missing = load_outputs(ctx)

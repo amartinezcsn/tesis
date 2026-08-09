@@ -4,10 +4,22 @@ from __future__ import annotations
 PIPELINE MAESTRO DE TESIS
 =========================
 
-Producto integrador para ejecutar, en orden, toda la metodología:
+Producto integrador para ejecutar, en orden, toda la metodología de la tesis:
+
+DE LA INTUICIÓN A LA INTELIGENCIA ARTIFICIAL: TRANSFORMACIÓN PREDICTIVA DE LA
+PLANEACIÓN FINANCIERA EN UNA MICROEMPRESA MEDIANTE INTELIGENCIA DE NEGOCIOS
+CON MODELOS DE APRENDIZAJE AUTOMÁTICO.
+
+Pregunta de investigación:
+¿En qué medida un sistema de inteligencia de negocios basado en modelos de
+aprendizaje automático optimiza la precisión del pronóstico de demanda y fortalece
+la planeación de abastecimiento y financiera de una microempresa de repostería
+creativa en Tizayuca, Hidalgo, frente al método empírico utilizado históricamente?
+
+El flujo está diseñado para responder esta pregunta mediante:
 
 1. Limpieza y construcción del dataset maestro.
-2. Ingeniería de características.
+2. Ingeniería de características y variables exógenas.
 3. Perfil del dataset y análisis dimensional.
 4. Diagnóstico de multicolinealidad.
 5. Selección de características y dataset reducido.
@@ -16,22 +28,23 @@ Producto integrador para ejecutar, en orden, toda la metodología:
 8. Redes recurrentes RNN/LSTM.
 
 El programa reutiliza los scripts metodológicos existentes y genera una bitácora,
-un manifiesto JSON y un resumen Excel de la ejecución.
+un manifiesto JSON, un reporte de alineación con la investigación y un resumen
+Excel de la ejecución.
 
 Ejemplo de ejecución completa:
 
-    python pipeline_maestro_tesis.py \
+    python 00_pipeline_maestro_tesis.py \
         --raw-dir "C:/Python/tesis/datasets/xlsx" \
         --input-dir "C:/Python/tesis/input" \
         --output-dir "C:/Python/tesis/output/analisis_dimensional"
 
 Ejecución sin redes neuronales:
 
-    python pipeline_maestro_tesis.py --sin-rnn
+    python 00_pipeline_maestro_tesis.py --sin-rnn
 
 Reanudar desde el dataset de modelado existente:
 
-    python pipeline_maestro_tesis.py --desde perfil
+    python 00_pipeline_maestro_tesis.py --desde perfil
 """
 
 import argparse
@@ -40,6 +53,7 @@ import json
 import logging
 import platform
 import shutil
+import subprocess
 import sys
 import time
 import traceback
@@ -64,11 +78,28 @@ SCRIPT_FILES = {
     "pca": "06_pca_reduccion_componentes.py",
     "modelos": "07_modelos_estadisticos_ml_rolling_origin.py",
     "rnn": "08_rnn_lstm_dataset_reducido.py",
+    "graficas_metodologia": "09_generar_graficas_manifiesto_pca.py",
+    "graficas_modelos": "10_generar_graficas_rolling_origin.py",
+    "graficas_rnn": "11_generar_graficas_rnn_lstm.py",
 }
 
 STAGE_ORDER = list(SCRIPT_FILES)
 DATASET_VARIANTS = ("completo", "reducido", "pca")
 RNN_VARIANTS = ("reducido", "pca")
+DEFAULT_GRAPHICS_DIR = Path(r"C:/Python/tesis/imagenes")
+RESEARCH_STAGE_ALIGNMENT = {
+    "limpieza": "Construye la base de datos del negocio para describir el registro histórico de ventas, compras y planeación empírica.",
+    "ingenieria": "Integra variables calendáricas, comerciales y de negocio para preparar el dataset de modelado orientado a demanda, ingresos y abastecimiento.",
+    "perfil": "Caracteriza el dataset y aporta evidencia para justificar la selección de variables y la calidad de la información.",
+    "multicolinealidad": "Evalúa redundancia entre variables y mejora la interpretabilidad de los modelos predictivos.",
+    "seleccion": "Prioriza variables relevantes para los objetivos de demanda, ingresos y abastecimiento.",
+    "pca": "Ofrece una representación alternativa del dataset para comparar precisión y reducción de dimensionalidad.",
+    "modelos": "Compara el método empírico contra modelos estadísticos y de machine learning bajo validación temporal y métricas MAE, RMSE y MAPE.",
+    "rnn": "Explora arquitecturas recurrentes para potenciar la captación de patrones temporales y reforzar el pronóstico de demanda e ingresos.",
+    "graficas_metodologia": "Convierte la evidencia de limpieza, ingeniería y selección en visualizaciones que apoyan la discusión metodológica de la tesis.",
+    "graficas_modelos": "Entrega evidencia visual del desempeño predictivo frente al método empírico y entre modelos.",
+    "graficas_rnn": "Resume el desempeño de las arquitecturas recurrentes para fortalecer la interpretación del modelo final.",
+}
 
 RAW_REQUIRED_FILES = (
     "INPC_2022_2026.csv",
@@ -99,7 +130,7 @@ class PipelineError(RuntimeError):
 # -----------------------------------------------------------------------------
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Ejecuta el flujo metodológico completo de la tesis.",
+        description="Ejecuta el flujo metodológico completo alineado a la pregunta y objetivos de la tesis.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
@@ -135,7 +166,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--hasta",
         choices=STAGE_ORDER,
-        default="rnn",
+        default="graficas_rnn",
         help="Última etapa que se ejecutará.",
     )
     parser.add_argument(
@@ -161,6 +192,11 @@ def parse_args() -> argparse.Namespace:
         "--sin-ajuste-hiperparametros",
         action="store_true",
         help="Usa los hiperparámetros base sin ejecutar la búsqueda temporal.",
+    )
+    parser.add_argument(
+        "--sin-ajuste-rnn",
+        action="store_true",
+        help="Usa la primera configuracion RNN/LSTM sin comparar candidatos.",
     )
     parser.add_argument(
         "--origenes-ajuste",
@@ -246,6 +282,52 @@ def validate_excel(path: Path, sheet: str | None = None) -> None:
                 )
 
 
+def validate_graphics(path: Path, manifest_name: str, expected_minimum: int) -> None:
+    manifest_path = path / manifest_name
+    if not manifest_path.exists():
+        raise PipelineError(f"No se genero el manifiesto de graficas: {manifest_path}")
+    png_files = [item for item in path.glob("*.png") if item.stat().st_size > 0]
+    if len(png_files) < expected_minimum:
+        raise PipelineError(
+            f"Se esperaban al menos {expected_minimum} graficas PNG en {path}; "
+            f"solo se validaron {len(png_files)}."
+        )
+
+
+def run_script(script: Path, arguments: list[str]) -> None:
+    """Ejecuta un generador aislado para que argparse no lea argumentos del maestro."""
+    subprocess.run([sys.executable, str(script), *arguments], check=True)
+
+
+def consolidate_best_configurations(
+    output_dir: Path,
+    variants: list[str],
+    prefix: str,
+    metric: str,
+) -> None:
+    finalists = []
+    for variant in variants:
+        path = output_dir / f"{prefix}_{variant}.xlsx"
+        if path.exists():
+            finalists.append(pd.read_excel(path, sheet_name="mejor_configuracion"))
+    if not finalists:
+        raise PipelineError(f"No hay configuraciones finales para consolidar ({prefix}).")
+    all_finalists = pd.concat(finalists, ignore_index=True)
+    winners = (
+        all_finalists.loc[all_finalists.groupby("target")[metric].idxmin()]
+        .sort_values("target")
+        .reset_index(drop=True)
+    )
+    suffix = "modelos" if prefix.startswith("05_") else "rnn_lstm"
+    output_path = output_dir / f"00_mejores_configuraciones_globales_{suffix}.xlsx"
+    with pd.ExcelWriter(output_path, engine="openpyxl") as writer:
+        winners.to_excel(writer, sheet_name="mejor_global_por_objetivo", index=False)
+        all_finalists.to_excel(writer, sheet_name="finalistas_por_dataset", index=False)
+    (output_dir / f"00_mejores_configuraciones_globales_{suffix}.json").write_text(
+        winners.to_json(orient="records", force_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
 def run_tracked(
     etapa: str,
     variante: str,
@@ -305,6 +387,51 @@ def copy_reproducibility_evidence(scripts_dir: Path, output_dir: Path) -> None:
     shutil.copy2(Path(__file__).resolve(), evidence_dir / Path(__file__).name)
 
 
+def write_research_alignment_report(
+    output_dir: Path,
+    args: argparse.Namespace,
+    results: list[StageResult],
+) -> Path:
+    executed_stages = [item.etapa for item in results if item.estado != "omitido"]
+    report_path = output_dir / "00_alineacion_investigacion.md"
+    content = "\n".join(
+        [
+            "# Alineación con la investigación",
+            "",
+            "## Pregunta de investigación",
+            "",
+            "¿En qué medida un sistema de inteligencia de negocios basado en modelos de aprendizaje automático optimiza la precisión del pronóstico de demanda y fortalece la planeación de abastecimiento y financiera de una microempresa de repostería creativa en Tizayuca, Hidalgo, frente al método empírico utilizado históricamente?",
+            "",
+            "## Objetivo general",
+            "",
+            "Evaluar en qué medida un sistema de inteligencia de negocios basado en modelos de aprendizaje automático optimiza la precisión del pronóstico de demanda y fortalece la planeación de abastecimiento y financiera de la microempresa.",
+            "",
+            "## Alineación del pipeline con los objetivos específicos",
+            "",
+            "1. Registro histórico de ventas, compras y planeación empírica: la etapa de limpieza y el dataset maestro permiten describir y validar la información disponible del negocio.",
+            "2. Dataset maestro y variables exógenas: la ingeniería de características y el perfilado del dataset consolidan variables calendáricas, comerciales y de negocio para el modelado.",
+            "3. Pronóstico de demanda, ingresos y abastecimiento: los modelos estadísticos, de machine learning y recurrentes se orientan a anticipar ventas, ingresos y compras.",
+            "4. Comparación temporal y estabilidad: la validación Rolling-Origin permite evaluar precisión, robustez y generalización bajo particiones temporales.",
+            "5. Selección y ajuste de modelos: las etapas de selección, PCA y ajuste de hiperparámetros fortalecen la calidad del modelo final.",
+            "6. Comparación frente al método empírico: MAE, RMSE y MAPE se reportan para justificar la mejora predictiva frente a la línea base histórica.",
+            "7. Integración a inteligencia de negocios: los resultados se consolidan en reportes y gráficos para la toma de decisiones.",
+            "8. Impacto financiero y operativo: los hallazgos alimentan la interpretación de planeación financiera y abastecimiento.",
+            "9. Escenarios de planeación: el pipeline genera bases reproducibles para futuras simulaciones de compras, inventarios y expansión comercial.",
+            "",
+            "## Evidencia de la ejecución actual",
+            "",
+            f"- Etapas ejecutadas: {', '.join(executed_stages) if executed_stages else 'ninguna'}",
+            f"- Variantes de modelos evaluadas: {', '.join(args.variantes_modelos)}",
+            f"- RNN/LSTM: {'activado' if not args.sin_rnn else 'omitido'}",
+            f"- Ruta de salida: {output_dir}",
+            "",
+            "Este archivo complementa el manifiesto y el resumen de ejecución para que la tesis quede trazable desde la pregunta inicial hasta la evidencia analítica.",
+        ]
+    )
+    report_path.write_text(content, encoding="utf-8")
+    return report_path
+
+
 def write_execution_products(
     output_dir: Path,
     args: argparse.Namespace,
@@ -313,6 +440,7 @@ def write_execution_products(
 ) -> None:
     result_rows = [asdict(item) for item in results]
     result_df = pd.DataFrame(result_rows)
+    report_path = write_research_alignment_report(output_dir, args, results)
 
     generated_files = []
     for path in sorted(output_dir.rglob("*")):
@@ -360,6 +488,7 @@ def write_execution_products(
     manifest = {
         "producto": "Pipeline metodológico integrado de tesis",
         "fecha_ejecucion": datetime.now().isoformat(timespec="seconds"),
+        "alineacion_investigacion": str(report_path.resolve()),
         "configuracion": {
             "scripts_dir": str(args.scripts_dir.resolve()),
             "raw_dir": str(args.raw_dir.resolve()),
@@ -370,6 +499,7 @@ def write_execution_products(
             "variantes_modelos": args.variantes_modelos,
             "variantes_rnn": [] if args.sin_rnn else args.variantes_rnn,
             "ajuste_hiperparametros": not args.sin_ajuste_hiperparametros,
+            "ajuste_rnn": not args.sin_ajuste_rnn,
             "origenes_ajuste": args.origenes_ajuste,
             "origenes_evaluacion": args.origenes_evaluacion,
         },
@@ -488,17 +618,41 @@ def main() -> int:
             for variant in args.variantes_modelos:
                 module.DATASET_TO_USE = variant
                 ok = run_tracked("modelos_rolling_origin", variant, module.main, results)
+                if ok:
+                    validate_excel(
+                        args.output_dir / f"05_modelos_rolling_origin_{variant}.xlsx",
+                        "mejor_configuracion",
+                    )
                 if not ok and not args.continuar_con_error:
                     raise PipelineError(f"Falló el modelado Rolling-Origin para '{variant}'.")
+
+            consolidate_best_configurations(
+                args.output_dir,
+                list(args.variantes_modelos),
+                "05_modelos_rolling_origin",
+                "rmse_promedio",
+            )
 
         # 8) RNN/LSTM para reducido y PCA
         if "rnn" in stages and not args.sin_rnn:
             module = load_module("tesis_rnn", args.scripts_dir / SCRIPT_FILES["rnn"])
+            module.ENABLE_HYPERPARAMETER_TUNING = not args.sin_ajuste_rnn
             for variant in args.variantes_rnn:
                 module.DATASET_TO_USE = variant
                 ok = run_tracked("rnn_lstm", variant, module.main, results)
+                if ok:
+                    validate_excel(
+                        args.output_dir / f"06_rnn_lstm_{variant}.xlsx",
+                        "mejor_configuracion",
+                    )
                 if not ok and not args.continuar_con_error:
                     raise PipelineError(f"Falló RNN/LSTM para '{variant}'.")
+            consolidate_best_configurations(
+                args.output_dir,
+                list(args.variantes_rnn),
+                "06_rnn_lstm",
+                "rmse",
+            )
         elif "rnn" in stages and args.sin_rnn:
             logging.info("RNN/LSTM omitido por parámetro --sin-rnn.")
             now = datetime.now().isoformat(timespec="seconds")
@@ -513,6 +667,59 @@ def main() -> int:
                     mensaje="Etapa omitida mediante --sin-rnn.",
                 )
             )
+
+        # 9) Evidencia visual de limpieza, ingenieria, seleccion y PCA.
+        if "graficas_metodologia" in stages:
+            graphics_dir = DEFAULT_GRAPHICS_DIR
+            action = lambda: run_script(
+                args.scripts_dir / SCRIPT_FILES["graficas_metodologia"],
+                [
+                    "--input-dir", str(args.input_dir),
+                    "--analysis-dir", str(args.output_dir),
+                    "--graphics-dir", str(graphics_dir),
+                ],
+            )
+            ok = run_tracked("graficas_metodologia", "general", action, results)
+            if ok:
+                validate_graphics(graphics_dir, "MANIFIESTO_METODOLOGIA_PCA.json", 1)
+            elif not args.continuar_con_error:
+                raise PipelineError("Fallo la generacion de graficas metodologicas.")
+
+        # 10) Evidencia visual de los modelos tradicionales.
+        if "graficas_modelos" in stages:
+            graphics_dir = DEFAULT_GRAPHICS_DIR
+            graph_args = [
+                "--analysis-dir", str(args.output_dir),
+                "--graphics-dir", str(graphics_dir),
+            ]
+            if set(args.variantes_modelos) != set(DATASET_VARIANTS):
+                graph_args.append("--continuar-con-faltantes")
+            action = lambda: run_script(
+                args.scripts_dir / SCRIPT_FILES["graficas_modelos"], graph_args
+            )
+            ok = run_tracked("graficas_modelos", "general", action, results)
+            if ok:
+                validate_graphics(graphics_dir, "MANIFIESTO_ROLLING_ORIGIN.json", 16)
+            elif not args.continuar_con_error:
+                raise PipelineError("Fallo la generacion de graficas Rolling-Origin.")
+
+        # 11) Evidencia visual de redes recurrentes.
+        if "graficas_rnn" in stages and not args.sin_rnn:
+            graphics_dir = DEFAULT_GRAPHICS_DIR
+            graph_args = [
+                "--analysis-dir", str(args.output_dir),
+                "--graphics-dir", str(graphics_dir),
+            ]
+            if set(args.variantes_rnn) != set(RNN_VARIANTS):
+                graph_args.append("--continuar-con-faltantes")
+            action = lambda: run_script(args.scripts_dir / SCRIPT_FILES["graficas_rnn"], graph_args)
+            ok = run_tracked("graficas_rnn", "general", action, results)
+            if ok:
+                validate_graphics(graphics_dir, "MANIFIESTO_RNN_LSTM.json", 16)
+            elif not args.continuar_con_error:
+                raise PipelineError("Fallo la generacion de graficas RNN/LSTM.")
+        elif "graficas_rnn" in stages and args.sin_rnn:
+            logging.info("Graficas RNN/LSTM omitidas porque --sin-rnn esta activo.")
 
     except Exception as exc:
         logging.error("PIPELINE INTERRUMPIDO: %s", exc)

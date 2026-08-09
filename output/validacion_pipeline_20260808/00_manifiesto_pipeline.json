@@ -1,0 +1,862 @@
+{
+  "producto": "Pipeline metodológico integrado de tesis",
+  "fecha_ejecucion": "2026-08-08T10:51:11",
+  "configuracion": {
+    "scripts_dir": "C:\\Python\\tesis\\codigos",
+    "raw_dir": "C:\\Python\\tesis\\datasets\\xlsx",
+    "input_dir": "C:\\Python\\tesis\\input",
+    "output_dir": "C:\\Python\\tesis\\output\\validacion_pipeline_20260808",
+    "desde": "graficas_modelos",
+    "hasta": "graficas_rnn",
+    "variantes_modelos": [
+      "completo",
+      "reducido",
+      "pca"
+    ],
+    "variantes_rnn": [
+      "reducido",
+      "pca"
+    ],
+    "ajuste_hiperparametros": true,
+    "ajuste_rnn": true,
+    "origenes_ajuste": 4,
+    "origenes_evaluacion": 3
+  },
+  "resultados": [
+    {
+      "etapa": "graficas_modelos",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-08-08T10:50:29",
+      "fin": "2026-08-08T10:50:43",
+      "duracion_segundos": 14.001,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "graficas_rnn",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-08-08T10:50:43",
+      "fin": "2026-08-08T10:51:11",
+      "duracion_segundos": 27.993,
+      "mensaje": "Etapa finalizada sin errores."
+    }
+  ],
+  "archivos_generados": [
+    {
+      "archivo": "00_manifiesto_pipeline.json",
+      "tamano_bytes": 31695,
+      "fecha_modificacion": "2026-08-08T10:46:19"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_modelos.json",
+      "tamano_bytes": 1760,
+      "fecha_modificacion": "2026-08-08T10:34:29"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_modelos.xlsx",
+      "tamano_bytes": 7238,
+      "fecha_modificacion": "2026-08-08T10:34:29"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_rnn_lstm.json",
+      "tamano_bytes": 2160,
+      "fecha_modificacion": "2026-08-08T10:42:28"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_rnn_lstm.xlsx",
+      "tamano_bytes": 7590,
+      "fecha_modificacion": "2026-08-08T10:42:28"
+    },
+    {
+      "archivo": "00_resumen_ejecucion_pipeline.xlsx",
+      "tamano_bytes": 12614,
+      "fecha_modificacion": "2026-08-08T10:46:18"
+    },
+    {
+      "archivo": "01_perfil_dataset_y_dimensiones.xlsx",
+      "tamano_bytes": 30708,
+      "fecha_modificacion": "2026-08-08T09:43:44"
+    },
+    {
+      "archivo": "02_diagnostico_multicolinealidad.xlsx",
+      "tamano_bytes": 35498,
+      "fecha_modificacion": "2026-08-08T09:43:54"
+    },
+    {
+      "archivo": "03_dataset_reducido_por_seleccion.xlsx",
+      "tamano_bytes": 906846,
+      "fecha_modificacion": "2026-08-08T10:21:48"
+    },
+    {
+      "archivo": "04_dataset_pca_componentes.xlsx",
+      "tamano_bytes": 3182844,
+      "fecha_modificacion": "2026-08-08T10:21:59"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_completo.xlsx",
+      "tamano_bytes": 49521,
+      "fecha_modificacion": "2026-08-08T10:25:59"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_pca.xlsx",
+      "tamano_bytes": 49853,
+      "fecha_modificacion": "2026-08-08T10:34:29"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_reducido.xlsx",
+      "tamano_bytes": 49548,
+      "fecha_modificacion": "2026-08-08T10:28:45"
+    },
+    {
+      "archivo": "06_rnn_lstm_pca.xlsx",
+      "tamano_bytes": 35490,
+      "fecha_modificacion": "2026-08-08T10:42:28"
+    },
+    {
+      "archivo": "06_rnn_lstm_reducido.xlsx",
+      "tamano_bytes": 36225,
+      "fecha_modificacion": "2026-08-08T10:39:04"
+    },
+    {
+      "archivo": "evidencia_codigo\\00_pipeline_maestro_tesis.py",
+      "tamano_bytes": 26462,
+      "fecha_modificacion": "2026-08-08T09:39:50"
+    },
+    {
+      "archivo": "evidencia_codigo\\01_clean_eda.py",
+      "tamano_bytes": 20597,
+      "fecha_modificacion": "2026-08-01T21:26:33"
+    },
+    {
+      "archivo": "evidencia_codigo\\02_feature_engineering_profesional.py",
+      "tamano_bytes": 15987,
+      "fecha_modificacion": "2026-08-01T21:28:20"
+    },
+    {
+      "archivo": "evidencia_codigo\\03_perfil_dataset_y_dimensiones.py",
+      "tamano_bytes": 3671,
+      "fecha_modificacion": "2026-07-10T19:50:40"
+    },
+    {
+      "archivo": "evidencia_codigo\\04_diagnostico_multicolinealidad.py",
+      "tamano_bytes": 4328,
+      "fecha_modificacion": "2026-07-10T19:50:41"
+    },
+    {
+      "archivo": "evidencia_codigo\\05_seleccion_caracteristicas_dataset_reducido.py",
+      "tamano_bytes": 5910,
+      "fecha_modificacion": "2026-08-08T10:18:59"
+    },
+    {
+      "archivo": "evidencia_codigo\\06_pca_reduccion_componentes.py",
+      "tamano_bytes": 3825,
+      "fecha_modificacion": "2026-07-10T19:50:44"
+    },
+    {
+      "archivo": "evidencia_codigo\\07_modelos_estadisticos_ml_rolling_origin.py",
+      "tamano_bytes": 19825,
+      "fecha_modificacion": "2026-08-08T10:18:10"
+    },
+    {
+      "archivo": "evidencia_codigo\\08_rnn_lstm_dataset_reducido.py",
+      "tamano_bytes": 13379,
+      "fecha_modificacion": "2026-08-08T10:18:37"
+    },
+    {
+      "archivo": "evidencia_codigo\\09_generar_graficas_manifiesto_pca.py",
+      "tamano_bytes": 168806,
+      "fecha_modificacion": "2026-08-02T13:19:55"
+    },
+    {
+      "archivo": "evidencia_codigo\\10_generar_graficas_rolling_origin.py",
+      "tamano_bytes": 42063,
+      "fecha_modificacion": "2026-08-08T10:48:50"
+    },
+    {
+      "archivo": "evidencia_codigo\\11_generar_graficas_rnn_lstm.py",
+      "tamano_bytes": 36704,
+      "fecha_modificacion": "2026-08-08T10:50:18"
+    },
+    {
+      "archivo": "evidencia_codigo\\config_metodologia.py",
+      "tamano_bytes": 5467,
+      "fecha_modificacion": "2026-08-08T10:17:46"
+    },
+    {
+      "archivo": "evidencia_codigo\\README_metodologia.md",
+      "tamano_bytes": 4070,
+      "fecha_modificacion": "2026-08-08T09:43:27"
+    },
+    {
+      "archivo": "graficas_metodologia\\01_cobertura_temporal_fuentes.png",
+      "tamano_bytes": 78776,
+      "fecha_modificacion": "2026-08-08T10:42:31"
+    },
+    {
+      "archivo": "graficas_metodologia\\02_evolucion_inpc.png",
+      "tamano_bytes": 130843,
+      "fecha_modificacion": "2026-08-08T10:42:32"
+    },
+    {
+      "archivo": "graficas_metodologia\\03_factor_ajuste_inflacion.png",
+      "tamano_bytes": 139845,
+      "fecha_modificacion": "2026-08-08T10:42:33"
+    },
+    {
+      "archivo": "graficas_metodologia\\04_temperatura_promedio_hidalgo.png",
+      "tamano_bytes": 164415,
+      "fecha_modificacion": "2026-08-08T10:42:33"
+    },
+    {
+      "archivo": "graficas_metodologia\\05_distribucion_categorias_clima.png",
+      "tamano_bytes": 61317,
+      "fecha_modificacion": "2026-08-08T10:42:34"
+    },
+    {
+      "archivo": "graficas_metodologia\\06_eventos_festivos_fechas_pago.png",
+      "tamano_bytes": 162037,
+      "fecha_modificacion": "2026-08-08T10:42:35"
+    },
+    {
+      "archivo": "graficas_metodologia\\07_serie_diaria_ventas_reales.png",
+      "tamano_bytes": 254107,
+      "fecha_modificacion": "2026-08-08T10:42:35"
+    },
+    {
+      "archivo": "graficas_metodologia\\08_ventas_nominales_vs_reales.png",
+      "tamano_bytes": 235194,
+      "fecha_modificacion": "2026-08-08T10:42:36"
+    },
+    {
+      "archivo": "graficas_metodologia\\09_distribucion_ventas_diarias.png",
+      "tamano_bytes": 68064,
+      "fecha_modificacion": "2026-08-08T10:42:37"
+    },
+    {
+      "archivo": "graficas_metodologia\\10_ventas_por_dia_semana.png",
+      "tamano_bytes": 63138,
+      "fecha_modificacion": "2026-08-08T10:42:38"
+    },
+    {
+      "archivo": "graficas_metodologia\\11_mapa_calor_ventas_mes_anio.png",
+      "tamano_bytes": 83893,
+      "fecha_modificacion": "2026-08-08T10:42:39"
+    },
+    {
+      "archivo": "graficas_metodologia\\12_composicion_productos_vendidos.png",
+      "tamano_bytes": 58341,
+      "fecha_modificacion": "2026-08-08T10:42:40"
+    },
+    {
+      "archivo": "graficas_metodologia\\13_margen_ganancia_mensual.png",
+      "tamano_bytes": 154109,
+      "fecha_modificacion": "2026-08-08T10:42:40"
+    },
+    {
+      "archivo": "graficas_metodologia\\14_serie_diaria_compras_reales.png",
+      "tamano_bytes": 225927,
+      "fecha_modificacion": "2026-08-08T10:42:42"
+    },
+    {
+      "archivo": "graficas_metodologia\\15_compras_por_clasificacion.png",
+      "tamano_bytes": 86727,
+      "fecha_modificacion": "2026-08-08T10:42:42"
+    },
+    {
+      "archivo": "graficas_metodologia\\16_pareto_proveedores.png",
+      "tamano_bytes": 157382,
+      "fecha_modificacion": "2026-08-08T10:42:43"
+    },
+    {
+      "archivo": "graficas_metodologia\\17_unidades_medida_normalizadas.png",
+      "tamano_bytes": 60078,
+      "fecha_modificacion": "2026-08-08T10:42:44"
+    },
+    {
+      "archivo": "graficas_metodologia\\18_ventas_compras_mensuales.png",
+      "tamano_bytes": 212440,
+      "fecha_modificacion": "2026-08-08T10:42:46"
+    },
+    {
+      "archivo": "graficas_metodologia\\19_saldo_operativo_mensual.png",
+      "tamano_bytes": 70520,
+      "fecha_modificacion": "2026-08-08T10:42:47"
+    },
+    {
+      "archivo": "graficas_metodologia\\20_dias_sin_actividad.png",
+      "tamano_bytes": 70241,
+      "fecha_modificacion": "2026-08-08T10:42:49"
+    },
+    {
+      "archivo": "graficas_metodologia\\21_valores_faltantes_dataset_maestro.png",
+      "tamano_bytes": 123902,
+      "fecha_modificacion": "2026-08-08T10:42:50"
+    },
+    {
+      "archivo": "graficas_metodologia\\22_correlacion_variables_clave_maestro.png",
+      "tamano_bytes": 288860,
+      "fecha_modificacion": "2026-08-08T10:42:52"
+    },
+    {
+      "archivo": "graficas_metodologia\\23_familias_ingenieria_caracteristicas.png",
+      "tamano_bytes": 102902,
+      "fecha_modificacion": "2026-08-08T10:42:53"
+    },
+    {
+      "archivo": "graficas_metodologia\\24_expansion_dimensional_feature_engineering.png",
+      "tamano_bytes": 56330,
+      "fecha_modificacion": "2026-08-08T10:42:59"
+    },
+    {
+      "archivo": "graficas_metodologia\\25_historial_minimo_y_observaciones.png",
+      "tamano_bytes": 92566,
+      "fecha_modificacion": "2026-08-08T10:43:05"
+    },
+    {
+      "archivo": "graficas_metodologia\\26_codificacion_ciclica_mes.png",
+      "tamano_bytes": 102216,
+      "fecha_modificacion": "2026-08-08T10:43:10"
+    },
+    {
+      "archivo": "graficas_metodologia\\27_codificacion_ciclica_dia_semana.png",
+      "tamano_bytes": 118628,
+      "fecha_modificacion": "2026-08-08T10:43:16"
+    },
+    {
+      "archivo": "graficas_metodologia\\28_alineacion_rezago_7_dias.png",
+      "tamano_bytes": 230419,
+      "fecha_modificacion": "2026-08-08T10:43:22"
+    },
+    {
+      "archivo": "graficas_metodologia\\29_correlacion_objetivo_rezagos.png",
+      "tamano_bytes": 63783,
+      "fecha_modificacion": "2026-08-08T10:43:27"
+    },
+    {
+      "archivo": "graficas_metodologia\\30_comparacion_ventanas_moviles.png",
+      "tamano_bytes": 225028,
+      "fecha_modificacion": "2026-08-08T10:43:33"
+    },
+    {
+      "archivo": "graficas_metodologia\\31_estadisticos_moviles_28_dias.png",
+      "tamano_bytes": 244848,
+      "fecha_modificacion": "2026-08-08T10:43:39"
+    },
+    {
+      "archivo": "graficas_metodologia\\32_proximidad_fechas_pago.png",
+      "tamano_bytes": 325265,
+      "fecha_modificacion": "2026-08-08T10:43:44"
+    },
+    {
+      "archivo": "graficas_metodologia\\33_ventanas_eventos_7_30_dias.png",
+      "tamano_bytes": 205393,
+      "fecha_modificacion": "2026-08-08T10:43:49"
+    },
+    {
+      "archivo": "graficas_metodologia\\34_recencia_ventas_compras.png",
+      "tamano_bytes": 151217,
+      "fecha_modificacion": "2026-08-08T10:43:53"
+    },
+    {
+      "archivo": "graficas_metodologia\\35_indicadores_financieros_derivados_7d.png",
+      "tamano_bytes": 166176,
+      "fecha_modificacion": "2026-08-08T10:43:59"
+    },
+    {
+      "archivo": "graficas_metodologia\\36_relacion_media7_objetivo_ventas.png",
+      "tamano_bytes": 159107,
+      "fecha_modificacion": "2026-08-08T10:44:05"
+    },
+    {
+      "archivo": "graficas_metodologia\\37_correlacion_features_objetivos.png",
+      "tamano_bytes": 314042,
+      "fecha_modificacion": "2026-08-08T10:44:12"
+    },
+    {
+      "archivo": "graficas_metodologia\\38_esparsidad_features_modelado.png",
+      "tamano_bytes": 166192,
+      "fecha_modificacion": "2026-08-08T10:44:17"
+    },
+    {
+      "archivo": "graficas_metodologia\\39_estructura_general_dataset_modelado.png",
+      "tamano_bytes": 96345,
+      "fecha_modificacion": "2026-08-08T10:44:18"
+    },
+    {
+      "archivo": "graficas_metodologia\\40_variables_por_dimension_metodologica.png",
+      "tamano_bytes": 104329,
+      "fecha_modificacion": "2026-08-08T10:44:18"
+    },
+    {
+      "archivo": "graficas_metodologia\\41_esparsidad_promedio_por_dimension.png",
+      "tamano_bytes": 110409,
+      "fecha_modificacion": "2026-08-08T10:44:19"
+    },
+    {
+      "archivo": "graficas_metodologia\\42_nulos_promedio_por_dimension.png",
+      "tamano_bytes": 94703,
+      "fecha_modificacion": "2026-08-08T10:44:19"
+    },
+    {
+      "archivo": "graficas_metodologia\\43_variables_constantes_por_dimension.png",
+      "tamano_bytes": 101434,
+      "fecha_modificacion": "2026-08-08T10:44:20"
+    },
+    {
+      "archivo": "graficas_metodologia\\44_cardinalidad_vs_esparsidad_variables.png",
+      "tamano_bytes": 181637,
+      "fecha_modificacion": "2026-08-08T10:44:21"
+    },
+    {
+      "archivo": "graficas_metodologia\\45_variables_mayor_concentracion_ceros.png",
+      "tamano_bytes": 161795,
+      "fecha_modificacion": "2026-08-08T10:44:21"
+    },
+    {
+      "archivo": "graficas_metodologia\\46_coeficiente_variacion_variables.png",
+      "tamano_bytes": 146866,
+      "fecha_modificacion": "2026-08-08T10:44:22"
+    },
+    {
+      "archivo": "graficas_metodologia\\47_rango_intercuartil_variables.png",
+      "tamano_bytes": 156463,
+      "fecha_modificacion": "2026-08-08T10:44:23"
+    },
+    {
+      "archivo": "graficas_metodologia\\48_boxplot_resumen_objetivos.png",
+      "tamano_bytes": 79100,
+      "fecha_modificacion": "2026-08-08T10:44:23"
+    },
+    {
+      "archivo": "graficas_metodologia\\49_intermitencia_variables_objetivo.png",
+      "tamano_bytes": 71085,
+      "fecha_modificacion": "2026-08-08T10:44:23"
+    },
+    {
+      "archivo": "graficas_metodologia\\50_matriz_calidad_dimensiones.png",
+      "tamano_bytes": 143847,
+      "fecha_modificacion": "2026-08-08T10:44:24"
+    },
+    {
+      "archivo": "graficas_metodologia\\51_distribucion_correlaciones_altas.png",
+      "tamano_bytes": 72560,
+      "fecha_modificacion": "2026-08-08T10:44:25"
+    },
+    {
+      "archivo": "graficas_metodologia\\52_pares_predictores_mayor_correlacion.png",
+      "tamano_bytes": 251342,
+      "fecha_modificacion": "2026-08-08T10:44:26"
+    },
+    {
+      "archivo": "graficas_metodologia\\53_red_redundancia_predictores.png",
+      "tamano_bytes": 167645,
+      "fecha_modificacion": "2026-08-08T10:44:26"
+    },
+    {
+      "archivo": "graficas_metodologia\\54_frecuencia_variables_redundantes.png",
+      "tamano_bytes": 114759,
+      "fecha_modificacion": "2026-08-08T10:44:27"
+    },
+    {
+      "archivo": "graficas_metodologia\\55_conservadas_eliminadas_por_objetivo.png",
+      "tamano_bytes": 65225,
+      "fecha_modificacion": "2026-08-08T10:44:28"
+    },
+    {
+      "archivo": "graficas_metodologia\\56_dimensiones_conservadas_por_objetivo.png",
+      "tamano_bytes": 141467,
+      "fecha_modificacion": "2026-08-08T10:44:29"
+    },
+    {
+      "archivo": "graficas_metodologia\\57_relevancia_conservada_vs_eliminada.png",
+      "tamano_bytes": 208628,
+      "fecha_modificacion": "2026-08-08T10:44:30"
+    },
+    {
+      "archivo": "graficas_metodologia\\58_ganancia_relevancia_filtro.png",
+      "tamano_bytes": 66978,
+      "fecha_modificacion": "2026-08-08T10:44:30"
+    },
+    {
+      "archivo": "graficas_metodologia\\59_ranking_vif_variables.png",
+      "tamano_bytes": 171276,
+      "fecha_modificacion": "2026-08-08T10:44:31"
+    },
+    {
+      "archivo": "graficas_metodologia\\60_clasificacion_variables_vif.png",
+      "tamano_bytes": 59699,
+      "fecha_modificacion": "2026-08-08T10:44:31"
+    },
+    {
+      "archivo": "graficas_metodologia\\61_solapamiento_variables_eliminadas.png",
+      "tamano_bytes": 52864,
+      "fecha_modificacion": "2026-08-08T10:44:32"
+    },
+    {
+      "archivo": "graficas_metodologia\\62_resumen_diagnostico_multicolinealidad.png",
+      "tamano_bytes": 86126,
+      "fecha_modificacion": "2026-08-08T10:44:33"
+    },
+    {
+      "archivo": "graficas_metodologia\\63_resultado_global_seleccion_caracteristicas.png",
+      "tamano_bytes": 92606,
+      "fecha_modificacion": "2026-08-08T10:44:33"
+    },
+    {
+      "archivo": "graficas_metodologia\\64_variables_seleccionadas_por_objetivo.png",
+      "tamano_bytes": 70655,
+      "fecha_modificacion": "2026-08-08T10:44:34"
+    },
+    {
+      "archivo": "graficas_metodologia\\65_distribucion_score_compuesto_seleccion.png",
+      "tamano_bytes": 58964,
+      "fecha_modificacion": "2026-08-08T10:44:34"
+    },
+    {
+      "archivo": "graficas_metodologia\\66_top_caracteristicas_score_compuesto.png",
+      "tamano_bytes": 526901,
+      "fecha_modificacion": "2026-08-08T10:44:36"
+    },
+    {
+      "archivo": "graficas_metodologia\\67_matriz_scores_metodos_top_variables.png",
+      "tamano_bytes": 251785,
+      "fecha_modificacion": "2026-08-08T10:44:37"
+    },
+    {
+      "archivo": "graficas_metodologia\\68_concordancia_metodos_seleccion.png",
+      "tamano_bytes": 138657,
+      "fecha_modificacion": "2026-08-08T10:44:38"
+    },
+    {
+      "archivo": "graficas_metodologia\\69_dimensiones_seleccionadas_por_objetivo.png",
+      "tamano_bytes": 142672,
+      "fecha_modificacion": "2026-08-08T10:44:39"
+    },
+    {
+      "archivo": "graficas_metodologia\\70_solapamiento_seleccion_entre_objetivos.png",
+      "tamano_bytes": 58357,
+      "fecha_modificacion": "2026-08-08T10:44:40"
+    },
+    {
+      "archivo": "graficas_metodologia\\71_curvas_score_por_ranking.png",
+      "tamano_bytes": 187599,
+      "fecha_modificacion": "2026-08-08T10:44:41"
+    },
+    {
+      "archivo": "graficas_metodologia\\72_esparsidad_coeficientes_lasso.png",
+      "tamano_bytes": 72727,
+      "fecha_modificacion": "2026-08-08T10:44:42"
+    },
+    {
+      "archivo": "graficas_metodologia\\73_metodo_dominante_por_variable_objetivo.png",
+      "tamano_bytes": 67531,
+      "fecha_modificacion": "2026-08-08T10:44:43"
+    },
+    {
+      "archivo": "graficas_metodologia\\74_comparacion_dataset_completo_reducido.png",
+      "tamano_bytes": 99015,
+      "fecha_modificacion": "2026-08-08T10:44:44"
+    },
+    {
+      "archivo": "graficas_metodologia\\75_reduccion_dimensional_pca.png",
+      "tamano_bytes": 81531,
+      "fecha_modificacion": "2026-08-08T10:44:48"
+    },
+    {
+      "archivo": "graficas_metodologia\\76_scree_plot_pca.png",
+      "tamano_bytes": 92703,
+      "fecha_modificacion": "2026-08-08T10:44:49"
+    },
+    {
+      "archivo": "graficas_metodologia\\77_varianza_acumulada_pca.png",
+      "tamano_bytes": 110251,
+      "fecha_modificacion": "2026-08-08T10:44:49"
+    },
+    {
+      "archivo": "graficas_metodologia\\78_contribucion_primeros_componentes.png",
+      "tamano_bytes": 55326,
+      "fecha_modificacion": "2026-08-08T10:44:50"
+    },
+    {
+      "archivo": "graficas_metodologia\\79_componentes_por_umbral_varianza.png",
+      "tamano_bytes": 68020,
+      "fecha_modificacion": "2026-08-08T10:44:51"
+    },
+    {
+      "archivo": "graficas_metodologia\\80_mapa_cargas_primeros_componentes.png",
+      "tamano_bytes": 106902,
+      "fecha_modificacion": "2026-08-08T10:44:52"
+    },
+    {
+      "archivo": "graficas_metodologia\\81_cargas_primer_componente.png",
+      "tamano_bytes": 146152,
+      "fecha_modificacion": "2026-08-08T10:44:53"
+    },
+    {
+      "archivo": "graficas_metodologia\\82_contribucion_variables_primeros_componentes.png",
+      "tamano_bytes": 96833,
+      "fecha_modificacion": "2026-08-08T10:44:54"
+    },
+    {
+      "archivo": "graficas_metodologia\\83_series_temporales_componentes_pca.png",
+      "tamano_bytes": 458513,
+      "fecha_modificacion": "2026-08-08T10:44:58"
+    },
+    {
+      "archivo": "graficas_metodologia\\84_plano_factorial_pca1_pca2.png",
+      "tamano_bytes": 534503,
+      "fecha_modificacion": "2026-08-08T10:45:01"
+    },
+    {
+      "archivo": "graficas_metodologia\\85_correlacion_componentes_objetivos.png",
+      "tamano_bytes": 227549,
+      "fecha_modificacion": "2026-08-08T10:45:05"
+    },
+    {
+      "archivo": "graficas_metodologia\\86_ortogonalidad_componentes_pca.png",
+      "tamano_bytes": 106540,
+      "fecha_modificacion": "2026-08-08T10:45:08"
+    },
+    {
+      "archivo": "graficas_metodologia\\generacion_metodologia_pca.log",
+      "tamano_bytes": 8608,
+      "fecha_modificacion": "2026-08-08T10:45:38"
+    },
+    {
+      "archivo": "graficas_metodologia\\INDICE_GRAFICAS_METODOLOGIA_PCA.csv",
+      "tamano_bytes": 57425,
+      "fecha_modificacion": "2026-08-08T10:45:08"
+    },
+    {
+      "archivo": "graficas_metodologia\\MANIFIESTO_METODOLOGIA_PCA.json",
+      "tamano_bytes": 88658,
+      "fecha_modificacion": "2026-08-08T10:45:08"
+    },
+    {
+      "archivo": "graficas_metodologia\\MANIFIESTO_METODOLOGIA_PCA.md",
+      "tamano_bytes": 81133,
+      "fecha_modificacion": "2026-08-08T10:45:08"
+    },
+    {
+      "archivo": "graficas_metodologia\\RESUMEN_ESTADISTICO_METODOLOGIA_PCA.xlsx",
+      "tamano_bytes": 4194829,
+      "fecha_modificacion": "2026-08-08T10:45:38"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\01_particion_temporal_rnn_lstm.png",
+      "tamano_bytes": 81554,
+      "fecha_modificacion": "2026-08-08T10:50:48"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\02_ventana_supervisada_28_dias.png",
+      "tamano_bytes": 79769,
+      "fecha_modificacion": "2026-08-08T10:50:49"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\03_arquitectura_rnn_lstm.png",
+      "tamano_bytes": 61209,
+      "fecha_modificacion": "2026-08-08T10:50:49"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\04_dimensionalidad_entrada_recurrente.png",
+      "tamano_bytes": 64807,
+      "fecha_modificacion": "2026-08-08T10:50:54"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\05_comparacion_rmse_rnn_lstm.png",
+      "tamano_bytes": 198626,
+      "fecha_modificacion": "2026-08-08T10:50:55"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\06_comparacion_mae_rnn_lstm.png",
+      "tamano_bytes": 200819,
+      "fecha_modificacion": "2026-08-08T10:50:56"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\07_diagnostico_mape_rnn_lstm.png",
+      "tamano_bytes": 215076,
+      "fecha_modificacion": "2026-08-08T10:50:57"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\08_arquitectura_ganadora_por_objetivo.png",
+      "tamano_bytes": 106609,
+      "fecha_modificacion": "2026-08-08T10:50:58"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\09_mejora_lstm_vs_rnn.png",
+      "tamano_bytes": 115494,
+      "fecha_modificacion": "2026-08-08T10:50:58"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\10_efecto_dataset_reducido_vs_pca.png",
+      "tamano_bytes": 106464,
+      "fecha_modificacion": "2026-08-08T10:50:59"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\11_relacion_mae_rmse_redes.png",
+      "tamano_bytes": 122574,
+      "fecha_modificacion": "2026-08-08T10:50:59"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\12_score_multicriterio_rnn_lstm.png",
+      "tamano_bytes": 201857,
+      "fecha_modificacion": "2026-08-08T10:51:00"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\13_configuracion_entrenamiento_redes.png",
+      "tamano_bytes": 79315,
+      "fecha_modificacion": "2026-08-08T10:51:01"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\14_complejidad_parametros_vs_muestra.png",
+      "tamano_bytes": 73542,
+      "fecha_modificacion": "2026-08-08T10:51:05"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\15_intermitencia_objetivos_periodo_prueba.png",
+      "tamano_bytes": 81088,
+      "fecha_modificacion": "2026-08-08T10:51:10"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\16_resumen_experimento_rnn_lstm.png",
+      "tamano_bytes": 67247,
+      "fecha_modificacion": "2026-08-08T10:51:10"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\generacion_rnn_lstm.log",
+      "tamano_bytes": 1357,
+      "fecha_modificacion": "2026-08-08T10:51:10"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\INDICE_GRAFICAS_RNN_LSTM.csv",
+      "tamano_bytes": 10839,
+      "fecha_modificacion": "2026-08-08T10:51:10"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\MANIFIESTO_RNN_LSTM.json",
+      "tamano_bytes": 16451,
+      "fecha_modificacion": "2026-08-08T10:51:10"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\MANIFIESTO_RNN_LSTM.md",
+      "tamano_bytes": 14190,
+      "fecha_modificacion": "2026-08-08T10:51:10"
+    },
+    {
+      "archivo": "graficas_rnn_lstm\\RESUMEN_ESTADISTICO_RNN_LSTM.xlsx",
+      "tamano_bytes": 14781,
+      "fecha_modificacion": "2026-08-08T10:51:10"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\01_esquema_validacion_rolling_origin.png",
+      "tamano_bytes": 75186,
+      "fecha_modificacion": "2026-08-08T10:50:31"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\02_cobertura_origenes_por_objetivo.png",
+      "tamano_bytes": 78359,
+      "fecha_modificacion": "2026-08-08T10:50:31"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\03_ranking_rmse_por_objetivo.png",
+      "tamano_bytes": 364904,
+      "fecha_modificacion": "2026-08-08T10:50:32"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\04_mejor_modelo_por_dataset_objetivo.png",
+      "tamano_bytes": 137340,
+      "fecha_modificacion": "2026-08-08T10:50:33"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\05_mejora_frente_linea_base_empirica.png",
+      "tamano_bytes": 190838,
+      "fecha_modificacion": "2026-08-08T10:50:34"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\06_relacion_mae_rmse_modelos.png",
+      "tamano_bytes": 300099,
+      "fecha_modificacion": "2026-08-08T10:50:35"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\07_concordancia_rankings_metricas.png",
+      "tamano_bytes": 81593,
+      "fecha_modificacion": "2026-08-08T10:50:35"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\08_evolucion_temporal_rmse_ganadores.png",
+      "tamano_bytes": 396414,
+      "fecha_modificacion": "2026-08-08T10:50:37"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\09_distribucion_rmse_por_modelo.png",
+      "tamano_bytes": 124633,
+      "fecha_modificacion": "2026-08-08T10:50:37"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\10_estabilidad_modelos_cv_rmse.png",
+      "tamano_bytes": 174434,
+      "fecha_modificacion": "2026-08-08T10:50:38"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\11_ventanas_ganadas_por_modelo.png",
+      "tamano_bytes": 66797,
+      "fecha_modificacion": "2026-08-08T10:50:38"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\12_sensibilidad_modelos_dataset.png",
+      "tamano_bytes": 109478,
+      "fecha_modificacion": "2026-08-08T10:50:39"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\13_empirico_vs_modelos_avanzados.png",
+      "tamano_bytes": 158282,
+      "fecha_modificacion": "2026-08-08T10:50:40"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\14_diagnostico_mape_por_objetivo.png",
+      "tamano_bytes": 202740,
+      "fecha_modificacion": "2026-08-08T10:50:41"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\15_origenes_temporales_mas_dificiles.png",
+      "tamano_bytes": 172721,
+      "fecha_modificacion": "2026-08-08T10:50:41"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\16_score_multicriterio_modelos.png",
+      "tamano_bytes": 170548,
+      "fecha_modificacion": "2026-08-08T10:50:42"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\generacion_rolling_origin.log",
+      "tamano_bytes": 1378,
+      "fecha_modificacion": "2026-08-08T10:50:42"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\INDICE_GRAFICAS_ROLLING_ORIGIN.csv",
+      "tamano_bytes": 12067,
+      "fecha_modificacion": "2026-08-08T10:50:42"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\MANIFIESTO_ROLLING_ORIGIN.json",
+      "tamano_bytes": 17619,
+      "fecha_modificacion": "2026-08-08T10:50:42"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\MANIFIESTO_ROLLING_ORIGIN.md",
+      "tamano_bytes": 15905,
+      "fecha_modificacion": "2026-08-08T10:50:42"
+    },
+    {
+      "archivo": "graficas_rolling_origin\\RESUMEN_ESTADISTICO_ROLLING_ORIGIN.xlsx",
+      "tamano_bytes": 44472,
+      "fecha_modificacion": "2026-08-08T10:50:42"
+    },
+    {
+      "archivo": "pipeline_tesis.log",
+      "tamano_bytes": 369,
+      "fecha_modificacion": "2026-08-08T10:51:11"
+    }
+  ]
+}

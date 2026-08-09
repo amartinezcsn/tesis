@@ -1,28 +1,36 @@
-2026-08-08 08:21:07,018 | INFO | Etapas solicitadas: limpieza, ingenieria, perfil, multicolinealidad, seleccion, pca, modelos, rnn
-2026-08-08 08:21:07,021 | INFO | INICIO | limpieza | general
-2026-08-08 08:21:13,876 | INFO | FIN CORRECTO | limpieza | general
-2026-08-08 08:21:13,901 | INFO | INICIO | ingenieria | general
-2026-08-08 08:21:23,828 | INFO | FIN CORRECTO | ingenieria | general
-2026-08-08 08:21:23,863 | INFO | INICIO | perfil | general
-2026-08-08 08:21:28,502 | INFO | FIN CORRECTO | perfil | general
-2026-08-08 08:21:28,503 | INFO | INICIO | multicolinealidad | general
-2026-08-08 08:21:46,293 | INFO | FIN CORRECTO | multicolinealidad | general
-2026-08-08 08:21:46,293 | INFO | INICIO | seleccion | reducido
-2026-08-08 08:23:02,253 | INFO | FIN CORRECTO | seleccion | reducido
-2026-08-08 08:23:02,276 | INFO | INICIO | pca | pca
-2026-08-08 08:23:12,673 | INFO | FIN CORRECTO | pca | pca
-2026-08-08 08:23:12,694 | INFO | INICIO | modelos_rolling_origin | completo
-2026-08-08 08:26:58,882 | INFO | FIN CORRECTO | modelos_rolling_origin | completo
-2026-08-08 08:26:58,882 | INFO | INICIO | modelos_rolling_origin | reducido
-2026-08-08 08:30:56,487 | INFO | FIN CORRECTO | modelos_rolling_origin | reducido
-2026-08-08 08:30:56,487 | INFO | INICIO | modelos_rolling_origin | pca
-2026-08-08 08:36:56,713 | INFO | FIN CORRECTO | modelos_rolling_origin | pca
-2026-08-08 08:36:56,715 | INFO | INICIO | rnn_lstm | reducido
-2026-08-08 08:37:10,623 | WARNING | TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
-2026-08-08 08:37:39,317 | WARNING | 5 out of the last 7 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001D24C6DC280> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
-2026-08-08 08:37:39,433 | WARNING | 6 out of the last 9 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x000001D24C6DC280> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
-2026-08-08 08:38:51,220 | INFO | FIN CORRECTO | rnn_lstm | reducido
-2026-08-08 08:38:51,220 | INFO | INICIO | rnn_lstm | pca
-2026-08-08 08:40:23,693 | INFO | FIN CORRECTO | rnn_lstm | pca
-2026-08-08 08:40:23,806 | INFO | Pipeline terminado. Errores registrados: 0
-2026-08-08 08:40:23,806 | INFO | Resumen: C:\Python\tesis\output\analisis_dimensional\00_resumen_ejecucion_pipeline.xlsx
+2026-08-08 12:21:35,502 | INFO | Etapas solicitadas: limpieza, ingenieria, perfil, multicolinealidad, seleccion, pca, modelos, rnn, graficas_metodologia, graficas_modelos, graficas_rnn
+2026-08-08 12:21:35,506 | INFO | INICIO | limpieza | general
+2026-08-08 12:21:41,545 | INFO | FIN CORRECTO | limpieza | general
+2026-08-08 12:21:41,566 | INFO | INICIO | ingenieria | general
+2026-08-08 12:21:50,665 | INFO | FIN CORRECTO | ingenieria | general
+2026-08-08 12:21:50,692 | INFO | INICIO | perfil | general
+2026-08-08 12:21:54,717 | INFO | FIN CORRECTO | perfil | general
+2026-08-08 12:21:54,720 | INFO | INICIO | multicolinealidad | general
+2026-08-08 12:22:04,140 | INFO | FIN CORRECTO | multicolinealidad | general
+2026-08-08 12:22:04,145 | INFO | INICIO | seleccion | reducido
+2026-08-08 12:23:53,847 | INFO | FIN CORRECTO | seleccion | reducido
+2026-08-08 12:23:53,870 | INFO | INICIO | pca | pca
+2026-08-08 12:24:02,748 | INFO | FIN CORRECTO | pca | pca
+2026-08-08 12:24:02,781 | INFO | INICIO | modelos_rolling_origin | completo
+2026-08-08 12:27:27,775 | INFO | FIN CORRECTO | modelos_rolling_origin | completo
+2026-08-08 12:27:27,810 | INFO | INICIO | modelos_rolling_origin | reducido
+2026-08-08 12:30:01,065 | INFO | FIN CORRECTO | modelos_rolling_origin | reducido
+2026-08-08 12:30:01,086 | INFO | INICIO | modelos_rolling_origin | pca
+2026-08-08 12:34:45,887 | INFO | FIN CORRECTO | modelos_rolling_origin | pca
+2026-08-08 12:34:45,962 | INFO | INICIO | rnn_lstm | reducido
+2026-08-08 12:34:51,645 | WARNING | From C:\Users\DEMO\AppData\Roaming\Python\Python310\site-packages\keras\src\backend\common\global_state.py:82: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+2026-08-08 12:34:51,835 | WARNING | TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+2026-08-08 12:35:18,024 | WARNING | 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000214E8A51FC0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-08-08 12:35:18,147 | WARNING | 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x00000214E8A51FC0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.
+2026-08-08 12:38:21,247 | INFO | FIN CORRECTO | rnn_lstm | reducido
+2026-08-08 12:38:21,267 | INFO | INICIO | rnn_lstm | pca
+2026-08-08 12:41:14,691 | INFO | FIN CORRECTO | rnn_lstm | pca
+2026-08-08 12:41:14,766 | INFO | INICIO | graficas_metodologia | general
+2026-08-08 12:43:22,480 | INFO | FIN CORRECTO | graficas_metodologia | general
+2026-08-08 12:43:22,488 | INFO | INICIO | graficas_modelos | general
+2026-08-08 12:43:33,208 | INFO | FIN CORRECTO | graficas_modelos | general
+2026-08-08 12:43:33,214 | INFO | INICIO | graficas_rnn | general
+2026-08-08 12:43:52,587 | INFO | FIN CORRECTO | graficas_rnn | general
+2026-08-08 12:43:52,728 | INFO | Pipeline terminado. Errores registrados: 0
+2026-08-08 12:43:52,728 | INFO | Resumen: C:\Python\tesis\output\analisis_dimensional\00_resumen_ejecucion_pipeline.xlsx

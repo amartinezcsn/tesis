@@ -1,7 +1,7 @@
 # Manifiesto académico de gráficas: limpieza, ingeniería de características, perfil dimensional, multicolinealidad, selección de características y PCA
 
 **Códigos metodológicos ilustrados:** `01_clean_eda.py`, `02_feature_engineering_profesional.py`, `03_perfil_dataset_y_dimensiones.py`, `04_diagnostico_multicolinealidad.py` y `05_seleccion_caracteristicas_dataset_reducido.py` y `06_pca_reduccion_componentes.py`  
-**Fecha de generación:** 2026-08-02T13:21:51.975057-06:00  
+**Fecha de generación:** 2026-08-08T12:43:03.540451-06:00  
 **Número de figuras catalogadas:** 86
 
 ## Propósito metodológico
@@ -836,7 +836,7 @@ Este conjunto de figuras documenta la transformación de fuentes heterogéneas e
 - **Fuente y hoja:** `03_dataset_reducido_por_seleccion.xlsx` / `resumen`
 - **Variables:** variables_originales, variables_reducidas, objetivos
 - **Objetivo académico:** Cuantificar la magnitud real de la reducción obtenida.
-- **Interpretación:** Se conservaron 264 de 271 predictores y se eliminaron 7, equivalente a 2.58%.
+- **Interpretación:** Se conservaron 80 de 271 predictores y se eliminaron 191, equivalente a 70.48%.
 - **Criterio de lectura:** Una reducción pequeña indica que el criterio de unión entre objetivos fue permisivo.
 - **Fundamento o ecuación:** Reducción(\%)=\frac{p_{original}-p_{reducido}}{p_{original}}\times100
 - **Ubicación sugerida:** Apertura de la sección de selección de características.
@@ -862,7 +862,7 @@ Este conjunto de figuras documenta la transformación de fuentes heterogéneas e
 - **Fuente y hoja:** `03_dataset_reducido_por_seleccion.xlsx` / `ranking_variables`
 - **Variables:** score_compuesto, seleccionada
 - **Objetivo académico:** Mostrar la separación entre variables retenidas y descartadas.
-- **Interpretación:** La mediana del score de las seleccionadas es 0.132.
+- **Interpretación:** La mediana del score de las seleccionadas es 0.359.
 - **Criterio de lectura:** Una superposición amplia indica que parte de la selección depende del criterio Top-K y no solo de un umbral absoluto.
 - **Fundamento o ecuación:** Score_{j,y}=\frac{1}{M}\sum_{m=1}^{M}Score^{norm}_{j,y,m}
 - **Ubicación sugerida:** Explicación de la función de decisión multicriterio.
@@ -927,7 +927,7 @@ Este conjunto de figuras documenta la transformación de fuentes heterogéneas e
 - **Fuente y hoja:** `03_dataset_reducido_por_seleccion.xlsx` / `ranking_variables`
 - **Variables:** variable, target, seleccionada
 - **Objetivo académico:** Distinguir predictores globales de predictores específicos.
-- **Interpretación:** 175 variables fueron seleccionadas por los cuatro objetivos.
+- **Interpretación:** 11 variables fueron seleccionadas por los cuatro objetivos.
 - **Criterio de lectura:** Una frecuencia alta sugiere utilidad transversal; una frecuencia de uno indica especialización.
 - **Fundamento o ecuación:** f_j=\sum_y I_{j,y}
 - **Ubicación sugerida:** Definición del conjunto unido de predictores.
@@ -979,7 +979,7 @@ Este conjunto de figuras documenta la transformación de fuentes heterogéneas e
 - **Fuente y hoja:** `03_dataset_reducido_por_seleccion.xlsx` / `ranking_variables`
 - **Variables:** dimension, variable, seleccionada
 - **Objetivo académico:** Evaluar cómo cambia la cobertura de dimensiones al construir el dataset reducido.
-- **Interpretación:** El universo contiene 271 predictores y la unión seleccionada conserva 264.
+- **Interpretación:** El universo contiene 271 predictores y la unión seleccionada conserva 80.
 - **Criterio de lectura:** Barras similares evidencian una reducción conservadora; diferencias amplias señalan dimensiones depuradas.
 - **Fundamento o ecuación:** p^{sel}_g=|\{X_j:d_j=g\land\max_y I_{j,y}=1\}|
 - **Ubicación sugerida:** Cierre de selección y transición a PCA/modelado.
