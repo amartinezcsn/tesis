@@ -1,0 +1,9 @@
+# Entornos y cachés locales de Python: se regeneran con la guía del pipeline.
+.venv/
+.deps_semanal/
+__pycache__/
+*.py[cod]
+
+# Artefactos transitorios de ejecución.
+output/semanal/.matplotlib/
+output/semanal/*.log
