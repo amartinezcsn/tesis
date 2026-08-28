@@ -68,6 +68,46 @@ class WeeklyPipelineTests(unittest.TestCase):
         self.assertEqual(origins[0], WINDOW_WEEKS)
         self.assertEqual(origins[-1], 79)
 
+    def test_complementary_horizon_has_four_steps_without_overrun(self):
+        origins = models.iter_rolling_windows(80, horizon=4)
+        self.assertEqual(origins[0], WINDOW_WEEKS)
+        self.assertEqual(origins[-1], 76)
+
+    def test_seasonal_baseline_uses_all_available_positions_for_h4(self):
+        train = pd.DataFrame({TARGET_COLUMN: np.arange(52, dtype=float)})
+        forecasts = models.empirical_forecasts(train, steps=4)
+        np.testing.assert_array_equal(
+            forecasts["empirico_estacional_52s"], np.array([0.0, 1.0, 2.0, 3.0])
+        )
+
+    def test_recursive_future_features_use_predictions_for_target_history(self):
+        history = [10.0, 20.0, 30.0, 40.0]
+        origin = pd.Series(
+            {
+                "hist_compras_importe_semanal_lag_1s": 40.0,
+                "hist_ventas_importe_real_2026_05_lag_1s": 99.0,
+                "exog_inpc_publicado": 100.0,
+            }
+        )
+        row = pd.Series(
+            {
+                "hist_compras_importe_semanal_lag_1s": 999.0,
+                "hist_ventas_importe_real_2026_05_lag_1s": 888.0,
+                "exog_inpc_publicado": 111.0,
+                "exog_es_dia_madre": 1.0,
+            }
+        )
+        future = models._recursive_feature_row(
+            row,
+            origin,
+            list(row.index),
+            history + [55.0],
+        )
+        self.assertEqual(future["hist_compras_importe_semanal_lag_1s"], 55.0)
+        self.assertEqual(future["hist_ventas_importe_real_2026_05_lag_1s"], 99.0)
+        self.assertEqual(future["exog_inpc_publicado"], 100.0)
+        self.assertEqual(future["exog_es_dia_madre"], 1.0)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -4,7 +4,12 @@ import os
 
 import pandas as pd
 
-from config_semanal import PRIMARY_BASELINE, ensure_output_dir
+from config_semanal import (
+    FORECAST_HORIZONS,
+    PRIMARY_BASELINE,
+    PRIMARY_HORIZON_WEEKS,
+    ensure_output_dir,
+)
 
 
 def main() -> None:
@@ -14,15 +19,26 @@ def main() -> None:
     metrics = pd.read_excel(source, sheet_name="metricas")
     h1 = pd.read_excel(source, sheet_name="contraste_h1")
     h2 = pd.read_excel(source, sheet_name="contraste_h2")
-    winner = metrics.iloc[0]
+    primary_metrics = metrics.loc[metrics["horizonte"].eq(PRIMARY_HORIZON_WEEKS)]
+    if primary_metrics.empty:
+        raise ValueError("No hay métricas para el horizonte principal.")
+    winner = primary_metrics.iloc[0]
+    horizons = ", ".join(f"H={h}" for h in FORECAST_HORIZONS)
+    h1_primary = h1.loc[h1["horizonte"].eq(PRIMARY_HORIZON_WEEKS)]
+    h2_primary = h2.loc[h2["horizonte"].eq(PRIMARY_HORIZON_WEEKS)]
+    supported_h1 = int(h1_primary["apoya_hipotesis"].fillna(False).sum()) if not h1_primary.empty else 0
+    supported_h2 = int(h2_primary["apoya_hipotesis"].fillna(False).sum()) if not h2_primary.empty else 0
 
     lines = [
         "# Resultados del pronóstico semanal",
         "",
         "## Configuración de referencia",
+        f"- Horizontes evaluados: {horizons}; el principal es H={PRIMARY_HORIZON_WEEKS}.",
         f"- Línea base primaria para H1: `{PRIMARY_BASELINE}`.",
         f"- Modelo con menor RMSE: `{winner['modelo']}` ({winner['feature_set']}).",
         f"- RMSE: {winner['rmse']:.4f}; MAE: {winner['mae']:.4f}; MASE: {winner['mase']:.4f}.",
+        f"- Contrastes H1 con apoyo estadístico y umbral de 20% en H=1: {supported_h1}.",
+        f"- Contrastes H2 con apoyo estadístico y mejora direccional en H=1: {supported_h2}.",
         "",
         "## Interpretación",
         "- H1 y H2 se interpretan con las tablas de contraste y no sólo con el ranking.",

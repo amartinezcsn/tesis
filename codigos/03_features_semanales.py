@@ -19,6 +19,8 @@ from config_semanal import (
     ROLLING_WINDOWS,
     SALES_COLUMNS,
     TARGET_COLUMN,
+    WEEKLY_CALENDAR_EXOGENOUS,
+    WEEKLY_DELAYED_EXOGENOUS,
     WEEKLY_MASTER_PATH,
     WEEKLY_MODEL_PATH,
 )
@@ -58,6 +60,19 @@ def build_weekly_features(weekly: pd.DataFrame) -> pd.DataFrame:
     semana. Así no se usa el valor observado durante la semana que se desea
     pronosticar.
     """
+    required = {
+        DATE_COLUMN,
+        "compras_importe_semanal",
+        "semana_anio",
+        "mes",
+        "inpc_observado_semana",
+        "temperatura_observada_semana",
+        *SALES_COLUMNS,
+    }
+    missing = sorted(required.difference(weekly.columns))
+    if missing:
+        raise ValueError(f"Faltan columnas para construir el dataset semanal: {', '.join(missing)}")
+
     frame = weekly.sort_values(DATE_COLUMN).reset_index(drop=True).copy()
     model = pd.DataFrame({DATE_COLUMN: frame[DATE_COLUMN]})
     model[TARGET_COLUMN] = frame["compras_importe_semanal"].astype(float)
@@ -68,27 +83,22 @@ def build_weekly_features(weekly: pd.DataFrame) -> pd.DataFrame:
         model = pd.concat([model, add_rolling_statistics(frame, column)], axis=1)
 
     # Calendario y eventos son conocidos al inicio de la semana.
-    exog_columns = [
-        "eventos_festivos_semana",
-        "eventos_pago_semana",
-        "es_san_valentin",
-        "es_dia_nino",
-        "es_dia_madre",
-        "nacimientos_indice_semanal",
-    ]
-    for column in exog_columns:
+    for column in WEEKLY_CALENDAR_EXOGENOUS:
         if column in frame:
             model[f"exog_{column}"] = frame[column].astype(float)
     model = pd.concat([model, cyclical_encoding(frame["semana_anio"], 52, "semana_anio")], axis=1)
     model = pd.concat([model, cyclical_encoding(frame["mes"], 12, "mes")], axis=1)
 
     # Variables externas observadas se vuelven disponibles con un rezago.
-    model["exog_inpc_publicado"] = frame["inpc_observado_semana"].shift(1)
-    model["exog_temperatura_lag_1s"] = frame["temperatura_observada_semana"].shift(1)
+    model[WEEKLY_DELAYED_EXOGENOUS[0]] = frame["inpc_observado_semana"].shift(1)
+    model[WEEKLY_DELAYED_EXOGENOUS[1]] = frame["temperatura_observada_semana"].shift(1)
 
     # Se requieren 52 semanas completas por el mayor rezago.
     model = model.iloc[max(LAG_WEEKS):].reset_index(drop=True)
-    return model.replace([np.inf, -np.inf], np.nan)
+    model = model.replace([np.inf, -np.inf], np.nan)
+    if model.empty:
+        raise ValueError("No quedan semanas después de aplicar el historial mínimo requerido.")
+    return model
 
 
 def build_dictionary(model: pd.DataFrame) -> pd.DataFrame:

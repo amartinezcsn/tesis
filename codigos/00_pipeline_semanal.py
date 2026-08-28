@@ -8,6 +8,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from config_semanal import DAILY_MASTER_PATH, PROJECT_DIR
+
 
 STAGES = (
     "02_agregar_semanal.py",
@@ -22,9 +24,17 @@ STAGES = (
 def main() -> None:
     """Ejecuta las etapas en orden y detiene el flujo ante el primer error."""
     scripts_dir = Path(__file__).resolve().parent
+    if not DAILY_MASTER_PATH.exists():
+        raise FileNotFoundError(
+            "No existe el maestro diario requerido: "
+            f"{DAILY_MASTER_PATH}. Ejecuta antes el pipeline maestro de limpieza."
+        )
     for stage in STAGES:
+        stage_path = scripts_dir / stage
+        if not stage_path.exists():
+            raise FileNotFoundError(f"No existe la etapa semanal: {stage_path}")
         print(f"\n=== Etapa semanal: {stage} ===")
-        subprocess.run([sys.executable, str(scripts_dir / stage)], check=True)
+        subprocess.run([sys.executable, str(stage_path)], check=True, cwd=PROJECT_DIR)
 
 
 if __name__ == "__main__":

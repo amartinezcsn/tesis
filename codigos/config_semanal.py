@@ -14,7 +14,9 @@ cerrado y variables externas que ya sean conocidas o publicadas en ese momento.
 from pathlib import Path
 
 
-PROJECT_DIR = Path(r"C:/Python/tesis")
+# Resolver el proyecto desde el propio archivo evita que la metodología
+# dependa de una ruta absoluta específica del equipo del investigador.
+PROJECT_DIR = Path(__file__).resolve().parents[1]
 INPUT_DIR = PROJECT_DIR / "input"
 OUTPUT_DIR = PROJECT_DIR / "output" / "semanal"
 DAILY_MASTER_PATH = INPUT_DIR / "dataset_maestro_diario.xlsx"
@@ -29,10 +31,19 @@ TARGET_COLUMN = "target_compras_importe_semanal"
 WEEK_FREQUENCY = "W-SUN"
 
 WINDOW_WEEKS = 52
-HORIZON_WEEKS = 1
+# La tesis define un horizonte principal de una semana y un análisis
+# complementario de cuatro semanas para consolidar el presupuesto mensual.
+PRIMARY_HORIZON_WEEKS = 1
+COMPLEMENTARY_HORIZON_WEEKS = 4
+FORECAST_HORIZONS = (PRIMARY_HORIZON_WEEKS, COMPLEMENTARY_HORIZON_WEEKS)
 STEP_WEEKS = 1
-FINAL_EVALUATION_WEEKS = 16
+# Se reservan 16 orígenes finales para la evaluación fuera de muestra. Para
+# H=1 equivalen a 16 semanas; para H=4 se reportan 16 orígenes consecutivos.
+FINAL_EVALUATION_ORIGINS = 16
 TUNING_WINDOWS = 8
+SIGNIFICANCE_ALPHA = 0.05
+H1_MIN_RMSE_REDUCTION = 0.20
+SARIMA_SEASONAL_PERIOD_WEEKS = 4
 
 LAG_WEEKS = (1, 2, 4, 8, 52)
 ROLLING_WINDOWS = (4, 8, 12)
@@ -46,8 +57,9 @@ BASELINE_NAMES = (
     "empirico_estacional_52s",
 )
 
-# Variables que se agregan y se consideran disponibles antes de pronosticar.
-# El INPC se desplaza una semana para representar el último valor publicado.
+# Fuentes exógenas que deben estar disponibles antes de emitir un pronóstico.
+# Las dos últimas se incorporan con rezago porque el archivo semanal contiene
+# valores observados, no pronósticos futuros.
 KNOWN_EXOGENOUS = (
     "es_festivo_mexicano",
     "es_fecha_pago",
@@ -55,6 +67,19 @@ KNOWN_EXOGENOUS = (
     "inpc_valor_mensual",
 )
 TEMPERATURE_COLUMN = "temperatura_promedio_mensual_hidalgo"
+
+WEEKLY_CALENDAR_EXOGENOUS = (
+    "eventos_festivos_semana",
+    "eventos_pago_semana",
+    "es_san_valentin",
+    "es_dia_nino",
+    "es_dia_madre",
+    "nacimientos_indice_semanal",
+)
+WEEKLY_DELAYED_EXOGENOUS = (
+    "exog_inpc_publicado",
+    "exog_temperatura_lag_1s",
+)
 
 # Se conservan las ventas como predictores históricos. Las compras no se usan
 # por categoría para evitar una matriz demasiado ancha frente a pocas semanas.
