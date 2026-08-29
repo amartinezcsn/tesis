@@ -13,7 +13,10 @@ import numpy as np
 import pandas as pd
 
 from config_semanal import (
+    ALLOWED_EXOGENOUS_FEATURES,
     DATE_COLUMN,
+    EXOGENOUS_REGISTRY,
+    exogenous_feature_name,
     LAG_WEEKS,
     PURCHASE_COLUMN,
     ROLLING_WINDOWS,
@@ -68,27 +71,34 @@ def build_weekly_features(weekly: pd.DataFrame) -> pd.DataFrame:
         model = pd.concat([model, add_rolling_statistics(frame, column)], axis=1)
 
     # Calendario y eventos son conocidos al inicio de la semana.
-    exog_columns = [
-        "eventos_festivos_semana",
-        "eventos_pago_semana",
-        "es_san_valentin",
-        "es_dia_nino",
-        "es_dia_madre",
-        "nacimientos_indice_semanal",
-    ]
-    for column in exog_columns:
-        if column in frame:
-            model[f"exog_{column}"] = frame[column].astype(float)
+    for source, metadata in EXOGENOUS_REGISTRY.items():
+        if metadata["rezago_semanas"] == 0 and source in frame:
+            model[exogenous_feature_name(source)] = frame[source].astype(float)
     model = pd.concat([model, cyclical_encoding(frame["semana_anio"], 52, "semana_anio")], axis=1)
     model = pd.concat([model, cyclical_encoding(frame["mes"], 12, "mes")], axis=1)
 
-    # Variables externas observadas se vuelven disponibles con un rezago.
-    model["exog_inpc_publicado"] = frame["inpc_observado_semana"].shift(1)
-    model["exog_temperatura_lag_1s"] = frame["temperatura_observada_semana"].shift(1)
+    # Los indicadores publicados u observados sólo se usan a partir del último
+    # valor disponible; el registro central define el rezago de cada fuente.
+    for source in ("nacimientos_indice_semanal", "inpc_observado_semana", "temperatura_observada_semana"):
+        if source in frame:
+            lag = EXOGENOUS_REGISTRY[source]["rezago_semanas"]
+            model[exogenous_feature_name(source)] = frame[source].shift(lag)
 
     # Se requieren 52 semanas completas por el mayor rezago.
     model = model.iloc[max(LAG_WEEKS):].reset_index(drop=True)
+    validate_registered_exogenous(model)
     return model.replace([np.inf, -np.inf], np.nan)
+
+
+def validate_registered_exogenous(model: pd.DataFrame) -> None:
+    """Bloquea predictores exógenos sin fuente, disponibilidad o rezago definido."""
+    actual = {column for column in model.columns if column.startswith("exog_")}
+    unregistered = sorted(actual - ALLOWED_EXOGENOUS_FEATURES)
+    if unregistered:
+        raise ValueError(
+            "Se detectaron variables exógenas no registradas: " + ", ".join(unregistered)
+            + ". Regístralas primero en EXOGENOUS_REGISTRY."
+        )
 
 
 def build_dictionary(model: pd.DataFrame) -> pd.DataFrame:
@@ -105,7 +115,19 @@ def build_dictionary(model: pd.DataFrame) -> pd.DataFrame:
             group, available = "exógena", "conocida o publicada antes del pronóstico"
         else:
             group, available = "otra", "revisar"
-        rows.append({"variable": column, "grupo": group, "disponibilidad": available})
+        source = "derivada del calendario o registro de disponibilidad"
+        lag = 0
+        for registry_name, metadata in EXOGENOUS_REGISTRY.items():
+            if column == exogenous_feature_name(registry_name):
+                source, lag = metadata["fuente"], metadata["rezago_semanas"]
+                break
+        if "nacimientos_indice" in column:
+            source, lag = EXOGENOUS_REGISTRY["nacimientos_indice_semanal"]["fuente"], EXOGENOUS_REGISTRY["nacimientos_indice_semanal"]["rezago_semanas"]
+        elif "inpc" in column:
+            source, lag = EXOGENOUS_REGISTRY["inpc_observado_semana"]["fuente"], EXOGENOUS_REGISTRY["inpc_observado_semana"]["rezago_semanas"]
+        elif "temperatura" in column:
+            source, lag = EXOGENOUS_REGISTRY["temperatura_observada_semana"]["fuente"], EXOGENOUS_REGISTRY["temperatura_observada_semana"]["rezago_semanas"]
+        rows.append({"variable": column, "grupo": group, "disponibilidad": available, "fuente": source, "rezago_semanas": lag})
     return pd.DataFrame(rows)
 
 
