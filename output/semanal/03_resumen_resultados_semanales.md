@@ -1,14 +1,13 @@
 # Resultados del pronóstico semanal
 
 ## Configuración de referencia
-- Horizontes evaluados: H=1, H=4; el principal es H=1.
-- Línea base primaria para H1: `empirico_promedio_4s`.
-- Modelo con menor RMSE: `empirico_ultimo_valor` (referencia).
-- RMSE: 608.0819; MAE: 452.8732; MASE: 8.5443.
-- Contrastes H1 con apoyo estadístico y umbral de 20% en H=1: 0.
-- Contrastes H2 con apoyo estadístico y mejora direccional en H=1: 0.
+- Línea base primaria para H1: `empirico_ultimo_valor`.
+- Mejor h=1: `ridge` (historico); RMSE 502.1078; MAE 325.9802.
+- Mejor h=4: `empirico_promedio_4s` (referencia); RMSE 652.5237; MAE 427.6304.
+- Consolidado mensual: 336 presupuestos históricos de cuatro semanas, cada uno como suma de h=1+h=2+h=3+h=4.
 
 ## Interpretación
 - H1 y H2 se interpretan con las tablas de contraste y no sólo con el ranking.
 - MAPE es diagnóstico: no se usa para seleccionar el modelo ni aceptar hipótesis.
-- Las conclusiones se limitan a precisión del presupuesto semanal.
+- H1 se interpreta principalmente en h=1; h=4 se reporta como evidencia complementaria de planeación.
+- El consolidado mensual no equivale a un modelo mensual independiente.

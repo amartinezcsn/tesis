@@ -14,8 +14,8 @@ cerrado y variables externas que ya sean conocidas o publicadas en ese momento.
 from pathlib import Path
 
 
-# Resolver el proyecto desde el propio archivo evita que la metodología
-# dependa de una ruta absoluta específica del equipo del investigador.
+# Se calcula desde este archivo para que el proyecto se pueda mover, clonar o
+# ejecutar en otro equipo sin editar rutas absolutas.
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 INPUT_DIR = PROJECT_DIR / "input"
 OUTPUT_DIR = PROJECT_DIR / "output" / "semanal"
@@ -31,26 +31,29 @@ TARGET_COLUMN = "target_compras_importe_semanal"
 WEEK_FREQUENCY = "W-SUN"
 
 WINDOW_WEEKS = 52
-# La tesis define un horizonte principal de una semana y un análisis
-# complementario de cuatro semanas para consolidar el presupuesto mensual.
-PRIMARY_HORIZON_WEEKS = 1
-COMPLEMENTARY_HORIZON_WEEKS = 4
-FORECAST_HORIZONS = (PRIMARY_HORIZON_WEEKS, COMPLEMENTARY_HORIZON_WEEKS)
+# El horizonte inmediato es el contraste principal de las hipótesis. El
+# horizonte de cuatro semanas se estima de forma directa y se emplea también
+# para consolidar el presupuesto mensual a partir de h=1, h=2, h=3 y h=4.
+HORIZON_WEEKS = 1
+SECONDARY_HORIZON_WEEKS = 4
+MONTHLY_CONSOLIDATION_HORIZONS = (1, 2, 3, 4)
 STEP_WEEKS = 1
 # Se reservan 16 orígenes finales para la evaluación fuera de muestra. Para
 # H=1 equivalen a 16 semanas; para H=4 se reportan 16 orígenes consecutivos.
 FINAL_EVALUATION_ORIGINS = 16
 TUNING_WINDOWS = 8
-SIGNIFICANCE_ALPHA = 0.05
-H1_MIN_RMSE_REDUCTION = 0.20
-SARIMA_SEASONAL_PERIOD_WEEKS = 4
+SIGNIFICANCE_LEVEL = 0.05
 
 LAG_WEEKS = (1, 2, 4, 8, 52)
 ROLLING_WINDOWS = (4, 8, 12)
 MAX_FEATURES = 15
 RANDOM_STATE = 42
+EXPERIMENT_SEED = RANDOM_STATE
 
-PRIMARY_BASELINE = "empirico_promedio_4s"
+# Referencia primaria de H1: persistencia del último importe semanal observado.
+# Conserva los ceros observados; las ausencias de cobertura y filas sintéticas
+# se excluyen antes de la evaluación por las salvaguardas del pipeline.
+PRIMARY_BASELINE = "empirico_ultimo_valor"
 BASELINE_NAMES = (
     "empirico_ultimo_valor",
     "empirico_promedio_4s",
@@ -68,17 +71,58 @@ KNOWN_EXOGENOUS = (
 )
 TEMPERATURE_COLUMN = "temperatura_promedio_mensual_hidalgo"
 
-WEEKLY_CALENDAR_EXOGENOUS = (
-    "eventos_festivos_semana",
-    "eventos_pago_semana",
-    "es_san_valentin",
-    "es_dia_nino",
-    "es_dia_madre",
-    "nacimientos_indice_semanal",
+EXOGENOUS_REGISTRY = {
+    "eventos_festivos_semana": {
+        "fuente": "calendario de festividades", "disponibilidad": "conocida antes del inicio de la semana", "rezago_semanas": 0,
+    },
+    "eventos_pago_semana": {
+        "fuente": "calendario de pagos", "disponibilidad": "conocida antes del inicio de la semana", "rezago_semanas": 0,
+    },
+    "es_san_valentin": {
+        "fuente": "calendario comercial", "disponibilidad": "conocida antes del inicio de la semana", "rezago_semanas": 0,
+    },
+    "es_dia_nino": {
+        "fuente": "calendario comercial", "disponibilidad": "conocida antes del inicio de la semana", "rezago_semanas": 0,
+    },
+    "es_dia_madre": {
+        "fuente": "calendario comercial", "disponibilidad": "conocida antes del inicio de la semana", "rezago_semanas": 0,
+    },
+    "nacimientos_indice_semanal": {
+        "fuente": "índice demográfico histórico", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
+    },
+    "inpc_observado_semana": {
+        "fuente": "INPC publicado", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
+    },
+    "temperatura_observada_semana": {
+        "fuente": "temperatura histórica regional", "disponibilidad": "último valor observado", "rezago_semanas": 1,
+    },
+}
+
+DERIVED_EXOGENOUS_FEATURES = (
+    "exog_semana_anio_sin",
+    "exog_semana_anio_cos",
+    "exog_mes_sin",
+    "exog_mes_cos",
 )
-WEEKLY_DELAYED_EXOGENOUS = (
-    "exog_inpc_publicado",
-    "exog_temperatura_lag_1s",
+
+
+def exogenous_feature_name(source: str) -> str:
+    """Devuelve el nombre permitido del predictor derivado de una fuente."""
+    metadata = EXOGENOUS_REGISTRY[source]
+    lag = metadata["rezago_semanas"]
+    if lag == 0:
+        return f"exog_{source}"
+    base = (
+        source.replace("_observado_semana", "")
+        .replace("_observada_semana", "")
+        .replace("_semanal", "")
+    )
+    return f"exog_{base}_publicado_lag_{lag}s"
+
+
+ALLOWED_EXOGENOUS_FEATURES = frozenset(
+    [exogenous_feature_name(source) for source in EXOGENOUS_REGISTRY] + list(DERIVED_EXOGENOUS_FEATURES)
+)
 )
 
 # Se conservan las ventas como predictores históricos. Las compras no se usan

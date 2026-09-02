@@ -10,16 +10,37 @@ estadísticos y de aprendizaje automático, comparados mediante rolling-window
 
 - Unidad de análisis: semana completa, lunes a domingo.
 - Ventana de entrenamiento: 52 semanas.
-- Horizonte principal: una semana.
-- Horizonte complementario: cuatro semanas, con predicción recursiva sin usar ventas o compras futuras.
-- SARIMA usa un periodo estacional parsimonioso de cuatro semanas; con una
-  ventana de entrenamiento de 52 semanas no es estable estimar una temporada
-  anual de 52 periodos dentro de cada origen.
+- Horizonte principal: una semana (`h=1`).
+- Horizonte complementario: cuatro semanas directas (`h=4`), reportado por
+  separado de `h=1`.
+- Consolidado mensual: suma de los pronósticos directos `h=1+h=2+h=3+h=4`;
+  no se interpreta como un modelo mensual independiente.
 - Desplazamiento de la ventana: una semana.
-- Evaluación final: 16 orígenes no usados para ajustar hiperparámetros.
-- H1: comparación con promedio móvil de cuatro semanas.
+- Evaluación final: 16 semanas no usadas para ajustar hiperparámetros.
+- H1: comparación con persistencia del último valor semanal observado.
 - H2: comparación de variables históricas frente a históricas más exógenas.
-- Significancia: prueba t unilateral pareada con alfa de 0.05; el apoyo operacional de H1 además exige una reducción mínima de 20 % en RMSE. H2 exige significancia y mejora en la dirección esperada, sin imponer el umbral operativo de H1.
+- Contraste H1: Diebold-Mariano unilateral sobre pérdida cuadrática, con
+  corrección de muestra finita y ajuste Holm para las comparaciones múltiples.
+- Intermitencia: Croston-SBA y TSB; variantes Ridge, Random Forest y
+  HistGradientBoosting con `log1p`; y modelo hurdle de dos etapas.
+
+## Trazabilidad y disponibilidad de información
+
+Las rutas se resuelven desde la carpeta del proyecto, por lo que el pipeline
+no depende de una ubicación fija en el equipo. Al finalizar una ejecución se
+genera `output/semanal/00_trazabilidad_ejecucion.json`, que registra la huella
+SHA-256 de las fuentes y scripts, versiones de paquetes, semilla y parámetros.
+
+El diccionario dentro de `dataset_modelado_semanal.xlsx` identifica la fuente,
+el rezago y la disponibilidad de cada predictor. Los calendarios se usan en la
+misma semana porque se conocen de antemano; INPC, temperatura y el índice de
+nacimientos se desplazan una semana para representar el último valor publicado
+u observado disponible al momento de pronosticar.
+
+La referencia primaria de H1 es `empirico_ultimo_valor`: para cada semana de
+prueba pronostica el importe de la semana observada inmediatamente anterior.
+El promedio móvil de cuatro semanas y el ingenuo estacional de 52 semanas se
+mantienen como comparadores obligatorios, no como referencias sustitutas.
 
 ## Ejecución
 
@@ -50,17 +71,25 @@ Para comprobar los controles estructurales antes de una corrida completa:
 | `input/dataset_maestro_semanal.xlsx` | Datos diarios agregados por semana. |
 | `input/dataset_modelado_semanal.xlsx` | Objetivo y predictores sin fuga de información. |
 | `output/semanal/01_perfil_semanal.xlsx` | Cobertura, ceros y calidad. |
-| `output/semanal/02_modelos_rolling_window.xlsx` | Predicciones H=1/H=4, métricas y H1/H2. |
+| `output/semanal/02_modelos_rolling_window.xlsx` | Predicciones y métricas por horizonte, H1/H2 y consolidado de cuatro semanas. |
 | `output/semanal/03_resumen_resultados_semanales.md` | Síntesis legible. |
 | `output/semanal/04_dss_semanal.json` | Datos de evaluación para el DSS. |
 
 ## Límites de interpretación
 
-El pipeline evalúa precisión del importe semanal de compras. No calcula
+El pipeline evalúa precisión del importe semanal de compras para `h=1` y,
+como análisis complementario, para `h=4`. El consolidado mensual agrega cuatro
+pronósticos semanales directos; no estima una serie mensual independiente. No calcula
 inventario, cantidades por insumo, merma, costos de faltante ni órdenes de
 compra. Una predicción futura requiere variables exógenas conocidas antes de la
 semana pronosticada; el JSON del DSS no fabrica pronósticos futuros cuando esas
 fuentes no existen.
+
+La extensión `05_extension_sintetica_compras.xlsx` se conserva fuera de las
+entradas operativas. Sus filas sólo sirven para análisis de sensibilidad o
+pruebas del DSS: el módulo de modelos se detiene si detecta indicadores de
+origen sintético, por lo que esos valores no pueden intervenir en ajuste,
+selección, evaluación ni contraste de H1/H2.
 
 ## Código heredado
 
