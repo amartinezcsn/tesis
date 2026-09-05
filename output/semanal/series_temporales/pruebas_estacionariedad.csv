@@ -1,0 +1,5 @@
+﻿transformacion,prueba,hipotesis_nula,estadistico,p_valor,rezagos,observaciones,decision_0_05
+nivel,ADF,raíz unitaria / no estacionaria,-2.216810602040531,0.2002008488019137,4,106,no rechazar H0
+nivel,KPSS,estacionaria en nivel,1.395983138076974,0.01,4,111,rechazar H0
+log1p,ADF,raíz unitaria / no estacionaria,-2.680335438646858,0.07750334878716912,4,106,no rechazar H0
+log1p,KPSS,estacionaria en nivel,0.8003974328768394,0.01,3,111,rechazar H0

@@ -13,6 +13,9 @@ cerrado y variables externas que ya sean conocidas o publicadas en ese momento.
 
 from pathlib import Path
 
+import numpy as np
+import pandas as pd
+
 
 # Se calcula desde este archivo para que el proyecto se pueda mover, clonar o
 # ejecutar en otro equipo sin editar rutas absolutas.
@@ -39,6 +42,7 @@ SECONDARY_HORIZON_WEEKS = 4
 MONTHLY_CONSOLIDATION_HORIZONS = (1, 2, 3, 4)
 STEP_WEEKS = 1
 FINAL_EVALUATION_WEEKS = 16
+MIN_COVERAGE_GAP_WEEKS = 16
 TUNING_WINDOWS = 8
 SIGNIFICANCE_LEVEL = 0.05
 
@@ -59,12 +63,14 @@ BASELINE_NAMES = (
 )
 
 # Variables que se agregan y se consideran disponibles antes de pronosticar.
-# El INPC se desplaza una semana para representar el último valor publicado.
+# La inflación anualizada se desplaza una semana para representar el último
+# valor publicado. El nivel del INPC sólo actualiza importes y no se usa como
+# predictor contemporáneo.
 KNOWN_EXOGENOUS = (
     "es_festivo_mexicano",
     "es_fecha_pago",
     "nacimientos_indice",
-    "inpc_valor_mensual",
+    "inflacion_anual_pct",
 )
 TEMPERATURE_COLUMN = "temperatura_promedio_mensual_hidalgo"
 
@@ -90,8 +96,8 @@ EXOGENOUS_REGISTRY = {
     "nacimientos_indice_semanal": {
         "fuente": "índice demográfico histórico", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
     },
-    "inpc_observado_semana": {
-        "fuente": "INPC publicado", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
+    "inflacion_anual_observada_semana": {
+        "fuente": "inflación anualizada publicada mensualmente", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
     },
     "temperatura_observada_semana": {
         "fuente": "temperatura histórica regional", "disponibilidad": "último valor observado", "rezago_semanas": 1,
@@ -130,6 +136,12 @@ SALES_COLUMNS = (
     "ventas_importe_real_2026_05",
     "ventas_registros",
     "ventas_cantidad_total",
+    "ventas_total_items",
+    "ventas_pastel",
+    "ventas_galletas",
+    "ventas_otros",
+    "ventas_cupcakes",
+    "ventas_detalle_registros",
 )
 PURCHASE_COLUMN = "compras_total_real_2026_05"
 
@@ -138,3 +150,74 @@ def ensure_output_dir() -> Path:
     """Crea y devuelve la carpeta exclusiva de resultados semanales."""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     return OUTPUT_DIR
+
+
+def sustained_zero_runs(values, min_length: int = MIN_COVERAGE_GAP_WEEKS) -> list[tuple[int, int]]:
+    """Devuelve intervalos inclusivos de ceros consecutivos prolongados."""
+    zero = np.isclose(np.asarray(values, dtype=float), 0.0)
+    runs: list[tuple[int, int]] = []
+    start = None
+    for index, is_zero in enumerate(zero):
+        if is_zero and start is None:
+            start = index
+        if start is not None and (not is_zero or index == len(zero) - 1):
+            end = index if is_zero and index == len(zero) - 1 else index - 1
+            if end - start + 1 >= min_length:
+                runs.append((start, end))
+            start = None
+    return runs
+
+
+def primary_coverage_block(
+    frame: pd.DataFrame,
+    target_column: str,
+    activity_column: str | None = None,
+    min_gap_weeks: int = MIN_COVERAGE_GAP_WEEKS,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Selecciona el bloque continuo principal y documenta brechas de cobertura.
+
+    Una racha prolongada de ceros se considera brecha cuando es una cola o,
+    dentro del historial, coincide con actividad comercial positiva. Esto evita
+    convertir ausencia de registro de compras en demanda intermitente real.
+    """
+    ordered = frame.sort_values(DATE_COLUMN).reset_index(drop=True).copy()
+    candidates = sustained_zero_runs(ordered[target_column].fillna(0), min_gap_weeks)
+    gaps: list[tuple[int, int, str]] = []
+    for start, end in candidates:
+        trailing = end == len(ordered) - 1
+        concurrent_activity = False
+        if activity_column and activity_column in ordered:
+            concurrent_activity = bool(ordered.loc[start:end, activity_column].fillna(0).gt(0).mean() >= 0.25)
+        if trailing or concurrent_activity:
+            reason = "cola sin cobertura" if trailing else "brecha interna con actividad comercial"
+            gaps.append((start, end, reason))
+    boundaries = [-1]
+    for start, end, _ in gaps:
+        boundaries.extend([start, end])
+    boundaries.append(len(ordered))
+    segments = []
+    cursor = 0
+    for start, end, _ in gaps:
+        if cursor < start:
+            segments.append((cursor, start - 1))
+        cursor = end + 1
+    if cursor < len(ordered):
+        segments.append((cursor, len(ordered) - 1))
+    usable = [segment for segment in segments if ordered.loc[segment[0]:segment[1], target_column].fillna(0).gt(0).any()]
+    if not usable:
+        raise ValueError("No se identificó un bloque continuo con compras positivas.")
+    chosen_start, chosen_end = max(usable, key=lambda pair: pair[1] - pair[0] + 1)
+    report = pd.DataFrame([
+        {
+            "inicio": ordered.loc[start, DATE_COLUMN], "fin": ordered.loc[end, DATE_COLUMN],
+            "semanas": end - start + 1, "motivo": reason,
+            "actividad_positiva_pct": float(ordered.loc[start:end, activity_column].fillna(0).gt(0).mean() * 100)
+            if activity_column and activity_column in ordered else np.nan,
+        }
+        for start, end, reason in gaps
+    ])
+    selected = ordered.iloc[chosen_start:chosen_end + 1].copy()
+    selected.attrs["inicio_bloque"] = ordered.loc[chosen_start, DATE_COLUMN]
+    selected.attrs["fin_bloque"] = ordered.loc[chosen_end, DATE_COLUMN]
+    selected.attrs["semanas_excluidas"] = len(ordered) - len(selected)
+    return selected, report

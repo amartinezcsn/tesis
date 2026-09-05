@@ -1,5 +1,5 @@
 {
-  "generado_utc": "2026-08-27T04:08:05.399938+00:00",
+  "generado_utc": "2026-08-29T17:54:30.176555+00:00",
   "frecuencia": "semanal",
   "objetivo": "target_compras_importe_semanal",
   "columna_temporal": "semana_inicio",
@@ -46,61 +46,67 @@
     "maestro_semanal": {
       "ruta": "C:\\Python\\tesis\\input\\dataset_maestro_semanal.xlsx",
       "existe": true,
-      "tamano_bytes": 23235,
-      "sha256": "46da7e089083d792f43bc36e2fd36c7b16a3df92fa5a6bf821050bb4ccc4e034"
+      "tamano_bytes": 23239,
+      "sha256": "2245b3aeda8e0e9a280e8917111a72d197fd554fdbebac98307f81280e0ebe84"
     },
     "dataset_modelado": {
       "ruta": "C:\\Python\\tesis\\input\\dataset_modelado_semanal.xlsx",
       "existe": true,
-      "tamano_bytes": 79344,
-      "sha256": "dc068ead9dd1dc8dca92198b22de7566b4d5fb67410816f6682bd1569c50edef"
+      "tamano_bytes": 79345,
+      "sha256": "628d18b79d36cc6f1ee5325773bc7ce177520960067aa3e4a79170a7a1fdebb5"
     }
   },
   "codigo": {
     "02_agregar_semanal.py": {
-      "ruta": "codigos\\02_agregar_semanal.py",
+      "ruta": "C:\\Python\\tesis\\codigos\\02_agregar_semanal.py",
       "existe": true,
-      "tamano_bytes": 4353,
-      "sha256": "badd29bc10af7ff35dc70ecb85fdfc0e536ef0ad6f0fbb4b432b4c68e9e0417f"
+      "tamano_bytes": 4467,
+      "sha256": "026dcea1ca981d2b3f60676b116f6bc078a1830ed978dc044528b8755aba1849"
     },
     "03_features_semanales.py": {
-      "ruta": "codigos\\03_features_semanales.py",
+      "ruta": "C:\\Python\\tesis\\codigos\\03_features_semanales.py",
       "existe": true,
-      "tamano_bytes": 7060,
-      "sha256": "e631263dabb9d4437afd36267be5afde1e63a733bac3b6a6e015e1fdc7ac4e26"
+      "tamano_bytes": 7220,
+      "sha256": "73729e1e389c24a8e19b5ce601d4379f16d7e280815993e24d5c8ff3d253a9f0"
     },
     "04_perfil_semanal.py": {
-      "ruta": "codigos\\04_perfil_semanal.py",
+      "ruta": "C:\\Python\\tesis\\codigos\\04_perfil_semanal.py",
       "existe": true,
       "tamano_bytes": 1820,
       "sha256": "5f3c21d648c97f4cfff543c1ef62483b427aca1e24f4f8b9081ab5ea0b4bb916"
     },
-    "06_modelos_rolling_window.py": {
-      "ruta": "codigos\\06_modelos_rolling_window.py",
+    "04_analisis_series_temporales_semanal.py": {
+      "ruta": "C:\\Python\\tesis\\codigos\\04_analisis_series_temporales_semanal.py",
       "existe": true,
-      "tamano_bytes": 27892,
-      "sha256": "2c80bc3de4401e50a42fc0462953fa3919d86bbe944bed0c1aa273e09e6d2f0e"
+      "tamano_bytes": 17163,
+      "sha256": "4b84f058941674a86ab1965451cb859c93885406eec902e03b7b6f9ed8ae4bc0"
+    },
+    "06_modelos_rolling_window.py": {
+      "ruta": "C:\\Python\\tesis\\codigos\\06_modelos_rolling_window.py",
+      "existe": true,
+      "tamano_bytes": 29142,
+      "sha256": "27eaaaa069aaa35a305cd7bba0064d72b9481d0d04431ab2933dd888b85e7d24"
     },
     "07_reportes_semanales.py": {
-      "ruta": "codigos\\07_reportes_semanales.py",
+      "ruta": "C:\\Python\\tesis\\codigos\\07_reportes_semanales.py",
       "existe": true,
-      "tamano_bytes": 3384,
-      "sha256": "9ba6b4bbea0587cddb8f119e5cd871024c9fc354286712dfab7b0dfa14243c04"
+      "tamano_bytes": 3451,
+      "sha256": "5b1a5f41d9f3ea654cb610f61396a8ec8c2d618f76323c604f222e802c242a76"
     },
     "08_exportar_dss_semanal.py": {
-      "ruta": "codigos\\08_exportar_dss_semanal.py",
+      "ruta": "C:\\Python\\tesis\\codigos\\08_exportar_dss_semanal.py",
       "existe": true,
-      "tamano_bytes": 2358,
-      "sha256": "95e2d7d5cb1f56045b151f3315d42fd699cae9b6217419ba1bce789356a6c76d"
+      "tamano_bytes": 2406,
+      "sha256": "c91f2e280247364de4036d7e79bd311d9565f8e92e6cacfed37dea8b6636b1b9"
     },
     "config_semanal.py": {
-      "ruta": "codigos\\config_semanal.py",
+      "ruta": "C:\\Python\\tesis\\codigos\\config_semanal.py",
       "existe": true,
-      "tamano_bytes": 5161,
-      "sha256": "24cefe53b88c103d96fd950835e2c7b18c7a939575f814ccac39e611f294a133"
+      "tamano_bytes": 8683,
+      "sha256": "bbd957e95348b43e2e36e54c3e76d7e5f03de30c2d85c087b30f26fbdf3942b6"
     },
     "trazabilidad.py": {
-      "ruta": "codigos\\trazabilidad.py",
+      "ruta": "C:\\Python\\tesis\\codigos\\trazabilidad.py",
       "existe": true,
       "tamano_bytes": 2713,
       "sha256": "48b58aa083b902460b5c50f80783c4943564d1759b1dc9bdff17bf662e270c24"

@@ -13,6 +13,7 @@ OUT_DIR = Path(r"C:/Python/tesis/input")
 START_DATE = pd.Timestamp("2022-01-01")
 END_DATE = pd.Timestamp("2026-05-31")
 INPC_BASE = pd.Timestamp("2026-05-01")
+OECD_INPC_FILE = "oecd_mexico_prices_2022_2026.csv"
 
 
 def strip_accents(value: str) -> str:
@@ -92,19 +93,46 @@ def save_excel(path: Path, sheets: dict[str, pd.DataFrame]) -> None:
 
 
 def build_inpc() -> tuple[pd.DataFrame, pd.DataFrame]:
-    raw = pd.read_csv(BASE_DIR / "INPC_2022_2026.csv")
-    raw["fecha"] = pd.to_datetime(raw["Fecha"], errors="coerce")
-    raw["fecha"] = raw["fecha"].dt.to_period("M").dt.to_timestamp()
-    raw = raw.loc[(raw["fecha"] >= START_DATE) & (raw["fecha"] <= END_DATE)].copy()
-    raw = raw.drop_duplicates(subset=["fecha"], keep="last").sort_values("fecha")
-    base_value = raw.loc[raw["fecha"] == INPC_BASE, "Valor"].iloc[0]
-    clean = raw.loc[:, ["fecha", "Valor"]].rename(columns={"Valor": "inpc_valor"})
-    clean["factor_ajuste_a_2026_05"] = base_value / clean["inpc_valor"]
+    """Separa el nivel del índice de la inflación anual reportada cada mes."""
+    inflation = pd.read_csv(BASE_DIR / "INPC_2022_2026.csv")
+    inflation["fecha"] = pd.to_datetime(inflation["Fecha"], errors="coerce").dt.to_period("M").dt.to_timestamp()
+    inflation = inflation.loc[inflation["fecha"].between(START_DATE, END_DATE), ["fecha", "Valor"]]
+    inflation = inflation.rename(columns={"Valor": "inflacion_anual_pct"}).drop_duplicates("fecha", keep="last")
+
+    index_raw = pd.read_csv(BASE_DIR / OECD_INPC_FILE)
+    index_raw = index_raw.loc[
+        index_raw["REF_AREA"].eq("MEX")
+        & index_raw["FREQ"].eq("M")
+        & index_raw["MEASURE"].eq("CPI")
+        & index_raw["UNIT_MEASURE"].eq("IX")
+        & index_raw["EXPENDITURE"].eq("_T")
+        & index_raw["ADJUSTMENT"].eq("N")
+        & index_raw["TRANSFORMATION"].eq("_Z")
+    ].copy()
+    index_raw["fecha"] = pd.to_datetime(index_raw["TIME_PERIOD"], errors="coerce").dt.to_period("M").dt.to_timestamp()
+    index_raw["inpc_indice"] = pd.to_numeric(index_raw["OBS_VALUE"], errors="coerce")
+    index_raw = index_raw.loc[index_raw["fecha"].between(START_DATE, END_DATE), ["fecha", "inpc_indice"]]
+    index_raw = index_raw.drop_duplicates("fecha", keep="last")
+
+    clean = index_raw.merge(inflation, on="fecha", how="left").sort_values("fecha")
+    if clean["fecha"].duplicated().any() or clean["inpc_indice"].isna().any():
+        raise ValueError("La serie mensual del nivel del INPC tiene duplicados o valores faltantes.")
+    base_value = clean.loc[clean["fecha"].eq(INPC_BASE), "inpc_indice"].iloc[0]
+    clean["factor_ajuste_a_2026_05"] = base_value / clean["inpc_indice"]
     clean["fecha"] = clean["fecha"].dt.date
     meta = pd.DataFrame(
         {
-            "métrica": ["fecha_base", "valor_base_inpc", "criterio_ajuste"],
-            "valor": [str(INPC_BASE.date()), float(base_value), "deflactar a pesos de mayo de 2026"],
+            "métrica": [
+                "fecha_base", "nivel_base_inpc", "criterio_ajuste", "variable_archivo_original",
+                "fuente_nivel_indice", "serie_nivel", "consulta_api",
+            ],
+            "valor": [
+                str(INPC_BASE.date()), float(base_value),
+                "importe_real = importe_nominal × INPC_mayo_2026 / INPC_mes",
+                "inflación anualizada reportada mensualmente; no se usa como nivel del índice",
+                "OCDE, G20 Prices, México", "CPI nacional mensual, unidad IX, sin ajuste",
+                "https://sdmx.oecd.org/public/rest/v1/data/OECD.SDD.TPS,DSD_G20_PRICES%40DF_G20_PRICES,1.0/MEX.M......",
+            ],
         }
     )
     return clean, meta
@@ -163,7 +191,7 @@ def build_compras(inpc: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     raw["fecha_mes"] = raw["fecha"].dt.to_period("M").dt.to_timestamp().dt.date
 
     clean_detail = raw.merge(inpc, left_on="fecha_mes", right_on="fecha", how="left", suffixes=("", "_inpc"))
-    clean_detail = clean_detail.rename(columns={"inpc_valor": "inpc_valor_mensual"})
+    clean_detail = clean_detail.rename(columns={"inpc_indice": "inpc_indice_mensual"})
     clean_detail["factor_ajuste_a_2026_05"] = clean_detail["factor_ajuste_a_2026_05"].fillna(1.0)
     clean_detail["monto_real_2026_05"] = clean_detail["monto_nominal"] * clean_detail["factor_ajuste_a_2026_05"]
     clean_detail["precio_unitario_real_2026_05"] = clean_detail["precio_unitario_nominal"] * clean_detail["factor_ajuste_a_2026_05"]
@@ -251,10 +279,14 @@ def build_ventas(inpc: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     raw["galletas"] = pd.to_numeric(raw["Galletas"], errors="coerce")
     raw["otros"] = pd.to_numeric(raw["Otros"], errors="coerce")
     raw["cupcakes"] = pd.to_numeric(raw["Cupcakes"], errors="coerce")
+    raw["detalle_producto_disponible"] = (
+        raw["descripcion_items"].notna()
+        | raw[["pastel", "galletas", "otros", "cupcakes"]].notna().any(axis=1)
+    ).astype(int)
     raw["fecha_mes"] = raw["fecha"].dt.to_period("M").dt.to_timestamp().dt.date
 
     clean_detail = raw.merge(inpc, left_on="fecha_mes", right_on="fecha", how="left", suffixes=("", "_inpc"))
-    clean_detail = clean_detail.rename(columns={"inpc_valor": "inpc_valor_mensual"})
+    clean_detail = clean_detail.rename(columns={"inpc_indice": "inpc_indice_mensual"})
     clean_detail["factor_ajuste_a_2026_05"] = clean_detail["factor_ajuste_a_2026_05"].fillna(1.0)
     clean_detail["importe_real_2026_05"] = clean_detail["importe_nominal"] * clean_detail["factor_ajuste_a_2026_05"]
     clean_detail["subtotal_real_2026_05"] = clean_detail["subtotal_nominal"] * clean_detail["factor_ajuste_a_2026_05"]
@@ -289,6 +321,7 @@ def build_ventas(inpc: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
             "galletas",
             "otros",
             "cupcakes",
+            "detalle_producto_disponible",
             "factor_ajuste_a_2026_05",
         ],
     ].copy()
@@ -319,6 +352,7 @@ def build_ventas(inpc: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
             ventas_galletas=("galletas", "sum"),
             ventas_otros=("otros", "sum"),
             ventas_cupcakes=("cupcakes", "sum"),
+            ventas_detalle_registros=("detalle_producto_disponible", "sum"),
             ventas_clientes_unicos=("nombre", pd.Series.nunique),
             ventas_vendedor_unico=("vendedor", pd.Series.nunique),
         )
@@ -327,6 +361,8 @@ def build_ventas(inpc: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     daily = full_dates.merge(daily, on="fecha", how="left")
     fill_cols = [c for c in daily.columns if c != "fecha"]
     daily[fill_cols] = daily[fill_cols].fillna(0)
+    product_cols = ["ventas_pastel", "ventas_galletas", "ventas_otros", "ventas_cupcakes"]
+    daily.loc[daily["ventas_detalle_registros"].eq(0), product_cols] = np.nan
     daily = daily.sort_values("fecha").reset_index(drop=True)
     return clean_detail, daily
 
@@ -378,9 +414,9 @@ def build_master(
         how="left",
     )
     master = master.merge(
-        inpc_daily.rename(columns={"inpc_valor": "inpc_valor_mensual"})[["fecha", "inpc_valor_mensual"]]
+        inpc_daily[["fecha", "inpc_indice", "inflacion_anual_pct"]]
         .assign(fecha_mes=lambda d: pd.to_datetime(d["fecha"]).dt.to_period("M").dt.to_timestamp().dt.date)
-        [["fecha_mes", "inpc_valor_mensual"]],
+        [["fecha_mes", "inpc_indice", "inflacion_anual_pct"]],
         on="fecha_mes",
         how="left",
     )
@@ -400,6 +436,7 @@ def build_master(
                 "ventas_galletas",
                 "ventas_otros",
                 "ventas_cupcakes",
+                "ventas_detalle_registros",
                 "ventas_clientes_unicos",
                 "ventas_vendedor_unico",
             ]
@@ -423,7 +460,11 @@ def build_master(
     clima_dummies = pd.get_dummies(clima_cols["clima"], prefix="clima", dtype=int)
     master = pd.concat([master.reset_index(drop=True), clima_dummies.reset_index(drop=True)], axis=1)
 
-    fill_zero_cols = [c for c in master.columns if c != "fecha" and c not in {"fecha_dt", "fecha_mes"}]
+    product_cols = {"ventas_pastel", "ventas_galletas", "ventas_otros", "ventas_cupcakes"}
+    fill_zero_cols = [
+        c for c in master.columns
+        if c != "fecha" and c not in {"fecha_dt", "fecha_mes"} and c not in product_cols
+    ]
     master[fill_zero_cols] = master[fill_zero_cols].fillna(0)
 
     master = master.drop(columns=["fecha_dt", "fecha_mes"])
@@ -457,7 +498,8 @@ def main() -> None:
     summary.append("")
     summary.append("## INPC")
     summary.append(f"- Filas: {len(inpc_clean)}")
-    summary.append(f"- Base de ajuste: {INPC_BASE.date()}")
+    summary.append(f"- Base de ajuste correcta con nivel del índice: {INPC_BASE.date()}")
+    summary.append("- INPC_2022_2026.csv se interpreta como inflación anualizada mensual y no como nivel del índice")
     summary.append("")
     summary.append("## Temperatura Hidalgo")
     summary.append(f"- Filas: {len(temp_clean)}")

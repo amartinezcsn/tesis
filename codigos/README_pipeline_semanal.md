@@ -24,6 +24,19 @@ estadísticos y de aprendizaje automático, comparados mediante rolling-window
 - Intermitencia: Croston-SBA y TSB; variantes Ridge, Random Forest y
   HistGradientBoosting con `log1p`; y modelo hurdle de dos etapas.
 
+## Análisis explícito de la serie temporal
+
+Antes de comparar modelos, `04_analisis_series_temporales_semanal.py`
+caracteriza la serie del importe semanal de compras. El módulo distingue la
+cola sin cobertura de los ceros internos observados, reserva las 16 semanas
+finales y calcula los diagnósticos únicamente con el bloque de desarrollo.
+
+El análisis incluye ACF, PACF, ADF, KPSS, Ljung-Box, proporción de ceros, ADI,
+CV² de importes positivos, detección robusta de valores atípicos y una
+descomposición STL anual de carácter exploratorio. Estos resultados orientan
+la ingeniería de características y la selección de modelos, pero no se usan
+para afirmar causalidad ni una estacionalidad anual concluyente.
+
 ## Trazabilidad y disponibilidad de información
 
 Las rutas se resuelven desde la carpeta del proyecto, por lo que el pipeline
@@ -71,6 +84,7 @@ Para comprobar los controles estructurales antes de una corrida completa:
 | `input/dataset_maestro_semanal.xlsx` | Datos diarios agregados por semana. |
 | `input/dataset_modelado_semanal.xlsx` | Objetivo y predictores sin fuga de información. |
 | `output/semanal/01_perfil_semanal.xlsx` | Cobertura, ceros y calidad. |
+| `output/semanal/series_temporales/` | Diagnósticos, tablas abiertas y figuras del análisis temporal. |
 | `output/semanal/02_modelos_rolling_window.xlsx` | Predicciones y métricas por horizonte, H1/H2 y consolidado de cuatro semanas. |
 | `output/semanal/03_resumen_resultados_semanales.md` | Síntesis legible. |
 | `output/semanal/04_dss_semanal.json` | Datos de evaluación para el DSS. |

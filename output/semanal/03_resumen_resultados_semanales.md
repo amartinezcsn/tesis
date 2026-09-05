@@ -2,8 +2,8 @@
 
 ## Configuración de referencia
 - Línea base primaria para H1: `empirico_ultimo_valor`.
-- Mejor h=1: `ridge` (historico); RMSE 502.1078; MAE 325.9802.
-- Mejor h=4: `empirico_promedio_4s` (referencia); RMSE 652.5237; MAE 427.6304.
+- Mejor h=1: `empirico_estacional_52s` (referencia); RMSE 695.1872; MAE 438.1884.
+- Mejor h=4: `hurdle_hist_gradient` (historico_exogeno); RMSE 399.5604; MAE 318.5170.
 - Consolidado mensual: 336 presupuestos históricos de cuatro semanas, cada uno como suma de h=1+h=2+h=3+h=4.
 
 ## Interpretación

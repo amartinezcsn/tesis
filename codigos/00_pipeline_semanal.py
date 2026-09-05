@@ -1,7 +1,8 @@
 """Ejecuta el pipeline semanal reproducible de la tesis.
 
-Orden: agregación -> características -> perfil -> rolling-window -> reportes ->
-exportación DSS. Las fases diarias anteriores no se modifican ni se ejecutan.
+Orden: agregación -> características -> perfil -> análisis temporal ->
+rolling-window -> reportes -> exportación DSS. Las fases diarias anteriores no
+se modifican ni se ejecutan.
 """
 
 import subprocess
@@ -16,6 +17,7 @@ STAGES = (
     "02_agregar_semanal.py",
     "03_features_semanales.py",
     "04_perfil_semanal.py",
+    "04_analisis_series_temporales_semanal.py",
     "06_modelos_rolling_window.py",
     "07_reportes_semanales.py",
     "08_exportar_dss_semanal.py",

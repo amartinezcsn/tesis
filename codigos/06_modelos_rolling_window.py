@@ -35,8 +35,10 @@ from config_semanal import (
     TARGET_COLUMN,
     TUNING_WINDOWS,
     WEEKLY_MODEL_PATH,
+    WEEKLY_MASTER_PATH,
     WINDOW_WEEKS,
     ensure_output_dir,
+    primary_coverage_block,
 )
 
 
@@ -540,7 +542,15 @@ def main() -> None:
     frame = pd.read_excel(WEEKLY_MODEL_PATH, sheet_name="modelo_semanal")
     frame[DATE_COLUMN] = pd.to_datetime(frame[DATE_COLUMN])
     reject_synthetic_targets(frame)
-    frame, tail = trim_unobserved_tail(frame)
+    weekly = pd.read_excel(WEEKLY_MASTER_PATH, sheet_name="semanal")
+    weekly[DATE_COLUMN] = pd.to_datetime(weekly[DATE_COLUMN])
+    coverage_block, coverage_gaps = primary_coverage_block(
+        weekly, "compras_importe_semanal", activity_column="ventas_importe_real_2026_05"
+    )
+    start, end = coverage_block[DATE_COLUMN].min(), coverage_block[DATE_COLUMN].max()
+    original_rows = len(frame)
+    frame = frame.loc[frame[DATE_COLUMN].between(start, end)].copy()
+    excluded_coverage = original_rows - len(frame)
     # Se usan orígenes comunes compatibles con h=4. Así la consolidación
     # mensual compara exactamente las mismas decisiones de pronóstico entre
     # h=1, h=2, h=3 y h=4.
@@ -567,8 +577,8 @@ def main() -> None:
     monthly = monthly_consolidation(predictions)
     coverage = pd.DataFrame(
         {
-            "metrica": ["semanas_disponibles", "semanas_cola_excluidas", "ventana_entrenamiento", "semanas_evaluacion", "baseline_primaria", "horizonte_principal", "horizonte_secundario", "consolidado"],
-            "valor": [len(frame), tail, WINDOW_WEEKS, len(evaluation_origins), PRIMARY_BASELINE, HORIZON_WEEKS, SECONDARY_HORIZON_WEEKS, "h=1+h=2+h=3+h=4"],
+            "metrica": ["semanas_disponibles", "semanas_excluidas_por_cobertura", "brechas_cobertura", "ventana_entrenamiento", "semanas_evaluacion", "baseline_primaria", "horizonte_principal", "horizonte_secundario", "consolidado"],
+            "valor": [len(frame), excluded_coverage, len(coverage_gaps), WINDOW_WEEKS, len(evaluation_origins), PRIMARY_BASELINE, HORIZON_WEEKS, SECONDARY_HORIZON_WEEKS, "h=1+h=2+h=3+h=4"],
         }
     )
     output = ensure_output_dir() / "02_modelos_rolling_window.xlsx"
@@ -579,6 +589,7 @@ def main() -> None:
         h2.to_excel(writer, sheet_name="contraste_h2", index=False)
         monthly.to_excel(writer, sheet_name="consolidado_4_semanas", index=False)
         coverage.to_excel(writer, sheet_name="cobertura", index=False)
+        coverage_gaps.to_excel(writer, sheet_name="brechas_cobertura", index=False)
     print(f"Archivo generado: {output}")
 
 

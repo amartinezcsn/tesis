@@ -14,7 +14,8 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 aggregate = importlib.import_module("02_agregar_semanal")
 features = importlib.import_module("03_features_semanales")
 models = importlib.import_module("06_modelos_rolling_window")
-from config_semanal import DATE_COLUMN, PRIMARY_BASELINE, TARGET_COLUMN, WINDOW_WEEKS
+time_series = importlib.import_module("04_analisis_series_temporales_semanal")
+from config_semanal import DATE_COLUMN, PRIMARY_BASELINE, TARGET_COLUMN, WINDOW_WEEKS, primary_coverage_block
 
 
 class WeeklyPipelineTests(unittest.TestCase):
@@ -152,6 +153,43 @@ class WeeklyPipelineTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "sintéticas"):
             models.reject_synthetic_targets(frame)
+
+    def test_temporal_analysis_trims_only_unobserved_tail(self):
+        frame = pd.DataFrame(
+            {
+                DATE_COLUMN: pd.date_range("2024-01-01", periods=8, freq="W-MON"),
+                time_series.SERIES_COLUMN: [0.0, 10.0, 0.0, 20.0, 0.0, 0.0, 0.0, 0.0],
+            }
+        )
+        observed, tail = time_series.trim_unobserved_tail(frame)
+        self.assertEqual(len(observed), 4)
+        self.assertEqual(tail, 4)
+        self.assertEqual(float(observed.iloc[2][time_series.SERIES_COLUMN]), 0.0)
+
+    def test_intermittency_classification_is_reproducible(self):
+        values = np.array([10.0, 0.0, 12.0, 0.0, 11.0, 0.0, 10.0, 0.0])
+        result = time_series.classify_intermittency(values)
+        self.assertAlmostEqual(float(result["adi"]), 2.0)
+        self.assertEqual(result["clasificacion"], "intermitente")
+
+    def test_autocorrelation_table_respects_sample_limit(self):
+        values = np.sin(np.arange(40) * 2 * np.pi / 4) + np.arange(40) * 0.01
+        result = time_series.autocorrelation_table(values, max_lag=12)
+        self.assertEqual(int(result["rezago"].max()), 12)
+        self.assertTrue(result["acf"].notna().all())
+
+    def test_primary_coverage_excludes_internal_gap_with_sales(self):
+        frame = pd.DataFrame(
+            {
+                DATE_COLUMN: pd.date_range("2022-01-03", periods=50, freq="W-MON"),
+                "compras": [10.0] * 20 + [0.0] * 16 + [20.0] * 14,
+                "ventas": [5.0] * 50,
+            }
+        )
+        block, gaps = primary_coverage_block(frame, "compras", activity_column="ventas")
+        self.assertEqual(len(block), 20)
+        self.assertEqual(len(gaps), 1)
+        self.assertEqual(gaps.iloc[0]["motivo"], "brecha interna con actividad comercial")
 
 
 if __name__ == "__main__":

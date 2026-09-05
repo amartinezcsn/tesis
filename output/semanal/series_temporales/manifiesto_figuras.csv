@@ -1,0 +1,6 @@
+﻿numero,archivo,proposito
+1,01_serie_semanal_compras.png,"Serie semanal, tendencia robusta y bloque final reservado."
+2,02_acf_pacf_semanal.png,ACF y PACF calculadas sin utilizar las semanas finales de evaluación.
+3,03_perfil_semana_anio.png,Perfil anual exploratorio; no implica estacionalidad estable.
+4,04_atipicos_robustos.png,Los atípicos se identifican para interpretación; no se eliminan automáticamente.
+5,05_descomposicion_stl_exploratoria.png,Descomposición exploratoria limitada por el número de ciclos anuales.
