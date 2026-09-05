@@ -1,0 +1,19 @@
+Archivo generado: C:\Python\tesis\input\dataset_maestro_semanal.xlsx
+Archivo generado: C:\Python\tesis\input\dataset_modelado_semanal.xlsx
+Archivo generado: C:\Python\tesis\output\semanal\01_perfil_semanal.xlsx
+Archivo generado: C:\Python\tesis\output\semanal\02_modelos_rolling_window.xlsx
+Reportes generados en: C:\Python\tesis\output\semanal
+Archivo generado: C:\Python\tesis\output\semanal\04_dss_semanal.json
+
+=== Etapa semanal: 02_agregar_semanal.py ===
+
+=== Etapa semanal: 03_features_semanales.py ===
+
+=== Etapa semanal: 04_perfil_semanal.py ===
+
+=== Etapa semanal: 06_modelos_rolling_window.py ===
+
+=== Etapa semanal: 07_reportes_semanales.py ===
+
+=== Etapa semanal: 08_exportar_dss_semanal.py ===
+Manifiesto generado: output/semanal/00_trazabilidad_ejecucion.json

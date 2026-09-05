@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Python\tesis\codigos\02_agregar_semanal.py", line 114, in <module>
+    main()
+  File "C:\Python\tesis\codigos\02_agregar_semanal.py", line 107, in main
+    with pd.ExcelWriter(WEEKLY_MASTER_PATH, engine="openpyxl") as writer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\tesis\.venv\Lib\site-packages\pandas\io\excel\_openpyxl.py", line 62, in __init__
+    super().__init__(
+  File "C:\Python\tesis\.venv\Lib\site-packages\pandas\io\excel\_base.py", line 1281, in __init__
+    self._handles = get_handle(
+                    ^^^^^^^^^^^
+  File "C:\Python\tesis\.venv\Lib\site-packages\pandas\io\common.py", line 939, in get_handle
+    handle = open(handle, ioargs.mode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\Python\\tesis\\input\\dataset_maestro_semanal.xlsx'
+Traceback (most recent call last):
+  File "C:\Python\tesis\codigos\00_pipeline_semanal.py", line 40, in <module>
+    main()
+  File "C:\Python\tesis\codigos\00_pipeline_semanal.py", line 30, in main
+    subprocess.run([sys.executable, str(scripts_dir / stage)], check=True)
+  File "C:\Users\DEMO\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Python\\tesis\\.venv\\Scripts\\python.exe', 'C:\\Python\\tesis\\codigos\\02_agregar_semanal.py']' returned non-zero exit status 1.
