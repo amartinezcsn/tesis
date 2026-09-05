@@ -96,7 +96,8 @@ como análisis complementario, para `h=4`. El consolidado mensual agrega cuatro
 pronósticos semanales directos; no estima una serie mensual independiente. No calcula
 inventario, cantidades por insumo, merma, costos de faltante ni órdenes de
 compra. Una predicción futura requiere variables exógenas conocidas antes de la
-semana pronosticada.
+semana pronosticada; el JSON del DSS no fabrica pronósticos futuros cuando esas
+fuentes no existen.
 
 La extensión `05_extension_sintetica_compras.xlsx` se conserva fuera de las
 entradas operativas. Sus filas sólo sirven para análisis de sensibilidad o
@@ -109,3 +110,5 @@ selección, evaluación ni contraste de H1/H2.
 Los archivos diarios previos, incluidos los que usan `rolling_origin`, PCA o
 RNN/LSTM, se conservan como antecedente reproducible y no forman parte de la
 ejecución semanal. La única entrada operativa es `00_pipeline_semanal.py`.
+La entrada diaria (`input/dataset_maestro_diario.xlsx`) debe generarse
+previamente mediante el pipeline maestro de limpieza.

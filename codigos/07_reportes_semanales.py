@@ -24,6 +24,7 @@ def main() -> None:
         "# Resultados del pronóstico semanal",
         "",
         "## Configuración de referencia",
+        f"- Horizontes evaluados: {horizons}; el principal es H={PRIMARY_HORIZON_WEEKS}.",
         f"- Línea base primaria para H1: `{PRIMARY_BASELINE}`.",
         f"- Mejor h=1: `{winner_h1['modelo']}` ({winner_h1['feature_set']}); RMSE {winner_h1['rmse']:.4f}; MAE {winner_h1['mae']:.4f}.",
         f"- Mejor h=4: `{winner_h4['modelo']}` ({winner_h4['feature_set']}); RMSE {winner_h4['rmse']:.4f}; MAE {winner_h4['mae']:.4f}.",

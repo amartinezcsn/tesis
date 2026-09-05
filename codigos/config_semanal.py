@@ -41,8 +41,12 @@ HORIZON_WEEKS = 1
 SECONDARY_HORIZON_WEEKS = 4
 MONTHLY_CONSOLIDATION_HORIZONS = (1, 2, 3, 4)
 STEP_WEEKS = 1
-FINAL_EVALUATION_WEEKS = 16
-MIN_COVERAGE_GAP_WEEKS = 16
+# Se reservan 16 orígenes finales para la evaluación fuera de muestra. Para
+# H=1 equivalen a 16 semanas; para H=4 se reportan 16 orígenes consecutivos.
+FINAL_EVALUATION_ORIGINS = 16
+# Compatibilidad: número de semanas usadas para la evaluación final y el gap mínimo
+FINAL_EVALUATION_WEEKS = FINAL_EVALUATION_ORIGINS
+MIN_COVERAGE_GAP_WEEKS = FINAL_EVALUATION_ORIGINS
 TUNING_WINDOWS = 8
 SIGNIFICANCE_LEVEL = 0.05
 
@@ -62,6 +66,9 @@ BASELINE_NAMES = (
     "empirico_estacional_52s",
 )
 
+# Fuentes exógenas que deben estar disponibles antes de emitir un pronóstico.
+# Las dos últimas se incorporan con rezago porque el archivo semanal contiene
+# valores observados, no pronósticos futuros.
 # Variables que se agregan y se consideran disponibles antes de pronosticar.
 # La inflación anualizada se desplaza una semana para representar el último
 # valor publicado. El nivel del INPC sólo actualiza importes y no se usa como
@@ -74,9 +81,6 @@ KNOWN_EXOGENOUS = (
 )
 TEMPERATURE_COLUMN = "temperatura_promedio_mensual_hidalgo"
 
-# Registro auditable de procedencia y disponibilidad. Un valor con ``rezago=1``
-# se desplaza una semana antes de convertirse en predictor; así se representa
-# el último dato publicado y no una medición conocida al cierre de la semana.
 EXOGENOUS_REGISTRY = {
     "eventos_festivos_semana": {
         "fuente": "calendario de festividades", "disponibilidad": "conocida antes del inicio de la semana", "rezago_semanas": 0,
@@ -128,6 +132,7 @@ def exogenous_feature_name(source: str) -> str:
 
 ALLOWED_EXOGENOUS_FEATURES = frozenset(
     [exogenous_feature_name(source) for source in EXOGENOUS_REGISTRY] + list(DERIVED_EXOGENOUS_FEATURES)
+)
 )
 
 # Se conservan las ventas como predictores históricos. Las compras no se usan

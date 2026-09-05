@@ -16,7 +16,6 @@ import pandas as pd
 from config_semanal import (
     DAILY_MASTER_PATH,
     DATE_COLUMN,
-    KNOWN_EXOGENOUS,
     PURCHASE_COLUMN,
     SALES_COLUMNS,
     TEMPERATURE_COLUMN,
@@ -38,8 +37,17 @@ def aggregate_daily_to_weekly(daily: pd.DataFrame) -> pd.DataFrame:
     disponibilidad ex ante se controla en la siguiente fase; aquí sólo se
     preserva la fuente observada.
     """
+    required = {"fecha", PURCHASE_COLUMN, *SALES_COLUMNS}
+    missing = sorted(required.difference(daily.columns))
+    if missing:
+        raise ValueError(f"Faltan columnas obligatorias del maestro diario: {', '.join(missing)}")
+
     frame = daily.copy()
     frame["fecha"] = pd.to_datetime(frame["fecha"])
+    if frame["fecha"].isna().any():
+        raise ValueError("El maestro diario contiene fechas inválidas o nulas.")
+    if frame["fecha"].duplicated().any():
+        raise ValueError("El maestro diario contiene fechas duplicadas; no se puede agregar de forma segura.")
     frame = frame.sort_values("fecha").reset_index(drop=True)
     frame[DATE_COLUMN] = _week_start(frame["fecha"])
 
@@ -62,6 +70,8 @@ def aggregate_daily_to_weekly(daily: pd.DataFrame) -> pd.DataFrame:
     # Sólo se conservan semanas completas. Con ello, las sumas de importes y
     # eventos mantienen una base temporal comparable.
     weekly = weekly.loc[weekly["dias_observados"].eq(7)].copy()
+    if weekly.empty:
+        raise ValueError("No se encontraron semanas calendario completas en el maestro diario.")
     weekly = weekly.rename(
         columns={
             PURCHASE_COLUMN: "compras_importe_semanal",

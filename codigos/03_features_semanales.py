@@ -22,6 +22,8 @@ from config_semanal import (
     ROLLING_WINDOWS,
     SALES_COLUMNS,
     TARGET_COLUMN,
+    WEEKLY_CALENDAR_EXOGENOUS,
+    WEEKLY_DELAYED_EXOGENOUS,
     WEEKLY_MASTER_PATH,
     WEEKLY_MODEL_PATH,
 )
@@ -61,6 +63,19 @@ def build_weekly_features(weekly: pd.DataFrame) -> pd.DataFrame:
     semana. Así no se usa el valor observado durante la semana que se desea
     pronosticar.
     """
+    required = {
+        DATE_COLUMN,
+        "compras_importe_semanal",
+        "semana_anio",
+        "mes",
+        "inpc_observado_semana",
+        "temperatura_observada_semana",
+        *SALES_COLUMNS,
+    }
+    missing = sorted(required.difference(weekly.columns))
+    if missing:
+        raise ValueError(f"Faltan columnas para construir el dataset semanal: {', '.join(missing)}")
+
     frame = weekly.sort_values(DATE_COLUMN).reset_index(drop=True).copy()
     model = pd.DataFrame({DATE_COLUMN: frame[DATE_COLUMN]})
     model[TARGET_COLUMN] = frame["compras_importe_semanal"].astype(float)

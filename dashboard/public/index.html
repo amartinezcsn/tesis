@@ -1062,14 +1062,14 @@ html&gt;body{padding:0}&lt;/style&gt;
           &lt;div class=&quot;cc-brand-sub&quot;&gt;Sistema de soporte a la decisión&lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;div class=&quot;cc-cutoff&quot;&gt;Resultados de validación temporal&lt;br&gt;&lt;strong&gt;Corte: 31 mayo 2026&lt;/strong&gt;&lt;/div&gt;
+      &lt;div class=&quot;cc-cutoff&quot;&gt;Resultados de validación temporal&lt;br&gt;&lt;strong&gt;Fuente: DSS semanal reproducible&lt;/strong&gt;&lt;/div&gt;
     &lt;/header&gt;
 
     &lt;main class=&quot;cc-main&quot;&gt;
       &lt;div class=&quot;cc-title-row&quot;&gt;
         &lt;div&gt;
           &lt;h1&gt;Resultados predictivos&lt;/h1&gt;
-          &lt;p class=&quot;cc-lead&quot;&gt;Comparación del mejor modelo contra la planeación empírica de Cup&amp;amp;Cake.&lt;/p&gt;
+          &lt;p class=&quot;cc-lead&quot;&gt;Comparación del mejor modelo semanal contra referencias empíricas para presupuesto de compras.&lt;/p&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 
@@ -1077,17 +1077,21 @@ html&gt;body{padding:0}&lt;/style&gt;
         &lt;label class=&quot;cc-field&quot;&gt;
           &lt;span&gt;Objetivo&lt;/span&gt;
           &lt;select id=&quot;cc-objective&quot;&gt;
-            &lt;option value=&quot;salesAmount&quot;&gt;Ventas · importe real&lt;/option&gt;
-            &lt;option value=&quot;salesRecords&quot;&gt;Ventas · número de registros&lt;/option&gt;
-            &lt;option value=&quot;purchasesAmount&quot;&gt;Compras · importe real&lt;/option&gt;
-            &lt;option value=&quot;purchasesRecords&quot;&gt;Compras · número de registros&lt;/option&gt;
+          &lt;option value=&quot;purchasesAmount&quot;&gt;Compras · importe semanal&lt;/option&gt;
           &lt;/select&gt;
         &lt;/label&gt;
         &lt;label class=&quot;cc-field&quot;&gt;
           &lt;span&gt;Línea base empírica&lt;/span&gt;
           &lt;select id=&quot;cc-baseline&quot;&gt;
-            &lt;option value=&quot;avg7&quot;&gt;Promedio móvil de 7 días&lt;/option&gt;
+            &lt;option value=&quot;avg4&quot;&gt;Promedio móvil de 4 semanas&lt;/option&gt;
             &lt;option value=&quot;last&quot;&gt;Último valor observado&lt;/option&gt;
+          &lt;/select&gt;
+        &lt;/label&gt;
+        &lt;label class=&quot;cc-field&quot;&gt;
+          &lt;span&gt;Horizonte&lt;/span&gt;
+          &lt;select id=&quot;cc-horizon&quot;&gt;
+            &lt;option value=&quot;1&quot;&gt;H=1 · próxima semana&lt;/option&gt;
+            &lt;option value=&quot;4&quot;&gt;H=4 · consolidación mensual&lt;/option&gt;
           &lt;/select&gt;
         &lt;/label&gt;
       &lt;/div&gt;
@@ -1158,15 +1162,15 @@ html&gt;body{padding:0}&lt;/style&gt;
             &lt;div class=&quot;cc-meta-row&quot;&gt;&lt;span&gt;Cobertura efectiva&lt;/span&gt;&lt;strong id=&quot;cc-coverage&quot;&gt;&lt;/strong&gt;&lt;/div&gt;
             &lt;div class=&quot;cc-meta-row&quot;&gt;&lt;span&gt;Datos excluidos&lt;/span&gt;&lt;strong id=&quot;cc-excluded&quot;&gt;&lt;/strong&gt;&lt;/div&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;cc-summary&quot;&gt;&lt;strong&gt;Conclusión global:&lt;/strong&gt; H1 recibe apoyo en compras, pero no en ventas. La evidencia respalda una conclusión parcial, no una aceptación general.&lt;/div&gt;
+          &lt;div class=&quot;cc-summary&quot;&gt;&lt;strong&gt;Conclusión global:&lt;/strong&gt; La conclusión se actualiza con el contraste H1 del horizonte seleccionado; el tablero no sustituye la validación estadística.&lt;/div&gt;
         &lt;/aside&gt;
       &lt;/div&gt;
 
       &lt;section class=&quot;cc-data-strip&quot; aria-label=&quot;Calidad y estructura de los datos&quot;&gt;
-        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;1,612 días&lt;/strong&gt;&lt;span&gt;Dataset maestro, 2022-01-01 a 2026-05-31&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;65 variables&lt;/strong&gt;&lt;span&gt;Calendario, ventas, compras, clima e INPC&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;1,584 × 276&lt;/strong&gt;&lt;span&gt;Dataset modelado tras rezagos de 28 días&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;0 nulos&lt;/strong&gt;&lt;span&gt;Sin fechas faltantes en el maestro final&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;135 semanas&lt;/strong&gt;&lt;span&gt;Semanas disponibles para el objetivo de compras&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;52 semanas&lt;/strong&gt;&lt;span&gt;Ventana histórica por origen&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;16 orígenes&lt;/strong&gt;&lt;span&gt;Evaluación final fuera del ajuste&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;cc-data-item&quot;&gt;&lt;strong&gt;H=1 / H=4&lt;/strong&gt;&lt;span&gt;Próxima semana y consolidación mensual&lt;/span&gt;&lt;/div&gt;
       &lt;/section&gt;
     &lt;/main&gt;
   &lt;/div&gt;
@@ -1176,45 +1180,9 @@ html&gt;body{padding:0}&lt;/style&gt;
       const root = document.getElementById(&#x27;cupcake-research-dashboard&#x27;);
       const objectiveSelect = root.querySelector(&#x27;#cc-objective&#x27;);
       const baselineSelect = root.querySelector(&#x27;#cc-baseline&#x27;);
+      const horizonSelect = root.querySelector(&#x27;#cc-horizon&#x27;);
       const svg = root.querySelector(&#x27;#cc-chart&#x27;);
-      const data = {
-        salesAmount: {
-          model: &#x27;ARIMA (1,1,2)&#x27;, dataset: &#x27;Dataset completo&#x27;, rmse: 161.1493, mae: 101.9506, mape: 1147.71,
-          unit: &#x27;MXN reales de mayo de 2026&#x27;, coverage: &#x27;2022-01-29 — 2026-05-31&#x27;, excluded: &#x27;0 días&#x27;,
-          periods: [&#x27;03 mar–01 abr&#x27;, &#x27;02 abr–01 may&#x27;, &#x27;02–31 may&#x27;], modelWindows: [142.1803, 168.6220, 172.6457],
-          avg7: { rmse: 166.5625, windows: [141.6717, 181.9703, 176.0454] },
-          last: { rmse: 165.8187, windows: [139.3698, 181.9703, 176.1159] },
-          insight: &#x27;ARIMA mejora ligeramente la línea base, pero la reducción no alcanza el umbral de 20% planteado en H1 para ingresos por ventas.&#x27;,
-          note: &#x27;El MAPE no debe ser la métrica principal aquí: los días con ventas cercanas a cero lo inflan de forma extrema. La conclusión se apoya en RMSE y MAE.&#x27;
-        },
-        salesRecords: {
-          model: &#x27;ARIMA (1,1,1)&#x27;, dataset: &#x27;Dataset completo&#x27;, rmse: 0.5251, mae: 0.3625, mape: 82.29,
-          unit: &#x27;registros de venta por día&#x27;, coverage: &#x27;2022-01-29 — 2026-05-31&#x27;, excluded: &#x27;0 días&#x27;,
-          periods: [&#x27;03 mar–01 abr&#x27;, &#x27;02 abr–01 may&#x27;, &#x27;02–31 may&#x27;], modelWindows: [0.5427, 0.5934, 0.4391],
-          avg7: { rmse: 0.5533, windows: [0.5483, 0.6583, 0.4533] },
-          last: { rmse: 0.5609, windows: [0.5774, 0.6583, 0.4472] },
-          insight: &#x27;ARIMA ofrece una mejora consistente, aunque pequeña. Para la operación diaria conviene usarlo con una política de inventario de seguridad.&#x27;,
-          note: &#x27;La demanda es intermitente; por eso MAPE permanece alto aun cuando RMSE y MAE muestran errores absolutos pequeños.&#x27;
-        },
-        purchasesAmount: {
-          model: &#x27;Random Forest&#x27;, dataset: &#x27;Dataset reducido&#x27;, rmse: 213.0144, mae: 116.9614, mape: 120.74,
-          unit: &#x27;MXN reales de mayo de 2026&#x27;, coverage: &#x27;2022-01-29 — 2025-07-30&#x27;, excluded: &#x27;305 días sin cobertura&#x27;,
-          periods: [&#x27;02–31 may&#x27;, &#x27;01–30 jun&#x27;, &#x27;01–30 jul&#x27;], modelWindows: [134.1513, 348.0000, 156.8919],
-          avg7: { rmse: 297.2899, windows: [141.2977, 368.3630, 382.2090] },
-          last: { rmse: 667.2004, windows: [135.4621, 368.3630, 1497.7762] },
-          insight: &#x27;Random Forest supera la meta de H1 y es la mejor opción para presupuestar compras. El mayor valor aparece al contener errores extremos de abastecimiento.&#x27;,
-          note: &#x27;La serie de compras termina 305 días antes que la de ventas. El tablero debe mostrar esta diferencia de cobertura para evitar decisiones con datos desactualizados.&#x27;
-        },
-        purchasesRecords: {
-          model: &#x27;Random Forest&#x27;, dataset: &#x27;Dataset reducido&#x27;, rmse: 2.5932, mae: 1.7269, mape: 61.14,
-          unit: &#x27;registros de compra por día&#x27;, coverage: &#x27;2022-01-29 — 2025-07-30&#x27;, excluded: &#x27;305 días sin cobertura&#x27;,
-          periods: [&#x27;02–31 may&#x27;, &#x27;01–30 jun&#x27;, &#x27;01–30 jul&#x27;], modelWindows: [2.2015, 3.3439, 2.2343],
-          avg7: { rmse: 3.3579, windows: [2.2438, 3.7059, 4.1240] },
-          last: { rmse: 6.0535, windows: [2.1679, 3.7059, 12.2868] },
-          insight: &#x27;Random Forest reduce el RMSE por encima de 20% frente al promedio de 7 días y estabiliza especialmente la última ventana de evaluación.&#x27;,
-          note: &#x27;La selección se hizo por menor RMSE promedio en tres orígenes. Conviene ampliar la cobertura de compras antes de desplegar el modelo en operación.&#x27;
-        }
-      };
+      const data = __DSS_DATA__;
 
       const format = (value, digits = 2) =&gt; new Intl.NumberFormat(&#x27;es-MX&#x27;, { maximumFractionDigits: digits, minimumFractionDigits: digits }).format(value);
 
@@ -1253,11 +1221,11 @@ html&gt;body{padding:0}&lt;/style&gt;
       }
 
       function update() {
-        const item = data[objectiveSelect.value];
+        const item = data[objectiveSelect.value][horizonSelect.value];
         const baselineKey = baselineSelect.value;
         const baseline = item[baselineKey];
-        const improvement = 100 * (baseline.rmse - item.rmse) / baseline.rmse;
-        const passes = improvement &gt;= 20;
+        const improvement = item.improvement;
+        const passes = item.hypothesisSupported;
         root.querySelector(&#x27;#cc-model&#x27;).textContent = item.model;
         root.querySelector(&#x27;#cc-dataset&#x27;).textContent = item.dataset;
         root.querySelector(&#x27;#cc-rmse&#x27;).textContent = format(item.rmse, item.rmse &lt; 10 ? 2 : 0);
@@ -1267,7 +1235,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         root.querySelector(&#x27;#cc-baseline-rmse&#x27;).textContent = `Base RMSE: ${format(baseline.rmse, baseline.rmse &lt; 10 ? 2 : 0)}`;
         root.querySelector(&#x27;#cc-progress&#x27;).style.width = `${Math.min(100, Math.max(0, improvement / 40 * 100))}%`;
         const status = root.querySelector(&#x27;#cc-status&#x27;);
-        status.textContent = passes ? &#x27;Meta superada&#x27; : &#x27;Meta no alcanzada&#x27;;
+        status.textContent = passes ? &#x27;H1 apoyada&#x27; : &#x27;H1 no apoyada&#x27;;
         status.className = `cc-status ${passes ? &#x27;is-pass&#x27; : &#x27;is-miss&#x27;}`;
         root.querySelector(&#x27;#cc-insight&#x27;).textContent = item.insight;
         root.querySelector(&#x27;#cc-note&#x27;).textContent = item.note;
@@ -1279,6 +1247,7 @@ html&gt;body{padding:0}&lt;/style&gt;
 
       objectiveSelect.addEventListener(&#x27;change&#x27;, update);
       baselineSelect.addEventListener(&#x27;change&#x27;, update);
+      horizonSelect.addEventListener(&#x27;change&#x27;, update);
       new ResizeObserver(update).observe(svg);
       update();
     })();
