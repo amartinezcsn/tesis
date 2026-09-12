@@ -17,6 +17,7 @@ from config_semanal import (
     DAILY_MASTER_PATH,
     DATE_COLUMN,
     PURCHASE_COLUMN,
+    REQUIRED_SALES_COLUMNS,
     SALES_COLUMNS,
     TEMPERATURE_COLUMN,
     WEEKLY_MASTER_PATH,
@@ -37,7 +38,7 @@ def aggregate_daily_to_weekly(daily: pd.DataFrame) -> pd.DataFrame:
     disponibilidad ex ante se controla en la siguiente fase; aquí sólo se
     preserva la fuente observada.
     """
-    required = {"fecha", PURCHASE_COLUMN, *SALES_COLUMNS}
+    required = {"fecha", PURCHASE_COLUMN, *REQUIRED_SALES_COLUMNS}
     missing = sorted(required.difference(daily.columns))
     if missing:
         raise ValueError(f"Faltan columnas obligatorias del maestro diario: {', '.join(missing)}")

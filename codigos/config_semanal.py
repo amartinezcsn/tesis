@@ -77,7 +77,7 @@ KNOWN_EXOGENOUS = (
     "es_festivo_mexicano",
     "es_fecha_pago",
     "nacimientos_indice",
-    "inflacion_anual_pct",
+    "inpc_valor_mensual",
 )
 TEMPERATURE_COLUMN = "temperatura_promedio_mensual_hidalgo"
 
@@ -100,8 +100,8 @@ EXOGENOUS_REGISTRY = {
     "nacimientos_indice_semanal": {
         "fuente": "índice demográfico histórico", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
     },
-    "inflacion_anual_observada_semana": {
-        "fuente": "inflación anualizada publicada mensualmente", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
+    "inpc_observado_semana": {
+        "fuente": "INPC publicado mensualmente", "disponibilidad": "último valor publicado", "rezago_semanas": 1,
     },
     "temperatura_observada_semana": {
         "fuente": "temperatura histórica regional", "disponibilidad": "último valor observado", "rezago_semanas": 1,
@@ -133,7 +133,6 @@ def exogenous_feature_name(source: str) -> str:
 ALLOWED_EXOGENOUS_FEATURES = frozenset(
     [exogenous_feature_name(source) for source in EXOGENOUS_REGISTRY] + list(DERIVED_EXOGENOUS_FEATURES)
 )
-)
 
 # Se conservan las ventas como predictores históricos. Las compras no se usan
 # por categoría para evitar una matriz demasiado ancha frente a pocas semanas.
@@ -148,6 +147,7 @@ SALES_COLUMNS = (
     "ventas_cupcakes",
     "ventas_detalle_registros",
 )
+REQUIRED_SALES_COLUMNS = SALES_COLUMNS[:3]
 PURCHASE_COLUMN = "compras_total_real_2026_05"
 
 

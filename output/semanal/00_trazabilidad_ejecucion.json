@@ -1,5 +1,5 @@
 {
-  "generado_utc": "2026-08-29T17:54:30.176555+00:00",
+  "generado_utc": "2026-09-05T19:07:09.290206+00:00",
   "frecuencia": "semanal",
   "objetivo": "target_compras_importe_semanal",
   "columna_temporal": "semana_inicio",
@@ -24,16 +24,16 @@
     "random_state": 42
   },
   "entorno": {
-    "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
-    "plataforma": "Windows-11-10.0.26200-SP0",
+    "python": "3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)]",
+    "plataforma": "Windows-10-10.0.26200-SP0",
     "paquetes": {
-      "numpy": "2.5.2",
-      "pandas": "3.0.5",
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
       "openpyxl": "3.1.5",
-      "scikit-learn": "1.9.0",
+      "scikit-learn": "1.7.2",
       "statsmodels": "0.14.6",
-      "scipy": "1.18.1",
-      "matplotlib": "3.11.1"
+      "scipy": "1.15.3",
+      "matplotlib": "3.10.8"
     }
   },
   "fuentes": {
@@ -46,70 +46,70 @@
     "maestro_semanal": {
       "ruta": "C:\\Python\\tesis\\input\\dataset_maestro_semanal.xlsx",
       "existe": true,
-      "tamano_bytes": 23239,
-      "sha256": "2245b3aeda8e0e9a280e8917111a72d197fd554fdbebac98307f81280e0ebe84"
+      "tamano_bytes": 26348,
+      "sha256": "129260eafa179b06acea38e36c17b1ad005cb58a2a597b15fbdb9d3fb8ffe309"
     },
     "dataset_modelado": {
       "ruta": "C:\\Python\\tesis\\input\\dataset_modelado_semanal.xlsx",
       "existe": true,
-      "tamano_bytes": 79345,
-      "sha256": "628d18b79d36cc6f1ee5325773bc7ce177520960067aa3e4a79170a7a1fdebb5"
+      "tamano_bytes": 128898,
+      "sha256": "efe3568da8643e826a7912d75882b6b2810568cb11093a05405214060ea13796"
     }
   },
   "codigo": {
     "02_agregar_semanal.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\02_agregar_semanal.py",
       "existe": true,
-      "tamano_bytes": 4467,
-      "sha256": "026dcea1ca981d2b3f60676b116f6bc078a1830ed978dc044528b8755aba1849"
+      "tamano_bytes": 5110,
+      "sha256": "b2c4f8aabc057a0818981c195008dd29d8ee7cd6582994afede13ca04f22e2b9"
     },
     "03_features_semanales.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\03_features_semanales.py",
       "existe": true,
-      "tamano_bytes": 7220,
-      "sha256": "73729e1e389c24a8e19b5ce601d4379f16d7e280815993e24d5c8ff3d253a9f0"
+      "tamano_bytes": 7652,
+      "sha256": "cd7e7803e89f39cd4b93796b13e359f5f5b8f2077778b7a012ec1bad2d21b2e0"
     },
     "04_perfil_semanal.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\04_perfil_semanal.py",
       "existe": true,
-      "tamano_bytes": 1820,
-      "sha256": "5f3c21d648c97f4cfff543c1ef62483b427aca1e24f4f8b9081ab5ea0b4bb916"
+      "tamano_bytes": 1863,
+      "sha256": "fd10c45bfdf81da54907cacbcb0f7723944f03c4764bd1145f3441dd47970c92"
     },
     "04_analisis_series_temporales_semanal.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\04_analisis_series_temporales_semanal.py",
       "existe": true,
-      "tamano_bytes": 17163,
-      "sha256": "4b84f058941674a86ab1965451cb859c93885406eec902e03b7b6f9ed8ae4bc0"
+      "tamano_bytes": 17449,
+      "sha256": "8577f95b7dc322e5e00fed323fb38a473228a3b2dd0f9fec236bbe5014816cb4"
     },
     "06_modelos_rolling_window.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\06_modelos_rolling_window.py",
       "existe": true,
-      "tamano_bytes": 29142,
-      "sha256": "27eaaaa069aaa35a305cd7bba0064d72b9481d0d04431ab2933dd888b85e7d24"
+      "tamano_bytes": 29498,
+      "sha256": "511e423ea56c16a07b96fa919f48093d102f2a5f8944c692bb3d5c3abdacd5fc"
     },
     "07_reportes_semanales.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\07_reportes_semanales.py",
       "existe": true,
-      "tamano_bytes": 3451,
-      "sha256": "5b1a5f41d9f3ea654cb610f61396a8ec8c2d618f76323c604f222e802c242a76"
+      "tamano_bytes": 3567,
+      "sha256": "9c2926b0de7cd3af5ed39c4c1ac6fa7a9de2f88c30f8e7bb22f3198aa68d955b"
     },
     "08_exportar_dss_semanal.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\08_exportar_dss_semanal.py",
       "existe": true,
-      "tamano_bytes": 2406,
-      "sha256": "c91f2e280247364de4036d7e79bd311d9565f8e92e6cacfed37dea8b6636b1b9"
+      "tamano_bytes": 3705,
+      "sha256": "b086cd7279a32173f9e8c7ec799a26255c47a9b6f5ba089afa5214ea11eb2641"
     },
     "config_semanal.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\config_semanal.py",
       "existe": true,
-      "tamano_bytes": 8683,
-      "sha256": "bbd957e95348b43e2e36e54c3e76d7e5f03de30c2d85c087b30f26fbdf3942b6"
+      "tamano_bytes": 9354,
+      "sha256": "bca0580d5a106b6c51f7cc43ed9bd2c2cdbb3890e926934dca50f50b29651e8a"
     },
     "trazabilidad.py": {
       "ruta": "C:\\Python\\tesis\\codigos\\trazabilidad.py",
       "existe": true,
-      "tamano_bytes": 2713,
-      "sha256": "48b58aa083b902460b5c50f80783c4943564d1759b1dc9bdff17bf662e270c24"
+      "tamano_bytes": 2784,
+      "sha256": "41a18b77d6d249d172befc7c1d397408f57aa3d76cb0fb833067fce87b7d057d"
     }
   },
   "restriccion_sinteticos": "Los datos sintéticos se mantienen fuera de las entradas de modelado y no se usan en H1/H2."

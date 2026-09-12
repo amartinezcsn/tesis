@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import json
 import math
-import re
 from collections.abc import Iterable
 
 import numpy as np
@@ -23,22 +22,18 @@ import pandas as pd
 
 from config_semanal import (
     BASELINE_NAMES,
-    FINAL_EVALUATION_ORIGINS,
-    FORECAST_HORIZONS,
-    H1_MIN_RMSE_REDUCTION,
     DATE_COLUMN,
+    FINAL_EVALUATION_WEEKS,
+    HORIZON_WEEKS,
     MAX_FEATURES,
     MONTHLY_CONSOLIDATION_HORIZONS,
     PRIMARY_BASELINE,
-    PRIMARY_HORIZON_WEEKS,
     RANDOM_STATE,
-    SARIMA_SEASONAL_PERIOD_WEEKS,
     SIGNIFICANCE_LEVEL,
     STEP_WEEKS,
     SECONDARY_HORIZON_WEEKS,
     TARGET_COLUMN,
     TUNING_WINDOWS,
-    WEEKLY_DELAYED_EXOGENOUS,
     WEEKLY_MODEL_PATH,
     WEEKLY_MASTER_PATH,
     WINDOW_WEEKS,
@@ -49,11 +44,6 @@ from config_semanal import (
 
 ML_GRIDS = {
     "ridge": [{"alpha": 0.1}, {"alpha": 1.0}, {"alpha": 10.0}],
-    "lasso": [
-        {"alpha": 0.1, "max_iter": 50000, "tol": 1e-3},
-        {"alpha": 1.0, "max_iter": 50000, "tol": 1e-3},
-        {"alpha": 10.0, "max_iter": 50000, "tol": 1e-3},
-    ],
     "ridge_log1p": [{"alpha": 0.1}, {"alpha": 1.0}, {"alpha": 10.0}],
     "random_forest": [
         {"n_estimators": 300, "max_depth": 4, "min_samples_leaf": 3},
@@ -135,7 +125,7 @@ def trim_unobserved_tail(frame: pd.DataFrame) -> tuple[pd.DataFrame, int]:
     if not len(active):
         raise ValueError("El objetivo semanal no contiene compras positivas.")
     tail = len(frame) - active[-1] - 1
-    if tail >= FINAL_EVALUATION_ORIGINS:
+    if tail >= FINAL_EVALUATION_WEEKS:
         return frame.iloc[: active[-1] + 1].copy(), int(tail)
     return frame.copy(), 0
 
@@ -152,10 +142,10 @@ def iter_rolling_windows(row_count: int, horizon: int = HORIZON_WEEKS) -> list[i
 
 def split_tuning_evaluation(origins: list[int]) -> tuple[list[int], list[int]]:
     """Reserva semanas finales para evaluación sin usarlas para ajuste."""
-    if len(origins) <= FINAL_EVALUATION_ORIGINS:
+    if len(origins) <= FINAL_EVALUATION_WEEKS:
         raise ValueError("No hay suficientes orígenes para reservar la evaluación final.")
-    evaluation = origins[-FINAL_EVALUATION_ORIGINS:]
-    tuning = origins[:-FINAL_EVALUATION_ORIGINS][-TUNING_WINDOWS:]
+    evaluation = origins[-FINAL_EVALUATION_WEEKS:]
+    tuning = origins[:-FINAL_EVALUATION_WEEKS][-TUNING_WINDOWS:]
     if not tuning:
         raise ValueError("No hay ventanas previas para ajustar hiperparámetros.")
     return tuning, evaluation
@@ -281,17 +271,6 @@ def forecast_statistical(name: str, train: pd.DataFrame, steps: int) -> np.ndarr
             from statsmodels.tsa.holtwinters import ExponentialSmoothing
             fitted = ExponentialSmoothing(y, trend="add", seasonal=None).fit(optimized=True)
             return np.maximum(np.asarray(fitted.forecast(steps), dtype=float), 0)
-        if name == "sarima":
-            from statsmodels.tsa.statespace.sarimax import SARIMAX
-
-            fitted = SARIMAX(
-                y,
-                order=(1, 1, 1),
-                seasonal_order=(0, 0, 1, SARIMA_SEASONAL_PERIOD_WEEKS),
-                enforce_stationarity=False,
-                enforce_invertibility=False,
-            ).fit(disp=False)
-            return np.maximum(np.asarray(fitted.forecast(steps=steps), dtype=float), 0)
     except Exception:
         return np.repeat(float(np.mean(y[-4:])), steps)
     raise ValueError(f"Modelo estadístico no soportado: {name}")
@@ -382,7 +361,6 @@ def tune_parameters(
 
 
 def evaluate_windows(
-def evaluate_windows(
     frame: pd.DataFrame, origins: Iterable[int], model: str, feature_set: str, params: dict, horizon: int
 ) -> list[dict]:
     """Genera una fila por predicción; es la evidencia auditable de H1 y H2."""
@@ -447,7 +425,7 @@ def summarize_predictions(predictions: pd.DataFrame) -> pd.DataFrame:
                 "mape_diagnostico": float(np.mean(absolute[nonzero] / np.abs(real[nonzero])) * 100) if nonzero.any() else math.nan,
             }
         )
-    return pd.DataFrame(rows).sort_values(["horizonte", "rmse", "mae"]).reset_index(drop=True)
+    return pd.DataFrame(rows).sort_values(["horizonte_semanas", "rmse", "mae"]).reset_index(drop=True)
 
 
 def newey_west_long_run_variance(values: np.ndarray, max_lag: int) -> float:

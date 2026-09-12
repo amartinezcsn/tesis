@@ -20,6 +20,9 @@ test("server-renders the weekly purchasing dashboard", async () => {
   assert.match(html, /Promedio móvil de 4 semanas/);
   assert.match(html, /H=4 · consolidación mensual/);
   assert.match(html, /DSS semanal reproducible/);
+  assert.match(html, /H=1 · 16 orígenes de evaluación/);
+  assert.match(html, /ajuste Holm/);
+  assert.doesNotMatch(html, /H=1 · 0 orígenes de evaluación|reducción mínima de 20%/);
   assert.doesNotMatch(html, /Ventas · importe real|Promedio móvil de 7 días/);
   assert.doesNotMatch(html, /__DSS_DATA__/);
 });

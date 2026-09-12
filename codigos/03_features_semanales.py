@@ -19,11 +19,10 @@ from config_semanal import (
     exogenous_feature_name,
     LAG_WEEKS,
     PURCHASE_COLUMN,
+    REQUIRED_SALES_COLUMNS,
     ROLLING_WINDOWS,
     SALES_COLUMNS,
     TARGET_COLUMN,
-    WEEKLY_CALENDAR_EXOGENOUS,
-    WEEKLY_DELAYED_EXOGENOUS,
     WEEKLY_MASTER_PATH,
     WEEKLY_MODEL_PATH,
 )
@@ -70,7 +69,7 @@ def build_weekly_features(weekly: pd.DataFrame) -> pd.DataFrame:
         "mes",
         "inpc_observado_semana",
         "temperatura_observada_semana",
-        *SALES_COLUMNS,
+        *REQUIRED_SALES_COLUMNS,
     }
     missing = sorted(required.difference(weekly.columns))
     if missing:

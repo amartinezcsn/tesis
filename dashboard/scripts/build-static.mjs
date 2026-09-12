@@ -30,16 +30,16 @@ const FEATURE_LABELS = {
 };
 
 const finite = (value, fallback = 0) => Number.isFinite(Number(value)) ? Number(value) : fallback;
-const byHorizon = (rows, horizon) => rows.filter((row) => Number(row.horizonte) === horizon);
+const byHorizon = (rows, horizon) => rows.filter((row) => Number(row.horizonte_semanas) === horizon);
 const metric = (rows, horizon, model, featureSet = undefined) => rows.find((row) =>
-  Number(row.horizonte) === horizon && row.modelo === model &&
+  Number(row.horizonte_semanas) === horizon && row.modelo === model &&
   (featureSet === undefined || row.feature_set === featureSet));
 const labelModel = (row) => `${MODEL_LABELS[row.modelo] ?? row.modelo} · ${FEATURE_LABELS[row.feature_set] ?? row.feature_set}`;
 
 function originRmse(rows, horizon, model, featureSet, origins) {
   return origins.map((origin) => {
-    const values = rows.filter((row) => Number(row.horizonte) === horizon &&
-      row.modelo === model && row.feature_set === featureSet && row.origen_pronostico === origin);
+    const values = rows.filter((row) => Number(row.horizonte_semanas) === horizon &&
+      row.modelo === model && row.feature_set === featureSet && row.semana_origen === origin);
     if (!values.length) return 0;
     return Math.sqrt(values.reduce((sum, row) => sum + finite(row.error_cuadrado), 0) / values.length);
   });
@@ -49,7 +49,7 @@ function buildDashboardData() {
   const metrics = dss.metricas ?? [];
   const predictions = dss.predicciones_validacion ?? [];
   const h1 = dss.contraste_h1 ?? [];
-  const coverageRows = dss.cobertura ?? [];
+  const coverage = Object.fromEntries((dss.cobertura ?? []).map((row) => [row.metrica, row.valor]));
   const horizons = dss.horizontes_evaluados_semanas ?? [1, 4];
   const result = { purchasesAmount: {} };
 
@@ -58,11 +58,10 @@ function buildDashboardData() {
     const winner = [...horizonMetrics].sort((a, b) => finite(a.rmse) - finite(b.rmse))[0];
     const base = metric(metrics, horizon, dss.linea_base_primaria) ?? {};
     const last = metric(metrics, horizon, "empirico_ultimo_valor") ?? {};
-    const winnerContrast = h1.find((row) => Number(row.horizonte) === horizon &&
-      winner && row.hipotesis?.includes(`${winner.modelo}/${winner.feature_set}`));
-    const rows = predictions.filter((row) => Number(row.horizonte) === horizon);
-    const origins = [...new Set(rows.map((row) => row.origen_pronostico))].sort().slice(-3);
-    const coverage = coverageRows.find((row) => Number(row.horizonte) === horizon) ?? {};
+    const winnerContrast = h1.find((row) => Number(row.horizonte_semanas) === horizon &&
+      winner && row.modelo === winner.modelo && row.feature_set === winner.feature_set);
+    const rows = predictions.filter((row) => Number(row.horizonte_semanas) === horizon);
+    const origins = [...new Set(rows.map((row) => row.semana_origen))].sort().slice(-3);
     const firstDate = rows.map((row) => row.semana_prueba).sort()[0] ?? "sin datos";
     const lastDate = rows.map((row) => row.semana_prueba).sort().at(-1) ?? "sin datos";
     const winnerFeature = winner?.feature_set ?? "referencia";
@@ -70,18 +69,19 @@ function buildDashboardData() {
     const winnerRmse = finite(winner?.rmse);
     const baselineRmse = finite(base.rmse);
     const improvement = baselineRmse ? 100 * (baselineRmse - winnerRmse) / baselineRmse : 0;
-    const supported = Boolean(winnerContrast?.apoya_hipotesis);
-    const h2Supported = dss.contraste_h2?.filter((row) => Number(row.horizonte) === horizon && row.apoya_hipotesis).length ?? 0;
+    const supported = Boolean(winnerContrast?.significativo_holm_0_05);
+    const h2Supported = dss.contraste_h2?.filter((row) =>
+      Number(row.horizonte_semanas) === horizon && Number(row.p_unilateral) <= 0.05).length ?? 0;
 
     result.purchasesAmount[String(horizon)] = {
       model: labelModel(winner ?? { modelo: dss.linea_base_primaria, feature_set: "referencia" }),
-      dataset: `H=${horizon} · ${finite(coverage.origenes_evaluacion)} orígenes de evaluación`,
+      dataset: `H=${horizon} · ${finite(coverage.semanas_evaluacion)} orígenes de evaluación`,
       rmse: winnerRmse,
       mae: finite(winner?.mae),
       mape: finite(winner?.mape_diagnostico),
       unit: "MXN por semana",
       coverage: `${firstDate} — ${lastDate}`,
-      excluded: `${finite(coverage.semanas_cola_excluidas)} semanas de cola excluidas`,
+      excluded: `${finite(coverage.semanas_excluidas_por_cobertura)} semanas excluidas por cobertura`,
       periods: origins,
       modelWindows: originRmse(predictions, horizon, winnerModel, winnerFeature, origins),
       avg4: {
@@ -95,9 +95,9 @@ function buildDashboardData() {
       improvement,
       hypothesisSupported: supported,
       insight: supported
-        ? `${labelModel(winner)} apoya H1 para H=${horizon}, con una reducción estimada de ${improvement.toFixed(1)}% frente al promedio móvil de cuatro semanas.`
+        ? `${labelModel(winner)} apoya H1 para H=${horizon}, con una reducción estimada de ${improvement.toFixed(1)}% frente a ${MODEL_LABELS[dss.linea_base_primaria]}.`
         : `${labelModel(winner)} no aporta evidencia suficiente para aceptar H1 en H=${horizon}; la decisión debe conservar la referencia empírica hasta contar con nueva validación.`,
-      note: `H1 exige significancia unilateral (α=0.05) y una reducción mínima de 20% en RMSE. Contrastes H2 con apoyo: ${h2Supported}. MAPE se muestra sólo como diagnóstico.`,
+      note: `H1 exige significancia unilateral (α=0.05) con ajuste Holm. Contrastes exploratorios H2 con p unilateral ≤ 0.05: ${h2Supported}. MAPE se muestra sólo como diagnóstico.`,
     };
   }
   return result;

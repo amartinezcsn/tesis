@@ -11,7 +11,16 @@ import json
 import numpy as np
 import pandas as pd
 
-from config_semanal import FORECAST_HORIZONS, PRIMARY_BASELINE, PRIMARY_HORIZON_WEEKS, TARGET_COLUMN, DATE_COLUMN, WEEKLY_MODEL_PATH, ensure_output_dir
+from config_semanal import (
+    DATE_COLUMN,
+    HORIZON_WEEKS,
+    PRIMARY_BASELINE,
+    SECONDARY_HORIZON_WEEKS,
+    TARGET_COLUMN,
+    WEEKLY_MODEL_PATH,
+    WINDOW_WEEKS,
+    ensure_output_dir,
+)
 
 
 def _records(frame: pd.DataFrame) -> list[dict]:
@@ -32,16 +41,18 @@ def main() -> None:
     dictionary = pd.read_excel(WEEKLY_MODEL_PATH, sheet_name="diccionario")
     exogenous = dictionary.loc[dictionary["grupo"].eq("exógena")].fillna("")
     coverage = pd.read_excel(source, sheet_name="cobertura")
-    for column in ("origen_pronostico", "semana_prueba"):
+    for column in ("semana_origen", "semana_prueba"):
         predictions[column] = pd.to_datetime(predictions[column]).dt.strftime("%Y-%m-%d")
+    if "semana_origen" in monthly.columns:
+        monthly["semana_origen"] = pd.to_datetime(monthly["semana_origen"]).dt.strftime("%Y-%m-%d")
     payload = {
         "producto": "DSS semanal de presupuesto de abastecimiento",
         "objetivo": TARGET_COLUMN,
         "frecuencia": "semanal",
-        "ventana_entrenamiento_semanas": 52,
-        "horizontes_evaluados_semanas": list(FORECAST_HORIZONS),
-        "horizonte_principal_semanas": PRIMARY_HORIZON_WEEKS,
-        "horizonte_complementario_semanas": SECONDARY_HORIZON_WEEKS if 'SECONDARY_HORIZON_WEEKS' in globals() else 4,
+        "ventana_entrenamiento_semanas": WINDOW_WEEKS,
+        "horizontes_evaluados_semanas": [HORIZON_WEEKS, SECONDARY_HORIZON_WEEKS],
+        "horizonte_principal_semanas": HORIZON_WEEKS,
+        "horizonte_complementario_semanas": SECONDARY_HORIZON_WEEKS,
         "linea_base_primaria": PRIMARY_BASELINE,
         "consolidado_mensual": "Suma de pronósticos directos h=1+h=2+h=3+h=4; no es un modelo mensual independiente.",
         "metricas": _records(metrics),
@@ -49,7 +60,7 @@ def main() -> None:
         "contraste_h2": _records(h2),
         "cobertura": _records(coverage),
         "predicciones_validacion": _records(predictions),
-        "consolidados_4_semanas_validacion": monthly.to_dict(orient="records"),
+        "consolidados_4_semanas_validacion": _records(monthly),
         "variables_exogenas_registradas": exogenous.to_dict(orient="records"),
         "pronostico_futuro": {
             "estado": "no_disponible",
