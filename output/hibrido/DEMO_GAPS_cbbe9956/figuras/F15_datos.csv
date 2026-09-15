@@ -1,0 +1,4 @@
+origen,fecha_objetivo,horizonte,modelo,insumo_id,real,prediccion
+2023-03-20,2023-03-20,1,participacion_ewm,harina,0.6,0.6
+2023-03-20,2023-03-20,1,participacion_ewm,azucar,0.4,0.4000000000000001
+2023-03-20,2023-03-20,1,participacion_ewm,otros,0.0,0.0

@@ -34,8 +34,16 @@ class Config:
     protocol_approved: bool = False
     use_rf: bool = True
     use_arima: bool = True
+    missing_policy: str = 'strict'
+    min_training_observations: int = 24
 
     def validate(self):
+        if self.missing_policy not in ('strict','calendar_gaps'):
+            raise ValueError('missing_policy inválida.')
+        if type(self.min_training_observations) is not int or self.min_training_observations < 8:
+            raise ValueError('min_training_observations requiere entero >= 8.')
+        if self.missing_policy == 'calendar_gaps' and (self.synthetic_training_approved or self.independent_holdout):
+            raise ValueError('calendar_gaps excluye síntesis y confirmación independiente.')
         for key in ('source_approved','synthetic_training_approved','protocol_approved','independent_holdout','use_rf','use_arima'):
             if not isinstance(getattr(self,key),bool):
                 raise ValueError(f'{key} requiere booleano JSON true/false, no texto.')
@@ -63,6 +71,7 @@ class Config:
 
     @property
     def lookback(self):
+        if self.missing_policy == 'calendar_gaps': return 4
         return max(*self.lags, *self.rolling)
 
     def dictionary(self):

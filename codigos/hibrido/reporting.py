@@ -22,6 +22,10 @@ def export_results(output,results,cfg,demo=False):
         'predicciones_validacion':records(results['predicciones']),
         'distribucion_futura':records(future),
         'advertencia':'DEMOSTRACIÓN SINTÉTICA: NO ES EVIDENCIA DE CUP&CAKE.' if demo else 'Evaluación retrospectiva; no garantiza precisión futura. Corte de emisión explícito. No es una orden de compra.'}
+    if 'advertencia' in results:
+        payload['advertencia']+=' '+results['advertencia']
+        payload['politica_faltantes']=results['politica_faltantes']
+        payload['cobertura_evaluacion']=records(results['particiones'])
     (output/'dss_hibrido.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
     # Safe static, self-contained view; no remote upload or implicit deployment.
     def table(df):
@@ -52,7 +56,9 @@ def export_results(output,results,cfg,demo=False):
 def quality_controls(panel,results):
     allocation=results['asignaciones'];future=results['pronostico_futuro']
     sums=allocation.groupby(['origen','horizonte']).agg(suma=('importe','sum'),total=('total_redondeado','first'),p=('participacion','sum'))
-    return [dict(control='Reconciliación de panel',aprobado=bool(np.allclose(panel.drop(columns='total').sum(axis=1),panel.total))),
+    observed=panel.loc[panel.total.notna()]
+    gap_ok=panel.loc[panel.total.isna()].isna().all().all()
+    return [dict(control='Reconciliación de panel observado y conservación de huecos',aprobado=bool(gap_ok and np.allclose(observed.drop(columns='total').sum(axis=1),observed.total))),
         dict(control='Asignaciones suman total',aprobado=bool(np.allclose(sums.suma,sums.total))),
         dict(control='Participaciones suman 100%',aprobado=bool(np.allclose(sums.p,1))),
         dict(control='Importes no negativos',aprobado=bool(allocation.importe.ge(0).all())),

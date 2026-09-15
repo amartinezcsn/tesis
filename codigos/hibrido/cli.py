@@ -82,6 +82,8 @@ def execute(command,config_path=None,output_base=None):
     try:
         cfg=create_demo(output) if demo else load_config(config_path)
         cfg.validate()
+        if not demo and cfg.synthetic_training_approved:
+            raise ValueError('Protocolo principal actualizado: síntesis excluida de ajuste, selección y evaluación.')
         source=ROOT/cfg.source;files.append(source)
         synthetic_before = (pd.Timestamp(cfg.end)-pd.Timedelta(weeks=cfg.holdout_weeks-1)) if cfg.start and cfg.end else None
         purchases,rejected=load_purchases(
@@ -93,6 +95,14 @@ def execute(command,config_path=None,output_base=None):
         purchases.to_csv(output/'compras_auditadas.csv',index=False)
         rejected.to_csv(output/'registros_pendientes.csv',index=False)
         coverage_template=templates(purchases,output)
+        if cfg.missing_policy=='calendar_gaps':
+            dates=pd.date_range(cfg.start,cfg.end,freq='W-MON')
+            coverage_template=pd.DataFrame({'semana_inicio':dates,'estado':'desconocida','evidencia':'','fecha_revision':''})
+            coverage_template['registros_detectados']=coverage_template.semana_inicio.map(purchases.groupby('semana_inicio').size()).fillna(0).astype(int)
+            coverage_template.to_csv(output/'cobertura_PARA_REVISAR.csv',index=False)
+            in_period=purchases.loc[purchases.semana_inicio.between(cfg.start,cfg.end)]
+            cat=pd.DataFrame({'descripcion_normalizada':sorted(in_period.descripcion_normalizada.unique()),'insumo_id':'','aprobado':False,'decision':'revisar','evidencia':''})
+            cat.to_csv(output/'catalogo_PARA_REVISAR.csv',index=False)
         (output/'auditoria.json').write_text(json.dumps({'fuente':str(source),'sha256':fingerprint(source),
             'registros_validos_para_revision':len(purchases),'pendientes':len(rejected),
             'cobertura':'Debe confirmarse documentalmente; transacciones no prueban integridad semanal.'},ensure_ascii=False,indent=2),encoding='utf-8')
@@ -107,7 +117,11 @@ def execute(command,config_path=None,output_base=None):
         if not rejected.empty:raise ValueError('Hay registros pendientes: corregir fuente o documentar decisión antes de entrenar.')
         if not cfg.start or not cfg.end:raise ValueError('Definir inicio y fin semanales del periodo auditado.')
         files.extend([ROOT/cfg.coverage,ROOT/cfg.catalog])
-        panel,cov=build_panel(purchases,read_table(ROOT/cfg.coverage),read_table(ROOT/cfg.catalog),cfg.start,cfg.end,synthetic_before)
+        if cfg.missing_policy=='calendar_gaps':
+            from .gaps import build_gap_panel
+            panel,cov=build_gap_panel(purchases,read_table(ROOT/cfg.coverage),read_table(ROOT/cfg.catalog),cfg.start,cfg.end)
+        else:
+            panel,cov=build_panel(purchases,read_table(ROOT/cfg.coverage),read_table(ROOT/cfg.catalog),cfg.start,cfg.end,synthetic_before)
         panel.to_csv(output/'panel_semanal.csv');cov.to_csv(output/'cobertura.csv')
         if cfg.exogenous:files.append(ROOT/cfg.exogenous)
         if cfg.sales:files.append(ROOT/cfg.sales)

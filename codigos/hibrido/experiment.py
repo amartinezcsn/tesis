@@ -7,16 +7,19 @@ from .features import partitions
 from .models import components, candidates, baselines, predict_stat
 from .composition import select_categories, shares, predict_shares, allocate
 from .evaluation import total_metrics, composition_metrics, hypothesis
+from .gaps import history as training_history
 
 
 def select_models(panel,cfg,exog,sales=None):
     cutoff,tuning,evaluation,folds=partitions(panel,cfg)
     # Vocabulary is fixed by available sources in development, not future rows.
-    variables=sorted(exog.loc[exog.available_at <= panel.index[tuning[0]-cfg.window-max(cfg.horizons)+1],'variable'].unique())
+    vocab_index=0 if cfg.missing_policy=='calendar_gaps' else tuning[0]-cfg.window-max(cfg.horizons)+1
+    variables=sorted(exog.loc[exog.available_at <= panel.index[vocab_index],'variable'].unique())
     selections={}; scores=[]; failures=[]; comp_scores=[]
     for h in cfg.horizons:
         inner=[]
         for origin in tuning:
+            if pd.isna(panel.total.iloc[origin+h-1]):continue
             pred,_,errors,_=components(panel,origin,h,cfg,exog,variables,sales)
             failures.extend(errors)
             inner.append((pred,float(panel.total.iloc[origin+h-1])))
@@ -34,11 +37,11 @@ def select_models(panel,cfg,exog,sales=None):
     for alpha in cfg.alphas:
         losses=[]
         for origin in tuning:
-            history=panel.iloc[origin-cfg.window:origin]
+            history=training_history(panel,origin,cfg)
             categories=select_categories(history,cfg.threshold)
             real=shares(panel.iloc[[origin]],categories).iloc[0]
             if real.notna().all():
-                pred=predict_shares(history,categories,alpha)
+                pred=predict_shares(history,categories,alpha,calendar=cfg.missing_policy=='calendar_gaps')
                 losses.append(float((real-pred).abs().mean()*100))
         if losses:comp_scores.append(dict(alpha=alpha,mae_pp=float(np.mean(losses)),n=len(losses)))
     if not comp_scores:raise ValueError('Sin semanas positivas para validar composición.')
@@ -48,20 +51,22 @@ def select_models(panel,cfg,exog,sales=None):
 
 
 def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
+    cfg.validate()
     output=Path(output)
     (selected,alpha,categories,variables,cutoff,tuning,evaluation,folds,scores,comp_scores,failures)=select_models(panel,cfg,exog,sales)
     rows=[]; composition=[]; allocations=[]
     for origin in evaluation:
-        history=panel.iloc[origin-cfg.window:origin]
-        prop=predict_shares(history,categories,alpha)
+        history=training_history(panel,origin,cfg)
+        prop=predict_shares(history,categories,alpha,calendar=cfg.missing_policy=='calendar_gaps')
         ref=predict_shares(history,categories)
         scale=float(history.total.diff().abs().mean())
         for h in cfg.horizons:
+            if origin+h-1>=len(panel):continue
             selection=selected[h]
             pred,_,errors,_=components(panel,origin,h,cfg,exog,variables,sales,selection)
             if errors:raise ValueError(f'Fallo del modelo fijado en evaluación: {errors}')
             pred['hibrido']=selection['peso']*pred[selection['stat']]+(1-selection['peso'])*pred[selection['ml']]
-            pred.update(baselines(history.total,h))
+            pred.update(baselines(history.total,h,gaps=cfg.missing_policy=='calendar_gaps'))
             target=origin+h-1
             for name,value in pred.items():
                 rows.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,modelo=name,
@@ -76,13 +81,13 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
                 allocations.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,
                     insumo_id=item,participacion=float(prop[item]),importe=value,total_redondeado=float(budget.sum())))
     predictions=pd.DataFrame(rows); composition=pd.DataFrame(composition); allocations=pd.DataFrame(allocations)
-    metrics=total_metrics(predictions); percentages=composition_metrics(composition)
+    metrics=total_metrics(predictions,common=cfg.missing_policy=='calendar_gaps'); percentages=composition_metrics(composition)
     result=hypothesis(predictions,composition,cfg,demo)
     # Final fit is selected in development, never from the final ranking.
     origin=len(panel); bundle={'version':1,'moneda':'MXN nominales','demostracion':demo,
         'origen':str(panel.index[-1]+pd.Timedelta(weeks=1)),'config':cfg.dictionary(),
         'seleccion':selected,'alpha_composicion':alpha,'categorias':categories,'variables_exogenas':variables,'modelos':{}}
-    prop=predict_shares(panel.iloc[-cfg.window:],categories,alpha)
+    prop=predict_shares(training_history(panel,len(panel),cfg),categories,alpha,calendar=cfg.missing_policy=='calendar_gaps')
     bundle['participaciones']=prop
     for h in cfg.horizons:
         pred,fitted,errors,test=components(panel,origin,h,cfg,exog,variables,sales,selected[h])
@@ -102,6 +107,9 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
     (output/'seleccion.json').write_text(json.dumps({'modelos':selected,'alpha':alpha,'categorias':categories,'variables':variables,
         'corte_desarrollo':str(panel.index[cutoff]),'criterio':'validacion temporal interna, no ranking de evaluación'},ensure_ascii=False,indent=2),encoding='utf-8')
     datasets.update(cutoff=cutoff,categories=categories,selection=selected,hypothesis=result)
+    if cfg.missing_policy=='calendar_gaps':
+        datasets['advertencia']='Evaluación exploratoria de importes registrados utilizables, no del gasto real completo. Calendario con huecos sin imputar; sin síntesis. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.'
+        datasets['politica_faltantes']='calendar_gaps'
     return datasets
 
 

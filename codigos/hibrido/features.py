@@ -4,6 +4,9 @@ import pandas as pd
 
 
 def row_features(panel, origin, horizon, cfg, exog, variables=(), sales=None):
+    if cfg.missing_policy == 'calendar_gaps':
+        from .gaps import gap_features
+        return gap_features(panel,origin,horizon,cfg,exog,variables,sales)
     if origin < cfg.lookback or origin > len(panel):
         raise ValueError('Historia insuficiente para características.')
     date = panel.index[0] + pd.Timedelta(weeks=origin)
@@ -29,6 +32,9 @@ def row_features(panel, origin, horizon, cfg, exog, variables=(), sales=None):
 
 
 def samples(panel, origin, horizon, cfg, exog, variables=(), sales=None):
+    if cfg.missing_policy == 'calendar_gaps':
+        from .gaps import gap_samples
+        return gap_samples(panel,origin,horizon,cfg,exog,variables,sales)
     # Labels end at origin-1. Context dates may precede the training target window.
     targets = range(origin-cfg.window, origin)
     contexts = [t-horizon+1 for t in targets]
@@ -41,6 +47,9 @@ def samples(panel, origin, horizon, cfg, exog, variables=(), sales=None):
 
 
 def partitions(panel, cfg):
+    if cfg.missing_policy == 'calendar_gaps':
+        from .gaps import gap_partitions
+        return gap_partitions(panel,cfg)
     cutoff = len(panel)-cfg.holdout_weeks
     first = cfg.lookback+cfg.window+max(cfg.horizons)-1
     # Every tuning label must be observed strictly before the first test origin.

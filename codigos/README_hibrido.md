@@ -1,5 +1,7 @@
 # Pipeline híbrido Rev44
 
+> Actualización del 14 de septiembre de 2026: la configuración principal usa `calendar_gaps`. Consultar [protocolo de calendario con faltantes](README_hibrido_faltantes.md), que sustituye las indicaciones de ventana continua y bloqueo por semanas desconocidas de esta guía histórica. La rama `strict` y el comando `demo` se conservan para compatibilidad y pruebas; no representan el protocolo actual del caso de estudio.
+
 Implementación inicial ejecutable del plan `documentacion/PLAN_PIPELINE_HIBRIDO_Rev44.md`. Predice el total semanal nominal, estima participaciones y distribuye el presupuesto entre insumos. El resultado científico puede ser desfavorable a H1; no se reajusta el procedimiento para forzar una mejora.
 
 ## Ejecución

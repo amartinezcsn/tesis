@@ -1,0 +1,44 @@
+{
+  "modelos": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": 1.2465016667818911,
+      "n": 3
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": 5.599876531519919,
+      "n": 3
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": 10.341701464025178,
+      "n": 2
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": 40.39747656725994,
+      "n": 2
+    }
+  },
+  "alpha": 0.1,
+  "categorias": [
+    "harina",
+    "azucar"
+  ],
+  "variables": [],
+  "corte_desarrollo": "2023-03-20 00:00:00",
+  "criterio": "validacion temporal interna, no ranking de evaluación"
+}

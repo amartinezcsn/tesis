@@ -2,14 +2,24 @@ import numpy as np
 import pandas as pd
 
 
-def total_metrics(predictions):
+def total_metrics(predictions,common=False):
     rows=[]
+    eligible={}
+    if common:
+        for h,g in predictions.groupby('horizonte'):
+            wide=g.pivot(index='origen',columns='modelo',values='prediccion')
+            # Main comparison: hybrid, selected components and last observed.
+            primary=[c for c in wide if c not in ('promedio_4s','estacional_52s')]
+            valid=g.groupby('origen').real.first().notna() & wide[primary].notna().all(axis=1)
+            eligible[h]=set(wide.index[valid])
     for (h,model),group in predictions.groupby(['horizonte','modelo']):
         g=group.dropna(subset=['prediccion','real'])
+        if common:g=g.loc[g.origen.isin(eligible[h])]
         e=g.real-g.prediccion
         scaled=e.abs()/g.escala_mase.replace(0,np.nan)
         rows.append(dict(horizonte=h,modelo=model,n=len(g),rmse=float(np.sqrt(np.mean(e**2))) if len(g) else np.nan,
-            mae=float(e.abs().mean()),mase=float(scaled.mean()),n_mase=int(scaled.notna().sum())))
+            mae=float(e.abs().mean()),mase=float(scaled.mean()),n_mase=int(scaled.notna().sum()),
+            excluidas=len(group)-len(g),comparacion='principal_fechas_comunes' if common and model not in ('promedio_4s','estacional_52s') else 'complementaria_disponibilidad_propia' if common else 'fechas_comunes'))
     return pd.DataFrame(rows)
 
 

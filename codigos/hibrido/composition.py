@@ -20,10 +20,17 @@ def shares(panel,categories):
     return amounts(panel,categories).div(panel.total.where(panel.total>0),axis=0)
 
 
-def predict_shares(history,categories,alpha=None):
+def predict_shares(history,categories,alpha=None,calendar=False):
     valid=shares(history,categories).dropna()
     if valid.empty:raise ValueError('Sin semanas de composición definida.')
-    prediction=valid.mean() if alpha is None else valid.ewm(alpha=alpha,adjust=False).mean().iloc[-1]
+    if calendar and alpha is not None:
+        # Time decay uses actual calendar age, never rank after dropping gaps.
+        ages=(history.index[-1]-valid.index).days.to_numpy()/7
+        weights=(1-alpha)**ages
+        if not weights.sum():raise ValueError('Pesos de composición sin soporte.')
+        prediction=valid.mul(weights,axis=0).sum()/weights.sum()
+    else:
+        prediction=valid.mean() if alpha is None else valid.ewm(alpha=alpha,adjust=False).mean().iloc[-1]
     result=np.maximum(prediction.to_numpy(float),0.)
     return pd.Series(result/result.sum(),index=valid.columns)
 

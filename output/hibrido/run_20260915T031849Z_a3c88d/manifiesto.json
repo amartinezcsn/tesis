@@ -1,0 +1,102 @@
+{
+  "run_id": "run_20260915T031849Z_a3c88d",
+  "estado": "bloqueado_o_fallido",
+  "demostracion": false,
+  "error": "Fuente no aprobada o hash distinto. Revisar auditoría antes de entrenar.",
+  "config": {
+    "source": "datasets/xlsx/Compras.xlsx",
+    "source_sheet": "Hoja1",
+    "source_sha256": "",
+    "source_approved": false,
+    "approved_duplicate_rows": [],
+    "synthetic_training_approved": false,
+    "coverage": "input/hibrido/cobertura_revisada.csv",
+    "catalog": "input/hibrido/catalogo_alcance_revisado.csv",
+    "exogenous": null,
+    "sales": null,
+    "start": "2021-05-03",
+    "end": "2024-06-24",
+    "window": 52,
+    "holdout_weeks": 26,
+    "tuning_origins": 8,
+    "lags": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ],
+    "rolling": [
+      4,
+      8,
+      12
+    ],
+    "horizons": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "threshold": 0.8,
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "bootstrap_block": 4,
+    "min_inference_weeks": 12,
+    "independent_holdout": false,
+    "protocol_approved": false,
+    "use_rf": true,
+    "use_arima": true,
+    "missing_policy": "calendar_gaps",
+    "min_training_observations": 24
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2",
+    "openpyxl": "3.1.5",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\datasets\\xlsx\\Compras.xlsx": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+    "C:\\Python\\tesis\\input\\compras_limpias.xlsx": "5531ac855e166812b6e3538e9910a11a664c817232b08ca9fe14e72ce76ec930",
+    "C:\\Python\\tesis\\input\\compras_limpias_corregidas.xlsx": "38afb7c8146fb88358f0e306b933db51e8d6e0e69793ad248226d978c23f89ef"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "c97ea06f3c86b434f9574dc0ab1f4c5850ab8c2fdb2c8de598ffd9547b7cfa20",
+    "codigos\\hibrido\\composition.py": "6bdfee3453d54f441f0f4f07c3dc2bd90d40faa6a8d7f3cc206f54ce40463652",
+    "codigos\\hibrido\\config.py": "ecad4f911238df48acb57962300b83b0b9ece3f481e2483560772ba8f02ab345",
+    "codigos\\hibrido\\data.py": "19a8f3cb3ba444b36724ce1cd73a5a75f969da011d8bfa6f1f6b5213d5e05b68",
+    "codigos\\hibrido\\evaluation.py": "7a4cead0e3853abed1903c5fce91330263e6b13223251457b6450bf6598dbf26",
+    "codigos\\hibrido\\experiment.py": "cc34bf7f702caeb18d75ccd4195d2f9d81ff43a0c13ba3b42af26640933b75d7",
+    "codigos\\hibrido\\features.py": "f9827bc20c5d8dfd61fe575b6db0d9f5bfa01fd44abc1d7412949c3855155b5e",
+    "codigos\\hibrido\\figures.py": "deeb9ac56c3ca1b7c0595515364c3fba5f7b4e3b74fadc0246687f4eb6d47a0f",
+    "codigos\\hibrido\\gaps.py": "bac5e4e26472d7d154f54eb5ad136cb164546b8a0bb469a51aaf36aee2ec4d83",
+    "codigos\\hibrido\\models.py": "2072bb291a668c834e9ae17f1193bd94ec01034dce6bcf76eb2d60b81dad5f8c",
+    "codigos\\hibrido\\reporting.py": "ca2ee670412ddd7cd159863db1c7a5e654770d7936052a89045e3ed6f72bd0e9",
+    "codigos\\hibrido\\__init__.py": "ac4bfacce45043ea348dce2d754cc98217ab0c279cd3392d80eca338b3086e44",
+    "codigos\\01_clean_eda.py": "69425f53d6d1dc99e39fcba2ab7752b9494950673b68686729ea039f0687204d"
+  },
+  "productos": {
+    "auditoria.json": "898a2d920c64b7c040f82fcce440e72dc44e0a7b9e46688fb331ce537bdf875b",
+    "catalogo_PARA_REVISAR.csv": "9d2e329857c7c9fdf872820500335665373d6312a21468662b7101b249806863",
+    "cobertura_PARA_REVISAR.csv": "978e9120da5feb19b4fded734b8e0ad3760364b31be8a2e727a29542f30f8598",
+    "comparacion_fuentes.csv": "3d41c5fb04ee81932b949a9b5c706dfef63854716fd32779518fd6508cf0c127",
+    "compras_auditadas.csv": "bede44f6c9a63aac5f739efd9388f8ceb731d5cf19fead66c8d000f0a0fed0f4",
+    "registros_pendientes.csv": "b06c03c1a803601ce921066f1316180f2af75a3dca5a4e308b14e85884ecac02"
+  }
+}
