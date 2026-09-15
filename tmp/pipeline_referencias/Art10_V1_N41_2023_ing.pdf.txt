@@ -1,0 +1,1076 @@
+
+=== PDF PAGE 1 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+Recibido: 20 de enero de 2023
+Aceptado: 15 de febrero de 2023
+:
+METODOLOGÍA BASADA EN MLOPS (MACHINE LEARNING OPERATIONS) PARA APOYO
+A LA GESTIÓN EN PROYECTOS DE CIENCIA DE DATOS
+METHODOLOGY BASED ON MLOPS (MACHINE LEARNING OPERATIONS) FOR
+MANAGEMENT SUPPORT IN DATA SCIENCE PROJECTS
+Ing. Angela A Ordonez Bolanos *, PhD. Gustavo Ramirez-Gonzalez*,
+PhD. Jorge Gómez Gómez**, PhD. Juan Sebastian Rojas ***
+* Universidad del Cauca, Facultad de Ingeniería Electrónica y Telecomunicaciones.
+Cauca, Popayán, Colombia.
+E-mail: {aaordonezb, gramirez}@unicauca.edu.co
+** Universidad de Córdoba, Facultad de Ingeniería. Departamento de Ingeniería
+de Sistemas y Telecomunicaciones. Montería - Colombia
+E-mail: jeliecergomez@correo.unicordoba.edu.co
+*** The Bit Bang Company, Popayán, Colombia.
+E-mail: sebastian.rojas@thebitbang.company
+Cómo citar: Ordonez Bolanos, A. A., Rojas, J. S., Gómez Gómez, J., & Ramirez-Gonzalez, G. (2023). METODOLOGÍA BASADA EN MLOPS
+(MACHINE LEARNING OPERATIONS) PARA APOYO A LA GESTIÓN EN PROYECTOS DE CIENCIA DE DATOS. REVISTA COLOMBIANA DE
+TECNOLOGIAS DE AVANZADA (RCTA), 1(41), 87–103. https://doi.org/10.24054/rcta.v1i41.2510
+Esta obra está bajo una licencia internacional
+Creative Commons Atribución-NoComercial 4.0.
+Resumen: Muchas empresas de ingeniería han decidido adentrarse en el campo de la
+ciencia de datos y MLOps con el objetivo de crear, extraer y analizar grandes volúmenes
+de datos. Este enfoque es de suma importancia debido a su naturaleza multidisciplinaria,
+ya que combina principios, conceptos y prácticas de la ingeniería, el aprendizaje
+automático, las matemáticas, entre otras disciplinas. El principal objetivo al explorar este
+campo de trabajo radica en lograr un rendimiento, eficiencia y eficacia óptimos al aplicar
+correctamente los conceptos, metodologías, procedimientos y directrices que ofrece esta
+área de estudio. Sin embargo, es fundamental destacar que, aunque la definición y el
+concepto son claros, la información sobre las metodologías y procedimientos requeridos
+en un proyecto de este tipo es escasa debido a la novedad del término MLOps. Por lo
+tanto, este artículo proporciona una metodología basada en MLOps que respalda la
+gestión de proyectos de ciencia de datos. Es importante mencionar que este proyecto se
+basa en una empresa colombiana; no obstante, se ha recopilado trabajos, documentos e
+información de diferentes países en la investigación realizada.
+Palabras clave: Machine Learning, MLOps, Machine, Learning Operaciones, Gestión,
+Metodología, Data science
+Abstract: Many engineering companies have made the strategic decision to venture into
+87
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 2 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+the field of data science and MLOps in order to create, extract, and analyze vast amounts
+of data. This approach holds significant importance due to its inherently multidisciplinary
+nature, combining principles, concepts, and practices from various domains including
+engineering, machine learning, and mathematics. The primary objective of exploring this
+field of work lies in achieving high performance, efficiency, and effectiveness by correctly
+applying the concepts, methodologies, procedures, and guidelines offered by this area of
+study. However, it is imperative to acknowledge that despite the clarity of the definition
+and concept, there remains a dearth of information concerning the specific
+methodologies and procedures required for executing projects of this nature. This scarcity
+can be attributed to the relative novelty of the term MLOps. Therefore, this paper
+presents a comprehensive methodology based on MLOps that serves to facilitate data
+science project management. It is worth mentioning that while this project is grounded in
+the context of a Colombian company, extensive research has been conducted,
+encompassing various countries through the exploration of relevant literature, papers,
+documents, and information from diverse sources
+Keywords: Machine Learning, MLOps, Machine Learning Operations, Management,
+Methodology, Data science
+1. INTRODUCTION from the multidisciplinary nature of data science,
+encompassing a diverse range of processes involved
+Presently, the daily operations of numerous in data acquisition and preparation. Only when these
+Colombian companies revolve around project-based data are appropriately processed and comprehended
+activities. These projects are undertaken with the do they transform into meaningful and valuable
+purpose of fulfilling customer requirements. insights (Gurrola & Rodriguez Rivas, 2020).
+Consequently, the execution of a project entails a
+high level of organizational involvement, prompting While methodologies such as KDD (Knowledge
+the development of techniques specifically designed Discovery in Database), SEMMA (Gurrola &
+to enhance the likelihood of project success. Among Rodriguez Rivas, 2020), CRISP DM and DDS:
+these techniques is the alignment of diverse groups Data-Driven Scrum (Azevedo & Santos, 2008),
+within the organization, which are established exist and are widely utilized for data science project
+exclusively to support the manufacturing process of management, a comprehensive and integrated
+the product or service and ensure its smooth delivery benchmark methodology with a well-defined
+process for effectively managing and successfully
+Having said that, it is crucial to acknowledge that completing data science projects remains elusive.
+every project needs a preliminary design phase prior Consequently, many companies in Colombia resort
+to its development and execution. To accomplish to an empirical approach when developing data
+this, it becomes imperative to comprehend the science projects, as they lack the strategies
+nature of the project at hand and ascertain the necessary to deploy and produce solutions
+appropriate guidelines to adhere to for its efficient accurately
+and successful completion.
+Hence, the company's data analytics team is tasked
+In the realm of software development projects, with defining all the stages to be followed through
+numerous methodologies are commonly employed, experimentation, operating without any established
+such as Scrum, Kanban, and the Dynamic Systems guidelines. They rely on the heuristic "trial and
+Development Method (Estructuras, Metodologías y error" method to navigate the process. As a result,
+Métodos Ágiles y Lean, n.d.). Nevertheless, in the when attempting alternative solutions, there is an
+rapidly evolving field of data science, where inherent risk of failure, leading to the need for
+projects often exhibit diverse approaches and further iterations and exploration of different
+varying development durations, these options. This renders each project a laborious, time-
+methodologies alone prove insufficient to address consuming, and tedious endeavor.
+the unique requirements and complexities inherent
+to projects in this domain. This complexity arises
+88
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 3 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+To bridge these gaps, numerous studies have involved exploring four databases, namely Scopus,
+emerged, addressing key research questions and Web of Science (WoS), ScienceDirect, and Google
+providing valuable guidelines for the advancement Scholar, to extract relevant information. Our search
+of this business practice. These studies propose yielded approximately 1070 investigations.
+intriguing recommendations for integrating DevOps However, after a proper analysis we focused on
+and data science practices, thereby enhancing the extracting the most significant insights from four
+development of data science projects. Furthermore, key papers, which have been instrumental in
+there is significant research offering insightful shaping our understanding of the subject matter.
+recommendations on machine learning techniques
+and strategies for maximizing the value derived by
+companies, taking into account the specific 2.1. MLOps: a taxonomy and a
+characteristics of the business organization and its methodology (Testi et al., 2022)
+primary objectives.
+In this paper, the authors present a methodology for
+Despite the valuable contributions made by the MLOps (Machine Learning Operations) projects,
+aforementioned research studies, none of them have along with a taxonomy to categorize research works
+explored the utilization of MLOps (Machine related to MLOps. This document represents a
+Learning Operations). MLOps facilitates effective significant advancement compared to the research
+communication and collaboration between the conducted earlier in 2021, as no proposed
+production team and data scientists, enabling methodology specifically addressing this topic was
+streamlined management of the machine learning available at that time. It is worth emphasizing that
+production lifecycle, waste reduction, and despite the potential of MLOps in enabling faster
+scalability through automation in data science and more optimal solutions, this field has received
+projects (Saltz, 2021). Therefore, there is a need to limited attention and discussion at the academic
+investigate the integration of MLOps into data level.
+science projects to establish a methodology that
+supports regulatory compliance, organizational With this context in mind, the methodology
+structure, and overall effectiveness within proposed by the authors is structured as follows:
+organizations.
+2.1.1. Business Problem Understanding
+This paper presents a MLOps-supported
+methodology for managing data science projects, The methodology begins by establishing a
+providing valuable guidance and direction to the comprehensive understanding of the business
+data science team throughout the project lifecycle. context and Key Performance Indicators (KPIs) to
+The methodology offers a structured set of ordered define the success criteria and effectively address
+guidelines, from project initiation to completion, the identified problem. The authors emphasize that
+which significantly contribute to the success of data this initial phase is non-technical in nature,
+science endeavors. Each step is accompanied by underscoring the crucial role of communication
+relevant questions, detailed descriptions, and between data scientists and business experts.
+practical recommendations on how to effectively
+execute the corresponding tasks. The methodology 2.1.2. Data Acquisition
+has been validated through its application in a
+Colombian company. The organization of this paper The data acquisition phase encompasses several
+is as follows: Section 2 illustrates the state of the art, tasks, including:
+Section 3 presents the proposed methodology, • Data extraction: In this task, the pertinent
+Section 4 outlines the validation of the data for the Machine Learning (ML) model
+methodology, and Section 5 concludes with final is carefully selected and integrated.
+remarks and insights. • Data analysis: An Exploratory Data
+Analysis (EDA) is conducted to identify
+trends within the dataset, revealing crucial
+2. STATE OF THE ART insights.
+• Data preparation: This step involves data
+To conduct the state-of-the-art analysis, we adopted cleaning, as well as splitting the data into
+the systematic mapping model proposed by Kai training, validation, and test sets.
+Petersen (Petersen et al., 2008). This approach Additionally, data transformation and
+89
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 4 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+feature engineering techniques are applied ensuring efficient and reliable software
+to prepare the data for modeling purposes. development processes.
+It is important to mention that this document 2.1.6. Continuous delivery
+discusses two primary methodologies that can be
+employed when there is an insufficient amount of This crucial step guarantees that an application is
+data to train the model: production-ready by successfully passing automated
+tests and quality checks. The primary objective of
+• Data Augmentation: This technique the implementation stage is to facilitate a seamless
+involves increasing the available data by integration of new models, minimizing potential
+inserting copies or variations of the risks. Continuous Deployment (CD) plays a pivotal
+existing data. role in reducing deployment risk through the
+• Transfer Learning: It is a technique that adoption of practices such as Continuous Integration
+enables the reuse of a pre-trained neural (CI) and deployment automation. These practices
+network that has already been trained on a ensure the automated delivery of software into
+similar problem. production environments, promoting efficiency and
+reliability in the deployment process.
+2.1.3. ML Methodology
+2.1.7. Continuous Training
+Once the data acquisition phase has been
+successfully completed, the subsequent step In the context of continuous training, it becomes
+involves the selection of the most suitable machine imperative to store and configure additional data in
+learning (ML) algorithms to address the problem at a manner consistent with our model training
+hand. Typically, the data science team conducts process. This requirement necessitates outlier
+thorough research to explore the state-of-the-art detection techniques to identify instances when the
+techniques and adopts a bottom-up approach to data distribution deviates from the training data.
+tackle the specific problem. It is important to note Continuous Training (CT) encompasses the
+that ML is inherently empirical in nature. Therefore, automatic retraining and deployment of models,
+various features, models, parameters, and ensuring their ongoing relevance and accuracy. As
+hyperparameters configurations are tested and an integral component of MLOps, CT plays a crucial
+evaluated to identify the optimal combination that role by enabling the automatic and continuous
+yields the best results. retraining of models prior to redeployment.
+2.1.4. ML training and testing 2.1.8. Continuous Monitoring
+This process follows an iterative approach, wherein During this stage, it is crucial to effectively manage
+the data science team systematically tests different the risks associated with models deployed in
+algorithms, functions, and hyperparameters. Once production by monitoring for performance drift and
+the optimal ML models have been identified, they recognizing any decline in accuracy. Continuous
+undergo retraining and subsequent testing. The monitoring of the model's predictive performance
+evaluation of these models involves employing triggers new iterations in the machine learning
+various validation methods, including Holdout process. Once the model is deployed in a production
+validation, Cross-validation, and Bootstrap environment, it needs ongoing validation and testing
+validation. These techniques provide robust to account for potential shifts and changes in the
+assessments of the models' performance and enable underlying data patterns. This is essential because
+reliable comparisons between different approaches. the data used during model training may no longer
+align with the new data encountered in the
+2.1.5. Continuous integration production environment, leading to a decrease in
+model accuracy over time.
+This step marks the beginning of the continuous
+delivery journey. Continuous Integration (CI) 2.1.9. Explainable AI
+empowers companies to enhance software quality
+and team productivity. This practice encompasses Deep learning methods exhibit higher model
+the automated creation and testing of software, complexity. As these models are integrated into
+real-world applications in production, the research
+90
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 5 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+community has turned its attention towards rounded exploration of the subject matter, allowing
+exploring the concept of "explainability" in order to for a robust analysis and valuable insights.
+address business-related inquiries. The authors Besides that, the authors identify nine principles
+define explainability as "the extent to which a necessary to perform MLOps, and they present the
+human can comprehend the reasoning behind a implementation of the principles of the technical
+decision." In other words, when an ML system is components, that is, a guide on how things should
+explainable, it becomes easier to identify and be done in MLOps. These principles mentioned are
+understand the cause-and-effect relationships within linked to the technical components with which they
+the inputs and outputs of the system. are associated. In addition to the aforementioned
+steps, the authors of this paper have identified nine
+fundamental principles that are essential for the
+2.1.10. Sustainability: Carbon Footprint successful implementation of MLOps. These
+principles serve as a guide for effectively carrying
+The authors raise an important concern regarding out MLOps activities. By aligning the principles
+the substantial computational and energy with their associated components, the authors
+requirements associated with the widespread use of provide a comprehensive framework that outlines
+Deep Learning models in real-world projects, the recommended approaches and best practices for
+especially considering its implications for climate executing MLOps. This integration of principles
+change. However, this paper highlights the and technical components ensures a cohesive and
+possibility of mitigating this trend by exploring structured implementation of MLOps, facilitating
+methods to enhance the energy efficiency of Deep the smooth operationalization of machine learning
+Learning models. Consequently, it becomes crucial models.
+for data scientists to be cognizant of their models'
+carbon and energy footprint, enabling them to The compilation of information presented in this
+actively take measures to reduce it whenever paper bears direct relevance to the execution of our
+feasible. project as it aligns with one of our key objectives
+established at the project's outset: the development
+The significance of the authors' proposed of a comprehensive methodology for effectively
+methodology is particularly notable in the context of managing data science projects using the MLOps
+this project, as it represents the first published approach in organizations.
+methodology addressing this specific domain. This
+allows for the consideration of other essential 2.3. Designing an open-source cloud-native
+factors, thereby facilitating its improvement. MLOps pipeline (Mäkinen, 2021)
+2.2. Machine Learning Operations (MLOps): This paper explores the architecture of an open-
+Overview, Definition, and Architecture source cloud-native MLOps pipeline. The
+(Kreuzberger et al., 2023) significance of this pipeline lies in its applicability
+to a diverse array of machine learning projects. It
+In this paper, the authors adopted a mixed-method offers the versatility to be deployed across different
+approach, comprising three key steps. Firstly, a environments, including on-premises Kubernetes
+comprehensive literature review was conducted to clusters, multi-cloud vendor Kubernetes
+explore the topic of MLOps (Machine Learning environments, and simulated Kubernetes on on-
+Operations). Subsequently, relevant tools within the premises machines.
+MLOps domain were identified to gain a deeper
+understanding of the technical components Also it considers relevant research questions to carry
+involved. Lastly, the authors conducted interviews out the project, like the following:
+with eight experts specialized in MLOps, through
+which they unveiled four crucial aspects of MLOps: • What are the requirements of a modern
+its principles, components, roles, and architecture. MLOps pipeline?
+The authors further provide detailed information on • How feasible is the design and
+the number of articles selected based on predefined implementation of a MLOps pipeline using
+inclusion and exclusion criteria, the identified tools, open-source cloud-native tools?
+as well as the number of conducted interviews. This • To what extent can the solution be cloud
+methodology ensures a comprehensive and well- provider agnostic?
+91
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 6 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+With these questions in mind, the authors proposed This section presents the MLOps-supported
+a MLOps pipeline that aims to offer a solution to the methodology for managing data science projects,
+questions. Firstly, requirements for the MLOps providing valuable guidance and direction to the
+pipeline were determined. These requirements are data science team throughout the project lifecycle.
+data cleansing, data labeling, feature engineering, Its different phases are illustrated in Figure 1 and are
+model training, model evaluation, model explained as follows.
+deployment, and model monitoring. In addition to
+that, the pipeline is capable of handling all these
+steps with open-source and cloud-native tools.
+This paper provides crucial insights for our project
+since one of its sub-stages covers the entire path of
+the data science project, going from start to finish.
+Also, the pipeline proposed by the authors meets
+most of the requirements of MLOps ensuring that
+the use of such pipeline should increase
+development performance in CI/CD automation of
+Fig. 1. MLOPS-based methodology for
+machine learning projects.
+management support in data science projects
+2.4. An intelligent DevOps platform research and
+design based on machine learning (Battina, 2019) 3.1. First stage: Business Comprehension
+In this paper, the authors have conducted extensive This stage includes 6 subphases that will be
+research on machine learning-based DevOps, explained as follows:
+providing foundational knowledge that is highly
+relevant to our own work. They emphasize the 3.1.1. Initial understanding
+benefits of adopting MLOps and outline several
+reasons why its usage is advantageous, including: In this subphase, the problem at hand is initially
+assessed through an initial client meeting. The
+primary objective of this stage is to gather essential
+• Collaboration
+• Automation information from the client, enabling the project
+team to comprehend the requested requirements and
+• Rapid innovation
+• Quick and easy implementation expected outcomes. To achieve this, it is crucial to
+• Effective lifecycle management obtain answers to a series of targeted questions,
+which serve as a guide for comprehensive
+Furthermore, the paper elucidates the complexities understanding and clarity and are stated as follows:
+inherent to machine learning models, which surpass
+those encountered in traditional software • Is the problem at hand specific to a client
+development. Tasks such as data extraction, or does it pertain to the company
+configuration, infrastructure provisioning, and internally?
+monitoring require additional effort and • Are there any requirements for
+implementing the ML model on cloud
+consideration due to the intricate nature of these
+services?
+models.
+• What is the specific problem that needs to
+However, automating DevOps yields several be addressed?
+positive outcomes, including improved model • How does this problem impact the
+company?
+quality, waste reduction, early adaptation, and a
+swift feedback loop, among others. The authors • What data is currently accessible to tackle
+this problem?
+strongly recommend the implementation of MLOps,
+as it significantly enhances operational efficiency • Are there any external datasets that might
+and production for companies. be pertinent to solving the problem? If so,
+what are they?
+• What are the expected outcomes or results?
+Will the final deliverable be an ML model,
+3. PROPOSAL
+an analytical report, or a dashboard?
+92
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 7 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+3.1.2. Project feasibility • Data Analysis: Outline the methodology
+and techniques that will be employed for
+This substage encompasses both technical and data analysis.
+commercial success criteria, which should be • ML Model (Product or Service in the
+quantifiable. To achieve this, it is essential to define Cloud): Detail the machine learning model
+key performance indicators (KPIs). KPIs serve as to be developed and specify if it will be a
+metrics that gauge the progress and performance of product or service hosted in the cloud.
+the ongoing project. Typically expressed as • Work Team: Introduce the members of
+percentages, KPIs enable us to assess the current the project team along with their roles and
+state of a business within a specific domain and responsibilities.
+subsequently optimize strategies based on the • Communication Channels: Define the
+findings (Battina, 2019). channels and platforms that will be used for
+effective communication and
+3.1.3. Estimate costs collaboration.
+• Follow-up Meetings and Consultancy:
+In this step the client is provided with a Establish a plan for follow-up meetings
+comprehensive cost estimation for the project, and ongoing consultancy to ensure the
+taking into account all the previously specified project progresses smoothly.
+requirements. This includes considerations such as
+taxes, acquisition costs, storage and data processing 3.2. Second stage: Data Preparation
+expenses, human resources, and other factors that
+impact the final pricing of the product. Data preparation consists of the following steps:
+• Data quality check
+3.1.4. Value and business proposition • Feature engineering
+• Code deployment foundations
+Within this substage, a fundamental question arises: • Data version control
+What are the benefits for customers in utilizing our
+software or service? 3.2.1. Data quality check
+The ML system should strive to deliver value to end- Within this step, the integrity of the data provided
+users. Similarly, the ongoing project should possess by the client to the company is examined. The
+a value proposition that entices and motivates objective is to ascertain whether the data adheres to
+clients to engage with the services or make the defined business rules. Both recent and historical
+purchases from the company. Furthermore, the data provided by the client must be suitable for the
+business proposal entails presenting the project's project's requirements. This entails verifying the
+cost to the client, aligning it with the previously presence of out-of-range data, empty fields, data
+agreed-upon specifications. imbalances, and other related factors. It is important
+to highlight that if the client fails to provide usable
+3.1.5. Kickoff data, the data preparation process cannot proceed.
+Once the data validity has been verified, the next
+This consists of a presentation that includes the step involves examining the consistency of the data.
+following points: This process utilizes Python-based tools. The
+primary activities within this stage include
+• Project Objective: Clearly define the identifying duplicate instances and ensuring a
+objective of the project. standardized data representation throughout the data
+• Phases: Outline the different phases that structure. The delivered inputs should adhere to the
+will be undertaken to achieve the project's required format; however, if inconsistencies arise,
+goal. the data must be transformed into a consistent
+• Deliverables and Proposed Solution: format to enable efficient access and management of
+Specify the deliverables that will be information. Furthermore, data consistency is
+provided to the client and present the crucial as it ensures that the data accurately reflects
+proposed solution to address their needs. reality and maintains precision and uniformity. To
+• Deployment Architecture: Describe the achieve this, all previous processes are conducted to
+architecture that will be used for deploying examine the integrity of the data. The objective is to
+the solution. verify data quality and minimize data loss by
+93
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 8 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+ensuring the cleanliness of the dataset. It is control and tracking of the specific version of the
+important to note that the integrity of the data can be dataset used for training a particular model. In this
+compromised by issues in the data capture process step, it is crucial to address the following questions:
+or from the data source itself. Therefore, utmost care
+must be taken at each stage of the data preparation • Is data version control optional or
+process to maintain data integrity. mandatory?
+• What data sources are available? (e.g.,
+3.2.2. Feature engineering proprietary, public, paid data)
+• What is the storage solution employed for
+Feature engineering is an integral process in the aforementioned data?
+building predictive models using machine learning.
+It involves the selection and transformation of 3.3. Third stage: Data Analysis
+variables to enhance model performance. The
+process of feature engineering typically Data analysis consists of the following 3 steps:
+encompasses three main activities: feature creation, • Observation
+transformation, and extraction (CI/CD para • Hypothesis (Applicability of machine
+Machine learning – Canalizaciones de Amazon learning)
+SageMaker – Amazon Web Services, n.d.) • Insights
+• Feature creation involves generating new 3.3.1. Observation
+features based on existing ones. The
+primary objective is often to reduce the It is the process through which specific patterns in
+dimensionality of the feature space. the available data are identified. These patterns are
+• Feature transformation handles the statistically observed and can be represented in
+replacement of missing or invalid features various forms such as tables, histograms, graphs,
+in the dataset. and more. The objective of this substage is to
+• Feature extraction aims to identify the comprehend the data's trends and ensure accurate
+subset of features that are most relevant to interpretation and analysis.
+the specific problem being addressed.
+3.3.2. Hypothesis
+3.2.3. Code deployment foundations
+Subsequently, various hypotheses are proposed to
+This substage focuses on the application of DevOps determine the usefulness of the variables in the
+best practices to MLOps activities. However, it is study for making accurate projections. In the case of
+crucial to address any gaps in traditional DevOps implementing a Machine Learning model, it is
+practices before delving into more complex tasks essential to verify the applicability of ML. To gain
+such as data and model versioning, continuous insights, the following questions can be addressed:
+model training, or feature storage. During this step,
+the following questions are addressed: • Which programming language should be
+utilized for the analysis? (R, Python, Scala,
+• How is the code maintained? Julia, SQL?)
+• What source code version control system is • Are there any infrastructure requirements
+utilized? for model training? For instance, storage
+• How is system performance monitored? capacity, profitability, security, and
+• In terms of deployment and test computer performance (resources).
+automation: What is the CI/CD pipeline for • What ML-specific and business
+the code base? - Which tools are employed assessment metrics (KPIs) need to be
+for this purpose? Some examples of such calculated? (Machine Learning Lens -
+tools include Jenkins, AWS, Azure, Machine Learning Lens, n.d.)
+DevOps, and GitLab. • Reproducibility: To ensure reproducibility,
+it is necessary to capture the computing
+3.2.4. Data version control environment in which the work was
+conducted, enabling others to replicate it.
+Is a mechanism utilized to manage and track This raises the following questions:
+changes made to software code. It enables the • Are any tools being employed to create a
+94
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 9 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+reproducible environment? For example, dispersion or variability. Variability
+conda, pip-toold, among others measures help determine the spread of the
+(Quintanilla, Luis, 2023). data. The main measures of variability are
+• What metadata about ML experiments is the standard deviation, range, and
+being collected? (e.g., datasets, interquartile range. They indicate how far
+hyperparameters). the data points deviate from the mean or
+median value, respectively. The standard
+3.3.3. Insights deviation shares the same sensitivity to
+outliers as the mean. However, an
+After collecting all the available data, the next step alternative measure is the interquartile
+involves examining the information to determine its range, which captures the spread between
+value and relevance. This analysis, usually known the 75th and 25th percentiles. Unlike the
+as Exploratory Data Analysis (EDA), enables central tendency and variability measures,
+informed decisions regarding which data will be which provide a single value, it is
+used to prepare the algorithm and evaluate it, important to visualize the data in the fifth
+ultimately leading to the extraction of valuable step to gain more detailed insights. For
+business insights. continuous and discrete data, a histogram
+can be calculated and plotted. By
+• Step-by-step exploratory analysis for organizing the data into different groups
+structured data: The first step involves and counting the number of observations in
+formulating a question that aligns with the each group, a histogram provides a visual
+project's objectives. Then, the dataset representation. It helps identify whether
+should be examined, paying attention to its the distribution is normal (bell-shaped) or
+size to determine the characteristics or skewed (asymmetric). One limitation of
+variables (i.e., columns) present. histograms is that they do not reveal
+Additionally, a preliminary scan of the outliers as they are incorporated into the
+recorded data in the tables should be bins. To address this, boxplots can be
+conducted to gain an initial understanding. employed for both continuous and discrete
+This process provides an initial idea of the data. Boxplots display percentiles, where
+data at hand. It is important to determine the upper and lower bars represent the 75th
+the variable types, distinguishing between and 25th percentiles, respectively. The line
+numerical and categorical data. within the box represents the median.
+Categorical data can further be classified as Additionally, the whiskers (lines extending
+nominal, binary, or ordinal based on their outside the box) indicate the range of the
+nature. The statistical description of data data, typically set at 1.5 times the
+depends on the type of variables being interquartile range.
+analyzed, and two types of measurements Outliers should be given careful
+are commonly used: central tendency and consideration as they play a significant role
+variability. in exploratory data analysis. However,
+Central tendency measures provide insight when working with categorical data, bar
+into the typical values within the dataset. charts can effectively visualize the count or
+The mean and median are two key percentage of occurrences within each
+measures in this category. The mean category. In addition, we can consider a
+represents the average of the data and can possible schema for prediction. When
+be applied to both discrete and continuous dealing with an imbalanced dataset, using
+data. However, it is sensitive to outliers, a conventional classifier may pose training
+making it less suitable in such cases. On the difficulties. Thus far, we have conducted
+other hand, the median addresses this analysis and visualization on a single
+concern and is applicable to ordinal or variable, referred to as univariate analysis.
+discrete data. To calculate the median, the However, we can also explore interactions
+data must be arranged in ascending order, and potential relationships between two or
+with half of the values falling below it and more variables, known as bivariate and
+the other half above it. However, knowing multivariate analysis. This allows us to
+just the mean or median is insufficient; it is examine linear trends, where an increase in
+also essential to understand the data's one variable corresponds to an increase or
+95
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 10 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+decrease in another. We can calculate the architecture are referred to as hyperparameters. The
+correlation index between these variables, number and type of hyperparameters vary
+where a value close to 1 indicates a positive depending on the specific machine learning model.
+linear relationship, a value close to -1 Common examples of hyperparameters include the
+indicates a negative linear relationship, and learning rate, number of hidden layers, number of
+a value close to 0 indicates no linear hidden units, and choice of activation functions.
+correlation. Hyperparameter tuning or optimization involves
+Furthermore, we can compare a numeric selecting the optimal model architecture by
+variable with a categorical variable and adjusting these hyperparameters.
+utilize bar graphs or fiddle plots. A fiddle
+plot, similar to a boxplot, displays the Now, a portion of the dataset is allocated for
+median, quartiles, and a density plot validation, which helps test and validate the
+illustrating the distribution. Comparisons hyperparameters instead of adjusting them as done
+between two categorical variables can be during training. Subsequently, the remaining part of
+made using stacked bar charts. In the dataset is designated as the test dataset, which is
+multivariate analysis, we simultaneously used to evaluate the generalization ability of the
+compare all possible pairs of variables to machine learning model. This evaluation aims to
+identify relationships. We calculate assess the model's effectiveness in making
+correlation indices between different pairs predictions when confronted with new and
+of variables and present the results in a previously unseen data. It is a crucial step as it
+correlation matrix. The main diagonal of validates the performance and accuracy of the
+this matrix contains values of 1 since we model. Multiple models can be generated using
+are comparing a variable with itself, while different methods, and each model can be evaluated
+the off-diagonal values represent the accordingly. In general, various metrics are
+analyzed relationships. calculated within a machine learning algorithm,
+The final step of the EDA is the summary, including training errors, overfitting, and prediction
+where we draw important conclusions accuracy, among others. These metrics serve to
+from all the conducted analyses. This determine if the model learns effectively and
+allows us to identify correlated variables or generalizes well in making predictions on unknown
+characteristics and determine their data. The specific metrics reported by the algorithm
+relevance. depend on the nature of the business problem and
+the machine learning technique employed. For
+3.4. Fourth stage: Modeling instance, a classification algorithm may be assessed
+using a confusion matrix that reveals true or false
+The modeling consists of the following stages: positives and true or false negatives, while a
+• Training, validation and tests regression algorithm can be evaluated using the root
+• Selection of models mean square deviation (RMSE).
+• Model chosen prior to deployment
+3.4.2. Selection of models
+3.4.1. Training, validation and tests
+After performing data cleaning, preparation, and
+This process takes the processed dataset as input and understanding, the next stage involves the selection
+produces three outputs: the training dataset, the of one or multiple models that demonstrate good
+validation dataset, and the test dataset. When performance with the data. This substage is
+working with a dataset, it is divided into three sets: commonly referred to as model selection. However,
+the training set, the validation set, and the test set. it is crucial to acknowledge that there are various
+The training set is typically the largest, comprising criteria for conducting this selection accurately.
+around 60% to 80% of the input data. It is crucial to Among the most commonly used criteria are the
+gather sufficient training data to gain insights and Akaike information criterion (AIC) and the Bayes
+establish model parameters for optimizing the factor, as well as the Bayesian information criterion
+training process. (BIC), which provides a reasonable approximation
+of the Bayes factor. (10 sugerencias principales
+In this context, it is important to note that para Machine Learning reproducible, n.d.)
+configurations that control the behavior of the
+machine learning algorithm and the resulting model
+96
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 11 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+In order to select appropriate models, it is essential during this final stage. However, it is possible that
+to address the following questions: in certain cases, it may be initiated during the initial
+• Which Machine Learning algorithm should stage of understanding the business. The timing
+be employed? The choice of algorithm depends on the project management approach
+primarily depends on two key aspects of employed. Often, nothing is designed and
+the data science scenario: implemented in the cloud until there is certainty that
+o What is the objective of the a model fulfilling the required task and meeting the
+analysis? In other words, what client's needs exists. This precautionary approach
+problem needs to be addressed by ensures that the model performs as expected and can
+leveraging historical data? address the client's requirements. Factors such as
+o What are the specific insufficient data or poor data quality may affect the
+requirements of the data science model's effectiveness, leading the client to make
+scenario? This includes decisions regarding cloud deployment.
+considerations such as linearity, Consequently, this step is positioned within this
+accuracy, training time, and the final stage, allowing for informed choices to be
+number of parameters involved made based on the model's performance and
+(hmong.wiki, n.d.). suitability.
+3.4.3. Model chosen prior to deployment 3.5.2. Evaluation with real data and tests in the
+cloud
+In this substage, the chosen model is prepared for
+deployment. It is crucial for this model to fulfill all In this step, the most suitable model has been
+the requirements specified by the client and selected and is subjected to testing in the cloud using
+successfully pass through each stage of the process. real data. The purpose is to determine whether the
+Moreover, during the preceding substage, "Model model's performance and accuracy align with the
+Selection," among various available models, the business objectives. Various approaches can be
+chosen model aligns most closely with the client's employed for evaluation and cloud-based testing,
+needs, making it feasible and beneficial for with the gitflow workflow being one of the well-
+deployment. known methodologies. Additionally, there exists a
+range of tools to facilitate this process, allowing for
+controlled deployment of different model versions
+3.5. Fifth stage: Deployment in the cloud environment without causing any
+disruption to users. Once thorough testing is
+3.5.1. Design and implementation of the solution in conducted and it is ensured that a stable and efficient
+the cloud model version exists, the model is then deployed for
+production use.
+This substage holds significant importance as it
+involves making critical decisions regarding the 3.5.3. Deployment/Model in Production
+architecture of the model. It is here that the optimal
+utilization of the predictive model is determined. In Deploying an ML model involves transitioning it
+prediction systems relying on Machine Learning from the development stage to the production stage,
+algorithms, several questions arise, such as: How enabling its availability to end users. This aspect has
+will this prediction be utilized? Who are the gained significant importance in recent years,
+intended clients of the system? How should the particularly in the industrial application
+client receive the information? These questions development domain. MLOps encompasses a set of
+revolve around how the model will be consumed practices aimed at achieving reliable and efficient
+and how its efficiency can be maximized. For deployment and maintenance of ML models.
+instance, considerations may include whether the Deployment plays a central role in this process, as it
+client will receive a prediction report in an Excel involves making the trained model accessible to end
+document or have access to it through a web page. users.
+In the case of classification, should the classification
+occur daily or weekly? Generating relevant The choice of deployment type depends on the
+questions is crucial to understanding and fulfilling model's use case and various design requirements,
+customer requirements. It is important to note that including:
+the solution design step is typically carried out
+97
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 12 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+• Type of Prediction: This can be either periodically delivered to a client
+real-time or in batches. application responsible for
+o Real-time predictions involve delivering them to the end user.
+quickly generating and returning o The second approach is to
+predictions to the user upon package the model into an API
+receiving a request. (Application Programming
+o Batch predictions, on the other Interface) that can receive
+hand, focus on processing large requests from end users and
+amounts of input data, with deliver prediction results. This
+predictions generated method is employed when low-
+asynchronously, not immediately. latency predictions are required
+• Latency: The response time required from and when batch processing is not
+the moment a request is sent to the model necessary.
+in production until the prediction is
+received. The goal is to minimize this time • On the Edge: This deployment approach
+as much as possible. involves hosting the model directly on the
+• Throughput: The number of requests per device responsible for receiving the
+second that the system hosting the model requests, such as a mobile phone, tablet, or
+can handle. smartwatch. However, these devices
+• Model Complexity: This refers to the size typically have limited computing capacity.
+of the machine learning model, indicating On the edge deployment is suitable for
+the computing and storage resources it scenarios where the models are not highly
+requires. More complex models demand complex, low latency is required, or
+greater computational resources. sending information over the internet is not
+desirable due to security concerns. It is
+Considering these deployment design requirements worth noting that in this deployment mode,
+allows for the selection of an appropriate real-time predictions are possible, as
+deployment strategy that meets the specific needs of mobile devices have limited resources for
+the ML model and its intended use case. batch processing.
+However, it is important to consider the available 3.5.4. Registering a new version of the model in
+deployment alternatives, which can generally be production (Model Registration and Model
+divided into two main categories: Versioning)
+• Cloud Deployment: This involves Machine learning models often require updating due
+performing the necessary computations for to "model decay," where their performance
+predictions on remote servers hosted in the decreases over time as new data becomes available.
+cloud. In this approach, data and To ensure compatibility with previous versions, it is
+predictions are transferred over the essential to maintain a record of the previously
+internet. It is recommended to use this created models. By implementing model versioning,
+alternative when dealing with complex multiple versions of the machine learning model can
+models or when latency is not a critical be tracked, enabling the adoption of different
+factor, as it allows for potential delays in deployment strategies.
+data transmission and prediction retrieval.
+Additionally, cloud deployment is suitable Model versioning allows for the tracking of
+for batch predictions. When deploying in modeling history and associated scores from model
+the cloud, there are two ways to access the run results as new or different datasets are provided.
+model: This enables a comprehensive understanding of
+o The first approach involves model performance and facilitates iterative
+storing input data in a database improvements over time.
+and programming the system to
+periodically retrieve that data and 3.5.5. Monitoring / Feedback of model performance
+generate predictions. The metrics / Reception of new requirements or
+resulting predictions are stored in functionalities
+another database and are
+98
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 13 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+Once the deployment stage is reached, a continuous • Inference and Feature Store (online):
+monitoring process begins to ensure the model's SageMaker Feature Store provides low
+performance metrics are functioning correctly. This latency (less than 10 milliseconds) and
+monitoring process relies on feedback from the high read throughput to serve the model on
+client regarding the machine learning system's top of newly arriving data.
+performance in the specific task at hand. • Edge Inference: Edge inference is
+Additionally, the consideration of incorporating beneficial in cases where connectivity is
+new functionalities into the system is an important limited. It leverages IoT devices or mobile
+aspect of this substage, requiring feedback on any devices, offering scalability by deploying
+proposed changes or retraining. the model on different devices. However,
+this approach presents new risks and
+To monitor the performance of the machine learning challenges. Developing models capable of
+model effectively, the following questions have running on devices with limited capacity
+been formulated: compared to cloud clusters requires careful
+consideration of the model's architecture
+• What is the serving model? and the implementation of robust processes
+• How are the predictions delivered? to reap the benefits.
+• What level of management is desired?
+(Batch or online) To decide which deployment method to implement,
+• What is the expected time for changes? the following factors should be considered:
+(Time from commit to production)
+• What type of environment will consume • Latency: How quickly do
+the model outputs (predictions or applications/users require the model
+classifications)? prediction results?
+• What are the performance metrics of the • Data privacy: Are there concerns about
+model? sending data to a back-end system?
+• What is your model release policy? Does it • Network connectivity: Certain
+require A/B testing or multi-armed bandits deployment options rely on internet or
+testing to measure effectiveness on network access. Limited or no network
+business metrics and determine which connectivity in the deployment
+model should be promoted in the environment narrows down the available
+production environment? options.
+• What is your implementation strategy • Cost: Different deployment options vary
+applied to machine learning? (e.g., in cost. Consider the expenses associated
+shadow/canary deployment required?) with keeping a server online 24/7 to serve
+predictions and the operational and
+Some of the most important concepts and maintenance costs involved.
+technologies to consider when monitoring a model’s
+performance metrics are presented as follows
+4. VALIDATION CHECKLIST
+• Batch Inference: This process is suitable
+when latency is higher and real-time To validate the methodology, a questionnaire was
+predictions are not necessary for the AI created using the Google Forms tool. This
+model. It is an asynchronous process that questionnaire underwent validation with the
+does not depend on user traffic, and any participation of seven different projects involving
+failures do not require immediate action as four engineers and an intern from the Faculty of
+there are no affected clients. Electronics Engineering and Telecommunications at
+• Online Inference: Online inference is Universidad Del Cauca. The questionnaire includes
+required when synchronous predictions are a series of questions based on the five stages of the
+needed. The model must be decoupled methodology. The following are the most pertinent
+from mobile and web applications. This questions from each stage:
+decoupling allows data scientists to update
+the model, roll back to previous versions, 4.1. Stage 1: Business Comprehension
+and implement various deployment
+strategies more easily. The following questions are relevant for this stage:
+99
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 14 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+clusters?
+• Is there access to a suitable dataset to • Was the analysis of percentiles (e.g., 75th,
+address this problem? 25th, min, and max) performed?
+• Have the requirements or needs of the • Do you believe that the appropriate
+client/company and the project objective analysis was conducted to draw the most
+been fully understood? important conclusions?
+• Have the necessary hypotheses been
+If the chosen approach involves an ML model or a formulated to assess the usefulness of the
+dashboard: variables in the study for making
+projections?
+• Is there a requirement for the ML model or • Has the algorithm been evaluated?
+dashboard to be implemented in cloud
+services? If not, please provide an 4.4. Stage 4: Modeling
+explanation.
+• Have the technical and business success During this stage, the following considerations are
+criteria for the project been identified? important:
+• Have the necessary physical components
+for the project's development been • Has a suitable machine learning algorithm
+calculated and determined? been selected to address the problem?
+• Is there a plan in place for data storage and • Has the model been trained?
+processing? • Depending on the business problem and
+• Have the required human resources been the machine learning technique used, select
+allocated? the option that best describes your machine
+• Are cloud tools being considered? learning model: binary, classification,
+Specifically, are AWS tools being utilized? multiclass classification, regression,
+• Has it been established whether this clustering, classification, or anomaly
+business is financially viable for potential detection.
+consumers of the product or service being • Has the model been appropriately
+offered? evaluated?
+• Has the design of a project pipeline been • Have measures been taken to prevent
+initiated? overfitting?
+• Have the necessary tests been conducted to
+4.2. Stage 2: Data Preparation ensure the correct functioning of the
+model?
+The following questions are relevant for this stage:
+4.5. Stage 5: Deployment
+• Has an analysis been conducted to
+determine if the data provided by the client The following aspects are relevant for this stage:
+is suitable and useful for the project? If not,
+has the necessary data treatment been • Was the model chosen for the development
+performed? and execution of the project?
+• Have the relevant features in the dataset • Describe the evaluation process and the
+been extracted to address the problem? tools used, or explain why it was not
+• Regarding deployment and test necessary to perform this process.
+automation, has the CI/CD pipeline been • Is the model currently in production? This
+established for the code base? means that the model is deployed in the
+cloud, fulfilling the required functions, and
+4.3. Stage 3: Data Analysis is accessible to the client.
+• Is the model reproducible? Reproducibility
+The following questions are relevant for this stage: is crucial for machine learning projects. It
+is important to provide details on the
+• Was a statistical description of the data method and results of the modeling phase
+carried out? so that it can be reproduced.
+• Was the necessary analysis conducted to • Please specify your implementation
+identify if the data exhibits any patterns or strategy and explain the reasons behind its
+100
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 15 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+selection.
+• Real-world data may differ from the data
+used to train the model, potentially leading
+to reduced model quality. Are mechanisms
+in place to monitor the model and prevent
+a decline in its performance?
+Additionally, an Excel template has been created to Fig. 3. Score of the 7 projects
+assess the project's advancement using a scoring
+system. Each route has a specific number of points
+assigned as follows:
+• For a dashboard, the maximum number of
+points is 55.
+• For an analytical report, the maximum
+number of points is 76.
+• For a machine learning model, the Fig. 4. Score for the question: has the primary
+maximum number of points is 115-122, measure that defines project performance been
+depending on the chosen evaluation metric. determined?
+Fig. 2. Histogram of the scores by the 7 projects
+Fig. 5. Score for the question: Is this product more
+evaluated.
+profitable than the competing product?
+The scores obtained from the 7 projects mentioned
+can be observed in Figures 2 and 3. To safeguard the
+privacy of the company's clients, the projects are
+identified by the engineers' email addresses
+responsible for their development. The figures
+illustrate a range of scores from 17 to 92 points. It is
+important to note that the lowest score belongs to a
+dashboard project, which means that the maximum
+score it could have achieved is 55. On the other
+Fig. 6. Score for the question: Is there knowledge
+hand, the project with the highest score is a Machine
+about how customer demand is sustained?
+Learning model, with a potential maximum score
+between 115 and 122, depending on the evaluation
+metric employed in the project.
+An analysis of the questionnaire responses has been
+conducted, revealing several noteworthy indicators
+that deserve careful consideration. It is evident from
+the analysis that the majority of projects either fail
+to comply with these indicators or overlook their
+Fig. 7. Score for the question: Regarding
+significance. Figures 4, 5, 6, 7, and 8 highlight the
+deployment and test automation – has the CI/CD
+specific questions where respondents who
+pipeline been established?
+completed the questionnaire display the highest
+rates of non-compliance.
+101
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 16 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+• For yes/no questions, one point is awarded
+for a "yes" response and zero points for a
+"no" response.
+• Multiple-choice questions are scored by
+assigning one point for each selected
+option. For example, if a multiple-choice
+question offers seven options and the user
+selects all of them, they will be awarded
+Fig. 8. Score for the question: Is there a
+seven points. However, it should be noted
+deployment strategy?
+that the scoring for multiple-choice
+The graphs obtained from the Google forms clearly
+questions must be manually calculated, as
+depict that the company overlooks crucial aspects
+Google Forms does not provide automatic
+when undertaking a project. It is worth noting that a
+individual point summation for questions
+significant weakness, which has a profound impact
+with multiple correct answers.
+on the data science team when working with
+It is worth noting that the number of questions
+Machine Learning, is the absence of an
+requiring manual score adjustment is minimal.
+implementation and deployment strategy. As
+Furthermore, the Excel document provides a
+mentioned earlier, one of the key objectives of this
+comprehensive view of the project's progress,
+methodology is to provide effective guidance to the
+displaying the percentage completion for each
+data science team, thereby reducing the likelihood
+section and the overall percentage achieved thus far.
+of project failures or setbacks and through this
+Each point in the document is accompanied by an
+validation process based on the Google forms
+explanation, allowing company personnel to easily
+assess the project's status and level of completion.
+5. CONCLUSIONS
+The second objective of the questionnaire is to
+enable the engineering team to identify any missing
+This paper presents a methodology based on MLOps
+steps in the project's development. This involves
+aimed at supporting management in data science
+analyzing whether certain features or metrics have
+projects. To validate the effectiveness of this
+been overlooked and identifying relevant areas that
+methodology, a questionnaire was developed using
+may have been overlooked but are crucial to the
+the Google Forms tool. The questionnaire was
+project's success.
+administered to seven different projects, involving
+four engineers and an intern from the Faculty of
+It is crucial to emphasize that the questionnaire
+Electronic Engineering and Telecommunications of
+should be answered by the data science team
+the Universidad Del Cauca. The intern's project was
+members who serve as leaders, in collaboration with
+carried out concurrently with the development of
+their respective technical and business teams. Since
+this methodology, as both projects focused on the
+the questionnaire encompasses both technical and
+implementation and application of MLOps. While
+business domains, input from the entire team is
+the project titled "PROPOSAL FOR THE
+essential to address it comprehensively. Each team
+IMPLEMENTATION OF A MLOPS FOLLOWING
+member plays a distinct role with unique
+THE GUIDELINES DEFINED BY THE COMPANY
+responsibilities, and therefore, answering the
+WIZIT MIND BLOWING SOLUTIONS SAS" aimed
+questionnaire with the appropriate individuals is
+to align with the proposed methodology to a
+crucial to ensure that no steps in the methodology
+significant extent (approximately 90%), not all
+are overlooked and to provide informed responses.
+aspects of the methodology were applicable to this
+specific project. It is important to note that the
+An analysis of the responses obtained through
+remaining six projects were in their final stages. The
+Google Forms indicates that the projects align with
+questionnaire serves two primary objectives:
+70% to 80% of the methodology. However, the most
+challenging areas for the company to comply with
+Firstly, it evaluates the progress of each project. To
+are deployment, as well as the financial and
+facilitate this evaluation, an Excel document was
+competitive aspects.
+created. The status of a project can be determined
+based on the number of points obtained, using the
+validation list provided in the survey. The scoring
+REFERENCES
+system is as follows:
+102
+Universidad de Pamplona
+I. I. D. T. A.
+
+=== PDF PAGE 17 ===
+ISSN: 1692-7257 - Volumen 1 – Número 41 - 2023
+Revista Colombiana de
+Tecnologías de Avanzada
+10 sugerencias principales para Machine Learning Petersen, K., Feldt, R., Mujtaba, S., & Mattsson, M.
+reproducible. (n.d.). Platzi. Retrieved June 26, (2008). Systematic Mapping Studies in
+2023, from https://platzi.com/blog/diez- Software Engineering. Proceedings of the 12th
+sugerencias-para-machine-learning/ International Conference on Evaluation and
+Azevedo, A., & Santos, M. (2008). KDD, SEMMA Assessment in Software Engineering, 68–77.
+and CRISP-DM: A parallel overview. IADIS http://dl.acm.org/citation.cfm?id=2227115.22
+European Conf. Data Mining. 27123
+https://www.semanticscholar.org/paper/KDD Saltz, J. (2021, July 30). Data Science Management:
+%2C-SEMMA-and-CRISP-DM%3A-a- 5 Key Concepts. Data Science Process
+parallel-overview-Azevedo- Alliance. https://www.datascience-
+Santos/6bc30ac3f23d43ffc2254b0be24ec4217 pm.com/data-science-management/
+cf8c845 Testi, M., Ballabio, M., Frontoni, E., Iannello, G.,
+Battina, D. S. (2019). An Intelligent Devops Moccia, S., Soda, P., & Vessio, G. (2022).
+Platform Research And Design Based On MLOps: A Taxonomy and a Methodology.
+Machine Learning. Training, 6(3). IEEE Access, 10, 63606–63618.
+CI/CD para Machine learning – Canalizaciones de https://doi.org/10.1109/ACCESS.2022.31817
+Amazon SageMaker – Amazon Web Services. 30
+(n.d.). Amazon Web Services, Inc. Retrieved
+June 26, 2023, from
+https://aws.amazon.com/es/sagemaker/pipelin
+es/
+Estructuras, Metodologías y Métodos Ágiles y
+Lean. (n.d.). Retrieved June 26, 2023, from
+https://www.centro-
+virtual.com/recursos/biblioteca/pdf/metodolo
+gias_agiles/clase2_pdf1.pdf
+Gurrola, R., & Rodriguez Rivas, J. G. (2020).
+Ciencia de los Datos, Propuestas y casos de
+uso.
+hmong.wiki. (n.d.). Selección de modelo
+IntroducciónyDos direcciones de selección de
+modelo. Retrieved June 26, 2023, from
+https://hmong.es/wiki/Model_selection
+Kreuzberger, D., Kühl, N., & Hirschl, S. (2023).
+Machine Learning Operations (MLOps):
+Overview, Definition, and Architecture. IEEE
+Access, 11, 31866–31879.
+https://doi.org/10.1109/ACCESS.2023.32621
+38
+Quintanilla, Luis. (2023, March 13). Métricas de
+ML.NET - ML.NET.
+https://learn.microsoft.com/es-
+es/dotnet/machine-learning/resources/metrics
+Machine Learning Lens—Machine Learning Lens.
+(n.d.). Retrieved June 26, 2023, from
+https://docs.aws.amazon.com/wellarchitected/
+latest/machine-learning-lens/machine-
+learning-lens.html
+Mäkinen, S. (n.d.). Designing an open-source cloud-
+native MLOps pipeline [University of
+Helsinki]. Retrieved June 26, 2023, from
+https://helda.helsinki.fi/bitstream/handle/1013
+8/328526/Makinen_Sasu_Thesis_2021.pdf?se
+quence=2&isAllowed=y
+103
+Universidad de Pamplona
+I. I. D. T. A.

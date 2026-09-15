@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1780" viewBox="0 0 1500 1780"><rect width="1500" height="1780" fill="white"/>
+<text x="190" y="56" font-family="Arial, sans-serif" font-size="41" font-weight="700" fill="#172B43">Pipeline híbrido semanal de Cup&amp;Cake</text>
+<text x="190" y="95" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Ciclo propuesto de desarrollo y operación con enfoque MLOps</text>
+<rect x="190" y="124" width="1200" height="140" rx="12" fill="#EEF4FA" stroke="#486B8F" stroke-width="2"/>
+<text x="210" y="170" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#486B8F">01</text>
+<text x="285" y="170" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">Business Comprehension</text>
+<text x="215" y="212" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Definir el problema, alcance, usuario y criterios de aceptación.</text>
+<text x="215" y="249" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Salida: objetivo semanal, horizontes h=1 a h=4 y protocolo.</text>
+<polyline points="790,264 790,298" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="790,298 781,285 799,285" fill="#52677E"/>
+<rect x="190" y="298" width="1200" height="140" rx="12" fill="#EEF4FA" stroke="#486B8F" stroke-width="2"/>
+<text x="210" y="344" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#486B8F">02</text>
+<text x="285" y="344" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">Data Collection</text>
+<text x="215" y="386" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Auditar fuente, hash, duplicados, catálogo y cobertura semanal.</text>
+<text x="215" y="423" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Salida: calendario íntegro; semanas inciertas como NaN.</text>
+<polyline points="790,438 790,472" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="790,472 781,459 799,459" fill="#52677E"/>
+<rect x="190" y="472" width="1200" height="140" rx="12" fill="#EEF4FA" stroke="#486B8F" stroke-width="2"/>
+<text x="210" y="518" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#486B8F">03</text>
+<text x="285" y="518" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">EDA</text>
+<text x="215" y="560" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Explorar importes, cobertura, ceros y patrones en desarrollo.</text>
+<text x="215" y="597" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Salida: diagnóstico y límites de suficiencia de los registros.</text>
+<polyline points="790,612 790,646" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="790,646 781,633 799,633" fill="#52677E"/>
+<rect x="190" y="646" width="1200" height="140" rx="12" fill="#EEF4FA" stroke="#486B8F" stroke-width="2"/>
+<text x="210" y="692" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#486B8F">04</text>
+<text x="285" y="692" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">Feature Engineering</text>
+<text x="215" y="734" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Construir historia disponible, antigüedad, medias y calendario.</text>
+<text x="215" y="771" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Salida: predictores disponibles en cada origen; objetivos sin imputar.</text>
+<polyline points="790,786 790,820" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="790,820 781,807 799,807" fill="#52677E"/>
+<rect x="190" y="820" width="1200" height="140" rx="12" fill="#EEF4FA" stroke="#486B8F" stroke-width="2"/>
+<text x="210" y="866" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#486B8F">05</text>
+<text x="285" y="866" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">Model Training</text>
+<text x="215" y="908" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Ajustar componentes estadístico y ML; combinar por horizonte.</text>
+<text x="215" y="945" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Salida: selección interna, participaciones y asignaciones reconciliadas.</text>
+<polyline points="790,960 790,994" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="790,994 781,981 799,981" fill="#52677E"/>
+<rect x="190" y="994" width="1200" height="140" rx="12" fill="#EEF4FA" stroke="#486B8F" stroke-width="2"/>
+<text x="210" y="1040" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#486B8F">06</text>
+<text x="285" y="1040" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">Testing and Debugging</text>
+<text x="215" y="1082" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Verificar software y evaluar predicciones sobre objetivos observados.</text>
+<text x="215" y="1119" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Salida: controles, métricas y fallos; evaluación retrospectiva exploratoria.</text>
+<polyline points="790,1134 790,1168" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="790,1168 781,1155 799,1155" fill="#52677E"/>
+<rect x="190" y="1168" width="1200" height="140" rx="12" fill="#FFF6E8" stroke="#AA782A" stroke-width="2"/>
+<text x="210" y="1214" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#AA782A">07</text>
+<text x="285" y="1214" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">Deployment</text>
+<text x="215" y="1256" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Empaquetar modelo, versión y salida DSS; validar el uso con el responsable.</text>
+<text x="215" y="1293" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Estado: exportación local disponible; operación productiva pendiente.</text>
+<polyline points="790,1308 790,1342" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="790,1342 781,1329 799,1329" fill="#52677E"/>
+<rect x="190" y="1342" width="1200" height="140" rx="12" fill="#FFF6E8" stroke="#AA782A" stroke-width="2"/>
+<text x="210" y="1388" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#AA782A">08</text>
+<text x="285" y="1388" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#172B43">Monitoring</text>
+<text x="215" y="1430" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Vigilar cobertura, antigüedad y errores cuando lleguen datos observados.</text>
+<text x="215" y="1467" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Propuesta: alertas, revisión humana y reentrenamiento versionado.</text>
+<polyline points="190,1412 105,1412 105,368 184,368" fill="none" stroke="#52677E" stroke-width="3"/>
+<polygon points="184,368 171,359 171,377" fill="#52677E"/>
+<text x="22" y="1539" font-family="Arial, sans-serif" font-size="29" font-weight="700" fill="#172B43">Retorno controlado: nuevos datos o degradación → revisión → nueva versión</text>
+<text x="22" y="1587" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Fallos técnicos: corregir y repetir las etapas afectadas, conservando el registro.</text>
+<text x="22" y="1629" font-family="Arial, sans-serif" font-size="27" font-weight="400" fill="#172B43">Evaluación final: no ajustar el método para mejorar retrospectivamente sus errores.</text>
+<text x="22" y="1684" font-family="Arial, sans-serif" font-size="26" font-weight="400" fill="#172B43">Trazabilidad transversal: fuentes · código · configuración · pruebas · modelos · métricas</text>
+<text x="22" y="1734" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#172B43">Fuente: elaboración propia con base en Ordonez Bolanos et al. (2023, fig. 1, pp. 92–99)</text>
+<text x="22" y="1767" font-family="Arial, sans-serif" font-size="24" font-weight="400" fill="#172B43">y García Velasco (2023, cap. 5, pp. 39–45).</text>
+</svg>

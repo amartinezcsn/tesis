@@ -1,0 +1,155 @@
+{
+  "source": "C:\\Python\\tesis\\tmp\\pipeline_referencias\\fuente_rev44_congelada.docx",
+  "sha256_original": "18841dc44aaa12b766f6179937b2d266d2097e6072b08f94de03fa088fc57ffc",
+  "changes": [
+    {
+      "paragraph_original": 312,
+      "before": "Por consiguiente, el rigor del estudio proviene de la separación temporal estricta, la validación rolling-window (ventana deslizante) y la comparación homogénea contra referencias reproducibles. Estos elementos permiten evaluar generalización predictiva en condiciones históricas, sin afirmar causalidad experimental.",
+      "after": "El rigor del estudio se sustentará en la separación cronológica, la validación con orígenes sucesivos y una ventana de historia creciente, conservando todas las semanas del calendario. La comparación se realizará sobre objetivos observados comunes a los métodos de cada contraste. La evaluación será retrospectiva y exploratoria; no permitirá inferir causalidad ni generalizar a otras microempresas."
+    },
+    {
+      "paragraph_original": 316,
+      "before": "Se propone una validación de ventana deslizante con 52 semanas de entrenamiento y avance de una semana. Su viabilidad se verificará según la cobertura efectiva, los rezagos y el número de observaciones utilizables; cualquier ajuste se justificará en la etapa de desarrollo. Se generarán pronósticos directos para h=1, h=2, h=3 y h=4, con h=1 como horizonte principal. Las métricas se reportarán por horizonte. La suma de los cuatro pronósticos será un consolidado de cuatro semanas y no equivaldrá necesariamente a un mes calendario.",
+      "after": "El protocolo calendar_gaps utiliza historia creciente desde el inicio del periodo hasta cada origen de pronóstico. La configuración vigente propone del 3 de mayo de 2021 al 24 de junio de 2024, con 165 semanas calendario y 26 semanas finales reservadas. El número de objetivos evaluables dependerá de la cobertura aprobada y del horizonte; 26 semanas reservadas no equivalen a 26 observaciones válidas. Se emitirán pronósticos para h=1 a h=4, con h=1 como horizonte principal. El consolidado de cuatro semanas no se denominará mes calendario. Estos parámetros deben justificarse antes de la ejecución real."
+    },
+    {
+      "paragraph_original": 330,
+      "before": "El procedimiento comprende recolección y depuración de registros, agregación semanal, diagnóstico temporal, ingeniería de características, selección de componentes e integración del modelo híbrido, estimación de la distribución porcentual, evaluación fuera de muestra y comunicación de resultados. El pipeline implementa una versión inicial de este flujo. La verificación técnica del software se distingue de la ejecución científica con datos reales, que permanece pendiente de aprobar fuentes, cobertura, catálogo y protocolo de evaluación.",
+      "after": "El procedimiento se organizará en ocho fases: Business Comprehension, Data Collection, EDA, Feature Engineering, Model Training, Testing and Debugging, Deployment y Monitoring. Se adopta como marco la metodología de cinco etapas de Ordonez Bolanos et al. (2023, fig. 1, pp. 92–99) y se integra la secuencia de experimentación, selección, puesta en producción, monitorización y reentrenamiento de García Velasco (2023, cap. 5, pp. 39–45). La Figura 27 presenta una adaptación propia para el pronóstico semanal de Cup&Cake, no una reproducción literal de los esquemas de los autores. La disponibilidad del software y las pruebas técnicas se distinguirán de la evaluación con datos reales y de la operación productiva."
+    },
+    {
+      "paragraph_original": 331,
+      "before": "Recolección y estructuración de los conjuntos de datos (Datasets)",
+      "after": "Data Collection y control de calidad"
+    },
+    {
+      "paragraph_original": 335,
+      "before": "Se homologarán fechas, identificadores de insumos e importes, documentando duplicados, devoluciones y registros incompletos. Las observaciones se agregarán por semana calendario con una regla uniforme de inicio y cierre. Se obtendrán la serie del importe total, las series monetarias por insumo y sus participaciones, además de predictores compatibles con la frecuencia semanal.",
+      "after": "Se conservarán las fuentes originales y se registrarán su huella SHA-256, hoja, fecha de extracción y decisiones de revisión. Se homologarán fechas, insumos e importes, documentando duplicados y registros incompletos sin eliminarlos automáticamente. El catálogo delimitará ingredientes, empaques y decoración recurrente y excluirá combustible, muebles y herramientas. El panel mantendrá todas las semanas del periodo; los estados incierta, desconocida e incompleta se representarán como NaN, mientras que los ceros requerirán confirmación. La calidad y el versionado de los datos constituyen condiciones de entrada al modelado (Ordonez Bolanos et al., 2023, pp. 93–94; García Velasco, 2023, pp. 40–41)."
+    },
+    {
+      "paragraph_original": 336,
+      "before": "Análisis exploratorio de la serie temporal semanal",
+      "after": "EDA de la serie temporal semanal"
+    },
+    {
+      "paragraph_original": 338,
+      "before": "El periodo con cobertura verificable se dividirá cronológicamente en desarrollo y evaluación final. La configuración inicial reserva las últimas 16 semanas calendario; al exigir que los cuatro horizontes tengan valores observables, se obtienen 13 orígenes finales comunes. Esta configuración deberá justificarse con la cobertura real antes del experimento. La versión actual genera ACF, PACF, distribución de importes y frecuencia de ceros sobre desarrollo. STL, con periodo 52, requiere al menos tres ciclos anuales y continuidad. ADF, KPSS, Ljung-Box, ADI, CV² y el diagnóstico formal de atípicos quedan como ampliaciones por implementar y revisar según su pertinencia.",
+      "after": "El calendario se dividirá cronológicamente en desarrollo y evaluación final. La configuración calendar_gaps reserva 26 semanas calendario y propone ocho orígenes internos de ajuste; el número de etiquetas observadas se informará por horizonte. El EDA describirá cobertura, distribución de importes, frecuencia de ceros confirmados y evolución temporal utilizando desarrollo para las decisiones de modelado. ACF, PACF y STL se omitirán cuando existan huecos en desarrollo, sin rellenar respuestas ni comprimir fechas para producir esas figuras. Los diagnósticos adicionales deberán justificarse según su pertinencia. Esta separación adapta el análisis de datos de los autores al carácter temporal e incompleto del caso (García Velasco, 2023, p. 40; Ordonez Bolanos et al., 2023, pp. 94–96)."
+    },
+    {
+      "paragraph_original": 341,
+      "before": "Ingeniería de características y variables exógenas",
+      "after": "Feature Engineering y disponibilidad temporal"
+    },
+    {
+      "paragraph_original": 343,
+      "before": "La versión inicial construye rezagos de 1, 2, 4, 8 y 12 semanas, resúmenes móviles de 4, 8 y 12 semanas y variables calendáricas. Emplea predictores prefijados, sin selección por frecuencia. La imputación y el escalado de los modelos que los requieren se ajustan dentro de cada ventana. Las exógenas son opcionales y requieren fuente, versión y fecha de disponibilidad; para semanas futuras solo se admiten calendarios conocidos o pronósticos archivados disponibles en el origen. En su ausencia se utilizan observaciones previas admisibles o se registra información faltante.",
+      "after": "La rama calendar_gaps construye el último importe observado y su antigüedad, el número de observaciones históricas, medias y conteos disponibles en ventanas calendario de 4, 8 y 12 semanas, y componentes calendáricos. Las ventanas sin datos conservan sus valores ausentes. Las respuestas de entrenamiento no se imputan y cada ejemplo utiliza únicamente predictores disponibles en su origen. Las ventas y exógenas son opcionales, con fuente y disponibilidad documentadas; la configuración principal no las incorpora actualmente. La selección y transformación de variables descrita por Ordonez Bolanos et al. (2023, p. 94) se adapta a este control temporal y no autoriza rellenar compras desconocidas."
+    },
+    {
+      "paragraph_original": 344,
+      "before": "Selección y configuración de modelos predictivos",
+      "after": "Model Training y selección de componentes"
+    },
+    {
+      "paragraph_original": 346,
+      "before": "Modelos estadísticos: la implementación inicial incluye ETS aditivo sin componente estacional y ARIMA(1,1,1). Croston-SBA y TSB quedan fuera de esta versión; su eventual incorporación requerirá justificación en desarrollo y pruebas antes de consultar la evaluación final.",
+      "after": "Modelos estadísticos: la rama calendar_gaps implementa AR(1) en espacio de estados mediante SARIMAX y permite ARIMA(1,1,1) como candidato adicional. Ambos conservan el calendario y admiten respuestas faltantes en el ajuste estadístico; sus estimaciones internas no se incorporan como compras observadas. ETS corresponde a la rama histórica strict y no al protocolo vigente con faltantes."
+    },
+    {
+      "paragraph_original": 347,
+      "before": "Modelos de aprendizaje automático: la implementación inicial incluye Ridge con estandarización y tres valores candidatos de regularización, así como Random Forest con complejidad acotada. El ajuste utiliza importes nominales. HistGradientBoosting y las variantes log1p o hurdle del código anterior no forman parte del experimento híbrido implementado.",
+      "after": "Modelos de aprendizaje automático: la rama calendar_gaps implementa HistGradientBoosting y permite Random Forest con soporte nativo de predictores faltantes. Los modelos directos por horizonte se entrenan únicamente con objetivos observados. La configuración propone al menos 24 etiquetas utilizables por horizonte como umbral operativo; su cumplimiento no demuestra suficiencia estadística. Ridge pertenece a la rama strict. Cada experimento conservará parámetros, métricas y artefactos conforme al principio de trazabilidad de García Velasco (2023, pp. 41–43)."
+    },
+    {
+      "paragraph_original": 352,
+      "before": "La referencia de distribución es el promedio de las participaciones semanales observadas en la ventana de entrenamiento, calculado solo en semanas de importe total positivo y actualizado con información previa a cada origen. El promedio exponencial se contrasta con esta referencia. Si no existen semanas válidas para estimar participaciones, el pipeline informa falta de datos y no genera una distribución arbitraria.",
+      "after": "La referencia de distribución será el promedio de participaciones históricas de semanas observadas con importe total positivo. El candidato exponencial tendrá en cuenta la edad calendario, incluidos los huecos. Ambos usarán solo la historia previa al origen. Si no existen semanas válidas, el procedimiento informará insuficiencia y no generará una composición arbitraria."
+    },
+    {
+      "paragraph_original": 354,
+      "before": "La configuración inicial utiliza ventanas de 52 etiquetas semanales por horizonte y requiere historia adicional para construir rezagos y resúmenes móviles. Ocho orígenes internos permiten seleccionar los componentes y sus parámetros. Las etiquetas de los cuatro horizontes de la última partición interna deben preceder al primer origen de evaluación final. La longitud de las ventanas y el número de orígenes deberán revisarse con la cobertura real, sin consultar los errores finales para elegirlos.",
+      "after": "En calendar_gaps se utiliza una ventana creciente; window=52 no limita esta rama. Ocho orígenes internos, sujetos a suficiencia por horizonte, seleccionarán componentes y pesos. Todas sus fechas objetivo deberán preceder al comienzo de la evaluación final. La configuración independent_holdout=false identifica una evaluación retrospectiva exploratoria; no se presentará como una prueba confirmatoria independiente. Las decisiones se registrarán antes de ejecutar la comparación real y no se modificarán para favorecer H1."
+    },
+    {
+      "paragraph_original": 355,
+      "before": "En cada origen se entrenarán los modelos con la ventana histórica disponible y se generarán pronósticos directos para las cuatro semanas siguientes, sin utilizar sus valores observados. La configuración, los hiperparámetros, las transformaciones y el mecanismo de integración se seleccionarán mediante particiones temporales internas. Durante la evaluación final podrán incorporarse observaciones de semanas ya transcurridas mediante una regla de actualización previamente fijada, pero sus errores no se usarán para rediseñar el procedimiento. Solo se evaluarán fechas objetivo observables y comunes a los métodos comparados.",
+      "after": "En cada origen se ajustarán los modelos con la historia previa disponible. La rama ML emitirá pronósticos directos por horizonte y la rama estadística pronósticos de varios pasos; ninguna utilizará las respuestas futuras. La combinación se seleccionará en validación interna y permanecerá fijada durante la evaluación. Las nuevas observaciones ya transcurridas podrán incorporarse mediante la regla de historia creciente, sin usar los errores finales para rediseñar el método. Se conservarán todos los orígenes y se evaluarán únicamente objetivos observados comunes a cada contraste."
+    },
+    {
+      "paragraph_original": 356,
+      "before": "Métricas de evaluación del desempeño",
+      "after": "Testing and Debugging"
+    },
+    {
+      "paragraph_original": 360,
+      "before": "Se propone utilizar MASE como medida monetaria complementaria, con el denominador calculado exclusivamente en el conjunto de entrenamiento y una referencia ingenua explícita. Si el denominador es cero, se reportará como no definido. MAPE no será un criterio de selección y, si se presenta como diagnóstico, se indicarán las observaciones excluidas por importe cero.",
+      "after": "MASE complementará las métricas monetarias cuando exista una escala válida. En calendar_gaps su denominador se obtendrá de diferencias absolutas entre pares de semanas calendario consecutivas observadas del entrenamiento. No se unirán artificialmente semanas separadas por huecos. Si la escala es cero o no puede calcularse, se informará como no definida. MAPE no será un criterio de selección."
+    },
+    {
+      "paragraph_original": 362,
+      "before": "El contraste de H1 exige evidencia favorable tanto para el importe total como para las participaciones en h=1. La implementación dispone de un remuestreo circular pareado por bloques de cuatro semanas, con 2000 réplicas y ajuste de Bonferroni para dos componentes, aplicado a diferencias de pérdidas monetarias cuadráticas y porcentuales absolutas. Conserva la posición temporal de las semanas con composición no definida. Este procedimiento se considera exploratorio hasta revisar su adecuación al tamaño muestral y aprobar el protocolo antes de examinar una evaluación independiente. Las mejoras descriptivas, las pruebas de software o una ejecución demostrativa no confirman H1.",
+      "after": "El análisis de H1 examinará por separado las diferencias de pérdida del importe total y de las participaciones en h=1. El código dispone de remuestreo circular pareado por bloques de cuatro semanas, con 2000 réplicas y ajuste de Bonferroni para dos componentes, conservando las posiciones temporales de los faltantes. Su interpretación será exploratoria y dependerá de la cantidad y distribución de objetivos observados. La configuración actual no habilita una confirmación independiente de H1; mejorar métricas descriptivas o aprobar pruebas de software no equivale a confirmarla."
+    },
+    {
+      "paragraph_original": 363,
+      "before": "Integración en Inteligencia de Negocios y comunicación del presupuesto de abastecimiento",
+      "after": "Deployment y comunicación del presupuesto"
+    },
+    {
+      "paragraph_original": 364,
+      "before": "Se implementó una salida local de inteligencia de negocios que muestra el importe total pronosticado por horizonte, las participaciones y asignaciones por insumo, las métricas y las advertencias de ejecución. Su uso con resultados de Cup&Cake permanece pendiente de la validación con datos reales. La suma de los cuatro horizontes se identificará como consolidado de cuatro semanas y no como mes calendario.",
+      "after": "La implementación exporta modelos, pronósticos y una salida local DSS con importes por horizonte, participaciones, asignaciones, métricas y advertencias. La exportación local constituye el prototipo disponible. El uso productivo requerirá una ejecución real validada, versión identificada, prueba de aceptación con el responsable y mecanismo de recuperación de la versión anterior. Se propone una entrega semanal por lotes, coherente con el horizonte del estudio. El despliegue debe elegirse según el destinatario y la forma de consumo de las predicciones (Ordonez Bolanos et al., 2023, pp. 97–98; García Velasco, 2023, p. 43)."
+    },
+    {
+      "paragraph_original": 396,
+      "before": "Proceso de construcción del pipeline",
+      "after": "Fases del pipeline híbrido con enfoque MLOps"
+    },
+    {
+      "paragraph_original": 397,
+      "before": "",
+      "after": ""
+    },
+    {
+      "paragraph_original": 398,
+      "before": "Figura 27 - Trazabilidad del pipeline analítico de la investigación. [Antecedente de la versión anterior; no es evidencia del híbrido actual]",
+      "after": "Figura 27 - Fases del pipeline híbrido semanal con enfoque MLOps. Fuente: elaboración propia con base en Ordonez Bolanos et al. (2023, fig. 1, pp. 92–99) y García Velasco (2023, cap. 5, pp. 39–45). Las fases operativas indicadas no acreditan un despliegue productivo completado."
+    },
+    {
+      "paragraph_original": 564,
+      "before": "Al 12 de septiembre de 2026 se dispone de una implementación inicial en Python, con entrada 00_pipeline_hibrido.py y módulos separados de auditoría, preparación semanal, características, modelos, composición, evaluación y comunicación. El software se ha ejecutado con datos de demostración para comprobar su funcionamiento; el entrenamiento y la evaluación científica con registros reales aprobados de Cup&Cake siguen pendientes.",
+      "after": "Al 15 de septiembre de 2026 se dispone de una implementación modular con entrada 00_pipeline_hibrido.py. La configuración principal utiliza calendar_gaps, actualizada el 14 de septiembre, y conserva las ramas strict y demo como antecedentes y pruebas técnicas. La corrida real del 15 de septiembre se detuvo en la validación de fuente, antes del entrenamiento. Su auditoría identificó 1670 registros válidos para revisión y 12 pendientes; este recuento no certifica cobertura ni suficiencia del conjunto analítico."
+    },
+    {
+      "paragraph_original": 566,
+      "before": "La rama monetaria selecciona internamente un componente ETS o ARIMA y uno Ridge o Random Forest, junto con el peso de su combinación por horizonte. La rama de composición utiliza participaciones históricas ponderadas exponencialmente y se compara con un promedio histórico. Las categorías se fijan sin consultar la evaluación final y las asignaciones conservan el total después del redondeo a centavos.",
+      "after": "La rama monetaria vigente selecciona internamente AR(1) o ARIMA(1,1,1) en espacio de estados y un componente HistGradientBoosting o Random Forest, según los candidatos habilitados. La historia crece conservando los huecos del calendario. La composición se estima con participaciones históricas y un promedio exponencial sensible a la edad calendario. Las categorías se fijan sin consultar los errores finales y las asignaciones conservan el total al redondear a centavos."
+    },
+    {
+      "paragraph_original": 567,
+      "before": "La revisión técnica aprobó 57 pruebas de Python y tres del constructor del tablero. Estas verifican, entre otros aspectos, disponibilidad temporal, particiones, registros inválidos, composición, reconciliación y recarga del artefacto. La ejecución demostrativa produjo 20 figuras de un catálogo de 23; las omisiones se documentaron. Estos conteos acreditan pruebas de software, no precisión predictiva ni respaldo de H1.",
+      "after": "Los conteos de 57 pruebas de Python y tres del constructor del tablero, así como las 20 figuras de demostración, corresponden a la revisión técnica previa de la implementación inicial. No certifican por sí solos la cobertura de pruebas de la rama calendar_gaps ni resultados predictivos sobre Cup&Cake. La verificación de esta rama deberá conservar su propio reporte de ejecución, incluidos fallos, omisiones y versiones de dependencias."
+    },
+    {
+      "paragraph_original": 593,
+      "before": "Antecedentes de arquitectura e Integración del Tablero de Inteligencia de Negocios (DSS)",
+      "after": "La evaluación heredada utilizó una ventana de 52 semanas y reportó 16 orígenes para h=1 y h=4. Se conserva exclusivamente como antecedente. La configuración principal actual utiliza historia creciente y reserva 26 semanas calendario; los objetivos observados se contabilizarán por horizonte. Las cifras de 16 semanas y 13 orígenes de la rama strict no describen calendar_gaps, cuya corrida real todavía no ha completado entrenamiento y evaluación."
+    },
+    {
+      "paragraph_original": 663,
+      "before": "Se recomienda resolver las incidencias de la fuente, aprobar el catálogo y documentar la cobertura semanal antes de entrenar con registros reales. También deberán fijarse el periodo final independiente y el protocolo de contraste. Durante la evaluación se conservarán las referencias, se informarán los cuatro horizontes y se mantendrá la revisión humana de las salidas.",
+      "after": "Se recomienda resolver las incidencias de fuente, aprobar el catálogo y documentar la cobertura antes de entrenar con registros reales. Deberán fijarse y justificar el periodo y el protocolo exploratorio de calendar_gaps; una futura evaluación confirmatoria requerirá un diseño independiente adicional. Para alinear el ciclo con MLOps, se propone explicitar la aceptación del despliegue, el registro de versiones, la vigilancia de datos y errores y el retorno controlado al reentrenamiento (García Velasco, 2023, pp. 43–45; Ordonez Bolanos et al., 2023, pp. 97–99)."
+    },
+    {
+      "paragraph_original": 665,
+      "before": "El trabajo inmediato consiste en completar la validación con datos reales, revisar los diagnósticos pendientes y generar las figuras empíricas del experimento. Las ampliaciones posibles incluyen una comparación controlada con y sin exógenas, actualización incremental con configuración congelada e intervalos futuros debidamente validados. La captura del tablero y la inserción editorial de figuras reales se realizarán después de verificar su procedencia y legibilidad.",
+      "after": "El trabajo inmediato consiste en completar la revisión de datos y la evaluación retrospectiva, y generar las figuras empíricas correspondientes. Las ampliaciones comprenden comparación controlada con y sin exógenas, intervalos futuros validados y un ciclo operativo de entrega semanal, monitorización y reentrenamiento versionado. Los umbrales de alerta y las reglas de sustitución del modelo deberán fijarse antes del uso productivo; no se presuponen mejoras de precisión ni beneficios financieros."
+    }
+  ],
+  "references_added": [
+    "García Velasco, A. (2023). MLOps: Administrando el diseño y ciclo de vida de los modelos de machine learning [Trabajo de fin de grado, Universidad Politécnica de Madrid]. Archivo Digital UPM. https://oa.upm.es/74985/",
+    "Ordonez Bolanos, A. A., Rojas, J. S., Gómez Gómez, J., & Ramirez-Gonzalez, G. (2023). Metodología basada en MLOps (Machine Learning Operations) para apoyo a la gestión en proyectos de ciencia de datos. Revista Colombiana de Tecnologías de Avanzada, 1(41), 87–103. https://doi.org/10.24054/rcta.v1i41.2510"
+  ]
+}
