@@ -1,5 +1,7 @@
 # Entornos y cachés locales de Python: se regeneran con la guía del pipeline.
 .venv/
+.venv_hibrido/
+output/hibrido/**/modelos.joblib
 .deps_semanal/
 __pycache__/
 *.py[cod]

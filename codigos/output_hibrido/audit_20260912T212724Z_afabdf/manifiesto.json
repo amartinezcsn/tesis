@@ -1,0 +1,115 @@
+{
+  "run_id": "audit_20260912T212724Z_afabdf",
+  "estado": "auditoria_sin_entrenamiento",
+  "demostracion": false,
+  "error": null,
+  "config": {
+    "source": "datasets/xlsx/Compras.xlsx",
+    "source_sheet": 0,
+    "source_sha256": "",
+    "source_approved": false,
+    "coverage": "input/hibrido/cobertura.csv",
+    "catalog": "input/hibrido/catalogo.csv",
+    "exogenous": null,
+    "sales": null,
+    "start": "",
+    "end": "",
+    "window": 52,
+    "holdout_weeks": 16,
+    "tuning_origins": 8,
+    "lags": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ],
+    "rolling": [
+      4,
+      8,
+      12
+    ],
+    "horizons": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "threshold": 0.8,
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "bootstrap_block": 4,
+    "min_inference_weeks": 12,
+    "independent_holdout": false,
+    "protocol_approved": false,
+    "use_rf": true,
+    "use_arima": true
+  },
+  "python": "3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)]",
+  "plataforma": "Windows-10-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.9",
+    "openpyxl": "3.1.5",
+    "scipy": "1.15.3",
+    "joblib": "1.6.0"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\datasets\\xlsx\\Compras.xlsx": "8864cb43b0ec1ef4d0299917823fa6f2bbf77ee18e29573b5cf2853ac090c9d1",
+    "C:\\Python\\tesis\\input\\compras_limpias.xlsx": "5531ac855e166812b6e3538e9910a11a664c817232b08ca9fe14e72ce76ec930",
+    "C:\\Python\\tesis\\input\\compras_limpias_corregidas.xlsx": "38afb7c8146fb88358f0e306b933db51e8d6e0e69793ad248226d978c23f89ef"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "1fff0d94e998cf1f8a6e8883fc86533cb04f2059f8141e3cb3a9ff1bad45789a",
+    "codigos\\hibrido\\composition.py": "f4de441d7f3ae0d0c8495598edebddb5a65329494e87ab8f1e1294c91a9cb351",
+    "codigos\\hibrido\\config.py": "191136a404ad6fb038da8f6b886f8a9411e3b67023f1dd796f55060bd26046c6",
+    "codigos\\hibrido\\data.py": "1027930e4ec21815b2a769b983a06c1bd6a9390b027520c3135b1ede427736cd",
+    "codigos\\hibrido\\evaluation.py": "8c601b7a1adf4c8944912960ac76552e81b0f10b96ae67660580389d1bcd134b",
+    "codigos\\hibrido\\experiment.py": "84415accde57c18a2f712ea566b927910e34f108ca597abcef88a2ab90daa41a",
+    "codigos\\hibrido\\features.py": "074f61a0b425ab749154a76d363b35d4dc36536adf08de716e56f4503fb44abf",
+    "codigos\\hibrido\\figures.py": "436f27bd32d5bf66a9af10378d56dc03bf36bd5d1fc7f360e9cded0d9f6393f7",
+    "codigos\\hibrido\\models.py": "21fcfdc260cd1b3d314b9ad1b2fc9000a1657dbdd2ac2ca0af807c19f509ba1b",
+    "codigos\\hibrido\\reporting.py": "9b06407e9dea0b2c0242b089546003c34851f0279b77457542a596d4bf5f5895",
+    "codigos\\hibrido\\__init__.py": "ac4bfacce45043ea348dce2d754cc98217ab0c279cd3392d80eca338b3086e44",
+    "codigos\\01_clean_eda.py": "69425f53d6d1dc99e39fcba2ab7752b9494950673b68686729ea039f0687204d"
+  },
+  "productos": {
+    "auditoria.json": "e6b3780008f0f3ce620bf0865b75d8b2bfe77c8a9390afabaea4165e6c4e78a2",
+    "catalogo_PARA_REVISAR.csv": "d6db2569f533ff165798842168f5d7088a2cefac48abe018068dfca565b63b72",
+    "cobertura_PARA_REVISAR.csv": "128f6ff634cd6348bd744d9e0a2e93af9681e30667f5dde7a37a2d36ced6b288",
+    "comparacion_fuentes.csv": "5b8884f4ff0df2de60273695dea2133775df62c77a4ca829dd482206078b7972",
+    "compras_auditadas.csv": "ba17cbd4083a9e378aba262e1295e67e241ab7c00829b83dfdfaf10d8e64e3c5",
+    "guia_figuras.md": "78c121d80f9d88f0f08ba54733269d3719971b9b9cdb4e14bafe1b01a18d8861",
+    "manifiesto_figuras.csv": "df0cf0a43a51be0ce26beb88822b0e7011ad169cde45f680f55de404bf91a9f1",
+    "manifiesto_figuras.json": "cd5d76f99d5b6f833480f4ed2c12dd8bef0f42ce0c647027539f15ab0127298e",
+    "registros_pendientes.csv": "03b8024efa8a7285606305f0ab8c77b18d7a9886bddf6784c87a2e18804e9a31",
+    "figuras\\F00.png": "a7c2938fd93c16202bc09a3b9427c581a1012c11752253c436d37f8b5db7d0b3",
+    "figuras\\F00.svg": "35c673139c8d4c8200769c4072aa361854bad21af0aa27e248501aa8fa4af720",
+    "figuras\\F00_datos.csv": "11efe7324df1aa22d36bf7f40420138754aa6383b65e2afd06588de39f8a1a9c",
+    "figuras\\F01.png": "6bd8f6001310cfb1578d74d992eef775a5eb28e36f0d056667f7061d9bf20319",
+    "figuras\\F01.svg": "991cc60da984a8ea1562aeb1cc4fb0c77affd83a74c2757a9a1bce4d9f7ac6a2",
+    "figuras\\F01_datos.csv": "1de5c16c54a08a1c43a22f1afed962f922f42bba7e88c45a5129efd31590941e",
+    "figuras\\F02.png": "ce88da2c293e8b3de9b78624180ef2ac4b911b6d046ddf33b04483f245bebdfb",
+    "figuras\\F02.svg": "d71449bf00a5a7a105b07724f98a95ffc2f6ab37cc72e0ba1bc601b37488031d",
+    "figuras\\F02_datos.csv": "128f6ff634cd6348bd744d9e0a2e93af9681e30667f5dde7a37a2d36ced6b288",
+    "figuras\\F10.png": "468441e4105327ab96864603b5e87cc21d697157236a7308ec4026cbb539c517",
+    "figuras\\F10.svg": "d889e50b6366dad75a41d6f6810b272d438ddb3b88eb33b541da795892357a71",
+    "figuras\\F10_datos.csv": "c08676101cf0de14dc28448bc646e1a0828201099969acc6bc2c66c8691817ba",
+    "figuras\\F12.png": "015defb52ee24f3195a5ad0c73a5c4a7b7b5da50c3682de89f93cf01c62edad1",
+    "figuras\\F12.svg": "221930bd5dcd29e71aa5c1f248d2f82280a5aea686b1926f3f3bf121dd28cff5",
+    "figuras\\F12_datos.csv": "7924e8b6c1834ca2780fe0450b22ff4deb4fc0d55ecd8a6fad5f2e6168aac366"
+  }
+}

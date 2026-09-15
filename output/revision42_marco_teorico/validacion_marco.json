@@ -1,0 +1,203 @@
+{
+  "source": "C:\\Python\\tesis\\documentacion\\TESIS_AGO2026_Rev42_(ZUJ)_11sep2026.docx",
+  "source_sha256": "835975a68e1479721fe600e19e4d35af2d480c6112aa47614eb73cc4406caafe",
+  "candidate": "C:\\Python\\tesis\\output\\revision42_marco_teorico\\TESIS_Rev42_marco_actualizado.docx",
+  "backup": "C:\\Python\\tesis\\output\\revision42_marco_teorico\\respaldo_antes_marco_20260912_102841.docx",
+  "sections": [
+    "Microempresa y planeación del presupuesto de abastecimiento",
+    "Compras monetarias y contexto de la repostería",
+    "Series temporales semanales y calidad de los registros",
+    "Métodos estadísticos y de aprendizaje automático",
+    "Fundamentos de integración del modelo híbrido",
+    "Distribución porcentual y coherencia de las asignaciones",
+    "Datos limitados e ingeniería de características",
+    "Evaluación temporal y métricas de precisión",
+    "Inteligencia de negocios y comunicación del pronóstico",
+    "Síntesis de fundamentos y relación con la hipótesis"
+  ],
+  "paragraphs": 75,
+  "equations": [
+    {
+      "number": "2.1",
+      "key": "media",
+      "latex": "\\hat{y}_{t+h|t}=E(y_{t+h}\\mid I_t)"
+    },
+    {
+      "number": "2.2",
+      "key": "total",
+      "latex": "y_t=\\sum_{j=1}^{J}b_{j,t}"
+    },
+    {
+      "number": "2.3",
+      "key": "descomp",
+      "latex": "y_t=T_t+S_t+R_t"
+    },
+    {
+      "number": "2.4",
+      "key": "diff",
+      "latex": "\\Delta y_t=y_t-y_{t-1}"
+    },
+    {
+      "number": "2.5",
+      "key": "acf",
+      "latex": "r_k=\\frac{\\sum_{t=k+1}^{N}(y_t-\\bar{y})(y_{t-k}-\\bar{y})}{\\sum_{t=1}^{N}(y_t-\\bar{y})^2}"
+    },
+    {
+      "number": "2.6",
+      "key": "croston",
+      "latex": "\\hat{y}_{t+h|t}=\\frac{\\hat{z}_t}{\\hat{a}_t}"
+    },
+    {
+      "number": "2.7",
+      "key": "naive",
+      "latex": "\\hat{y}_{t+h|t}=y_t"
+    },
+    {
+      "number": "2.8",
+      "key": "ses",
+      "latex": "\\ell_t=\\alpha y_t+(1-\\alpha)\\ell_{t-1},\\quad \\hat{y}_{t+h|t}=\\ell_t"
+    },
+    {
+      "number": "2.9",
+      "key": "arima",
+      "latex": "\\phi(B)(1-B)^d y_t=c+\\theta(B)\\varepsilon_t"
+    },
+    {
+      "number": "2.10",
+      "key": "rf",
+      "latex": "\\hat{f}(x)=\\frac{1}{B}\\sum_{b=1}^{B}T_b(x)"
+    },
+    {
+      "number": "2.11",
+      "key": "gb",
+      "latex": "F_m(x)=F_{m-1}(x)+\\nu\\rho_m g_m(x)"
+    },
+    {
+      "number": "2.12",
+      "key": "hybrid",
+      "latex": "\\hat{y}_{t+h|t}^{H}=w\\hat{y}_{t+h|t}^{E}+(1-w)\\hat{y}_{t+h|t}^{A}"
+    },
+    {
+      "number": "2.13",
+      "key": "variance",
+      "latex": "\\sigma_H^2=w^2\\sigma_E^2+(1-w)^2\\sigma_A^2+2w(1-w)\\sigma_{EA}"
+    },
+    {
+      "number": "2.14",
+      "key": "weight",
+      "latex": "w^{*}=\\frac{\\sigma_A^2-\\sigma_{EA}}{\\sigma_E^2+\\sigma_A^2-2\\sigma_{EA}}"
+    },
+    {
+      "number": "2.15",
+      "key": "residual",
+      "latex": "y_t=L_t+N_t,\\quad \\hat{y}_{t+h|t}=\\hat{L}_{t+h|t}+\\hat{N}_{t+h|t}"
+    },
+    {
+      "number": "2.16",
+      "key": "shares",
+      "latex": "p_{j,t}=\\frac{b_{j,t}}{y_t},\\quad p_{j,t}\\geq0,\\quad \\sum_{j=1}^{J}p_{j,t}=1,\\quad y_t>0"
+    },
+    {
+      "number": "2.17",
+      "key": "allocation",
+      "latex": "\\hat{b}_{j,t+h|t}=\\hat{p}_{j,t+h|t}\\hat{y}_{t+h|t}"
+    },
+    {
+      "number": "2.18",
+      "key": "histshare",
+      "latex": "\\bar{p}_{j}=\\frac{1}{n}\\sum_{t\\in V}\\frac{b_{j,t}}{y_t}"
+    },
+    {
+      "number": "2.19",
+      "key": "alr",
+      "latex": "z_{j,t}=\\log\\left(\\frac{p_{j,t}}{p_{J,t}}\\right),\\quad j=1,\\ldots,J-1"
+    },
+    {
+      "number": "2.20",
+      "key": "biasvar",
+      "latex": "E[(Y-\\hat{f}(x))^2]=\\mathrm{Sesgo}^2[\\hat{f}(x)]+\\mathrm{Var}[\\hat{f}(x)]+\\sigma^2"
+    },
+    {
+      "number": "2.21",
+      "key": "ridge",
+      "latex": "\\hat{\\beta}^{R}=\\arg\\min_{\\beta}\\left(\\mathrm{SSE}(\\beta)+\\lambda\\sum_{j=1}^{K}\\beta_j^2\\right)"
+    },
+    {
+      "number": "2.22",
+      "key": "lasso",
+      "latex": "\\hat{\\beta}^{L}=\\arg\\min_{\\beta}\\left(\\mathrm{SSE}(\\beta)+\\lambda\\sum_{j=1}^{K}|\\beta_j|\\right)"
+    },
+    {
+      "number": "2.23",
+      "key": "fourier",
+      "latex": "s_{k,t}=\\sin\\left(\\frac{2\\pi kt}{m}\\right),\\quad c_{k,t}=\\cos\\left(\\frac{2\\pi kt}{m}\\right)"
+    },
+    {
+      "number": "2.24",
+      "key": "error",
+      "latex": "e_{t,h}=y_{t+h}-\\hat{y}_{t+h|t}"
+    },
+    {
+      "number": "2.25",
+      "key": "mae",
+      "latex": "\\mathrm{MAE}_h=\\frac{1}{n}\\sum_{t\\in O}|e_{t,h}|"
+    },
+    {
+      "number": "2.26",
+      "key": "rmse",
+      "latex": "\\mathrm{RMSE}_h=\\sqrt{\\frac{1}{n}\\sum_{t\\in O}e_{t,h}^2}"
+    },
+    {
+      "number": "2.27",
+      "key": "mase",
+      "latex": "\\mathrm{MASE}=\\frac{\\frac{1}{n}\\sum_{i=1}^{n}|e_i|}{\\frac{1}{N-m}\\sum_{t=m+1}^{N}|y_t-y_{t-m}|}"
+    },
+    {
+      "number": "2.28",
+      "key": "maepp",
+      "latex": "\\mathrm{MAE}_{p,h}=\\frac{100}{n_{+}J}\\sum_{t\\in O_{+}}\\sum_{j=1}^{J}|p_{j,t+h}-\\hat{p}_{j,t+h|t}|"
+    },
+    {
+      "number": "2.29",
+      "key": "interval",
+      "latex": "\\hat{y}_{t+h|t}\\pm z_{1-\\alpha/2}\\hat{\\sigma}_h"
+    }
+  ],
+  "cited_reference_keys": [
+    "AITCH",
+    "BG",
+    "ESL",
+    "FPP",
+    "GB",
+    "HIER",
+    "HK",
+    "KUHN",
+    "OECD",
+    "POWER",
+    "RF",
+    "SHM",
+    "TASH",
+    "TIB",
+    "ZHANG"
+  ],
+  "references_added": [
+    "AITCH",
+    "BG",
+    "GB",
+    "HIER",
+    "HK",
+    "OECD",
+    "RF",
+    "TIB",
+    "ZHANG"
+  ],
+  "references_updated": [
+    "ESL",
+    "FPP",
+    "KUHN",
+    "POWER",
+    "SHM",
+    "TASH"
+  ],
+  "other_chapters_preserved": true
+}

@@ -1,5 +1,5 @@
 {
-  "generado_utc": "2026-09-05T19:07:09.290206+00:00",
+  "generado_utc": "2026-09-12T02:51:44.869824+00:00",
   "frecuencia": "semanal",
   "objetivo": "target_compras_importe_semanal",
   "columna_temporal": "semana_inicio",
@@ -46,14 +46,14 @@
     "maestro_semanal": {
       "ruta": "C:\\Python\\tesis\\input\\dataset_maestro_semanal.xlsx",
       "existe": true,
-      "tamano_bytes": 26348,
-      "sha256": "129260eafa179b06acea38e36c17b1ad005cb58a2a597b15fbdb9d3fb8ffe309"
+      "tamano_bytes": 26350,
+      "sha256": "80e570050a8f8597c893f7561a8e813fc57a18517f1213b91e447b7263809183"
     },
     "dataset_modelado": {
       "ruta": "C:\\Python\\tesis\\input\\dataset_modelado_semanal.xlsx",
       "existe": true,
-      "tamano_bytes": 128898,
-      "sha256": "efe3568da8643e826a7912d75882b6b2810568cb11093a05405214060ea13796"
+      "tamano_bytes": 128897,
+      "sha256": "8038bc49801a4366ad8f8515eb03440b3e080c8494a510486ef51478341f506f"
     }
   },
   "codigo": {

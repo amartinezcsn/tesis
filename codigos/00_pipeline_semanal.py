@@ -47,4 +47,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    # El punto de entrada anterior delega en Rev44; las etapas heredadas quedan
+    # disponibles como antecedente, pero no se ejecutan accidentalmente.
+    from hibrido.cli import main as hybrid_main
+    raise SystemExit(hybrid_main(sys.argv[1:] or ["audit"]))

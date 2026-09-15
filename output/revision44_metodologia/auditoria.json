@@ -1,0 +1,140 @@
+{
+  "source": "C:\\Python\\tesis\\documentacion\\TESIS_AGO2026_Rev44_(ZUJ)_12sep2026.docx",
+  "backup": "C:\\Python\\tesis\\output\\revision44_metodologia\\Rev44_antes_metodologia_20260912_130324.docx",
+  "paragraphs_modified": 26,
+  "paragraphs_added": 6,
+  "protected_definitions_unchanged": true,
+  "other_chapters_unchanged": true,
+  "changes": [
+    {
+      "paragraph_index": 289,
+      "before": "Se trata de una investigación centrada en evaluar un mecanismo concreto: el uso de modelos estadísticos y de aprendizaje automático para pronosticar semanalmente el importe de compras de una microempresa de repostería creativa. El ámbito es específico y delimitado; no busca explicar una amplia variedad de situaciones ni atribuir causalidad sobre ingresos, sino contrastar precisión predictiva en un caso de estudio.",
+      "after": "En Cup&Cake, la investigación tendrá como propósito desarrollar un modelo híbrido que integre métodos estadísticos y aprendizaje automático para pronosticar el importe total semanal de compras, junto con un procedimiento para estimar su distribución porcentual entre los principales insumos. Su precisión se contrastará frente a modelos de referencia como apoyo a la planeación del presupuesto de abastecimiento."
+    },
+    {
+      "paragraph_index": 290,
+      "before": "La investigación tiene un fin aplicado: evaluar si modelos predictivos y un tablero de inteligencia de negocios pueden apoyar la planeación semanal del presupuesto de abastecimiento de Cup&Cake. El estudio no busca generalizar resultados a todas las microempresas ni sustituir el juicio del responsable, sino ofrecer evidencia reproducible para un caso específico.",
+      "after": "La aplicación se delimitará al caso de Cup&Cake. Se prevé comunicar los pronósticos mediante un tablero de inteligencia de negocios, sin sustituir el juicio del responsable ni presuponer mejoras en rentabilidad, inventarios o merma. Los resultados no se generalizarán automáticamente a otras microempresas."
+    },
+    {
+      "paragraph_index": 293,
+      "before": "La investigación examina cómo el propietario estima empíricamente las compras y compara esa práctica con pronósticos semanales basados en datos. El propósito es valorar si una estimación de una a cuatro semanas aporta información más precisa para reservar y revisar el presupuesto de abastecimiento.",
+      "after": "Se documentará el contexto de planeación de compras de Cup&Cake para interpretar las necesidades de información del responsable. La evaluación cuantitativa se realizará frente a referencias reproducibles. Solo se incluirán estimaciones del propietario como comparador si existen registros fechados antes de conocer los importes observados y compatibles con los mismos horizontes de pronóstico."
+    },
+    {
+      "paragraph_index": 296,
+      "before": "En un estudio evaluativo se comparan alternativas de pronóstico bajo las mismas condiciones temporales. El objetivo es estimar cuál generaliza mejor fuera de muestra, no establecer relaciones de causa-efecto.",
+      "after": "Para el caso de Cup&Cake no se adoptará el alcance causal descrito en la definición precedente. La aplicación tendrá carácter evaluativo y comparativo: se contrastarán alternativas de pronóstico bajo las mismas condiciones temporales para examinar su precisión fuera de muestra, sin atribuir relaciones de causa y efecto sobre la operación del negocio."
+    },
+    {
+      "paragraph_index": 297,
+      "before": "La presente investigación tiene un alcance evaluativo y comparativo. Describe el comportamiento histórico de ventas y compras y compara, bajo las mismas ventanas temporales, la precisión de reglas empíricas, modelos estadísticos y modelos de aprendizaje automático. El diseño no permite atribuir causalidad sobre la rentabilidad, los ingresos o la eficiencia real de inventarios; su inferencia se limita al desempeño predictivo fuera de muestra.",
+      "after": "La investigación describirá el comportamiento histórico de ventas y compras y comparará la precisión del modelo híbrido y del procedimiento de distribución porcentual con sus respectivas referencias. La evaluación considerará por separado el importe total semanal y la participación de los principales insumos. Su inferencia se limitará al desempeño predictivo del caso de estudio."
+    },
+    {
+      "paragraph_index": 303,
+      "before": "Atendiendo a la naturaleza de los datos recolectados y procesados, la investigación se fundamenta en un enfoque cuantitativo. Los registros diarios se transforman en una serie semanal de compras y en predictores históricos y exógenos, con el propósito de entrenar y comparar modelos de pronóstico.",
+      "after": "La semana calendario constituirá la unidad temporal de análisis. Se calcularán el importe total de compras, el importe correspondiente a cada insumo seleccionado y su participación porcentual. Los registros históricos de ventas podrán utilizarse como predictores únicamente cuando su información esté disponible antes de cada origen de pronóstico."
+    },
+    {
+      "paragraph_index": 304,
+      "before": "En el escenario operativo de Cup&Cake, el enfoque se operacionaliza mediante la integración de registros históricos de ventas y compras, agregados por semana calendario. También se incorporan variables exógenas disponibles antes de cada pronóstico, tales como eventos comerciales, calendario, inflación vigente y condiciones climáticas definidas sin utilizar información futura.",
+      "after": "Se integrarán los registros históricos de ventas y compras de Cup&Cake y se agregarán por semana calendario. Las variables exógenas se incorporarán según su pertinencia y disponibilidad documentada. Los eventos de calendario conocidos podrán utilizarse para la semana objetivo; los indicadores económicos y meteorológicos deberán representar la información efectivamente disponible antes del pronóstico."
+    },
+    {
+      "paragraph_index": 305,
+      "before": "La transformación de estos registros en matrices semanales permite contrastar líneas base, modelos estadísticos y algoritmos supervisados. La evaluación se apoyará en RMSE, MAE y una métrica escalada, mientras que MAPE se reportará sólo como diagnóstico condicionado por la presencia de valores cero. Los hallazgos serán verificables y reproducibles dentro del alcance del caso de estudio, sin pretender generalización estadística amplia.",
+      "after": "Las matrices semanales permitirán ajustar y comparar los componentes estadístico y de aprendizaje automático, su integración híbrida y el procedimiento de distribución porcentual. Se evaluará el error monetario del total y el error de participación por insumo. El carácter cuantitativo no implicará generalización estadística a otras empresas: las conclusiones se circunscribirán a los registros y condiciones del caso estudiado."
+    },
+    {
+      "paragraph_index": 310,
+      "before": "Por las condiciones inherentes al caso de estudio, la investigación adopta un diseño no experimental, evaluativo y retrospectivo. No se introdujo una intervención deliberada en la operación de la empresa ni se asignaron grupos; se analizaron registros históricos en su secuencia temporal.",
+      "after": "Se adoptará un diseño no experimental basado en el análisis retrospectivo de registros históricos de Cup&Cake. No se introducirán intervenciones deliberadas en la operación ni se asignarán grupos experimentales. La evaluación reproducirá situaciones de pronóstico mediante cortes cronológicos y utilizará exclusivamente información disponible hasta cada origen."
+    },
+    {
+      "paragraph_index": 311,
+      "before": "En el contexto de esta investigación, el objeto evaluado es la precisión predictiva del importe semanal de compras. La línea base primaria será el método ingenuo de persistencia o último valor semanal observado: para cada semana futura, el pronóstico será igual al importe registrado en la semana completa inmediatamente anterior. Se conservarán los ceros observados; las ausencias de cobertura y los valores sintéticos se excluirán. El promedio móvil de cuatro semanas y, cuando la cobertura lo permita, el pronóstico ingenuo estacional de 52 semanas se mantendrán como comparadores obligatorios en las mismas ventanas futuras.",
+      "after": "Se evaluarán la precisión del importe total semanal y la de su distribución porcentual. Para el importe total, la referencia primaria será el último valor semanal observado; se conservarán como comparadores el promedio móvil de cuatro semanas y, cuando exista cobertura suficiente, el ingenuo estacional de 52 semanas. Para la distribución se utilizará una referencia de participaciones históricas. Todos los métodos se evaluarán sobre fechas objetivo comunes; los ceros observados se distinguirán de la ausencia de registros."
+    },
+    {
+      "paragraph_index": 314,
+      "before": "Se adoptó un diseño cuantitativo, aplicado, no experimental y evaluativo, basado en un estudio de caso longitudinal-retrospectivo. No se manipuló deliberadamente la operación de la empresa ni se asignaron grupos aleatorios; se analizaron registros históricos ordenados cronológicamente.",
+      "after": "El diseño cuantitativo, aplicado, no experimental y evaluativo se concretará mediante un estudio de caso longitudinal-retrospectivo. Los registros se organizarán cronológicamente y las decisiones de modelado se documentarán antes de examinar la evaluación final."
+    },
+    {
+      "paragraph_index": 315,
+      "before": "La comparación se operacionalizará como el contraste entre el error de las líneas base empíricas semanales —último valor, promedio móvil de cuatro semanas e ingenuo estacional cuando proceda— y el error de los modelos predictivos en las mismas semanas futuras. No se emplearán preprueba, posprueba ni grupos de control experimentales.",
+      "after": "La comparación contrastará el modelo híbrido con las referencias monetarias y con sus componentes individuales; el procedimiento de distribución porcentual se contrastará con su propia referencia histórica. Se utilizarán las mismas fechas objetivo y horizontes para cada comparación. No se emplearán preprueba, posprueba ni grupos de control experimentales."
+    },
+    {
+      "paragraph_index": 316,
+      "before": "La evaluación utilizará rolling-window (ventana deslizante) con 52 semanas de entrenamiento y desplazamiento de una semana. El horizonte principal será h=1; el horizonte complementario h=4 se estimará de forma directa, usando únicamente la información disponible en el origen y las variables exógenas conocidas para la semana objetivo. Las métricas de h=1 y h=4 se reportarán por separado. El consolidado presupuestal de cuatro semanas será la suma de los pronósticos directos h=1, h=2, h=3 y h=4, y no un modelo mensual independiente.",
+      "after": "Se propone una validación de ventana deslizante con 52 semanas de entrenamiento y avance de una semana. Su viabilidad se verificará según la cobertura efectiva, los rezagos y el número de observaciones utilizables; cualquier ajuste se justificará en la etapa de desarrollo. Se generarán pronósticos directos para h=1, h=2, h=3 y h=4, con h=1 como horizonte principal. Las métricas se reportarán por horizonte. La suma de los cuatro pronósticos será un consolidado de cuatro semanas y no equivaldrá necesariamente a un mes calendario."
+    },
+    {
+      "paragraph_index": 325,
+      "before": "La investigación es longitudinal y retrospectiva porque utiliza registros diarios de ventas y compras entre 2022 y 2026, agregados posteriormente por semana calendario. La cobertura efectiva de cada objetivo se delimitará antes del modelado; en particular, el análisis de compras sólo utilizará semanas para las que existan registros observados.",
+      "after": "El estudio será longitudinal y retrospectivo porque analizará registros históricos en su secuencia temporal. Se revisarán las fuentes disponibles del periodo 2022–2026 y se documentarán las fechas efectivas de inicio y corte para ventas y compras, sin asumir cobertura completa. El modelado se limitará a los periodos cuya disponibilidad y continuidad puedan verificarse."
+    },
+    {
+      "paragraph_index": 330,
+      "before": "Para dar cumplimiento a los objetivos de la investigación, el desarrollo operativo se divide en fases secuenciales: recolección, depuración, agregación semanal, ingeniería de características, modelado, validación rolling-window (ventana deslizante) y comunicación de resultados para el presupuesto de abastecimiento.",
+      "after": "El procedimiento comprenderá recolección y depuración de registros, agregación semanal, diagnóstico temporal, ingeniería de características, selección de componentes e integración del modelo híbrido, estimación de la distribución porcentual, evaluación fuera de muestra y comunicación de resultados. Estas fases se ejecutarán preservando la separación entre desarrollo y evaluación final."
+    },
+    {
+      "paragraph_index": 332,
+      "before": "El primer paso metodológico consiste en la extracción y depuración de la información histórica de la microempresa Cup&Cake. Dado que las microempresas operan en entornos de Small Data, el proceso requiere la consolidación de registros fragmentados para construir un conjunto de datos (dataset) estructurado y relacional. Se integrarán dos conjuntos de datos con información principalmente: ",
+      "after": "Se recopilarán y estructurarán los registros históricos disponibles de Cup&Cake. Se verificará su integridad antes de asumir su utilidad para el modelado. La consolidación contemplará principalmente las siguientes fuentes:"
+    },
+    {
+      "paragraph_index": 335,
+      "before": "Después de depurar y homologar los registros, las observaciones se agregarán por semana calendario. Esta estructuración permitirá construir una serie objetivo semanal y predictores compatibles con la frecuencia de decisión del presupuesto de abastecimiento.",
+      "after": "Se homologarán fechas, identificadores de insumos e importes, documentando duplicados, devoluciones y registros incompletos. Las observaciones se agregarán por semana calendario con una regla uniforme de inicio y cierre. Se obtendrán la serie del importe total, las series monetarias por insumo y sus participaciones, además de predictores compatibles con la frecuencia semanal."
+    },
+    {
+      "paragraph_index": 337,
+      "before": "Antes de generar características y comparar algoritmos se realizará un diagnóstico temporal reproducible de la serie objetivo. La cobertura se auditará con el calendario semanal y con la actividad de ventas. Las rachas prolongadas de compras iguales a cero se considerarán brechas de cobertura cuando coincidan con ventas positivas o formen una cola posterior al último registro; los ceros aislados dentro de un bloque continuo se conservarán como observaciones operativas.",
+      "after": "Antes del modelado se auditará la cobertura mediante el calendario semanal y la revisión de las fuentes. Las rachas de compras iguales a cero, su coincidencia con ventas positivas o su ubicación al final del registro motivarán una verificación, pero no bastarán para clasificarlas automáticamente como ausencia de observación. Se distinguirán semanas sin compras confirmadas, semanas con registros y semanas de cobertura incierta. La decisión y su evidencia se documentarán; no se imputarán ceros a periodos sin cobertura comprobada."
+    },
+    {
+      "paragraph_index": 338,
+      "before": "El bloque continuo principal se separará cronológicamente en desarrollo y evaluación. Las últimas 16 semanas quedarán reservadas. Las pruebas ADF y KPSS, las funciones ACF y PACF, Ljung-Box, ADI, CV², los estadísticos móviles y la detección robusta de atípicos se calcularán con el bloque de desarrollo. La descomposición STL con periodo 52 se mostrará sólo como recurso exploratorio cuando existan menos de tres ciclos anuales completos.",
+      "after": "El periodo con cobertura verificable se dividirá cronológicamente en desarrollo y evaluación final. Se propone reservar las últimas 16 semanas, sujeto a justificar su viabilidad y el número de fechas evaluables por horizonte antes de ajustar modelos. Los diagnósticos ADF, KPSS, ACF, PACF, Ljung-Box, ADI, CV² y de atípicos se aplicarán al conjunto de desarrollo según su pertinencia y requisitos. La descomposición STL con periodo 52 se utilizará únicamente si la longitud y continuidad permiten su cálculo e interpretación, explicitando las limitaciones de disponer de pocos ciclos."
+    },
+    {
+      "paragraph_index": 342,
+      "before": "En el sector de la repostería creativa, la demanda no presenta un comportamiento lineal, sino que está fuertemente condicionada por factores estacionales y comerciales. Por ello, se aplicarán técnicas de ingeniería de características (feature engineering) para enriquecer el conjunto de datos. ",
+      "after": "Se examinará si los registros de compras de Cup&Cake presentan patrones temporales o asociaciones con eventos comerciales que puedan aportar información predictiva. Estas relaciones no se asumirán de antemano ni se equiparará el importe de compras con la demanda de productos. Las características candidatas se evaluarán dentro del conjunto de desarrollo."
+    },
+    {
+      "paragraph_index": 343,
+      "before": "Se diseñarán variables semanales y exógenas que capturen patrones cíclicos y eventos conocidos antes del pronóstico, como número de días festivos, proximidad de fechas comerciales, calendario, INPC vigente y temperatura agregada o pronosticada. No se utilizarán valores observados de una semana futura como predictores.",
+      "after": "Se construirán rezagos, resúmenes móviles y variables calendáricas con información anterior al pronóstico. Para indicadores económicos se registrará la fecha de publicación; para datos meteorológicos futuros solo se admitirán pronósticos archivados y disponibles en el origen correspondiente. Si no existe esa evidencia de disponibilidad, se emplearán observaciones rezagadas o se excluirá la variable. Las transformaciones y la selección de características se ajustarán dentro de cada partición de entrenamiento."
+    },
+    {
+      "paragraph_index": 350,
+      "before": "Al tratarse de series temporales, una partición aleatoria clásica invalidaría el orden cronológico. Por ello, se aplicará rolling-window (ventana deslizante) con una ventana fija de 52 semanas.",
+      "after": "Se respetará el orden cronológico mediante una ventana deslizante. La longitud inicial propuesta será de 52 semanas y deberá justificarse considerando la cobertura, los rezagos y las observaciones efectivas para cada modelo. Se distinguirá la validación interna, destinada a configurar el procedimiento, de la evaluación final fuera de muestra."
+    },
+    {
+      "paragraph_index": 351,
+      "before": "En cada iteración, el modelo se entrenará con las 52 semanas inmediatamente anteriores y pronosticará la semana siguiente. La ventana avanzará una semana, incorporando el dato más reciente y excluyendo el más antiguo. El ajuste de hiperparámetros se realizará únicamente con información previa a cada periodo de prueba para evitar fuga de información.",
+      "after": "En cada origen se entrenarán los modelos con la ventana histórica disponible y se generarán pronósticos directos para las cuatro semanas siguientes, sin utilizar sus valores observados. La configuración, los hiperparámetros, las transformaciones y el mecanismo de integración se seleccionarán mediante particiones temporales internas. Durante la evaluación final podrán incorporarse observaciones de semanas ya transcurridas mediante una regla de actualización previamente fijada, pero sus errores no se usarán para rediseñar el procedimiento. Solo se evaluarán fechas objetivo observables y comunes a los métodos comparados."
+    },
+    {
+      "paragraph_index": 355,
+      "before": "RMSE (Raíz del Error Cuadrático Medio): penalizará con mayor severidad las desviaciones grandes y será el criterio principal de comparación, junto con MAE.",
+      "after": "RMSE (Raíz del Error Cuadrático Medio): se utilizará como criterio principal para el importe total semanal; MAE será una medida complementaria. La evaluación de participaciones utilizará un criterio propio y no se combinarán directamente errores monetarios con errores porcentuales."
+    },
+    {
+      "paragraph_index": 356,
+      "before": "MASE o RMSSE: permitirán expresar el error de forma escalada respecto de una referencia ingenua. MAPE se reportará sólo como diagnóstico complementario cuando los valores cero no impidan su interpretación.",
+      "after": "Se propone utilizar MASE como medida monetaria complementaria, con el denominador calculado exclusivamente en el conjunto de entrenamiento y una referencia ingenua explícita. Si el denominador es cero, se reportará como no definido. MAPE no será un criterio de selección y, si se presenta como diagnóstico, se indicarán las observaciones excluidas por importe cero."
+    },
+    {
+      "paragraph_index": 358,
+      "before": "La fase final del diseño metodológico consiste en comunicar los resultados del modelo seleccionado mediante un tablero de inteligencia de negocios. El tablero mostrará el pronóstico de una a cuatro semanas, el consolidado mensual, el modelo utilizado, las métricas de error, las variables exógenas consideradas y las advertencias de cobertura.",
+      "after": "Se prevé comunicar los resultados mediante un tablero de inteligencia de negocios. Se mostrarán el importe total pronosticado para cada horizonte, las participaciones estimadas y las asignaciones monetarias por insumo, junto con el modelo utilizado, las métricas y las advertencias de cobertura. La suma de los cuatro horizontes se identificará como consolidado de cuatro semanas; una presentación por mes calendario requerirá una regla de agregación explícita."
+    }
+  ]
+}

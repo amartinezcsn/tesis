@@ -1,5 +1,7 @@
 # Pipeline semanal de presupuesto de abastecimiento
 
+> Legado anterior a Rev44. Para el modelo híbrido y la distribución por insumo, utilizar `00_pipeline_hibrido.py` y `README_hibrido.md`. Este ejecutor anterior conserva hipótesis y reglas de cobertura que no deben usarse en el nuevo estudio.
+
 ## Propósito
 
 Pronosticar semanalmente el importe de compras de Cup&Cake con modelos

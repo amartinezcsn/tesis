@@ -1,0 +1,19 @@
+{
+  "source": "codigos/outputs/complemento_rolling_2022_2024/Compras_complementadas_entrenamiento.xlsx",
+  "source_sheet": "Datos",
+  "source_sha256": "dad9166a4fc84a70854420c320d5bdd50a25296cb3449bc10cc8d09e77fb02cf",
+  "source_approved": true,
+  "approved_duplicate_rows": [1219, 1221, 1311, 1317, 2275, 2277, 2278, 2279],
+  "synthetic_training_approved": true,
+  "coverage": "codigos/outputs/pipeline_hibrido_real/cobertura_hibrida.xlsx",
+  "catalog": "codigos/outputs/pipeline_hibrido_real/catalogo_hibrido.xlsx",
+  "sales": "codigos/outputs/pipeline_hibrido_real/ventas_semanales_hibridas.xlsx",
+  "start": "2022-01-03",
+  "end": "2024-01-22",
+  "window": 52,
+  "holdout_weeks": 12,
+  "tuning_origins": 8,
+  "threshold": 0.8,
+  "independent_holdout": false,
+  "protocol_approved": true
+}

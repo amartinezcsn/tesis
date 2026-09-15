@@ -1,0 +1,62 @@
+[
+  {
+    "dataset":"pca",
+    "target":"target_compras_registros",
+    "modelo":"rnn_simple",
+    "hiperparametros":"{\"batch_size\": 16, \"dense_units\": 16, \"learning_rate\": 0.001, \"lookback\": 28, \"units\": 32}",
+    "mejor_epoca":12,
+    "mae_validacion":0.3136885441,
+    "rmse_validacion":0.4970349949,
+    "mape_validacion":82.7233657241,
+    "fecha_fin_efectiva_objetivo":1753833600000,
+    "dias_cola_sin_cobertura_excluidos":305,
+    "mae":1.4348411571,
+    "rmse":2.7479072054,
+    "mape":75.8509249332
+  },
+  {
+    "dataset":"pca",
+    "target":"target_compras_total_real_2026_05",
+    "modelo":"rnn_simple",
+    "hiperparametros":"{\"batch_size\": 16, \"dense_units\": 12, \"learning_rate\": 0.001, \"lookback\": 14, \"units\": 24}",
+    "mejor_epoca":13,
+    "mae_validacion":14.8200583995,
+    "rmse_validacion":28.2028201739,
+    "mape_validacion":100.0,
+    "fecha_fin_efectiva_objetivo":1753833600000,
+    "dias_cola_sin_cobertura_excluidos":305,
+    "mae":102.3617745422,
+    "rmse":239.7140503995,
+    "mape":100.729674343
+  },
+  {
+    "dataset":"reducido",
+    "target":"target_ventas_importe_real_2026_05",
+    "modelo":"lstm",
+    "hiperparametros":"{\"batch_size\": 16, \"dense_units\": 16, \"learning_rate\": 0.001, \"lookback\": 28, \"units\": 32}",
+    "mejor_epoca":23,
+    "mae_validacion":79.0845142649,
+    "rmse_validacion":283.8706722155,
+    "mape_validacion":90.2331921697,
+    "fecha_fin_efectiva_objetivo":1780185600000,
+    "dias_cola_sin_cobertura_excluidos":0,
+    "mae":55.7732679747,
+    "rmse":163.7769159725,
+    "mape":129.5210539883
+  },
+  {
+    "dataset":"pca",
+    "target":"target_ventas_registros",
+    "modelo":"lstm",
+    "hiperparametros":"{\"batch_size\": 16, \"dense_units\": 16, \"learning_rate\": 0.001, \"lookback\": 28, \"units\": 32}",
+    "mejor_epoca":7,
+    "mae_validacion":0.2383967798,
+    "rmse_validacion":0.7131418778,
+    "mape_validacion":92.6898997277,
+    "fecha_fin_efectiva_objetivo":1780185600000,
+    "dias_cola_sin_cobertura_excluidos":0,
+    "mae":0.2600564024,
+    "rmse":0.54462918,
+    "mape":94.1934925105
+  }
+]

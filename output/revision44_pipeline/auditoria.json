@@ -1,0 +1,416 @@
+{
+  "backup": "output\\revision44_pipeline\\Rev44_antes_pipeline_20260912_150611.docx",
+  "modified": 81,
+  "added": 7,
+  "definitions_preserved": true,
+  "equations_preserved": 42,
+  "references_preserved": true,
+  "visual_review": "pending_renderer_unavailable",
+  "changes": [
+    {
+      "index": 281,
+      "before": "La investigación se desarrollará como una evaluación predictiva del presupuesto semanal de abastecimiento. El capítulo sustenta la elección de variables, métodos y criterios de contraste, sin anticipar resultados de Cup&Cake. H1 podrá recibir respaldo completo, parcial o no recibirlo según el comportamiento de sus dos componentes bajo el protocolo temporal definido (Shmueli, 2010).",
+      "after": "La investigación se desarrollará como una evaluación predictiva del presupuesto semanal de abastecimiento. El capítulo sustenta la elección de variables, métodos y criterios de contraste, sin anticipar resultados de Cup&Cake. El respaldo de H1 requerirá evidencia favorable en el importe total y en las participaciones; una mejora aislada se describirá como un resultado de ese componente y no como confirmación de la hipótesis conjunta (Shmueli, 2010)."
+    },
+    {
+      "index": 289,
+      "before": "En Cup&Cake, la investigación tendrá como propósito desarrollar un modelo híbrido que integre métodos estadísticos y aprendizaje automático para pronosticar el importe total semanal de compras, junto con un procedimiento para estimar su distribución porcentual entre los principales insumos. Su precisión se contrastará frente a modelos de referencia como apoyo a la planeación del presupuesto de abastecimiento.",
+      "after": "En Cup&Cake, la investigación tiene como propósito desarrollar y evaluar un modelo híbrido que integre métodos estadísticos y aprendizaje automático para pronosticar el importe total semanal de compras, junto con un procedimiento para estimar su distribución porcentual entre los principales insumos. Se dispone de una implementación computacional inicial; su precisión con datos reales todavía deberá contrastarse frente a modelos de referencia como apoyo a la planeación del presupuesto de abastecimiento."
+    },
+    {
+      "index": 330,
+      "before": "El procedimiento comprenderá recolección y depuración de registros, agregación semanal, diagnóstico temporal, ingeniería de características, selección de componentes e integración del modelo híbrido, estimación de la distribución porcentual, evaluación fuera de muestra y comunicación de resultados. Estas fases se ejecutarán preservando la separación entre desarrollo y evaluación final.",
+      "after": "El procedimiento comprende recolección y depuración de registros, agregación semanal, diagnóstico temporal, ingeniería de características, selección de componentes e integración del modelo híbrido, estimación de la distribución porcentual, evaluación fuera de muestra y comunicación de resultados. El pipeline implementa una versión inicial de este flujo. La verificación técnica del software se distingue de la ejecución científica con datos reales, que permanece pendiente de aprobar fuentes, cobertura, catálogo y protocolo de evaluación."
+    },
+    {
+      "index": 338,
+      "before": "El periodo con cobertura verificable se dividirá cronológicamente en desarrollo y evaluación final. Se propone reservar las últimas 16 semanas, sujeto a justificar su viabilidad y el número de fechas evaluables por horizonte antes de ajustar modelos. Los diagnósticos ADF, KPSS, ACF, PACF, Ljung-Box, ADI, CV² y de atípicos se aplicarán al conjunto de desarrollo según su pertinencia y requisitos. La descomposición STL con periodo 52 se utilizará únicamente si la longitud y continuidad permiten su cálculo e interpretación, explicitando las limitaciones de disponer de pocos ciclos.",
+      "after": "El periodo con cobertura verificable se dividirá cronológicamente en desarrollo y evaluación final. La configuración inicial reserva las últimas 16 semanas calendario; al exigir que los cuatro horizontes tengan valores observables, se obtienen 13 orígenes finales comunes. Esta configuración deberá justificarse con la cobertura real antes del experimento. La versión actual genera ACF, PACF, distribución de importes y frecuencia de ceros sobre desarrollo. STL, con periodo 52, requiere al menos tres ciclos anuales y continuidad. ADF, KPSS, Ljung-Box, ADI, CV² y el diagnóstico formal de atípicos quedan como ampliaciones por implementar y revisar según su pertinencia."
+    },
+    {
+      "index": 340,
+      "before": "La ejecución exportará tablas abiertas, figuras, un resumen JSON y el libro 01b_diagnostico_series_temporales.xlsx. El archivo documentará cobertura, estacionariedad, dependencia serial, intermitencia, atípicos y las limitaciones de interpretación, de modo que la caracterización pueda auditarse independientemente del tablero de inteligencia de negocios.",
+      "after": "El pipeline exporta tablas de respaldo, figuras y un manifiesto por ejecución. Los diagnósticos disponibles se identifican por su conjunto temporal y las omisiones incluyen un motivo. El libro de diagnósticos de la implementación anterior se conserva como antecedente y no se considera un producto verificado del pipeline híbrido actual."
+    },
+    {
+      "index": 343,
+      "before": "Se construirán rezagos, resúmenes móviles y variables calendáricas con información anterior al pronóstico. Para indicadores económicos se registrará la fecha de publicación; para datos meteorológicos futuros solo se admitirán pronósticos archivados y disponibles en el origen correspondiente. Si no existe esa evidencia de disponibilidad, se emplearán observaciones rezagadas o se excluirá la variable. Las transformaciones y la selección de características se ajustarán dentro de cada partición de entrenamiento.",
+      "after": "La versión inicial construye rezagos de 1, 2, 4, 8 y 12 semanas, resúmenes móviles de 4, 8 y 12 semanas y variables calendáricas. Emplea predictores prefijados, sin selección por frecuencia. La imputación y el escalado de los modelos que los requieren se ajustan dentro de cada ventana. Las exógenas son opcionales y requieren fuente, versión y fecha de disponibilidad; para semanas futuras solo se admiten calendarios conocidos o pronósticos archivados disponibles en el origen. En su ausencia se utilizan observaciones previas admisibles o se registra información faltante."
+    },
+    {
+      "index": 346,
+      "before": "Modelos estadísticos: se evaluarán ETS, ARIMA, Croston-SBA y TSB. Los dos últimos se incluyen porque separan la frecuencia y el tamaño de los eventos de compra cuando la serie semanal contiene ceros.",
+      "after": "Modelos estadísticos: la implementación inicial incluye ETS aditivo sin componente estacional y ARIMA(1,1,1). Croston-SBA y TSB quedan fuera de esta versión; su eventual incorporación requerirá justificación en desarrollo y pruebas antes de consultar la evaluación final."
+    },
+    {
+      "index": 347,
+      "before": "Modelos de aprendizaje automático: se evaluarán Ridge, Random Forest e HistGradientBoosting con variables históricas, calendáricas y exógenas disponibles al momento de pronosticar. También se compararán variantes con transformación log1p del importe, que atenúan la influencia de picos al ajustar y revierten la escala al pronosticar.",
+      "after": "Modelos de aprendizaje automático: la implementación inicial incluye Ridge con estandarización y tres valores candidatos de regularización, así como Random Forest con complejidad acotada. El ajuste utiliza importes nominales. HistGradientBoosting y las variantes log1p o hurdle del código anterior no forman parte del experimento híbrido implementado."
+    },
+    {
+      "index": 348,
+      "before": "Redes neuronales: RNN y LSTM podrán evaluarse como contraste secundario. Su inclusión no presupone una ventaja, debido al número limitado de observaciones semanales y al riesgo de sobreajuste.",
+      "after": "RNN y LSTM no forman parte de la implementación actual. Su eventual evaluación será una ampliación secundaria, condicionada a la disponibilidad de observaciones suficientes y sin modificar retrospectivamente el protocolo del experimento principal."
+    },
+    {
+      "index": 349,
+      "before": "La integración híbrida se definirá como una fase específica del desarrollo. Se seleccionarán un componente estadístico y uno de aprendizaje automático, y se establecerá el mecanismo mediante el cual sus estimaciones producirán el pronóstico conjunto. La elección y configuración se realizarán exclusivamente mediante validación temporal interna. Antes de la evaluación final se documentarán los componentes, la regla de integración, el tratamiento de pronósticos negativos y las condiciones de actualización, de forma que el procedimiento pueda reproducirse.",
+      "after": "La integración implementada combina un componente estadístico y uno de aprendizaje automático mediante un promedio ponderado. La pareja de componentes y el peso se seleccionan por horizonte en validación temporal interna, con pesos candidatos de 0.25, 0.50 y 0.75 para el componente estadístico y el peso complementario para el componente de aprendizaje automático. Los pronósticos se restringen a valores no negativos. Los fallos se registran y no se sustituyen silenciosamente por otro método bajo el mismo nombre."
+    },
+    {
+      "index": 350,
+      "before": "Para la distribución porcentual, los principales insumos se seleccionarán con un criterio explícito de participación monetaria acumulada aplicado al conjunto de desarrollo. El umbral y la regla de selección se fijarán antes de la evaluación final. Las compras no incluidas en los insumos seleccionados se agruparán en una categoría residual para conservar la correspondencia con el importe total.",
+      "after": "La configuración inicial propone seleccionar los principales insumos hasta alcanzar el 80 % de participación monetaria acumulada en desarrollo y reunir el resto en una categoría residual. El umbral deberá aprobarse antes del experimento. Durante la validación interna, la selección utiliza únicamente el entrenamiento de cada partición; las categorías quedan congeladas antes de la evaluación final."
+    },
+    {
+      "index": 351,
+      "before": "En semanas con importe total positivo, la participación de cada insumo se obtendrá dividiendo su importe entre el total semanal. Se definirá y ajustará con datos de desarrollo un procedimiento para pronosticar dichas participaciones, con restricciones de no negatividad y suma igual a uno. Las asignaciones monetarias se calcularán multiplicando las participaciones pronosticadas por el total pronosticado; su suma deberá coincidir con este total.",
+      "after": "En semanas con importe total positivo, la participación de cada insumo se obtiene dividiendo su importe entre el total semanal. El procedimiento implementado estima participaciones mediante un promedio exponencial, con parámetro seleccionado internamente entre 0.1, 0.3 y 0.6 en el horizonte principal. Esta primera versión mantiene la misma composición pronosticada para los cuatro horizontes. Las participaciones son no negativas y suman uno; las asignaciones se calculan a partir del total híbrido y se reconcilian a centavos mediante la regla de mayores restos."
+    },
+    {
+      "index": 352,
+      "before": "La referencia de distribución será el promedio de las participaciones semanales observadas en la ventana de entrenamiento, calculado únicamente en semanas de importe total positivo y actualizado con información previa a cada origen. El procedimiento propuesto deberá diferenciarse de esta referencia y documentarse antes de la evaluación final. Si no existen semanas válidas para estimar participaciones, se reportará falta de información y no se generará una distribución arbitraria.",
+      "after": "La referencia de distribución es el promedio de las participaciones semanales observadas en la ventana de entrenamiento, calculado solo en semanas de importe total positivo y actualizado con información previa a cada origen. El promedio exponencial se contrasta con esta referencia. Si no existen semanas válidas para estimar participaciones, el pipeline informa falta de datos y no genera una distribución arbitraria."
+    },
+    {
+      "index": 354,
+      "before": "Se respetará el orden cronológico mediante una ventana deslizante. La longitud inicial propuesta será de 52 semanas y deberá justificarse considerando la cobertura, los rezagos y las observaciones efectivas para cada modelo. Se distinguirá la validación interna, destinada a configurar el procedimiento, de la evaluación final fuera de muestra.",
+      "after": "La configuración inicial utiliza ventanas de 52 etiquetas semanales por horizonte y requiere historia adicional para construir rezagos y resúmenes móviles. Ocho orígenes internos permiten seleccionar los componentes y sus parámetros. Las etiquetas de los cuatro horizontes de la última partición interna deben preceder al primer origen de evaluación final. La longitud de las ventanas y el número de orígenes deberán revisarse con la cobertura real, sin consultar los errores finales para elegirlos."
+    },
+    {
+      "index": 357,
+      "before": "La evaluación comparativa calculará la discrepancia entre los valores observados y pronosticados del importe total semanal y de la participación porcentual de los principales insumos. H1 se contrastará frente a las respectivas líneas base. La comparación de configuraciones equivalentes con y sin variables exógenas se utilizará como análisis complementario del aporte de dichas variables.",
+      "after": "La evaluación comparativa calculará la discrepancia entre valores observados y pronosticados del importe total semanal y de las participaciones. H1 se contrastará frente a las respectivas referencias. La comparación equivalente con y sin variables exógenas permanece como análisis complementario pendiente; admitir estas variables como entrada no equivale a haber ejecutado dicha comparación."
+    },
+    {
+      "index": 362,
+      "before": "El contraste de H1 considerará conjuntamente la comparación del importe total y la comparación de participaciones frente a sus respectivas referencias. Antes de examinar la evaluación final se fijarán los criterios de evidencia, el procedimiento para cuantificar la incertidumbre y el tratamiento de comparaciones múltiples, atendiendo a la dependencia temporal y al tamaño de la muestra. Se distinguirá una reducción descriptiva del error del respaldo inferencial de la hipótesis; no se declarará respaldo de H1 a partir de una mejora aislada en uno de sus componentes.",
+      "after": "El contraste de H1 exige evidencia favorable tanto para el importe total como para las participaciones en h=1. La implementación dispone de un remuestreo circular pareado por bloques de cuatro semanas, con 2000 réplicas y ajuste de Bonferroni para dos componentes, aplicado a diferencias de pérdidas monetarias cuadráticas y porcentuales absolutas. Conserva la posición temporal de las semanas con composición no definida. Este procedimiento se considera exploratorio hasta revisar su adecuación al tamaño muestral y aprobar el protocolo antes de examinar una evaluación independiente. Las mejoras descriptivas, las pruebas de software o una ejecución demostrativa no confirman H1."
+    },
+    {
+      "index": 364,
+      "before": "Se prevé comunicar los resultados mediante un tablero de inteligencia de negocios. Se mostrarán el importe total pronosticado para cada horizonte, las participaciones estimadas y las asignaciones monetarias por insumo, junto con el modelo utilizado, las métricas y las advertencias de cobertura. La suma de los cuatro horizontes se identificará como consolidado de cuatro semanas; una presentación por mes calendario requerirá una regla de agregación explícita.",
+      "after": "Se implementó una salida local de inteligencia de negocios que muestra el importe total pronosticado por horizonte, las participaciones y asignaciones por insumo, las métricas y las advertencias de ejecución. Su uso con resultados de Cup&Cake permanece pendiente de la validación con datos reales. La suma de los cuatro horizontes se identificará como consolidado de cuatro semanas y no como mes calendario."
+    },
+    {
+      "index": 367,
+      "before": "El repositorio",
+      "after": "Antecedentes del repositorio y de la preparación de datos"
+    },
+    {
+      "index": 368,
+      "before": "Se construyó un repositorio en GITHUB en el cual se podrá consultar todos los archivos creados para realizar la investigación.  La fuente visual correspondiente se identifica en la Imagen 1.",
+      "after": "Se construyó un repositorio en GITHUB para conservar los archivos de la investigación. La Imagen 1 identifica este antecedente. Las descripciones, tablas y figuras heredadas que siguen documentan etapas previas de exploración; no acreditan cobertura, ausencia de fuga de información ni precisión del pipeline híbrido actual. Su reutilización científica requiere una nueva auditoría conforme al procedimiento vigente."
+    },
+    {
+      "index": 678,
+      "before": "La evaluación se ejecutó mediante rolling-window con 52 semanas fijas de entrenamiento, desplazamiento de una semana y 16 orígenes finales comunes dentro del bloque continuo. Las métricas se calcularon por separado para h=1 y h=4. Para el consolidado presupuestal se sumaron los pronósticos directos h=1, h=2, h=3 y h=4; esta suma no se interpreta como un modelo mensual independiente.",
+      "after": "La evaluación heredada utilizó una ventana de 52 semanas y reportó 16 orígenes para h=1 y h=4. Se conserva como antecedente, no como evaluación del híbrido. El pipeline actual distingue 16 semanas objetivo reservadas de los 13 orígenes comunes que permiten observar h=1 a h=4; sus resultados reales todavía no se han generado."
+    },
+    {
+      "index": 687,
+      "before": "La integración se realiza mediante 04_dss_semanal.json, generado a partir de la ejecución con cobertura corregida. El archivo conserva la relación entre cada configuración, las métricas por horizonte, los contrastes estadísticos y las variables exógenas registradas; evita presentar resultados diarios heredados o semanas sin cobertura como evidencia semanal válida.",
+      "after": "El archivo 04_dss_semanal.json corresponde a la integración heredada y no debe utilizarse para respaldar la H1 actual. El pipeline híbrido genera dss_hibrido.json y tablero.html dentro de una carpeta identificada por ejecución, con una separación explícita entre demostración y evaluación real."
+    },
+    {
+      "index": 691,
+      "before": "Los indicadores principales son RMSE, MAE y métricas escaladas por horizonte, junto con la línea base primaria de último valor semanal observado. MAPE se conserva sólo como diagnóstico para observaciones distintas de cero. La aceptación de H1 requiere una prueba Diebold-Mariano unilateral favorable con ajuste Holm no mayor a 0.05; una reducción descriptiva de RMSE por sí sola no es suficiente.",
+      "after": "En la versión actual, los indicadores monetarios son RMSE, MAE y MASE; las participaciones se evalúan mediante MAE en puntos porcentuales. El procedimiento Diebold-Mariano con ajuste Holm de la versión anterior no constituye el protocolo vigente para la H1 conjunta. La adecuación del procedimiento inferencial implementado deberá aprobarse antes de la evaluación real independiente."
+    },
+    {
+      "index": 695,
+      "before": "En el horizonte principal h=1, la referencia ingenua estacional de 52 semanas obtuvo el menor RMSE descriptivo (695.19) y MAE de 438.19. El modelo de aprendizaje automático más cercano fue Random Forest con transformación log1p y variables históricas, con RMSE de 699.28 y MAE de 478.54. La cercanía descriptiva no constituye evidencia de superioridad y debe leerse junto con los contrastes inferenciales.",
+      "after": "Las métricas incorporadas en versiones anteriores del DSS pertenecen a experimentos heredados. No representan resultados del híbrido actual ni permiten seleccionar sus componentes. El tablero nuevo solo dispone, hasta este punto, de una ejecución demostrativa identificada como tal."
+    },
+    {
+      "index": 698,
+      "before": "El DSS debe apoyar la revisión del presupuesto y mostrar la incertidumbre asociada a cada horizonte. En h=1 se comunica la referencia estacional como menor RMSE descriptivo; en h=4, HistGradientBoosting tipo hurdle con variables exógenas obtuvo el menor RMSE descriptivo (399.56) y MAE de 318.52. Ninguno de estos resultados autoriza automatizar compras ni afirmar superioridad estadísticamente demostrada frente a la referencia primaria.",
+      "after": "El DSS está destinado a facilitar la revisión humana del presupuesto. No se dispone todavía de evidencia real para recomendar el híbrido por encima de sus referencias. La versión inicial tampoco genera intervalos de predicción para los importes futuros; no deben interpretarse bandas o variaciones descriptivas como tales intervalos."
+    },
+    {
+      "index": 703,
+      "before": "En su estado actual, el tablero funciona como una instantánea reproducible de los resultados finales. El esquema de base de datos del proyecto permanece vacío y los indicadores están integrados directamente en el código de la interfaz; por ello, la aplicación no actualiza automáticamente sus valores cuando se incorporan nuevas ventas, compras o ejecuciones del pipeline. Esta arquitectura es adecuada para comunicar y auditar los resultados de la tesis, pero debe distinguirse de un sistema transaccional conectado en tiempo real.",
+      "after": "La interfaz heredada y sus capturas se conservan como antecedentes. Para el pipeline actual se añadió un constructor independiente, build-hibrido.mjs, que consume los productos de una ejecución completada y preserva las advertencias de demostración. La salida es una instantánea local; no se ha publicado ni se conecta automáticamente con los registros operativos."
+    },
+    {
+      "index": 704,
+      "before": "Para una implementación continua en Cup&Cake, la siguiente evolución consistiría en automatizar la exportación de los resultados ganadores hacia una fuente de datos consumida por el tablero, incorporar controles de actualización y registrar la fecha de la última ejecución. Aun con esta limitación, el prototipo cumple la función central de un DSS: integrar evidencia predictiva, compararla con la práctica empírica, comunicar incertidumbre y facilitar que la decisión final permanezca bajo responsabilidad del usuario del negocio. La representación visual correspondiente se presenta en la Figura 30.",
+      "after": "La actualización incremental con configuración congelada, la captura verificada de la nueva interfaz y su uso operativo permanecen pendientes. La recarga del artefacto actual reproduce el pronóstico del corte guardado; un nuevo corte requiere incorporar fuentes y cobertura aprobadas y ejecutar nuevamente el pipeline. La configuración no debe elegirse por el mejor resultado del conjunto final."
+    },
+    {
+      "index": 711,
+      "before": "El pipeline semanal se ejecutó con 135 semanas observadas de compras; una cola de 43 semanas sin cobertura se excluyó como ausencia de observación y no como importe cero. La evaluación utilizó una ventana de entrenamiento de 52 semanas y 16 orígenes temporales finales comunes. Los datos sintéticos se conservaron en un archivo independiente y no participaron en el ajuste, la evaluación ni los contrastes de hipótesis.",
+      "after": "La auditoría preliminar de Compras.xlsx identificó 1670 registros sin las incidencias examinadas y 13 pendientes de revisión: 12 marcados por duplicidad y uno por importe inválido. Estos conteos no establecen cobertura semanal ni constituyen una muestra final aprobada. La fuente definitiva, las correcciones, el catálogo de insumos y el periodo continuo de análisis siguen pendientes de validación."
+    },
+    {
+      "index": 713,
+      "before": "El conjunto semanal de modelado integra características históricas, cíclicas y exógenas con disponibilidad documentada. La selección se realiza dentro de cada ventana de entrenamiento y se limita a un máximo de 15 predictores; este criterio favorece parsimonia e interpretabilidad ante el tamaño muestral disponible.",
+      "after": "La versión inicial emplea características históricas y calendáricas prefijadas, con exógenas opcionales sujetas a disponibilidad documentada. No se ha ejecutado una selección dimensional del nuevo experimento con datos reales. Los análisis de reducción dimensional anteriores no se presentan como resultados del híbrido."
+    },
+    {
+      "index": 715,
+      "before": "La evaluación comparativa se reporta por horizonte. En h=1, Ridge con variables históricas registró RMSE de 502.11 y MAE de 325.98, frente a RMSE de 595.02 y MAE de 400.19 de la persistencia del último valor semanal observado. En h=4, el promedio móvil de cuatro semanas fue la alternativa con menor RMSE descriptivo (652.52) y MAE de 427.63. Las métricas no se combinan entre horizontes.",
+      "after": "No se dispone todavía de métricas reales del modelo híbrido ni de su procedimiento de distribución porcentual. RMSE, MAE, MASE y MAE de participaciones se reportarán después de ejecutar el protocolo aprobado sobre fechas comparables. Los rankings y valores de versiones anteriores no permiten concluir qué modelo será más preciso en este experimento."
+    },
+    {
+      "index": 716,
+      "before": "Para la planeación de cuatro semanas, el pipeline suma las estimaciones directas h=1, h=2, h=3 y h=4. Esta salida se conserva como consolidado presupuestal histórico y no equivale a un modelo mensual independiente. La comparación incluye 21 configuraciones en 16 orígenes comunes, con 336 registros consolidados.",
+      "after": "La ejecución demostrativa verificó que el software puede producir pronósticos para cuatro horizontes y distribuir cada total entre insumos. Sus importes y errores son datos de prueba y se excluyen de los resultados empíricos de la investigación. Las figuras heredadas siguientes se mantienen identificadas como antecedentes, pendientes de sustitución por evidencia real del procedimiento actual."
+    },
+    {
+      "index": 722,
+      "before": "Las arquitecturas RNN y LSTM no se utilizaron como evidencia principal en la evaluación semanal. Con 135 semanas observadas, se priorizaron modelos estadísticos y de aprendizaje automático parsimoniosos; las redes recurrentes se reservan como comparación secundaria para una futura ampliación de la cobertura.",
+      "after": "RNN y LSTM no se incluyen en la implementación inicial. Por tanto, no se presentan resultados de redes recurrentes como evidencia del experimento actual."
+    },
+    {
+      "index": 724,
+      "before": "El contraste de H1 se realizará después del desarrollo del modelo y de la evaluación fuera de muestra. Se reportarán por separado los errores del importe total semanal y de la distribución porcentual, junto con sus referencias y la incertidumbre de las diferencias. Mientras no se complete este procedimiento, no corresponde afirmar que la hipótesis ha sido respaldada o rechazada.",
+      "after": "H1 permanece pendiente de contraste con datos reales. Se reportarán por separado los errores del importe total y de las participaciones frente a sus referencias, junto con la incertidumbre y las limitaciones del procedimiento. Hasta completar esa evaluación no corresponde afirmar respaldo ni rechazo de la hipótesis."
+    },
+    {
+      "index": 726,
+      "before": "El DSS integra métricas y predicciones de validación por horizonte, el consolidado de cuatro semanas, los contraste de H1 y el registro de variables exógenas. Las salvaguardas comunican cobertura, disponibilidad ex ante y el carácter histórico de los resultados. La interfaz debe mantener la decisión final bajo responsabilidad de la persona usuaria.",
+      "after": "Se verificó técnicamente la generación del JSON y de la interfaz local con una ejecución demostrativa. No se ha validado su utilidad operativa con la persona responsable de Cup&Cake. Las expresiones de error conservadas a continuación son definiciones matemáticas y no constituyen resultados; los indicadores complementarios no implementados no se atribuyen a la salida actual."
+    },
+    {
+      "index": 732,
+      "before": "Los resultados se reportan exclusivamente para el importe semanal de compras. En h=1, Ridge histórico obtuvo el menor RMSE descriptivo; en h=4, el promedio móvil de cuatro semanas obtuvo el menor RMSE descriptivo. La MAPE se mantiene como indicador secundario debido a la presencia de semanas con importe cero.",
+      "after": "La tabla heredada de modelos ganadores no corresponde al experimento híbrido y no se utilizará para concluir sobre H1. La tabla de resultados vigente se elaborará únicamente después de la evaluación con datos reales y distinguirá el importe total, las participaciones y cada horizonte."
+    },
+    {
+      "index": 736,
+      "before": "Los hallazgos no respaldan una superioridad general de un modelo complejo. En h=1, Ridge histórico mostró el menor RMSE descriptivo; en h=4, una referencia empírica simple resultó competitiva. Esta diferencia entre horizontes refuerza la necesidad de informar métricas separadas y de no trasladar conclusiones de un horizonte a otro.",
+      "after": "La discusión empírica permanece pendiente de evaluar el híbrido y la distribución porcentual con datos reales. La implementación permite efectuar comparaciones separadas por horizonte, pero su funcionamiento técnico no demuestra una mejora de precisión."
+    },
+    {
+      "index": 737,
+      "before": "La evaluación refuerza que una arquitectura más compleja no implica mayor precisión. La muestra semanal limitada, la intermitencia y la heterogeneidad de las compras justifican mantener alternativas parsimoniosas y referencias empíricas como controles permanentes.",
+      "after": "El conjunto inicial acotado de componentes responde a una decisión de diseño parsimonioso. Su conveniencia deberá examinarse con el protocolo temporal definido; no se deduce superioridad de una familia de modelos a partir de su complejidad ni de los resultados demostrativos."
+    },
+    {
+      "index": 739,
+      "before": "La serie semanal conserva episodios con importe cero y picos de compra, por lo que MAPE puede ser inestable o no estar definido en algunas semanas. Las conclusiones se sustentan principalmente en RMSE, MAE y métricas escaladas; MAPE se presenta sólo como diagnóstico condicionado a valores observados distintos de cero.",
+      "after": "La evaluación monetaria conservará los ceros confirmados. Las semanas cuyo importe observado sea cero no tienen participaciones definidas y se excluirán únicamente de la métrica porcentual, informando su número. La frecuencia real de estos casos quedará establecida después de aprobar la cobertura."
+    },
+    {
+      "index": 741,
+      "before": "La evidencia permite utilizar los pronósticos como apoyo exploratorio para revisar el presupuesto de compras, pero no para automatizar decisiones. La ausencia de significancia tras Holm implica que la referencia de último valor semanal debe seguir acompañando cualquier recomendación. Tampoco es posible inferir reducciones efectivas de faltantes, sobreabastecimiento o merma sin datos de inventario, recetas y tiempos de entrega.",
+      "after": "El uso previsto es apoyar la revisión del presupuesto semanal mediante importes y participaciones pronosticados. No se han medido beneficios financieros u operativos, ni reducciones de faltantes, sobreabastecimiento o merma. La interfaz no autoriza compras automáticas y mantiene la decisión bajo responsabilidad humana."
+    },
+    {
+      "index": 743,
+      "before": "La validez interna se fortaleció mediante orden temporal, ventana fija, exclusión de cobertura ausente, bloqueo de datos sintéticos y control explícito de disponibilidad de exógenas. La validez externa permanece limitada por tratarse de una sola microempresa, 135 semanas observadas y 16 orígenes finales. Estos límites explican la interpretación conservadora de los contrastes de hipótesis.",
+      "after": "Las pruebas técnicas verifican controles de separación temporal, reconciliación y trazabilidad, pero no sustituyen una evaluación independiente con datos reales. La elección de la fuente, la cobertura, el tamaño muestral y el protocolo inferencial siguen condicionando la validez del estudio. La eventual generalización se limitará al caso y a las condiciones observadas."
+    },
+    {
+      "index": 745,
+      "before": "Se construyó una solución semanal reproducible que integra registros de compras, características históricas y variables exógenas registradas. El proceso compara modelos mediante rolling-window, separa h=1 y h=4, genera un consolidado de cuatro semanas y comunica los resultados en un DSS auditable.",
+      "after": "Se implementó una versión inicial del pipeline para combinar pronósticos estadísticos y de aprendizaje automático del importe semanal de compras, estimar participaciones y generar asignaciones monetarias reconciliadas. La verificación técnica comprende pruebas automatizadas y una ejecución demostrativa; este avance no equivale a concluir la investigación."
+    },
+    {
+      "index": 746,
+      "before": "La evidencia no respalda H1 bajo el criterio inferencial predefinido: aunque Ridge histórico redujo descriptivamente el RMSE en h=1, ninguna configuración superó el contraste Diebold-Mariano con ajuste Holm. En h=4, una línea base de promedio móvil fue la alternativa con menor RMSE descriptivo. Por ello, no se afirma superioridad general de los modelos estadísticos o de aprendizaje automático frente a la referencia primaria.",
+      "after": "H1 todavía no ha sido contrastada con el modelo híbrido actual sobre datos reales aprobados. No se afirma su respaldo ni su rechazo. Las conclusiones de experimentos anteriores y los resultados sintéticos no se transfieren a la hipótesis conjunta sobre importe total y distribución porcentual."
+    },
+    {
+      "index": 747,
+      "before": "El estudio muestra que, en un contexto de Small Data e intermitencia, la parsimonia, la calidad de las variables, la disponibilidad ex ante y la validación temporal son más relevantes que la complejidad algorítmica. La ausencia de respaldo de H1 también constituye conocimiento útil: impide recomendar un modelo como superior sin evidencia suficiente.",
+      "after": "La conclusión en esta etapa se limita a la disponibilidad de una implementación inicial verificable. Determinar su precisión y su pertinencia para Cup&Cake exige completar la auditoría de datos y la evaluación prevista, sin condicionar el cierre del estudio a obtener una hipótesis favorable."
+    },
+    {
+      "index": 749,
+      "before": "Se recomienda actualizar semanalmente los registros de compras y ejecutar nuevamente el pipeline antes de usar pronósticos operativos. Debe conservarse la línea base de último valor como referencia, revisar por separado h=1 y h=4 y comunicar el consolidado sólo como suma de cuatro pronósticos semanales. Las decisiones deben incluir revisión humana y límites financieros.",
+      "after": "Se recomienda resolver las incidencias de la fuente, aprobar el catálogo y documentar la cobertura semanal antes de entrenar con registros reales. También deberán fijarse el periodo final independiente y el protocolo de contraste. Durante la evaluación se conservarán las referencias, se informarán los cuatro horizontes y se mantendrá la revisión humana de las salidas."
+    },
+    {
+      "index": 751,
+      "before": "Como trabajo futuro, conviene ampliar la cobertura observada de compras, registrar inventario inicial y final, recetas, merma, costo de faltante y tiempos de entrega; además, realizar validación prospectiva y analizar si los resultados se sostienen con más orígenes de prueba. También puede evaluarse un modelo mensual independiente únicamente cuando exista una serie mensual suficiente y una necesidad de decisión claramente diferenciada.",
+      "after": "El trabajo inmediato consiste en completar la validación con datos reales, revisar los diagnósticos pendientes y generar las figuras empíricas del experimento. Las ampliaciones posibles incluyen una comparación controlada con y sin exógenas, actualización incremental con configuración congelada e intervalos futuros debidamente validados. La captura del tablero y la inserción editorial de figuras reales se realizarán después de verificar su procedencia y legibilidad."
+    },
+    {
+      "index": 371,
+      "before": "El contexto del negocio",
+      "after": "Antecedentes de el contexto del negocio"
+    },
+    {
+      "index": 375,
+      "before": "Los conjuntos de datos existentes",
+      "after": "Antecedentes de los conjuntos de datos existentes"
+    },
+    {
+      "index": 435,
+      "before": "Conjuntos de datos de variables exógenas temporales y comerciales",
+      "after": "Antecedentes de conjuntos de datos de variables exógenas temporales y comerciales"
+    },
+    {
+      "index": 494,
+      "before": "El proceso de construcción del dataset maestro",
+      "after": "Antecedentes de el proceso de construcción del dataset maestro"
+    },
+    {
+      "index": 635,
+      "before": "Análisis exploratorio de la serie temporal semanal",
+      "after": "Antecedentes de análisis exploratorio de la serie temporal semanal"
+    },
+    {
+      "index": 658,
+      "before": "Diagnóstico de la línea base empírica y evaluación comparativa",
+      "after": "Antecedentes de diagnóstico de la línea base empírica y evaluación comparativa"
+    },
+    {
+      "index": 661,
+      "before": "Auditoría, Depuración e Integración del Conjunto de Datos (Dataset) ",
+      "after": "Antecedentes de auditoría, Depuración e Integración del Conjunto de Datos (Dataset) "
+    },
+    {
+      "index": 664,
+      "before": "Ingeniería de Características (Feature Engineering) y Variables Exógenas ",
+      "after": "Antecedentes de ingeniería de Características (Feature Engineering) y Variables Exógenas "
+    },
+    {
+      "index": 669,
+      "before": "Desarrollo, Configuración y Entrenamiento de los Modelos Predictivos ",
+      "after": "Antecedentes de desarrollo, Configuración y Entrenamiento de los Modelos Predictivos "
+    },
+    {
+      "index": 674,
+      "before": "Evaluación comparativa del rendimiento predictivo frente a la línea base",
+      "after": "Antecedentes de evaluación comparativa del rendimiento predictivo frente a la línea base"
+    },
+    {
+      "index": 679,
+      "before": "Arquitectura e Integración del Tablero de Inteligencia de Negocios (DSS) ",
+      "after": "Antecedentes de arquitectura e Integración del Tablero de Inteligencia de Negocios (DSS) "
+    },
+    {
+      "index": 370,
+      "before": "Imagen 1 - Repositorio github",
+      "after": "Imagen 1 - Repositorio github [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 376,
+      "before": "Tabla 2 - Conjuntos de datos de Ventas y Compras",
+      "after": "Tabla 2 - Conjuntos de datos de Ventas y Compras [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 438,
+      "before": "Tabla 3 - Conjunto de datos de variables exógenas (Contexto Tizayuca, Hgo.)",
+      "after": "Tabla 3 - Conjunto de datos de variables exógenas (Contexto Tizayuca, Hgo.) [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 459,
+      "before": "Tabla 4 - Inflación histórica en México (INPC)",
+      "after": "Tabla 4 - Inflación histórica en México (INPC) [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 479,
+      "before": "Imagen 2 - Temperatura Media por Entidad Federativa y Nacional, contenido en PDF",
+      "after": "Imagen 2 - Temperatura Media por Entidad Federativa y Nacional, contenido en PDF [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 481,
+      "before": "Tabla 5 - Temperatura mensual (Tizayuca, Hgo.)",
+      "after": "Tabla 5 - Temperatura mensual (Tizayuca, Hgo.) [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 496,
+      "before": "Figura 27 - Trazabilidad del pipeline analítico de la investigación.",
+      "after": "Figura 27 - Trazabilidad del pipeline analítico de la investigación. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 545,
+      "before": "Tabla 6 - Síntesis de fuentes de datos y transformaciones aplicadas",
+      "after": "Tabla 6 - Síntesis de fuentes de datos y transformaciones aplicadas [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 640,
+      "before": "Figura AT-1 - Serie semanal del importe de compras y bloque final reservado",
+      "after": "Figura AT-1 - Serie semanal del importe de compras y bloque final reservado [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 645,
+      "before": "Figura AT-2 - Funciones ACF y PACF del bloque de desarrollo",
+      "after": "Figura AT-2 - Funciones ACF y PACF del bloque de desarrollo [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 647,
+      "before": "Figura AT-3 - Perfil exploratorio del importe por semana del año",
+      "after": "Figura AT-3 - Perfil exploratorio del importe por semana del año [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 652,
+      "before": "Figura AT-4 - Identificación robusta de importes semanales atípicos",
+      "after": "Figura AT-4 - Identificación robusta de importes semanales atípicos [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 654,
+      "before": "Figura AT-5 - Descomposición STL exploratoria con periodo de 52 semanas",
+      "after": "Figura AT-5 - Descomposición STL exploratoria con periodo de 52 semanas [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 659,
+      "before": "Tabla 7 - Operacionalización de la línea base y los modelos predictivos",
+      "after": "Tabla 7 - Operacionalización de la línea base y los modelos predictivos [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 662,
+      "before": "Tabla 8 - Trazabilidad de los conjuntos analíticos",
+      "after": "Tabla 8 - Trazabilidad de los conjuntos analíticos [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 666,
+      "before": "Figura 24 - Expansión dimensional producida por la ingeniería de características.",
+      "after": "Figura 24 - Expansión dimensional producida por la ingeniería de características. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 667,
+      "before": "Tabla 9 - Dimensiones principales de las variables modeladas",
+      "after": "Tabla 9 - Dimensiones principales de las variables modeladas [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 671,
+      "before": "Figura 25 - Arquitecturas recurrentes consideradas para el modelado temporal.",
+      "after": "Figura 25 - Arquitecturas recurrentes consideradas para el modelado temporal. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 672,
+      "before": "Tabla 10 - Familias de modelos y configuración evaluada",
+      "after": "Tabla 10 - Familias de modelos y configuración evaluada [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 676,
+      "before": "Figura 26 - Esquema de validación temporal Rolling-Origin.",
+      "after": "Figura 26 - Esquema de validación temporal Rolling-Origin. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 681,
+      "before": "Figura 28 - Arquitectura funcional del sistema de soporte a la decisión.",
+      "after": "Figura 28 - Arquitectura funcional del sistema de soporte a la decisión. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 702,
+      "before": "Figura 29 - Interfaz funcional del tablero DSS implementado para Cup&Cake.",
+      "after": "Figura 29 - Interfaz funcional del tablero DSS implementado para Cup&Cake. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 707,
+      "before": "Figura 30 - Flujo de decisión operativa asistido por el DSS.",
+      "after": "Figura 30 - Flujo de decisión operativa asistido por el DSS. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 718,
+      "before": "Figura 31 - Mejora relativa del RMSE frente a la línea base empírica.",
+      "after": "Figura 31 - Mejora relativa del RMSE frente a la línea base empírica. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 720,
+      "before": "Figura 32 - Mejor modelo por objetivo y representación de datos.",
+      "after": "Figura 32 - Mejor modelo por objetivo y representación de datos. [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    },
+    {
+      "index": 733,
+      "before": "Tabla 11 - Modelos ganadores y desempeño temporal",
+      "after": "Tabla 11 - Modelos ganadores y desempeño temporal [Antecedente de la versión anterior; no es evidencia del híbrido actual]"
+    }
+  ]
+}

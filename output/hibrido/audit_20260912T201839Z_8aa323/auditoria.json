@@ -1,0 +1,7 @@
+{
+  "fuente": "C:\\Python\\tesis\\datasets\\xlsx\\Compras.xlsx",
+  "sha256": "8864cb43b0ec1ef4d0299917823fa6f2bbf77ee18e29573b5cf2853ac090c9d1",
+  "registros_validos_para_revision": 1670,
+  "pendientes": 13,
+  "cobertura": "Debe confirmarse documentalmente; transacciones no prueban integridad semanal."
+}

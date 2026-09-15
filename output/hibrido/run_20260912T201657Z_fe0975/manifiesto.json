@@ -1,0 +1,94 @@
+{
+  "run_id": "run_20260912T201657Z_fe0975",
+  "estado": "bloqueado_o_fallido",
+  "demostracion": false,
+  "error": "Fuente no aprobada o hash distinto. Revisar auditoría antes de entrenar.",
+  "config": {
+    "source": "datasets/xlsx/Compras.xlsx",
+    "source_sheet": 0,
+    "source_sha256": "",
+    "source_approved": false,
+    "coverage": "input/hibrido/cobertura.csv",
+    "catalog": "input/hibrido/catalogo.csv",
+    "exogenous": null,
+    "sales": null,
+    "start": "",
+    "end": "",
+    "window": 52,
+    "holdout_weeks": 16,
+    "tuning_origins": 8,
+    "lags": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ],
+    "rolling": [
+      4,
+      8,
+      12
+    ],
+    "horizons": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "threshold": 0.8,
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "bootstrap_block": 4,
+    "min_inference_weeks": 12,
+    "independent_holdout": false,
+    "protocol_approved": false,
+    "use_rf": true,
+    "use_arima": true
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2",
+    "openpyxl": "3.1.5",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\datasets\\xlsx\\Compras.xlsx": "8864cb43b0ec1ef4d0299917823fa6f2bbf77ee18e29573b5cf2853ac090c9d1"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "fa229348a5519f95fd7ed6c18722a1ab06b35b5321e7209e73f75906a8af5b13",
+    "codigos\\hibrido\\composition.py": "f4de441d7f3ae0d0c8495598edebddb5a65329494e87ab8f1e1294c91a9cb351",
+    "codigos\\hibrido\\config.py": "191136a404ad6fb038da8f6b886f8a9411e3b67023f1dd796f55060bd26046c6",
+    "codigos\\hibrido\\data.py": "5cfbe70b1285aa3f93e676037ac94404e09884fff012bd62492ce85db2822fe5",
+    "codigos\\hibrido\\evaluation.py": "8c601b7a1adf4c8944912960ac76552e81b0f10b96ae67660580389d1bcd134b",
+    "codigos\\hibrido\\experiment.py": "84415accde57c18a2f712ea566b927910e34f108ca597abcef88a2ab90daa41a",
+    "codigos\\hibrido\\features.py": "074f61a0b425ab749154a76d363b35d4dc36536adf08de716e56f4503fb44abf",
+    "codigos\\hibrido\\figures.py": "436f27bd32d5bf66a9af10378d56dc03bf36bd5d1fc7f360e9cded0d9f6393f7",
+    "codigos\\hibrido\\models.py": "21fcfdc260cd1b3d314b9ad1b2fc9000a1657dbdd2ac2ca0af807c19f509ba1b",
+    "codigos\\hibrido\\reporting.py": "9b06407e9dea0b2c0242b089546003c34851f0279b77457542a596d4bf5f5895",
+    "codigos\\hibrido\\__init__.py": "ac4bfacce45043ea348dce2d754cc98217ab0c279cd3392d80eca338b3086e44",
+    "codigos\\01_clean_eda.py": "69425f53d6d1dc99e39fcba2ab7752b9494950673b68686729ea039f0687204d"
+  },
+  "productos": {
+    "auditoria.json": "e6b3780008f0f3ce620bf0865b75d8b2bfe77c8a9390afabaea4165e6c4e78a2",
+    "catalogo_PARA_REVISAR.csv": "d6db2569f533ff165798842168f5d7088a2cefac48abe018068dfca565b63b72",
+    "cobertura_PARA_REVISAR.csv": "128f6ff634cd6348bd744d9e0a2e93af9681e30667f5dde7a37a2d36ced6b288",
+    "compras_auditadas.csv": "ba17cbd4083a9e378aba262e1295e67e241ab7c00829b83dfdfaf10d8e64e3c5",
+    "registros_pendientes.csv": "03b8024efa8a7285606305f0ab8c77b18d7a9886bddf6784c87a2e18804e9a31"
+  }
+}

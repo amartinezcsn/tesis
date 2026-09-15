@@ -1,0 +1,99 @@
+{
+  "run_id": "DEMO_20260912T201653Z_53d253",
+  "estado": "bloqueado_o_fallido",
+  "demostracion": true,
+  "error": "Cero confirmado contradice compras positivas.",
+  "config": {
+    "source": "C:\\Python\\tesis\\output\\hibrido\\DEMO_20260912T201653Z_53d253\\compras_demo.csv",
+    "source_sheet": 0,
+    "source_sha256": "9c946703701309fb6ec6ce110f666e8a8bdd496245c52dbc40151f07edef8368",
+    "source_approved": true,
+    "coverage": "C:\\Python\\tesis\\output\\hibrido\\DEMO_20260912T201653Z_53d253\\cobertura_demo.csv",
+    "catalog": "C:\\Python\\tesis\\output\\hibrido\\DEMO_20260912T201653Z_53d253\\catalogo_demo.csv",
+    "exogenous": null,
+    "sales": null,
+    "start": "2021-01-04",
+    "end": "2023-02-06",
+    "window": 52,
+    "holdout_weeks": 16,
+    "tuning_origins": 8,
+    "lags": [
+      1,
+      2,
+      4,
+      8,
+      12
+    ],
+    "rolling": [
+      4,
+      8,
+      12
+    ],
+    "horizons": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "threshold": 0.8,
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "bootstrap_block": 4,
+    "min_inference_weeks": 12,
+    "independent_holdout": false,
+    "protocol_approved": false,
+    "use_rf": true,
+    "use_arima": true
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "plataforma": "Windows-11-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2",
+    "openpyxl": "3.1.5",
+    "scipy": "1.18.1",
+    "joblib": "1.6.0"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\output\\hibrido\\DEMO_20260912T201653Z_53d253\\compras_demo.csv": "9c946703701309fb6ec6ce110f666e8a8bdd496245c52dbc40151f07edef8368",
+    "C:\\Python\\tesis\\output\\hibrido\\DEMO_20260912T201653Z_53d253\\cobertura_demo.csv": "920606e63fa7b3b707af6e0fe35bb3dfd427cec2a4e1014ab9561a1867efaea5",
+    "C:\\Python\\tesis\\output\\hibrido\\DEMO_20260912T201653Z_53d253\\catalogo_demo.csv": "3cf8a66fe223d898671c79d9fad827f0cd4b88baf39e3d3d57ae89006fb4c999"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "fa229348a5519f95fd7ed6c18722a1ab06b35b5321e7209e73f75906a8af5b13",
+    "codigos\\hibrido\\composition.py": "f4de441d7f3ae0d0c8495598edebddb5a65329494e87ab8f1e1294c91a9cb351",
+    "codigos\\hibrido\\config.py": "191136a404ad6fb038da8f6b886f8a9411e3b67023f1dd796f55060bd26046c6",
+    "codigos\\hibrido\\data.py": "5cfbe70b1285aa3f93e676037ac94404e09884fff012bd62492ce85db2822fe5",
+    "codigos\\hibrido\\evaluation.py": "8c601b7a1adf4c8944912960ac76552e81b0f10b96ae67660580389d1bcd134b",
+    "codigos\\hibrido\\experiment.py": "84415accde57c18a2f712ea566b927910e34f108ca597abcef88a2ab90daa41a",
+    "codigos\\hibrido\\features.py": "074f61a0b425ab749154a76d363b35d4dc36536adf08de716e56f4503fb44abf",
+    "codigos\\hibrido\\figures.py": "436f27bd32d5bf66a9af10378d56dc03bf36bd5d1fc7f360e9cded0d9f6393f7",
+    "codigos\\hibrido\\models.py": "21fcfdc260cd1b3d314b9ad1b2fc9000a1657dbdd2ac2ca0af807c19f509ba1b",
+    "codigos\\hibrido\\reporting.py": "9b06407e9dea0b2c0242b089546003c34851f0279b77457542a596d4bf5f5895",
+    "codigos\\hibrido\\__init__.py": "ac4bfacce45043ea348dce2d754cc98217ab0c279cd3392d80eca338b3086e44",
+    "codigos\\01_clean_eda.py": "69425f53d6d1dc99e39fcba2ab7752b9494950673b68686729ea039f0687204d"
+  },
+  "productos": {
+    "auditoria.json": "33817e1f00f406ce93a91b457ce3792a01c6d80f4c7588e48ef5484dc4d6c094",
+    "catalogo_demo.csv": "3cf8a66fe223d898671c79d9fad827f0cd4b88baf39e3d3d57ae89006fb4c999",
+    "catalogo_PARA_REVISAR.csv": "2012e8057c5706a6ee400ba5e9dd052a6d791d45236761f6776d373983bfc475",
+    "cobertura_demo.csv": "920606e63fa7b3b707af6e0fe35bb3dfd427cec2a4e1014ab9561a1867efaea5",
+    "cobertura_PARA_REVISAR.csv": "0bae95ab18469f1b9e46c68a972542a029221bd83a3e319b3cf6019882b91f33",
+    "compras_auditadas.csv": "1b2d599a72eaadba4f0468702a3cc23c5aeb101298b006f2f94ce4542895e543",
+    "compras_demo.csv": "9c946703701309fb6ec6ce110f666e8a8bdd496245c52dbc40151f07edef8368",
+    "registros_pendientes.csv": "fc74bfadc00fb3f208d7f0cb2a9ef9b8d5e95bfc288b4c06cfed65556d3d02b9"
+  }
+}

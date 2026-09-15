@@ -6,6 +6,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "build:hibrido": "node scripts/build-hibrido.mjs",
     "build": "node scripts/build-static.mjs",
     "dev": "node scripts/preview.mjs",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",

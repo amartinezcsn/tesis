@@ -1,0 +1,55 @@
+{
+  "modelos": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ets",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 830908.6338286003,
+      "n": 8
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ets",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 1083667.9597067619,
+      "n": 8
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ets",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 629835.7914920722,
+      "n": 8
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ets",
+      "ml": "rf",
+      "peso": 0.25,
+      "mse": 528074.8679897619,
+      "n": 8
+    }
+  },
+  "alpha": 0.1,
+  "categorias": [
+    "combustible",
+    "chocolate",
+    "fondant",
+    "harina",
+    "empaque",
+    "chantilly",
+    "decoracion",
+    "relleno",
+    "huevo",
+    "muebles",
+    "herramienta",
+    "domo",
+    "ambiante"
+  ],
+  "variables": [],
+  "corte_desarrollo": "2023-11-06 00:00:00",
+  "criterio": "validacion temporal interna, no ranking de evaluación"
+}

@@ -1,0 +1,91 @@
+{
+  "backup": "output\\rev44_diccionario_20260913\\Rev44_antes_diccionario_20260913_153949.docx",
+  "sources": [
+    {
+      "file": "datasets\\xlsx\\Ventas.xlsx",
+      "sha256": "44c9fa88442dd4256d0f7eaa6f0fb031446af4862383984bf148b7347fd73af2",
+      "fields": [
+        "Number",
+        "Status",
+        "Fecha/Hora",
+        "Cantidad",
+        "Total de ítems",
+        "Descri. Items",
+        "Subtotal",
+        "Descuento",
+        "Tasa",
+        "Envío",
+        "Importe",
+        "Ganancia",
+        "Nombre",
+        "Vendedor",
+        "Observación",
+        "Fecha",
+        "Año",
+        "Mes",
+        "Día",
+        "Pastel",
+        "Galletas",
+        "Otros",
+        "Cupcakes",
+        "Pedido",
+        "NumPedido"
+      ]
+    },
+    {
+      "file": "datasets\\xlsx\\Compras.xlsx",
+      "sha256": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+      "fields": [
+        "PROVEEDOR",
+        "FECHA",
+        "NUMERO",
+        "CANT",
+        "U#MEDIDA",
+        "DESCRIPCION",
+        "MONTO",
+        "P#UNITARIO",
+        "CLASIFICACION",
+        "SUBCLASIFICACION"
+      ]
+    }
+  ],
+  "source_fields": 35,
+  "analytical_rows": 31,
+  "changes": [
+    {
+      "before": "En 2022, Cup&Cake inició el registro de sus ventas mediante un archivo de Microsoft Excel. Posteriormente, Cup&Cake incorporó la plataforma KYTE para registrar sus ventas. Los reportes generados por esta aplicación se descargaron e integraron al archivo de Microsoft Excel utilizado previamente, cuya estructura se ajustó para incorporar la información proveniente de KYTE. De esta manera, Excel se mantuvo como el archivo de consolidación del historial de ventas.",
+      "after": "En noviembre de 2020, Cup&Cake inició el registro de sus ventas mediante un archivo de Microsoft Excel. Posteriormente, Cup&Cake incorporó la plataforma KYTE para registrar sus ventas. Los reportes generados por esta aplicación se descargaron e integraron al archivo de Microsoft Excel utilizado previamente, cuya estructura se ajustó para incorporar la información proveniente de KYTE. De esta manera, Excel se mantuvo como el archivo de consolidación del historial de ventas."
+    },
+    {
+      "before": "Para registrar las compras de insumos y materias primas, se desarrolló un sistema propio en Microsoft Access. Este sistema permitió acumular información sobre las adquisiciones realizadas por el negocio y conservarla para su consulta. Los registros de compras constituyen la fuente principal para construir la serie del importe total semanal y calcular las participaciones monetarias de los insumos considerados en el estudio.",
+      "after": "En diciembre de 2016, para registrar las compras de insumos y materias primas, se desarrolló un sistema propio en Microsoft Access. Este sistema permitió acumular información sobre las adquisiciones realizadas por el negocio y conservarla para su consulta. Los registros de compras constituyen la fuente principal para construir la serie del importe total semanal y calcular las participaciones monetarias de los insumos considerados en el estudio."
+    },
+    {
+      "before": "El registro de ventas y compra de insumos ",
+      "after": "El registro de ventas y compras de insumos"
+    },
+    {
+      "before": "Aunque Cup&Cake inició operaciones en 2012, el registro de ventas en Microsoft Excel comenzó en 2022. Este archivo permitió organizar la información de las transacciones y constituyó la base inicial para integrar el historial de ventas del negocio.",
+      "after": "Aunque Cup&Cake inició operaciones en 2012, el registro de ventas en Microsoft Excel comenzó en noviembre de 2020. Este archivo permitió organizar la información de las transacciones y constituyó la base inicial para integrar el historial de ventas del negocio."
+    },
+    {
+      "before": "Por su parte, el registro de compras surgió de la necesidad de documentar las adquisiciones de insumos y materias primas utilizados en la elaboración de los productos. Para ello, se desarrolló un sistema propio en Microsoft Access, mediante el cual se ha acumulado información de las compras realizadas. Esta herramienta permite consultar y extraer los registros para su posterior revisión y análisis.",
+      "after": "En diciembre de 2016, Cup&Cake comenzó a registrar las compras de insumos y materias primas mediante un sistema propio desarrollado en Microsoft Access. Esta herramienta permite conservar, consultar y extraer la información de las adquisiciones para su revisión y análisis."
+    },
+    {
+      "before": "Nota. Elaboración propia con base en la información proporcionada sobre Cup&Cake. El inicio de los registros no garantiza su continuidad o cobertura completa.",
+      "after": "Nota. Elaboración propia con base en la información proporcionada sobre Cup&Cake. El inicio de los registros no garantiza cobertura continua. Los valores iguales a cero no necesariamente indican ausencia de ventas o compras; también podrían corresponder a omisiones o información incompleta. Su significado se verificará antes del análisis."
+    },
+    {
+      "before": "La Tabla 2 resumirá la procedencia, las fechas de inicio del registro y la función prevista de cada conjunto. El periodo efectivamente utilizado en el modelado se establecerá después de la auditoría, considerando la disponibilidad y continuidad verificables de la información.",
+      "after": "La Tabla 3 resume la procedencia y la función de ambos conjuntos. El Anexo A presenta el diccionario de campos de origen y variables analíticas. El periodo utilizable se establecerá después de verificar la cobertura, sin equiparar las fechas de inicio del registro con una muestra completa."
+    },
+    {
+      "before": "Como se observa en la Tabla 3 - Conjuntos de datos de Ventas y Compras, la arquitectura de ambos conjuntos de datos comparte dimensiones fundamentales (Temporales, Financieras y Logísticas). Esta homologación estructural es crucial para la investigación, ya que permite la vinculación directa entre el costo de abastecimiento (Compras) y la captación de ingresos (Ventas), facilitando la implementación de métricas financieras de inteligencia de negocios y la evaluación precisa de la rentabilidad del proyecto. Los datos correspondientes se sintetizan en la Tabla 3.",
+      "after": "Las compras definen las variables objetivo y las ventas constituyen una fuente predictiva complementaria. La agregación semanal no supone una correspondencia directa entre cada venta y cada adquisición ni permite, por sí sola, evaluar rentabilidad o existencias de inventario."
+    }
+  ],
+  "methodology_preserved": true,
+  "equations_preserved": 42,
+  "references_preserved": true
+}

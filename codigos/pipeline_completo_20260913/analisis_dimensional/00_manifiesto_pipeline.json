@@ -1,0 +1,213 @@
+{
+  "producto": "Pipeline metodológico integrado de tesis",
+  "fecha_ejecucion": "2026-09-13T13:18:32",
+  "alineacion_investigacion": "C:\\Python\\tesis\\codigos\\pipeline_completo_20260913\\analisis_dimensional\\00_alineacion_investigacion.md",
+  "configuracion": {
+    "scripts_dir": "C:\\Python\\tesis\\codigos",
+    "raw_dir": "C:\\Python\\tesis\\datasets\\xlsx",
+    "input_dir": "C:\\Python\\tesis\\codigos\\pipeline_completo_20260913\\input",
+    "output_dir": "C:\\Python\\tesis\\codigos\\pipeline_completo_20260913\\analisis_dimensional",
+    "graphics_dir": "C:\\Python\\tesis\\codigos\\pipeline_completo_20260913\\imagenes",
+    "desde": "graficas_metodologia",
+    "hasta": "graficas_rnn",
+    "variantes_modelos": [
+      "completo",
+      "reducido",
+      "pca"
+    ],
+    "variantes_rnn": [
+      "reducido",
+      "pca"
+    ],
+    "ajuste_hiperparametros": true,
+    "ajuste_rnn": true,
+    "origenes_ajuste": 4,
+    "origenes_evaluacion": 3
+  },
+  "resultados": [
+    {
+      "etapa": "graficas_metodologia",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-09-13T13:15:38",
+      "fin": "2026-09-13T13:17:58",
+      "duracion_segundos": 139.297,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "graficas_modelos",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-09-13T13:17:58",
+      "fin": "2026-09-13T13:18:09",
+      "duracion_segundos": 11.438,
+      "mensaje": "Etapa finalizada sin errores."
+    },
+    {
+      "etapa": "graficas_rnn",
+      "variante": "general",
+      "estado": "correcto",
+      "inicio": "2026-09-13T13:18:09",
+      "fin": "2026-09-13T13:18:31",
+      "duracion_segundos": 22.277,
+      "mensaje": "Etapa finalizada sin errores."
+    }
+  ],
+  "archivos_generados": [
+    {
+      "archivo": "00_alineacion_investigacion.md",
+      "tamano_bytes": 2536,
+      "fecha_modificacion": "2026-09-13T13:18:31"
+    },
+    {
+      "archivo": "00_manifiesto_pipeline.json",
+      "tamano_bytes": 9428,
+      "fecha_modificacion": "2026-09-13T13:14:52"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_modelos.json",
+      "tamano_bytes": 1760,
+      "fecha_modificacion": "2026-09-13T13:07:30"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_modelos.xlsx",
+      "tamano_bytes": 7239,
+      "fecha_modificacion": "2026-09-13T13:07:30"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_rnn_lstm.json",
+      "tamano_bytes": 2160,
+      "fecha_modificacion": "2026-09-13T13:14:49"
+    },
+    {
+      "archivo": "00_mejores_configuraciones_globales_rnn_lstm.xlsx",
+      "tamano_bytes": 7593,
+      "fecha_modificacion": "2026-09-13T13:14:49"
+    },
+    {
+      "archivo": "00_resumen_ejecucion_pipeline.xlsx",
+      "tamano_bytes": 8254,
+      "fecha_modificacion": "2026-09-13T13:14:52"
+    },
+    {
+      "archivo": "01_perfil_dataset_y_dimensiones.xlsx",
+      "tamano_bytes": 30712,
+      "fecha_modificacion": "2026-09-13T12:54:34"
+    },
+    {
+      "archivo": "02_diagnostico_multicolinealidad.xlsx",
+      "tamano_bytes": 35498,
+      "fecha_modificacion": "2026-09-13T12:54:43"
+    },
+    {
+      "archivo": "03_dataset_reducido_por_seleccion.xlsx",
+      "tamano_bytes": 906846,
+      "fecha_modificacion": "2026-09-13T12:56:36"
+    },
+    {
+      "archivo": "04_dataset_pca_componentes.xlsx",
+      "tamano_bytes": 3182845,
+      "fecha_modificacion": "2026-09-13T12:56:45"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_completo.xlsx",
+      "tamano_bytes": 49528,
+      "fecha_modificacion": "2026-09-13T13:00:01"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_pca.xlsx",
+      "tamano_bytes": 49852,
+      "fecha_modificacion": "2026-09-13T13:07:30"
+    },
+    {
+      "archivo": "05_modelos_rolling_origin_reducido.xlsx",
+      "tamano_bytes": 49548,
+      "fecha_modificacion": "2026-09-13T13:02:33"
+    },
+    {
+      "archivo": "06_rnn_lstm_pca.xlsx",
+      "tamano_bytes": 35487,
+      "fecha_modificacion": "2026-09-13T13:14:48"
+    },
+    {
+      "archivo": "06_rnn_lstm_reducido.xlsx",
+      "tamano_bytes": 36224,
+      "fecha_modificacion": "2026-09-13T13:11:42"
+    },
+    {
+      "archivo": "evidencia_codigo\\00_pipeline_maestro_tesis.py",
+      "tamano_bytes": 32695,
+      "fecha_modificacion": "2026-09-13T12:50:55"
+    },
+    {
+      "archivo": "evidencia_codigo\\01_clean_eda.py",
+      "tamano_bytes": 23556,
+      "fecha_modificacion": "2026-09-05T12:30:18"
+    },
+    {
+      "archivo": "evidencia_codigo\\02_feature_engineering_profesional.py",
+      "tamano_bytes": 16531,
+      "fecha_modificacion": "2026-09-13T12:54:12"
+    },
+    {
+      "archivo": "evidencia_codigo\\03_perfil_dataset_y_dimensiones.py",
+      "tamano_bytes": 3671,
+      "fecha_modificacion": "2026-07-10T19:50:40"
+    },
+    {
+      "archivo": "evidencia_codigo\\04_diagnostico_multicolinealidad.py",
+      "tamano_bytes": 4328,
+      "fecha_modificacion": "2026-07-10T19:50:41"
+    },
+    {
+      "archivo": "evidencia_codigo\\05_seleccion_caracteristicas_dataset_reducido.py",
+      "tamano_bytes": 5910,
+      "fecha_modificacion": "2026-08-08T10:18:59"
+    },
+    {
+      "archivo": "evidencia_codigo\\06_pca_reduccion_componentes.py",
+      "tamano_bytes": 3825,
+      "fecha_modificacion": "2026-07-10T19:50:44"
+    },
+    {
+      "archivo": "evidencia_codigo\\07_modelos_estadisticos_ml_rolling_origin.py",
+      "tamano_bytes": 19825,
+      "fecha_modificacion": "2026-08-08T10:18:10"
+    },
+    {
+      "archivo": "evidencia_codigo\\08_rnn_lstm_dataset_reducido.py",
+      "tamano_bytes": 13379,
+      "fecha_modificacion": "2026-08-08T10:18:37"
+    },
+    {
+      "archivo": "evidencia_codigo\\09_generar_graficas_manifiesto_pca.py",
+      "tamano_bytes": 169027,
+      "fecha_modificacion": "2026-09-13T13:15:28"
+    },
+    {
+      "archivo": "evidencia_codigo\\10_generar_graficas_rolling_origin.py",
+      "tamano_bytes": 42066,
+      "fecha_modificacion": "2026-08-08T11:57:52"
+    },
+    {
+      "archivo": "evidencia_codigo\\11_generar_graficas_rnn_lstm.py",
+      "tamano_bytes": 36697,
+      "fecha_modificacion": "2026-08-08T11:57:53"
+    },
+    {
+      "archivo": "evidencia_codigo\\config_metodologia.py",
+      "tamano_bytes": 5891,
+      "fecha_modificacion": "2026-08-08T12:21:08"
+    },
+    {
+      "archivo": "evidencia_codigo\\README_metodologia.md",
+      "tamano_bytes": 5747,
+      "fecha_modificacion": "2026-08-08T12:21:08"
+    },
+    {
+      "archivo": "pipeline_tesis.log",
+      "tamano_bytes": 545,
+      "fecha_modificacion": "2026-09-13T13:18:31"
+    }
+  ]
+}
