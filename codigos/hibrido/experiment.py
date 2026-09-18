@@ -13,8 +13,10 @@ from .gaps import history as training_history
 def select_models(panel,cfg,exog,sales=None):
     cutoff,tuning,evaluation,folds=partitions(panel,cfg)
     # Vocabulary is fixed by available sources in development, not future rows.
-    vocab_index=0 if cfg.missing_policy=='calendar_gaps' else tuning[0]-cfg.window-max(cfg.horizons)+1
-    variables=sorted(exog.loc[exog.available_at <= panel.index[vocab_index],'variable'].unique())
+    # Freeze the schema before internal validation. Per-origin availability is
+    # still enforced by feature construction, so this does not expose values
+    # published after each forecast origin.
+    variables=sorted(exog.loc[exog.available_at <= panel.index[tuning[0]],'variable'].unique())
     selections={}; scores=[]; failures=[]; comp_scores=[]
     for h in cfg.horizons:
         inner=[]
@@ -41,7 +43,7 @@ def select_models(panel,cfg,exog,sales=None):
             categories=select_categories(history,cfg.threshold)
             real=shares(panel.iloc[[origin]],categories).iloc[0]
             if real.notna().all():
-                pred=predict_shares(history,categories,alpha,calendar=cfg.missing_policy=='calendar_gaps')
+                pred=predict_shares(history,categories,alpha,calendar=True)
                 losses.append(float((real-pred).abs().mean()*100))
         if losses:comp_scores.append(dict(alpha=alpha,mae_pp=float(np.mean(losses)),n=len(losses)))
     if not comp_scores:raise ValueError('Sin semanas positivas para validar composición.')
@@ -57,7 +59,7 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
     rows=[]; composition=[]; allocations=[]
     for origin in evaluation:
         history=training_history(panel,origin,cfg)
-        prop=predict_shares(history,categories,alpha,calendar=cfg.missing_policy=='calendar_gaps')
+        prop=predict_shares(history,categories,alpha,calendar=True)
         ref=predict_shares(history,categories)
         scale=float(history.total.diff().abs().mean())
         for h in cfg.horizons:
@@ -66,7 +68,7 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
             pred,_,errors,_=components(panel,origin,h,cfg,exog,variables,sales,selection)
             if errors:raise ValueError(f'Fallo del modelo fijado en evaluación: {errors}')
             pred['hibrido']=selection['peso']*pred[selection['stat']]+(1-selection['peso'])*pred[selection['ml']]
-            pred.update(baselines(history.total,h,gaps=cfg.missing_policy=='calendar_gaps'))
+            pred.update(baselines(history.total,h,gaps=True))
             target=origin+h-1
             for name,value in pred.items():
                 rows.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,modelo=name,
@@ -81,13 +83,13 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
                 allocations.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,
                     insumo_id=item,participacion=float(prop[item]),importe=value,total_redondeado=float(budget.sum())))
     predictions=pd.DataFrame(rows); composition=pd.DataFrame(composition); allocations=pd.DataFrame(allocations)
-    metrics=total_metrics(predictions,common=cfg.missing_policy=='calendar_gaps'); percentages=composition_metrics(composition)
+    metrics=total_metrics(predictions,common=True); percentages=composition_metrics(composition)
     result=hypothesis(predictions,composition,cfg,demo)
     # Final fit is selected in development, never from the final ranking.
     origin=len(panel); bundle={'version':1,'moneda':'MXN nominales','demostracion':demo,
         'origen':str(panel.index[-1]+pd.Timedelta(weeks=1)),'config':cfg.dictionary(),
         'seleccion':selected,'alpha_composicion':alpha,'categorias':categories,'variables_exogenas':variables,'modelos':{}}
-    prop=predict_shares(training_history(panel,len(panel),cfg),categories,alpha,calendar=cfg.missing_policy=='calendar_gaps')
+    prop=predict_shares(training_history(panel,len(panel),cfg),categories,alpha,calendar=True)
     bundle['participaciones']=prop
     for h in cfg.horizons:
         pred,fitted,errors,test=components(panel,origin,h,cfg,exog,variables,sales,selected[h])
@@ -107,9 +109,8 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
     (output/'seleccion.json').write_text(json.dumps({'modelos':selected,'alpha':alpha,'categorias':categories,'variables':variables,
         'corte_desarrollo':str(panel.index[cutoff]),'criterio':'validacion temporal interna, no ranking de evaluación'},ensure_ascii=False,indent=2),encoding='utf-8')
     datasets.update(cutoff=cutoff,categories=categories,selection=selected,hypothesis=result)
-    if cfg.missing_policy=='calendar_gaps':
-        datasets['advertencia']='Evaluación exploratoria de importes registrados utilizables, no del gasto real completo. Calendario con huecos sin imputar; sin síntesis. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.'
-        datasets['politica_faltantes']='calendar_gaps'
+    datasets['advertencia']='Evaluación exploratoria de importes registrados utilizables, no del gasto real completo. Calendario con huecos sin imputar; sin síntesis. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.'
+    datasets['politica_faltantes']='calendar_gaps'
     return datasets
 
 

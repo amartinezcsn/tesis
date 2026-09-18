@@ -1,7 +1,6 @@
 """Technical fixtures, never business observations or evidence for H1."""
 import sys,unittest,tempfile,json
 from pathlib import Path
-from dataclasses import replace
 from unittest.mock import patch
 import numpy as np
 import pandas as pd
@@ -25,7 +24,7 @@ def panel():
 
 class GapTemporalTests(unittest.TestCase):
     def setUp(self):
-        self.p=panel();self.c=Config(missing_policy='calendar_gaps',use_arima=False,use_rf=False,tuning_origins=4,holdout_weeks=16,min_training_observations=12)
+        self.p=panel();self.c=Config(use_arima=False,use_rf=False,tuning_origins=4,holdout_weeks=16,min_training_observations=12)
         self.ex=load_exogenous(None)
     def test_calendar_not_compressed(self):
         with self.assertRaisesRegex(ValueError,'comprimir'):validate_panel(self.p.dropna())
@@ -60,10 +59,6 @@ class GapTemporalTests(unittest.TestCase):
         self.assertTrue((f.motivo=='semana_incierta').any());self.assertTrue((f.motivo=='fuera_del_periodo').any())
     def test_insufficient_labels_block(self):
         with self.assertRaises(ValueError):samples(self.p,10,1,self.c,self.ex)
-    def test_no_synthetic_config(self):
-        with self.assertRaises(ValueError):replace(self.c,synthetic_training_approved=True).validate()
-    def test_no_confirmatory_mode(self):
-        with self.assertRaises(ValueError):replace(self.c,independent_holdout=True).validate()
     def test_no_imputed_targets(self):
         x,y,_=samples(self.p,60,1,self.c,self.ex);y=y.copy();y[0]=np.nan
         with self.assertRaisesRegex(ValueError,'Objetivos'):ml_fit(x,y,'hgb',self.c)
@@ -111,8 +106,18 @@ class GapIngestionTests(unittest.TestCase):
         self.cov.loc[0,'estado']='incierta';p,_=self.build();self.assertTrue(p.iloc[0].isna().all())
 
 class GapIntegrationTests(unittest.TestCase):
+    def test_exogenous_schema_is_frozen_before_tuning_not_at_panel_start(self):
+        p=panel().ffill()
+        cfg=Config(use_arima=False,use_rf=False,tuning_origins=3,holdout_weeks=12,min_training_observations=12,weights=(.5,),alphas=(.1,))
+        _,tuning,_,_=partitions(p,cfg)
+        published=p.index[tuning[0]-1]
+        ex=pd.DataFrame([dict(variable='inpc',fecha_referencia=published,available_at=published,
+            valor=1.,fuente='fixture',version='1',tipo='observada')])
+        selected=select_models(p,cfg,ex)
+        self.assertIn('inpc',selected[3])
+
     def test_pipeline_roundtrip_and_missing_evaluation(self):
-        p=panel();before=p.copy();cfg=Config(missing_policy='calendar_gaps',use_arima=False,use_rf=False,tuning_origins=3,holdout_weeks=12,min_training_observations=12,weights=(.5,),alphas=(.1,))
+        p=panel();before=p.copy();cfg=Config(use_arima=False,use_rf=False,tuning_origins=3,holdout_weeks=12,min_training_observations=12,weights=(.5,),alphas=(.1,))
         with tempfile.TemporaryDirectory() as temp:
             r=run_experiment(p,cfg,load_exogenous(None),temp,demo=True)
             pd.testing.assert_frame_equal(p,before)

@@ -1,0 +1,45 @@
+{
+  "modelos": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ss_arima111",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 1162.8091252707059,
+      "n": 8
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ss_ar1",
+      "ml": "rf",
+      "peso": 0.25,
+      "mse": 17138.533990072803,
+      "n": 8
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ss_ar1",
+      "ml": "rf",
+      "peso": 0.25,
+      "mse": 16816.153586117387,
+      "n": 8
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.25,
+      "mse": 18831.100175521995,
+      "n": 8
+    }
+  },
+  "alpha": 0.6,
+  "categorias": [
+    "harina",
+    "azucar",
+    "mantequilla"
+  ],
+  "variables": [],
+  "corte_desarrollo": "2022-10-24 00:00:00",
+  "criterio": "validacion temporal interna, no ranking de evaluación"
+}

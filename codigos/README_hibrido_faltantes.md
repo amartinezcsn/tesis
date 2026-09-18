@@ -17,11 +17,11 @@ La configuración real continúa bloqueada: faltan aprobación de fuente y hash,
 5. Entrenar modelos directos por horizonte solo con objetivos observados: HistGradientBoosting y, opcionalmente, RandomForest con soporte nativo de predictores NaN. Predictores: último importe disponible y antigüedad, medias y conteos observados en ventanas calendario de 4/8/12 semanas y calendario. Las ventanas sin observaciones conservan media NaN. No hay relleno de objetivos ni datos sintéticos.
 6. Seleccionar componentes y peso de la combinación dentro del desarrollo temporal. Estimar participaciones con historia disponible; la ponderación exponencial usa edad calendario, incluidos los huecos. Distribuir el total entre insumos y reconciliar importes.
 7. Evaluar únicamente objetivos observados, conservando todas las fechas de origen en los archivos. Comparación principal por horizonte sobre fechas comunes de híbrido, estadístico seleccionado, ML seleccionado y último valor disponible. Los referentes suplementarios pueden tener menos casos; no deben ordenarse como si su muestra fuera idéntica. MASE usa diferencias entre semanas calendario consecutivas observadas.
-8. Guardar selección, particiones, predicciones, controles, modelos y figuras. La evaluación es retrospectiva exploratoria: `independent_holdout=false`. H1 puede no recibir respaldo; no se garantiza mejor desempeño.
+8. Guardar selección, particiones, predicciones, controles, modelos y figuras. La evaluación es retrospectiva exploratoria; H1 puede no recibir respaldo y no se garantiza mejor desempeño.
 
 ## Parámetros que aún requieren revisión metodológica
 
-`holdout_weeks=26` propone un corte en enero de 2024, pero no equivale a 26 objetivos observados. `min_training_observations=24` es un umbral operativo, no una garantía de suficiencia estadística. `tuning_origins=8` y el resto de hiperparámetros son propuestas de implementación. `window=52` no limita la historia en `calendar_gaps`. La validación interna exige objetivos suficientes por horizonte; si no los hay, se detiene. No se debe cambiar el corte para favorecer H1.
+`holdout_weeks=26` propone un corte en enero de 2024, pero no equivale a 26 objetivos observados. `min_training_observations=24` es un umbral operativo, no una garantía de suficiencia estadística. `tuning_origins=8` y el resto de hiperparámetros son propuestas de implementación. El protocolo usa historia creciente y calendario completo con huecos. La validación interna exige objetivos suficientes por horizonte; si no los hay, se detiene. No se debe cambiar el corte para favorecer H1.
 
 ## Ejecución y pruebas
 

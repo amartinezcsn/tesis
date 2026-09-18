@@ -1,6 +1,6 @@
 # Pipeline híbrido Rev44
 
-> Actualización del 14 de septiembre de 2026: la configuración principal usa `calendar_gaps`. Consultar [protocolo de calendario con faltantes](README_hibrido_faltantes.md), que sustituye las indicaciones de ventana continua y bloqueo por semanas desconocidas de esta guía histórica. La rama `strict` y el comando `demo` se conservan para compatibilidad y pruebas; no representan el protocolo actual del caso de estudio.
+> El protocolo de tesis conserva el calendario semanal completo y representa las semanas inciertas como valores ausentes. Consultar [protocolo de calendario con faltantes](README_hibrido_faltantes.md). La implementación anterior de ventana continua fue retirada del camino ejecutable.
 
 Implementación inicial ejecutable del plan `documentacion/PLAN_PIPELINE_HIBRIDO_Rev44.md`. Predice el total semanal nominal, estima participaciones y distribuye el presupuesto entre insumos. El resultado científico puede ser desfavorable a H1; no se reajusta el procedimiento para forzar una mejora.
 
@@ -13,7 +13,7 @@ python -m venv .venv_hibrido
 .\.venv_hibrido\Scripts\python.exe -m pip install -r codigos\requirements_hibrido.txt
 .\.venv_hibrido\Scripts\python.exe codigos\00_pipeline_hibrido.py audit
 .\.venv_hibrido\Scripts\python.exe codigos\00_pipeline_hibrido.py demo
-.\.venv_hibrido\Scripts\python.exe -m unittest discover -s codigos\tests -p test_hibrido.py -v
+.\.venv_hibrido\Scripts\python.exe -m unittest discover -s codigos\tests -p "test_hibrido*.py" -v
 ```
 
 El entorno `.venv_hibrido` de esta entrega ya fue instalado para las pruebas. El comando `audit` no entrena. `demo` crea sus propios datos sintéticos en una carpeta DEMO y marca todas las figuras, artefactos, reportes y predicciones; nunca los trata como evidencia de Cup&Cake.
@@ -33,7 +33,7 @@ La corrida real se bloquea deliberadamente hasta completar la aprobación de fue
 3. Completar `catalogo_PARA_REVISAR.csv`: homologar descripciones a `insumo_id` y aprobar cada correspondencia. `otros` y `total` son nombres reservados. No confundir clasificación comercial con insumo sin revisarlo.
 4. Completar `cobertura_PARA_REVISAR.csv`: cada lunes requiere estado `observada` o `cero_confirmado`, evidencia y fecha de revisión. `desconocida` o `incompleta` bloquean el entrenamiento dentro del periodo elegido. Siete filas de calendario no prueban cobertura.
 5. Guardar los archivos revisados en las rutas `catalog` y `coverage`; pueden estar en `input/hibrido/`. Definir `start` y `end` como lunes inclusivos del periodo aprobado. No usar la selección del periodo para buscar resultados favorables.
-6. Revisar el umbral de selección (80% propuesto), ventana, holdout y protocolo inferencial. La opción `independent_holdout` debe permanecer falsa si las fechas ya fueron usadas para orientar el desarrollo. `protocol_approved` no significa que la prueba estadística sea automáticamente adecuada: requiere revisión metodológica.
+6. Revisar el umbral de selección (80% propuesto), el holdout y el protocolo inferencial. La evaluación implementada es retrospectiva y exploratoria; no se presenta como confirmación independiente.
 
 Las rutas relativas se resuelven desde la raíz del proyecto, no desde el directorio de ejecución. Las fuentes brutas, tesis y salidas anteriores no se sobrescriben.
 
@@ -48,10 +48,10 @@ Si no se proporcionan estas fuentes, el modelo funciona con compras históricas 
 ## Modelado y separación temporal
 
 - Reutiliza las funciones de normalización de `01_clean_eda.py`, no sus imputaciones o deflactores. Adapta los rezagos, medias desplazadas, referencias y componentes semanales en módulos nuevos con contratos más estrictos.
-- Ventana predeterminada: 52 etiquetas semanales por horizonte; 12 semanas de historia adicional para características. La rama estadística usa 52 importes consecutivos. No requiere lag 52 para todos los modelos.
-- Reserva las últimas 16 semanas calendario como evaluación. Para comparar h=1..4 desde orígenes comunes y con los cuatro objetivos observables se obtienen 13 orígenes de prueba. No etiqueta 16 orígenes como si fueran 16 semanas objetivo. Se exige historia suficiente y la configuración queda registrada.
-- Ajuste interno: ocho orígenes anteriores y purgados, cuya última etiqueta h=4 precede al primer origen final. Transformaciones de ML se ajustan por ventana.
-- Componentes: ETS aditivo sin estacionalidad y ARIMA(1,1,1); Ridge con tres valores de regularización y Random Forest parsimonioso. Predictores históricos prefijados y calendario; sin búsqueda masiva de variables.
+- Historia creciente por origen, sin comprimir semanas ni imputar objetivos. Los modelos ML exigen un mínimo configurable de etiquetas observadas.
+- La configuración real reserva 26 semanas calendario como evaluación. Esto no equivale a 26 objetivos observados; el número efectivo se informa por horizonte.
+- Ajuste interno: ocho orígenes anteriores y purgados, cuya última etiqueta h=4 precede al primer origen final.
+- Componentes: SARIMAX AR(1) y ARIMA(1,1,1) opcional; HistGradientBoosting y Random Forest opcional. Los predictores son historia disponible, antigüedad, resúmenes de 4/8/12 semanas, calendario y fuentes opcionales disponibles en cada origen.
 - Selección de componente estadístico, componente ML y peso por horizonte en validación interna. Pesos candidatos 0.25, 0.50 y 0.75; no se llama híbrido a un componente puro. Los fallos invalidan la configuración durante selección y detienen la evaluación si afectan al modelo fijado; no se ocultan con un promedio bajo otro nombre.
 - Categorías seleccionadas en desarrollo y congeladas en prueba; durante ajuste interno se seleccionan nuevamente solo con entrenamiento. Referencia de composición: promedio histórico de participaciones. Candidato: promedio exponencial con alfa seleccionado internamente. La composición es constante entre horizontes en esta primera versión.
 - Los ceros observados se mantienen en métricas monetarias; en composición son indefinidos. El remuestreo conserva su posición temporal en lugar de unir semanas distantes.

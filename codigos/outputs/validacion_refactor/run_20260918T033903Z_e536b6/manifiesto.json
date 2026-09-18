@@ -1,0 +1,85 @@
+{
+  "run_id": "run_20260918T033903Z_e536b6",
+  "estado": "bloqueado_o_fallido",
+  "demostracion": false,
+  "error": "Fuente no aprobada o hash distinto. Revisar auditoría antes de entrenar.",
+  "config": {
+    "source": "datasets/xlsx/Compras.xlsx",
+    "source_sheet": "Hoja1",
+    "source_sha256": "",
+    "source_approved": false,
+    "approved_duplicate_rows": [],
+    "coverage": "input/hibrido/cobertura_revisada.csv",
+    "catalog": "input/hibrido/catalogo_alcance_revisado.csv",
+    "exogenous": null,
+    "sales": null,
+    "start": "2021-05-03",
+    "end": "2024-06-24",
+    "holdout_weeks": 26,
+    "tuning_origins": 8,
+    "horizons": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "threshold": 0.8,
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "bootstrap_block": 4,
+    "min_inference_weeks": 12,
+    "use_rf": true,
+    "use_arima": true,
+    "min_training_observations": 24
+  },
+  "python": "3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)]",
+  "plataforma": "Windows-10-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.9",
+    "openpyxl": "3.1.5",
+    "scipy": "1.15.3",
+    "joblib": "1.6.0"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\datasets\\xlsx\\Compras.xlsx": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+    "C:\\Python\\tesis\\input\\compras_limpias.xlsx": "5531ac855e166812b6e3538e9910a11a664c817232b08ca9fe14e72ce76ec930",
+    "C:\\Python\\tesis\\input\\compras_limpias_corregidas.xlsx": "38afb7c8146fb88358f0e306b933db51e8d6e0e69793ad248226d978c23f89ef"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "09b8255a120366607d0ef754b3fefff6d501f93d09106c01d53082d2ce9f75ce",
+    "codigos\\hibrido\\composition.py": "6bdfee3453d54f441f0f4f07c3dc2bd90d40faa6a8d7f3cc206f54ce40463652",
+    "codigos\\hibrido\\config.py": "042f6ce6ea1712caada25593fddde14c217ace29b8905a8a94f3a1c377b7e62a",
+    "codigos\\hibrido\\data.py": "84af6f28e2a462eef65196b0b6412d3f9b5e93ab1ea465d00d082370d4659b52",
+    "codigos\\hibrido\\evaluation.py": "15c403cd711f8a55a01edfb4aba0d199a449a22c22090505bcd0a4cf91107e36",
+    "codigos\\hibrido\\experiment.py": "8286fc1119ef23b566e5f68a865eda3debf71af09200ddc465501e5459f22407",
+    "codigos\\hibrido\\features.py": "05d441cacb0a27566ec05a4306078974178988d1b01a48c171e78cd409e938ca",
+    "codigos\\hibrido\\figures.py": "deeb9ac56c3ca1b7c0595515364c3fba5f7b4e3b74fadc0246687f4eb6d47a0f",
+    "codigos\\hibrido\\gaps.py": "5b02ec891ca8e09235368c1e37e79477f198fc7b266e82224b701a9f148a6ec8",
+    "codigos\\hibrido\\models.py": "6bfd0888613972e7d705e7c672b02d87f3c0558e7c9435300340ce8e37866716",
+    "codigos\\hibrido\\reporting.py": "ca2ee670412ddd7cd159863db1c7a5e654770d7936052a89045e3ed6f72bd0e9",
+    "codigos\\hibrido\\__init__.py": "ac4bfacce45043ea348dce2d754cc98217ab0c279cd3392d80eca338b3086e44",
+    "codigos\\01_clean_eda.py": "69425f53d6d1dc99e39fcba2ab7752b9494950673b68686729ea039f0687204d"
+  },
+  "productos": {
+    "auditoria.json": "898a2d920c64b7c040f82fcce440e72dc44e0a7b9e46688fb331ce537bdf875b",
+    "catalogo_PARA_REVISAR.csv": "9d2e329857c7c9fdf872820500335665373d6312a21468662b7101b249806863",
+    "cobertura_PARA_REVISAR.csv": "978e9120da5feb19b4fded734b8e0ad3760364b31be8a2e727a29542f30f8598",
+    "comparacion_fuentes.csv": "3d41c5fb04ee81932b949a9b5c706dfef63854716fd32779518fd6508cf0c127",
+    "compras_auditadas.csv": "bede44f6c9a63aac5f739efd9388f8ceb731d5cf19fead66c8d000f0a0fed0f4",
+    "registros_pendientes.csv": "b06c03c1a803601ce921066f1316180f2af75a3dca5a4e308b14e85884ecac02"
+  }
+}

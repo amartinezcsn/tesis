@@ -14,12 +14,14 @@ def total_metrics(predictions,common=False):
             eligible[h]=set(wide.index[valid])
     for (h,model),group in predictions.groupby(['horizonte','modelo']):
         g=group.dropna(subset=['prediccion','real'])
-        if common:g=g.loc[g.origen.isin(eligible[h])]
+        primary=model not in ('promedio_4s','estacional_52s')
+        if common and primary:
+            g=g.loc[g.origen.isin(eligible[h])]
         e=g.real-g.prediccion
         scaled=e.abs()/g.escala_mase.replace(0,np.nan)
         rows.append(dict(horizonte=h,modelo=model,n=len(g),rmse=float(np.sqrt(np.mean(e**2))) if len(g) else np.nan,
             mae=float(e.abs().mean()),mase=float(scaled.mean()),n_mase=int(scaled.notna().sum()),
-            excluidas=len(group)-len(g),comparacion='principal_fechas_comunes' if common and model not in ('promedio_4s','estacional_52s') else 'complementaria_disponibilidad_propia' if common else 'fechas_comunes'))
+            excluidas=len(group)-len(g),comparacion='principal_fechas_comunes' if common and primary else 'complementaria_disponibilidad_propia' if common else 'fechas_comunes'))
     return pd.DataFrame(rows)
 
 
@@ -62,7 +64,7 @@ def hypothesis(predictions,composition,cfg,demo=False):
     percent=(c['participacion_historica']-c['participacion_ewm']).reindex(money.index)
     a,b=paired_interval(money,cfg),paired_interval(percent,cfg)
     favorable=all(x['limite_inferior'] is not None and x['limite_inferior']>0 for x in (a,b))
-    confirmatory=cfg.independent_holdout and cfg.protocol_approved and not demo
+    confirmatory=False
     return {'hipotesis':'H1','horizonte_principal':1,'importe':a,'composicion':b,
         'evidencia_favorable_ambos_componentes':favorable,
         'respaldo_confirmatorio':bool(favorable and confirmatory),

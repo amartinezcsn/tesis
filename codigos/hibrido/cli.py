@@ -10,7 +10,8 @@ import importlib.metadata
 import numpy as np
 import pandas as pd
 from .config import Config,load_config
-from .data import load_purchases,templates,build_panel,load_exogenous,load_sales,read_table,fingerprint
+from .data import load_purchases,templates,load_exogenous,load_sales,read_table,fingerprint
+from .gaps import build_gap_panel
 
 ROOT=Path(__file__).resolve().parents[2]
 
@@ -21,13 +22,17 @@ def create_demo(output):
     for i,date in enumerate(dates):
         total=max(0,300+1.5*i+60*np.sin(i*2*np.pi/13)+rng.normal(0,12)) if i%13 else 0
         amounts=total*np.array([.45+.08*np.sin(i/8),.35-.08*np.sin(i/8),.2])
+        if total == 0:
+            continue
         for item,amount in zip(['HARINA','AZUCAR','MANTEQUILLA'],amounts):
-            rows.append(dict(fecha=date,descripcion=item,importe_nominal=round(amount,2),es_sintetico=1))
+            rows.append(dict(fecha=date,descripcion=item,importe_nominal=round(amount,2)))
     source=output/'compras_demo.csv';pd.DataFrame(rows).to_csv(source,index=False)
     coverage=pd.DataFrame({'semana_inicio':dates,'estado':['cero_confirmado' if i%13==0 else 'observada' for i in range(len(dates))],
         'evidencia':'fixture sintético de prueba','fecha_revision':'2026-09-12'})
     coverage.to_csv(output/'cobertura_demo.csv',index=False)
-    catalog=pd.DataFrame({'descripcion_normalizada':['HARINA','AZUCAR','MANTEQUILLA'],'insumo_id':['harina','azucar','mantequilla'],'aprobado':True})
+    catalog=pd.DataFrame({'descripcion_normalizada':['HARINA','AZUCAR','MANTEQUILLA'],
+        'insumo_id':['harina','azucar','mantequilla'],'aprobado':True,
+        'decision':'incluir','evidencia':'fixture sintético de prueba'})
     catalog.to_csv(output/'catalogo_demo.csv',index=False)
     return Config(source=str(source),source_sha256=fingerprint(source),source_approved=True,
         coverage=str(output/'cobertura_demo.csv'),catalog=str(output/'catalogo_demo.csv'),
@@ -57,11 +62,7 @@ def inventory_sources(output,source,sheet,files,cfg):
         if not path.exists():continue
         if path not in files:files.append(path)
         try:
-            kwargs = dict(
-                approved_duplicate_rows=cfg.approved_duplicate_rows,
-                synthetic_training_approved=cfg.synthetic_training_approved,
-                synthetic_before=pd.Timestamp(cfg.end)-pd.Timedelta(weeks=cfg.holdout_weeks-1),
-            ) if candidate_number == 0 and cfg.start and cfg.end else {}
+            kwargs = dict(approved_duplicate_rows=cfg.approved_duplicate_rows) if candidate_number == 0 else {}
             valid,rejected=load_purchases(path,tab,**kwargs)
             rows.append(dict(archivo=str(path),sha256=fingerprint(path),estado='auditado',
                 registros_validos=len(valid),pendientes=len(rejected),
@@ -75,34 +76,28 @@ def inventory_sources(output,source,sheet,files,cfg):
 
 def execute(command,config_path=None,output_base=None):
     demo=command=='demo'
-    base=Path(output_base or ROOT/'output/hibrido')
+    base=Path(output_base or ROOT/'output/hibrido').resolve()
     stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
     output=base/(('DEMO_' if demo else command+'_')+stamp+'_'+uuid.uuid4().hex[:6]);output.mkdir(parents=True)
     cfg=None;files=[]
     try:
         cfg=create_demo(output) if demo else load_config(config_path)
         cfg.validate()
-        if not demo and cfg.synthetic_training_approved:
-            raise ValueError('Protocolo principal actualizado: síntesis excluida de ajuste, selección y evaluación.')
         source=ROOT/cfg.source;files.append(source)
-        synthetic_before = (pd.Timestamp(cfg.end)-pd.Timedelta(weeks=cfg.holdout_weeks-1)) if cfg.start and cfg.end else None
         purchases,rejected=load_purchases(
             source,cfg.source_sheet,demo,
             approved_duplicate_rows=cfg.approved_duplicate_rows,
-            synthetic_training_approved=cfg.synthetic_training_approved,
-            synthetic_before=synthetic_before,
         )
         purchases.to_csv(output/'compras_auditadas.csv',index=False)
         rejected.to_csv(output/'registros_pendientes.csv',index=False)
         coverage_template=templates(purchases,output)
-        if cfg.missing_policy=='calendar_gaps':
-            dates=pd.date_range(cfg.start,cfg.end,freq='W-MON')
-            coverage_template=pd.DataFrame({'semana_inicio':dates,'estado':'desconocida','evidencia':'','fecha_revision':''})
-            coverage_template['registros_detectados']=coverage_template.semana_inicio.map(purchases.groupby('semana_inicio').size()).fillna(0).astype(int)
-            coverage_template.to_csv(output/'cobertura_PARA_REVISAR.csv',index=False)
-            in_period=purchases.loc[purchases.semana_inicio.between(cfg.start,cfg.end)]
-            cat=pd.DataFrame({'descripcion_normalizada':sorted(in_period.descripcion_normalizada.unique()),'insumo_id':'','aprobado':False,'decision':'revisar','evidencia':''})
-            cat.to_csv(output/'catalogo_PARA_REVISAR.csv',index=False)
+        dates=pd.date_range(cfg.start,cfg.end,freq='W-MON')
+        coverage_template=pd.DataFrame({'semana_inicio':dates,'estado':'desconocida','evidencia':'','fecha_revision':''})
+        coverage_template['registros_detectados']=coverage_template.semana_inicio.map(purchases.groupby('semana_inicio').size()).fillna(0).astype(int)
+        coverage_template.to_csv(output/'cobertura_PARA_REVISAR.csv',index=False)
+        in_period=purchases.loc[purchases.semana_inicio.between(cfg.start,cfg.end)]
+        cat=pd.DataFrame({'descripcion_normalizada':sorted(in_period.descripcion_normalizada.unique()),'insumo_id':'','aprobado':False,'decision':'revisar','evidencia':''})
+        cat.to_csv(output/'catalogo_PARA_REVISAR.csv',index=False)
         (output/'auditoria.json').write_text(json.dumps({'fuente':str(source),'sha256':fingerprint(source),
             'registros_validos_para_revision':len(purchases),'pendientes':len(rejected),
             'cobertura':'Debe confirmarse documentalmente; transacciones no prueban integridad semanal.'},ensure_ascii=False,indent=2),encoding='utf-8')
@@ -117,16 +112,12 @@ def execute(command,config_path=None,output_base=None):
         if not rejected.empty:raise ValueError('Hay registros pendientes: corregir fuente o documentar decisión antes de entrenar.')
         if not cfg.start or not cfg.end:raise ValueError('Definir inicio y fin semanales del periodo auditado.')
         files.extend([ROOT/cfg.coverage,ROOT/cfg.catalog])
-        if cfg.missing_policy=='calendar_gaps':
-            from .gaps import build_gap_panel
-            panel,cov=build_gap_panel(purchases,read_table(ROOT/cfg.coverage),read_table(ROOT/cfg.catalog),cfg.start,cfg.end)
-        else:
-            panel,cov=build_panel(purchases,read_table(ROOT/cfg.coverage),read_table(ROOT/cfg.catalog),cfg.start,cfg.end,synthetic_before)
+        panel,cov=build_gap_panel(purchases,read_table(ROOT/cfg.coverage),read_table(ROOT/cfg.catalog),cfg.start,cfg.end)
         panel.to_csv(output/'panel_semanal.csv');cov.to_csv(output/'cobertura.csv')
         if cfg.exogenous:files.append(ROOT/cfg.exogenous)
         if cfg.sales:files.append(ROOT/cfg.sales)
         exog=load_exogenous(ROOT/cfg.exogenous if cfg.exogenous else None)
-        sales=load_sales(ROOT/cfg.sales if cfg.sales else None,panel.index,cfg.synthetic_training_approved,synthetic_before)
+        sales=load_sales(ROOT/cfg.sales if cfg.sales else None,panel.index)
         from .experiment import run_experiment
         from .reporting import export_results,quality_controls
         print('Entrenamiento y evaluación: selección interna, prueba final y persistencia.',flush=True)

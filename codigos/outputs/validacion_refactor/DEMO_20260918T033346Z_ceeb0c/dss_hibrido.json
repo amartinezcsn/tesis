@@ -1,0 +1,5032 @@
+{
+  "schema_version": 1,
+  "run_id": "DEMO_20260918T033346Z_ceeb0c",
+  "demostracion": true,
+  "unidad": "MXN nominales",
+  "modelo": "hibrido estadistico y aprendizaje automatico",
+  "origen": "2023-02-13 00:00:00",
+  "consolidado_4_semanas": 1676.44,
+  "horizontes": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "seleccion": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ss_arima111",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 1162.8091252707059,
+      "n": 8
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ss_ar1",
+      "ml": "rf",
+      "peso": 0.25,
+      "mse": 17138.533990072803,
+      "n": 8
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ss_ar1",
+      "ml": "rf",
+      "peso": 0.25,
+      "mse": 16816.153586117387,
+      "n": 8
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.25,
+      "mse": 18831.100175521995,
+      "n": 8
+    }
+  },
+  "hipotesis": {
+    "hipotesis": "H1",
+    "horizonte_principal": 1,
+    "importe": {
+      "estado": "estimado",
+      "n": 16,
+      "media": 9262.963584010775,
+      "limite_inferior": -6614.0501578938565,
+      "limite_superior": 36637.09341469439
+    },
+    "composicion": {
+      "estado": "estimado",
+      "n": 15,
+      "media": 1.1645522198400342,
+      "limite_inferior": 0.01035647037715271,
+      "limite_superior": 2.2559700710321224
+    },
+    "evidencia_favorable_ambos_componentes": false,
+    "respaldo_confirmatorio": false,
+    "alcance": "demostracion_sintetica",
+    "metodo": "Bootstrap circular pareado por semanas; bloques fijados en configuración; intervalos simultáneos Bonferroni para dos componentes de H1.",
+    "advertencia": "No garantiza validez inferencial con muestras pequeñas. No reusar test explorado como confirmación independiente."
+  },
+  "metricas_total": [
+    {
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "n": 16,
+      "rmse": 70.2974839521,
+      "mae": 67.035,
+      "mase": 0.897257017,
+      "n_mase": 16,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "n": 16,
+      "rmse": 123.770755925,
+      "mae": 83.3570688749,
+      "mase": 1.1264361348,
+      "n_mase": 16,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "n": 16,
+      "rmse": 142.6499712419,
+      "mae": 102.698125,
+      "mase": 1.3809993052,
+      "n_mase": 16,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "rf",
+      "n": 16,
+      "rmse": 120.118603063,
+      "mae": 74.6762980748,
+      "mase": 1.0246162427,
+      "n_mase": 16,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "n": 16,
+      "rmse": 128.7658029225,
+      "mae": 89.3907782929,
+      "mase": 1.2038598996,
+      "n_mase": 16,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "n": 16,
+      "rmse": 156.7870007566,
+      "mae": 69.364375,
+      "mase": 0.9523173068,
+      "n_mase": 16,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "n": 15,
+      "rmse": 69.4251547111,
+      "mae": 66.0186666667,
+      "mase": 0.8845692351,
+      "n_mase": 15,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "n": 15,
+      "rmse": 115.7991206543,
+      "mae": 80.0735844237,
+      "mase": 1.0874015878,
+      "n_mase": 15,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "n": 15,
+      "rmse": 153.1065803289,
+      "mae": 120.0906666667,
+      "mase": 1.6151043652,
+      "n_mase": 15,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "rf",
+      "n": 15,
+      "rmse": 109.8407283013,
+      "mae": 69.701191785,
+      "mase": 0.9516828205,
+      "n_mase": 15,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "n": 15,
+      "rmse": 146.0465792572,
+      "mae": 123.9120131112,
+      "mase": 1.6671460579,
+      "n_mase": 15,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "n": 15,
+      "rmse": 165.54988209,
+      "mae": 84.9313333333,
+      "mase": 1.1612732972,
+      "n_mase": 15,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "n": 14,
+      "rmse": 69.3586224427,
+      "mae": 65.7092857143,
+      "mase": 0.8830819034,
+      "n_mase": 14,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "n": 14,
+      "rmse": 117.6989850791,
+      "mae": 80.4635062218,
+      "mase": 1.0962588443,
+      "n_mase": 14,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "n": 14,
+      "rmse": 160.453480291,
+      "mae": 129.7039285714,
+      "mase": 1.7510864322,
+      "n_mase": 14,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "rf",
+      "n": 14,
+      "rmse": 111.7771856599,
+      "mae": 66.1229429493,
+      "mase": 0.9051151696,
+      "n_mase": 14,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "n": 14,
+      "rmse": 146.3013468574,
+      "mae": 123.4851960392,
+      "mase": 1.6696898683,
+      "n_mase": 14,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "n": 14,
+      "rmse": 182.2688781914,
+      "mae": 105.3485714286,
+      "mase": 1.4403894419,
+      "n_mase": 14,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "n": 13,
+      "rmse": 68.9172522221,
+      "mae": 65.0053846154,
+      "mase": 0.876938475,
+      "n_mase": 13,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "hgb",
+      "n": 13,
+      "rmse": 141.5231073187,
+      "mae": 107.5060090348,
+      "mase": 1.4783133081,
+      "n_mase": 13,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "n": 13,
+      "rmse": 137.2990141452,
+      "mae": 99.9444917633,
+      "mase": 1.374445771,
+      "n_mase": 13,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "n": 13,
+      "rmse": 164.1885227106,
+      "mae": 133.6432692308,
+      "mase": 1.8123310114,
+      "n_mase": 13,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "n": 13,
+      "rmse": 146.1435661257,
+      "mae": 122.1699248452,
+      "mase": 1.6628720919,
+      "n_mase": 13,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "n": 13,
+      "rmse": 190.6908522472,
+      "mae": 126.2653846154,
+      "mase": 1.7230004531,
+      "n_mase": 13,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    }
+  ],
+  "metricas_composicion": [
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "azucar",
+      "mae_pp": 1.4070000933,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "harina",
+      "mae_pp": 1.4069511216,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0005947516,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "azucar",
+      "mae_pp": 3.7361048246,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "harina",
+      "mae_pp": 3.7361534695,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0004965518,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "azucar",
+      "mae_pp": 2.2829455779,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "harina",
+      "mae_pp": 2.2829348583,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0005747935,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "azucar",
+      "mae_pp": 3.6014597585,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "harina",
+      "mae_pp": 3.6014865787,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0005039122,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_ewm",
+      "insumo_id": "azucar",
+      "mae_pp": 3.1857056722,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_ewm",
+      "insumo_id": "harina",
+      "mae_pp": 3.1856553273,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_ewm",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0005379562,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_ewm",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_historica",
+      "insumo_id": "azucar",
+      "mae_pp": 3.495535614,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_historica",
+      "insumo_id": "harina",
+      "mae_pp": 3.4955670011,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_historica",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0005400948,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_historica",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "azucar",
+      "mae_pp": 4.1104495747,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "harina",
+      "mae_pp": 4.1104666558,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0006197107,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "azucar",
+      "mae_pp": 3.430718025,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "harina",
+      "mae_pp": 3.4307886515,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "mantequilla",
+      "mae_pp": 0.0005512893,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "otros",
+      "mae_pp": 0.0,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 0.7036364916,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 1.8681887115,
+      "n": 15,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 1.1416138074,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 1.8008625624,
+      "n": 14,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_ewm",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 1.5929747389,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 3,
+      "modelo": "participacion_historica",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 1.7479106775,
+      "n": 13,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 2.0553839853,
+      "n": 12,
+      "excluidas": 1
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 1.7155144915,
+      "n": 12,
+      "excluidas": 1
+    }
+  ],
+  "predicciones_validacion": [
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-24T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 494.94,
+      "prediccion": 381.5223052911,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-24T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 494.94,
+      "prediccion": 453.4635205518,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-24T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 494.94,
+      "prediccion": 399.5076091063,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-24T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 494.94,
+      "prediccion": 494.72,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-24T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 494.94,
+      "prediccion": 337.1975,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-24T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 494.94,
+      "prediccion": 412.66,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 498.75,
+      "prediccion": 341.5616976932,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 498.75,
+      "prediccion": 440.5672556871,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 498.75,
+      "prediccion": 415.8158661886,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 498.75,
+      "prediccion": 494.72,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 498.75,
+      "prediccion": 337.1975,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 498.75,
+      "prediccion": 428.4,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 489.56,
+      "prediccion": 339.989596376,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 489.56,
+      "prediccion": 443.6582327665,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 489.56,
+      "prediccion": 417.7410736689,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 489.56,
+      "prediccion": 494.72,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 489.56,
+      "prediccion": 337.1975,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 489.56,
+      "prediccion": 414.7,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 465.21,
+      "prediccion": 339.8220476192,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 465.21,
+      "prediccion": 393.0488807688,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 465.21,
+      "prediccion": 379.7421724814,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 465.21,
+      "prediccion": 494.72,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 465.21,
+      "prediccion": 337.1975,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 465.21,
+      "prediccion": 388.38,
+      "escala_mase": 76.6782795699
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 498.75,
+      "prediccion": 389.2099954075,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 498.75,
+      "prediccion": 461.2329996273,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 498.75,
+      "prediccion": 407.2157464625,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 498.75,
+      "prediccion": 494.94,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 498.75,
+      "prediccion": 360.3,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 498.75,
+      "prediccion": 428.4,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 489.56,
+      "prediccion": 343.7257451023,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 489.56,
+      "prediccion": 426.9656932839,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 489.56,
+      "prediccion": 406.1557062385,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 489.56,
+      "prediccion": 494.94,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 489.56,
+      "prediccion": 360.3,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 489.56,
+      "prediccion": 414.7,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 465.21,
+      "prediccion": 341.0412179142,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 465.21,
+      "prediccion": 436.461241594,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 465.21,
+      "prediccion": 412.6062356741,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 465.21,
+      "prediccion": 494.94,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 465.21,
+      "prediccion": 360.3,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 465.21,
+      "prediccion": 388.38,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 440.63,
+      "prediccion": 340.6589068417,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 440.63,
+      "prediccion": 501.5797061806,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 440.63,
+      "prediccion": 461.3495063458,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 440.63,
+      "prediccion": 494.94,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 440.63,
+      "prediccion": 360.3,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 440.63,
+      "prediccion": 346.66,
+      "escala_mase": 75.864893617
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 489.56,
+      "prediccion": 397.2680973691,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 489.56,
+      "prediccion": 424.2588274889,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 489.56,
+      "prediccion": 404.0157798991,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 489.56,
+      "prediccion": 498.75,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 489.56,
+      "prediccion": 484.9875,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 489.56,
+      "prediccion": 414.7,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 465.21,
+      "prediccion": 346.1218373895,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 465.21,
+      "prediccion": 415.3012140681,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 465.21,
+      "prediccion": 398.0063698985,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 465.21,
+      "prediccion": 498.75,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 465.21,
+      "prediccion": 484.9875,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 465.21,
+      "prediccion": 388.38,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 440.63,
+      "prediccion": 343.5499040279,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 440.63,
+      "prediccion": 387.978243503,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 440.63,
+      "prediccion": 376.8711586342,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 440.63,
+      "prediccion": 498.75,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 440.63,
+      "prediccion": 484.9875,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 440.63,
+      "prediccion": 346.66,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 407.54,
+      "prediccion": 343.193665701,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 407.54,
+      "prediccion": 433.5317702252,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 407.54,
+      "prediccion": 410.9472440941,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 407.54,
+      "prediccion": 498.75,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 407.54,
+      "prediccion": 484.9875,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 407.54,
+      "prediccion": 333.49,
+      "escala_mase": 75.1064210526
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 465.21,
+      "prediccion": 402.9625535549,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 465.21,
+      "prediccion": 437.3945677952,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 465.21,
+      "prediccion": 411.570557115,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 465.21,
+      "prediccion": 489.56,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 465.21,
+      "prediccion": 494.4925,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 465.21,
+      "prediccion": 388.38,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 440.63,
+      "prediccion": 348.0827687546,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 440.63,
+      "prediccion": 424.3209261172,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 440.63,
+      "prediccion": 405.2613867766,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 440.63,
+      "prediccion": 489.56,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 440.63,
+      "prediccion": 494.4925,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 440.63,
+      "prediccion": 346.66,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 407.54,
+      "prediccion": 344.422737643,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 407.54,
+      "prediccion": 388.7029067121,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 407.54,
+      "prediccion": 377.6328644448,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 407.54,
+      "prediccion": 489.56,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 407.54,
+      "prediccion": 494.4925,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 407.54,
+      "prediccion": 333.49,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 388.82,
+      "prediccion": 343.7848080941,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 388.82,
+      "prediccion": 469.2322779448,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 388.82,
+      "prediccion": 437.8704104821,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 388.82,
+      "prediccion": 489.56,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 388.82,
+      "prediccion": 494.4925,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 388.82,
+      "prediccion": 317.3,
+      "escala_mase": 74.4197916667
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 440.63,
+      "prediccion": 404.6886989856,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 440.63,
+      "prediccion": 436.8955863359,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 440.63,
+      "prediccion": 412.7404208231,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 440.63,
+      "prediccion": 465.21,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 440.63,
+      "prediccion": 487.115,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 440.63,
+      "prediccion": 346.66,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 407.54,
+      "prediccion": 348.9228002627,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 407.54,
+      "prediccion": 431.6104244378,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 407.54,
+      "prediccion": 410.938518394,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 407.54,
+      "prediccion": 465.21,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 407.54,
+      "prediccion": 487.115,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 407.54,
+      "prediccion": 333.49,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 388.82,
+      "prediccion": 345.5603247528,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 388.82,
+      "prediccion": 382.9475960443,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 388.82,
+      "prediccion": 373.6007782214,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 388.82,
+      "prediccion": 465.21,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 388.82,
+      "prediccion": 487.115,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 388.82,
+      "prediccion": 317.3,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 390.98,
+      "prediccion": 344.9378766088,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 390.98,
+      "prediccion": 463.5259016495,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 390.98,
+      "prediccion": 433.8788953893,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 390.98,
+      "prediccion": 465.21,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 390.98,
+      "prediccion": 487.115,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 390.98,
+      "prediccion": 316.56,
+      "escala_mase": 73.9036082474
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 407.54,
+      "prediccion": 404.3613506165,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 407.54,
+      "prediccion": 428.3698923676,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 407.54,
+      "prediccion": 410.3634860543,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 407.54,
+      "prediccion": 440.63,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 407.54,
+      "prediccion": 473.5375,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 407.54,
+      "prediccion": 333.49,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 388.82,
+      "prediccion": 349.4545689759,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 388.82,
+      "prediccion": 401.0840603499,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 388.82,
+      "prediccion": 388.1766875064,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 388.82,
+      "prediccion": 440.63,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 388.82,
+      "prediccion": 473.5375,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 388.82,
+      "prediccion": 317.3,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 390.98,
+      "prediccion": 347.2264424935,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 390.98,
+      "prediccion": 383.0734464621,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 390.98,
+      "prediccion": 374.1116954699,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 390.98,
+      "prediccion": 440.63,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 390.98,
+      "prediccion": 473.5375,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 390.98,
+      "prediccion": 316.56,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 383.37,
+      "prediccion": 346.8498409278,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 383.37,
+      "prediccion": 402.9731639749,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 383.37,
+      "prediccion": 388.9423332131,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 383.37,
+      "prediccion": 440.63,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 383.37,
+      "prediccion": 473.5375,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 383.37,
+      "prediccion": 336.08,
+      "escala_mase": 73.4003061224
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 388.82,
+      "prediccion": 400.5972040017,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 388.82,
+      "prediccion": 384.2483658203,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 388.82,
+      "prediccion": 396.5099944563,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 388.82,
+      "prediccion": 407.54,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 388.82,
+      "prediccion": 450.735,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 388.82,
+      "prediccion": 317.3,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 390.98,
+      "prediccion": 349.096276186,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 390.98,
+      "prediccion": 377.7052863632,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 390.98,
+      "prediccion": 370.5530338189,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 390.98,
+      "prediccion": 407.54,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 390.98,
+      "prediccion": 450.735,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 390.98,
+      "prediccion": 316.56,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 383.37,
+      "prediccion": 347.6225678467,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 383.37,
+      "prediccion": 376.3053037336,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 383.37,
+      "prediccion": 369.1346197619,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 383.37,
+      "prediccion": 407.54,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 383.37,
+      "prediccion": 450.735,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 383.37,
+      "prediccion": 336.08,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 409.25,
+      "prediccion": 347.3692334607,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 409.25,
+      "prediccion": 335.5870721671,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 409.25,
+      "prediccion": 338.5326124905,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 409.25,
+      "prediccion": 407.54,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 409.25,
+      "prediccion": 450.735,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 409.25,
+      "prediccion": 351.3,
+      "escala_mase": 72.9931313131
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 390.98,
+      "prediccion": 397.4934699681,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 390.98,
+      "prediccion": 302.7562148624,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 390.98,
+      "prediccion": 373.8091561916,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 390.98,
+      "prediccion": 388.82,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 390.98,
+      "prediccion": 425.55,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 390.98,
+      "prediccion": 316.56,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 383.37,
+      "prediccion": 348.9224375038,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 383.37,
+      "prediccion": 352.1701294761,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 383.37,
+      "prediccion": 351.358206483,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 383.37,
+      "prediccion": 388.82,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 383.37,
+      "prediccion": 425.55,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 383.37,
+      "prediccion": 336.08,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 409.25,
+      "prediccion": 347.9024483506,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 409.25,
+      "prediccion": 380.2635593193,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 409.25,
+      "prediccion": 372.1732815771,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 409.25,
+      "prediccion": 388.82,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 409.25,
+      "prediccion": 425.55,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 409.25,
+      "prediccion": 351.3,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 0.0,
+      "prediccion": 347.7258025955,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 0.0,
+      "prediccion": 348.2828895679,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 0.0,
+      "prediccion": 348.1436178248,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 0.0,
+      "prediccion": 388.82,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 0.0,
+      "prediccion": 425.55,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 0.0,
+      "prediccion": 0.0,
+      "escala_mase": 72.4504
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 383.37,
+      "prediccion": 397.2749557991,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 383.37,
+      "prediccion": 294.2504055314,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 383.37,
+      "prediccion": 371.5188182322,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 383.37,
+      "prediccion": 390.98,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 383.37,
+      "prediccion": 406.9925,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 383.37,
+      "prediccion": 336.08,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 409.25,
+      "prediccion": 349.415796398,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 409.25,
+      "prediccion": 356.8411861594,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 409.25,
+      "prediccion": 354.984838719,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 409.25,
+      "prediccion": 390.98,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 409.25,
+      "prediccion": 406.9925,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 409.25,
+      "prediccion": 351.3,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 0.0,
+      "prediccion": 348.3413379778,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 0.0,
+      "prediccion": 373.6676789435,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 0.0,
+      "prediccion": 367.3360937021,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 0.0,
+      "prediccion": 390.98,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 0.0,
+      "prediccion": 406.9925,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 0.0,
+      "prediccion": 0.0,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 469.51,
+      "prediccion": 348.154140337,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 469.51,
+      "prediccion": 326.4195407297,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 469.51,
+      "prediccion": 331.8531906315,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 469.51,
+      "prediccion": 390.98,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 469.51,
+      "prediccion": 406.9925,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 469.51,
+      "prediccion": 415.53,
+      "escala_mase": 71.7544554455
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 409.25,
+      "prediccion": 395.4026887703,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 409.25,
+      "prediccion": 315.5672155865,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 409.25,
+      "prediccion": 375.4438204744,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 409.25,
+      "prediccion": 383.37,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 409.25,
+      "prediccion": 392.6775,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 409.25,
+      "prediccion": 351.3,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 0.0,
+      "prediccion": 349.5099224752,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 0.0,
+      "prediccion": 367.1789362683,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 0.0,
+      "prediccion": 362.76168282,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 0.0,
+      "prediccion": 383.37,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 0.0,
+      "prediccion": 392.6775,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 0.0,
+      "prediccion": 0.0,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 469.51,
+      "prediccion": 348.6269187517,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 469.51,
+      "prediccion": 400.9119081164,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 469.51,
+      "prediccion": 387.8406607752,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 469.51,
+      "prediccion": 383.37,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 469.51,
+      "prediccion": 392.6775,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 469.51,
+      "prediccion": 415.53,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 496.41,
+      "prediccion": 348.472347661,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 496.41,
+      "prediccion": 260.7963795465,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 496.41,
+      "prediccion": 282.7153715751,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 496.41,
+      "prediccion": 383.37,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 496.41,
+      "prediccion": 392.6775,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 496.41,
+      "prediccion": 431.19,
+      "escala_mase": 71.1255882353
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 0.0,
+      "prediccion": 399.3956026594,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 0.0,
+      "prediccion": 398.8392432486,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 0.0,
+      "prediccion": 399.2565128067,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 0.0,
+      "prediccion": 409.25,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 0.0,
+      "prediccion": 393.105,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 0.0,
+      "prediccion": 0.0,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 469.51,
+      "prediccion": 350.9440331132,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 469.51,
+      "prediccion": 388.8535491589,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 469.51,
+      "prediccion": 379.3761701475,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 469.51,
+      "prediccion": 409.25,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 469.51,
+      "prediccion": 393.105,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 469.51,
+      "prediccion": 415.53,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 496.41,
+      "prediccion": 349.4018177017,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 496.41,
+      "prediccion": 410.0626158553,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 496.41,
+      "prediccion": 394.8974163169,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 496.41,
+      "prediccion": 409.25,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 496.41,
+      "prediccion": 393.105,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 496.41,
+      "prediccion": 431.19,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 524.86,
+      "prediccion": 349.1297743258,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 524.86,
+      "prediccion": 345.4584445139,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 524.86,
+      "prediccion": 346.3762769669,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 524.86,
+      "prediccion": 409.25,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 524.86,
+      "prediccion": 393.105,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 524.86,
+      "prediccion": 445.53,
+      "escala_mase": 70.6863106796
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 469.51,
+      "prediccion": 325.562973825,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 469.51,
+      "prediccion": 287.2795023949,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 469.51,
+      "prediccion": 315.9921059674,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 469.51,
+      "prediccion": 0.0,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 469.51,
+      "prediccion": 295.9,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 469.51,
+      "prediccion": 415.53,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 496.41,
+      "prediccion": 332.2898879615,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 496.41,
+      "prediccion": 362.3666478635,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 496.41,
+      "prediccion": 354.847457888,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 496.41,
+      "prediccion": 0.0,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 496.41,
+      "prediccion": 295.9,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 496.41,
+      "prediccion": 431.19,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 524.86,
+      "prediccion": 341.7492882621,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 524.86,
+      "prediccion": 417.0140366689,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 524.86,
+      "prediccion": 398.1978495672,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 524.86,
+      "prediccion": 0.0,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 524.86,
+      "prediccion": 295.9,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 524.86,
+      "prediccion": 445.53,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 507.24,
+      "prediccion": 343.4856138698,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 507.24,
+      "prediccion": 458.1321175659,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 507.24,
+      "prediccion": 429.4704916419,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 507.24,
+      "prediccion": 0.0,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 507.24,
+      "prediccion": 295.9,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 507.24,
+      "prediccion": 447.68,
+      "escala_mase": 73.9417307692
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 496.41,
+      "prediccion": 387.5245287659,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 496.41,
+      "prediccion": 453.9034953047,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 496.41,
+      "prediccion": 404.1192704006,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 496.41,
+      "prediccion": 469.51,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 496.41,
+      "prediccion": 315.5325,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 496.41,
+      "prediccion": 431.19,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 524.86,
+      "prediccion": 348.5039927782,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 524.86,
+      "prediccion": 467.6062274061,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 524.86,
+      "prediccion": 437.8306687491,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 524.86,
+      "prediccion": 469.51,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 524.86,
+      "prediccion": 315.5325,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 524.86,
+      "prediccion": 445.53,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 507.24,
+      "prediccion": 346.5029296248,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 507.24,
+      "prediccion": 453.5684137996,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 507.24,
+      "prediccion": 426.8020427559,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 507.24,
+      "prediccion": 469.51,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 507.24,
+      "prediccion": 315.5325,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 507.24,
+      "prediccion": 447.68,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 498.75,
+      "prediccion": 346.2285241609,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hgb",
+      "real": 498.75,
+      "prediccion": 461.9951567989,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 498.75,
+      "prediccion": 433.0534986394,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 498.75,
+      "prediccion": 469.51,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 498.75,
+      "prediccion": 315.5325,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 498.75,
+      "prediccion": 407.8,
+      "escala_mase": 77.709047619
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 524.86,
+      "prediccion": 396.2116616357,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 524.86,
+      "prediccion": 476.7582914097,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 524.86,
+      "prediccion": 416.3483190792,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 524.86,
+      "prediccion": 496.41,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 524.86,
+      "prediccion": 343.7925,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 524.86,
+      "prediccion": 445.53,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 507.24,
+      "prediccion": 350.8686400233,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 507.24,
+      "prediccion": 462.7044281199,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 507.24,
+      "prediccion": 434.7454810958,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 507.24,
+      "prediccion": 496.41,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 507.24,
+      "prediccion": 343.7925,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 507.24,
+      "prediccion": 447.68,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": 498.75,
+      "prediccion": 348.0823996836,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": 498.75,
+      "prediccion": 459.1289730784,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": 498.75,
+      "prediccion": 431.3673297297,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": 498.75,
+      "prediccion": 496.41,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": 498.75,
+      "prediccion": 343.7925,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": 498.75,
+      "prediccion": 407.8,
+      "escala_mase": 77.2297169811
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 507.24,
+      "prediccion": 407.1217599347,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 507.24,
+      "prediccion": 478.3565458147,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 507.24,
+      "prediccion": 424.9304564047,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 507.24,
+      "prediccion": 524.86,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 507.24,
+      "prediccion": 372.695,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 507.24,
+      "prediccion": 447.68,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 498.75,
+      "prediccion": 353.7992436654,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "rf",
+      "real": 498.75,
+      "prediccion": 457.1130005773,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 498.75,
+      "prediccion": 431.2845613493,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 498.75,
+      "prediccion": 524.86,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 498.75,
+      "prediccion": 372.695,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 498.75,
+      "prediccion": 407.8,
+      "escala_mase": 76.7738317757
+    },
+    {
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 498.75,
+      "prediccion": 412.1521655851,
+      "escala_mase": 76.2261111111
+    },
+    {
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 498.75,
+      "prediccion": 476.7628278953,
+      "escala_mase": 76.2261111111
+    },
+    {
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 498.75,
+      "prediccion": 428.3048311626,
+      "escala_mase": 76.2261111111
+    },
+    {
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 498.75,
+      "prediccion": 507.24,
+      "escala_mase": 76.2261111111
+    },
+    {
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 498.75,
+      "prediccion": 499.505,
+      "escala_mase": 76.2261111111
+    },
+    {
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 498.75,
+      "prediccion": 407.8,
+      "escala_mase": 76.2261111111
+    }
+  ],
+  "distribucion_futura": [
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-13 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "harina",
+      "participacion": 0.5158989599,
+      "importe": 223.5,
+      "total": 433.22,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-13 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "azucar",
+      "participacion": 0.2841006849,
+      "importe": 123.08,
+      "total": 433.22,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-13 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "mantequilla",
+      "participacion": 0.2000003552,
+      "importe": 86.64,
+      "total": 433.22,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-13 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "otros",
+      "participacion": 0.0,
+      "importe": 0.0,
+      "total": 433.22,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-20 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "harina",
+      "participacion": 0.5158989599,
+      "importe": 215.83,
+      "total": 418.35,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-20 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "azucar",
+      "participacion": 0.2841006849,
+      "importe": 118.85,
+      "total": 418.35,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-20 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "mantequilla",
+      "participacion": 0.2000003552,
+      "importe": 83.67,
+      "total": 418.35,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-20 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "otros",
+      "participacion": 0.0,
+      "importe": 0.0,
+      "total": 418.35,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-27 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "harina",
+      "participacion": 0.5158989599,
+      "importe": 202.61,
+      "total": 392.73,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-27 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "azucar",
+      "participacion": 0.2841006849,
+      "importe": 111.57,
+      "total": 392.73,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-27 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "mantequilla",
+      "participacion": 0.2000003552,
+      "importe": 78.55,
+      "total": 392.73,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-02-27 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "otros",
+      "participacion": 0.0,
+      "importe": 0.0,
+      "total": 392.73,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-03-06 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "harina",
+      "participacion": 0.5158989599,
+      "importe": 222.94,
+      "total": 432.14,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-03-06 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "azucar",
+      "participacion": 0.2841006849,
+      "importe": 122.77,
+      "total": 432.14,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-03-06 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "mantequilla",
+      "participacion": 0.2000003552,
+      "importe": 86.43,
+      "total": 432.14,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    },
+    {
+      "origen": "2023-02-13 00:00:00",
+      "fecha_objetivo": "2023-03-06 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "otros",
+      "participacion": 0.0,
+      "importe": 0.0,
+      "total": 432.14,
+      "unidad": "MXN nominales",
+      "demostracion": true
+    }
+  ],
+  "advertencia": "DEMOSTRACIÓN SINTÉTICA: NO ES EVIDENCIA DE CUP&CAKE. Evaluación exploratoria de importes registrados utilizables, no del gasto real completo. Calendario con huecos sin imputar; sin síntesis. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.",
+  "politica_faltantes": "calendar_gaps",
+  "cobertura_evaluacion": [
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-08T00:00:00.000",
+      "fecha_objetivo": "2022-08-08T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-01T00:00:00.000",
+      "n_entrenamiento_observado": 79,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-08T00:00:00.000",
+      "fecha_objetivo": "2022-08-15T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-01T00:00:00.000",
+      "n_entrenamiento_observado": 78,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-08T00:00:00.000",
+      "fecha_objetivo": "2022-08-22T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-01T00:00:00.000",
+      "n_entrenamiento_observado": 77,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-08T00:00:00.000",
+      "fecha_objetivo": "2022-08-29T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-01T00:00:00.000",
+      "n_entrenamiento_observado": 76,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-15T00:00:00.000",
+      "fecha_objetivo": "2022-08-15T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-08T00:00:00.000",
+      "n_entrenamiento_observado": 80,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-15T00:00:00.000",
+      "fecha_objetivo": "2022-08-22T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-08T00:00:00.000",
+      "n_entrenamiento_observado": 79,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-15T00:00:00.000",
+      "fecha_objetivo": "2022-08-29T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-08T00:00:00.000",
+      "n_entrenamiento_observado": 78,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-15T00:00:00.000",
+      "fecha_objetivo": "2022-09-05T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-08T00:00:00.000",
+      "n_entrenamiento_observado": 77,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-22T00:00:00.000",
+      "fecha_objetivo": "2022-08-22T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-15T00:00:00.000",
+      "n_entrenamiento_observado": 81,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-22T00:00:00.000",
+      "fecha_objetivo": "2022-08-29T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-15T00:00:00.000",
+      "n_entrenamiento_observado": 80,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-22T00:00:00.000",
+      "fecha_objetivo": "2022-09-05T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-15T00:00:00.000",
+      "n_entrenamiento_observado": 79,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-22T00:00:00.000",
+      "fecha_objetivo": "2022-09-12T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-15T00:00:00.000",
+      "n_entrenamiento_observado": 78,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-29T00:00:00.000",
+      "fecha_objetivo": "2022-08-29T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-22T00:00:00.000",
+      "n_entrenamiento_observado": 82,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-29T00:00:00.000",
+      "fecha_objetivo": "2022-09-05T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-22T00:00:00.000",
+      "n_entrenamiento_observado": 81,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-29T00:00:00.000",
+      "fecha_objetivo": "2022-09-12T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-22T00:00:00.000",
+      "n_entrenamiento_observado": 80,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-08-29T00:00:00.000",
+      "fecha_objetivo": "2022-09-19T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-22T00:00:00.000",
+      "n_entrenamiento_observado": 79,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-05T00:00:00.000",
+      "fecha_objetivo": "2022-09-05T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-29T00:00:00.000",
+      "n_entrenamiento_observado": 83,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-05T00:00:00.000",
+      "fecha_objetivo": "2022-09-12T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-29T00:00:00.000",
+      "n_entrenamiento_observado": 82,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-05T00:00:00.000",
+      "fecha_objetivo": "2022-09-19T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-29T00:00:00.000",
+      "n_entrenamiento_observado": 81,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-05T00:00:00.000",
+      "fecha_objetivo": "2022-09-26T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-08-29T00:00:00.000",
+      "n_entrenamiento_observado": 80,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-12T00:00:00.000",
+      "fecha_objetivo": "2022-09-12T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-05T00:00:00.000",
+      "n_entrenamiento_observado": 84,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-12T00:00:00.000",
+      "fecha_objetivo": "2022-09-19T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-05T00:00:00.000",
+      "n_entrenamiento_observado": 83,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-12T00:00:00.000",
+      "fecha_objetivo": "2022-09-26T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-05T00:00:00.000",
+      "n_entrenamiento_observado": 82,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-12T00:00:00.000",
+      "fecha_objetivo": "2022-10-03T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-05T00:00:00.000",
+      "n_entrenamiento_observado": 81,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-19T00:00:00.000",
+      "fecha_objetivo": "2022-09-19T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-12T00:00:00.000",
+      "n_entrenamiento_observado": 85,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-19T00:00:00.000",
+      "fecha_objetivo": "2022-09-26T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-12T00:00:00.000",
+      "n_entrenamiento_observado": 84,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-19T00:00:00.000",
+      "fecha_objetivo": "2022-10-03T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-12T00:00:00.000",
+      "n_entrenamiento_observado": 83,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-19T00:00:00.000",
+      "fecha_objetivo": "2022-10-10T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-12T00:00:00.000",
+      "n_entrenamiento_observado": 82,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-26T00:00:00.000",
+      "fecha_objetivo": "2022-09-26T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-19T00:00:00.000",
+      "n_entrenamiento_observado": 86,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-26T00:00:00.000",
+      "fecha_objetivo": "2022-10-03T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-19T00:00:00.000",
+      "n_entrenamiento_observado": 85,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-26T00:00:00.000",
+      "fecha_objetivo": "2022-10-10T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-19T00:00:00.000",
+      "n_entrenamiento_observado": 84,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2022-09-26T00:00:00.000",
+      "fecha_objetivo": "2022-10-17T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-09-19T00:00:00.000",
+      "n_entrenamiento_observado": 83,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-24T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-17T00:00:00.000",
+      "n_entrenamiento_observado": 90,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-17T00:00:00.000",
+      "n_entrenamiento_observado": 89,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-17T00:00:00.000",
+      "n_entrenamiento_observado": 88,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-24T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-17T00:00:00.000",
+      "n_entrenamiento_observado": 87,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-10-31T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-24T00:00:00.000",
+      "n_entrenamiento_observado": 91,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-24T00:00:00.000",
+      "n_entrenamiento_observado": 90,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-24T00:00:00.000",
+      "n_entrenamiento_observado": 89,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-10-31T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-24T00:00:00.000",
+      "n_entrenamiento_observado": 88,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-07T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-31T00:00:00.000",
+      "n_entrenamiento_observado": 92,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-31T00:00:00.000",
+      "n_entrenamiento_observado": 91,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-31T00:00:00.000",
+      "n_entrenamiento_observado": 90,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-07T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-10-31T00:00:00.000",
+      "n_entrenamiento_observado": 89,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-14T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-07T00:00:00.000",
+      "n_entrenamiento_observado": 93,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-07T00:00:00.000",
+      "n_entrenamiento_observado": 92,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-07T00:00:00.000",
+      "n_entrenamiento_observado": 91,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-14T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-07T00:00:00.000",
+      "n_entrenamiento_observado": 90,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-21T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-14T00:00:00.000",
+      "n_entrenamiento_observado": 94,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-14T00:00:00.000",
+      "n_entrenamiento_observado": 93,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-14T00:00:00.000",
+      "n_entrenamiento_observado": 92,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-21T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-14T00:00:00.000",
+      "n_entrenamiento_observado": 91,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-11-28T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-21T00:00:00.000",
+      "n_entrenamiento_observado": 95,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-21T00:00:00.000",
+      "n_entrenamiento_observado": 94,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-21T00:00:00.000",
+      "n_entrenamiento_observado": 93,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-11-28T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-21T00:00:00.000",
+      "n_entrenamiento_observado": 92,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-05T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-28T00:00:00.000",
+      "n_entrenamiento_observado": 96,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-28T00:00:00.000",
+      "n_entrenamiento_observado": 95,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-28T00:00:00.000",
+      "n_entrenamiento_observado": 94,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-05T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-11-28T00:00:00.000",
+      "n_entrenamiento_observado": 93,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-12T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-05T00:00:00.000",
+      "n_entrenamiento_observado": 97,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-05T00:00:00.000",
+      "n_entrenamiento_observado": 96,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-05T00:00:00.000",
+      "n_entrenamiento_observado": 95,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-12T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-05T00:00:00.000",
+      "n_entrenamiento_observado": 94,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-19T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-12T00:00:00.000",
+      "n_entrenamiento_observado": 98,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-12T00:00:00.000",
+      "n_entrenamiento_observado": 97,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-12T00:00:00.000",
+      "n_entrenamiento_observado": 96,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-19T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-12T00:00:00.000",
+      "n_entrenamiento_observado": 95,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2022-12-26T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-19T00:00:00.000",
+      "n_entrenamiento_observado": 99,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-19T00:00:00.000",
+      "n_entrenamiento_observado": 98,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-19T00:00:00.000",
+      "n_entrenamiento_observado": 97,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2022-12-26T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-19T00:00:00.000",
+      "n_entrenamiento_observado": 96,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-02T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-26T00:00:00.000",
+      "n_entrenamiento_observado": 100,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-26T00:00:00.000",
+      "n_entrenamiento_observado": 99,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-26T00:00:00.000",
+      "n_entrenamiento_observado": 98,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-02T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2022-12-26T00:00:00.000",
+      "n_entrenamiento_observado": 97,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-09T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-02T00:00:00.000",
+      "n_entrenamiento_observado": 101,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-02T00:00:00.000",
+      "n_entrenamiento_observado": 100,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-02T00:00:00.000",
+      "n_entrenamiento_observado": 99,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-09T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-02T00:00:00.000",
+      "n_entrenamiento_observado": 98,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-16T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-09T00:00:00.000",
+      "n_entrenamiento_observado": 102,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-09T00:00:00.000",
+      "n_entrenamiento_observado": 101,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-09T00:00:00.000",
+      "n_entrenamiento_observado": 100,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-16T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-09T00:00:00.000",
+      "n_entrenamiento_observado": 99,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-23T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-16T00:00:00.000",
+      "n_entrenamiento_observado": 103,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-16T00:00:00.000",
+      "n_entrenamiento_observado": 102,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-16T00:00:00.000",
+      "n_entrenamiento_observado": 101,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-23T00:00:00.000",
+      "fecha_objetivo": "2023-02-13T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-16T00:00:00.000",
+      "n_entrenamiento_observado": 100,
+      "objetivo_observado": false,
+      "motivo": "fuera_del_periodo"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-01-30T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-23T00:00:00.000",
+      "n_entrenamiento_observado": 104,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-23T00:00:00.000",
+      "n_entrenamiento_observado": 103,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-13T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-23T00:00:00.000",
+      "n_entrenamiento_observado": 102,
+      "objetivo_observado": false,
+      "motivo": "fuera_del_periodo"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-01-30T00:00:00.000",
+      "fecha_objetivo": "2023-02-20T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-23T00:00:00.000",
+      "n_entrenamiento_observado": 101,
+      "objetivo_observado": false,
+      "motivo": "fuera_del_periodo"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-06T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-30T00:00:00.000",
+      "n_entrenamiento_observado": 105,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-13T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-30T00:00:00.000",
+      "n_entrenamiento_observado": 104,
+      "objetivo_observado": false,
+      "motivo": "fuera_del_periodo"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-20T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-30T00:00:00.000",
+      "n_entrenamiento_observado": 103,
+      "objetivo_observado": false,
+      "motivo": "fuera_del_periodo"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2023-02-06T00:00:00.000",
+      "fecha_objetivo": "2023-02-27T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2021-01-04T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-01-30T00:00:00.000",
+      "n_entrenamiento_observado": 102,
+      "objetivo_observado": false,
+      "motivo": "fuera_del_periodo"
+    }
+  ]
+}

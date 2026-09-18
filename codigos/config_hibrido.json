@@ -4,18 +4,13 @@
   "source_sha256": "",
   "source_approved": false,
   "approved_duplicate_rows": [],
-  "synthetic_training_approved": false,
   "coverage": "input/hibrido/cobertura_revisada.csv",
   "catalog": "input/hibrido/catalogo_alcance_revisado.csv",
   "sales": null,
   "start": "2021-05-03",
   "end": "2024-06-24",
-  "window": 52,
   "holdout_weeks": 26,
   "tuning_origins": 8,
   "threshold": 0.8,
-  "independent_holdout": false,
-  "protocol_approved": false,
-  "missing_policy": "calendar_gaps",
   "min_training_observations": 24
 }

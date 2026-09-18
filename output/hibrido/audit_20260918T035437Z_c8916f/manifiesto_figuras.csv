@@ -1,0 +1,24 @@
+id,titulo,estado,archivo,vector,datos,sha256_datos,run_id,capitulo,motivo,demostracion
+F00,Arquitectura del pipeline,generada,figuras/F00.png,figuras/F00.svg,figuras/F00_datos.csv,11efe7324df1aa22d36bf7f40420138754aa6383b65e2afd06588de39f8a1a9c,audit_20260918T035437Z_c8916f,Metodología,,False
+F01,Auditoría de registros,generada,figuras/F01.png,figuras/F01.svg,figuras/F01_datos.csv,af298ff84f26c6dd5ba89ca9a1dc027293838faa307c8660f9da5f76e522df4b,audit_20260918T035437Z_c8916f,Desarrollo,,False
+F02,Cobertura semanal,generada,figuras/F02.png,figuras/F02.svg,figuras/F02_datos.csv,978e9120da5feb19b4fded734b8e0ad3760364b31be8a2e727a29542f30f8598,audit_20260918T035437Z_c8916f,Desarrollo,,False
+F03,Importe semanal de compras,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F04,Selección de insumos en desarrollo,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F05,Composición semanal en desarrollo,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F06,Dependencia temporal en desarrollo,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,ACF/PACF requiere desarrollo continuo observado; no se comprimen ni imputan huecos.,False
+F07,Distribución del importe y ceros,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F08,Descomposición temporal exploratoria,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,STL requiere al menos 156 semanas de desarrollo sin huecos en esta configuración.,False
+F09,Particiones temporales,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F10,Disponibilidad de información,generada,figuras/F10.png,figuras/F10.svg,figuras/F10_datos.csv,c08676101cf0de14dc28448bc646e1a0828201099969acc6bc2c66c8691817ba,audit_20260918T035437Z_c8916f,Metodología,,False
+F11,Selección de características,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,"Esta versión usa un conjunto parsimonioso prefijado, sin selección por frecuencia; no se fabrican importancias.",False
+F12,Integración híbrida,generada,figuras/F12.png,figuras/F12.svg,figuras/F12_datos.csv,7924e8b6c1834ca2780fe0450b22ff4deb4fc0d55ecd8a6fad5f2e6168aac366,audit_20260918T035437Z_c8916f,Metodología,,False
+F13,Pesos y validación interna,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F14,Pronósticos fuera de muestra,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F15,Composición observada y pronosticada,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F16,Asignación y reconciliación,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F17,Errores monetarios,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F18,Errores de participación,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F19,Diferencias de pérdidas para H1,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F20,Presupuesto de las cuatro semanas siguientes,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False
+F21,Interfaz del tablero,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Captura requiere inspeccionar el HTML de la ejecución en navegador; no se sustituye con una maqueta.,False
+F22,Controles de calidad,omitida,,,,,audit_20260918T035437Z_c8916f,Desarrollo,Sin ejecución empírica aprobada.,False

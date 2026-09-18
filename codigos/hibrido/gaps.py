@@ -5,7 +5,7 @@ from .data import clean_upper
 
 
 def history(panel, origin, cfg):
-    return panel.iloc[:origin] if cfg.missing_policy == 'calendar_gaps' else panel.iloc[origin-cfg.window:origin]
+    return panel.iloc[:origin]
 
 
 def validate_panel(panel):
