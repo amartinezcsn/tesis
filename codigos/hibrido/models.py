@@ -11,6 +11,8 @@ from .features import samples
 
 
 def stat_fit(y, name):
+    if name not in ('ss_ar1', 'ss_arima111'):
+        raise ValueError(f'Componente estadístico no soportado: {name}')
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter('always')
         order=(1,0,0) if name=='ss_ar1' else (1,1,1)
@@ -27,6 +29,8 @@ def predict_stat(fit, h):
 
 
 def ml_fit(x,y,name,cfg):
+    if name not in ('hgb', 'rf'):
+        raise ValueError(f'Componente ML no soportado: {name}')
     if not np.isfinite(y).all():raise ValueError('Objetivos de ML deben ser observados y finitos.')
     # Native missing-feature support: no synthetic target or median replacement.
     model=(HistGradientBoostingRegressor(max_iter=100,max_leaf_nodes=7,min_samples_leaf=5,early_stopping=False,random_state=cfg.seed)

@@ -1,5 +1,10 @@
-"""Entrada operativa del pipeline híbrido Rev44. El legado no se ejecuta."""
-from hibrido.cli import main
+"""00: entrada operativa del pipeline híbrido Rev44."""
+
+
+def main(argv=None):
+    from hibrido.cli import main as hybrid_main
+
+    return hybrid_main(argv)
 
 if __name__ == '__main__':
     raise SystemExit(main())

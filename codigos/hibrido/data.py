@@ -1,4 +1,4 @@
-"""Ingesta nominal; reutiliza normalización de 01_clean_eda sin su imputación."""
+"""Ingesta nominal del protocolo Rev44."""
 from pathlib import Path
 import hashlib
 import importlib
@@ -6,7 +6,7 @@ import re
 import numpy as np
 import pandas as pd
 
-clean_upper = importlib.import_module('01_clean_eda').clean_upper
+clean_upper = importlib.import_module('01_normalizacion').clean_upper
 
 
 def boolean_flags(values):

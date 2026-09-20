@@ -44,7 +44,7 @@ def manifest(output,cfg,status,files,error=None,demo=False):
     for name in ['numpy','pandas','scikit-learn','statsmodels','matplotlib','openpyxl','scipy','joblib']:
         try:versions[name]=importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:versions[name]=None
-    source_code=list(Path(__file__).parent.glob('*.py'))+[ROOT/'codigos/01_clean_eda.py']
+    source_code=list(Path(__file__).parent.glob('*.py'))+[ROOT/'codigos/00_pipeline_hibrido.py',ROOT/'codigos/01_normalizacion.py']
     artifacts=[p for p in output.rglob('*') if p.is_file() and p.name!='manifiesto.json' and '.matplotlib' not in p.parts]
     value={'run_id':output.name,'estado':status,'demostracion':demo,'error':error,'config':cfg.dictionary() if cfg else None,
         'python':sys.version,'plataforma':platform.platform(),'versiones':versions,
@@ -112,7 +112,12 @@ def execute(command,config_path=None,output_base=None):
         if not rejected.empty:raise ValueError('Hay registros pendientes: corregir fuente o documentar decisión antes de entrenar.')
         if not cfg.start or not cfg.end:raise ValueError('Definir inicio y fin semanales del periodo auditado.')
         files.extend([ROOT/cfg.coverage,ROOT/cfg.catalog])
-        panel,cov=build_gap_panel(purchases,read_table(ROOT/cfg.coverage),read_table(ROOT/cfg.catalog),cfg.start,cfg.end)
+        panel,cov=build_gap_panel(
+            purchases,
+            read_table(ROOT/cfg.coverage,cfg.coverage_sheet),
+            read_table(ROOT/cfg.catalog,cfg.catalog_sheet),
+            cfg.start,cfg.end,cfg.zero_targets_valid,
+        )
         panel.to_csv(output/'panel_semanal.csv');cov.to_csv(output/'cobertura.csv')
         if cfg.exogenous:files.append(ROOT/cfg.exogenous)
         if cfg.sales:files.append(ROOT/cfg.sales)
@@ -139,7 +144,7 @@ def execute(command,config_path=None,output_base=None):
 def main(argv=None):
     parser=argparse.ArgumentParser(description='Pipeline híbrido Rev44: auditoría, demo, ejecución y reproducción de emisión.')
     parser.add_argument('command',choices=['audit','demo','run','forecast'])
-    parser.add_argument('--config',default=str(ROOT/'codigos/config_hibrido.json'))
+    parser.add_argument('--config',default=str(ROOT/'codigos/02_config_hibrido.json'))
     parser.add_argument('--output',help='Carpeta base de salidas nuevas; no sobrescribe corridas anteriores.')
     parser.add_argument('--artifact',help='Modelo local de confianza generado por este pipeline. Joblib no es seguro para archivos desconocidos.')
     args=parser.parse_args(argv)

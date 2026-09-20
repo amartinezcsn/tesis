@@ -6,7 +6,7 @@ Adaptación del 14 de septiembre de 2026. Periodo propuesto: mayo de 2021 a juni
 
 Se incluyen ingredientes, empaques y materiales de decoración recurrentes; se excluyen combustible, herramientas, muebles y otras adquisiciones duraderas. Cada descripción requiere decisión documentada en el catálogo; no se infiere automáticamente su inclusión por la categoría comercial. Los originales no se modifican y los duplicados no se eliminan automáticamente.
 
-La configuración real continúa bloqueada: faltan aprobación de fuente y hash, revisión de incidencias, catálogo y cobertura. Esta implementación no constituye resultados empíricos de Cup&Cake ni confirmación de H1. No se modificó la tesis.
+La fuente original y su hash quedaron fijados el 19 de septiembre de 2026; los 12 registros duplicados se conservan por indicación del usuario. El catálogo activo contiene decisiones y trazabilidad a las filas originales; la cobertura activa distingue 129 semanas observadas y 36 inciertas. La corrida real finalizó en `outputs/ejecucion_real_20260919/run_20260919T212455Z_f0255d/`. Sus resultados son empíricos y exploratorios; no confirman H1 de forma independiente ni certifican cobertura completa de compras. No se modificó la tesis.
 
 ## Secuencia implementada
 
@@ -25,16 +25,16 @@ La configuración real continúa bloqueada: faltan aprobación de fuente y hash,
 
 ## Ejecución y pruebas
 
-Desde la raíz del proyecto:
+Desde `codigos/`:
 
 ```powershell
-.\.venv_hibrido\Scripts\python.exe codigos\00_pipeline_hibrido.py audit --config codigos\config_hibrido.json
+.\.venv_hibrido\Scripts\python.exe 00_pipeline_hibrido.py audit --config 02_config_hibrido.json
 $env:OMP_NUM_THREADS='1'
-.\.venv_hibrido\Scripts\python.exe -m unittest discover -s codigos\tests -p 'test_hibrido*.py'
-.\.venv_hibrido\Scripts\python.exe codigos\00_pipeline_hibrido.py run --config codigos\config_hibrido.json
+.\.venv_hibrido\Scripts\python.exe -m unittest discover -s tests -p 'test_hibrido*.py'
+.\.venv_hibrido\Scripts\python.exe 00_pipeline_hibrido.py run --config 02_config_hibrido.json
 ```
 
-`audit` genera plantillas nuevas sin aprobar datos ni entrenar. Completar catálogo y cobertura en las rutas configuradas, resolver incidencias y aprobar explícitamente el hash antes de `run`. El bloqueo actual es intencional. Las demostraciones sintéticas se aíslan y marcan como pruebas técnicas, nunca como evidencia de la investigación.
+`audit` genera plantillas nuevas sin entrenar. El catálogo y la cobertura activos están en las rutas configuradas; la aprobación de duplicados existente solo aplica al hash actual. Las demostraciones sintéticas se aíslan y marcan como pruebas técnicas, nunca como evidencia de la investigación.
 
 La prueba integral automatizada usa AR(1) y HistGradientBoosting. En una prueba adicional con los candidatos opcionales, ARIMA(1,1,1) no convergió en un origen de evaluación de la serie artificial: la corrida se detuvo, como corresponde. No se sustituye el modelo seleccionado ni se oculta ese origen para mejorar métricas. Habilitar candidatos opcionales no garantiza completar cualquier serie; la configuración real no se cambió para favorecer el resultado de la demostración.
 

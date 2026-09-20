@@ -11,7 +11,9 @@ class Config:
     source_approved: bool = False
     approved_duplicate_rows: tuple = ()
     coverage: str = 'input/hibrido/cobertura.csv'
+    coverage_sheet: str | int = 0
     catalog: str = 'input/hibrido/catalogo.csv'
+    catalog_sheet: str | int = 0
     exogenous: str | None = None
     sales: str | None = None
     start: str = ''
@@ -29,11 +31,12 @@ class Config:
     use_rf: bool = True
     use_arima: bool = True
     min_training_observations: int = 24
+    zero_targets_valid: bool = True
 
     def validate(self):
         if type(self.min_training_observations) is not int or self.min_training_observations < 8:
             raise ValueError('min_training_observations requiere entero >= 8.')
-        for key in ('source_approved','use_rf','use_arima'):
+        for key in ('source_approved','use_rf','use_arima','zero_targets_valid'):
             if not isinstance(getattr(self,key),bool):
                 raise ValueError(f'{key} requiere booleano JSON true/false, no texto.')
         duplicate_rows = self.approved_duplicate_rows

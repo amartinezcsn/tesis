@@ -16,6 +16,7 @@ from hibrido.data import load_purchases,load_exogenous,load_sales
 from hibrido.composition import select_categories,predict_shares,allocate,shares
 from hibrido.evaluation import paired_interval,composition_metrics,total_metrics
 from hibrido.experiment import run_experiment,forecast_bundle,select_models
+from hibrido.models import stat_fit, ml_fit
 
 
 def panel(n=110):
@@ -27,6 +28,28 @@ def panel(n=110):
 
 
 class DataTests(unittest.TestCase):
+    def test_main_entry_uses_hybrid_when_called_as_function(self):
+        from unittest.mock import patch
+        entry = importlib.import_module('00_pipeline_hibrido')
+        with patch('hibrido.cli.main', return_value=0) as hybrid_main:
+            self.assertEqual(entry.main(['audit']), 0)
+            hybrid_main.assert_called_once_with(['audit'])
+
+    def test_unknown_component_names_are_rejected(self):
+        with self.assertRaisesRegex(ValueError, 'estadístico no soportado'):
+            stat_fit([1., 2., 3.], 'otro')
+        with self.assertRaisesRegex(ValueError, 'ML no soportado'):
+            ml_fit(pd.DataFrame({'x': [1., 2.]}), np.array([1., 2.]), 'otro', Config())
+
+    def test_normalizer_preserves_legacy_contract(self):
+        active = importlib.import_module('01_normalizacion').clean_upper
+        for raw, expected in [('  Café  molido ', 'CAFE MOLIDO'), ('Azúcar\trefinada', 'AZUCAR REFINADA'), ('', pd.NA), (None, pd.NA)]:
+            value = active(raw)
+            if pd.isna(expected):
+                self.assertTrue(pd.isna(value))
+            else:
+                self.assertEqual(value, expected)
+
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.path=Path(self.temp.name)
         self.raw=pd.DataFrame({'fecha':['2024-01-01','2024-01-08'],'descripcion':['Harina','Harina'],'importe_nominal':[10,0]})

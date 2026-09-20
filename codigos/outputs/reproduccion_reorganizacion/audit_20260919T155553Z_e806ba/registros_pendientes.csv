@@ -1,0 +1,13 @@
+PROVEEDOR,fecha,NUMERO,CANT,U#MEDIDA,descripcion,importe_nominal,P#UNITARIO,CLASIFICACION,SUBCLASIFICACION,registro_id,descripcion_normalizada,es_sintetico,motivo
+CASETA,2024-02-14,,1.0,tick,peaje,65.0,65.0,CASETAS,,190,PEAJE,False,duplicado_requiere_revision
+CASETA,2024-02-14,,1.0,tick,peaje,65.0,65.0,CASETAS,,191,PEAJE,False,duplicado_requiere_revision
+B. AURRERA,2023-12-08,,1.0,kg,chantilly dulce,71.0,71.0,CHANTILLY,,294,CHANTILLY DULCE,False,duplicado_requiere_revision
+B. AURRERA,2023-12-08,,1.0,kg,chantilly dulce,71.0,71.0,CHANTILLY,,296,CHANTILLY DULCE,False,duplicado_requiere_revision
+CASETA,2023-12-08,,1.0,tick,peaje,65.0,65.0,CASETAS,,297,PEAJE,False,duplicado_requiere_revision
+CASETA,2023-12-08,,1.0,tick,peaje,65.0,65.0,CASETAS,,298,PEAJE,False,duplicado_requiere_revision
+REPOSTEARTE,2023-03-01,ND,2.0,kg,Foundant,166.0,83.0,FONDANT,,792,FOUNDANT,False,duplicado_requiere_revision
+REPOSTEARTE,2023-03-01,ND,2.0,kg,Foundant,166.0,83.0,FONDANT,,798,FOUNDANT,False,duplicado_requiere_revision
+REPOSTEARTE,2023-01-19,ND,1.0,pz,caja acetato,26.0,26.0,EMPAQUE,,893,CAJA ACETATO,False,duplicado_requiere_revision
+REPOSTEARTE,2023-01-19,ND,1.0,pz,caja acetato,26.0,26.0,EMPAQUE,,895,CAJA ACETATO,False,duplicado_requiere_revision
+DULCERIA,2021-11-25,ND,1.0,paq,Luneta m&m's grande,17.0,17.0,RELLENO,,1417,LUNETA M&M'S GRANDE,False,duplicado_requiere_revision
+DULCERIA,2021-11-25,ND,1.0,paq,Luneta m&m's grande,17.0,17.0,RELLENO,,1418,LUNETA M&M'S GRANDE,False,duplicado_requiere_revision

@@ -85,6 +85,12 @@ class GapIngestionTests(unittest.TestCase):
     def build(self):return build_gap_panel(self.p,self.cov,self.cat,self.d[0],self.d[-1])
     def test_unknown_and_true_zero_differ(self):
         p,c=self.build();self.assertTrue(p.iloc[1].isna().all());self.assertEqual(p.total.iloc[3],0);self.assertEqual(len(p),4)
+    def test_zero_targets_rejected_when_policy_disallows_them(self):
+        with self.assertRaisesRegex(ValueError,'Ceros semanales no válidos'):
+            build_gap_panel(self.p,self.cov,self.cat,self.d[0],self.d[-1],zero_targets_valid=False)
+        self.cov.loc[3,'estado']='incierta'
+        p,_=build_gap_panel(self.p,self.cov,self.cat,self.d[0],self.d[-1],zero_targets_valid=False)
+        self.assertTrue(p.iloc[3].isna().all())
     def test_missing_coverage_defaults_unknown(self):
         self.cov=self.cov.iloc[[0,2,3]];p,c=self.build();self.assertTrue(p.iloc[1].isna().all())
     def test_synthesis_rejected(self):
@@ -99,6 +105,12 @@ class GapIngestionTests(unittest.TestCase):
     def test_unknown_catalog_blocks(self):
         self.cat.loc[0,'decision']='revisar'
         with self.assertRaisesRegex(ValueError,'Catálogo pendiente'):self.build()
+    def test_provisional_catalog_evidence_blocks(self):
+        self.cat.loc[0,'evidencia']='Pendiente de homologación por descripción.'
+        with self.assertRaisesRegex(ValueError,'evidencia concreta'):self.build()
+    def test_provisional_catalog_evidence_blocks(self):
+        self.cat.loc[0,'evidencia']='Pendiente de homologación por descripción.'
+        with self.assertRaisesRegex(ValueError,'evidencia concreta'):self.build()
     def test_week_without_included_rows_cannot_be_observed(self):
         self.cov.loc[1,['estado','evidencia','fecha_revision']]=['registrada','revisado','2026-09-14']
         with self.assertRaisesRegex(ValueError,'sin compras'):self.build()

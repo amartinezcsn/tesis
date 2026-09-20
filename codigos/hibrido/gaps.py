@@ -24,7 +24,7 @@ def validate_panel(panel):
         raise ValueError('Panel no reconciliado.')
 
 
-def build_gap_panel(purchases, coverage, catalog, start, end):
+def build_gap_panel(purchases, coverage, catalog, start, end, zero_targets_valid=True):
     """Only approved recorded totals are usable; no assertion of actual total spend."""
     if purchases.get('es_sintetico',pd.Series(False,index=purchases.index)).astype(bool).any():
         raise ValueError('Panel principal no admite registros sintéticos.')
@@ -38,7 +38,9 @@ def build_gap_panel(purchases, coverage, catalog, start, end):
         raise ValueError('Catálogo ambiguo.')
     if not cat.aprobado.astype(str).str.lower().isin(['true','1']).all() or not cat.decision.isin(['incluir','excluir']).all():
         raise ValueError('Catálogo pendiente: aprobar alcance por descripción.')
-    if cat.evidencia.fillna('').astype(str).str.strip().eq('').any():raise ValueError('Decisión sin evidencia.')
+    evidence=cat.evidencia.fillna('').astype(str).str.strip()
+    if evidence.eq('').any() or evidence.str.lower().str.startswith('pendiente de homolog').any():
+        raise ValueError('Decisión sin evidencia concreta; sustituir el texto provisional.')
     inc=cat.decision.eq('incluir')
     if cat.loc[inc,'insumo_id'].fillna('').astype(str).str.strip().eq('').any() or cat.loc[inc,'insumo_id'].isin(['total','otros']).any():
         raise ValueError('Identificador de insumo vacío o reservado.')
@@ -67,6 +69,8 @@ def build_gap_panel(purchases, coverage, catalog, start, end):
     counts=selected.groupby('semana_inicio').size().reindex(dates,fill_value=0)
     if (cov.estado.isin(['registrada','observada']) & counts.eq(0)).any():raise ValueError('Semana sin compras incluidas no es cero confirmado.')
     if (cov.estado.eq('cero_confirmado') & panel.total.gt(0)).any():raise ValueError('Cero confirmado contradice importes.')
+    if not zero_targets_valid and (usable & panel.total.eq(0)).any():
+        raise ValueError('Ceros semanales no válidos para esta configuración; marcar semana incierta o corregir fuente.')
     panel.loc[~usable,:]=np.nan
     panel.index.name='semana_inicio';cov.index.name='semana_inicio'
     validate_panel(panel)

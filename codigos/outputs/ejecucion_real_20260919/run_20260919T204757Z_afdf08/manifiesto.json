@@ -1,0 +1,102 @@
+{
+  "run_id": "run_20260919T204757Z_afdf08",
+  "estado": "bloqueado_o_fallido",
+  "demostracion": false,
+  "error": "Decisión sin evidencia concreta; sustituir el texto provisional.",
+  "config": {
+    "source": "datasets/xlsx/Compras.xlsx",
+    "source_sheet": "Hoja1",
+    "source_sha256": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+    "source_approved": true,
+    "approved_duplicate_rows": [
+      190,
+      191,
+      294,
+      296,
+      297,
+      298,
+      792,
+      798,
+      893,
+      895,
+      1417,
+      1418
+    ],
+    "coverage": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_sin_ceros.xlsx",
+    "coverage_sheet": "Cobertura",
+    "catalog": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_sin_ceros.xlsx",
+    "catalog_sheet": "Catalogo",
+    "exogenous": null,
+    "sales": null,
+    "start": "2021-05-03",
+    "end": "2024-06-24",
+    "holdout_weeks": 26,
+    "tuning_origins": 8,
+    "horizons": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "threshold": 0.8,
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "bootstrap_block": 4,
+    "min_inference_weeks": 12,
+    "use_rf": true,
+    "use_arima": true,
+    "min_training_observations": 24
+  },
+  "python": "3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)]",
+  "plataforma": "Windows-10-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.8",
+    "openpyxl": "3.1.5",
+    "scipy": "1.15.3",
+    "joblib": "1.5.3"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\datasets\\xlsx\\Compras.xlsx": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+    "C:\\Python\\tesis\\input\\compras_limpias.xlsx": "5531ac855e166812b6e3538e9910a11a664c817232b08ca9fe14e72ce76ec930",
+    "C:\\Python\\tesis\\input\\compras_limpias_corregidas.xlsx": "38afb7c8146fb88358f0e306b933db51e8d6e0e69793ad248226d978c23f89ef",
+    "C:\\Python\\tesis\\codigos\\outputs\\revision_datos_20260919\\revision_catalogo_cobertura_sin_ceros.xlsx": "47b5bc142b3e10331be99e448999c4b22a5f8604eeb444872ea7dc96d8e7a298"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "7954cb546ce528bd4fc9d00249e3abc1f4c3fe3cf88a75aac1b3b2f3f62e0db7",
+    "codigos\\hibrido\\composition.py": "6bdfee3453d54f441f0f4f07c3dc2bd90d40faa6a8d7f3cc206f54ce40463652",
+    "codigos\\hibrido\\config.py": "70c33f642afdd395e34f45b4eaea77ee67981c5bd689b84f8db83fc27e6f5539",
+    "codigos\\hibrido\\data.py": "65d57f9b03f577a26109918d6288be31bf588d11b7fc66fd8ea136cd0e21c679",
+    "codigos\\hibrido\\evaluation.py": "15c403cd711f8a55a01edfb4aba0d199a449a22c22090505bcd0a4cf91107e36",
+    "codigos\\hibrido\\experiment.py": "8286fc1119ef23b566e5f68a865eda3debf71af09200ddc465501e5459f22407",
+    "codigos\\hibrido\\features.py": "05d441cacb0a27566ec05a4306078974178988d1b01a48c171e78cd409e938ca",
+    "codigos\\hibrido\\figures.py": "deeb9ac56c3ca1b7c0595515364c3fba5f7b4e3b74fadc0246687f4eb6d47a0f",
+    "codigos\\hibrido\\gaps.py": "e546544f82738efba98c9c1d51a033f30edb799289f85a326aad924743f0a044",
+    "codigos\\hibrido\\models.py": "7ed8003fe26fd98f35e20c9c42c462b2a631f7a23110830f8c86d885eb95fef1",
+    "codigos\\hibrido\\reporting.py": "ca2ee670412ddd7cd159863db1c7a5e654770d7936052a89045e3ed6f72bd0e9",
+    "codigos\\hibrido\\__init__.py": "ac4bfacce45043ea348dce2d754cc98217ab0c279cd3392d80eca338b3086e44",
+    "codigos\\00_pipeline_hibrido.py": "5a7e2b529e2f38fad5be6db14b9df769c3419ec78f4e848f4e4cbd91f1f990e9",
+    "codigos\\01_normalizacion.py": "938fd6c34c0a6b8963e0bb5006c4694592ac7beb157006e51bb8d71bae0ee067"
+  },
+  "productos": {
+    "auditoria.json": "d12e5c29cded42e087313b1fd77baa811bc62e4740bebc4faa775974b0be7095",
+    "catalogo_PARA_REVISAR.csv": "a71d4a722c800b96bf4681d166fe9d891d6bcd50df06c5720279c8d78d19c067",
+    "cobertura_PARA_REVISAR.csv": "606b38c48fa65136ccd3bce69a5546d54b2f29d015b99dff69c6292015b03e9e",
+    "comparacion_fuentes.csv": "ec20eaf6a90abb0847398b46f1fc0ba453513c62f469e6d865f7d02b7411dd67",
+    "compras_auditadas.csv": "121597e2cbc547e12c314293a2d8b8e9a416d018d68cbaec02bf1e16e2668a2b",
+    "registros_pendientes.csv": "564984177b5f7b1fb970a12d5aad98eecd9c0f0de9319fa7ee5239abc7297b9b"
+  }
+}
