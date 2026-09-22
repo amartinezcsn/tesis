@@ -1,0 +1,27 @@
+id,titulo,estado,archivo,vector,datos,sha256_datos,run_id,capitulo,motivo,demostracion
+F00,Arquitectura del pipeline,generada,figuras/F00.png,figuras/F00.svg,figuras/F00_datos.csv,11efe7324df1aa22d36bf7f40420138754aa6383b65e2afd06588de39f8a1a9c,run_20260922T230952Z_ed5620,Metodología,,False
+F01,Auditoría de registros,generada,figuras/F01.png,figuras/F01.svg,figuras/F01_datos.csv,b5baf92d3ecd91323ec34d26e9c38d540e3551e86abd4ebc28ec61fea3f3a268,run_20260922T230952Z_ed5620,Desarrollo,,False
+F02,Cobertura semanal,generada,figuras/F02.png,figuras/F02.svg,figuras/F02_datos.csv,5e1789cbe172719eca3b6cf7b76fb2cf9efd9c6f688116ed677652a842fc29f3,run_20260922T230952Z_ed5620,Desarrollo,,False
+F03,Importe semanal de compras,generada,figuras/F03.png,figuras/F03.svg,figuras/F03_datos.csv,0b1d1921331d69e6acfa4970b540ae48a2d216704b45a5d189ce12fe23731369,run_20260922T230952Z_ed5620,Desarrollo,,False
+F04,Selección de insumos en desarrollo,generada,figuras/F04.png,figuras/F04.svg,figuras/F04_datos.csv,3eac74a02b3d9ccfbb3790bceae6f2be155fbdc39dbe9b5dae9579e2e4f5c387,run_20260922T230952Z_ed5620,Desarrollo,,False
+F05,Composición semanal en desarrollo,generada,figuras/F05.png,figuras/F05.svg,figuras/F05_datos.csv,ce6604bae492c46de60b9a393bb27ec04d027be4eceb0785324ca7a2c7b41b9c,run_20260922T230952Z_ed5620,Desarrollo,,False
+F06,Dependencia temporal en desarrollo,omitida,,,,,run_20260922T230952Z_ed5620,Desarrollo,ACF/PACF requiere desarrollo continuo observado; no se comprimen ni imputan huecos.,False
+F07,Distribución del importe y ceros,generada,figuras/F07.png,figuras/F07.svg,figuras/F07_datos.csv,00712da457ede0d1dd6ae9bce6f77ddca354b59cb1ea268a154a86032e1275fc,run_20260922T230952Z_ed5620,Desarrollo,,False
+F08,Descomposición temporal exploratoria,omitida,,,,,run_20260922T230952Z_ed5620,Desarrollo,STL requiere al menos 156 semanas de desarrollo sin huecos en esta configuración.,False
+F09,Particiones temporales,generada,figuras/F09.png,figuras/F09.svg,figuras/F09_datos.csv,44778593590c6ee97385def952dc2657509b522344caaef4b4ba0202af27266e,run_20260922T230952Z_ed5620,Desarrollo,,False
+F10,Disponibilidad de información,generada,figuras/F10.png,figuras/F10.svg,figuras/F10_datos.csv,c08676101cf0de14dc28448bc646e1a0828201099969acc6bc2c66c8691817ba,run_20260922T230952Z_ed5620,Metodología,,False
+F11,Selección de características,omitida,,,,,run_20260922T230952Z_ed5620,Desarrollo,"Esta versión usa un conjunto parsimonioso prefijado, sin selección por frecuencia; no se fabrican importancias.",False
+F12,Integración híbrida,generada,figuras/F12.png,figuras/F12.svg,figuras/F12_datos.csv,7924e8b6c1834ca2780fe0450b22ff4deb4fc0d55ecd8a6fad5f2e6168aac366,run_20260922T230952Z_ed5620,Metodología,,False
+F13,Pesos y validación interna,generada,figuras/F13.png,figuras/F13.svg,figuras/F13_datos.csv,7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6,run_20260922T230952Z_ed5620,Desarrollo,,False
+F14,Pronósticos fuera de muestra,generada,figuras/F14.png,figuras/F14.svg,figuras/F14_datos.csv,5eb370c895c96cc4534427c590cc78461239ae72bcfbe26656ad91314b4073bc,run_20260922T230952Z_ed5620,Resultados,,False
+F15,Composición observada y pronosticada,generada,figuras/F15.png,figuras/F15.svg,figuras/F15_datos.csv,ec1a0c0d315418ced82dbb381e8baeaf09fd355410ade3423f621461840c3c89,run_20260922T230952Z_ed5620,Resultados,,False
+F16,Asignación y reconciliación,generada,figuras/F16.png,figuras/F16.svg,figuras/F16_datos.csv,07a1c1516515c12b502d127e2a08da7ba26afc8fcf4f77c2d9a3199035f76c92,run_20260922T230952Z_ed5620,Resultados,,False
+F17,Errores monetarios,generada,figuras/F17.png,figuras/F17.svg,figuras/F17_datos.csv,e8311bfc3e53bb43f05723dc0a3ec4616dc31a54c2f1fa41f1223fb963fdf634,run_20260922T230952Z_ed5620,Resultados,,False
+F18,Errores de participación,generada,figuras/F18.png,figuras/F18.svg,figuras/F18_datos.csv,a88eb26df55be0a15eab774f5bf21901177e113687ce3dedf98b0a987696fdd7,run_20260922T230952Z_ed5620,Resultados,,False
+F19,Diferencias de pérdidas para H1,generada,figuras/F19.png,figuras/F19.svg,figuras/F19_datos.csv,499c4bb150897d11e657d33e8412f3d3555e342060f076f0e481330cbf21ee8a,run_20260922T230952Z_ed5620,Resultados,,False
+F20,Presupuesto de las cuatro semanas siguientes,generada,figuras/F20.png,figuras/F20.svg,figuras/F20_datos.csv,1a5499c1eb5ac51e7e2d751f17e453c5522817ea60c8023234c9f96870c93002,run_20260922T230952Z_ed5620,Desarrollo,,False
+F21,Interfaz del tablero,omitida,,,,,run_20260922T230952Z_ed5620,Desarrollo,Captura requiere inspeccionar el HTML de la ejecución en navegador; no se sustituye con una maqueta.,False
+F22,Controles de calidad,generada,figuras/F22.png,figuras/F22.svg,figuras/F22_datos.csv,7c437ab8cdb7e28294fa4c8136a923d938db3ae2b67fd4cb1a95237799bec03b,run_20260922T230952Z_ed5620,Desarrollo,,False
+F23,Convergencia del error rolling,generada,figuras/F23.png,figuras/F23.svg,figuras/F23_datos.csv,156e0d70083d25bedc0b33165115c130b82f5cbe0fac7d2fbf3edfca5c1f2d44,run_20260922T230952Z_ed5620,Resultados,,False
+F24,Correlación de variables,generada,figuras/F24.png,figuras/F24.svg,figuras/F24_datos.csv,4556cb0c6869d258183f4644e10080538ab6469ead40ce3091169ff19267e8a0,run_20260922T230952Z_ed5620,Resultados,,False
+F25,Ventas semanales y semanas sin captura,generada,figuras/F25.png,figuras/F25.svg,figuras/F25_datos.csv,ebae02aab89c31c98c1ef2f02f83b3c0ee66c66c38a6b9b4e034b69f66b59048,run_20260922T230952Z_ed5620,Desarrollo,,False

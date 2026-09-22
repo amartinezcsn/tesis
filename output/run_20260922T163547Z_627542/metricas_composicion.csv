@@ -1,0 +1,97 @@
+horizonte,modelo,insumo_id,mae_pp,n,excluidas
+1,participacion_ewm,AMBIANTE,12.03073776780317,14,12
+1,participacion_ewm,CHANTILLY,5.647132813709456,14,12
+1,participacion_ewm,CHOCOLATE,18.775644449531537,14,12
+1,participacion_ewm,DECORACION,5.256594626176201,14,12
+1,participacion_ewm,EMPAQUE,7.631726419232853,14,12
+1,participacion_ewm,FONDANT,7.059341519304396,14,12
+1,participacion_ewm,HARINA,10.00539788162724,14,12
+1,participacion_ewm,HUEVO,2.770377305770538,14,12
+1,participacion_ewm,QUESO CREMA,6.102342270280085,14,12
+1,participacion_ewm,RELLENO,8.17423515121851,14,12
+1,participacion_ewm,otros,21.791142650964513,14,12
+1,participacion_historica,AMBIANTE,11.355166785543222,14,12
+1,participacion_historica,CHANTILLY,8.09281254176676,14,12
+1,participacion_historica,CHOCOLATE,18.082689949764525,14,12
+1,participacion_historica,DECORACION,5.1689163372456965,14,12
+1,participacion_historica,EMPAQUE,6.518022493209931,14,12
+1,participacion_historica,FONDANT,7.829265866776895,14,12
+1,participacion_historica,HARINA,9.641722536494914,14,12
+1,participacion_historica,HUEVO,5.057078308147717,14,12
+1,participacion_historica,QUESO CREMA,5.423755582906408,14,12
+1,participacion_historica,RELLENO,7.673699957111345,14,12
+1,participacion_historica,otros,19.531075330958327,14,12
+2,participacion_ewm,AMBIANTE,11.345615795852465,14,11
+2,participacion_ewm,CHANTILLY,5.947782543199703,14,11
+2,participacion_ewm,CHOCOLATE,18.311408180534006,14,11
+2,participacion_ewm,DECORACION,5.157490114520031,14,11
+2,participacion_ewm,EMPAQUE,7.579319756519019,14,11
+2,participacion_ewm,FONDANT,7.306425352657624,14,11
+2,participacion_ewm,HARINA,9.992111784282931,14,11
+2,participacion_ewm,HUEVO,2.8173084916895093,14,11
+2,participacion_ewm,QUESO CREMA,5.94539840269663,14,11
+2,participacion_ewm,RELLENO,8.264782662784308,14,11
+2,participacion_ewm,otros,20.915836582697352,14,11
+2,participacion_historica,AMBIANTE,11.365924342692185,14,11
+2,participacion_historica,CHANTILLY,8.146503878324397,14,11
+2,participacion_historica,CHOCOLATE,18.086977737525586,14,11
+2,participacion_historica,DECORACION,5.162559803465669,14,11
+2,participacion_historica,EMPAQUE,6.497904075166329,14,11
+2,participacion_historica,FONDANT,7.840922797575379,14,11
+2,participacion_historica,HARINA,9.618164724323659,14,11
+2,participacion_historica,HUEVO,5.082063378133262,14,11
+2,participacion_historica,QUESO CREMA,5.392207879363497,14,11
+2,participacion_historica,RELLENO,7.68150478551665,14,11
+2,participacion_historica,otros,19.39587111493777,14,11
+3,participacion_ewm,AMBIANTE,11.761747190493102,13,11
+3,participacion_ewm,CHANTILLY,5.961351499371596,13,11
+3,participacion_ewm,CHOCOLATE,17.981559892516366,13,11
+3,participacion_ewm,DECORACION,4.70600256820172,13,11
+3,participacion_ewm,EMPAQUE,7.659730641753426,13,11
+3,participacion_ewm,FONDANT,7.5211590320263,13,11
+3,participacion_ewm,HARINA,10.004041674380321,13,11
+3,participacion_ewm,HUEVO,2.503297523869592,13,11
+3,participacion_ewm,QUESO CREMA,5.178868077631143,13,11
+3,participacion_ewm,RELLENO,8.389586824438748,13,11
+3,participacion_ewm,otros,21.968179708080434,13,11
+3,participacion_historica,AMBIANTE,11.814921297344624,13,11
+3,participacion_historica,CHANTILLY,8.161263022564683,13,11
+3,participacion_historica,CHOCOLATE,18.623105747088516,13,11
+3,participacion_historica,DECORACION,4.660155086187361,13,11
+3,participacion_historica,EMPAQUE,6.912354306078724,13,11
+3,participacion_historica,FONDANT,8.39828687115348,13,11
+3,participacion_historica,HARINA,9.64756355446685,13,11
+3,participacion_historica,HUEVO,5.219911415928404,13,11
+3,participacion_historica,QUESO CREMA,4.787525669693377,13,11
+3,participacion_historica,RELLENO,7.778836706028913,13,11
+3,participacion_historica,otros,20.340057157925703,13,11
+4,participacion_ewm,AMBIANTE,13.26293302596938,12,11
+4,participacion_ewm,CHANTILLY,5.8830881337168,12,11
+4,participacion_ewm,CHOCOLATE,18.8232826394664,12,11
+4,participacion_ewm,DECORACION,4.669508770049118,12,11
+4,participacion_ewm,EMPAQUE,7.890945783190873,12,11
+4,participacion_ewm,FONDANT,7.641655263262514,12,11
+4,participacion_ewm,HARINA,9.662165863562794,12,11
+4,participacion_ewm,HUEVO,2.5557679200018586,12,11
+4,participacion_ewm,QUESO CREMA,5.635045024637162,12,11
+4,participacion_ewm,RELLENO,8.120370983602774,12,11
+4,participacion_ewm,otros,16.71268182672026,12,11
+4,participacion_historica,AMBIANTE,12.444951745443491,12,11
+4,participacion_historica,CHANTILLY,8.165595286747017,12,11
+4,participacion_historica,CHOCOLATE,19.04504951486633,12,11
+4,participacion_historica,DECORACION,4.545771551610459,12,11
+4,participacion_historica,EMPAQUE,6.890719729902852,12,11
+4,participacion_historica,FONDANT,8.325822576149013,12,11
+4,participacion_historica,HARINA,9.418934000495534,12,11
+4,participacion_historica,HUEVO,5.207790060875511,12,11
+4,participacion_historica,QUESO CREMA,4.9510138675786735,12,11
+4,participacion_historica,RELLENO,7.845899949990439,12,11
+4,participacion_historica,otros,15.543932223465994,12,11
+1,participacion_ewm,PROMEDIO_MACRO,9.567697532328953,14,12
+1,participacion_historica,PROMEDIO_MACRO,9.488564153629612,14,12
+2,participacion_ewm,PROMEDIO_MACRO,9.416679969766689,14,11
+2,participacion_historica,PROMEDIO_MACRO,9.479145865184035,14,11
+3,participacion_ewm,PROMEDIO_MACRO,9.421411330251159,13,11
+3,participacion_historica,PROMEDIO_MACRO,9.667634621314603,13,11
+4,participacion_ewm,PROMEDIO_MACRO,9.168858657652722,12,11
+4,participacion_historica,PROMEDIO_MACRO,9.307770955193211,12,11

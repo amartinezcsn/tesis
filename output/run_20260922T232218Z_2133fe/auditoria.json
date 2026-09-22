@@ -1,0 +1,7 @@
+{
+  "fuente": "C:\\Python\\tesis\\output\\test_dataset_staging\\compras_semanales_como_transacciones.csv",
+  "sha256": "425b94a62b8fce0836bf2fd5e2253fa91478550361affcb185c8b771937298e9",
+  "registros_validos_para_revision": 1763,
+  "pendientes": 0,
+  "cobertura": "Debe confirmarse documentalmente; transacciones no prueban integridad semanal."
+}

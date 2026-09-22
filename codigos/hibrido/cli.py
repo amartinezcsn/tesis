@@ -11,7 +11,7 @@ import importlib.metadata
 import numpy as np
 import pandas as pd
 from .config import Config,load_config
-from .data import load_purchases,templates,load_exogenous,load_sales,read_table,fingerprint
+from .data import load_purchases,templates,load_exogenous,load_sales,read_table,fingerprint,complete_purchase_panel_simple_mean,complete_sales_simple_mean
 from .gaps import build_gap_panel
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -47,7 +47,8 @@ def create_demo(output):
     catalog.to_csv(output/'catalogo_demo.csv',index=False)
     return Config(source=str(source),source_sha256=fingerprint(source),source_approved=True,
         coverage=str(output/'cobertura_demo.csv'),catalog=str(output/'catalogo_demo.csv'),
-        start=str(dates[0].date()),end=str(dates[-1].date()))
+        start=str(dates[0].date()),end=str(dates[-1].date()),holdout_weeks=20,
+        tuning_origins=5,training_window_weeks=52,rolling_step_weeks=3)
 
 
 def manifest(output,cfg,status,files,error=None,demo=False):
@@ -138,6 +139,23 @@ def execute(command,config_path=None):
         if cfg.sales:files.append(ROOT/cfg.sales)
         exog=load_exogenous(ROOT/cfg.exogenous if cfg.exogenous else None)
         sales=load_sales(ROOT/cfg.sales if cfg.sales else None,panel.index)
+        if cfg.imputation_start is not None:
+            panel_completed,purchase_imputations=complete_purchase_panel_simple_mean(
+                panel,cfg.imputation_start,cfg.imputation_end)
+            sales_completed,sales_imputations=complete_sales_simple_mean(
+                sales,cfg.imputation_start,cfg.imputation_end)
+            panel_completed.to_csv(output/'panel_semanal_completado_promedio_simple.csv')
+            sales_completed.to_csv(output/'ventas_semanales_completadas_promedio_simple.csv')
+            pd.concat([purchase_imputations,sales_imputations],ignore_index=True).to_csv(
+                output/'imputaciones_promedio_simple.csv',index=False)
+            pd.DataFrame([
+                dict(fuente='compras',semanas_observadas=int(panel.loc[cfg.imputation_start:cfg.imputation_end,'total'].notna().sum()),
+                     semanas_estimadas=int(panel_completed.loc[cfg.imputation_start:cfg.imputation_end,'total'].notna().sum()-panel.loc[cfg.imputation_start:cfg.imputation_end,'total'].notna().sum()),
+                     periodo_inicio=cfg.imputation_start,periodo_fin=cfg.imputation_end),
+                dict(fuente='ventas',semanas_observadas=int(sales.loc[cfg.imputation_start:cfg.imputation_end,'importe_nominal'].notna().sum()),
+                     semanas_estimadas=int(sales_completed.loc[cfg.imputation_start:cfg.imputation_end,'estado_dato'].eq('estimado_promedio_simple').sum()),
+                     periodo_inicio=cfg.imputation_start,periodo_fin=cfg.imputation_end),
+            ]).to_csv(output/'resumen_imputacion.csv',index=False)
         from .experiment import run_experiment
         from .reporting import export_results,quality_controls
         print('Entrenamiento y evaluación: selección interna, prueba final y persistencia.',flush=True)
@@ -149,7 +167,7 @@ def execute(command,config_path=None):
         if not all(x['aprobado'] for x in controls):raise ValueError('Fallaron controles de salida.')
         export_results(output,result,cfg,demo)
         print('Generando figuras y datos de respaldo.',flush=True)
-        generate_figures(output,purchases,rejected,cov,panel,result,controls,demo)
+        generate_figures(output,purchases,rejected,cov,panel,result,controls,demo,exog=exog,sales=sales)
         manifest(output,cfg,'completado_demo' if demo else 'completado',files,demo=demo)
         return output
     except Exception as exc:

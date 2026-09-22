@@ -112,10 +112,30 @@ def templates(purchases, output):
 
 
 def load_exogenous(path):
-    """Validar variables externas y su fecha real de disponibilidad."""
+    """Validar variables externas y su fecha real de disponibilidad.
+
+    ``Dataset_Tizayuca_2022_2026.xlsx`` se acepta como fuente diaria y se
+    transforma aquí a variables calendáricas semanales conocidas en el origen
+    del pronóstico. Temperatura, clima e índices no se convierten
+    automáticamente: sin una fecha de publicación no es posible demostrar que
+    eran conocidos antes del pronóstico.
+    """
     columns = ['variable','fecha_referencia','available_at','valor','fuente','version','tipo']
     if path is None: return pd.DataFrame(columns=columns)
     frame = read_table(path)
+    if {'Fecha','EsFestivoMexicano','EsFechaPago'}.issubset(frame):
+        fecha = pd.to_datetime(frame['Fecha'], errors='raise', format='%Y-%m-%d')
+        daily = pd.DataFrame({'fecha': fecha, 'festivo': pd.to_numeric(frame['EsFestivoMexicano'], errors='raise'),
+            'pago': pd.to_numeric(frame['EsFechaPago'], errors='raise')})
+        daily['semana_inicio'] = daily['fecha'] - pd.to_timedelta(daily['fecha'].dt.dayofweek, unit='D')
+        weekly = daily.groupby('semana_inicio', as_index=False)[['festivo','pago']].max()
+        rows = []
+        for _, row in weekly.iterrows():
+            for variable, value in [('es_festivo_semana', row['festivo']), ('es_fecha_pago_semana', row['pago'])]:
+                rows.append(dict(variable=variable, fecha_referencia=row['semana_inicio'],
+                    available_at=row['semana_inicio'], valor=float(value), fuente=Path(path).name,
+                    version='1', tipo='calendario'))
+        return pd.DataFrame(rows, columns=columns)
     if not set(columns).issubset(frame): raise ValueError('Contrato de exógenas incompleto.')
     for col in ('fecha_referencia','available_at'):
         frame[col] = pd.to_datetime(frame[col], errors='raise')
@@ -137,16 +157,81 @@ def load_sales(path, index):
     """Validar ventas semanales opcionales, publicadas después de su cierre."""
     if path is None: return None
     sales = read_table(path)
+    if {'Fecha','Importe'}.issubset(sales):
+        # Exportación transaccional: las filas antiguas pueden ser conceptos
+        # separados del mismo pedido, por lo que no se deduplican por número.
+        fecha = pd.to_datetime(sales['Fecha'], errors='coerce', format='%d/%m/%Y')
+        importe = pd.to_numeric(sales['Importe'], errors='coerce')
+        valid = fecha.notna() & importe.notna()
+        if not valid.any():
+            raise ValueError('Ventas transaccionales sin fecha e importe utilizables.')
+        clean = pd.DataFrame({'fecha': fecha[valid], 'importe_nominal': importe[valid]})
+        if (clean['importe_nominal'] < 0).any():
+            raise ValueError('Ventas negativas requieren una regla documentada de devoluciones.')
+        clean['semana_inicio'] = clean['fecha'] - pd.to_timedelta(clean['fecha'].dt.dayofweek, unit='D')
+        weekly = clean.groupby('semana_inicio', as_index=False)['importe_nominal'].sum()
+        # No hay evidencia de que la bitácora sea exhaustiva: una semana sin
+        # transacciones es falta de captura, no ventas cero.
+        full_weeks = pd.date_range(weekly['semana_inicio'].min(), weekly['semana_inicio'].max(), freq='W-MON')
+        weekly = weekly.set_index('semana_inicio').reindex(full_weeks).rename_axis('semana_inicio').reset_index()
+        weekly['available_at'] = weekly['semana_inicio'] + pd.Timedelta(weeks=1)
+        weekly['es_sintetico'] = False
+        sales = weekly
     if not {'semana_inicio','importe_nominal','available_at'}.issubset(sales):
         raise ValueError('Ventas requieren semana_inicio, importe_nominal, available_at.')
     sales['semana_inicio'] = pd.to_datetime(sales.semana_inicio)
     sales['available_at'] = pd.to_datetime(sales.available_at)
     sales['importe_nominal'] = pd.to_numeric(sales.importe_nominal,errors='raise')
-    if sales.semana_inicio.duplicated().any() or not np.isfinite(sales.importe_nominal).all():
+    if sales.semana_inicio.duplicated().any() or not np.isfinite(sales.importe_nominal.dropna()).all():
         raise ValueError('Ventas semanales duplicadas o no finitas.')
-    if sales.semana_inicio.dt.dayofweek.ne(0).any() or (sales.available_at < sales.semana_inicio+pd.Timedelta(weeks=1)).any():
+    if sales.semana_inicio.dt.dayofweek.ne(0).any() or (sales.available_at.dropna() < sales.semana_inicio[sales.available_at.notna()]+pd.Timedelta(weeks=1)).any():
         raise ValueError('Ventas semanales deben publicarse después del cierre lunes-domingo.')
     synthetic = boolean_flags(sales.get('es_sintetico', pd.Series(False,index=sales.index)))
     if synthetic.any():
         raise ValueError('Ventas sintéticas prohibidas en el protocolo de tesis.')
     return sales.set_index('semana_inicio').reindex(index)
+
+
+def complete_purchase_panel_simple_mean(panel, start, end):
+    """Completar solo semanas ausentes del alcance indicado con medias por categoría.
+
+    Devuelve una copia (nunca altera el panel observado) y una tabla larga de
+    valores generados para que cada imputación conserve trazabilidad.
+    """
+    result=panel.copy();scope=result.index.to_series().between(pd.Timestamp(start),pd.Timestamp(end)).to_numpy()
+    observed=scope & result.total.notna().to_numpy();missing=scope & result.total.isna().to_numpy()
+    if not observed.any():raise ValueError('Sin semanas observadas para calcular promedio de compras.')
+    categories=[column for column in result.columns if column!='total']
+    rows=[]
+    for category in categories:
+        average=float(result.loc[observed,category].mean())
+        result.loc[missing,category]=average
+        for date in result.index[missing]:
+            rows.append(dict(fuente='compras',semana_inicio=date,serie=category,importe_observado=np.nan,
+                importe_estimado=average,estado='estimado_promedio_simple',metodo='media_aritmetica_categoria'))
+    # La suma de las medias por categoría equivale al promedio de los totales
+    # de las semanas observadas y mantiene la reconciliación presupuestaria.
+    result.loc[missing,'total']=result.loc[missing,categories].sum(axis=1)
+    for date in result.index[missing]:
+        rows.append(dict(fuente='compras',semana_inicio=date,serie='TOTAL',importe_observado=np.nan,
+            importe_estimado=float(result.loc[date,'total']),estado='estimado_promedio_simple',
+            metodo='suma_de_medias_aritmeticas_por_categoria'))
+    result['estado_dato']=np.where(result.total.notna(),'observado','ausente_fuera_de_alcance')
+    result.loc[missing,'estado_dato']='estimado_promedio_simple'
+    return result,pd.DataFrame(rows)
+
+
+def complete_sales_simple_mean(sales, start, end):
+    """Completar las semanas de ventas faltantes dentro del periodo autorizado."""
+    result=sales.copy();scope=result.index.to_series().between(pd.Timestamp(start),pd.Timestamp(end))
+    observed=scope & result.importe_nominal.notna();missing=scope & result.importe_nominal.isna()
+    if not observed.any():raise ValueError('Sin semanas observadas para calcular promedio de ventas.')
+    average=float(result.loc[observed,'importe_nominal'].mean())
+    result.loc[missing,'importe_nominal']=average
+    result.loc[missing,'available_at']=pd.Timestamp.now().normalize()
+    result['estado_dato']=np.where(result.importe_nominal.notna(),'observado','ausente_fuera_de_alcance')
+    result.loc[missing,'estado_dato']='estimado_promedio_simple'
+    audit=pd.DataFrame([dict(fuente='ventas',semana_inicio=date,serie='TOTAL',importe_observado=np.nan,
+        importe_estimado=average,estado='estimado_promedio_simple',metodo='media_aritmetica_semanal')
+        for date in result.index[missing]])
+    return result,audit

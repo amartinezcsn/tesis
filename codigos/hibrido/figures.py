@@ -18,10 +18,12 @@ TITLES=[
 'Pesos y validación interna','Pronósticos fuera de muestra','Composición observada y pronosticada',
 'Asignación y reconciliación','Errores monetarios','Errores de participación',
 'Diferencias de pérdidas para H1','Presupuesto de las cuatro semanas siguientes','Interfaz del tablero','Controles de calidad']
+TITLES += ['Convergencia del error rolling','Correlación de variables']
+TITLES += ['Ventas semanales y semanas sin captura']
 
 
-def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,controls=None,demo=False):
-    """Crear figuras F00–F22 disponibles y registrar por qué faltan otras."""
+def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,controls=None,demo=False,exog=None,sales=None):
+    """Crear figuras metodológicas/resultados y registrar por qué faltan otras."""
     output=Path(output); directory=output/'figuras'; directory.mkdir(exist_ok=True)
     os.environ.setdefault('MPLCONFIGDIR',str(output/'.matplotlib'))
     import matplotlib
@@ -81,8 +83,35 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
         # F03–F13: describir desarrollo y mostrar la selección temporal.
         from .composition import shares
         cutoff=results['cutoff'];dev=panel.iloc[:cutoff];cats=results['categories']
-        fig,ax=plt.subplots(figsize=(10,4));ax.plot(panel.index,panel.total,color='#345f7e');ax.axvline(panel.index[cutoff],color='black',linestyle='--',label='Inicio evaluación');ax.set_ylabel('MXN nominales');ax.legend()
+        fig,(ax,coverage_ax)=plt.subplots(2,1,figsize=(11,5),sharex=True,gridspec_kw={'height_ratios':[4,0.55]})
+        ax.plot(panel.index,panel.total,color='#345f7e',label='Compras registradas')
+        ax.axvline(panel.index[cutoff],color='black',linestyle='--',label='Inicio evaluación')
+        ax.set_ylabel('MXN nominales');ax.legend()
+        coverage_ax.scatter(panel.index[panel.total.notna()],np.ones(panel.total.notna().sum()),s=7,color='#379166')
+        coverage_ax.set_ylim(.5,1.5);coverage_ax.set_yticks([1],['Captura']);coverage_ax.set_xlabel('Semana; huecos en línea/franja = sin registros')
         save(3,fig,panel.reset_index())
+        if sales is not None:
+            weekly_sales=sales['importe_nominal'] if isinstance(sales,pd.DataFrame) else sales
+            weekly_sales=weekly_sales.reindex(panel.index)
+            fig,(ax,sales_ax)=plt.subplots(2,1,figsize=(11,5),sharex=True,gridspec_kw={'height_ratios':[4,0.55]})
+            ax.plot(weekly_sales.index,weekly_sales,color='#a64b2a',label='Ventas registradas')
+            ax.set_ylabel('MXN nominales');ax.legend()
+            sales_ax.scatter(weekly_sales.index[weekly_sales.notna()],np.ones(weekly_sales.notna().sum()),s=7,color='#379166')
+            sales_ax.set_ylim(.5,1.5);sales_ax.set_yticks([1],['Captura']);sales_ax.set_xlabel('Semana; huecos en línea/franja = sin registros')
+            sales_table=pd.DataFrame({'semana_inicio':weekly_sales.index,'ventas_registradas':weekly_sales.to_numpy(),
+                'captura_observada':weekly_sales.notna().to_numpy()})
+            save(25,fig,sales_table)
+            gap_rows=[]
+            for nombre,series in [('compras',panel.total),('ventas',weekly_sales)]:
+                missing=series.index[series.isna()]
+                if len(missing):
+                    groups=(missing.to_series().diff().dt.days.ne(7)).cumsum()
+                    for _,group in missing.to_series().groupby(groups):
+                        gap_rows.append(dict(fuente=nombre,inicio=group.iloc[0],fin=group.iloc[-1],
+                            semanas_ausentes=len(group),clasificacion='sin_captura_en_archivo'))
+            gap_table=pd.DataFrame(gap_rows,columns=['fuente','inicio','fin','semanas_ausentes','clasificacion'])
+            if not gap_table.empty:gap_table=gap_table.sort_values(['fuente','inicio'])
+            gap_table.to_csv(output/'periodos_ausentes.csv',index=False)
         pareto=dev.drop(columns='total').sum().sort_values(ascending=False)
         leading=pareto.head(15).iloc[::-1]
         fig,ax=plt.subplots(figsize=(12,7));ax.barh(readable_labels(leading.index),leading.values,
@@ -114,8 +143,13 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
             ax.scatter(r.fecha_objetivo,i,color='#b44828' if r.etapa=='evaluacion' else '#379166',s=15)
         ax.set_ylabel('Origen (h=4)');ax.set_xlabel('Fecha; azul: entrenamiento, punto: objetivo');save(9,fig,folds)
         score=results['seleccion_interna'];fig,axes=plt.subplots(1,2,figsize=(10,4))
-        for h,g in score.groupby('horizonte'):axes[0].plot(range(len(g)),np.sqrt(g.mse),'.',label=f'h={h}')
-        axes[0].set_ylabel('RMSE de validación (MXN)');axes[0].set_xlabel('Configuración candidata');axes[0].legend()
+        if {'horizonte','mse'}.issubset(score.columns):
+            for h,g in score.groupby('horizonte'):
+                axes[0].plot(range(len(g)),np.sqrt(g.mse),'.',label=f'h={h}')
+        else:
+            axes[0].text(.5,.5,'Sin etiquetas observadas para comparar configuraciones',ha='center',va='center',wrap=True,transform=axes[0].transAxes)
+        axes[0].set_ylabel('RMSE de validación (MXN)');axes[0].set_xlabel('Configuración candidata')
+        if {'horizonte','mse'}.issubset(score.columns):axes[0].legend()
         axes[1].bar(list(results['selection']),[s['peso'] for s in results['selection'].values()]);axes[1].set_ylim(0,1);axes[1].set_xlabel('Horizonte');axes[1].set_ylabel('Peso estadístico seleccionado');save(13,fig,score)
         # F14–F20: resultados congelados, errores y presupuesto por insumo.
         p=results['predicciones'];fig,axes=plt.subplots(2,2,figsize=(12,7))
@@ -170,6 +204,46 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
     if controls:
         # F22 resume los invariantes de cierre; no convierte prueba en selección.
         tab=pd.DataFrame(controls);fig,ax=plt.subplots(figsize=(10,4));ax.barh(tab.control,tab.aprobado.astype(int),color='#367d59');ax.set_xlim(0,1.2);ax.set_xticks([0,1],['Falló','Aprobado']);save(22,fig,tab)
+    if panel is not None and results is not None:
+        # F23: convergencia descriptiva del error acumulado por fold rolling.
+        # No pretende demostrar convergencia asintótica con muestras pequeñas.
+        pred=results['predicciones'].copy()
+        pred=pred.dropna(subset=['real','prediccion']).sort_values(['horizonte','fecha_objetivo','modelo'])
+        if not pred.empty:
+            pred['error_abs']=(pred['real']-pred['prediccion']).abs()
+            pred['fold']=pred.groupby('horizonte')['fecha_objetivo'].rank(method='dense').astype(int)
+            pred['mae_acumulado']=pred.groupby(['horizonte','modelo'])['error_abs'].expanding().mean().reset_index(level=[0,1],drop=True)
+            fig,axes=plt.subplots(2,2,figsize=(12,7),sharey=False)
+            for h,ax in zip(range(1,5),axes.flat):
+                g=pred[pred.horizonte.eq(h)]
+                for model in ['hibrido','ultimo_valor','promedio_4s','estacional_52s']:
+                    q=g[g.modelo.eq(model)]
+                    if not q.empty:ax.plot(q.fold,q.mae_acumulado,marker='o',label=model)
+                ax.set_title(f'h={h}');ax.set_xlabel('Fold rolling acumulado');ax.set_ylabel('MAE acumulado (MXN)')
+                if h==1:ax.legend(fontsize=8)
+            save(23,fig,pred[['origen','fecha_objetivo','horizonte','modelo','fold','error_abs','mae_acumulado']],'Resultados')
+        # F24: correlación descriptiva; no se interpreta como causalidad.
+        corr_frame=panel[['total']].rename(columns={'total':'compras_total_mxn'}).copy()
+        if sales is not None and 'importe_nominal' in sales:
+            corr_frame['ventas_total_mxn']=pd.to_numeric(sales.importe_nominal,errors='coerce').reindex(corr_frame.index)
+        if exog is not None and not exog.empty:
+            ex=exog.pivot_table(index='fecha_referencia',columns='variable',values='valor',aggfunc='last')
+            ex.index=pd.to_datetime(ex.index);corr_frame=corr_frame.join(ex.reindex(corr_frame.index),how='left')
+        # Añadir calendario derivado como variables explicativas observables.
+        week=corr_frame.index.isocalendar().week.astype(float).to_numpy()
+        corr_frame['semana_sin']=np.sin(2*np.pi*week/52.1775)
+        corr_frame['semana_cos']=np.cos(2*np.pi*week/52.1775)
+        corr_frame=corr_frame.select_dtypes(include=[np.number]).dropna(axis=1,how='all')
+        matrix=corr_frame.corr(min_periods=3)
+        if not matrix.empty:
+            fig,ax=plt.subplots(figsize=(10,8));im=ax.imshow(matrix.values,vmin=-1,vmax=1,cmap='coolwarm')
+            labels=readable_labels(matrix.columns);ax.set_xticks(range(len(labels)),labels,rotation=45,ha='right');ax.set_yticks(range(len(labels)),labels)
+            for i in range(len(matrix)):
+                for j in range(len(matrix)):
+                    value=matrix.iloc[i,j]
+                    if pd.notna(value):ax.text(j,i,f'{value:.2f}',ha='center',va='center',fontsize=8)
+            fig.colorbar(im,ax=ax,label='Correlación de Pearson');ax.set_title('Relación descriptiva; no implica causalidad',fontsize=10)
+            save(24,fig,matrix.rename_axis('variable').reset_index(),'Resultados')
     for number,title in enumerate(TITLES):
         # Cada figura ausente conserva motivo explícito en el manifiesto.
         if number not in generated:
@@ -178,6 +252,8 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
             if number==8:reason='STL requiere al menos 156 semanas de desarrollo sin huecos en esta configuración.'
             if number==11:reason='Esta versión usa un conjunto parsimonioso prefijado, sin selección por frecuencia; no se fabrican importancias.'
             if number==21:reason='Captura requiere inspeccionar el HTML de la ejecución en navegador; no se sustituye con una maqueta.'
+            if number==23:reason='No hay predicciones observadas suficientes para construir la trayectoria de error rolling.'
+            if number==24:reason='No hay al menos una variable numérica con observaciones suficientes para correlacionar.'
             manifest.append(dict(id=f'F{number:02}',titulo=title,estado='omitida',archivo='',datos='',run_id=output.name,capitulo='Desarrollo',motivo=reason,demostracion=demo))
     manifest=sorted(manifest,key=lambda r:r['id'])
     (output/'manifiesto_figuras.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')

@@ -1,0 +1,58 @@
+{
+  "source": "datasets/xlsx/Compras.xlsx",
+  "source_sheet": "Hoja1",
+  "source_sha256": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+  "source_approved": true,
+  "approved_duplicate_rows": [
+    190,
+    191,
+    294,
+    296,
+    297,
+    298,
+    792,
+    798,
+    893,
+    895,
+    1417,
+    1418
+  ],
+  "coverage": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_trazada.xlsx",
+  "coverage_sheet": "Cobertura",
+  "catalog": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_trazada.xlsx",
+  "catalog_sheet": "Catalogo",
+  "exogenous": "datasets/xlsx/Dataset_Tizayuca_2022_2026.xlsx",
+  "sales": "datasets/xlsx/Ventas.xlsx",
+  "start": "2022-10-17",
+  "end": "2024-06-24",
+  "holdout_weeks": 26,
+  "tuning_origins": 4,
+  "training_window_weeks": 52,
+  "rolling_step_weeks": 2,
+  "rolling_origin_start": 52,
+  "horizons": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "weights": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "alphas": [
+    0.1,
+    0.3,
+    0.6
+  ],
+  "threshold": 0.8,
+  "seed": 42,
+  "bootstrap_samples": 2000,
+  "bootstrap_block": 4,
+  "min_inference_weeks": 12,
+  "use_rf": true,
+  "use_arima": true,
+  "min_training_observations": 24,
+  "zero_targets_valid": false
+}

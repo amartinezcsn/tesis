@@ -1,0 +1,1524 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Pipeline híbrido</title>
+<style>body{font:16px system-ui;margin:2rem auto;max-width:1200px;padding:0 1rem;color:#203044}h1,h2{color:#203044}.notice{padding:1rem;background:#fff3dc}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:.55rem;text-align:left;border-bottom:1px solid #d9e1e8}th{background:#e8f0f6}.scroll{overflow:auto}section{margin:2rem 0}img{max-width:100%}</style></head><body>
+<h1>Presupuesto semanal de Cup&Cake</h1><p class="notice">Evaluación retrospectiva; no garantiza precisión futura. Corte de emisión explícito. No es una orden de compra. Evaluación rolling exploratoria de importes registrados utilizables, no del gasto real completo. Se excluyeron 14 objetivos inciertos de las métricas; no se imputaron ni sintetizaron. Calendario con huecos sin imputar. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.</p><p>Ejecución: run_20260922T174842Z_734842. Corte: 2024-07-01 00:00:00. Unidad: MXN nominales.</p>
+<section><h2>Pronóstico y distribución por insumo</h2><p>Consolidado de cuatro semanas: $3,898.75. No equivale a un mes calendario.</p><div class="scroll"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>origen</th>
+      <th>fecha_objetivo</th>
+      <th>horizonte</th>
+      <th>insumo_id</th>
+      <th>importe</th>
+      <th>total</th>
+      <th>unidad</th>
+      <th>participacion_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>CHOCOLATE</td>
+      <td>224.40</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>20.35</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>HARINA</td>
+      <td>160.11</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>14.52</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>FONDANT</td>
+      <td>85.03</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>7.71</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>EMPAQUE</td>
+      <td>86.65</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>7.86</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>RELLENO</td>
+      <td>112.83</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>10.23</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>CHANTILLY</td>
+      <td>19.28</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>DECORACION</td>
+      <td>54.35</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>4.93</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>AMBIANTE</td>
+      <td>128.63</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>11.66</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>HUEVO</td>
+      <td>8.79</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>QUESO CREMA</td>
+      <td>22.35</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>2.03</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-01 00:00:00</td>
+      <td>1</td>
+      <td>otros</td>
+      <td>200.57</td>
+      <td>1,102.99</td>
+      <td>MXN nominales</td>
+      <td>18.18</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>CHOCOLATE</td>
+      <td>227.91</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>20.35</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>HARINA</td>
+      <td>162.61</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>14.52</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>FONDANT</td>
+      <td>86.36</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>7.71</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>EMPAQUE</td>
+      <td>88.00</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>7.86</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>RELLENO</td>
+      <td>114.59</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>10.23</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>CHANTILLY</td>
+      <td>19.58</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>DECORACION</td>
+      <td>55.20</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>4.93</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>AMBIANTE</td>
+      <td>130.64</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>11.66</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>HUEVO</td>
+      <td>8.92</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>QUESO CREMA</td>
+      <td>22.70</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>2.03</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-08 00:00:00</td>
+      <td>2</td>
+      <td>otros</td>
+      <td>203.70</td>
+      <td>1,120.21</td>
+      <td>MXN nominales</td>
+      <td>18.18</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>CHOCOLATE</td>
+      <td>177.93</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>20.35</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>HARINA</td>
+      <td>126.95</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>14.52</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>FONDANT</td>
+      <td>67.42</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>7.71</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>EMPAQUE</td>
+      <td>68.70</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>7.86</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>RELLENO</td>
+      <td>89.46</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>10.23</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>CHANTILLY</td>
+      <td>15.29</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>DECORACION</td>
+      <td>43.09</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>4.93</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>AMBIANTE</td>
+      <td>101.99</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>11.66</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>HUEVO</td>
+      <td>6.97</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>QUESO CREMA</td>
+      <td>17.72</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>2.03</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-15 00:00:00</td>
+      <td>3</td>
+      <td>otros</td>
+      <td>159.03</td>
+      <td>874.55</td>
+      <td>MXN nominales</td>
+      <td>18.18</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>CHOCOLATE</td>
+      <td>162.96</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>20.35</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>HARINA</td>
+      <td>116.27</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>14.52</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>FONDANT</td>
+      <td>61.75</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>7.71</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>EMPAQUE</td>
+      <td>62.93</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>7.86</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>RELLENO</td>
+      <td>81.94</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>10.23</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>CHANTILLY</td>
+      <td>14.00</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>DECORACION</td>
+      <td>39.47</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>4.93</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>AMBIANTE</td>
+      <td>93.41</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>11.66</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>HUEVO</td>
+      <td>6.38</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>QUESO CREMA</td>
+      <td>16.23</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>2.03</td>
+    </tr>
+    <tr>
+      <td>2024-07-01 00:00:00</td>
+      <td>2024-07-22 00:00:00</td>
+      <td>4</td>
+      <td>otros</td>
+      <td>145.66</td>
+      <td>801.00</td>
+      <td>MXN nominales</td>
+      <td>18.18</td>
+    </tr>
+  </tbody>
+</table></div></section>
+<section><h2>Evaluación del importe</h2><div class="scroll"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>horizonte</th>
+      <th>modelo</th>
+      <th>n</th>
+      <th>rmse</th>
+      <th>mae</th>
+      <th>mase</th>
+      <th>n_mase</th>
+      <th>excluidas</th>
+      <th>comparacion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>estacional_52s</td>
+      <td>4</td>
+      <td>669.16</td>
+      <td>432.92</td>
+      <td>0.66</td>
+      <td>4</td>
+      <td>2</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>hibrido</td>
+      <td>4</td>
+      <td>505.01</td>
+      <td>481.39</td>
+      <td>0.76</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>promedio_4s</td>
+      <td>3</td>
+      <td>621.94</td>
+      <td>611.05</td>
+      <td>0.96</td>
+      <td>3</td>
+      <td>3</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>rf</td>
+      <td>4</td>
+      <td>348.51</td>
+      <td>301.99</td>
+      <td>0.47</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>ss_arima111</td>
+      <td>4</td>
+      <td>562.68</td>
+      <td>541.19</td>
+      <td>0.86</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>ultimo_valor</td>
+      <td>4</td>
+      <td>783.43</td>
+      <td>674.73</td>
+      <td>1.08</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>estacional_52s</td>
+      <td>2</td>
+      <td>667.32</td>
+      <td>634.60</td>
+      <td>0.94</td>
+      <td>2</td>
+      <td>4</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>hgb</td>
+      <td>3</td>
+      <td>215.58</td>
+      <td>211.86</td>
+      <td>0.33</td>
+      <td>3</td>
+      <td>3</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>hibrido</td>
+      <td>3</td>
+      <td>162.83</td>
+      <td>134.41</td>
+      <td>0.20</td>
+      <td>3</td>
+      <td>3</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>promedio_4s</td>
+      <td>3</td>
+      <td>730.76</td>
+      <td>672.50</td>
+      <td>1.02</td>
+      <td>3</td>
+      <td>3</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>ss_arima111</td>
+      <td>3</td>
+      <td>525.96</td>
+      <td>508.02</td>
+      <td>0.79</td>
+      <td>3</td>
+      <td>3</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>ultimo_valor</td>
+      <td>3</td>
+      <td>1,352.98</td>
+      <td>1,284.03</td>
+      <td>1.95</td>
+      <td>3</td>
+      <td>3</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>estacional_52s</td>
+      <td>2</td>
+      <td>87.69</td>
+      <td>62.98</td>
+      <td>0.09</td>
+      <td>2</td>
+      <td>4</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>hibrido</td>
+      <td>2</td>
+      <td>394.13</td>
+      <td>375.93</td>
+      <td>0.56</td>
+      <td>2</td>
+      <td>4</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>promedio_4s</td>
+      <td>2</td>
+      <td>580.56</td>
+      <td>544.51</td>
+      <td>0.79</td>
+      <td>2</td>
+      <td>4</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>rf</td>
+      <td>2</td>
+      <td>242.68</td>
+      <td>235.56</td>
+      <td>0.35</td>
+      <td>2</td>
+      <td>4</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>ss_ar1</td>
+      <td>2</td>
+      <td>444.80</td>
+      <td>422.72</td>
+      <td>0.63</td>
+      <td>2</td>
+      <td>4</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>ultimo_valor</td>
+      <td>2</td>
+      <td>1,344.09</td>
+      <td>1,274.85</td>
+      <td>1.86</td>
+      <td>2</td>
+      <td>4</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>estacional_52s</td>
+      <td>4</td>
+      <td>669.16</td>
+      <td>432.92</td>
+      <td>0.63</td>
+      <td>4</td>
+      <td>2</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>hibrido</td>
+      <td>4</td>
+      <td>536.67</td>
+      <td>499.06</td>
+      <td>0.76</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>promedio_4s</td>
+      <td>4</td>
+      <td>732.46</td>
+      <td>675.94</td>
+      <td>1.02</td>
+      <td>4</td>
+      <td>2</td>
+      <td>complementaria_disponibilidad_propia</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>rf</td>
+      <td>4</td>
+      <td>531.53</td>
+      <td>488.94</td>
+      <td>0.74</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>ss_ar1</td>
+      <td>4</td>
+      <td>554.54</td>
+      <td>531.76</td>
+      <td>0.81</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>ultimo_valor</td>
+      <td>4</td>
+      <td>1,264.65</td>
+      <td>1,119.95</td>
+      <td>1.70</td>
+      <td>4</td>
+      <td>2</td>
+      <td>principal_fechas_comunes</td>
+    </tr>
+  </tbody>
+</table></div></section>
+<section><h2>Evaluación de participaciones</h2><div class="scroll"><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>horizonte</th>
+      <th>modelo</th>
+      <th>insumo_id</th>
+      <th>mae_pp</th>
+      <th>n</th>
+      <th>excluidas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>AMBIANTE</td>
+      <td>27.58</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>CHANTILLY</td>
+      <td>3.55</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>CHOCOLATE</td>
+      <td>24.83</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>DECORACION</td>
+      <td>5.02</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>EMPAQUE</td>
+      <td>7.63</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>FONDANT</td>
+      <td>6.52</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>HARINA</td>
+      <td>11.25</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>HUEVO</td>
+      <td>1.58</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>QUESO CREMA</td>
+      <td>3.93</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>RELLENO</td>
+      <td>14.77</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>otros</td>
+      <td>17.91</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>AMBIANTE</td>
+      <td>26.73</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>CHANTILLY</td>
+      <td>8.04</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>CHOCOLATE</td>
+      <td>24.87</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>DECORACION</td>
+      <td>5.05</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>EMPAQUE</td>
+      <td>7.53</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>FONDANT</td>
+      <td>8.45</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>HARINA</td>
+      <td>9.66</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>HUEVO</td>
+      <td>3.63</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>QUESO CREMA</td>
+      <td>3.39</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>RELLENO</td>
+      <td>13.96</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>otros</td>
+      <td>17.53</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>AMBIANTE</td>
+      <td>3.90</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>CHANTILLY</td>
+      <td>4.52</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>CHOCOLATE</td>
+      <td>11.16</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>DECORACION</td>
+      <td>4.37</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>EMPAQUE</td>
+      <td>2.50</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>FONDANT</td>
+      <td>9.77</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>HARINA</td>
+      <td>10.61</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>HUEVO</td>
+      <td>2.03</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>QUESO CREMA</td>
+      <td>11.55</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>RELLENO</td>
+      <td>5.12</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>otros</td>
+      <td>23.80</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>AMBIANTE</td>
+      <td>4.24</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>CHANTILLY</td>
+      <td>8.12</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>CHOCOLATE</td>
+      <td>10.39</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>DECORACION</td>
+      <td>3.20</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>EMPAQUE</td>
+      <td>2.22</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>FONDANT</td>
+      <td>8.24</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>HARINA</td>
+      <td>10.70</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>HUEVO</td>
+      <td>4.11</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>QUESO CREMA</td>
+      <td>11.28</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>RELLENO</td>
+      <td>4.68</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>otros</td>
+      <td>22.42</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>AMBIANTE</td>
+      <td>5.06</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>CHANTILLY</td>
+      <td>5.91</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>CHOCOLATE</td>
+      <td>21.27</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>DECORACION</td>
+      <td>5.53</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>EMPAQUE</td>
+      <td>7.23</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>FONDANT</td>
+      <td>6.49</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>HARINA</td>
+      <td>12.83</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>HUEVO</td>
+      <td>2.67</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>QUESO CREMA</td>
+      <td>4.30</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>RELLENO</td>
+      <td>7.14</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>otros</td>
+      <td>23.93</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>AMBIANTE</td>
+      <td>4.46</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>CHANTILLY</td>
+      <td>8.14</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>CHOCOLATE</td>
+      <td>21.79</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>DECORACION</td>
+      <td>3.67</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>EMPAQUE</td>
+      <td>6.85</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>FONDANT</td>
+      <td>9.35</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>HARINA</td>
+      <td>13.85</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>HUEVO</td>
+      <td>4.72</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>QUESO CREMA</td>
+      <td>3.24</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>RELLENO</td>
+      <td>6.48</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>otros</td>
+      <td>23.56</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>AMBIANTE</td>
+      <td>28.77</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>CHANTILLY</td>
+      <td>4.48</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>CHOCOLATE</td>
+      <td>24.90</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>DECORACION</td>
+      <td>4.97</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>EMPAQUE</td>
+      <td>8.39</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>FONDANT</td>
+      <td>6.93</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>HARINA</td>
+      <td>11.56</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>HUEVO</td>
+      <td>2.02</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>QUESO CREMA</td>
+      <td>3.84</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>RELLENO</td>
+      <td>14.09</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>otros</td>
+      <td>19.18</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>AMBIANTE</td>
+      <td>26.95</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>CHANTILLY</td>
+      <td>7.96</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>CHOCOLATE</td>
+      <td>24.94</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>DECORACION</td>
+      <td>5.00</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>EMPAQUE</td>
+      <td>7.88</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>FONDANT</td>
+      <td>8.91</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>HARINA</td>
+      <td>9.51</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>HUEVO</td>
+      <td>4.01</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>QUESO CREMA</td>
+      <td>3.23</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>RELLENO</td>
+      <td>13.93</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>otros</td>
+      <td>18.65</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_ewm</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>11.33</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>participacion_historica</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>11.71</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_ewm</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>8.12</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>participacion_historica</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>8.15</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_ewm</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>9.30</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>participacion_historica</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>9.65</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_ewm</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>11.74</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>participacion_historica</td>
+      <td>PROMEDIO_MACRO</td>
+      <td>11.91</td>
+      <td>4</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table></div></section>
+<section><h2>H1</h2><p>Alcance: retrospectivo_exploratorio. Evidencia favorable en ambos componentes: False. Respaldo confirmatorio: False.</p><p>El modelo se seleccionó en desarrollo, no por el ranking final. Revisar hipotesis.json antes de interpretar inferencia.</p></section>
+<section><h2>Figuras del pipeline</h2><p>Consultar manifiesto_figuras.csv y guia_figuras.md: incluyen datos de respaldo y motivos de omisión.</p></section></body></html>

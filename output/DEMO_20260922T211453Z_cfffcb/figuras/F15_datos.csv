@@ -1,0 +1,5 @@
+origen,fecha_objetivo,horizonte,modelo,insumo_id,real,prediccion
+2022-10-24,2022-10-24,1,participacion_ewm,HARINA,0.39170404493473954,0.38295120973321617
+2022-10-24,2022-10-24,1,participacion_ewm,AZUCAR,0.4082919141714147,0.417052595529043
+2022-10-24,2022-10-24,1,participacion_ewm,MANTEQUILLA,0.20000404089384569,0.19999619473774094
+2022-10-24,2022-10-24,1,participacion_ewm,otros,0.0,0.0

@@ -1,0 +1,57 @@
+{
+  "modelos": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.75,
+      "mse": 715553.6533196649,
+      "n": 5
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.25,
+      "mse": 983042.954099033,
+      "n": 5
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ss_ar1",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 627644.7592716728,
+      "n": 5
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.25,
+      "mse": 73065.19338383913,
+      "n": 5
+    }
+  },
+  "alpha": 0.1,
+  "categorias": [
+    "HARINA",
+    "CHOCOLATE",
+    "FONDANT",
+    "EMPAQUE",
+    "CHANTILLY",
+    "RELLENO",
+    "DECORACION",
+    "HUEVO",
+    "AMBIANTE",
+    "DOMO",
+    "CAPACILLOS",
+    "OTROS"
+  ],
+  "variables": [
+    "es_fecha_pago_semana",
+    "es_festivo_semana"
+  ],
+  "corte_desarrollo": "2023-12-18 00:00:00",
+  "criterio": "validacion temporal interna, no ranking de evaluación"
+}

@@ -1,0 +1,4 @@
+archivo,sha256,estado,registros_validos,pendientes,importe_nominal_valido,inicio,fin,observacion
+C:\Python\tesis\datasets\xlsx\Compras.xlsx,c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57,auditado,1682,0,112381.85,2016-12-08 00:00:00,2025-07-30 00:00:00,Totales de registros sin incidencias; no equivalen a cobertura verificada.
+C:\Python\tesis\input\compras_limpias.xlsx,5531ac855e166812b6e3538e9910a11a664c817232b08ca9fe14e72ce76ec930,auditado,1333,0,92984.91,2022-01-01 00:00:00,2025-07-30 00:00:00,Totales de registros sin incidencias; no equivalen a cobertura verificada.
+C:\Python\tesis\input\compras_limpias_corregidas.xlsx,38afb7c8146fb88358f0e306b933db51e8d6e0e69793ad248226d978c23f89ef,auditado,1333,0,92984.91,2022-01-01 00:00:00,2025-07-30 00:00:00,Totales de registros sin incidencias; no equivalen a cobertura verificada.

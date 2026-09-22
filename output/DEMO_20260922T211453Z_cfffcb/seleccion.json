@@ -1,0 +1,45 @@
+{
+  "modelos": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ss_arima111",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 6714.61313550856,
+      "n": 5
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.25,
+      "mse": 1986.2818452749198,
+      "n": 5
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.25,
+      "mse": 19382.671276331042,
+      "n": 5
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ss_arima111",
+      "ml": "hgb",
+      "peso": 0.25,
+      "mse": 3049.075598279148,
+      "n": 5
+    }
+  },
+  "alpha": 0.6,
+  "categorias": [
+    "HARINA",
+    "AZUCAR",
+    "MANTEQUILLA"
+  ],
+  "variables": [],
+  "corte_desarrollo": "2022-09-26 00:00:00",
+  "criterio": "validacion temporal interna, no ranking de evaluación"
+}

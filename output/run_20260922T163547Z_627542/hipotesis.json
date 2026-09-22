@@ -1,0 +1,23 @@
+{
+  "hipotesis": "H1",
+  "horizonte_principal": 1,
+  "importe": {
+    "estado": "estimado",
+    "n": 14,
+    "media": 470325.8768015355,
+    "limite_inferior": 85610.95813486967,
+    "limite_superior": 882182.9857747972
+  },
+  "composicion": {
+    "estado": "estimado",
+    "n": 14,
+    "media": -0.07913337869934235,
+    "limite_inferior": -0.7764110980833142,
+    "limite_superior": 0.4607585174166777
+  },
+  "evidencia_favorable_ambos_componentes": false,
+  "respaldo_confirmatorio": false,
+  "alcance": "retrospectivo_exploratorio",
+  "metodo": "Bootstrap circular pareado por semanas; bloques fijados en configuración; intervalos simultáneos Bonferroni para dos componentes de H1.",
+  "advertencia": "No garantiza validez inferencial con muestras pequeñas. No reusar test explorado como confirmación independiente."
+}

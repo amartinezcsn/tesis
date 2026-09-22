@@ -1,0 +1,106 @@
+{
+  "run_id": "run_20260922T220506Z_193955",
+  "estado": "bloqueado_o_fallido",
+  "demostracion": false,
+  "error": "Una semana incierta debe permanecer completamente ausente.",
+  "config": {
+    "source": "datasets/xlsx/Compras.xlsx",
+    "source_sheet": "Hoja1",
+    "source_sha256": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+    "source_approved": true,
+    "approved_duplicate_rows": [
+      190,
+      191,
+      294,
+      296,
+      297,
+      298,
+      792,
+      798,
+      893,
+      895,
+      1417,
+      1418
+    ],
+    "coverage": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_trazada.xlsx",
+    "coverage_sheet": "Cobertura",
+    "catalog": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_trazada.xlsx",
+    "catalog_sheet": "Catalogo",
+    "exogenous": "datasets/xlsx/Dataset_Tizayuca_2022_2026.xlsx",
+    "sales": "datasets/xlsx/Ventas.xlsx",
+    "start": "2016-12-05",
+    "end": "2026-05-11",
+    "holdout_weeks": 20,
+    "tuning_origins": 5,
+    "training_window_weeks": 52,
+    "rolling_step_weeks": 3,
+    "rolling_origin_start": null,
+    "horizons": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "weights": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "alphas": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "threshold": 0.8,
+    "seed": 42,
+    "bootstrap_samples": 2000,
+    "bootstrap_block": 4,
+    "min_inference_weeks": 12,
+    "use_rf": true,
+    "use_arima": true,
+    "min_training_observations": 8,
+    "zero_targets_valid": false
+  },
+  "python": "3.10.0rc2 (tags/v3.10.0rc2:839d789, Sep  7 2021, 18:51:45) [MSC v.1929 64 bit (AMD64)]",
+  "plataforma": "Windows-10-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.8",
+    "openpyxl": "3.1.5",
+    "scipy": "1.15.3",
+    "joblib": "1.5.2"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\datasets\\xlsx\\Compras.xlsx": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+    "C:\\Python\\tesis\\input\\compras_limpias.xlsx": "5531ac855e166812b6e3538e9910a11a664c817232b08ca9fe14e72ce76ec930",
+    "C:\\Python\\tesis\\input\\compras_limpias_corregidas.xlsx": "38afb7c8146fb88358f0e306b933db51e8d6e0e69793ad248226d978c23f89ef",
+    "C:\\Python\\tesis\\codigos\\outputs\\revision_datos_20260919\\revision_catalogo_cobertura_trazada.xlsx": "c96e3564d7b7ce5a55a18e0b667b0f57947bd9f891d913682daf88b0367454ca"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "524ec8a92f7aeb38654d2881c04608d796dbde6891cd8e12ac60d4e552df714e",
+    "codigos\\hibrido\\composition.py": "425e057599efc5bb7961980462df629f57e6c5e4278d8c9534273f0dd0b48179",
+    "codigos\\hibrido\\config.py": "64c69e774dbb2232a9c08b3ee5e28b2084b660eaa2e44714143df308ff19e845",
+    "codigos\\hibrido\\data.py": "2ccc1256368b3a700a5ec5bf83f0b8888ab8ee20a9f8fe55197a6a25190d1365",
+    "codigos\\hibrido\\evaluation.py": "c7427b4f1ccc4634b22e10faa0ab16962530084ce53e3f5829bb505629f576ba",
+    "codigos\\hibrido\\experiment.py": "299943beaa5efec4c163cb641d6baa03489f0785885f7aedeaf78ffc6eb3bb6e",
+    "codigos\\hibrido\\features.py": "be40a1d2526b5cd4147b346e51f850e98351909badfcd08119af3b6c85228242",
+    "codigos\\hibrido\\figures.py": "fba10e70595d27d8bd9424db33a84581fcfe46dc24655d5537598538e74fbfa9",
+    "codigos\\hibrido\\gaps.py": "2040e1dcc220f6f604ccfe0e9a5c2c1143b57a84d05f089383874f418a4a7991",
+    "codigos\\hibrido\\models.py": "02b2c76fc97030ead233ba4dc3931385c2ee2eeb8f071561423a282cb8c83900",
+    "codigos\\hibrido\\reporting.py": "27d2b54521a18b9f05fd8ec7fcc661898ad5257e4bd6015df3466ee0285eded1",
+    "codigos\\hibrido\\__init__.py": "abc65b9865759a70dd4d631ede845ef21fbf87ca07dbb55343fba5d6af65ea91",
+    "codigos\\00_pipeline_hibrido.py": "022621e91b6bd4e9c63097be33ffa2ce344d1712aae5d4b737619be6243feaf9",
+    "codigos\\01_normalizacion.py": "6f6bc9ed0d2668693581e5ab2affccb4ba6d4bdb1ba167a9139a423f477735b2"
+  },
+  "productos": {
+    "auditoria.json": "d12e5c29cded42e087313b1fd77baa811bc62e4740bebc4faa775974b0be7095",
+    "catalogo_PARA_REVISAR.csv": "5cb2311803f0420200dc80414abdfa568ef86802cbff03a42ccd19ff8c64ab04",
+    "cobertura_PARA_REVISAR.csv": "26908bd63ceab95cf7a9cd71948c5d6605c7134f350ae9ebac587e4ce1d965ee",
+    "comparacion_fuentes.csv": "ec20eaf6a90abb0847398b46f1fc0ba453513c62f469e6d865f7d02b7411dd67",
+    "compras_auditadas.csv": "121597e2cbc547e12c314293a2d8b8e9a416d018d68cbaec02bf1e16e2668a2b",
+    "registros_pendientes.csv": "564984177b5f7b1fb970a12d5aad98eecd9c0f0de9319fa7ee5239abc7297b9b"
+  }
+}

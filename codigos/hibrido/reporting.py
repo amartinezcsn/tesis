@@ -43,10 +43,22 @@ def export_results(output,results,cfg,demo=False):
 <section><h2>H1</h2><p>Alcance: {html.escape(results['hypothesis']['alcance'])}. Evidencia favorable en ambos componentes: {results['hypothesis']['evidencia_favorable_ambos_componentes']}. Respaldo confirmatorio: {results['hypothesis']['respaldo_confirmatorio']}.</p><p>El modelo se seleccionó en desarrollo, no por el ranking final. Revisar hipotesis.json antes de interpretar inferencia.</p></section>
 <section><h2>Figuras del pipeline</h2><p>Consultar manifiesto_figuras.csv y guia_figuras.md: incluyen datos de respaldo y motivos de omisión.</p></section></body></html>'''
     (output/'tablero.html').write_text(document,encoding='utf-8')
+    partition_summary=results['particiones'].groupby(['etapa','horizonte']).agg(
+        folds=('origen','count'),observados=('objetivo_observado','sum')).reset_index()
+    partition_summary['excluidos']=partition_summary['folds']-partition_summary['observados']
+    hybrid=results['metricas'].loc[results['metricas'].modelo.eq('hibrido'),
+        ['horizonte','n','rmse','mae','mase']].rename(columns={'n':'n_metricas'})
+    summary=partition_summary.merge(hybrid,on='horizonte',how='left')
+    # Las métricas publicadas corresponden a evaluación final; no se copian
+    # artificialmente en las filas de validación interna.
+    for col in ('n_metricas','rmse','mae','mase'):
+        summary.loc[summary.etapa.ne('evaluacion'),col]=np.nan
     lines=['# Informe de ejecución del pipeline híbrido','',payload['advertencia'],'',
         f"Corte de emisión: {payload['origen']}. Moneda: MXN nominales.",
         'Configuraciones elegidas únicamente en validación temporal interna.',
         f"Alcance de H1: {results['hypothesis']['alcance']}.",
+        '', '## Resumen por horizonte', '',
+        '```', summary.to_string(index=False), '```',
         '','## Productos','',
         'resultados.xlsx; CSV por fase; modelos.joblib; seleccion.json; hipotesis.json; dss_hibrido.json; tablero.html; manifiesto_figuras.csv.',
         '','## Limitaciones','',

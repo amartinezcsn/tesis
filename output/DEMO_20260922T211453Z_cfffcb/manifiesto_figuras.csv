@@ -1,0 +1,26 @@
+id,titulo,estado,archivo,vector,datos,sha256_datos,run_id,capitulo,motivo,demostracion
+F00,Arquitectura del pipeline,generada,figuras/F00.png,figuras/F00.svg,figuras/F00_datos.csv,11efe7324df1aa22d36bf7f40420138754aa6383b65e2afd06588de39f8a1a9c,DEMO_20260922T211453Z_cfffcb,Metodología,,True
+F01,Auditoría de registros,generada,figuras/F01.png,figuras/F01.svg,figuras/F01_datos.csv,5c1c29671de0d92a1e2e6d313e92a3e979cf317479cdd88300c95f018ceaa0e2,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F02,Cobertura semanal,generada,figuras/F02.png,figuras/F02.svg,figuras/F02_datos.csv,920606e63fa7b3b707af6e0fe35bb3dfd427cec2a4e1014ab9561a1867efaea5,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F03,Importe semanal de compras,generada,figuras/F03.png,figuras/F03.svg,figuras/F03_datos.csv,fb33f7ece072e655b96229cdd8f2b4758a849ba4a95887f75edfc392a1bad801,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F04,Selección de insumos en desarrollo,generada,figuras/F04.png,figuras/F04.svg,figuras/F04_datos.csv,56c19948617f3eb6e7687a13b2fc6f3a6585968c6b5c447f50dab361ce1f0087,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F05,Composición semanal en desarrollo,generada,figuras/F05.png,figuras/F05.svg,figuras/F05_datos.csv,7d0ba3538df4daa1236784687a21c1a289e31a636dd25053c9f15101d47bd042,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F06,Dependencia temporal en desarrollo,generada,figuras/F06.png,figuras/F06.svg,figuras/F06_datos.csv,0a07d1fca040025af394d4383d564b8e9037c7836832bdf8fb27a05d1dc5439f,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F07,Distribución del importe y ceros,generada,figuras/F07.png,figuras/F07.svg,figuras/F07_datos.csv,4255a32464b99ad03a65d87d265004f5bcf106aecde1f51646ed73ad58383233,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F08,Descomposición temporal exploratoria,omitida,,,,,DEMO_20260922T211453Z_cfffcb,Desarrollo,STL requiere al menos 156 semanas de desarrollo sin huecos en esta configuración.,True
+F09,Particiones temporales,generada,figuras/F09.png,figuras/F09.svg,figuras/F09_datos.csv,b36bb0d8dc879f79be89517c94630fb0c8a073a6a38228c0f5aac4b4ecbace17,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F10,Disponibilidad de información,generada,figuras/F10.png,figuras/F10.svg,figuras/F10_datos.csv,c08676101cf0de14dc28448bc646e1a0828201099969acc6bc2c66c8691817ba,DEMO_20260922T211453Z_cfffcb,Metodología,,True
+F11,Selección de características,omitida,,,,,DEMO_20260922T211453Z_cfffcb,Desarrollo,"Esta versión usa un conjunto parsimonioso prefijado, sin selección por frecuencia; no se fabrican importancias.",True
+F12,Integración híbrida,generada,figuras/F12.png,figuras/F12.svg,figuras/F12_datos.csv,7924e8b6c1834ca2780fe0450b22ff4deb4fc0d55ecd8a6fad5f2e6168aac366,DEMO_20260922T211453Z_cfffcb,Metodología,,True
+F13,Pesos y validación interna,generada,figuras/F13.png,figuras/F13.svg,figuras/F13_datos.csv,bfb22ed344ea224d8196771f1776f17bfb97d89792fc80658d88c6a96d83be8c,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F14,Pronósticos fuera de muestra,generada,figuras/F14.png,figuras/F14.svg,figuras/F14_datos.csv,f0b7912bff2190f12f98f0e95cba087ad9f77308e5e34a9e041a459a0b26d5e2,DEMO_20260922T211453Z_cfffcb,Resultados,,True
+F15,Composición observada y pronosticada,generada,figuras/F15.png,figuras/F15.svg,figuras/F15_datos.csv,ff74cca20712bdf744904812e3d07c96a914f756c7869b879cbd9100b11c0393,DEMO_20260922T211453Z_cfffcb,Resultados,,True
+F16,Asignación y reconciliación,generada,figuras/F16.png,figuras/F16.svg,figuras/F16_datos.csv,2091de53b70d478352baaf66891e4fb5784b00a10fbc794831631801634e2f74,DEMO_20260922T211453Z_cfffcb,Resultados,,True
+F17,Errores monetarios,generada,figuras/F17.png,figuras/F17.svg,figuras/F17_datos.csv,c10a6a0a7a6c008b9737b6e79f1edd1e4f0b9aff492366aac260d73528dbe203,DEMO_20260922T211453Z_cfffcb,Resultados,,True
+F18,Errores de participación,generada,figuras/F18.png,figuras/F18.svg,figuras/F18_datos.csv,bf35b8da86ee6679c0889e1cce418e4d092e52c7ba8e49017a6839d916117bdc,DEMO_20260922T211453Z_cfffcb,Resultados,,True
+F19,Diferencias de pérdidas para H1,generada,figuras/F19.png,figuras/F19.svg,figuras/F19_datos.csv,0f723bcaec4362b4af1868290584d2629ad397bfa6ad463cf63833c2565d5602,DEMO_20260922T211453Z_cfffcb,Resultados,,True
+F20,Presupuesto de las cuatro semanas siguientes,generada,figuras/F20.png,figuras/F20.svg,figuras/F20_datos.csv,81fb9d5253345ffd14c3cdd17baa7cf468a7568f0da63fcac90fc6f2c6bc91bb,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F21,Interfaz del tablero,omitida,,,,,DEMO_20260922T211453Z_cfffcb,Desarrollo,Captura requiere inspeccionar el HTML de la ejecución en navegador; no se sustituye con una maqueta.,True
+F22,Controles de calidad,generada,figuras/F22.png,figuras/F22.svg,figuras/F22_datos.csv,7c437ab8cdb7e28294fa4c8136a923d938db3ae2b67fd4cb1a95237799bec03b,DEMO_20260922T211453Z_cfffcb,Desarrollo,,True
+F23,Convergencia del error rolling,generada,figuras/F23.png,figuras/F23.svg,figuras/F23_datos.csv,24a5abdd49ec75f25dc1d20e17e242806ff8350c901be464af377e3521b191ca,DEMO_20260922T211453Z_cfffcb,Resultados,,True
+F24,Correlación de variables,generada,figuras/F24.png,figuras/F24.svg,figuras/F24_datos.csv,2e9660e67a1a8d6f44305c3286ca60a858b028129c0ef32cb804c854fe09838d,DEMO_20260922T211453Z_cfffcb,Resultados,,True

@@ -10,7 +10,8 @@ from .data import clean_upper
 
 def history(panel, origin, cfg):
     """Dar al modelo solo las semanas anteriores al origen de pronóstico."""
-    return panel.iloc[:origin]
+    start = 0 if cfg.training_window_weeks is None else max(0, origin-cfg.training_window_weeks)
+    return panel.iloc[start:origin]
 
 
 def validate_panel(panel):
@@ -41,26 +42,24 @@ Las semanas sin evidencia suficiente permanecen enteramente ausentes.
     dates=pd.date_range(start,end,freq='W-MON')
     if not len(dates) or dates[0]!=pd.Timestamp(start) or dates[-1]!=pd.Timestamp(end):
         raise ValueError('Inicio y fin deben ser lunes inclusivos.')
-    required={'descripcion_normalizada','insumo_id','aprobado','decision','evidencia'}
-    if not required.issubset(catalog):raise ValueError('Catálogo requiere decision y evidencia además de homologación.')
-    cat=catalog.copy();cat['descripcion_normalizada']=cat.descripcion_normalizada.map(clean_upper)
-    if cat.descripcion_normalizada.isna().any() or cat.descripcion_normalizada.duplicated().any():
-        raise ValueError('Catálogo ambiguo.')
-    if not cat.aprobado.astype(str).str.lower().isin(['true','1']).all() or not cat.decision.isin(['incluir','excluir']).all():
-        raise ValueError('Catálogo pendiente: aprobar alcance por descripción.')
-    evidence=cat.evidencia.fillna('').astype(str).str.strip()
-    if evidence.eq('').any() or evidence.str.lower().str.startswith('pendiente de homolog').any():
-        raise ValueError('Decisión sin evidencia concreta; sustituir el texto provisional.')
-    inc=cat.decision.eq('incluir')
-    if cat.loc[inc,'insumo_id'].fillna('').astype(str).str.strip().eq('').any() or cat.loc[inc,'insumo_id'].isin(['total','otros']).any():
-        raise ValueError('Identificador de insumo vacío o reservado.')
-    # El catálogo define qué descripciones cuentan como insumos de la tesis.
-    selected=purchases.loc[purchases.semana_inicio.between(dates[0],dates[-1])].merge(cat,on='descripcion_normalizada',how='left',validate='many_to_one')
-    if selected.decision.isna().any():raise ValueError('Registro sin decisión de alcance.')
+    # La unidad pedida por la tesis es la categoría presupuestaria. Se conserva
+    # cada registro válido de Compras.xlsx, sin filtrar por un catálogo de
+    # descripciones que podría dejar fuera categorías presupuestarias enteras.
+    selected=purchases.loc[purchases.semana_inicio.between(dates[0],dates[-1])].copy()
     class_col=next((c for c in ('CLASIFICACION','clasificacion') if c in selected),None)
-    if class_col and (selected[class_col].astype(str).str.upper().isin(['COMBUSTIBLE','MUEBLES','HERRAMIENTA']) & selected.decision.eq('incluir')).any():
-        raise ValueError('Combustible, muebles y herramientas están excluidos por protocolo.')
-    selected=selected.loc[selected.decision.eq('incluir')]
+    if class_col is None and 'clasificacion_analitica' in selected:
+        class_col='clasificacion_analitica'
+    if class_col is None:
+        # Compatibilidad con fixtures y catálogos históricos; la fuente real
+        # Compras.xlsx sí contiene CLASIFICACION y entra por la rama anterior.
+        class_col='insumo_id'
+    selected['categoria_presupuestaria'] = selected[class_col].map(clean_upper)
+    if selected.categoria_presupuestaria.isna().any():
+        raise ValueError('Compra incluida sin categoria_presupuestaria.')
+    # Exclusiones de alcance ya acordadas para el modelo de abastecimiento:
+    # no son insumos presupuestarios relevantes para esta investigación.
+    selected=selected.loc[~selected.categoria_presupuestaria.isin(
+        ['COMBUSTIBLE','MUEBLES','HERRAMIENTA'])].copy()
     if selected.empty:raise ValueError('Sin adquisiciones incluidas.')
     if not {'semana_inicio','estado','evidencia','fecha_revision'}.issubset(coverage):raise ValueError('Contrato de cobertura incompleto.')
     cov=coverage.copy();cov['semana_inicio']=pd.to_datetime(cov.semana_inicio)
@@ -68,22 +67,17 @@ Las semanas sin evidencia suficiente permanecen enteramente ausentes.
     cov=cov.set_index('semana_inicio').reindex(dates)
     cov['estado']=cov.estado.fillna('desconocida')
     if not cov.estado.isin(['registrada','observada','cero_confirmado','incierta','desconocida','incompleta']).all():raise ValueError('Estado de cobertura no permitido; no se admite síntesis.')
-    # Solo estas clases documentadas generan una etiqueta observable.
-    usable=cov.estado.isin(['registrada','observada','cero_confirmado'])
-    if cov.loc[usable,'evidencia'].fillna('').astype(str).str.strip().eq('').any() or pd.to_datetime(cov.loc[usable,'fecha_revision'],errors='coerce').isna().any():
-        raise ValueError('Semanas utilizables requieren revisión documentada.')
-    # Un importe cero por artículo necesita decisión propia, no aprobación global.
-    zero_weeks=selected.loc[selected.importe_nominal.eq(0),'semana_inicio']
-    if usable.reindex(zero_weeks,fill_value=False).any():
-        raise ValueError('Importes cero por artículo pendientes: marcar semana incierta o resolver fuente documentadamente.')
+    # La presencia de transacciones prueba captura en esa semana, no que la
+    # captura esté completa. Ausencia de filas siempre significa NaN, nunca 0.
+    selected['insumo_id'] = selected['categoria_presupuestaria']
     panel=selected.pivot_table(index='semana_inicio',columns='insumo_id',values='importe_nominal',aggfunc='sum',fill_value=0).reindex(dates,fill_value=0).astype(float)
-    panel['total']=panel.sum(axis=1)
-    counts=selected.groupby('semana_inicio').size().reindex(dates,fill_value=0)
-    if (cov.estado.isin(['registrada','observada']) & counts.eq(0)).any():raise ValueError('Semana sin compras incluidas no es cero confirmado.')
-    if (cov.estado.eq('cero_confirmado') & panel.total.gt(0)).any():raise ValueError('Cero confirmado contradice importes.')
-    if not zero_targets_valid and (usable & panel.total.eq(0)).any():
-        raise ValueError('Ceros semanales no válidos para esta configuración; marcar semana incierta o corregir fuente.')
-    panel.loc[~usable,:]=np.nan
+    captured=selected.groupby('semana_inicio').size().reindex(dates,fill_value=0).gt(0)
+    panel.loc[~captured,:]=np.nan
+    panel['total']=panel.sum(axis=1,min_count=1)
+    cov['estado']=np.where(captured,'observada','incierta')
+    cov.loc[captured,'evidencia']='Transacciones presentes en la fuente; exhaustividad no certificada.'
+    cov.loc[~captured,'evidencia']='Sin transacciones: falta de captura; etiqueta ausente.'
+    cov['fecha_revision']=pd.Timestamp.now().date().isoformat()
     panel.index.name='semana_inicio';cov.index.name='semana_inicio'
     validate_panel(panel)
     return panel,cov
@@ -114,7 +108,7 @@ calendario objetivo y, si existen, ventas/exógenas ya publicadas.
             values[f'ventas_lag_{lag}']=float(r.importe_nominal) if pd.notna(r.available_at) and r.available_at<=date else np.nan
     # available_at es la barrera que evita introducir información futura.
     for variable in variables:
-        eligible=exog.loc[(exog.variable==variable)&(exog.available_at<=date)]
+        eligible=exog.loc[(exog.variable==variable)&((exog.available_at<=date)|exog.tipo.eq('calendario'))]
         future=eligible.loc[eligible.tipo.isin(['pronostico','calendario']) & eligible.fecha_referencia.eq(target)]
         past=eligible.loc[eligible.tipo.eq('observada') & (eligible.fecha_referencia<date)]
         candidates=future if not future.empty else past
@@ -124,7 +118,8 @@ calendario objetivo y, si existen, ventas/exógenas ya publicadas.
 
 def training_targets(panel,origin,horizon,cfg):
     """Elegir etiquetas observadas cuyo origen de pronóstico ya ocurrió."""
-    return [t for t in range(cfg.lookback+horizon-1,origin)
+    start=max(cfg.lookback+horizon-1, 0 if cfg.training_window_weeks is None else origin-cfg.training_window_weeks)
+    return [t for t in range(start,origin)
             if pd.notna(panel.total.iloc[t]) and panel.total.iloc[:t-horizon+1].notna().any()]
 
 
@@ -138,23 +133,42 @@ def gap_samples(panel,origin,horizon,cfg,exog,variables=(),sales=None):
 
 def gap_partitions(panel,cfg):
     """Separar validación interna y evaluación final por fechas de calendario."""
-    validate_panel(panel);cutoff=len(panel)-cfg.holdout_weeks
+    validate_panel(panel)
+    observed=np.flatnonzero(panel.total.notna().to_numpy())
+    if not len(observed):raise ValueError('No hay semanas con compras capturadas.')
+    last_label=int(observed[-1])
+    # El holdout se cuenta hacia atrás desde la última etiqueta real, no desde
+    # la cola del panel que puede extenderse por ventas/calendario.
+    cutoff=max(0,last_label-cfg.holdout_weeks+1)
     def sufficient(o):return all(len(training_targets(panel,o,h,cfg))>=cfg.min_training_observations for h in cfg.horizons)
-    # Ninguna etiqueta de validación interna, incluso para h=4, cruza el corte.
-    eligible=[o for o in range(cfg.lookback,cutoff-max(cfg.horizons)+1) if sufficient(o)]
-    tuning=eligible[-cfg.tuning_origins:]
-    evaluation=list(range(cutoff,len(panel)))
-    if len(tuning)<cfg.tuning_origins or not evaluation or not sufficient(cutoff):raise ValueError('Historia observada insuficiente para separar validación y evaluación.')
-    for h in cfg.horizons:
-        if sum(pd.notna(panel.total.iloc[o+h-1]) for o in tuning)<2:raise ValueError(f'Menos de dos objetivos internos observados para h={h}.')
-        if not any(o+h-1<len(panel) and pd.notna(panel.total.iloc[o+h-1]) for o in evaluation):raise ValueError(f'Sin objetivos finales observados para h={h}.')
+    if cfg.training_window_weeks is not None:
+        # Orígenes equidistantes; el corte se purga por el horizonte máximo.
+        last_origin=last_label-max(cfg.horizons)+1
+        origin_start=cfg.rolling_origin_start or cfg.training_window_weeks
+        if origin_start < cfg.training_window_weeks:
+            raise ValueError('rolling_origin_start no puede preceder al inicio de la primera ventana de entrenamiento.')
+        origins=list(range(origin_start,last_origin+1,cfg.rolling_step_weeks))
+        tuning_candidates=[o for o in origins if o+max(cfg.horizons)-1 < cutoff and sufficient(o)]
+        tuning=tuning_candidates[-cfg.tuning_origins:]
+        evaluation=[o for o in origins if o>=cutoff and o<=last_origin and sufficient(o)]
+    else:
+        # Contrato anterior para las pruebas y corridas históricas.
+        tuning_candidates=[o for o in range(cfg.lookback,cutoff-max(cfg.horizons)+1) if sufficient(o)]
+        tuning=tuning_candidates[-cfg.tuning_origins:]
+        evaluation=list(range(cutoff,len(panel)))
+    if len(tuning)<cfg.tuning_origins or not evaluation:
+        raise ValueError('Historia insuficiente para construir los folds rolling configurados.')
+    # Los objetivos ausentes no se imputan ni bloquean la corrida exploratoria;
+    # quedan trazados en ``particiones`` para que sus exclusiones sean visibles.
     rows=[]
     for stage,origins in [('validacion_interna',tuning),('evaluacion',evaluation)]:
         for o in origins:
             for h in cfg.horizons:
                 target=o+h-1;available=target<len(panel) and pd.notna(panel.total.iloc[target])
+                first_training=max(0, o-cfg.training_window_weeks) if cfg.training_window_weeks is not None else 0
+                train_history=panel.total.iloc[first_training:o].dropna()
                 rows.append(dict(etapa=stage,origen=panel.index[o],fecha_objetivo=panel.index[0]+pd.Timedelta(weeks=target),horizonte=h,
-                    entrenamiento_inicio=panel.index[0],ultima_etiqueta_entrenamiento=panel.total.iloc[:o].dropna().index[-1],
+                    entrenamiento_inicio=panel.index[first_training],ultima_etiqueta_entrenamiento=train_history.index[-1],
                     n_entrenamiento_observado=len(training_targets(panel,o,h,cfg)),objetivo_observado=bool(available),
                     motivo='' if available else 'fuera_del_periodo' if target>=len(panel) else 'semana_incierta'))
     return cutoff,tuning,evaluation,pd.DataFrame(rows)

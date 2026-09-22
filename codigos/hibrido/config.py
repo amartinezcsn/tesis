@@ -26,8 +26,14 @@ class Config:
     # Periodo y separación temporal: desarrollo, validación interna y prueba.
     start: str = ''
     end: str = ''
+    imputation_start: str | None = None
+    imputation_end: str | None = None
     holdout_weeks: int = 16
     tuning_origins: int = 8
+    # Rolling real: None/1 conserva el contrato de fixtures legacy.
+    training_window_weeks: int | None = None
+    rolling_step_weeks: int = 1
+    rolling_origin_start: int | None = None
     horizons: tuple = (1, 2, 3, 4)
     weights: tuple = (0.25, 0.5, 0.75)
     alphas: tuple = (0.1, 0.3, 0.6)
@@ -54,13 +60,30 @@ class Config:
             type(row) is not int or row < 2 for row in duplicate_rows
         ) or len(set(duplicate_rows)) != len(duplicate_rows):
             raise ValueError('approved_duplicate_rows requiere filas Excel unicas, enteras y mayores o iguales a 2.')
-        for key in ('holdout_weeks','tuning_origins','bootstrap_samples','bootstrap_block','min_inference_weeks','seed'):
+        for key in ('holdout_weeks','tuning_origins','rolling_step_weeks','bootstrap_samples','bootstrap_block','min_inference_weeks','seed'):
             if type(getattr(self,key)) is not int or getattr(self,key)<1:
                 raise ValueError(f'{key} requiere entero positivo.')
+        if self.training_window_weeks is not None and (
+            type(self.training_window_weeks) is not int or self.training_window_weeks < self.lookback
+        ):
+            raise ValueError('training_window_weeks requiere entero >= lookback o null.')
+        if self.rolling_origin_start is not None and (
+            type(self.rolling_origin_start) is not int or self.rolling_origin_start < self.lookback
+        ):
+            raise ValueError('rolling_origin_start requiere entero >= lookback o null.')
         if tuple(self.horizons) != (1, 2, 3, 4):
             raise ValueError('Esta versión implementa los cuatro horizontes 1..4.')
         if self.holdout_weeks < 4 or self.tuning_origins < 2:
             raise ValueError('Partición insuficiente.')
+        if (self.imputation_start is None) != (self.imputation_end is None):
+            raise ValueError('imputation_start e imputation_end deben definirse juntos.')
+        if self.imputation_start is not None:
+            import pandas as pd
+            imp_start=pd.Timestamp(self.imputation_start);imp_end=pd.Timestamp(self.imputation_end)
+            if imp_start.dayofweek or imp_end.dayofweek or imp_end < imp_start:
+                raise ValueError('El periodo de imputación debe ser lunes a lunes en orden.')
+            if self.start and self.end and (imp_start < pd.Timestamp(self.start) or imp_end > pd.Timestamp(self.end)):
+                raise ValueError('El periodo de imputación debe estar dentro del periodo general.')
         if not 0 < self.threshold <= 1 or any(not 0 < w < 1 for w in self.weights):
             raise ValueError('Umbral/pesos inválidos; un híbrido requiere dos componentes.')
         if not self.weights or not self.alphas or any(not 0 < a <= 1 for a in self.alphas):

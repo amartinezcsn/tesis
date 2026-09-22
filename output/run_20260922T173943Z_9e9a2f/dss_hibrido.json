@@ -1,0 +1,2017 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260922T173943Z_9e9a2f",
+  "demostracion": false,
+  "unidad": "MXN nominales",
+  "modelo": "hibrido estadistico y aprendizaje automatico",
+  "origen": "2024-07-01 00:00:00",
+  "consolidado_4_semanas": 3850.62,
+  "horizontes": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "seleccion": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ss_arima111",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 824464.7625934947,
+      "n": 2
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": null,
+      "n": 0,
+      "seleccion": "sin_validacion_interna"
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ss_ar1",
+      "ml": "rf",
+      "peso": 0.25,
+      "mse": 397787.12902211695,
+      "n": 2
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ss_ar1",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 305551.5600447182,
+      "n": 2
+    }
+  },
+  "hipotesis": {
+    "hipotesis": "H1",
+    "horizonte_principal": 1,
+    "importe": {
+      "estado": "muestra_insuficiente",
+      "n": 1,
+      "media": -40052.88688364165,
+      "limite_inferior": null,
+      "limite_superior": null
+    },
+    "composicion": {
+      "estado": "muestra_insuficiente",
+      "n": 1,
+      "media": 0.5381685514748469,
+      "limite_inferior": null,
+      "limite_superior": null
+    },
+    "evidencia_favorable_ambos_componentes": false,
+    "respaldo_confirmatorio": false,
+    "alcance": "retrospectivo_exploratorio",
+    "metodo": "Bootstrap circular pareado por semanas; bloques fijados en configuración; intervalos simultáneos Bonferroni para dos componentes de H1.",
+    "advertencia": "No garantiza validez inferencial con muestras pequeñas. No reusar test explorado como confirmación independiente."
+  },
+  "metricas_total": [
+    {
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "n": 1,
+      "rmse": 1.96,
+      "mae": 1.96,
+      "mase": 0.002839698,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "n": 1,
+      "rmse": 271.1860742804,
+      "mae": 271.1860742804,
+      "mase": 0.3929013017,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "n": 1,
+      "rmse": 741.91,
+      "mae": 741.91,
+      "mase": 1.0748981322,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "rf",
+      "n": 1,
+      "rmse": 203.034236575,
+      "mae": 203.034236575,
+      "mase": 0.2941611808,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "n": 1,
+      "rmse": 293.9033535156,
+      "mae": 293.9033535156,
+      "mase": 0.4258146753,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "n": 1,
+      "rmse": 183.0,
+      "mae": 183.0,
+      "mase": 0.2651350679,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "n": 1,
+      "rmse": 1295.09,
+      "mae": 1295.09,
+      "mase": 1.8763594264,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "hgb",
+      "n": 1,
+      "rmse": 431.4822157102,
+      "mae": 431.4822157102,
+      "mase": 0.6251424401,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "n": 1,
+      "rmse": 495.2505750259,
+      "mae": 495.2505750259,
+      "mase": 0.7175316657,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "n": 1,
+      "rmse": 1010.91,
+      "mae": 1010.91,
+      "mase": 1.4646321937,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "n": 1,
+      "rmse": 559.0189343416,
+      "mae": 559.0189343416,
+      "mase": 0.8099208912,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "n": 1,
+      "rmse": 86.0,
+      "mae": 86.0,
+      "mase": 0.1245989936,
+      "n_mase": 1,
+      "excluidas": 1,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "n": 0,
+      "rmse": null,
+      "mae": null,
+      "mase": null,
+      "n_mase": 0,
+      "excluidas": 2,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "n": 0,
+      "rmse": null,
+      "mae": null,
+      "mase": null,
+      "n_mase": 0,
+      "excluidas": 2,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "n": 0,
+      "rmse": null,
+      "mae": null,
+      "mase": null,
+      "n_mase": 0,
+      "excluidas": 2,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "rf",
+      "n": 0,
+      "rmse": null,
+      "mae": null,
+      "mase": null,
+      "n_mase": 0,
+      "excluidas": 2,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "n": 0,
+      "rmse": null,
+      "mae": null,
+      "mase": null,
+      "n_mase": 0,
+      "excluidas": 2,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "n": 0,
+      "rmse": null,
+      "mae": null,
+      "mase": null,
+      "n_mase": 0,
+      "excluidas": 2,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "n": 2,
+      "rmse": 241.9302114247,
+      "mae": 221.44,
+      "mase": 0.3366286564,
+      "n_mase": 2,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "n": 2,
+      "rmse": 377.3632249378,
+      "mae": 334.1071905332,
+      "mase": 0.4919256319,
+      "n_mase": 2,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "n": 2,
+      "rmse": 204.4810168451,
+      "mae": 187.855,
+      "mase": 0.2854794322,
+      "n_mase": 2,
+      "excluidas": 0,
+      "comparacion": "complementaria_disponibilidad_propia"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "rf",
+      "n": 2,
+      "rmse": 287.7696346596,
+      "mae": 271.4773151855,
+      "mase": 0.4020453517,
+      "n_mase": 2,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "n": 2,
+      "rmse": 437.8133408644,
+      "mae": 413.6583171536,
+      "mase": 0.6127095683,
+      "n_mase": 2,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    },
+    {
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "n": 2,
+      "rmse": 987.1295797412,
+      "mae": 986.06,
+      "mase": 1.4752125101,
+      "n_mase": 2,
+      "excluidas": 0,
+      "comparacion": "principal_fechas_comunes"
+    }
+  ],
+  "metricas_composicion": [
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "AMBIANTE",
+      "mae_pp": 3.9842107931,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "CHANTILLY",
+      "mae_pp": 5.8411542031,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "CHOCOLATE",
+      "mae_pp": 22.8764523,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "DECORACION",
+      "mae_pp": 5.4632936569,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "EMPAQUE",
+      "mae_pp": 10.3282948238,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "FONDANT",
+      "mae_pp": 6.4079776646,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "HARINA",
+      "mae_pp": 0.5532537689,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "HUEVO",
+      "mae_pp": 2.6397083689,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "QUESO CREMA",
+      "mae_pp": 6.463033625,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "RELLENO",
+      "mae_pp": 5.1683586291,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "otros",
+      "mae_pp": 23.9728332333,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "AMBIANTE",
+      "mae_pp": 4.7661955133,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "CHANTILLY",
+      "mae_pp": 8.1733829495,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "CHOCOLATE",
+      "mae_pp": 22.139588891,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "DECORACION",
+      "mae_pp": 3.6767889261,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "EMPAQUE",
+      "mae_pp": 9.5364545258,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "FONDANT",
+      "mae_pp": 9.0496960314,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "HARINA",
+      "mae_pp": 1.7193501424,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "HUEVO",
+      "mae_pp": 4.7282450044,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "QUESO CREMA",
+      "mae_pp": 3.5500448247,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "RELLENO",
+      "mae_pp": 6.3284047913,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "otros",
+      "mae_pp": 25.950273533,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "AMBIANTE",
+      "mae_pp": 23.0649695348,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "CHANTILLY",
+      "mae_pp": 5.8411542031,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "CHOCOLATE",
+      "mae_pp": 1.4356941864,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "DECORACION",
+      "mae_pp": 2.7334276546,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "EMPAQUE",
+      "mae_pp": 10.3282948238,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "FONDANT",
+      "mae_pp": 6.4079776646,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "HARINA",
+      "mae_pp": 7.5428060528,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "HUEVO",
+      "mae_pp": 2.6397083689,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "QUESO CREMA",
+      "mae_pp": 6.463033625,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "RELLENO",
+      "mae_pp": 18.1922971086,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "otros",
+      "mae_pp": 18.417637479,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "AMBIANTE",
+      "mae_pp": 22.2829848146,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "CHANTILLY",
+      "mae_pp": 8.1733829495,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "CHOCOLATE",
+      "mae_pp": 2.1725575955,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "DECORACION",
+      "mae_pp": 4.5199323854,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "EMPAQUE",
+      "mae_pp": 9.5364545258,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "FONDANT",
+      "mae_pp": 9.0496960314,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "HARINA",
+      "mae_pp": 9.8154099641,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "HUEVO",
+      "mae_pp": 4.7282450044,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "QUESO CREMA",
+      "mae_pp": 3.5500448247,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "RELLENO",
+      "mae_pp": 17.0322509464,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "otros",
+      "mae_pp": 16.4401971793,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "AMBIANTE",
+      "mae_pp": 9.6007496141,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "CHANTILLY",
+      "mae_pp": 4.0341283861,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "CHOCOLATE",
+      "mae_pp": 22.8034802291,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "DECORACION",
+      "mae_pp": 7.0749078822,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "EMPAQUE",
+      "mae_pp": 6.2866985046,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "FONDANT",
+      "mae_pp": 8.453651192,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "HARINA",
+      "mae_pp": 13.220797717,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "HUEVO",
+      "mae_pp": 1.8031254578,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "QUESO CREMA",
+      "mae_pp": 4.470040872,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "RELLENO",
+      "mae_pp": 17.2395786028,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "otros",
+      "mae_pp": 14.9511953587,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "AMBIANTE",
+      "mae_pp": 5.4070366174,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "CHANTILLY",
+      "mae_pp": 7.7344087017,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "CHOCOLATE",
+      "mae_pp": 18.6460462333,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "DECORACION",
+      "mae_pp": 6.06376921,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "EMPAQUE",
+      "mae_pp": 4.9086896352,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "FONDANT",
+      "mae_pp": 8.621389656,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "HARINA",
+      "mae_pp": 13.6386336199,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "HUEVO",
+      "mae_pp": 3.3607973231,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "QUESO CREMA",
+      "mae_pp": 3.2981365813,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "RELLENO",
+      "mae_pp": 16.1936051244,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "otros",
+      "mae_pp": 16.221458446,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_ewm",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 8.5180519151,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 1,
+      "modelo": "participacion_historica",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 9.0562204666,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_ewm",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 9.3697273365,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 2,
+      "modelo": "participacion_historica",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 9.7546505655,
+      "n": 1,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_ewm",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 9.9943958015,
+      "n": 2,
+      "excluidas": 0
+    },
+    {
+      "horizonte": 4,
+      "modelo": "participacion_historica",
+      "insumo_id": "PROMEDIO_MACRO",
+      "mae_pp": 9.4630882862,
+      "n": 2,
+      "excluidas": 0
+    }
+  ],
+  "predicciones_validacion": [
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-04T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": 513.0,
+      "prediccion": 806.9033535156,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-04T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": 513.0,
+      "prediccion": 716.034236575,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-04T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": 513.0,
+      "prediccion": 784.1860742804,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-04T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": 513.0,
+      "prediccion": 330.0,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-04T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": 513.0,
+      "prediccion": 1254.91,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-04T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": 513.0,
+      "prediccion": 514.96,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-11T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": 244.0,
+      "prediccion": 803.0189343416,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-11T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hgb",
+      "real": 244.0,
+      "prediccion": 675.4822157102,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-11T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": 244.0,
+      "prediccion": 739.2505750259,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-11T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": 244.0,
+      "prediccion": 330.0,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-11T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": 244.0,
+      "prediccion": 1254.91,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-11T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": 244.0,
+      "prediccion": 1539.09,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-18T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": null,
+      "prediccion": 805.058148593,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-18T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": null,
+      "prediccion": 690.8452946889,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-18T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": null,
+      "prediccion": 719.3985081649,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-18T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": null,
+      "prediccion": 330.0,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-18T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": null,
+      "prediccion": 1254.91,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-18T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": null,
+      "prediccion": 329.47,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-25T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 1362.0,
+      "prediccion": 804.9285799287,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-25T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "rf",
+      "real": 1362.0,
+      "prediccion": 995.0688741425,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-25T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 1362.0,
+      "prediccion": 852.4636534821,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-25T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 1362.0,
+      "prediccion": 330.0,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-25T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 1362.0,
+      "prediccion": 1254.91,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-25T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 1362.0,
+      "prediccion": 1238.0,
+      "escala_mase": 690.2142424242
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-13T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ss_arima111",
+      "real": null,
+      "prediccion": 791.4611824813,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-13T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "rf",
+      "real": null,
+      "prediccion": 310.436488824,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-13T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "hibrido",
+      "real": null,
+      "prediccion": 671.205009067,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-13T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "ultimo_valor",
+      "real": null,
+      "prediccion": 1472.0,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-13T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "promedio_4s",
+      "real": null,
+      "prediccion": 800.5,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-13T00:00:00.000",
+      "horizonte": 1,
+      "modelo": "estacional_52s",
+      "real": null,
+      "prediccion": 55.0,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-20T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ss_ar1",
+      "real": null,
+      "prediccion": 802.1207850437,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-20T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hgb",
+      "real": null,
+      "prediccion": 960.9456456805,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-20T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "hibrido",
+      "real": null,
+      "prediccion": 881.5332153621,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-20T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "ultimo_valor",
+      "real": null,
+      "prediccion": 1472.0,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-20T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "promedio_4s",
+      "real": null,
+      "prediccion": 800.5,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-20T00:00:00.000",
+      "horizonte": 2,
+      "modelo": "estacional_52s",
+      "real": null,
+      "prediccion": 1213.48,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-27T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ss_ar1",
+      "real": null,
+      "prediccion": 802.1252989682,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-27T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "rf",
+      "real": null,
+      "prediccion": 594.2237159171,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-27T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "hibrido",
+      "real": null,
+      "prediccion": 646.1991116799,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-27T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "ultimo_valor",
+      "real": null,
+      "prediccion": 1472.0,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-27T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "promedio_4s",
+      "real": null,
+      "prediccion": 800.5,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-27T00:00:00.000",
+      "horizonte": 3,
+      "modelo": "estacional_52s",
+      "real": null,
+      "prediccion": 20.0,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-06-03T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ss_ar1",
+      "real": 531.88,
+      "prediccion": 802.125214236,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-06-03T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "rf",
+      "real": 531.88,
+      "prediccion": 355.8564954865,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-06-03T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "hibrido",
+      "real": 531.88,
+      "prediccion": 690.5580345486,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-06-03T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "ultimo_valor",
+      "real": 531.88,
+      "prediccion": 1472.0,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-06-03T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "promedio_4s",
+      "real": 531.88,
+      "prediccion": 800.5,
+      "escala_mase": 646.0253125
+    },
+    {
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-06-03T00:00:00.000",
+      "horizonte": 4,
+      "modelo": "estacional_52s",
+      "real": 531.88,
+      "prediccion": 213.0,
+      "escala_mase": 646.0253125
+    }
+  ],
+  "distribucion_futura": [
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "CHOCOLATE",
+      "participacion": 0.2034503225,
+      "importe": 224.4,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "HARINA",
+      "participacion": 0.145159985,
+      "importe": 160.11,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "FONDANT",
+      "participacion": 0.0770899211,
+      "importe": 85.03,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "EMPAQUE",
+      "participacion": 0.0785600632,
+      "importe": 86.65,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "RELLENO",
+      "participacion": 0.1022911509,
+      "importe": 112.83,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "CHANTILLY",
+      "participacion": 0.0174832299,
+      "importe": 19.28,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "DECORACION",
+      "participacion": 0.0492756939,
+      "importe": 54.35,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "AMBIANTE",
+      "participacion": 0.1166224853,
+      "importe": 128.63,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "HUEVO",
+      "participacion": 0.0079656075,
+      "importe": 8.79,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "QUESO CREMA",
+      "participacion": 0.0202600265,
+      "importe": 22.35,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-01 00:00:00",
+      "horizonte": 1,
+      "insumo_id": "otros",
+      "participacion": 0.1818415142,
+      "importe": 200.57,
+      "total": 1102.99,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "CHOCOLATE",
+      "participacion": 0.2034503225,
+      "importe": 210.05,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "HARINA",
+      "participacion": 0.145159985,
+      "importe": 149.87,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "FONDANT",
+      "participacion": 0.0770899211,
+      "importe": 79.59,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "EMPAQUE",
+      "participacion": 0.0785600632,
+      "importe": 81.11,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "RELLENO",
+      "participacion": 0.1022911509,
+      "importe": 105.61,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "CHANTILLY",
+      "participacion": 0.0174832299,
+      "importe": 18.05,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "DECORACION",
+      "participacion": 0.0492756939,
+      "importe": 50.87,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "AMBIANTE",
+      "participacion": 0.1166224853,
+      "importe": 120.41,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "HUEVO",
+      "participacion": 0.0079656075,
+      "importe": 8.22,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "QUESO CREMA",
+      "participacion": 0.0202600265,
+      "importe": 20.92,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-08 00:00:00",
+      "horizonte": 2,
+      "insumo_id": "otros",
+      "participacion": 0.1818415142,
+      "importe": 187.74,
+      "total": 1032.44,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "CHOCOLATE",
+      "participacion": 0.2034503225,
+      "importe": 185.99,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "HARINA",
+      "participacion": 0.145159985,
+      "importe": 132.7,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "FONDANT",
+      "participacion": 0.0770899211,
+      "importe": 70.48,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "EMPAQUE",
+      "participacion": 0.0785600632,
+      "importe": 71.82,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "RELLENO",
+      "participacion": 0.1022911509,
+      "importe": 93.51,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "CHANTILLY",
+      "participacion": 0.0174832299,
+      "importe": 15.98,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "DECORACION",
+      "participacion": 0.0492756939,
+      "importe": 45.05,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "AMBIANTE",
+      "participacion": 0.1166224853,
+      "importe": 106.62,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "HUEVO",
+      "participacion": 0.0079656075,
+      "importe": 7.28,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "QUESO CREMA",
+      "participacion": 0.0202600265,
+      "importe": 18.52,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-15 00:00:00",
+      "horizonte": 3,
+      "insumo_id": "otros",
+      "participacion": 0.1818415142,
+      "importe": 166.24,
+      "total": 914.19,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "CHOCOLATE",
+      "participacion": 0.2034503225,
+      "importe": 162.96,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "HARINA",
+      "participacion": 0.145159985,
+      "importe": 116.27,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "FONDANT",
+      "participacion": 0.0770899211,
+      "importe": 61.75,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "EMPAQUE",
+      "participacion": 0.0785600632,
+      "importe": 62.93,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "RELLENO",
+      "participacion": 0.1022911509,
+      "importe": 81.94,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "CHANTILLY",
+      "participacion": 0.0174832299,
+      "importe": 14.0,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "DECORACION",
+      "participacion": 0.0492756939,
+      "importe": 39.47,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "AMBIANTE",
+      "participacion": 0.1166224853,
+      "importe": 93.41,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "HUEVO",
+      "participacion": 0.0079656075,
+      "importe": 6.38,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "QUESO CREMA",
+      "participacion": 0.0202600265,
+      "importe": 16.23,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    },
+    {
+      "origen": "2024-07-01 00:00:00",
+      "fecha_objetivo": "2024-07-22 00:00:00",
+      "horizonte": 4,
+      "insumo_id": "otros",
+      "participacion": 0.1818415142,
+      "importe": 145.66,
+      "total": 801.0,
+      "unidad": "MXN nominales",
+      "demostracion": false
+    }
+  ],
+  "advertencia": "Evaluación retrospectiva; no garantiza precisión futura. Corte de emisión explícito. No es una orden de compra. Evaluación rolling exploratoria de importes registrados utilizables, no del gasto real completo. Se excluyeron 6 objetivos inciertos de las métricas; no se imputaron ni sintetizaron. Calendario con huecos sin imputar. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.",
+  "politica_faltantes": "calendar_gaps",
+  "cobertura_evaluacion": [
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-10-16T00:00:00.000",
+      "fecha_objetivo": "2023-10-16T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2022-10-17T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-10-09T00:00:00.000",
+      "n_entrenamiento_observado": 43,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-10-16T00:00:00.000",
+      "fecha_objetivo": "2023-10-23T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2022-10-17T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-10-09T00:00:00.000",
+      "n_entrenamiento_observado": 42,
+      "objetivo_observado": false,
+      "motivo": "semana_incierta"
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-10-16T00:00:00.000",
+      "fecha_objetivo": "2023-10-30T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2022-10-17T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-10-09T00:00:00.000",
+      "n_entrenamiento_observado": 41,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-10-16T00:00:00.000",
+      "fecha_objetivo": "2023-11-06T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2022-10-17T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-10-09T00:00:00.000",
+      "n_entrenamiento_observado": 40,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-12-25T00:00:00.000",
+      "fecha_objetivo": "2023-12-25T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2022-12-26T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-12-18T00:00:00.000",
+      "n_entrenamiento_observado": 46,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-12-25T00:00:00.000",
+      "fecha_objetivo": "2024-01-01T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2022-12-26T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-12-18T00:00:00.000",
+      "n_entrenamiento_observado": 46,
+      "objetivo_observado": false,
+      "motivo": "semana_incierta"
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-12-25T00:00:00.000",
+      "fecha_objetivo": "2024-01-08T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2022-12-26T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-12-18T00:00:00.000",
+      "n_entrenamiento_observado": 46,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "validacion_interna",
+      "origen": "2023-12-25T00:00:00.000",
+      "fecha_objetivo": "2024-01-15T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2022-12-26T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2023-12-18T00:00:00.000",
+      "n_entrenamiento_observado": 46,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-04T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2023-03-06T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-02-26T00:00:00.000",
+      "n_entrenamiento_observado": 43,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-11T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2023-03-06T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-02-26T00:00:00.000",
+      "n_entrenamiento_observado": 43,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-18T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2023-03-06T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-02-26T00:00:00.000",
+      "n_entrenamiento_observado": 43,
+      "objetivo_observado": false,
+      "motivo": "semana_incierta"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-03-04T00:00:00.000",
+      "fecha_objetivo": "2024-03-25T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2023-03-06T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-02-26T00:00:00.000",
+      "n_entrenamiento_observado": 43,
+      "objetivo_observado": true,
+      "motivo": ""
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-13T00:00:00.000",
+      "horizonte": 1,
+      "entrenamiento_inicio": "2023-05-15T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-04-29T00:00:00.000",
+      "n_entrenamiento_observado": 42,
+      "objetivo_observado": false,
+      "motivo": "semana_incierta"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-20T00:00:00.000",
+      "horizonte": 2,
+      "entrenamiento_inicio": "2023-05-15T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-04-29T00:00:00.000",
+      "n_entrenamiento_observado": 42,
+      "objetivo_observado": false,
+      "motivo": "semana_incierta"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-05-27T00:00:00.000",
+      "horizonte": 3,
+      "entrenamiento_inicio": "2023-05-15T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-04-29T00:00:00.000",
+      "n_entrenamiento_observado": 42,
+      "objetivo_observado": false,
+      "motivo": "semana_incierta"
+    },
+    {
+      "etapa": "evaluacion",
+      "origen": "2024-05-13T00:00:00.000",
+      "fecha_objetivo": "2024-06-03T00:00:00.000",
+      "horizonte": 4,
+      "entrenamiento_inicio": "2023-05-15T00:00:00.000",
+      "ultima_etiqueta_entrenamiento": "2024-04-29T00:00:00.000",
+      "n_entrenamiento_observado": 42,
+      "objetivo_observado": true,
+      "motivo": ""
+    }
+  ]
+}

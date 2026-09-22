@@ -1,0 +1,62 @@
+{
+  "modelos": {
+    "1": {
+      "horizonte": 1,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": null,
+      "n": 0,
+      "seleccion": "sin_validacion_interna"
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": null,
+      "n": 0,
+      "seleccion": "sin_validacion_interna"
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": null,
+      "n": 0,
+      "seleccion": "sin_validacion_interna"
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ss_ar1",
+      "ml": "hgb",
+      "peso": 0.5,
+      "mse": null,
+      "n": 0,
+      "seleccion": "sin_validacion_interna"
+    }
+  },
+  "alpha": 0.1,
+  "categorias": [
+    "HARINA",
+    "COMBUSTIBLE",
+    "CHOCOLATE",
+    "FONDANT",
+    "EMPAQUE",
+    "CHANTILLY",
+    "RELLENO",
+    "DECORACION",
+    "HERRAMIENTA",
+    "AMBIANTE",
+    "HUEVO",
+    "MUEBLES",
+    "CAPACILLOS"
+  ],
+  "variables": [
+    "es_fecha_pago_semana",
+    "es_festivo_semana"
+  ],
+  "corte_desarrollo": "2025-03-17 00:00:00",
+  "criterio": "validacion temporal interna, no ranking de evaluación"
+}

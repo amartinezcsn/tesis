@@ -1,0 +1,22 @@
+{
+  "source": "output/test_dataset_staging/compras_semanales_como_transacciones.csv",
+  "source_sheet": 0,
+  "source_sha256": "425b94a62b8fce0836bf2fd5e2253fa91478550361affcb185c8b771937298e9",
+  "source_approved": true,
+  "approved_duplicate_rows": [],
+  "coverage": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_trazada.xlsx",
+  "coverage_sheet": "Cobertura",
+  "catalog": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_trazada.xlsx",
+  "catalog_sheet": "Catalogo",
+  "exogenous": "datasets/xlsx/Dataset_Tizayuca_2022_2026.xlsx",
+  "sales": "output/run_20260922T230952Z_ed5620/ventas_semanales_2021-05-03_2024-04-29.csv",
+  "start": "2021-05-03",
+  "end": "2024-04-29",
+  "holdout_weeks": 20,
+  "tuning_origins": 5,
+  "training_window_weeks": 52,
+  "rolling_step_weeks": 3,
+  "threshold": 0.8,
+  "min_training_observations": 8,
+  "zero_targets_valid": false
+}

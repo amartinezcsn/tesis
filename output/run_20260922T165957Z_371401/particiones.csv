@@ -1,0 +1,17 @@
+etapa,origen,fecha_objetivo,horizonte,entrenamiento_inicio,ultima_etiqueta_entrenamiento,n_entrenamiento_observado,objetivo_observado,motivo
+validacion_interna,2023-10-16,2023-10-16,1,2022-10-17,2023-10-09,43,True,
+validacion_interna,2023-10-16,2023-10-23,2,2022-10-17,2023-10-09,42,False,semana_incierta
+validacion_interna,2023-10-16,2023-10-30,3,2022-10-17,2023-10-09,41,True,
+validacion_interna,2023-10-16,2023-11-06,4,2022-10-17,2023-10-09,40,True,
+validacion_interna,2023-12-25,2023-12-25,1,2022-10-17,2023-12-18,46,True,
+validacion_interna,2023-12-25,2024-01-01,2,2022-10-17,2023-12-18,46,False,semana_incierta
+validacion_interna,2023-12-25,2024-01-08,3,2022-10-17,2023-12-18,46,True,
+validacion_interna,2023-12-25,2024-01-15,4,2022-10-17,2023-12-18,46,True,
+evaluacion,2024-03-04,2024-03-04,1,2022-10-17,2024-02-26,43,True,
+evaluacion,2024-03-04,2024-03-11,2,2022-10-17,2024-02-26,43,True,
+evaluacion,2024-03-04,2024-03-18,3,2022-10-17,2024-02-26,43,False,semana_incierta
+evaluacion,2024-03-04,2024-03-25,4,2022-10-17,2024-02-26,43,True,
+evaluacion,2024-05-13,2024-05-13,1,2022-10-17,2024-04-29,42,False,semana_incierta
+evaluacion,2024-05-13,2024-05-20,2,2022-10-17,2024-04-29,42,False,semana_incierta
+evaluacion,2024-05-13,2024-05-27,3,2022-10-17,2024-04-29,42,False,semana_incierta
+evaluacion,2024-05-13,2024-06-03,4,2022-10-17,2024-04-29,42,True,

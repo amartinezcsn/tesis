@@ -1,0 +1,4 @@
+descripcion_normalizada,insumo_id,aprobado,decision,evidencia
+HARINA,harina,True,incluir,fixture sintético de prueba
+AZUCAR,azucar,True,incluir,fixture sintético de prueba
+MANTEQUILLA,mantequilla,True,incluir,fixture sintético de prueba

@@ -31,6 +31,12 @@ final aún no participa en ninguna elección.
             failures.extend(errors)
             inner.append((pred,float(panel.total.iloc[origin+h-1])))
         stats,mls=candidates(cfg)
+        if not inner:
+            if not stats or not mls:
+                raise ValueError(f'Sin componentes para h={h}; fallos: {failures}')
+            selections[h]=dict(horizonte=h,stat=stats[0],ml=mls[0],peso=float(cfg.weights[len(cfg.weights)//2]),
+                mse=None,n=0,seleccion='sin_validacion_interna')
+            continue
         for stat in stats:
             # Probar parejas y pesos declarados; gana el menor MSE interno.
             for ml in mls:
@@ -39,18 +45,40 @@ final aún no participa en ninguna elección.
                     mse=float(np.mean([(y-weight*p[stat]-(1-weight)*p[ml])**2 for p,y in inner]))
                     scores.append(dict(horizonte=h,stat=stat,ml=ml,peso=weight,mse=mse,n=len(inner)))
         available=[r for r in scores if r['horizonte']==h]
-        if not available:raise ValueError(f'Sin combinación válida para h={h}; fallos: {failures}')
-        selections[h]=min(available,key=lambda r:r['mse'])
+        if available:
+            selections[h]=min(available,key=lambda r:r['mse'])
+        else:
+            # En la evaluación exploratoria puede no existir una etiqueta
+            # observada para un horizonte dentro de los folds internos. Se
+            # conserva una configuración base y se marca explícitamente.
+            stats,mls=candidates(cfg)
+            if not stats or not mls:
+                raise ValueError(f'Sin componentes para h={h}; fallos: {failures}')
+            selections[h]=dict(horizonte=h,stat=stats[0],ml=mls[0],peso=float(cfg.weights[len(cfg.weights)//2]),
+                mse=None,n=0,seleccion='sin_validacion_interna')
     # Evaluar la mezcla de insumos con categorías aprendidas en cada historia.
+    composition_origins=tuning
+    if not any(pd.notna(panel.total.iloc[o+h-1]) for o in composition_origins for h in cfg.horizons if o+h-1<len(panel)):
+        # En datos dispersos, los cinco orígenes de ajuste del total pueden
+        # caer todos en semanas sin captura. Calibrar alpha en una cuadrícula
+        # rolling más amplia, siempre anterior al holdout y con historia 52w.
+        start=cfg.rolling_origin_start or cfg.training_window_weeks or cfg.lookback
+        composition_origins=list(range(start,max(start,cutoff-max(cfg.horizons)+2),cfg.rolling_step_weeks))
     for alpha in cfg.alphas:
         losses=[]
-        for origin in tuning:
+        for origin in composition_origins:
             history=training_history(panel,origin,cfg)
+            if history.total.dropna().empty:
+                continue
             categories=select_categories(history,cfg.threshold)
-            real=shares(panel.iloc[[origin]],categories).iloc[0]
-            if real.notna().all():
-                pred=predict_shares(history,categories,alpha,calendar=True)
-                losses.append(float((real-pred).abs().mean()*100))
+            pred=predict_shares(history,categories,alpha,calendar=True)
+            for horizon in cfg.horizons:
+                target=origin+horizon-1
+                if target>=len(panel) or pd.isna(panel.total.iloc[target]):
+                    continue
+                real=shares(panel.iloc[[target]],categories).iloc[0]
+                if real.notna().all():
+                    losses.append(float((real-pred).abs().mean()*100))
         if losses:comp_scores.append(dict(alpha=alpha,mae_pp=float(np.mean(losses)),n=len(losses)))
     if not comp_scores:raise ValueError('Sin semanas positivas para validar composición.')
     alpha=min(comp_scores,key=lambda r:r['mae_pp'])['alpha']
@@ -86,6 +114,10 @@ predicciones finales nunca retroalimentan la selección de candidatos.
             for name,value in pred.items():
                 rows.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,modelo=name,
                     real=float(panel.total.iloc[target]),prediccion=value,escala_mase=scale))
+            if pd.isna(panel.total.iloc[target]):
+                # La fila queda trazada para auditar el fold; las métricas la
+                # excluyen porque real es NaN y no se fabrican composiciones.
+                continue
             real=shares(panel.iloc[[target]],categories).iloc[0]
             for name,values in [('participacion_historica',ref),('participacion_ewm',prop)]:
                 for item,value in values.items():
@@ -100,10 +132,12 @@ predicciones finales nunca retroalimentan la selección de candidatos.
     metrics=total_metrics(predictions,common=True); percentages=composition_metrics(composition)
     result=hypothesis(predictions,composition,cfg,demo)
     # Reajuste final con toda la historia, pero configuración elegida antes.
-    origin=len(panel); bundle={'version':1,'moneda':'MXN nominales','demostracion':demo,
-        'origen':str(panel.index[-1]+pd.Timedelta(weeks=1)),'config':cfg.dictionary(),
+    origin=int(np.flatnonzero(panel.total.notna().to_numpy())[-1])+1
+    origin_date=panel.index[origin] if origin<len(panel) else panel.index[-1]+pd.Timedelta(weeks=1)
+    bundle={'version':1,'moneda':'MXN nominales','demostracion':demo,
+        'origen':str(origin_date),'config':cfg.dictionary(),
         'seleccion':selected,'alpha_composicion':alpha,'categorias':categories,'variables_exogenas':variables,'modelos':{}}
-    prop=predict_shares(training_history(panel,len(panel),cfg),categories,alpha,calendar=True)
+    prop=predict_shares(training_history(panel,origin,cfg),categories,alpha,calendar=True)
     bundle['participaciones']=prop
     for h in cfg.horizons:
         pred,fitted,errors,test=components(panel,origin,h,cfg,exog,variables,sales,selected[h])
@@ -124,7 +158,8 @@ predicciones finales nunca retroalimentan la selección de candidatos.
     (output/'seleccion.json').write_text(json.dumps({'modelos':selected,'alpha':alpha,'categorias':categories,'variables':variables,
         'corte_desarrollo':str(panel.index[cutoff]),'criterio':'validacion temporal interna, no ranking de evaluación'},ensure_ascii=False,indent=2),encoding='utf-8')
     datasets.update(cutoff=cutoff,categories=categories,selection=selected,hypothesis=result)
-    datasets['advertencia']='Evaluación exploratoria de importes registrados utilizables, no del gasto real completo. Calendario con huecos sin imputar; sin síntesis. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.'
+    excluded=int((folds['objetivo_observado']==False).sum())
+    datasets['advertencia']=f'Evaluación rolling exploratoria de importes registrados utilizables, no del gasto real completo. Se excluyeron {excluded} objetivos inciertos de las métricas; no se imputaron ni sintetizaron. Calendario con huecos sin imputar. ultimo_valor significa último importe observado disponible, no necesariamente semana anterior. MASE usa solo diferencias entre semanas calendario consecutivas observadas. La cobertura no está certificada por la mera existencia de registros.'
     datasets['politica_faltantes']='calendar_gaps'
     return datasets
 
