@@ -1,3 +1,4 @@
+"""Productos interpretables para revisión humana y controles de cierre."""
 from pathlib import Path
 import json
 import html
@@ -6,11 +7,13 @@ import pandas as pd
 
 
 def records(frame):
-    # pandas JSON handles timestamps and missing numerics without emitting NaN.
+    """Convertir una tabla a registros JSON con fechas y faltantes válidos."""
+    # pandas evita emitir NaN, que no pertenece al estándar JSON.
     return json.loads(frame.to_json(orient='records',date_format='iso'))
 
 
 def export_results(output,results,cfg,demo=False):
+    """Exportar datos del DSS, tablero HTML local e informe de limitaciones."""
     output=Path(output)
     future=results['pronostico_futuro']
     totals=future.groupby('horizonte').total.first()
@@ -27,7 +30,7 @@ def export_results(output,results,cfg,demo=False):
         payload['politica_faltantes']=results['politica_faltantes']
         payload['cobertura_evaluacion']=records(results['particiones'])
     (output/'dss_hibrido.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
-    # Safe static, self-contained view; no remote upload or implicit deployment.
+    # Vista estática autocontenida: no publica datos en servicios externos.
     def table(df):
         return df.to_html(index=False,escape=True,na_rep='No definido',float_format=lambda x:f'{x:,.2f}')
     headline='DEMOSTRACIÓN SINTÉTICA' if demo else 'Presupuesto semanal de Cup&Cake'
@@ -54,6 +57,7 @@ def export_results(output,results,cfg,demo=False):
 
 
 def quality_controls(panel,results):
+    """Verificar seis invariantes antes de declarar una corrida completada."""
     allocation=results['asignaciones'];future=results['pronostico_futuro']
     sums=allocation.groupby(['origen','horizonte']).agg(suma=('importe','sum'),total=('total_redondeado','first'),p=('participacion','sum'))
     observed=panel.loc[panel.total.notna()]

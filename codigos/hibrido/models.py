@@ -1,4 +1,8 @@
-"""Componentes adaptados de 06_modelos_rolling_window, sin fallback encubierto."""
+"""Modelos estadísticos y de aprendizaje automático del total semanal.
+
+Cada componente devuelve su propio pronóstico. Una falla se registra: no se
+sustituye por otro modelo bajo el nombre del componente fallido.
+"""
 import warnings
 import numpy as np
 import pandas as pd
@@ -11,6 +15,7 @@ from .features import samples
 
 
 def stat_fit(y, name):
+    """Ajustar SARIMAX AR(1) o ARIMA(1,1,1) a la historia disponible."""
     if name not in ('ss_ar1', 'ss_arima111'):
         raise ValueError(f'Componente estadístico no soportado: {name}')
     with warnings.catch_warnings(record=True) as caught:
@@ -23,16 +28,18 @@ def stat_fit(y, name):
 
 
 def predict_stat(fit, h):
+    """Obtener un total no negativo a ``h`` semanas del origen."""
     result = float(np.asarray(fit.forecast(h))[-1])
     if not np.isfinite(result): raise ValueError('Pronóstico estadístico no finito.')
     return max(result,0.)
 
 
 def ml_fit(x,y,name,cfg):
+    """Ajustar boosting o bosque aleatorio con semilla fija y un hilo."""
     if name not in ('hgb', 'rf'):
         raise ValueError(f'Componente ML no soportado: {name}')
     if not np.isfinite(y).all():raise ValueError('Objetivos de ML deben ser observados y finitos.')
-    # Native missing-feature support: no synthetic target or median replacement.
+    # No se inventan etiquetas; el boosting admite predictores ausentes.
     model=(HistGradientBoostingRegressor(max_iter=100,max_leaf_nodes=7,min_samples_leaf=5,early_stopping=False,random_state=cfg.seed)
            if name=='hgb' else RandomForestRegressor(n_estimators=100,max_depth=4,min_samples_leaf=3,random_state=cfg.seed,n_jobs=1))
     with threadpool_limits(limits=1):model.fit(x,y)
@@ -40,10 +47,16 @@ def ml_fit(x,y,name,cfg):
 
 
 def candidates(cfg):
+    """Enumerar las familias habilitadas antes de la validación interna."""
     return ['ss_ar1']+(['ss_arima111'] if cfg.use_arima else []),['hgb']+(['rf'] if cfg.use_rf else [])
 
 
 def components(panel,origin,h,cfg,exog,variables,sales=None,selection=None):
+    """Ajustar y pronosticar componentes con historia anterior al origen.
+
+Sin ``selection`` se prueban candidatos. Con ella se usa exclusivamente la
+pareja ya elegida durante desarrollo y se informan sus fallos.
+"""
     stat_names,ml_names=candidates(cfg)
     if selection: stat_names,ml_names=[selection['stat']],[selection['ml']]
     predictions={}; fitted={}; errors=[]
@@ -66,6 +79,7 @@ def components(panel,origin,h,cfg,exog,variables,sales=None,selection=None):
 
 
 def baselines(y,h,gaps=False):
-    # Reused last-value, trailing mean and seasonal logic, explicit unavailable status.
+    """Calcular referencias simples para interpretar la mejora del híbrido."""
+    # Último observado, media reciente y valor estacional si hay 52 semanas.
     return {'ultimo_valor':float(y.dropna().iloc[-1]) if gaps and y.notna().any() else float(y.iloc[-1]),'promedio_4s':float(y.iloc[-4:].mean()),
         'estacional_52s':float(y.iloc[-52+h-1]) if len(y)>=52 else np.nan}

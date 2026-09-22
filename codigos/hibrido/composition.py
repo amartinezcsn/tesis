@@ -1,8 +1,10 @@
+"""Segundo componente del sistema: participaciones y reparto del presupuesto."""
 import numpy as np
 import pandas as pd
 
 
 def select_categories(history, threshold):
+    """Fijar insumos principales según su importe acumulado en desarrollo."""
     sums=history.drop(columns='total').sum().sort_values(ascending=False,kind='stable')
     sums=sums[sums>0]
     if sums.empty: raise ValueError('Sin historia positiva para composición.')
@@ -11,20 +13,23 @@ def select_categories(history, threshold):
 
 
 def amounts(panel,categories):
+    """Conservar categorías elegidas y agrupar el resto en ``otros``."""
     result=panel.reindex(columns=categories,fill_value=0.).copy()
     result['otros']=panel.drop(columns=['total',*categories],errors='ignore').sum(axis=1)
     return result
 
 
 def shares(panel,categories):
+    """Convertir importes observados en proporciones del total semanal."""
     return amounts(panel,categories).div(panel.total.where(panel.total>0),axis=0)
 
 
 def predict_shares(history,categories,alpha=None,calendar=False):
+    """Estimar mezcla histórica o mezcla reciente ponderada por edad real."""
     valid=shares(history,categories).dropna()
     if valid.empty:raise ValueError('Sin semanas de composición definida.')
     if calendar and alpha is not None:
-        # Time decay uses actual calendar age, never rank after dropping gaps.
+        # La antigüedad se mide en semanas reales, sin acercar huecos ausentes.
         ages=(history.index[-1]-valid.index).days.to_numpy()/7
         weights=(1-alpha)**ages
         if not weights.sum():raise ValueError('Pesos de composición sin soporte.')
@@ -36,7 +41,10 @@ def predict_shares(history,categories,alpha=None,calendar=False):
 
 
 def allocate(total,participation):
-    """Largest remainder: exact budget in cents, deterministic ties by catalog order."""
+    """Asignar centavos por resto mayor para reconciliar exactamente el total.
+
+Los empates siguen el orden estable del catálogo: la salida es determinista.
+"""
     if total<0 or not np.isfinite(total) or (participation<0).any() or not np.isclose(participation.sum(),1):
         raise ValueError('Total o composición inválidos.')
     cents=int(np.floor(total*100+0.5))

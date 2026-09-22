@@ -1,0 +1,7 @@
+{
+  "fuente": "C:\\Python\\tesis\\codigos\\outputs\\ejecucion_manual_20260921\\DEMO_20260922T022805Z_37f2d0\\compras_demo.csv",
+  "sha256": "0590ff1618239797bcd064fa4fc939aafb5bf8aeecff24c6d8fee80d5e927362",
+  "registros_validos_para_revision": 303,
+  "pendientes": 0,
+  "cobertura": "Debe confirmarse documentalmente; transacciones no prueban integridad semanal."
+}

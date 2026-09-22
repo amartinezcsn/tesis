@@ -28,6 +28,12 @@ def panel(n=110):
 
 
 class DataTests(unittest.TestCase):
+    def test_cli_has_fixed_output_directory(self):
+        from hibrido import cli
+        self.assertEqual(cli.OUTPUT_DIR,Path('C:/Python/tesis/output'))
+        with self.assertRaises(SystemExit):
+            cli.main(['audit','--output','otro_directorio'])
+
     def test_main_entry_uses_hybrid_when_called_as_function(self):
         from unittest.mock import patch
         entry = importlib.import_module('00_pipeline_hibrido')

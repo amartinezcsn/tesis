@@ -1,3 +1,8 @@
+"""Parámetros congelados que hacen reproducible una corrida.
+
+El archivo JSON define fuentes, periodos y candidatos. Aquí se rechazan
+parámetros inválidos antes de leer o entrenar con los datos.
+"""
 from dataclasses import dataclass, asdict, fields
 from pathlib import Path
 import json
@@ -5,6 +10,8 @@ import json
 
 @dataclass(frozen=True)
 class Config:
+    """Contrato completo del experimento; una instancia no cambia al ejecutarse."""
+    # Fuentes auditadas y decisiones documentales sobre su uso.
     source: str = 'datasets/xlsx/Compras.xlsx'
     source_sheet: str | int = 0
     source_sha256: str = ''
@@ -16,6 +23,7 @@ class Config:
     catalog_sheet: str | int = 0
     exogenous: str | None = None
     sales: str | None = None
+    # Periodo y separación temporal: desarrollo, validación interna y prueba.
     start: str = ''
     end: str = ''
     holdout_weeks: int = 16
@@ -24,6 +32,7 @@ class Config:
     weights: tuple = (0.25, 0.5, 0.75)
     alphas: tuple = (0.1, 0.3, 0.6)
     threshold: float = 0.8
+    # Semilla, remuestreo y familias de modelos candidatas.
     seed: int = 42
     bootstrap_samples: int = 2000
     bootstrap_block: int = 4
@@ -34,6 +43,7 @@ class Config:
     zero_targets_valid: bool = True
 
     def validate(self):
+        """Fallar temprano si un parámetro contradice el protocolo."""
         if type(self.min_training_observations) is not int or self.min_training_observations < 8:
             raise ValueError('min_training_observations requiere entero >= 8.')
         for key in ('source_approved','use_rf','use_arima','zero_targets_valid'):
@@ -61,13 +71,16 @@ class Config:
 
     @property
     def lookback(self):
+        """Historia mínima de cuatro semanas para construir predictores."""
         return 4
 
     def dictionary(self):
+        """Convertir los parámetros a un diccionario para el manifiesto."""
         return asdict(self)
 
 
 def load_config(path):
+    """Leer el JSON sin admitir claves desconocidas ni valores fuera de contrato."""
     values = json.loads(Path(path).read_text(encoding='utf-8'))
     unknown = set(values) - {f.name for f in fields(Config)}
     if unknown:

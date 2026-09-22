@@ -1,14 +1,20 @@
-"""Calendario intacto, objetivos sin imputar, alcance explícito y ventana creciente."""
+"""Construcción del panel semanal y predictores sin fuga temporal.
+
+El calendario conserva todos los lunes. Una semana incierta permanece NaN;
+no se comprime el tiempo ni se crea una compra ficticia de cero pesos.
+"""
 import numpy as np
 import pandas as pd
 from .data import clean_upper
 
 
 def history(panel, origin, cfg):
+    """Dar al modelo solo las semanas anteriores al origen de pronóstico."""
     return panel.iloc[:origin]
 
 
 def validate_panel(panel):
+    """Exigir lunes consecutivos, importes válidos y total reconciliado."""
     expected = pd.date_range(panel.index[0], periods=len(panel), freq='W-MON')
     if not panel.index.equals(expected):
         raise ValueError('Panel debe conservar cada lunes, sin comprimir huecos.')
@@ -25,7 +31,11 @@ def validate_panel(panel):
 
 
 def build_gap_panel(purchases, coverage, catalog, start, end, zero_targets_valid=True):
-    """Only approved recorded totals are usable; no assertion of actual total spend."""
+    """Cruzar compras, catálogo y cobertura aprobados en un panel semanal.
+
+El total representa registros utilizables, no el gasto real completo.
+Las semanas sin evidencia suficiente permanecen enteramente ausentes.
+"""
     if purchases.get('es_sintetico',pd.Series(False,index=purchases.index)).astype(bool).any():
         raise ValueError('Panel principal no admite registros sintéticos.')
     dates=pd.date_range(start,end,freq='W-MON')
@@ -44,6 +54,7 @@ def build_gap_panel(purchases, coverage, catalog, start, end, zero_targets_valid
     inc=cat.decision.eq('incluir')
     if cat.loc[inc,'insumo_id'].fillna('').astype(str).str.strip().eq('').any() or cat.loc[inc,'insumo_id'].isin(['total','otros']).any():
         raise ValueError('Identificador de insumo vacío o reservado.')
+    # El catálogo define qué descripciones cuentan como insumos de la tesis.
     selected=purchases.loc[purchases.semana_inicio.between(dates[0],dates[-1])].merge(cat,on='descripcion_normalizada',how='left',validate='many_to_one')
     if selected.decision.isna().any():raise ValueError('Registro sin decisión de alcance.')
     class_col=next((c for c in ('CLASIFICACION','clasificacion') if c in selected),None)
@@ -57,10 +68,11 @@ def build_gap_panel(purchases, coverage, catalog, start, end, zero_targets_valid
     cov=cov.set_index('semana_inicio').reindex(dates)
     cov['estado']=cov.estado.fillna('desconocida')
     if not cov.estado.isin(['registrada','observada','cero_confirmado','incierta','desconocida','incompleta']).all():raise ValueError('Estado de cobertura no permitido; no se admite síntesis.')
+    # Solo estas clases documentadas generan una etiqueta observable.
     usable=cov.estado.isin(['registrada','observada','cero_confirmado'])
     if cov.loc[usable,'evidencia'].fillna('').astype(str).str.strip().eq('').any() or pd.to_datetime(cov.loc[usable,'fecha_revision'],errors='coerce').isna().any():
         raise ValueError('Semanas utilizables requieren revisión documentada.')
-    # Raw zero line items require their own adjudication, not a blanket weekly approval.
+    # Un importe cero por artículo necesita decisión propia, no aprobación global.
     zero_weeks=selected.loc[selected.importe_nominal.eq(0),'semana_inicio']
     if usable.reindex(zero_weeks,fill_value=False).any():
         raise ValueError('Importes cero por artículo pendientes: marcar semana incierta o resolver fuente documentadamente.')
@@ -78,6 +90,11 @@ def build_gap_panel(purchases, coverage, catalog, start, end, zero_targets_valid
 
 
 def gap_features(panel, origin, horizon, cfg, exog, variables=(), sales=None):
+    """Construir una fila de predictores conocidos en el origen.
+
+Incluye último total observado, edad del dato, medias y conteos recientes,
+calendario objetivo y, si existen, ventas/exógenas ya publicadas.
+"""
     date=panel.index[0]+pd.Timedelta(weeks=origin)
     target=date+pd.Timedelta(weeks=horizon-1)
     y=panel.total.iloc[:origin];valid=y.dropna()
@@ -95,6 +112,7 @@ def gap_features(panel, origin, horizon, cfg, exog, variables=(), sales=None):
         for lag in (1,4):
             r=sales.iloc[origin-lag]
             values[f'ventas_lag_{lag}']=float(r.importe_nominal) if pd.notna(r.available_at) and r.available_at<=date else np.nan
+    # available_at es la barrera que evita introducir información futura.
     for variable in variables:
         eligible=exog.loc[(exog.variable==variable)&(exog.available_at<=date)]
         future=eligible.loc[eligible.tipo.isin(['pronostico','calendario']) & eligible.fecha_referencia.eq(target)]
@@ -105,11 +123,13 @@ def gap_features(panel, origin, horizon, cfg, exog, variables=(), sales=None):
 
 
 def training_targets(panel,origin,horizon,cfg):
+    """Elegir etiquetas observadas cuyo origen de pronóstico ya ocurrió."""
     return [t for t in range(cfg.lookback+horizon-1,origin)
             if pd.notna(panel.total.iloc[t]) and panel.total.iloc[:t-horizon+1].notna().any()]
 
 
 def gap_samples(panel,origin,horizon,cfg,exog,variables=(),sales=None):
+    """Preparar entrenamiento ML y la fila que se debe pronosticar."""
     targets=training_targets(panel,origin,horizon,cfg)
     if len(targets)<cfg.min_training_observations:raise ValueError('Objetivos observados insuficientes para ML.')
     x=pd.concat([gap_features(panel,t-horizon+1,horizon,cfg,exog,variables,sales) for t in targets],ignore_index=True)
@@ -117,9 +137,10 @@ def gap_samples(panel,origin,horizon,cfg,exog,variables=(),sales=None):
 
 
 def gap_partitions(panel,cfg):
+    """Separar validación interna y evaluación final por fechas de calendario."""
     validate_panel(panel);cutoff=len(panel)-cfg.holdout_weeks
     def sufficient(o):return all(len(training_targets(panel,o,h,cfg))>=cfg.min_training_observations for h in cfg.horizons)
-    # All inner h=1..4 labels must precede the cutoff, including unavailable labels.
+    # Ninguna etiqueta de validación interna, incluso para h=4, cruza el corte.
     eligible=[o for o in range(cfg.lookback,cutoff-max(cfg.horizons)+1) if sufficient(o)]
     tuning=eligible[-cfg.tuning_origins:]
     evaluation=list(range(cutoff,len(panel)))

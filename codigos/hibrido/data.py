@@ -1,4 +1,9 @@
-"""Ingesta nominal del protocolo Rev44."""
+"""Lectura y auditoría de fuentes, sin inventar observaciones.
+
+Las compras son importes nominales registrados. Catálogo y cobertura se
+aprueban por separado; una transacción no demuestra que una semana esté
+completa.
+"""
 from pathlib import Path
 import hashlib
 import importlib
@@ -10,7 +15,7 @@ clean_upper = importlib.import_module('01_normalizacion').clean_upper
 
 
 def boolean_flags(values):
-    """Parse explicit boolean-like values without treating non-empty text as true."""
+    """Interpretar banderas explícitas sin confundir cualquier texto con True."""
     normalized=values.fillna(False).astype(str).str.strip().str.lower()
     allowed={'','0','0.0','1','1.0','false','true','no','si','sí'}
     invalid=~normalized.isin(allowed)
@@ -20,17 +25,24 @@ def boolean_flags(values):
 
 
 def fingerprint(path):
+    """Calcular SHA-256 para detectar cambios en un archivo aprobado."""
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def read_table(path, sheet=0):
+    """Leer CSV o una hoja XLSX con la misma interfaz."""
     path = Path(path)
     return pd.read_excel(path, sheet_name=sheet) if path.suffix.lower() == '.xlsx' else pd.read_csv(path)
 
 
 def load_purchases(path, sheet=0, demo=False, approved_duplicate_rows=()):
+    """Auditar filas y separar compras utilizables de registros pendientes.
+
+Conserva el número de fila original y no elimina duplicados autorizados.
+Devuelve dos tablas: ``valid`` y ``rejected`` con un motivo por rechazo.
+"""
     raw = read_table(path, sheet)
-    # Original and historical clean-detail formats, without choosing either silently.
+    # Homologar nombres de columnas conocidos, sin decidir cuál fuente es oficial.
     frame = raw.rename(columns={'FECHA':'fecha', 'MONTO':'importe_nominal',
         'monto_nominal':'importe_nominal', 'DESCRIPCION':'descripcion'}).copy()
     if frame.columns.duplicated().any():
@@ -60,7 +72,7 @@ def load_purchases(path, sheet=0, demo=False, approved_duplicate_rows=()):
         raise ValueError('Datos sintéticos prohibidos en el protocolo de tesis.')
     frame['es_sintetico'] = synthetic
     frame['motivo'] = ''
-    # One mutually exclusive reason per rejected row; never silently drop duplicates.
+    # Una causa principal por fila; los duplicados nunca se descartan en silencio.
     conditions = [('fecha_invalida', frame.fecha.isna()),
         ('importe_invalido', ~np.isfinite(frame.importe_nominal)),
         ('importe_negativo_requiere_revision', frame.importe_nominal.lt(0)),
@@ -85,6 +97,7 @@ def load_purchases(path, sheet=0, demo=False, approved_duplicate_rows=()):
 
 
 def templates(purchases, output):
+    """Crear plantillas de revisión, no aprobaciones automáticas."""
     output = Path(output)
     weeks = pd.date_range(purchases.semana_inicio.min(), purchases.semana_inicio.max(), freq='W-MON')
     counts = purchases.groupby('semana_inicio').size()
@@ -99,6 +112,7 @@ def templates(purchases, output):
 
 
 def load_exogenous(path):
+    """Validar variables externas y su fecha real de disponibilidad."""
     columns = ['variable','fecha_referencia','available_at','valor','fuente','version','tipo']
     if path is None: return pd.DataFrame(columns=columns)
     frame = read_table(path)
@@ -113,13 +127,14 @@ def load_exogenous(path):
     for col in ('variable','fuente','version'):
         if frame[col].fillna('').astype(str).str.strip().eq('').any():
             raise ValueError(f'Exógenas sin {col}.')
-    # Prevent labeling a future observation as already published.
+    # Una observación futura no puede presentarse como conocida en el origen.
     if ((frame.tipo=='observada') & (frame.fecha_referencia>frame.available_at)).any():
         raise ValueError('Una observación no puede estar disponible antes de su fecha de referencia.')
     return frame
 
 
 def load_sales(path, index):
+    """Validar ventas semanales opcionales, publicadas después de su cierre."""
     if path is None: return None
     sales = read_table(path)
     if not {'semana_inicio','importe_nominal','available_at'}.issubset(sales):

@@ -1,5 +1,8 @@
 # Pipeline híbrido Rev44
 
+Para explicar el recorrido completo en la predefensa, consultar
+[FLUJO_PIPELINE_HIBRIDO_PREDEFENSA.md](FLUJO_PIPELINE_HIBRIDO_PREDEFENSA.md).
+
 El diagnóstico del 12 de septiembre describía el flujo anterior, archivado en `legados/`. La integración estadística y ML está en `hibrido/models.py` y `hibrido/experiment.py`. `00_pipeline_hibrido.py` es la única entrada operativa, `01_normalizacion.py` normaliza descripciones y `02_config_hibrido.json` fija el experimento. Los módulos internos de `hibrido/` conservan nombres importables.
 
 | Orden | Archivo activo | Función |
@@ -71,7 +74,7 @@ Si no se proporcionan estas fuentes, el modelo funciona con compras históricas 
 
 ## Productos por ejecución
 
-Cada corrida se guarda bajo `output/hibrido/<run_id>/` y contiene lo que haya alcanzado a generar, incluso si se bloquea:
+Cada corrida `audit`, `demo`, `run` o `forecast` se guarda en una carpeta nueva bajo `C:\Python\tesis\output\<run_id>\`, incluso si se bloquea. La ruta de salida es fija: `--output` ya no se admite. `forecast` guarda `pronostico_futuro.csv` y su manifiesto en lugar de imprimir el CSV. Las corridas anteriores no se mueven ni sobrescriben.
 
 - Auditoría, pendientes, plantillas de cobertura/catálogo y panel reconciliado.
 - Particiones, selección interna, métricas, predicciones, participaciones y asignaciones en CSV y Excel.
@@ -83,7 +86,7 @@ Cada corrida se guarda bajo `output/hibrido/<run_id>/` y contiene lo que haya al
 Los artefactos joblib solo deben cargarse si son de confianza: no abrir modelos enviados por terceros desconocidos.
 
 ```powershell
-.\.venv_hibrido\Scripts\python.exe 00_pipeline_hibrido.py forecast --artifact ..\output\hibrido\<run_id>\modelos.joblib
+.\.venv_hibrido\Scripts\python.exe 00_pipeline_hibrido.py forecast --artifact ..\output\<run_id>\modelos.joblib
 ```
 
 Este comando reproduce la emisión del corte guardado, comprobada contra el modelo en memoria. No pretende actualizar un modelo con datos que no recibió. Para un nuevo corte, actualizar fuentes y cobertura y ejecutar una nueva corrida. Su origen es el lunes siguiente al último dato auditado, no necesariamente la fecha actual del equipo.
@@ -100,7 +103,7 @@ Se añadió un constructor compatible con el nuevo contrato, sin sustituir ni pu
 
 ```powershell
 cd dashboard
-npm run build:hibrido -- ..\output\hibrido\<run_id>
+npm run build:hibrido -- ..\output\<run_id>
 node --test tests/hibrido.test.mjs
 ```
 

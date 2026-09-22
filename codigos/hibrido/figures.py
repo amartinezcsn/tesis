@@ -1,4 +1,8 @@
-"""Figuras trazables por fase; datos de respaldo y omisiones explícitas."""
+"""Figuras de metodología y resultados, con CSV y omisiones trazables.
+
+La visualización puede agrupar categorías para ser legible; sus CSV de
+respaldo conservan el detalle usado para verificarla.
+"""
 from pathlib import Path
 import hashlib
 import json
@@ -17,6 +21,7 @@ TITLES=[
 
 
 def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,controls=None,demo=False):
+    """Crear figuras F00–F22 disponibles y registrar por qué faltan otras."""
     output=Path(output); directory=output/'figuras'; directory.mkdir(exist_ok=True)
     os.environ.setdefault('MPLCONFIGDIR',str(output/'.matplotlib'))
     import matplotlib
@@ -24,12 +29,24 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
     import matplotlib.pyplot as plt
     plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,'savefig.bbox':'tight'})
     manifest=[]; generated=set()
+    def readable_labels(index):
+        """Acortar nombres solo en los ejes, sin modificar identificadores."""
+        return [str(value).replace('_',' ')[:38] + ('…' if len(str(value))>38 else '') for value in index]
+
+    def top_with_remainder(frame, limit, order):
+        """Mostrar los principales y agregar los demás únicamente en la figura."""
+        chosen=[item for item in order if item!='otros'][:limit]
+        shown=frame.reindex(columns=chosen,fill_value=0).copy()
+        shown['Resto de insumos']=frame.drop(columns=chosen,errors='ignore').sum(axis=1)
+        return shown
+
     def save(number,figure,table,chapter='Desarrollo'):
+        """Guardar PNG, SVG y CSV, y añadir sus rutas al manifiesto."""
         title=TITLES[number]; ident=f'F{number:02}'
         figure.suptitle(title,fontsize=14)
         note=('DEMOSTRACIÓN SINTÉTICA — NO ES EVIDENCIA DE TESIS' if demo else 'Importes registrados utilizables; huecos conservados; cobertura no certificada' if results and results.get('politica_faltantes')=='calendar_gaps' else 'Fuente: registros auditados de la ejecución')
-        figure.text(.5,.005,note,ha='center',fontsize=8,color='#9d2525' if demo else '#444444')
-        figure.tight_layout(rect=(0,.035,1,.94))
+        figure.text(.5,.015,note,ha='center',fontsize=8,color='#9d2525' if demo else '#444444')
+        figure.tight_layout(rect=(0,.075,1,.92))
         for ext in ('png','svg'):figure.savefig(directory/f'{ident}.{ext}',dpi=300)
         table.to_csv(directory/f'{ident}_datos.csv',index=False)
         digest=hashlib.sha256((directory/f'{ident}_datos.csv').read_bytes()).hexdigest()
@@ -38,6 +55,7 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
             run_id=output.name,capitulo=chapter,motivo='',demostracion=demo))
         generated.add(number);plt.close(figure)
     def diagram(number,labels):
+        """Dibujar un esquema metodológico; no representa un resultado medido."""
         fig,ax=plt.subplots(figsize=(10,3));ax.axis('off')
         for i,label in enumerate(labels):
             x=(i+.5)/len(labels)
@@ -48,6 +66,7 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
     diagram(0,['Fuentes y\ncobertura','Panel\nsemanal','Validación\ntemporal','Total híbrido\ny composición','Evaluación\ny presupuesto'])
     diagram(10,['Historia cerrada\nantes de origen','Exógena con\navailable_at ≤ origen','Calendario\nde semana objetivo','Pronóstico\nh = 1, 2, 3, 4'])
     diagram(12,['Componente\nestadístico','Peso w por\nhorizonte','Componente ML\npeso (1 − w)','Pronóstico\nhíbrido'])
+    # F01–F02: calidad de registros y cobertura, disponibles incluso en audit.
     counts=pd.concat([pd.Series({'aceptados_para_revision':len(purchases)}),rejected.motivo.value_counts()])
     fig,ax=plt.subplots(figsize=(9,4));ax.barh(counts.index,counts.values,color='#3c708c');ax.set_xlabel('Registros')
     save(1,fig,counts.rename_axis('estado').reset_index(name='registros'))
@@ -59,16 +78,22 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
         mask=cov.estado.eq(state);ax.scatter(x[mask],np.repeat(value,mask.sum()),label=state,s=18)
     ax.set_yticks(list(states.values()),list(states));ax.set_xlabel('Semana');save(2,fig,cov)
     if panel is not None and results is not None:
+        # F03–F13: describir desarrollo y mostrar la selección temporal.
         from .composition import shares
         cutoff=results['cutoff'];dev=panel.iloc[:cutoff];cats=results['categories']
         fig,ax=plt.subplots(figsize=(10,4));ax.plot(panel.index,panel.total,color='#345f7e');ax.axvline(panel.index[cutoff],color='black',linestyle='--',label='Inicio evaluación');ax.set_ylabel('MXN nominales');ax.legend()
         save(3,fig,panel.reset_index())
         pareto=dev.drop(columns='total').sum().sort_values(ascending=False)
-        fig,ax=plt.subplots(figsize=(10,5));pareto.plot.bar(ax=ax,color=['#346d96' if c in cats else '#b8c4cb' for c in pareto.index]);ax.set_ylabel('MXN nominales');ax.tick_params(axis='x',rotation=70,labelsize=8)
-        ax2=ax.twinx();ax2.plot(range(len(pareto)),pareto.cumsum()/pareto.sum()*100,color='#a24722',marker='o');ax2.set_ylabel('Participación acumulada (%)');ax2.set_ylim(0,105)
+        leading=pareto.head(15).iloc[::-1]
+        fig,ax=plt.subplots(figsize=(12,7));ax.barh(readable_labels(leading.index),leading.values,
+            color=['#346d96' if c in cats else '#b8c4cb' for c in leading.index])
+        ax.set_xlabel('MXN nominales');ax.set_title(f'15 principales: {pareto.head(15).sum()/pareto.sum():.1%} del importe total',fontsize=10)
         save(4,fig,pd.DataFrame({'insumo':pareto.index,'importe':pareto.values,'acumulado_pct':(pareto.cumsum()/pareto.sum()*100).values}))
         comp=shares(dev,cats)
-        fig,ax=plt.subplots(figsize=(11,max(3,len(comp.columns)*.35)));im=ax.imshow(comp.T*100,aspect='auto',interpolation='nearest',vmin=0,vmax=100,cmap='Blues');ax.set_yticks(range(len(comp.columns)),comp.columns);ax.set_xlabel('Semana del conjunto de desarrollo');fig.colorbar(im,ax=ax,label='Participación (%)');save(5,fig,comp.reset_index())
+        heat=top_with_remainder(comp,15,pareto.index)
+        fig,ax=plt.subplots(figsize=(12,7));im=ax.imshow(heat.T*100,aspect='auto',interpolation='nearest',vmin=0,vmax=100,cmap='Blues')
+        ax.set_yticks(range(len(heat.columns)),readable_labels(heat.columns));ax.set_xlabel('Semana del conjunto de desarrollo')
+        fig.colorbar(im,ax=ax,label='Participación (%)');save(5,fig,comp.reset_index())
         from statsmodels.tsa.stattools import acf,pacf
         if len(dev)>=10 and dev.total.notna().all() and dev.total.std()>0:
             lags=min(26,len(dev)//2-1);ac=acf(dev.total,nlags=lags);pc=pacf(dev.total,nlags=lags)
@@ -92,6 +117,7 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
         for h,g in score.groupby('horizonte'):axes[0].plot(range(len(g)),np.sqrt(g.mse),'.',label=f'h={h}')
         axes[0].set_ylabel('RMSE de validación (MXN)');axes[0].set_xlabel('Configuración candidata');axes[0].legend()
         axes[1].bar(list(results['selection']),[s['peso'] for s in results['selection'].values()]);axes[1].set_ylim(0,1);axes[1].set_xlabel('Horizonte');axes[1].set_ylabel('Peso estadístico seleccionado');save(13,fig,score)
+        # F14–F20: resultados congelados, errores y presupuesto por insumo.
         p=results['predicciones'];fig,axes=plt.subplots(2,2,figsize=(12,7))
         for h,ax in zip(range(1,5),axes.flat):
             for model,color in [('hibrido','#346d96'),('ultimo_valor','#b44828')]:
@@ -102,23 +128,50 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
         c=results['composicion'];first=c[(c.horizonte==1)&(c.modelo=='participacion_ewm')&c.real.notna()].origen.min()
         if pd.notna(first):
             example=c[(c.horizonte==1)&(c.origen==first)&(c.modelo=='participacion_ewm')]
-            fig,ax=plt.subplots(figsize=(9,4));example.set_index('insumo_id')[['real','prediccion']].T.mul(100).plot.bar(stacked=True,ax=ax);ax.set_ylabel('Participación (%)');ax.legend(bbox_to_anchor=(1,1),fontsize=8);ax.set_xlabel('Primera semana válida, regla predefinida');save(15,fig,example,'Resultados')
+            values=example.set_index('insumo_id')[['real','prediccion']]
+            leading=values.max(axis=1).sort_values(ascending=False).head(10).index
+            display=top_with_remainder(values.T,10,leading).T.iloc[::-1].mul(100)
+            fig,ax=plt.subplots(figsize=(11,7));display.plot.barh(ax=ax,color=['#346d96','#b44828'],width=.75)
+            ax.set_yticklabels(readable_labels(display.index));ax.set_xlabel('Participación (%)');ax.set_ylabel('')
+            ax.legend(['Observada','Pronosticada'],loc='upper right',fontsize=9)
+            ax.set_title('Primera semana válida; 10 participaciones principales y resto',fontsize=10)
+            save(15,fig,example,'Resultados')
         assignments=results['asignaciones'];example=assignments[(assignments.horizonte==1)&(assignments.origen==assignments.origen.min())]
-        fig,ax=plt.subplots(figsize=(10,4));ax.barh(example.insumo_id,example.importe,color='#346d96');ax.set_xlabel('MXN nominales asignados');save(16,fig,example,'Resultados')
+        ranked=example.set_index('insumo_id').importe.sort_values(ascending=False)
+        shown=ranked.head(12).copy();shown.loc['Resto de insumos']=ranked.iloc[12:].sum();shown=shown.iloc[::-1]
+        fig,ax=plt.subplots(figsize=(11,7));ax.barh(readable_labels(shown.index),shown.values,color='#346d96')
+        ax.set_xlabel('MXN nominales asignados');ax.set_title('Primer origen, h=1; 12 insumos principales y resto',fontsize=10)
+        save(16,fig,example,'Resultados')
         metrics=results['metricas'];fig,axes=plt.subplots(1,2,figsize=(12,5))
         for metric,ax in zip(['rmse','mae'],axes):metrics.pivot(index='modelo',columns='horizonte',values=metric).plot.barh(ax=ax);ax.set_xlabel(metric.upper()+' (MXN)')
         save(17,fig,metrics,'Resultados')
-        cm=results['metricas_composicion'];fig,ax=plt.subplots(figsize=(10,5));cm[cm.horizonte==1].pivot(index='insumo_id',columns='modelo',values='mae_pp').plot.barh(ax=ax);ax.set_xlabel('MAE de participación (puntos porcentuales), h=1');save(18,fig,cm,'Resultados')
+        cm=results['metricas_composicion'];errors=cm[cm.horizonte==1].pivot(index='insumo_id',columns='modelo',values='mae_pp')
+        leaders=errors.drop(index='PROMEDIO_MACRO',errors='ignore').max(axis=1).nlargest(12).index.tolist()
+        if 'PROMEDIO_MACRO' in errors.index:leaders.append('PROMEDIO_MACRO')
+        shown=errors.loc[leaders].iloc[::-1]
+        fig,ax=plt.subplots(figsize=(12,7));shown.plot.barh(ax=ax,color=['#346d96','#b44828'],width=.75)
+        ax.set_yticklabels(readable_labels(shown.index));ax.set_xlabel('MAE de participación (puntos porcentuales), h=1');ax.set_ylabel('')
+        ax.legend(['Ponderación temporal','Promedio histórico'],fontsize=9)
+        ax.set_title('12 mayores errores por insumo y promedio macro',fontsize=10)
+        save(18,fig,cm,'Resultados')
         loss=p[p.horizonte==1].pivot(index='origen',columns='modelo',values=['real','prediccion']);y=loss[('real','hibrido')]
         dif=(y-loss[('prediccion','ultimo_valor')])**2-(y-loss[('prediccion','hibrido')])**2
         cc=c[c.horizonte==1].copy();cc['error_pp']=(cc.real-cc.prediccion).abs()*100;cp=cc.groupby(['origen','modelo']).error_pp.mean().unstack();dp=cp.participacion_historica-cp.participacion_ewm
         fig,axes=plt.subplots(2,1,figsize=(10,6))
         for ax,s,label in zip(axes,[dif,dp],['Diferencia de pérdida monetaria (MXN²)','Diferencia de MAE de participación (pp)']):ax.plot(s.index,s.values,marker='o');ax.axhline(0,color='black',linestyle='--');ax.set_ylabel(label,fontsize=8)
         save(19,fig,pd.concat([dif.rename('diferencia_monetaria'),dp.rename('diferencia_pp')],axis=1).reset_index(),'Resultados')
-        future=results['pronostico_futuro'];fig,ax=plt.subplots(figsize=(10,5));future.pivot(index='horizonte',columns='insumo_id',values='importe').plot.bar(stacked=True,ax=ax);ax.set_ylabel('MXN nominales');ax.set_xlabel('Horizonte desde el corte guardado');ax.legend(bbox_to_anchor=(1,1),fontsize=8);save(20,fig,future)
+        future=results['pronostico_futuro'];budget=future.pivot(index='horizonte',columns='insumo_id',values='importe').fillna(0)
+        order=budget.sum().sort_values(ascending=False).index
+        shown=top_with_remainder(budget,7,order)
+        fig,ax=plt.subplots(figsize=(11,6));shown.plot.bar(stacked=True,ax=ax,width=.65,colormap='tab20')
+        ax.set_ylabel('MXN nominales');ax.set_xlabel('Horizonte desde el corte guardado');ax.tick_params(axis='x',rotation=0)
+        ax.legend(readable_labels(shown.columns),loc='upper left',bbox_to_anchor=(1.01,1),fontsize=8,title='Insumos principales')
+        save(20,fig,future)
     if controls:
+        # F22 resume los invariantes de cierre; no convierte prueba en selección.
         tab=pd.DataFrame(controls);fig,ax=plt.subplots(figsize=(10,4));ax.barh(tab.control,tab.aprobado.astype(int),color='#367d59');ax.set_xlim(0,1.2);ax.set_xticks([0,1],['Falló','Aprobado']);save(22,fig,tab)
     for number,title in enumerate(TITLES):
+        # Cada figura ausente conserva motivo explícito en el manifiesto.
         if number not in generated:
             reason='Sin ejecución empírica aprobada.'
             if number==6:reason='ACF/PACF requiere desarrollo continuo observado; no se comprimen ni imputan huecos.'

@@ -1,3 +1,4 @@
+"""Orquesta cada comando y deja evidencia auditable en una carpeta nueva."""
 from pathlib import Path
 from datetime import datetime, timezone
 import argparse
@@ -14,10 +15,20 @@ from .data import load_purchases,templates,load_exogenous,load_sales,read_table,
 from .gaps import build_gap_panel
 
 ROOT=Path(__file__).resolve().parents[2]
+OUTPUT_DIR=Path(r'C:\Python\tesis\output')
+
+
+def new_run_directory(command):
+    """Crear un identificador único sin sobrescribir corridas anteriores."""
+    stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
+    prefix='DEMO' if command=='demo' else command
+    output=OUTPUT_DIR/(prefix+'_'+stamp+'_'+uuid.uuid4().hex[:6])
+    output.mkdir(parents=True)
+    return output
 
 
 def create_demo(output):
-    """Technical fixture isolated from real sources and outputs, never research evidence."""
+    """Crear datos sintéticos aislados; DEMO nunca es evidencia de la tesis."""
     rng=np.random.default_rng(42);dates=pd.date_range('2021-01-04',periods=110,freq='W-MON');rows=[]
     for i,date in enumerate(dates):
         total=max(0,300+1.5*i+60*np.sin(i*2*np.pi/13)+rng.normal(0,12)) if i%13 else 0
@@ -40,6 +51,7 @@ def create_demo(output):
 
 
 def manifest(output,cfg,status,files,error=None,demo=False):
+    """Registrar estado, entorno, fuentes, código y huellas de cada producto."""
     versions={}
     for name in ['numpy','pandas','scikit-learn','statsmodels','matplotlib','openpyxl','scipy','joblib']:
         try:versions[name]=importlib.metadata.version(name)
@@ -55,7 +67,7 @@ def manifest(output,cfg,status,files,error=None,demo=False):
 
 
 def inventory_sources(output,source,sheet,files,cfg):
-    """Comparación descriptiva, nunca selección automática de fuente canónica."""
+    """Comparar fuentes descriptivamente, sin cambiar la fuente canónica."""
     candidates=[(source,sheet)]+[(ROOT/'input'/name,'detalle') for name in ('compras_limpias.xlsx','compras_limpias_corregidas.xlsx')]
     rows=[]
     for candidate_number,(path,tab) in enumerate(candidates):
@@ -74,16 +86,17 @@ def inventory_sources(output,source,sheet,files,cfg):
     pd.DataFrame(rows).to_csv(output/'comparacion_fuentes.csv',index=False)
 
 
-def execute(command,config_path=None,output_base=None):
+def execute(command,config_path=None):
+    """Aplicar las puertas auditables: ingesta, aprobación, panel, modelos y salidas."""
     demo=command=='demo'
-    base=Path(output_base or ROOT/'output/hibrido').resolve()
-    stamp=datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')
-    output=base/(('DEMO_' if demo else command+'_')+stamp+'_'+uuid.uuid4().hex[:6]);output.mkdir(parents=True)
+    output=new_run_directory(command)
     cfg=None;files=[]
     try:
         cfg=create_demo(output) if demo else load_config(config_path)
         cfg.validate()
         source=ROOT/cfg.source;files.append(source)
+        # Primero se audita cada registro; incluso una corrida bloqueada conserva
+        # sus diagnósticos y no se convierte silenciosamente en entrenamiento.
         purchases,rejected=load_purchases(
             source,cfg.source_sheet,demo,
             approved_duplicate_rows=cfg.approved_duplicate_rows,
@@ -104,10 +117,12 @@ def execute(command,config_path=None,output_base=None):
         if not demo:inventory_sources(output,source,cfg.source_sheet,files,cfg)
         from .figures import generate_figures
         if command=='audit':
+            # La auditoría termina aquí: no utiliza ni ajusta modelos.
             generate_figures(output,purchases,rejected,coverage_template,demo=demo)
             manifest(output,cfg,'auditoria_sin_entrenamiento',files,demo=demo)
             return output
         if not cfg.source_approved or not cfg.source_sha256 or fingerprint(source)!=cfg.source_sha256:
+            # El hash impide reutilizar una aprobación con un archivo cambiado.
             raise ValueError('Fuente no aprobada o hash distinto. Revisar auditoría antes de entrenar.')
         if not rejected.empty:raise ValueError('Hay registros pendientes: corregir fuente o documentar decisión antes de entrenar.')
         if not cfg.start or not cfg.end:raise ValueError('Definir inicio y fin semanales del periodo auditado.')
@@ -126,6 +141,8 @@ def execute(command,config_path=None,output_base=None):
         from .experiment import run_experiment
         from .reporting import export_results,quality_controls
         print('Entrenamiento y evaluación: selección interna, prueba final y persistencia.',flush=True)
+        # La función experimental separa la elección de hiperparámetros del
+        # periodo final, que solo sirve para evaluar las decisiones ya fijadas.
         result=run_experiment(panel,cfg,exog,output,sales,demo)
         controls=quality_controls(panel,result)
         pd.DataFrame(controls).to_csv(output/'controles.csv',index=False)
@@ -136,26 +153,37 @@ def execute(command,config_path=None,output_base=None):
         manifest(output,cfg,'completado_demo' if demo else 'completado',files,demo=demo)
         return output
     except Exception as exc:
+        # No esconder errores: se registra el motivo y se devuelve código fallido.
         manifest(output,cfg,'bloqueado_o_fallido',files,error=str(exc),demo=demo)
         print(f'Corrida detenida. Auditoría: {output}\nMotivo: {exc}',file=sys.stderr)
         raise
 
 
 def main(argv=None):
+    """Interpretar los cuatro comandos públicos del pipeline."""
     parser=argparse.ArgumentParser(description='Pipeline híbrido Rev44: auditoría, demo, ejecución y reproducción de emisión.')
     parser.add_argument('command',choices=['audit','demo','run','forecast'])
     parser.add_argument('--config',default=str(ROOT/'codigos/02_config_hibrido.json'))
-    parser.add_argument('--output',help='Carpeta base de salidas nuevas; no sobrescribe corridas anteriores.')
     parser.add_argument('--artifact',help='Modelo local de confianza generado por este pipeline. Joblib no es seguro para archivos desconocidos.')
     args=parser.parse_args(argv)
     if args.command=='forecast':
+        # Solo reproduce el corte persistido. Para un corte nuevo se ejecuta run.
         if not args.artifact:parser.error('forecast requiere --artifact de confianza.')
+        output=new_run_directory('forecast')
+        artifact=Path(args.artifact).resolve()
         import joblib
         from .experiment import forecast_bundle
-        result=forecast_bundle(joblib.load(args.artifact))
-        print(result.to_csv(index=False))
-        return 0
-    try:print(f'Productos guardados en: {execute(args.command,args.config,args.output)}');return 0
+        try:
+            result=forecast_bundle(joblib.load(artifact))
+            result.to_csv(output/'pronostico_futuro.csv',index=False)
+            manifest(output,None,'pronostico_reproducido',[artifact])
+            print(f'Productos guardados en: {output}')
+            return 0
+        except Exception as exc:
+            manifest(output,None,'bloqueado_o_fallido',[artifact],error=str(exc))
+            print(f'Pronóstico detenido. Auditoría: {output}\nMotivo: {exc}',file=sys.stderr)
+            return 2
+    try:print(f'Productos guardados en: {execute(args.command,args.config)}');return 0
     except Exception:return 2
 
 

@@ -1,4 +1,8 @@
-"""API temporal única del protocolo de tesis con calendario incompleto."""
+"""Nombres públicos de las funciones temporales implementadas en ``gaps``.
+
+No hay dos algoritmos de características: estos alias mantienen una sola
+implementación verificable del calendario incompleto.
+"""
 from .gaps import gap_features, gap_partitions, gap_samples
 
 

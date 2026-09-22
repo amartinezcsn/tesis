@@ -1,14 +1,20 @@
+"""Métricas retrospectivas y contraste exploratorio de la hipótesis H1."""
 import numpy as np
 import pandas as pd
 
 
 def total_metrics(predictions,common=False):
+    """Calcular RMSE, MAE y MASE monetarios por modelo y horizonte.
+
+La comparación principal usa las mismas fechas observadas para todos los
+modelos comparados, evitando ventajas por distinta disponibilidad.
+"""
     rows=[]
     eligible={}
     if common:
         for h,g in predictions.groupby('horizonte'):
             wide=g.pivot(index='origen',columns='modelo',values='prediccion')
-            # Main comparison: hybrid, selected components and last observed.
+            # Se comparan híbrido, componentes elegidos y último valor.
             primary=[c for c in wide if c not in ('promedio_4s','estacional_52s')]
             valid=g.groupby('origen').real.first().notna() & wide[primary].notna().all(axis=1)
             eligible[h]=set(wide.index[valid])
@@ -26,6 +32,7 @@ def total_metrics(predictions,common=False):
 
 
 def composition_metrics(frame):
+    """Medir error absoluto de participación por insumo y promedio macro."""
     rows=[]
     for (h,model,item),g in frame.groupby(['horizonte','modelo','insumo_id']):
         error=(g.real-g.prediccion).abs()*100
@@ -37,7 +44,11 @@ def composition_metrics(frame):
 
 
 def paired_interval(differences,cfg):
-    """Exploratory paired circular block bootstrap; positive favors proposed model."""
+    """Intervalo exploratorio por bloques de semanas emparejadas.
+
+Una diferencia positiva favorece al modelo propuesto. No sustituye una
+confirmación independiente, especialmente con pocas semanas.
+"""
     d=np.asarray(differences,float)
     n=int(np.isfinite(d).sum())
     if np.isinf(d).any() or n<cfg.min_inference_weeks or len(d)<2*cfg.bootstrap_block:
@@ -46,15 +57,16 @@ def paired_interval(differences,cfg):
     starts=rng.integers(0,len(d),size=(cfg.bootstrap_samples,int(np.ceil(len(d)/cfg.bootstrap_block))))
     idx=(starts[:,:,None]+np.arange(cfg.bootstrap_block))%len(d)
     samples=d[idx.reshape(cfg.bootstrap_samples,-1)[:,:len(d)]]
-    # Keep undefined composition weeks in the calendar; never join distant weeks.
+    # Los huecos siguen en su posición: no se unen semanas alejadas.
     valid_counts=np.isfinite(samples).sum(axis=1)
     means=np.nansum(samples,axis=1)[valid_counts>0]/valid_counts[valid_counts>0]
-    # Bonferroni simultaneous 95% intervals for the two predeclared H1 endpoints.
+    # Intervalos simultáneos Bonferroni para los dos componentes de H1.
     low,high=np.quantile(means,[0.0125,0.9875])
     return {'estado':'estimado','n':n,'media':float(np.nanmean(d)),'limite_inferior':float(low),'limite_superior':float(high)}
 
 
 def hypothesis(predictions,composition,cfg,demo=False):
+    """Comparar H1 en h=1: pérdida monetaria y error de participaciones."""
     p=predictions[predictions.horizonte==1].pivot(index='origen',columns='modelo',values=['real','prediccion'])
     y=p[('real','hibrido')]
     money=(y-p[('prediccion','ultimo_valor')])**2-(y-p[('prediccion','hibrido')])**2

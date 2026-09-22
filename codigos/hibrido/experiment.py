@@ -1,3 +1,4 @@
+"""Experimento temporal: selección interna, prueba final y emisión futura."""
 from pathlib import Path
 import json
 import numpy as np
@@ -11,14 +12,18 @@ from .gaps import history as training_history
 
 
 def select_models(panel,cfg,exog,sales=None):
+    """Elegir componentes, peso, alfa y categorías usando solo desarrollo.
+
+Cada horizonte tiene su propia pareja estadístico/ML y su peso. La prueba
+final aún no participa en ninguna elección.
+"""
     cutoff,tuning,evaluation,folds=partitions(panel,cfg)
-    # Vocabulary is fixed by available sources in development, not future rows.
-    # Freeze the schema before internal validation. Per-origin availability is
-    # still enforced by feature construction, so this does not expose values
-    # published after each forecast origin.
+    # Fijar nombres de exógenas en desarrollo; gap_features aún comprueba
+    # available_at para cada origen y evita usar valores publicados después.
     variables=sorted(exog.loc[exog.available_at <= panel.index[tuning[0]],'variable'].unique())
     selections={}; scores=[]; failures=[]; comp_scores=[]
     for h in cfg.horizons:
+        # Simular pronósticos retrospectivos solo en orígenes internos.
         inner=[]
         for origin in tuning:
             if pd.isna(panel.total.iloc[origin+h-1]):continue
@@ -27,6 +32,7 @@ def select_models(panel,cfg,exog,sales=None):
             inner.append((pred,float(panel.total.iloc[origin+h-1])))
         stats,mls=candidates(cfg)
         for stat in stats:
+            # Probar parejas y pesos declarados; gana el menor MSE interno.
             for ml in mls:
                 for weight in cfg.weights:
                     if any(stat not in pred or ml not in pred for pred,_ in inner):continue
@@ -35,7 +41,7 @@ def select_models(panel,cfg,exog,sales=None):
         available=[r for r in scores if r['horizonte']==h]
         if not available:raise ValueError(f'Sin combinación válida para h={h}; fallos: {failures}')
         selections[h]=min(available,key=lambda r:r['mse'])
-    # Categories are learned afresh on each inner training window.
+    # Evaluar la mezcla de insumos con categorías aprendidas en cada historia.
     for alpha in cfg.alphas:
         losses=[]
         for origin in tuning:
@@ -53,16 +59,23 @@ def select_models(panel,cfg,exog,sales=None):
 
 
 def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
+    """Ejecutar la evaluación congelada y guardar un modelo de emisión.
+
+Devuelve las tablas necesarias para métricas, reportes y figuras; las
+predicciones finales nunca retroalimentan la selección de candidatos.
+"""
     cfg.validate()
     output=Path(output)
     (selected,alpha,categories,variables,cutoff,tuning,evaluation,folds,scores,comp_scores,failures)=select_models(panel,cfg,exog,sales)
     rows=[]; composition=[]; allocations=[]
     for origin in evaluation:
+        # Ventana creciente: en cada origen entra solo la historia anterior.
         history=training_history(panel,origin,cfg)
         prop=predict_shares(history,categories,alpha,calendar=True)
         ref=predict_shares(history,categories)
         scale=float(history.total.diff().abs().mean())
         for h in cfg.horizons:
+            # El total híbrido es peso * estadístico + (1-peso) * ML.
             if origin+h-1>=len(panel):continue
             selection=selected[h]
             pred,_,errors,_=components(panel,origin,h,cfg,exog,variables,sales,selection)
@@ -79,13 +92,14 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
                     composition.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,
                         modelo=name,insumo_id=item,real=float(real[item]),prediccion=float(value)))
             budget=allocate(pred['hibrido'],prop)
+            # Reparto exacto en centavos: suma de insumos = total redondeado.
             for item,value in budget.items():
                 allocations.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,
                     insumo_id=item,participacion=float(prop[item]),importe=value,total_redondeado=float(budget.sum())))
     predictions=pd.DataFrame(rows); composition=pd.DataFrame(composition); allocations=pd.DataFrame(allocations)
     metrics=total_metrics(predictions,common=True); percentages=composition_metrics(composition)
     result=hypothesis(predictions,composition,cfg,demo)
-    # Final fit is selected in development, never from the final ranking.
+    # Reajuste final con toda la historia, pero configuración elegida antes.
     origin=len(panel); bundle={'version':1,'moneda':'MXN nominales','demostracion':demo,
         'origen':str(panel.index[-1]+pd.Timedelta(weeks=1)),'config':cfg.dictionary(),
         'seleccion':selected,'alpha_composicion':alpha,'categorias':categories,'variables_exogenas':variables,'modelos':{}}
@@ -98,6 +112,7 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
     joblib.dump(bundle,output/'modelos.joblib')
     future=forecast_bundle(bundle)
     reloaded=forecast_bundle(joblib.load(output/'modelos.joblib'))
+    # La recarga debe reproducir exactamente la emisión en memoria.
     pd.testing.assert_frame_equal(future,reloaded)
     datasets={'predicciones':predictions,'composicion':composition,'asignaciones':allocations,'metricas':metrics,
         'metricas_composicion':percentages,'particiones':folds,'seleccion_interna':scores,
@@ -115,7 +130,11 @@ def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
 
 
 def forecast_bundle(bundle):
-    """Reproduce la emisión del corte guardado; un nuevo corte requiere reentrenar."""
+    """Reproducir cuatro semanas desde el corte guardado en ``modelos.joblib``.
+
+No incorpora datos nuevos: para otro corte se actualizan fuentes y se corre
+otra vez el pipeline completo.
+"""
     rows=[]; prop=bundle['participaciones']
     for h,models in bundle['modelos'].items():
         stat=predict_stat(models['stat'],int(h))
