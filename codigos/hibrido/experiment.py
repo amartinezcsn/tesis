@@ -80,8 +80,16 @@ final aún no participa en ninguna elección.
                 if real.notna().all():
                     losses.append(float((real-pred).abs().mean()*100))
         if losses:comp_scores.append(dict(alpha=alpha,mae_pp=float(np.mean(losses)),n=len(losses)))
-    if not comp_scores:raise ValueError('Sin semanas positivas para validar composición.')
-    alpha=min(comp_scores,key=lambda r:r['mae_pp'])['alpha']
+    if not comp_scores:
+        # Si las semanas de validación contienen únicamente etiquetas
+        # excluidas, no se inventa una categoría residual. Se conserva una
+        # configuración determinista y se deja constancia de que no hubo
+        # soporte para comparar alphas.
+        alpha=cfg.alphas[0]
+        comp_scores.append(dict(alpha=alpha,mae_pp=np.nan,n=0,
+            seleccion='sin_validacion_composicion'))
+    else:
+        alpha=min(comp_scores,key=lambda r:r['mae_pp'])['alpha']
     categories=select_categories(panel.iloc[:cutoff],cfg.threshold)
     return selections,alpha,categories,variables,cutoff,tuning,evaluation,folds,pd.DataFrame(scores),pd.DataFrame(comp_scores),failures
 

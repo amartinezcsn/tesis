@@ -104,12 +104,20 @@ class DataTests(unittest.TestCase):
 class CompositionTests(unittest.TestCase):
     def test_select_categories_does_not_need_test(self):
         p=panel();self.assertEqual(select_categories(p.iloc[:50],.5),['harina'])
-    def test_residual_reconciles(self):
+    def test_excluded_labels_are_never_budget_categories(self):
+        p=panel(8);p['IMPUTADO']=1000.;p['OTROS']=500.;p.total+=p['IMPUTADO']+p['OTROS']
+        selected=select_categories(p,.8)
+        self.assertNotIn('IMPUTADO',selected)
+        self.assertNotIn('OTROS',selected)
+        result=shares(p,selected)
+        self.assertAlmostEqual(result.iloc[0].sum(),1.)
+        self.assertNotIn('otros',result.columns)
+    def test_unselected_amount_is_redistributed(self):
         p=panel();s=shares(p,['harina']);np.testing.assert_allclose(s.sum(axis=1),1)
-        np.testing.assert_allclose(s.otros,.4)
-    def test_new_test_insumo_goes_to_residual(self):
+        np.testing.assert_allclose(s.harina,1.)
+    def test_new_test_insumo_is_redistributed(self):
         p=panel(1);p['nuevo']=50;p.total+=50
-        s=shares(p,['harina']);self.assertGreater(s.otros.iloc[0],.4)
+        s=shares(p,['harina']);self.assertEqual(s.harina.iloc[0],1.)
     def test_zero_total_shares_undefined(self):
         p=panel(1)*0;self.assertTrue(shares(p,['harina']).isna().all().all())
     def test_all_zero_history_blocks_composition(self):

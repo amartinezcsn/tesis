@@ -1,0 +1,1017 @@
+fuente,semana_inicio,serie,importe_observado,importe_estimado,estado,metodo
+compras,2021-05-10,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,ACEITE,,6.996153846153846,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,ADMINISTRACION,,1.6153846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,AMBIANTE,,21.58076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,AZUCAR,,4.542000000000001,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,BASES,,14.480846153846153,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,CAPACILLOS,,15.574307692307691,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,CASETAS,,5.576923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,CHANTILLY,,52.63846153846154,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,CHOCOLATE,,73.33307692307692,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,CINTA,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,COLORANTES,,5.4423076923076925,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,CONSUMIBLES,,4.817,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,DECORACION,,40.831923076923076,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,DOMO,,15.384615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,DULCERIA,,5.709923076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,EMPAQUE,,57.70776923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,FONDANT,,66.13076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,GALLETAS,,7.092538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,HARINA,,77.99369230769231,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,HORNEADO,,2.15,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,HUEVO,,20.97423076923077,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,JARABE,,0.34615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,LECHE,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,LECHE EN POLVO,,0.3769230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,LECHERA,,1.1876923076923078,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,LICORES,,4.915384615384616,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,MANTECA VEGETAL,,0.16923076923076924,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,MANTEQUILLA,,13.811538461538461,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,NO DEFINIDO,,9.896846153846155,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,OTROS,,15.108230769230769,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,QUESO CREMA,,14.314615384615385,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,RELLENO,,48.901,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,ROYALICING,,5.223076923076923,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,SABORIZANTE,,0.11538461538461539,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,TRANSFER,,7.615384615384615,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-24,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-06-07,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-05,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-07-12,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-02,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-09,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-16,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-08-30,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-03-07,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-11,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-04-18,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-02,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-16,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-05-23,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-04,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-07-11,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2022-10-10,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-04-10,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-05-08,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-06-19,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-07-03,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2023-10-23,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-01-29,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-02-19,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-03-18,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2024-04-15,VELAS,,0.0,estimado_promedio_simple,media_aritmetica_categoria
+compras,2021-05-10,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-05-24,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-06-07,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-07-05,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-07-12,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-08-02,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-08-09,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-08-16,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2021-08-30,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-03-07,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-04-11,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-04-18,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-05-02,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-05-16,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-05-23,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-07-04,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-07-11,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2022-10-10,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2023-04-10,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2023-05-08,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2023-06-19,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2023-07-03,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2023-10-23,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2024-01-29,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2024-02-19,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2024-03-18,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+compras,2024-04-15,TOTAL,,622.5541538461539,estimado_promedio_simple,suma_de_medias_aritmeticas_por_categoria
+ventas,2021-08-02,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2021-08-09,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2021-08-30,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-03-07,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-03-21,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-04-11,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-05-23,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-07-04,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-08-01,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-08-08,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-09-12,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-09-19,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-09-26,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-10-10,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-10-31,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2022-11-14,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal
+ventas,2023-02-20,TOTAL,,2023.8285714285714,estimado_promedio_simple,media_aritmetica_semanal

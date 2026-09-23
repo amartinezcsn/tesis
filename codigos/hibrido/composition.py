@@ -2,10 +2,14 @@
 import numpy as np
 import pandas as pd
 
+EXCLUDED_BUDGET_CATEGORIES = {'IMPUTADO', 'OTROS'}
+
 
 def select_categories(history, threshold):
     """Fijar insumos principales según su importe acumulado en desarrollo."""
     sums=history.drop(columns='total').sum().sort_values(ascending=False,kind='stable')
+    normalized=sums.index.astype(str).str.strip().str.upper()
+    sums=sums[~normalized.isin(EXCLUDED_BUDGET_CATEGORIES)]
     sums=sums[sums>0]
     if sums.empty: raise ValueError('Sin historia positiva para composición.')
     count=min(len(sums),int(np.searchsorted(sums.cumsum()/sums.sum(),threshold))+1)
@@ -13,10 +17,10 @@ def select_categories(history, threshold):
 
 
 def amounts(panel,categories):
-    """Conservar categorías elegidas y agrupar el resto en ``otros``."""
+    """Repartir el total únicamente entre las categorías presupuestarias elegidas."""
     result=panel.reindex(columns=categories,fill_value=0.).copy()
-    result['otros']=panel.drop(columns=['total',*categories],errors='ignore').sum(axis=1)
-    return result
+    selected_total=result.sum(axis=1)
+    return result.div(selected_total.where(selected_total>0),axis=0).mul(panel.total,axis=0)
 
 
 def shares(panel,categories):

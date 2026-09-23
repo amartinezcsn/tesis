@@ -1,7 +1,7 @@
 {
   "source": "datasets/xlsx/Compras.xlsx",
   "source_sheet": "Hoja1",
-  "source_sha256": "c47fab1d3545ecd309e9aebb4e7ae160da3fd2004ccca03c798c3c9cd8a41d57",
+  "source_sha256": "48608adf10526747c644d05cb2cc94d42a23e243e6f8a92f2531102e5cc59996",
   "source_approved": true,
   "approved_duplicate_rows": [190, 191, 294, 296, 297, 298, 792, 798, 893, 895, 1417, 1418],
   "coverage": "codigos/outputs/revision_datos_20260919/revision_catalogo_cobertura_trazada.xlsx",

@@ -1,0 +1,7 @@
+origen,fecha_objetivo,horizonte,modelo,insumo_id,real,prediccion
+2025-03-24,2025-03-24,1,participacion_ewm,IMPUTADO,1.0,1.0
+2025-03-24,2025-03-24,1,participacion_ewm,HARINA,0.0,3.563952602903225e-18
+2025-03-24,2025-03-24,1,participacion_ewm,CHOCOLATE,0.0,1.2482468150149817e-19
+2025-03-24,2025-03-24,1,participacion_ewm,FONDANT,0.0,4.784459213481962e-18
+2025-03-24,2025-03-24,1,participacion_ewm,EMPAQUE,0.0,3.9581347825392444e-18
+2025-03-24,2025-03-24,1,participacion_ewm,otros,0.0,1.702845926757047e-17
