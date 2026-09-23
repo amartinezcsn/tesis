@@ -1,0 +1,7 @@
+{
+  "fuente": "C:\\Python\\tesis\\output\\test_dataset_staging\\caso1_compras_promedio_asumido_real.csv",
+  "sha256": "006b3aa279b0e3cdc4564cba4180d7f6a41c7c38d083d9a0e53f85f756c8c81e",
+  "registros_validos_para_revision": 2466,
+  "pendientes": 0,
+  "cobertura": "Debe confirmarse documentalmente; transacciones no prueban integridad semanal."
+}

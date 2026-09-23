@@ -1,0 +1,7 @@
+{
+  "fuente": "C:\\Python\\tesis\\output\\test_dataset_staging\\caso2_imputado_como_categoria.csv",
+  "sha256": "4862e341b0a391690acf72bd8070fe26c85ba825b3164043483410c728cc5330",
+  "registros_validos_para_revision": 1709,
+  "pendientes": 0,
+  "cobertura": "Debe confirmarse documentalmente; transacciones no prueban integridad semanal."
+}
