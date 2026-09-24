@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 from .config import Config,load_config
 from .data import load_purchases,templates,load_exogenous,load_sales,read_table,fingerprint,complete_purchase_panel_simple_mean,complete_sales_simple_mean
-from .gaps import build_gap_panel
+from .gaps import build_gap_panel, excluded_purchase_summary, zero_purchase_records
 
 ROOT=Path(__file__).resolve().parents[2]
 OUTPUT_DIR=Path(r'C:\Python\tesis\output')
@@ -110,6 +110,10 @@ def execute(command,config_path=None):
         coverage_template['registros_detectados']=coverage_template.semana_inicio.map(purchases.groupby('semana_inicio').size()).fillna(0).astype(int)
         coverage_template.to_csv(output/'cobertura_PARA_REVISAR.csv',index=False)
         in_period=purchases.loc[purchases.semana_inicio.between(cfg.start,cfg.end)]
+        exclusions=excluded_purchase_summary(purchases,cfg.start,cfg.end,cfg.excluded_budget_categories)
+        exclusions.to_csv(output/'exclusiones_compras.csv',index=False)
+        zero_purchase_records(purchases,cfg.start,cfg.end).to_csv(
+            output/'registros_importe_cero.csv',index=False)
         cat=pd.DataFrame({'descripcion_normalizada':sorted(in_period.descripcion_normalizada.unique()),'insumo_id':'','aprobado':False,'decision':'revisar','evidencia':''})
         cat.to_csv(output/'catalogo_PARA_REVISAR.csv',index=False)
         (output/'auditoria.json').write_text(json.dumps({'fuente':str(source),'sha256':fingerprint(source),
@@ -132,7 +136,7 @@ def execute(command,config_path=None):
             purchases,
             read_table(ROOT/cfg.coverage,cfg.coverage_sheet),
             read_table(ROOT/cfg.catalog,cfg.catalog_sheet),
-            cfg.start,cfg.end,cfg.zero_targets_valid,
+            cfg.start,cfg.end,cfg.zero_targets_valid,cfg.excluded_budget_categories,
         )
         panel.to_csv(output/'panel_semanal.csv');cov.to_csv(output/'cobertura.csv')
         if cfg.exogenous:files.append(ROOT/cfg.exogenous)
@@ -163,6 +167,10 @@ def execute(command,config_path=None):
         # periodo final, que solo sirve para evaluar las decisiones ya fijadas.
         result=run_experiment(panel,cfg,exog,output,sales,demo)
         controls=quality_controls(panel,result)
+        excluded_labels={str(value).strip().upper() for value in cfg.excluded_budget_categories}
+        present_excluded=excluded_labels.intersection(str(col).strip().upper() for col in panel.columns)
+        controls.append(dict(control='Categorías fuera de alcance excluidas del objetivo monetario',
+            aprobado=not present_excluded,detalle=', '.join(sorted(present_excluded))))
         pd.DataFrame(controls).to_csv(output/'controles.csv',index=False)
         if not all(x['aprobado'] for x in controls):raise ValueError('Fallaron controles de salida.')
         export_results(output,result,cfg,demo)

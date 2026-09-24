@@ -6,9 +6,9 @@ import pandas as pd
 import joblib
 from .features import partitions
 from .models import components, candidates, baselines, predict_stat
-from .composition import select_categories, shares, predict_shares, allocate
+from .composition import select_categories, shares, predict_shares, with_eligible_remainder, allocate
 from .evaluation import total_metrics, composition_metrics, hypothesis
-from .gaps import history as training_history
+from .gaps import history as training_history, composition_history
 
 
 def select_models(panel,cfg,exog,sales=None):
@@ -21,7 +21,7 @@ final aún no participa en ninguna elección.
     # Fijar nombres de exógenas en desarrollo; gap_features aún comprueba
     # available_at para cada origen y evita usar valores publicados después.
     variables=sorted(exog.loc[exog.available_at <= panel.index[tuning[0]],'variable'].unique())
-    selections={}; scores=[]; failures=[]; comp_scores=[]
+    selections={}; scores=[]; failures=[]; comp_scores=[]; composition_exclusions=[]
     for h in cfg.horizons:
         # Simular pronósticos retrospectivos solo en orígenes internos.
         inner=[]
@@ -40,10 +40,13 @@ final aún no participa en ninguna elección.
         for stat in stats:
             # Probar parejas y pesos declarados; gana el menor MSE interno.
             for ml in mls:
+                if ml in ('rf_residual','nn_residual') and stat!='ss_arima111':
+                    continue
+                ml_key=f'{ml}__{stat}' if ml in ('rf_residual','nn_residual') else ml
                 for weight in cfg.weights:
-                    if any(stat not in pred or ml not in pred for pred,_ in inner):continue
-                    mse=float(np.mean([(y-weight*p[stat]-(1-weight)*p[ml])**2 for p,y in inner]))
-                    scores.append(dict(horizonte=h,stat=stat,ml=ml,peso=weight,mse=mse,n=len(inner)))
+                    if any(stat not in pred or ml_key not in pred for pred,_ in inner):continue
+                    mse=float(np.mean([(y-weight*p[stat]-(1-weight)*p[ml_key])**2 for p,y in inner]))
+                    scores.append(dict(horizonte=h,stat=stat,ml=ml_key,peso=weight,mse=mse,n=len(inner)))
         available=[r for r in scores if r['horizonte']==h]
         if available:
             selections[h]=min(available,key=lambda r:r['mse'])
@@ -67,11 +70,19 @@ final aún no participa en ninguna elección.
     for alpha in cfg.alphas:
         losses=[]
         for origin in composition_origins:
-            history=training_history(panel,origin,cfg)
-            if history.total.dropna().empty:
+            history=composition_history(panel,origin,cfg)
+            positive_weeks=int((history.total>0).sum())
+            if positive_weeks<cfg.min_composition_weeks:
+                composition_exclusions.append(dict(origen=panel.index[origin],alpha=alpha,
+                    semanas_composicion_positiva=positive_weeks,motivo='historia_elegible_insuficiente'))
                 continue
-            categories=select_categories(history,cfg.threshold)
-            pred=predict_shares(history,categories,alpha,calendar=True)
+            try:
+                categories=select_categories(history,cfg.threshold,cfg.excluded_budget_categories)
+                pred=predict_shares(history,categories,alpha,calendar=True)
+            except ValueError as exc:
+                composition_exclusions.append(dict(origen=panel.index[origin],alpha=alpha,
+                    semanas_composicion_positiva=positive_weeks,motivo=str(exc)))
+                continue
             for horizon in cfg.horizons:
                 target=origin+horizon-1
                 if target>=len(panel) or pd.isna(panel.total.iloc[target]):
@@ -90,8 +101,8 @@ final aún no participa en ninguna elección.
             seleccion='sin_validacion_composicion'))
     else:
         alpha=min(comp_scores,key=lambda r:r['mae_pp'])['alpha']
-    categories=select_categories(panel.iloc[:cutoff],cfg.threshold)
-    return selections,alpha,categories,variables,cutoff,tuning,evaluation,folds,pd.DataFrame(scores),pd.DataFrame(comp_scores),failures
+    categories=select_categories(panel.iloc[:cutoff],cfg.threshold,cfg.excluded_budget_categories)
+    return selections,alpha,categories,variables,cutoff,tuning,evaluation,folds,pd.DataFrame(scores),pd.DataFrame(comp_scores),failures,pd.DataFrame(composition_exclusions)
 
 
 def run_experiment(panel,cfg,exog,output,sales=None,demo=False):
@@ -102,13 +113,14 @@ predicciones finales nunca retroalimentan la selección de candidatos.
 """
     cfg.validate()
     output=Path(output)
-    (selected,alpha,categories,variables,cutoff,tuning,evaluation,folds,scores,comp_scores,failures)=select_models(panel,cfg,exog,sales)
+    (selected,alpha,categories,variables,cutoff,tuning,evaluation,folds,scores,comp_scores,failures,composition_exclusions)=select_models(panel,cfg,exog,sales)
     rows=[]; composition=[]; allocations=[]
     for origin in evaluation:
         # Ventana creciente: en cada origen entra solo la historia anterior.
         history=training_history(panel,origin,cfg)
-        prop=predict_shares(history,categories,alpha,calendar=True)
-        ref=predict_shares(history,categories)
+        share_history=composition_history(panel,origin,cfg)
+        prop=predict_shares(share_history,categories,alpha,calendar=True)
+        ref=predict_shares(share_history,categories)
         scale=float(history.total.diff().abs().mean())
         for h in cfg.horizons:
             # El total híbrido es peso * estadístico + (1-peso) * ML.
@@ -131,11 +143,13 @@ predicciones finales nunca retroalimentan la selección de candidatos.
                 for item,value in values.items():
                     composition.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,
                         modelo=name,insumo_id=item,real=float(real[item]),prediccion=float(value)))
-            budget=allocate(pred['hibrido'],prop)
-            # Reparto exacto en centavos: suma de insumos = total redondeado.
+            allocation_shares=with_eligible_remainder(prop)
+            budget=allocate(pred['hibrido'],allocation_shares)
+            # RESTO_ELEGIBLE conserva categorías elegibles menores; no es la
+            # categoría presupuestaria excluida OTROS.
             for item,value in budget.items():
                 allocations.append(dict(origen=panel.index[origin],fecha_objetivo=panel.index[target],horizonte=h,
-                    insumo_id=item,participacion=float(prop[item]),importe=value,total_redondeado=float(budget.sum())))
+                    insumo_id=item,participacion=float(allocation_shares[item]),importe=value,total_redondeado=float(budget.sum())))
     predictions=pd.DataFrame(rows); composition=pd.DataFrame(composition); allocations=pd.DataFrame(allocations)
     metrics=total_metrics(predictions,common=True); percentages=composition_metrics(composition)
     result=hypothesis(predictions,composition,cfg,demo)
@@ -145,8 +159,8 @@ predicciones finales nunca retroalimentan la selección de candidatos.
     bundle={'version':1,'moneda':'MXN nominales','demostracion':demo,
         'origen':str(origin_date),'config':cfg.dictionary(),
         'seleccion':selected,'alpha_composicion':alpha,'categorias':categories,'variables_exogenas':variables,'modelos':{}}
-    prop=predict_shares(training_history(panel,origin,cfg),categories,alpha,calendar=True)
-    bundle['participaciones']=prop
+    prop=predict_shares(composition_history(panel,origin,cfg),categories,alpha,calendar=True)
+    bundle['participaciones']=with_eligible_remainder(prop)
     for h in cfg.horizons:
         pred,fitted,errors,test=components(panel,origin,h,cfg,exog,variables,sales,selected[h])
         if errors:raise ValueError(f'Fallo de entrenamiento final: {errors}')
@@ -156,9 +170,11 @@ predicciones finales nunca retroalimentan la selección de candidatos.
     reloaded=forecast_bundle(joblib.load(output/'modelos.joblib'))
     # La recarga debe reproducir exactamente la emisión en memoria.
     pd.testing.assert_frame_equal(future,reloaded)
+    four_week=aggregate_four_week_forecast(future)
     datasets={'predicciones':predictions,'composicion':composition,'asignaciones':allocations,'metricas':metrics,
         'metricas_composicion':percentages,'particiones':folds,'seleccion_interna':scores,
-        'seleccion_composicion':comp_scores,'pronostico_futuro':future,'fallos_componentes':pd.DataFrame(failures)}
+        'seleccion_composicion':comp_scores,'exclusiones_composicion':composition_exclusions,
+        'pronostico_futuro':future,'pronostico_4_semanas':four_week,'fallos_componentes':pd.DataFrame(failures)}
     for name,table in datasets.items():table.to_csv(output/(name+'.csv'),index=False)
     with pd.ExcelWriter(output/'resultados.xlsx',engine='openpyxl') as writer:
         for name,table in datasets.items():table.to_excel(writer,sheet_name=name[:31],index=False)
@@ -181,7 +197,9 @@ otra vez el pipeline completo.
     rows=[]; prop=bundle['participaciones']
     for h,models in bundle['modelos'].items():
         stat=predict_stat(models['stat'],int(h))
-        ml=max(0.,float(models['ml'].predict(models['x_emision'])[0]))
+        ml_value=float(models['ml'].predict(models['x_emision'])[0])
+        residual=bundle['seleccion'][h]['ml'].startswith(('rf_residual__','nn_residual__'))
+        ml=max(0.,stat+ml_value) if residual else max(0.,ml_value)
         weight=bundle['seleccion'][h]['peso']
         total=weight*stat+(1-weight)*ml
         if not np.isfinite(total):raise ValueError('Inferencia no finita.')
@@ -191,3 +209,18 @@ otra vez el pipeline completo.
                 horizonte=int(h),insumo_id=item,participacion=float(prop[item]),importe=float(amount),
                 total=float(allocation.sum()),unidad='MXN nominales',demostracion=bundle['demostracion']))
     return pd.DataFrame(rows)
+
+
+def aggregate_four_week_forecast(future):
+    """Consolidar cuatro pronósticos semanales en presupuesto de 28 días."""
+    horizons=set(pd.to_numeric(future.horizonte,errors='coerce').dropna().astype(int))
+    if horizons!={1,2,3,4}:
+        raise ValueError('El consolidado requiere los cuatro horizontes semanales.')
+    grouped=future.groupby('insumo_id',as_index=False).importe.sum().rename(columns={'importe':'importe_4_semanas'})
+    total=float(grouped.importe_4_semanas.sum())
+    if not np.isfinite(total) or total<0:raise ValueError('Total de cuatro semanas inválido.')
+    grouped['participacion_4_semanas']=grouped.importe_4_semanas/total if total else 0.
+    grouped['total_4_semanas']=total
+    grouped['unidad']='MXN nominales'
+    grouped['periodo']='próximas 4 semanas (28 días)'
+    return grouped.sort_values('importe_4_semanas',ascending=False,kind='stable').reset_index(drop=True)

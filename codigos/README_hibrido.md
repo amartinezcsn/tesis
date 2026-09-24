@@ -64,11 +64,12 @@ Si no se proporcionan estas fuentes, el modelo funciona con compras históricas 
 
 - `01_normalizacion.py` conserva la normalización de descripciones del código histórico sin sus imputaciones o deflactores. Los rezagos, referencias y componentes semanales tienen contratos temporales explícitos en `hibrido/`.
 - Historia creciente por origen, sin comprimir semanas ni imputar objetivos. Los modelos ML exigen un mínimo configurable de etiquetas observadas.
-- La configuración real reserva 26 semanas calendario como evaluación. Esto no equivale a 26 objetivos observados; el número efectivo se informa por horizonte.
-- Ajuste interno: ocho orígenes anteriores y purgados, cuya última etiqueta h=4 precede al primer origen final.
-- Componentes: SARIMAX AR(1) y ARIMA(1,1,1) opcional; HistGradientBoosting y Random Forest opcional. Los predictores son historia disponible, antigüedad, resúmenes de 4/8/12 semanas, calendario y fuentes opcionales disponibles en cada origen.
+- La configuración principal usa ventana móvil de 52 semanas, avance de 3 semanas y reserva de 20 semanas objetivo. El ajuste usa cinco orígenes internos purgados; la cantidad utilizable se informa por horizonte.
+- El total se forma después de excluir las categorías configuradas (incluidas IMPUTADO/IMPUTADOS y OTROS); `exclusiones_compras.csv` conserva el importe y conteo excluidos. Una semana con transacciones solo excluidas es cero MXN elegible; sin transacciones fuente permanece ausente.
+- Componentes estadísticos: SARIMAX AR(1), ARIMA(1,1,1), SES, Holt amortiguado y naive estacional. Componentes ML: HistGradientBoosting, Random Forest, Ridge y MLP pequeña regularizada. También se evalúan correctores residuales RF y MLP sobre ARIMA mediante pronósticos de origen móvil fuera de muestra.
+- Los predictores son historia disponible, antigüedad, resúmenes de 4/8/12 semanas, calendario, rezagos de ventas y fuentes opcionales disponibles en cada origen. Las variables futuras se usan únicamente si estaban disponibles en el origen.
 - Selección de componente estadístico, componente ML y peso por horizonte en validación interna. Pesos candidatos 0.25, 0.50 y 0.75; no se llama híbrido a un componente puro. Los fallos invalidan la configuración durante selección y detienen la evaluación si afectan al modelo fijado; no se ocultan con un promedio bajo otro nombre.
-- Categorías seleccionadas en desarrollo y congeladas en prueba; durante ajuste interno se seleccionan nuevamente solo con entrenamiento. Referencia de composición: promedio histórico de participaciones. Candidato: promedio exponencial con alfa seleccionado internamente. La composición es constante entre horizontes en esta primera versión.
+- Categorías principales se fijan solo con desarrollo. La ventana de composición es independiente de la ventana del total y, por defecto, creciente; requiere ocho semanas positivas elegibles para puntuar un fold. Referencia: promedio histórico; candidato: promedio exponencial con alfa seleccionado internamente. Las participaciones principales se calculan sobre el total elegible y el remanente se informa como `RESTO_ELEGIBLE`, no como categoría fuente OTROS.
 - La configuración real no acepta importes cero como objetivos válidos (`zero_targets_valid: false`). Las semanas afectadas quedan `incierta` y mantienen su posición temporal ausente; los importes originales permanecen en la auditoría.
 - RMSE y MAE monetarios, MASE con escala del entrenamiento y MAE porcentual por insumo y macro. H1 compara dos pérdidas en h=1. Intervalos exploratorios de diferencia por bootstrap circular pareado con bloque fijo y corrección Bonferroni para dos componentes; sin garantía inferencial con pocas observaciones. El test final no elige el modelo operativo.
 
@@ -78,7 +79,7 @@ Cada corrida `audit`, `demo`, `run` o `forecast` se guarda en una carpeta nueva 
 
 - Auditoría, pendientes, plantillas de cobertura/catálogo y panel reconciliado.
 - Particiones, selección interna, métricas, predicciones, participaciones y asignaciones en CSV y Excel.
-- `seleccion.json`, `hipotesis.json`, `modelos.joblib`, `pronostico_futuro.csv`.
+- `seleccion.json`, `hipotesis.json`, `modelos.joblib`, `pronostico_futuro.csv`, `pronostico_4_semanas.csv`.
 - `dss_hibrido.json`, `tablero.html`, `informe.md`.
 - Figuras PNG 300 dpi y SVG, CSV de respaldo, guía de inserción y manifiesto F00–F22.
 - `manifiesto.json`: configuración, hashes de fuentes y código, versiones, productos y estado de corrida.

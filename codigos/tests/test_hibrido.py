@@ -13,10 +13,11 @@ import joblib
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from hibrido.config import Config,load_config
 from hibrido.data import load_purchases,load_exogenous,load_sales
-from hibrido.composition import select_categories,predict_shares,allocate,shares
+from hibrido.composition import select_categories,predict_shares,allocate,shares,with_eligible_remainder
 from hibrido.evaluation import paired_interval,composition_metrics,total_metrics
-from hibrido.experiment import run_experiment,forecast_bundle,select_models
-from hibrido.models import stat_fit, ml_fit
+from hibrido.experiment import run_experiment,forecast_bundle,select_models,aggregate_four_week_forecast
+from hibrido.models import stat_fit, ml_fit, candidates, predict_stat
+from hibrido.gaps import build_gap_panel
 
 
 def panel(n=110):
@@ -46,6 +47,29 @@ class DataTests(unittest.TestCase):
             stat_fit([1., 2., 3.], 'otro')
         with self.assertRaisesRegex(ValueError, 'ML no soportado'):
             ml_fit(pd.DataFrame({'x': [1., 2.]}), np.array([1., 2.]), 'otro', Config())
+
+    def test_expanded_statistical_candidates_keep_calendar_gaps(self):
+        y=np.asarray([10.,np.nan,12.,14.,np.nan,15.,17.,18.])
+        for name in ('ses','holt_damped'):
+            fitted=stat_fit(y,name)
+            self.assertTrue(np.isfinite(predict_stat(fitted,4)))
+        seasonal=stat_fit(np.arange(60,dtype=float),'seasonal_52s')
+        self.assertEqual(predict_stat(seasonal,1),8.)
+        self.assertIn('holt_damped',candidates(Config())[0])
+        self.assertIn('ridge',candidates(Config())[1])
+        self.assertIn('rf_residual',candidates(Config())[1])
+        self.assertIn('mlp',candidates(Config())[1])
+        self.assertIn('nn_residual',candidates(Config())[1])
+
+    def test_ridge_imputes_predictors_not_targets(self):
+        x=pd.DataFrame({'x':[1.,2.,np.nan,4.],'z':[np.nan]*4})
+        model=ml_fit(x,np.asarray([2.,4.,6.,8.]),'ridge',Config())
+        self.assertTrue(np.isfinite(model.predict(pd.DataFrame({'x':[3.],'z':[np.nan]}))[0]))
+
+    def test_mlp_is_scaled_and_predicts_finite_values(self):
+        x=pd.DataFrame({'x':np.arange(12,dtype=float),'z':np.arange(12,dtype=float)**2})
+        model=ml_fit(x,np.arange(12,dtype=float)*100,'mlp',Config())
+        self.assertTrue(np.isfinite(model.predict(x.iloc[[-1]]))[0])
 
     def test_normalizer_preserves_legacy_contract(self):
         active = importlib.import_module('01_normalizacion').clean_upper
@@ -110,21 +134,31 @@ class CompositionTests(unittest.TestCase):
         self.assertNotIn('IMPUTADO',selected)
         self.assertNotIn('OTROS',selected)
         result=shares(p,selected)
-        self.assertAlmostEqual(result.iloc[0].sum(),1.)
+        self.assertLess(result.iloc[0].sum(),1.)
         self.assertNotIn('otros',result.columns)
-    def test_unselected_amount_is_redistributed(self):
-        p=panel();s=shares(p,['harina']);np.testing.assert_allclose(s.sum(axis=1),1)
-        np.testing.assert_allclose(s.harina,1.)
-    def test_new_test_insumo_is_redistributed(self):
+    def test_unselected_amount_is_not_redistributed_to_principal(self):
+        p=panel();s=shares(p,['harina'])
+        np.testing.assert_allclose(s.harina,.6)
+        self.assertTrue((with_eligible_remainder(s.iloc[0])['RESTO_ELEGIBLE']>.39))
+    def test_new_test_insumo_reduces_main_category_share(self):
         p=panel(1);p['nuevo']=50;p.total+=50
-        s=shares(p,['harina']);self.assertEqual(s.harina.iloc[0],1.)
+        s=shares(p,['harina']);self.assertLess(s.harina.iloc[0],.6)
     def test_zero_total_shares_undefined(self):
         p=panel(1)*0;self.assertTrue(shares(p,['harina']).isna().all().all())
     def test_all_zero_history_blocks_composition(self):
         with self.assertRaises(ValueError):predict_shares(panel(10)*0,['harina'],.3)
     def test_both_shares_methods_nonnegative_and_normalized(self):
         for alpha in [None,.1,.6]:
-            p=predict_shares(panel(10),['harina'],alpha);self.assertTrue((p>=0).all());self.assertAlmostEqual(p.sum(),1)
+            p=predict_shares(panel(10),['harina','azucar'],alpha);self.assertTrue((p>=0).all());self.assertAlmostEqual(p.sum(),1)
+    def test_build_panel_excludes_budget_categories_before_total(self):
+        dates=pd.date_range('2024-01-01',periods=2,freq='W-MON')
+        purchases=pd.DataFrame({'semana_inicio':[dates[0],dates[0],dates[1]],
+            'CLASIFICACION':['HARINA','IMPUTADO','OTROS'],'importe_nominal':[60.,100.,50.]})
+        coverage=pd.DataFrame({'semana_inicio':dates,'estado':'observada','evidencia':'captura','fecha_revision':'2026-01-01'})
+        panel_out,_=build_gap_panel(purchases,coverage,None,dates[0],dates[-1],False)
+        self.assertEqual(panel_out.total.iloc[0],60.)
+        self.assertEqual(panel_out.total.iloc[1],0.)
+        self.assertNotIn('IMPUTADO',panel_out.columns);self.assertNotIn('OTROS',panel_out.columns)
     def test_allocation_exact_cents(self):
         p=pd.Series([1/3]*3,index=['a','b','otros']);a=allocate(10.,p)
         self.assertEqual(round(a.sum(),2),10.);self.assertEqual(a.a,3.34)
@@ -151,6 +185,14 @@ class CompositionTests(unittest.TestCase):
 
 
 class IntegrationTests(unittest.TestCase):
+    def test_four_week_budget_uses_money_weighted_composition(self):
+        future=pd.DataFrame({'horizonte':[1,1,2,2,3,3,4,4],
+            'insumo_id':['a','RESTO_ELEGIBLE']*4,
+            'importe':[60,40,30,70,50,50,80,20]})
+        result=aggregate_four_week_forecast(future).set_index('insumo_id')
+        self.assertEqual(result.total_4_semanas.iloc[0],400)
+        self.assertEqual(result.loc['a','importe_4_semanas'],220)
+        self.assertAlmostEqual(result.participacion_4_semanas.sum(),1)
     def test_full_experiment_reload_and_future_no_labels(self):
         p=panel(75)
         cfg=Config(holdout_weeks=8,tuning_origins=2,use_arima=False,use_rf=False,bootstrap_samples=100)

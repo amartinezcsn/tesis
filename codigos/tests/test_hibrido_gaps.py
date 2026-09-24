@@ -99,9 +99,10 @@ class GapIngestionTests(unittest.TestCase):
     def test_fuel_excluded_even_if_catalog_includes(self):
         self.p['CLASIFICACION']='COMBUSTIBLE'
         with self.assertRaisesRegex(ValueError,'excluidos'):self.build()
-    def test_zero_items_need_adjudication(self):
+    def test_zero_amount_line_is_retained_as_zero(self):
         self.p.loc[0,'importe_nominal']=0
-        with self.assertRaisesRegex(ValueError,'cero por artículo'):self.build()
+        p,_=self.build()
+        self.assertEqual(p.total.iloc[0],0.)
     def test_unknown_catalog_blocks(self):
         self.cat.loc[0,'decision']='revisar'
         with self.assertRaisesRegex(ValueError,'Catálogo pendiente'):self.build()

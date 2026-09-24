@@ -16,14 +16,17 @@ def export_results(output,results,cfg,demo=False):
     """Exportar datos del DSS, tablero HTML local e informe de limitaciones."""
     output=Path(output)
     future=results['pronostico_futuro']
-    totals=future.groupby('horizonte').total.first()
+    four_week=results['pronostico_4_semanas']
+    monthly_total=float(four_week.importe_4_semanas.sum())
     payload={'schema_version':1,'run_id':output.name,'demostracion':demo,'unidad':'MXN nominales',
         'modelo':'hibrido estadistico y aprendizaje automatico','origen':future.origen.iloc[0],
-        'consolidado_4_semanas':round(float(totals.sum()),2),
+        'consolidado_4_semanas':round(monthly_total,2),
+        'categorias_excluidas':list(cfg.excluded_budget_categories),
         'horizontes':[1,2,3,4],'seleccion':results['selection'],'hipotesis':results['hypothesis'],
         'metricas_total':records(results['metricas']),'metricas_composicion':records(results['metricas_composicion']),
         'predicciones_validacion':records(results['predicciones']),
         'distribucion_futura':records(future),
+        'distribucion_4_semanas':records(four_week),
         'advertencia':'DEMOSTRACIÓN SINTÉTICA: NO ES EVIDENCIA DE CUP&CAKE.' if demo else 'Evaluación retrospectiva; no garantiza precisión futura. Corte de emisión explícito. No es una orden de compra.'}
     if 'advertencia' in results:
         payload['advertencia']+=' '+results['advertencia']
@@ -37,7 +40,8 @@ def export_results(output,results,cfg,demo=False):
     document=f'''<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Pipeline híbrido</title>
 <style>body{{font:16px system-ui;margin:2rem auto;max-width:1200px;padding:0 1rem;color:#203044}}h1,h2{{color:#203044}}.notice{{padding:1rem;background:#fff3dc}}table{{border-collapse:collapse;width:100%;font-size:14px}}th,td{{padding:.55rem;text-align:left;border-bottom:1px solid #d9e1e8}}th{{background:#e8f0f6}}.scroll{{overflow:auto}}section{{margin:2rem 0}}img{{max-width:100%}}</style></head><body>
 <h1>{headline}</h1><p class="notice">{html.escape(payload['advertencia'])}</p><p>Ejecución: {html.escape(output.name)}. Corte: {html.escape(payload['origen'])}. Unidad: MXN nominales.</p>
-<section><h2>Pronóstico y distribución por insumo</h2><p>Consolidado de cuatro semanas: ${payload['consolidado_4_semanas']:,.2f}. No equivale a un mes calendario.</p><div class="scroll">{table(future.assign(participacion_pct=future.participacion*100).drop(columns=['demostracion','participacion']))}</div></section>
+<section><h2>Presupuesto de las próximas cuatro semanas</h2><p>Total: ${payload['consolidado_4_semanas']:,.2f} MXN nominales. Es un periodo de 28 días, no un mes calendario. RESTO_ELEGIBLE representa categorías presupuestarias válidas fuera de las principales seleccionadas; no corresponde a la categoría OTROS, que fue excluida.</p><div class="scroll">{table(four_week.assign(participacion_pct=four_week.participacion_4_semanas*100).drop(columns=['participacion_4_semanas']))}</div></section>
+<section><h2>Pronósticos semanales</h2><div class="scroll">{table(future.assign(participacion_pct=future.participacion*100).drop(columns=['demostracion','participacion']))}</div></section>
 <section><h2>Evaluación del importe</h2><div class="scroll">{table(results['metricas'])}</div></section>
 <section><h2>Evaluación de participaciones</h2><div class="scroll">{table(results['metricas_composicion'])}</div></section>
 <section><h2>H1</h2><p>Alcance: {html.escape(results['hypothesis']['alcance'])}. Evidencia favorable en ambos componentes: {results['hypothesis']['evidencia_favorable_ambos_componentes']}. Respaldo confirmatorio: {results['hypothesis']['respaldo_confirmatorio']}.</p><p>El modelo se seleccionó en desarrollo, no por el ranking final. Revisar hipotesis.json antes de interpretar inferencia.</p></section>
@@ -60,9 +64,9 @@ def export_results(output,results,cfg,demo=False):
         '', '## Resumen por horizonte', '',
         '```', summary.to_string(index=False), '```',
         '','## Productos','',
-        'resultados.xlsx; CSV por fase; modelos.joblib; seleccion.json; hipotesis.json; dss_hibrido.json; tablero.html; manifiesto_figuras.csv.',
+        'resultados.xlsx; pronostico_4_semanas.csv; CSV por fase; modelos.joblib; seleccion.json; hipotesis.json; dss_hibrido.json; tablero.html; manifiesto_figuras.csv.',
         '','## Limitaciones','',
-        'Participaciones exponenciales sin covariables, constantes entre horizontes para un origen. No hay intervalos de predicción futuros implementados; los intervalos de H1 describen diferencias de pérdidas.',
+        'Participaciones exponenciales sin covariables, constantes entre horizontes para un origen. RESTO_ELEGIBLE concilia categorías válidas no mostradas como principales. No hay intervalos de predicción futuros implementados; los intervalos de H1 describen diferencias de pérdidas.',
         'El modo forecast reproduce el origen guardado. Para emitir desde un nuevo corte se requiere nueva ingesta y ejecución con datos y cobertura actualizados.',
         'Las figuras no se insertan automáticamente en el DOCX ni se publican en servicios externos.']
     (output/'informe.md').write_text('\n'.join(lines),encoding='utf-8')

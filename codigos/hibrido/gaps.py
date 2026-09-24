@@ -31,7 +31,43 @@ def validate_panel(panel):
         raise ValueError('Panel no reconciliado.')
 
 
-def build_gap_panel(purchases, coverage, catalog, start, end, zero_targets_valid=True):
+def _category_column(frame):
+    column=next((c for c in ('CLASIFICACION','clasificacion') if c in frame),None)
+    if column is None and 'clasificacion_analitica' in frame:column='clasificacion_analitica'
+    if column is None and 'insumo_id' in frame:column='insumo_id'
+    return column
+
+
+def excluded_purchase_summary(purchases, start, end, excluded_categories):
+    """Auditar importes excluidos del objetivo monetario por semana y categoría."""
+    frame=purchases.loc[purchases.semana_inicio.between(start,end)].copy()
+    column=_category_column(frame)
+    if column is None:raise ValueError('No se encontró categoría presupuestaria para auditar exclusiones.')
+    frame['categoria_presupuestaria']=frame[column].map(clean_upper)
+    excluded={str(value).strip().upper() for value in excluded_categories}
+    frame=frame.loc[frame.categoria_presupuestaria.isin(excluded)]
+    columns=['semana_inicio','categoria_presupuestaria','registros_excluidos','importe_nominal_excluido']
+    if frame.empty:return pd.DataFrame(columns=columns)
+    return (frame.groupby(['semana_inicio','categoria_presupuestaria'],as_index=False)
+        .agg(registros_excluidos=('importe_nominal','size'),importe_nominal_excluido=('importe_nominal','sum')))
+
+
+def zero_purchase_records(purchases, start, end):
+    """Conservar y auditar renglones de cero sin tratarlos como huecos semanales."""
+    frame=purchases.loc[purchases.semana_inicio.between(start,end) & purchases.importe_nominal.eq(0)].copy()
+    columns=[name for name in ('fecha','semana_inicio','descripcion','descripcion_normalizada',
+        'CLASIFICACION','clasificacion','importe_nominal') if name in frame]
+    return frame[columns].reset_index(drop=True)
+
+
+def composition_history(panel, origin, cfg):
+    """Historia previa al origen para participaciones, independiente del total."""
+    start=0 if cfg.composition_window_weeks is None else max(0,origin-cfg.composition_window_weeks)
+    return panel.iloc[start:origin]
+
+
+def build_gap_panel(purchases, coverage, catalog, start, end, zero_targets_valid=True,
+                    excluded_categories=('COMBUSTIBLE','MUEBLES','HERRAMIENTA','IMPUTADO','IMPUTADOS','OTROS')):
     """Cruzar compras, catálogo y cobertura aprobados en un panel semanal.
 
 El total representa registros utilizables, no el gasto real completo.
@@ -45,22 +81,36 @@ Las semanas sin evidencia suficiente permanecen enteramente ausentes.
     # La unidad pedida por la tesis es la categoría presupuestaria. Se conserva
     # cada registro válido de Compras.xlsx, sin filtrar por un catálogo de
     # descripciones que podría dejar fuera categorías presupuestarias enteras.
-    selected=purchases.loc[purchases.semana_inicio.between(dates[0],dates[-1])].copy()
-    class_col=next((c for c in ('CLASIFICACION','clasificacion') if c in selected),None)
-    if class_col is None and 'clasificacion_analitica' in selected:
-        class_col='clasificacion_analitica'
+    source_rows=purchases.loc[purchases.semana_inicio.between(dates[0],dates[-1])].copy()
+    selected=source_rows.copy()
+    class_col=_category_column(selected)
     if class_col is None:
-        # Compatibilidad con fixtures y catálogos históricos; la fuente real
-        # Compras.xlsx sí contiene CLASIFICACION y entra por la rama anterior.
-        class_col='insumo_id'
-    selected['categoria_presupuestaria'] = selected[class_col].map(clean_upper)
+        # Compatibilidad limitada para fixtures/archivos antiguos. La fuente
+        # canónica usa CLASIFICACION y no depende de este catálogo por artículo.
+        required={'descripcion_normalizada','insumo_id','aprobado','decision','evidencia'}
+        if not required.issubset(catalog.columns):
+            raise ValueError('Catálogo pendiente: falta evidencia para mapear a categoría presupuestaria.')
+        mapping=catalog.copy();mapping['descripcion_normalizada']=mapping.descripcion_normalizada.map(clean_upper)
+        if not mapping.aprobado.astype(bool).all() or not mapping.decision.astype(str).str.lower().eq('incluir').all():
+            raise ValueError('Catálogo pendiente: las decisiones de inclusión deben aprobarse.')
+        evidence=mapping.evidencia.fillna('').astype(str).str.lower()
+        if evidence.str.contains('pendiente|revisar|sin evidencia').any() or evidence.str.strip().eq('').any():
+            raise ValueError('El catálogo requiere evidencia concreta para cada mapeo.')
+        mapping=mapping.set_index('descripcion_normalizada').insumo_id
+        selected['categoria_presupuestaria']=selected.descripcion_normalizada.map(clean_upper).map(mapping)
+        if selected.categoria_presupuestaria.isna().any():
+            raise ValueError('Catálogo pendiente: hay descripciones sin categoría aprobada.')
+        selected['categoria_presupuestaria']=selected.categoria_presupuestaria.map(clean_upper)
+        class_col='categoria_presupuestaria'
+    else:
+        selected['categoria_presupuestaria'] = selected[class_col].map(clean_upper)
     if selected.categoria_presupuestaria.isna().any():
         raise ValueError('Compra incluida sin categoria_presupuestaria.')
     # Exclusiones de alcance ya acordadas para el modelo de abastecimiento:
     # no son insumos presupuestarios relevantes para esta investigación.
-    selected=selected.loc[~selected.categoria_presupuestaria.isin(
-        ['COMBUSTIBLE','MUEBLES','HERRAMIENTA'])].copy()
-    if selected.empty:raise ValueError('Sin adquisiciones incluidas.')
+    excluded={str(value).strip().upper() for value in excluded_categories}
+    selected=selected.loc[~selected.categoria_presupuestaria.isin(excluded)].copy()
+    if selected.empty:raise ValueError('Todos los registros fueron excluidos por categoría presupuestaria.')
     if not {'semana_inicio','estado','evidencia','fecha_revision'}.issubset(coverage):raise ValueError('Contrato de cobertura incompleto.')
     cov=coverage.copy();cov['semana_inicio']=pd.to_datetime(cov.semana_inicio)
     if cov.semana_inicio.duplicated().any() or cov.semana_inicio.dt.dayofweek.ne(0).any():raise ValueError('Cobertura con fechas ambiguas.')
@@ -71,13 +121,30 @@ Las semanas sin evidencia suficiente permanecen enteramente ausentes.
     # captura esté completa. Ausencia de filas siempre significa NaN, nunca 0.
     selected['insumo_id'] = selected['categoria_presupuestaria']
     panel=selected.pivot_table(index='semana_inicio',columns='insumo_id',values='importe_nominal',aggfunc='sum',fill_value=0).reindex(dates,fill_value=0).astype(float)
-    captured=selected.groupby('semana_inicio').size().reindex(dates,fill_value=0).gt(0)
+    source_present=source_rows.groupby('semana_inicio').size().reindex(dates,fill_value=0).gt(0)
+    declared=cov.estado.copy()
+    if ((declared.eq('registrada')|declared.eq('observada')) & ~source_present).any():
+        raise ValueError('Semana marcada como registrada/observada sin compras fuente.')
+    confirmed_zero=declared.eq('cero_confirmado') & ~source_present
+    if confirmed_zero.any() and not zero_targets_valid:
+        raise ValueError('Ceros semanales no válidos para el entrenamiento; revisar política de cobertura.')
+    if (declared.eq('cero_confirmado') & source_present).any():
+        raise ValueError('Cobertura declara cero confirmado, pero existen transacciones fuente.')
+    # Una semana con filas fuente, aunque todas sean categorías excluidas,
+    # tiene cero MXN registrados dentro del universo elegible. Una semana
+    # sin filas fuente sigue siendo ausencia de captura (NaN).
+    uncertain=declared.isin(['incierta','incompleta'])
+    captured=(source_present & ~uncertain) | confirmed_zero
+    eligible_captured=selected.groupby('semana_inicio').size().reindex(dates,fill_value=0).gt(0)
+    panel.loc[captured & ~eligible_captured,:]=0.
     panel.loc[~captured,:]=np.nan
     panel['total']=panel.sum(axis=1,min_count=1)
-    cov['estado']=np.where(captured,'observada','incierta')
-    cov.loc[captured,'evidencia']='Transacciones presentes en la fuente; exhaustividad no certificada.'
-    cov.loc[~captured,'evidencia']='Sin transacciones: falta de captura; etiqueta ausente.'
-    cov['fecha_revision']=pd.Timestamp.now().date().isoformat()
+    cov.loc[source_present & ~uncertain,'estado']='observada'
+    cov.loc[source_present & ~uncertain & eligible_captured,'evidencia']='Transacciones elegibles presentes; exhaustividad no certificada.'
+    cov.loc[source_present & ~uncertain & ~eligible_captured,'evidencia']='Hay registros fuente, pero pertenecen solo a categorías excluidas; total elegible observado = 0 MXN.'
+    cov.loc[confirmed_zero,'evidencia']='Cero elegible confirmado en la cobertura aprobada.'
+    cov.loc[~source_present & ~confirmed_zero & cov.estado.isna(),'estado']='desconocida'
+    cov['fecha_revision']=cov.fecha_revision.fillna('')
     panel.index.name='semana_inicio';cov.index.name='semana_inicio'
     validate_panel(panel)
     return panel,cov
@@ -155,7 +222,7 @@ def gap_partitions(panel,cfg):
         # Contrato anterior para las pruebas y corridas históricas.
         tuning_candidates=[o for o in range(cfg.lookback,cutoff-max(cfg.horizons)+1) if sufficient(o)]
         tuning=tuning_candidates[-cfg.tuning_origins:]
-        evaluation=list(range(cutoff,len(panel)))
+        evaluation=list(range(cutoff,min(cutoff+cfg.holdout_weeks,last_label+1)))
     if len(tuning)<cfg.tuning_origins or not evaluation:
         raise ValueError('Historia insuficiente para construir los folds rolling configurados.')
     # Los objetivos ausentes no se imputan ni bloquean la corrida exploratoria;

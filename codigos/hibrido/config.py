@@ -38,6 +38,11 @@ class Config:
     weights: tuple = (0.25, 0.5, 0.75)
     alphas: tuple = (0.1, 0.3, 0.6)
     threshold: float = 0.8
+    # La composición puede necesitar más historia que el modelo del total.
+    # None significa usar toda la historia disponible anterior al origen.
+    composition_window_weeks: int | None = None
+    min_composition_weeks: int = 8
+    excluded_budget_categories: tuple = ('COMBUSTIBLE','MUEBLES','HERRAMIENTA','IMPUTADO','IMPUTADOS','OTROS')
     # Semilla, remuestreo y familias de modelos candidatas.
     seed: int = 42
     bootstrap_samples: int = 2000
@@ -45,6 +50,10 @@ class Config:
     min_inference_weeks: int = 12
     use_rf: bool = True
     use_arima: bool = True
+    use_ridge: bool = True
+    use_extended_statistical: bool = True
+    use_residual_hybrid: bool = True
+    use_neural_network: bool = True
     min_training_observations: int = 24
     zero_targets_valid: bool = True
 
@@ -52,7 +61,7 @@ class Config:
         """Fallar temprano si un parámetro contradice el protocolo."""
         if type(self.min_training_observations) is not int or self.min_training_observations < 8:
             raise ValueError('min_training_observations requiere entero >= 8.')
-        for key in ('source_approved','use_rf','use_arima','zero_targets_valid'):
+        for key in ('source_approved','use_rf','use_arima','use_ridge','use_extended_statistical','use_residual_hybrid','use_neural_network','zero_targets_valid'):
             if not isinstance(getattr(self,key),bool):
                 raise ValueError(f'{key} requiere booleano JSON true/false, no texto.')
         duplicate_rows = self.approved_duplicate_rows
@@ -67,6 +76,16 @@ class Config:
             type(self.training_window_weeks) is not int or self.training_window_weeks < self.lookback
         ):
             raise ValueError('training_window_weeks requiere entero >= lookback o null.')
+        if self.composition_window_weeks is not None and (
+            type(self.composition_window_weeks) is not int or self.composition_window_weeks < 1
+        ):
+            raise ValueError('composition_window_weeks requiere entero positivo o null.')
+        if type(self.min_composition_weeks) is not int or self.min_composition_weeks < 2:
+            raise ValueError('min_composition_weeks requiere entero >= 2.')
+        if not isinstance(self.excluded_budget_categories,(list,tuple)) or any(
+            not isinstance(value,str) or not value.strip() for value in self.excluded_budget_categories
+        ):
+            raise ValueError('excluded_budget_categories requiere una lista de nombres no vacíos.')
         if self.rolling_origin_start is not None and (
             type(self.rolling_origin_start) is not int or self.rolling_origin_start < self.lookback
         ):

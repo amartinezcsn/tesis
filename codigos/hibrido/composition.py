@@ -2,14 +2,15 @@
 import numpy as np
 import pandas as pd
 
-EXCLUDED_BUDGET_CATEGORIES = {'IMPUTADO', 'OTROS'}
+EXCLUDED_BUDGET_CATEGORIES = {'COMBUSTIBLE','MUEBLES','HERRAMIENTA','IMPUTADO','IMPUTADOS','OTROS'}
 
 
-def select_categories(history, threshold):
+def select_categories(history, threshold, excluded_categories=EXCLUDED_BUDGET_CATEGORIES):
     """Fijar insumos principales según su importe acumulado en desarrollo."""
     sums=history.drop(columns='total').sum().sort_values(ascending=False,kind='stable')
     normalized=sums.index.astype(str).str.strip().str.upper()
-    sums=sums[~normalized.isin(EXCLUDED_BUDGET_CATEGORIES)]
+    excluded={str(value).strip().upper() for value in excluded_categories}
+    sums=sums[~normalized.isin(excluded)]
     sums=sums[sums>0]
     if sums.empty: raise ValueError('Sin historia positiva para composición.')
     count=min(len(sums),int(np.searchsorted(sums.cumsum()/sums.sum(),threshold))+1)
@@ -17,10 +18,8 @@ def select_categories(history, threshold):
 
 
 def amounts(panel,categories):
-    """Repartir el total únicamente entre las categorías presupuestarias elegidas."""
-    result=panel.reindex(columns=categories,fill_value=0.).copy()
-    selected_total=result.sum(axis=1)
-    return result.div(selected_total.where(selected_total>0),axis=0).mul(panel.total,axis=0)
+    """Importes de categorías elegidas, sin redistribuirles las categorías omitidas."""
+    return panel.reindex(columns=categories,fill_value=0.).copy()
 
 
 def shares(panel,categories):
@@ -29,7 +28,11 @@ def shares(panel,categories):
 
 
 def predict_shares(history,categories,alpha=None,calendar=False):
-    """Estimar mezcla histórica o mezcla reciente ponderada por edad real."""
+    """Estimar participaciones de categorías respecto al total elegible.
+
+Las categorías no seleccionadas conservan su remanente; no se reasignan a
+los insumos principales.
+"""
     valid=shares(history,categories).dropna()
     if valid.empty:raise ValueError('Sin semanas de composición definida.')
     if calendar and alpha is not None:
@@ -40,8 +43,25 @@ def predict_shares(history,categories,alpha=None,calendar=False):
         prediction=valid.mul(weights,axis=0).sum()/weights.sum()
     else:
         prediction=valid.mean() if alpha is None else valid.ewm(alpha=alpha,adjust=False).mean().iloc[-1]
-    result=np.maximum(prediction.to_numpy(float),0.)
-    return pd.Series(result/result.sum(),index=valid.columns)
+    result=np.clip(prediction.to_numpy(float),0.,1.)
+    result=pd.Series(result,index=valid.columns)
+    if result.sum()>1+1e-8:
+        raise ValueError('Las participaciones principales exceden el total elegible.')
+    return result
+
+
+def with_eligible_remainder(participation):
+    """Completar el vector con el remanente de categorías elegibles no listadas."""
+    result=participation.astype(float).clip(lower=0.).copy()
+    if 'RESTO_ELEGIBLE' in result.index:
+        raise ValueError('RESTO_ELEGIBLE es una etiqueta reservada de salida.')
+    remainder=1.-float(result.sum())
+    if remainder < -1e-8:
+        raise ValueError('Las participaciones principales exceden el total elegible.')
+    result.loc['RESTO_ELEGIBLE']=max(0.,remainder)
+    # Mitiga solo el error de redondeo flotante; no redistribuye masa omitida.
+    result/=result.sum()
+    return result
 
 
 def allocate(total,participation):
