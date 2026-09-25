@@ -1,0 +1,41 @@
+{
+  "run_id": "forecast_20260925T032226Z_b557e5",
+  "estado": "pronostico_reproducido",
+  "demostracion": false,
+  "error": null,
+  "config": null,
+  "python": "3.10.9 (tags/v3.10.9:1dd9be6, Dec  6 2022, 20:01:21) [MSC v.1934 64 bit (AMD64)]",
+  "plataforma": "Windows-10-10.0.26200-SP0",
+  "versiones": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "statsmodels": "0.14.6",
+    "matplotlib": "3.10.9",
+    "openpyxl": "3.1.5",
+    "scipy": "1.15.3",
+    "joblib": "1.6.0"
+  },
+  "fuentes": {
+    "C:\\Python\\tesis\\output\\run_20260924T195600Z_86a6f5\\modelos.joblib": "ece7a11bf720176915b03dfe565d45ce0ff6f8a621d0ca0389fce222e2662e11"
+  },
+  "codigo": {
+    "codigos\\hibrido\\cli.py": "98e38979cb7d823f94ed1230eaad735e5b84aa17839ef1d28d8218fe2971f307",
+    "codigos\\hibrido\\composition.py": "13958ac0585157010353c005fb49b5b145c83fb84d288fe21afecea2bdda4d6a",
+    "codigos\\hibrido\\config.py": "5c0f900530310b0b576fc35cd4ec2ef8b0566c5d588ede6b490671611dfd75a9",
+    "codigos\\hibrido\\data.py": "bfd86c01b3007bde23c04bdad65fbfa2a7c633c05fb27fd200de8b55bead7cb7",
+    "codigos\\hibrido\\evaluation.py": "1a856129ec6e308f57adbcf258af310d2e34848e073d5b99dfaf99115d9a2e45",
+    "codigos\\hibrido\\experiment.py": "d304116461d8cd5ee59c83419059121553fb7c07005445da58b83ccf63fcdf56",
+    "codigos\\hibrido\\features.py": "b478fb58f8e70a2b249df8bf2472f4dbe49f7a935850f3624976bb837963a9bd",
+    "codigos\\hibrido\\figures.py": "830000867730fe23e8a5fa23cda062259c430a69ee08bf35cab642b5c649ca89",
+    "codigos\\hibrido\\gaps.py": "ebc5e2d276ebfb2341c3e170a1cecf97ffc513cc4d902cfc9bc81733c3340b3c",
+    "codigos\\hibrido\\models.py": "fd43222eb461dc1d68d275af78c4f0bd3c52cd0857f321d5dbac7230e0dbe51a",
+    "codigos\\hibrido\\reporting.py": "b69a013515a20090dc18cc78e33fb48008e6b0dd5cb8c77e4f8614de1e932fdd",
+    "codigos\\hibrido\\__init__.py": "ac4bfacce45043ea348dce2d754cc98217ab0c279cd3392d80eca338b3086e44",
+    "codigos\\00_pipeline_hibrido.py": "182f38c4ee7ddf7092b8c2f0b95f86b1c9d9bb6490b2c04c18f2284e27770fb8",
+    "codigos\\01_normalizacion.py": "f234b9e4ba4df6e02f6a2a00d59b76ae8e743be15cde3dc25f71ccfebea4be4e"
+  },
+  "productos": {
+    "pronostico_futuro.csv": "092251df9d77fdca814b424fd5dfaf23507b39af8cc0da52ac1f8a92568f3148"
+  }
+}
