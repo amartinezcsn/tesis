@@ -1,0 +1,4 @@
+modelo,n_objetivos_positivos,rmse_objetivos_positivos,mae_objetivos_positivos,sesgo_objetivos_positivos,predicciones_truncadas_en_cero
+hibrido_base,15,857.2949132228849,662.4994627479119,-163.0901681482496,0
+lstm,15,826.4566492724175,606.9622122901492,-604.9831902090086,1
+prophet,15,747.3636533656334,525.2279133726165,-456.8313939497062,6

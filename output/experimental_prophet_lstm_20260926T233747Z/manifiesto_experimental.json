@@ -1,0 +1,29 @@
+{
+  "tipo": "experimento_aislado_no_incorporado_a_la_tesis",
+  "creado_utc": "2026-09-26T23:39:32.738788+00:00",
+  "corrida_base": "C:\\Python\\tesis\\output\\run_20260924T195600Z_86a6f5",
+  "estado_corrida_base": "completado",
+  "configuracion": {
+    "training_window_weeks": 52,
+    "lstm_lookback_weeks": 8,
+    "lstm_units": 4,
+    "lstm_epochs": 80,
+    "lstm_patience": 10,
+    "lstm_min_sequences": 24,
+    "seed": 42,
+    "prophet_n_changepoints": 5,
+    "prophet_changepoint_prior_scale": 0.01
+  },
+  "versiones": {
+    "prophet": "1.4.0",
+    "tensorflow": "2.21.0",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3"
+  },
+  "entradas": {
+    "panel_semanal.csv": "28ae70c9177a28f8b6af2018cc7349ccbda88d99594c3414e79ffa85235e11cc",
+    "particiones.csv": "c1a61a78f7671d2b5bc48a9aeb503c16724cc481286444148351444bfb9e026f",
+    "predicciones.csv": "b8515e0251fc08fc4f7ec7752c050f4a8bfe015753e6f7d80545b071e4b332ae",
+    "manifiesto.json": "9a79a198b9259c214a6620388fa9f8ab9b9bc86db665bd3b1fa0db29f41698dd"
+  }
+}
