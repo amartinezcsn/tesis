@@ -1,0 +1,2717 @@
+{
+  "source": "C:\\Python\\tesis\\documentacion\\TESIS_SEP2026_Rev60_(ZUJ)_Final.docx",
+  "citation_paragraphs": [
+    {
+      "paragraph_index": 166,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Un emprendimiento surge cuando una persona identifica una oportunidad para ofrecer un producto o servicio y organiza recursos para desarrollarla. El Global Entrepreneurship Monitor 2023/2024 sitúa la actividad emprendedora como un componente de la salud de las economías y analiza las condiciones que favorecen o limitan su desarrollo (Global Entrepreneurship Monitor, 2024).",
+      "container": "body_paragraph",
+      "context_text": "Un emprendimiento surge cuando una persona identifica una oportunidad para ofrecer un producto o servicio y organiza recursos para desarrollarla. El Global Entrepreneurship Monitor 2023/2024 sitúa la actividad emprendedora como un componente de la salud de las economías y analiza las condiciones que favorecen o limitan su desarrollo (Global Entrepreneurship Monitor, 2024).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Global Entrepreneurship Monitor, 2024)",
+          "content": "Global Entrepreneurship Monitor, 2024"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 167,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Los emprendimientos o microempresas enfrentan desafíos de planeación y aprendizaje durante sus primeras etapas. Minniti y Bygrave (2001) explican que el proceso emprendedor es dinámico y se nutre del aprendizaje derivado de la interacción con el entorno y de las decisiones bajo incertidumbre. Ries (2017), desde la perspectiva lean startup, describe la validación iterativa de supuestos y el ajuste del modelo de negocio mediante experimentación.",
+      "container": "body_paragraph",
+      "context_text": "Los emprendimientos o microempresas enfrentan desafíos de planeación y aprendizaje durante sus primeras etapas. Minniti y Bygrave (2001) explican que el proceso emprendedor es dinámico y se nutre del aprendizaje derivado de la interacción con el entorno y de las decisiones bajo incertidumbre. Ries (2017), desde la perspectiva lean startup, describe la validación iterativa de supuestos y el ajuste del modelo de negocio mediante experimentación.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Minniti y Bygrave (2001)",
+          "content": "Minniti y Bygrave, 2001"
+        },
+        {
+          "type": "narrative",
+          "raw": "Ries (2017)",
+          "content": "Ries, 2017"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 168,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "La Organización para la Cooperación y el Desarrollo Económicos documenta brechas de digitalización y capacidades en las pequeñas empresas, las cuales limitan el aprovechamiento sistemático de información para gestionar el negocio (OCDE, 2021). Las consecuencias específicas de esas brechas sobre el pronóstico de compras y el inventario deben evaluarse en cada contexto. Kantis, Federico y García (2020) señalan que las capacidades de gestión durante las etapas tempranas influyen en la organización interna, el uso de recursos y las posibilidades de crecimiento.",
+      "container": "body_paragraph",
+      "context_text": "La Organización para la Cooperación y el Desarrollo Económicos documenta brechas de digitalización y capacidades en las pequeñas empresas, las cuales limitan el aprovechamiento sistemático de información para gestionar el negocio (OCDE, 2021). Las consecuencias específicas de esas brechas sobre el pronóstico de compras y el inventario deben evaluarse en cada contexto. Kantis, Federico y García (2020) señalan que las capacidades de gestión durante las etapas tempranas influyen en la organización interna, el uso de recursos y las posibilidades de crecimiento.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(OCDE, 2021)",
+          "content": "OCDE, 2021"
+        },
+        {
+          "type": "narrative",
+          "raw": "Federico y García (2020)",
+          "content": "Federico y García, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 169,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Cuando un producto o servicio obtiene aceptación en el mercado aparecen nuevos retos de coordinación, capacidad y planeación. El aprendizaje emprendedor puede desarrollarse de manera progresiva conforme se toman decisiones y se recibe información del entorno (Minniti y Bygrave, 2001). Los efectos concretos sobre desperdicio, productividad y compras requieren evidencia propia del sector y del negocio analizado.",
+      "container": "body_paragraph",
+      "context_text": "Cuando un producto o servicio obtiene aceptación en el mercado aparecen nuevos retos de coordinación, capacidad y planeación. El aprendizaje emprendedor puede desarrollarse de manera progresiva conforme se toman decisiones y se recibe información del entorno (Minniti y Bygrave, 2001). Los efectos concretos sobre desperdicio, productividad y compras requieren evidencia propia del sector y del negocio analizado.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Minniti y Bygrave, 2001)",
+          "content": "Minniti y Bygrave, 2001"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 170,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Las microempresas constituyen la mayoría de las unidades económicas de México. Los resultados oportunos de los Censos Económicos 2024 indican que en 2023 operaron 5,451,113 unidades económicas del sector privado y empresas paraestatales; 95.5% eran microempresas y empleaban 41.5% del personal ocupado (INEGI, 2025). Estas cifras delimitan su importancia económica, pero no demuestran por sí mismas limitaciones específicas en planeación financiera, inventarios o cadena de suministro.",
+      "container": "body_paragraph",
+      "context_text": "Las microempresas constituyen la mayoría de las unidades económicas de México. Los resultados oportunos de los Censos Económicos 2024 indican que en 2023 operaron 5,451,113 unidades económicas del sector privado y empresas paraestatales; 95.5% eran microempresas y empleaban 41.5% del personal ocupado (INEGI, 2025). Estas cifras delimitan su importancia económica, pero no demuestran por sí mismas limitaciones específicas en planeación financiera, inventarios o cadena de suministro.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(INEGI, 2025)",
+          "content": "INEGI, 2025"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 171,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Las pequeñas empresas presentan brechas de adopción digital y de capacidades para aprovechar tecnologías avanzadas (OCDE, 2021). La magnitud de esas brechas y sus efectos sobre decisiones de compras, inventarios e ingresos varían según el país, el sector y la empresa. Por ello, la utilidad de herramientas analíticas para una microempresa de repostería debe evaluarse con datos del caso, sin atribuir a la OCDE una proporción no documentada.",
+      "container": "body_paragraph",
+      "context_text": "Las pequeñas empresas presentan brechas de adopción digital y de capacidades para aprovechar tecnologías avanzadas (OCDE, 2021). La magnitud de esas brechas y sus efectos sobre decisiones de compras, inventarios e ingresos varían según el país, el sector y la empresa. Por ello, la utilidad de herramientas analíticas para una microempresa de repostería debe evaluarse con datos del caso, sin atribuir a la OCDE una proporción no documentada.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(OCDE, 2021)",
+          "content": "OCDE, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 172,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Una planificación inadecuada de la demanda en el sector de panadería puede generar niveles significativos de merma, con tasas de devolución que oscilan entre el 1.5% y el 19%, lo cual tiene implicaciones económicas y operativas relevantes para las empresas del sector (Hübner et al., 2024). En cuanto a la comparación de métodos, la evidencia de competencias de pronóstico muestra que una mayor complejidad no garantiza una precisión superior y que el desempeño debe evaluarse fuera de muestra para cada contexto (Makridakis et al., 2018a; Spiliotis et al., 2025).",
+      "container": "body_paragraph",
+      "context_text": "Una planificación inadecuada de la demanda en el sector de panadería puede generar niveles significativos de merma, con tasas de devolución que oscilan entre el 1.5% y el 19%, lo cual tiene implicaciones económicas y operativas relevantes para las empresas del sector (Hübner et al., 2024). En cuanto a la comparación de métodos, la evidencia de competencias de pronóstico muestra que una mayor complejidad no garantiza una precisión superior y que el desempeño debe evaluarse fuera de muestra para cada contexto (Makridakis et al., 2018a; Spiliotis et al., 2025).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hübner et al., 2024)",
+          "content": "Hübner et al., 2024"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Makridakis et al., 2018a; Spiliotis et al., 2025)",
+          "content": "Makridakis et al., 2018a; Spiliotis et al., 2025"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 173,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "La literatura reciente muestra que los modelos de aprendizaje automático pueden capturar relaciones no lineales, estacionalidad y variables externas; sin embargo, su desempeño frente a los métodos estadísticos depende de las características de la serie, la disponibilidad de datos, el horizonte de pronóstico y el protocolo de evaluación (Makridakis et al., 2018; Spiliotis et al., 2022).",
+      "container": "body_paragraph",
+      "context_text": "La literatura reciente muestra que los modelos de aprendizaje automático pueden capturar relaciones no lineales, estacionalidad y variables externas; sin embargo, su desempeño frente a los métodos estadísticos depende de las características de la serie, la disponibilidad de datos, el horizonte de pronóstico y el protocolo de evaluación (Makridakis et al., 2018; Spiliotis et al., 2022).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Makridakis et al., 2018; Spiliotis et al., 2022)",
+          "content": "Makridakis et al., 2018; Spiliotis et al., 2022"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 178,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Hübner et al. (2024) analizaron la implementación del servicio de aprendizaje automático Foodforecast en panaderías de Alemania. El estudio aplicó una evaluación de ciclo de vida y comparó los impactos directos del sistema con los beneficios asociados a la reducción de devoluciones de productos de panadería. Los autores reportaron una reducción promedio de 30% en devoluciones durante 2022, según los informes de ventas utilizados. El trabajo aporta evidencia sobre reducción de desperdicio e impactos ambientales, pero no realiza una evaluación independiente del error de pronóstico.",
+      "container": "body_paragraph",
+      "context_text": "Hübner et al. (2024) analizaron la implementación del servicio de aprendizaje automático Foodforecast en panaderías de Alemania. El estudio aplicó una evaluación de ciclo de vida y comparó los impactos directos del sistema con los beneficios asociados a la reducción de devoluciones de productos de panadería. Los autores reportaron una reducción promedio de 30% en devoluciones durante 2022, según los informes de ventas utilizados. El trabajo aporta evidencia sobre reducción de desperdicio e impactos ambientales, pero no realiza una evaluación independiente del error de pronóstico.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Hübner et al. (2024)",
+          "content": "Hübner et al., 2024"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 181,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Huber y Stuckenschmidt (2020) desarrollaron un estudio orientado al pronóstico diario de ventas en el sector minorista, utilizando algoritmos de aprendizaje automático capaces de incorporar variables calendáricas y eventos especiales. La metodología consistió en comparar distintos modelos predictivos utilizando datos históricos de ventas de una cadena comercial. Los resultados evidenciaron que los modelos de aprendizaje automático lograron mejorar la precisión de los pronósticos, especialmente en periodos asociados a eventos especiales o festividades.",
+      "container": "body_paragraph",
+      "context_text": "Huber y Stuckenschmidt (2020) desarrollaron un estudio orientado al pronóstico diario de ventas en el sector minorista, utilizando algoritmos de aprendizaje automático capaces de incorporar variables calendáricas y eventos especiales. La metodología consistió en comparar distintos modelos predictivos utilizando datos históricos de ventas de una cadena comercial. Los resultados evidenciaron que los modelos de aprendizaje automático lograron mejorar la precisión de los pronósticos, especialmente en periodos asociados a eventos especiales o festividades.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Huber y Stuckenschmidt (2020)",
+          "content": "Huber y Stuckenschmidt, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 182,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "En la literatura reciente también se observa un creciente interés por el desarrollo de modelos híbridos y técnicas avanzadas de predicción. Un ejemplo de ello es el estudio de Abrar et al. (2024) quienes propusieron un modelo híbrido denominado Multi-Channel Data Fusion Network (MCDFN) para el pronóstico de la demanda en cadenas de suministro. Este modelo integra redes neuronales convolucionales, redes LSTM y mecanismos de interpretabilidad basados en inteligencia artificial explicable (XAI). Los resultados del estudio evidencian una mejora significativa en la precisión de los pronósticos.",
+      "container": "body_paragraph",
+      "context_text": "En la literatura reciente también se observa un creciente interés por el desarrollo de modelos híbridos y técnicas avanzadas de predicción. Un ejemplo de ello es el estudio de Abrar et al. (2024) quienes propusieron un modelo híbrido denominado Multi-Channel Data Fusion Network (MCDFN) para el pronóstico de la demanda en cadenas de suministro. Este modelo integra redes neuronales convolucionales, redes LSTM y mecanismos de interpretabilidad basados en inteligencia artificial explicable (XAI). Los resultados del estudio evidencian una mejora significativa en la precisión de los pronósticos.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Abrar et al. (2024)",
+          "content": "Abrar et al., 2024"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 184,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "La agregación temporal debe corresponder a la frecuencia de la decisión y modifica tanto la variabilidad como el número de observaciones disponibles (Hyndman & Athanasopoulos, 2021). En series de compras, la conveniencia de resumir registros diarios por semana debe comprobarse con la cobertura y la finalidad de planeación de cada caso. Con independencia de la frecuencia elegida, los modelos de aprendizaje automático deben compararse con métodos estadísticos establecidos y no asumirse superiores por su mayor complejidad (Spiliotis et al., 2022).",
+      "container": "body_paragraph",
+      "context_text": "La agregación temporal debe corresponder a la frecuencia de la decisión y modifica tanto la variabilidad como el número de observaciones disponibles (Hyndman & Athanasopoulos, 2021). En series de compras, la conveniencia de resumir registros diarios por semana debe comprobarse con la cobertura y la finalidad de planeación de cada caso. Con independencia de la frecuencia elegida, los modelos de aprendizaje automático deben compararse con métodos estadísticos establecidos y no asumirse superiores por su mayor complejidad (Spiliotis et al., 2022).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Spiliotis et al., 2022)",
+          "content": "Spiliotis et al., 2022"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 185,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "La competencia M4 ofrece evidencia comparativa a gran escala: reunió 100,000 series y evaluó 61 métodos (Makridakis et al., 2020). En el análisis inicial, 12 de los 17 métodos mejor posicionados fueron combinaciones, y el de mayor precisión integró elementos estadísticos y de aprendizaje automático; su SMAPE medio fue cercano a 10% mejor que el benchmark de combinación. Los seis métodos exclusivamente de aprendizaje automático no superaron ese benchmark (Makridakis et al., 2018b). Estos resultados justifican evaluar combinaciones, pero no establecen su superioridad para compras semanales de una microempresa, pues la M4 incluye series de distintos dominios y frecuencias. De manera consistente, Hewamalage et al. (2021) advierten que las redes neuronales recurrentes no son soluciones universales, especialmente con series individuales cortas o heterogéneas.",
+      "container": "body_paragraph",
+      "context_text": "La competencia M4 ofrece evidencia comparativa a gran escala: reunió 100,000 series y evaluó 61 métodos (Makridakis et al., 2020). En el análisis inicial, 12 de los 17 métodos mejor posicionados fueron combinaciones, y el de mayor precisión integró elementos estadísticos y de aprendizaje automático; su SMAPE medio fue cercano a 10% mejor que el benchmark de combinación. Los seis métodos exclusivamente de aprendizaje automático no superaron ese benchmark (Makridakis et al., 2018b). Estos resultados justifican evaluar combinaciones, pero no establecen su superioridad para compras semanales de una microempresa, pues la M4 incluye series de distintos dominios y frecuencias. De manera consistente, Hewamalage et al. (2021) advierten que las redes neuronales recurrentes no son soluciones universales, especialmente con series individuales cortas o heterogéneas.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Makridakis et al., 2020)",
+          "content": "Makridakis et al., 2020"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Makridakis et al., 2018b)",
+          "content": "Makridakis et al., 2018b"
+        },
+        {
+          "type": "narrative",
+          "raw": "Hewamalage et al. (2021)",
+          "content": "Hewamalage et al., 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 186,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "La revisión de Giannopoulos et al. (2025) confirma que la demanda intermitente requiere atención explícita al diseño de características, la partición temporal, el ajuste de hiperparámetros y las métricas de evaluación. Esta literatura sustenta que, en un contexto de small data, una validación rolling window y la comparación con líneas base reproducibles son más pertinentes que inferir superioridad a partir de un único modelo o una única partición.",
+      "container": "body_paragraph",
+      "context_text": "La revisión de Giannopoulos et al. (2025) confirma que la demanda intermitente requiere atención explícita al diseño de características, la partición temporal, el ajuste de hiperparámetros y las métricas de evaluación. Esta literatura sustenta que, en un contexto de small data, una validación rolling window y la comparación con líneas base reproducibles son más pertinentes que inferir superioridad a partir de un único modelo o una única partición.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Giannopoulos et al. (2025)",
+          "content": "Giannopoulos et al., 2025"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 188,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "El pronóstico constituye una fase posterior a la caracterización de la serie. Antes de comparar algoritmos conviene examinar la frecuencia, la tendencia, la autocorrelación y la estabilidad de los patrones estacionales (Hyndman & Athanasopoulos, 2021). La validación y el preprocesamiento también deben respetar el orden temporal para evitar que información posterior intervenga en el ajuste (Bergmeir & Benítez, 2012). Cuando existen huecos de captura, primero debe distinguirse una ausencia de registro de un valor económico igual a cero; esta distinción corresponde a la depuración del caso.",
+      "container": "body_paragraph",
+      "context_text": "El pronóstico constituye una fase posterior a la caracterización de la serie. Antes de comparar algoritmos conviene examinar la frecuencia, la tendencia, la autocorrelación y la estabilidad de los patrones estacionales (Hyndman & Athanasopoulos, 2021). La validación y el preprocesamiento también deben respetar el orden temporal para evitar que información posterior intervenga en el ajuste (Bergmeir & Benítez, 2012). Cuando existen huecos de captura, primero debe distinguirse una ausencia de registro de un valor económico igual a cero; esta distinción corresponde a la depuración del caso.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Bergmeir & Benítez, 2012)",
+          "content": "Bergmeir & Benítez, 2012"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 189,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "En series con periodos sin movimiento, el intervalo promedio entre ocurrencias (ADI) y el cuadrado del coeficiente de variación de los importes positivos (CV²) permiten clasificar patrones de demanda (Syntetos et al., 2005). Esta clasificación orienta el diagnóstico, pero no determina por sí sola el modelo ganador. Croston-SBA constituye una corrección para demanda intermitente (Syntetos & Boylan, 2005), mientras que TSB incorpora una actualización explícita de la probabilidad de ocurrencia (Teunter et al., 2011).",
+      "container": "body_paragraph",
+      "context_text": "En series con periodos sin movimiento, el intervalo promedio entre ocurrencias (ADI) y el cuadrado del coeficiente de variación de los importes positivos (CV²) permiten clasificar patrones de demanda (Syntetos et al., 2005). Esta clasificación orienta el diagnóstico, pero no determina por sí sola el modelo ganador. Croston-SBA constituye una corrección para demanda intermitente (Syntetos & Boylan, 2005), mientras que TSB incorpora una actualización explícita de la probabilidad de ocurrencia (Teunter et al., 2011).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Syntetos et al., 2005)",
+          "content": "Syntetos et al., 2005"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Syntetos & Boylan, 2005)",
+          "content": "Syntetos & Boylan, 2005"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Teunter et al., 2011)",
+          "content": "Teunter et al., 2011"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 192,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Borsato (2023) examina la repostería como una forma de estética comestible en la que convergen técnicas culinarias y expresión artística. Desde ese alcance, la repostería creativa o cake design puede caracterizarse por el énfasis en el diseño y la personalización de productos para celebraciones y ocasiones especiales. La fuente no se utiliza para inferir por sí sola una transformación económica de toda la industria.",
+      "container": "body_paragraph",
+      "context_text": "Borsato (2023) examina la repostería como una forma de estética comestible en la que convergen técnicas culinarias y expresión artística. Desde ese alcance, la repostería creativa o cake design puede caracterizarse por el énfasis en el diseño y la personalización de productos para celebraciones y ocasiones especiales. La fuente no se utiliza para inferir por sí sola una transformación económica de toda la industria.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Borsato (2023)",
+          "content": "Borsato, 2023"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 193,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "La repostería contemporánea combina elementos gastronómicos, artísticos y comerciales, donde la diferenciación mediante el diseño, la personalización y la experiencia del cliente constituyen factores clave para la competitividad empresarial. En este contexto, la creatividad se ha convertido en un recurso estratégico para los profesionales de la pastelería, integrando conocimientos técnicos, innovación estética y comprensión de las preferencias del consumidor (Lee et al., 2020). Asimismo, la innovación en productos representa uno de los principales factores que contribuyen al desempeño y posicionamiento competitivo de las empresas del sector pastelero (Ben Abdallah et al., 2022).",
+      "container": "body_paragraph",
+      "context_text": "La repostería contemporánea combina elementos gastronómicos, artísticos y comerciales, donde la diferenciación mediante el diseño, la personalización y la experiencia del cliente constituyen factores clave para la competitividad empresarial. En este contexto, la creatividad se ha convertido en un recurso estratégico para los profesionales de la pastelería, integrando conocimientos técnicos, innovación estética y comprensión de las preferencias del consumidor (Lee et al., 2020). Asimismo, la innovación en productos representa uno de los principales factores que contribuyen al desempeño y posicionamiento competitivo de las empresas del sector pastelero (Ben Abdallah et al., 2022).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Lee et al., 2020)",
+          "content": "Lee et al., 2020"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Ben Abdallah et al., 2022)",
+          "content": "Ben Abdallah et al., 2022"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 196,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Las capacidades de analítica de datos pueden relacionarse con innovación y desempeño organizacional, aunque la evidencia de Mikalef et al. (2019) y Dubey et al. (2021) no se limita al sector panadero. Para este sector, Melesse y Orrù (2025) revisan aplicaciones de tecnologías de Industria 4.0. En conjunto, estas fuentes permiten plantear que la digitalización puede apoyar actividades operativas, pero sus efectos sobre pedidos, inventarios y producción deben comprobarse en cada organización.",
+      "container": "body_paragraph",
+      "context_text": "Las capacidades de analítica de datos pueden relacionarse con innovación y desempeño organizacional, aunque la evidencia de Mikalef et al. (2019) y Dubey et al. (2021) no se limita al sector panadero. Para este sector, Melesse y Orrù (2025) revisan aplicaciones de tecnologías de Industria 4.0. En conjunto, estas fuentes permiten plantear que la digitalización puede apoyar actividades operativas, pero sus efectos sobre pedidos, inventarios y producción deben comprobarse en cada organización.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Mikalef et al. (2019)",
+          "content": "Mikalef et al., 2019"
+        },
+        {
+          "type": "narrative",
+          "raw": "Dubey et al. (2021)",
+          "content": "Dubey et al., 2021"
+        },
+        {
+          "type": "narrative",
+          "raw": "Melesse y Orrù (2025)",
+          "content": "Melesse y Orrù, 2025"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 197,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Hübner et al. (2024) demostraron que la implementación de modelos de aprendizaje automático para el pronóstico de la demanda en panaderías permitió disminuir significativamente el desperdicio alimentario y mejorar la planificación de la producción. De manera complementaria, estudios recientes sobre la digitalización del sector panadero destacan que las tecnologías asociadas a la Industria 4.0 facilitan la integración de datos operativos, la automatización de procesos y la mejora continua en la gestión de la cadena de suministro (Melesse & Orrù, 2025).",
+      "container": "body_paragraph",
+      "context_text": "Hübner et al. (2024) demostraron que la implementación de modelos de aprendizaje automático para el pronóstico de la demanda en panaderías permitió disminuir significativamente el desperdicio alimentario y mejorar la planificación de la producción. De manera complementaria, estudios recientes sobre la digitalización del sector panadero destacan que las tecnologías asociadas a la Industria 4.0 facilitan la integración de datos operativos, la automatización de procesos y la mejora continua en la gestión de la cadena de suministro (Melesse & Orrù, 2025).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Melesse & Orrù, 2025)",
+          "content": "Melesse & Orrù, 2025"
+        },
+        {
+          "type": "narrative",
+          "raw": "Hübner et al. (2024)",
+          "content": "Hübner et al., 2024"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 198,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Las aplicaciones descritas se han estudiado principalmente en contextos con mayor disponibilidad de datos y capacidades tecnológicas. Para las PYMES latinoamericanas, Poveda-Valverde y Fierro Barragán (2026) identifican barreras de infraestructura, presupuesto y talento especializado. La búsqueda documental realizada para este capítulo encontró poca evidencia directamente referida a microempresas de repostería creativa; este resultado delimita la revisión efectuada y no demuestra la inexistencia de otros estudios.",
+      "container": "body_paragraph",
+      "context_text": "Las aplicaciones descritas se han estudiado principalmente en contextos con mayor disponibilidad de datos y capacidades tecnológicas. Para las PYMES latinoamericanas, Poveda-Valverde y Fierro Barragán (2026) identifican barreras de infraestructura, presupuesto y talento especializado. La búsqueda documental realizada para este capítulo encontró poca evidencia directamente referida a microempresas de repostería creativa; este resultado delimita la revisión efectuada y no demuestra la inexistencia de otros estudios.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Poveda-Valverde y Fierro Barragán (2026)",
+          "content": "Poveda-Valverde y Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 201,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Poveda-Valverde y Fierro Barragán (2026), mediante una revisión sistemática de aplicaciones de inteligencia artificial en PYMES latinoamericanas, identifican barreras recurrentes relacionadas con infraestructura tecnológica, recursos financieros y disponibilidad de talento especializado.",
+      "container": "body_paragraph",
+      "context_text": "Poveda-Valverde y Fierro Barragán (2026), mediante una revisión sistemática de aplicaciones de inteligencia artificial en PYMES latinoamericanas, identifican barreras recurrentes relacionadas con infraestructura tecnológica, recursos financieros y disponibilidad de talento especializado.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Poveda-Valverde y Fierro Barragán (2026)",
+          "content": "Poveda-Valverde y Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 202,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "De manera similar, Mikalef et al. (2019) señalan que la capacidad de las organizaciones para aprovechar el potencial del análisis de datos depende en gran medida de sus capacidades analíticas y de su orientación hacia la innovación tecnológica.",
+      "container": "body_paragraph",
+      "context_text": "De manera similar, Mikalef et al. (2019) señalan que la capacidad de las organizaciones para aprovechar el potencial del análisis de datos depende en gran medida de sus capacidades analíticas y de su orientación hacia la innovación tecnológica.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Mikalef et al. (2019)",
+          "content": "Mikalef et al., 2019"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 203,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Por otra parte, Dubey et al. (2021) destacan que la integración de analítica avanzada y herramientas de inteligencia artificial contribuye significativamente al desempeño operativo de las organizaciones cuando se combina con capacidades dinámicas y estrategias de innovación.",
+      "container": "body_paragraph",
+      "context_text": "Por otra parte, Dubey et al. (2021) destacan que la integración de analítica avanzada y herramientas de inteligencia artificial contribuye significativamente al desempeño operativo de las organizaciones cuando se combina con capacidades dinámicas y estrategias de innovación.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Dubey et al. (2021)",
+          "content": "Dubey et al., 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 206,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Valdez-Juárez, García-Pérez-de-Lema y Maldonado-Guzmán (2018) analizaron datos de 412 PYMES industriales y de servicios del noroeste de México. Sus resultados muestran relaciones entre el uso de tecnologías de información y comunicación, la gestión del conocimiento, la innovación y la rentabilidad, por lo que el estudio aporta evidencia nacional sobre capacidades digitales y desempeño empresarial.",
+      "container": "body_paragraph",
+      "context_text": "Valdez-Juárez, García-Pérez-de-Lema y Maldonado-Guzmán (2018) analizaron datos de 412 PYMES industriales y de servicios del noroeste de México. Sus resultados muestran relaciones entre el uso de tecnologías de información y comunicación, la gestión del conocimiento, la innovación y la rentabilidad, por lo que el estudio aporta evidencia nacional sobre capacidades digitales y desempeño empresarial.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "García-Pérez-de-Lema y Maldonado-Guzmán (2018)",
+          "content": "García-Pérez-de-Lema y Maldonado-Guzmán, 2018"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 207,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "De manera similar, Cuevas Vargas, Estrada y Larios Gómez (2016) examinaron el efecto de la adopción de tecnologías de información y comunicación en pequeñas y medianas empresas mexicanas. Sus resultados indican que la digitalización de procesos y el uso de herramientas analíticas contribuyen significativamente a mejorar el desempeño organizacional.",
+      "container": "body_paragraph",
+      "context_text": "De manera similar, Cuevas Vargas, Estrada y Larios Gómez (2016) examinaron el efecto de la adopción de tecnologías de información y comunicación en pequeñas y medianas empresas mexicanas. Sus resultados indican que la digitalización de procesos y el uso de herramientas analíticas contribuyen significativamente a mejorar el desempeño organizacional.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Estrada y Larios Gómez (2016)",
+          "content": "Estrada y Larios Gómez, 2016"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 208,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Maldonado-Guzmán y Garza-Reyes (2020) estudiaron la adopción de prácticas de ecoinnovación en la industria automotriz. El trabajo aporta evidencia sobre innovación tecnológica y organizacional en un sector industrial, pero no aborda transformación digital ni modelos predictivos en microempresas.",
+      "container": "body_paragraph",
+      "context_text": "Maldonado-Guzmán y Garza-Reyes (2020) estudiaron la adopción de prácticas de ecoinnovación en la industria automotriz. El trabajo aporta evidencia sobre innovación tecnológica y organizacional en un sector industrial, pero no aborda transformación digital ni modelos predictivos en microempresas.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Maldonado-Guzmán y Garza-Reyes (2020)",
+          "content": "Maldonado-Guzmán y Garza-Reyes, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 209,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Asimismo, Saavedra García y Tapia Sánchez (2020) señalan que las tecnologías de información desempeñan un papel clave en la competitividad de las PYMES mexicanas; sin embargo, su adopción se ve limitada por restricciones financieras y por la falta de personal especializado.",
+      "container": "body_paragraph",
+      "context_text": "Asimismo, Saavedra García y Tapia Sánchez (2020) señalan que las tecnologías de información desempeñan un papel clave en la competitividad de las PYMES mexicanas; sin embargo, su adopción se ve limitada por restricciones financieras y por la falta de personal especializado.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Saavedra García y Tapia Sánchez (2020)",
+          "content": "Saavedra García y Tapia Sánchez, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 210,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Finalmente, Romero Hidalgo et al. (2021) destacan que la gestión del conocimiento y el uso de datos en las organizaciones favorecen los procesos de innovación empresarial, lo que resulta particularmente relevante en el contexto de pequeñas empresas que buscan mejorar su desempeño mediante el uso de tecnologías digitales.",
+      "container": "body_paragraph",
+      "context_text": "Finalmente, Romero Hidalgo et al. (2021) destacan que la gestión del conocimiento y el uso de datos en las organizaciones favorecen los procesos de innovación empresarial, lo que resulta particularmente relevante en el contexto de pequeñas empresas que buscan mejorar su desempeño mediante el uso de tecnologías digitales.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Romero Hidalgo et al. (2021)",
+          "content": "Romero Hidalgo et al., 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 211,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Como complemento regional, Poveda-Valverde y Fierro Barragán (2026), en una revisión sistemática sobre inteligencia artificial en PYMES latinoamericanas, identifican restricciones de infraestructura, presupuesto y talento especializado, además de una distribución heterogénea de aplicaciones entre actividades empresariales. Estos resultados justifican desarrollar estudios aplicados y reproducibles en organizaciones con menor disponibilidad de datos, sin atribuir a la revisión una concentración sectorial más precisa que la informada por sus autores.",
+      "container": "body_paragraph",
+      "context_text": "Como complemento regional, Poveda-Valverde y Fierro Barragán (2026), en una revisión sistemática sobre inteligencia artificial en PYMES latinoamericanas, identifican restricciones de infraestructura, presupuesto y talento especializado, además de una distribución heterogénea de aplicaciones entre actividades empresariales. Estos resultados justifican desarrollar estudios aplicados y reproducibles en organizaciones con menor disponibilidad de datos, sin atribuir a la revisión una concentración sectorial más precisa que la informada por sus autores.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Poveda-Valverde y Fierro Barragán (2026)",
+          "content": "Poveda-Valverde y Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 222,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Hübner et al. (2024)",
+      "container": "table_row",
+      "context_text": "Hübner et al. (2024) | Alemania | panadería; ML; pronóstico; desperdicio | Panaderías; ventas, producción y desperdicio | Caso cuantitativo con ML | El pronóstico de demanda puede apoyar la reducción de desperdicio. | Caso con infraestructura superior a la microempresa. | Aporta el antecedente sectorial; justifica evaluar una solución acotada a registros internos.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Hübner et al. (2024)",
+          "content": "Hübner et al., 2024"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 230,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Huber y Stuckenschmidt (2020)",
+      "container": "table_row",
+      "context_text": "Huber y Stuckenschmidt (2020) | Alemania | retail; ML; calendario; demanda diaria | Retail diario; ventas y calendario | Comparación de ML con variables calendáricas | Las variables de calendario mejoran pronósticos en eventos. | Contexto minorista de mayor escala. | Sustenta incluir calendario y eventos disponibles en el dataset.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Huber y Stuckenschmidt (2020)",
+          "content": "Huber y Stuckenschmidt, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 238,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Abrar et al. (2024)",
+      "container": "table_row",
+      "context_text": "Abrar et al. (2024) | Internacional | cadena de suministro; CNN; LSTM; XAI | Cadena de suministro; demanda multifuente | Preprint arXiv; modelo híbrido CNN-LSTM con XAI | Los modelos híbridos pueden integrar señales complejas. | Arquitectura compleja evaluada con mayor disponibilidad de datos; evidencia aún como preprint. | Sirve como contraste: la tesis evalúa alternativas parsimoniosas en small data.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Abrar et al. (2024)",
+          "content": "Abrar et al., 2024"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 246,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Spiliotis et al. (2022)",
+      "container": "table_row",
+      "context_text": "Spiliotis et al. (2022) | Grecia | SKU; demanda diaria; ML; métodos estadísticos | SKU diarios; series irregulares e intermitentes | Comparación de métodos estadísticos y ML | La superioridad de ML depende del objetivo y debe verificarse empíricamente. | Datos minoristas con múltiples SKU. | Fundamenta comparar Random Forest, ARIMA y línea base empírica.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Spiliotis et al. (2022)",
+          "content": "Spiliotis et al., 2022"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 254,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Makridakis et al. (2018)",
+      "container": "table_row",
+      "context_text": "Makridakis et al. (2018) | Internacional | M4; forecasting; ML; métodos híbridos | Competencia M4; múltiples series y horizontes | Benchmark de métodos estadísticos, híbridos y ML | Los modelos complejos no dominan de forma universal. | No estudia microempresas ni compras. | Sustenta una hipótesis condicional y la evaluación comparativa.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Makridakis et al. (2018)",
+          "content": "Makridakis et al., 2018"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 262,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Hewamalage et al. (2021)",
+      "container": "table_row",
+      "context_text": "Hewamalage et al. (2021) | Australia | RNN; series temporales; ARIMA; ETS | Series temporales con RNN | Estudio empírico frente a ETS y ARIMA | Las RNN son competitivas, pero no son soluciones universales. | No se centra en presupuesto de compras de microempresas. | Justifica reportar RNN/LSTM sin asumir superioridad frente a modelos simples.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Hewamalage et al. (2021)",
+          "content": "Hewamalage et al., 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 270,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Giannopoulos et al. (2025)",
+      "container": "table_row",
+      "context_text": "Giannopoulos et al. (2025) | Grecia | demanda intermitente; ML; evaluación | Demanda intermitente en distintas industrias | Revisión de ML y protocolos de evaluación | La intermitencia exige atención a partición temporal, ajuste y métricas. | Predomina evidencia de SKU y refacciones. | Sustenta la validación rolling-origin y el uso cauteloso de métricas; small data corresponde a la condición de esta tesis.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Giannopoulos et al. (2025)",
+          "content": "Giannopoulos et al., 2025"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 278,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Borsato (2023)",
+      "container": "table_row",
+      "context_text": "Borsato (2023) | Italia | repostería; estética; personalización | Repostería creativa y valor estético | Estudio sectorial cualitativo | La personalización distingue a la repostería creativa. | No evalúa pronósticos ni IA. | Delimita el contexto de negocio del caso Cup&Cake.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Borsato (2023)",
+          "content": "Borsato, 2023"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 286,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Lee et al. (2020)",
+      "container": "table_row",
+      "context_text": "Lee et al. (2020) | Malasia | pastelería; creatividad; experiencia | Pastelería; creatividad y experiencia | Estudio de retrato/teoría integrada | La creatividad y personalización influyen en la oferta del sector. | No modela demanda. | Apoya la explicación de la variabilidad comercial del caso.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Lee et al. (2020)",
+          "content": "Lee et al., 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 294,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Ben Abdallah et al. (2022)",
+      "container": "table_row",
+      "context_text": "Ben Abdallah et al. (2022) | Túnez | innovación; pastelería; competitividad | Empresas pasteleras; innovación de producto | Estudio exploratorio | La innovación favorece desempeño y posicionamiento competitivo. | No analiza pronóstico ni ML. | Complementa la caracterización del sector de repostería.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Ben Abdallah et al. (2022)",
+          "content": "Ben Abdallah et al., 2022"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 302,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Mikalef et al. (2019)",
+      "container": "table_row",
+      "context_text": "Mikalef et al. (2019) | Noruega | big data; capacidades analíticas; innovación | Organizaciones orientadas a datos | Modelo de capacidades analíticas | Las capacidades analíticas se relacionan con innovación. | No se limita a microempresas ni pronóstico. | Sustenta la adopción de datos como capacidad organizacional.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Mikalef et al. (2019)",
+          "content": "Mikalef et al., 2019"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 310,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Dubey et al. (2021)",
+      "container": "table_row",
+      "context_text": "Dubey et al. (2021) | Reino Unido / India | IA; big data; desempeño operativo | Manufactura; analítica, IA y desempeño | Modelo empírico de desempeño operativo | El valor de IA depende de capacidades y contexto. | Contexto industrial. | Refuerza que el DSS es apoyo y no garantía automática de desempeño.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Dubey et al. (2021)",
+          "content": "Dubey et al., 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 318,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Melesse y Orrù (2025)",
+      "container": "table_row",
+      "context_text": "Melesse y Orrù (2025) | Rumania | panadería; Industria 4.0; digitalización | Sector panadero e Industria 4.0 | Revisión sistemática | La digitalización integra datos y automatización en panadería. | Evidencia sectorial heterogénea. | Apoya la pertinencia de digitalizar ventas y compras del caso.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Melesse y Orrù (2025)",
+          "content": "Melesse y Orrù, 2025"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 326,
+      "style": "",
+      "section": "Anexo B Paquete de reproducibilidad103",
+      "text": "Valdez-Juárez et al. (2018)",
+      "container": "table_row",
+      "context_text": "Valdez-Juárez et al. (2018) | México | TIC; gestión del conocimiento; innovación; rentabilidad | 412 PYMES industriales y de servicios del noroeste de México | Encuesta y modelado PLS-SEM | Las TIC se relacionan con la gestión del conocimiento, la innovación y la rentabilidad. | No evalúa IA ni pronósticos. | Aporta contexto nacional sobre capacidades digitales y desempeño empresarial.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Valdez-Juárez et al. (2018)",
+          "content": "Valdez-Juárez et al., 2018"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 334,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Cuevas-Vargas et al. (2016)",
+      "container": "table_row",
+      "context_text": "Cuevas-Vargas et al. (2016) | México | TIC; PYMES; innovación | PYMES mexicanas; TIC y desempeño | Estudio cuantitativo | Las TIC favorecen la innovación y el desempeño organizacional. | No incorpora ML. | Sustenta el antecedente mexicano de digitalización.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Cuevas-Vargas et al. (2016)",
+          "content": "Cuevas-Vargas et al., 2016"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 342,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Maldonado-Guzmán y Garza-Reyes (2020)",
+      "container": "table_row",
+      "context_text": "Maldonado-Guzmán y Garza-Reyes (2020) | México | ecoinnovación; adopción; industria automotriz | Empresas del sector automotriz | Estudio empírico de adopción de prácticas de ecoinnovación | Analiza la adopción de innovaciones tecnológicas y organizacionales en un contexto industrial. | No estudia transformación digital, IA ni pronósticos en microempresas. | Aporta un antecedente mexicano sobre adopción de innovación, con alcance sectorial delimitado.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Maldonado-Guzmán y Garza-Reyes (2020)",
+          "content": "Maldonado-Guzmán y Garza-Reyes, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 350,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Saavedra-García y Tapia-Sánchez (2020)",
+      "container": "table_row",
+      "context_text": "Saavedra-García y Tapia-Sánchez (2020) | México | TIC; PYMES; competitividad | PYMES mexicanas; adopción de TIC | Análisis de adopción tecnológica | Las restricciones financieras y de talento limitan la adopción. | Enfoque descriptivo. | Respalda la pertinencia de una solución reproducible y accesible.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Saavedra-García y Tapia-Sánchez (2020)",
+          "content": "Saavedra-García y Tapia-Sánchez, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 358,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Romero-Hidalgo et al. (2021)",
+      "container": "table_row",
+      "context_text": "Romero-Hidalgo et al. (2021) | México | gestión del conocimiento; innovación; datos | Pequeñas empresas; conocimiento e innovación | Modelo de gestión del conocimiento | El uso de datos favorece la innovación organizacional. | No evalúa precisión predictiva. | Complementa el valor de formalizar registros dispersos.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Romero-Hidalgo et al. (2021)",
+          "content": "Romero-Hidalgo et al., 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 366,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Poveda-Valverde y Fierro Barragán (2026)",
+      "container": "table_row",
+      "context_text": "Poveda-Valverde y Fierro Barragán (2026) | Ecuador / América Latina | IA; PYMES; adopción; barreras | PYMES latinoamericanas; adopción de IA | Revisión sistemática | Persisten barreras de infraestructura, presupuesto y talento; las aplicaciones revisadas abarcan distintas actividades empresariales. | No se centra en microempresas de repostería. | Refuerza el vacío regional identificado por esta revisión y la necesidad de evidencia aplicada en microempresas.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Poveda-Valverde y Fierro Barragán (2026)",
+          "content": "Poveda-Valverde y Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 374,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Hyndman y Athanasopoulos (2021)",
+      "container": "table_row",
+      "context_text": "Hyndman y Athanasopoulos (2021) | Australia | series temporales; diagnóstico; pronóstico; validación. | Ejemplos de series reales de distintos sectores | Libro metodológico con aplicaciones en R | El diagnóstico precede al modelado; la evaluación requiere datos fuera de muestra. | No estudia compras de microempresas. | Sustenta el diagnóstico temporal y la evaluación fuera de muestra.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Hyndman y Athanasopoulos (2021)",
+          "content": "Hyndman y Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 382,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Syntetos y Boylan (2005)",
+      "container": "table_row",
+      "context_text": "Syntetos y Boylan (2005) | Reino Unido | demanda intermitente; Croston; SBA; precisión | Industria automotriz; 3,000 series intermitentes | Comparación de cuatro métodos y simulación | La modificación de Croston mejora la precisión en las series evaluadas. | No compara ML ni estudia microempresas alimentarias. | Fundamenta incluir Croston-SBA y métricas compatibles con ceros..",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Syntetos y Boylan (2005)",
+          "content": "Syntetos y Boylan, 2005"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 392,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La literatura revisada destaca el potencial de los modelos híbridos y las combinaciones de métodos para mejorar la precisión del pronóstico. Makridakis et al. (2018b) identificaron en la competencia M4 resultados destacados mediante la integración de componentes estadísticos y de aprendizaje automático. Por su parte, Abrar et al. (2024) presentaron una arquitectura híbrida de redes neuronales con mejoras en el contexto evaluado. Aunque representan formas distintas de integración, estos antecedentes fundamentan el estudio de enfoques complementarios, cuya precisión debe comprobarse según las características de los datos y el horizonte de pronóstico.",
+      "container": "body_paragraph",
+      "context_text": "La literatura revisada destaca el potencial de los modelos híbridos y las combinaciones de métodos para mejorar la precisión del pronóstico. Makridakis et al. (2018b) identificaron en la competencia M4 resultados destacados mediante la integración de componentes estadísticos y de aprendizaje automático. Por su parte, Abrar et al. (2024) presentaron una arquitectura híbrida de redes neuronales con mejoras en el contexto evaluado. Aunque representan formas distintas de integración, estos antecedentes fundamentan el estudio de enfoques complementarios, cuya precisión debe comprobarse según las características de los datos y el horizonte de pronóstico.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(2018b)",
+          "content": "2018b"
+        },
+        {
+          "type": "narrative",
+          "raw": "Makridakis et al. (2018b)",
+          "content": "Makridakis et al., 2018b"
+        },
+        {
+          "type": "narrative",
+          "raw": "Abrar et al. (2024)",
+          "content": "Abrar et al., 2024"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 393,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los antecedentes incluyen estudios de demanda por producto y aplicaciones en el sector panadero. Huber y Stuckenschmidt (2020) abordaron el pronóstico diario por categoría y establecimiento en una cadena de panaderías, mientras que Spiliotis et al. (2022) compararon métodos estadísticos y de aprendizaje automático en series diarias de demanda por producto. Estos contextos difieren del pronóstico del importe semanal de compras de una microempresa. Asimismo, Poveda Valverde y Fierro Barragán (2026) identificaron restricciones de infraestructura, presupuesto y talento especializado para la adopción de IA en PYMES latinoamericanas, lo que refuerza la pertinencia de soluciones adaptadas a sus recursos.",
+      "container": "body_paragraph",
+      "context_text": "Los antecedentes incluyen estudios de demanda por producto y aplicaciones en el sector panadero. Huber y Stuckenschmidt (2020) abordaron el pronóstico diario por categoría y establecimiento en una cadena de panaderías, mientras que Spiliotis et al. (2022) compararon métodos estadísticos y de aprendizaje automático en series diarias de demanda por producto. Estos contextos difieren del pronóstico del importe semanal de compras de una microempresa. Asimismo, Poveda Valverde y Fierro Barragán (2026) identificaron restricciones de infraestructura, presupuesto y talento especializado para la adopción de IA en PYMES latinoamericanas, lo que refuerza la pertinencia de soluciones adaptadas a sus recursos.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Huber y Stuckenschmidt (2020)",
+          "content": "Huber y Stuckenschmidt, 2020"
+        },
+        {
+          "type": "narrative",
+          "raw": "Spiliotis et al. (2022)",
+          "content": "Spiliotis et al., 2022"
+        },
+        {
+          "type": "narrative",
+          "raw": "Poveda Valverde y Fierro Barragán (2026)",
+          "content": "Poveda Valverde y Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 398,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Góngora Chonillo (2023) aborda la evaluación del riesgo financiero en microempresas mediante inteligencia artificial. Esta referencia sustenta la relevancia de analizar información financiera en empresas pequeñas, pero no demuestra afirmaciones generales sobre variabilidad de la demanda, inventarios o gestión de la cadena de suministro.",
+      "container": "body_paragraph",
+      "context_text": "Góngora Chonillo (2023) aborda la evaluación del riesgo financiero en microempresas mediante inteligencia artificial. Esta referencia sustenta la relevancia de analizar información financiera en empresas pequeñas, pero no demuestra afirmaciones generales sobre variabilidad de la demanda, inventarios o gestión de la cadena de suministro.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Góngora Chonillo (2023)",
+          "content": "Góngora Chonillo, 2023"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 399,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "En empresas del sector alimentario, la perecibilidad y la variación de la demanda vuelven relevante coordinar compras, producción e inventarios. Los pronósticos aportan información para la planeación, pero no eliminan la incertidumbre ni determinan por sí solos los costos o faltantes de inventario (Hyndman & Athanasopoulos, 2021). En esta tesis, los efectos financieros y operativos se mantendrán separados de las métricas de precisión predictiva.",
+      "container": "body_paragraph",
+      "context_text": "En empresas del sector alimentario, la perecibilidad y la variación de la demanda vuelven relevante coordinar compras, producción e inventarios. Los pronósticos aportan información para la planeación, pero no eliminan la incertidumbre ni determinan por sí solos los costos o faltantes de inventario (Hyndman & Athanasopoulos, 2021). En esta tesis, los efectos financieros y operativos se mantendrán separados de las métricas de precisión predictiva.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 400,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "En el ámbito latinoamericano, la adopción de soluciones basadas en inteligencia artificial por parte de las PYMES enfrenta barreras de infraestructura, presupuesto y talento especializado. Estas condiciones limitan la transferencia directa de aplicaciones desarrolladas en organizaciones con mayores capacidades tecnológicas (Poveda-Valverde & Fierro Barragán, 2026).",
+      "container": "body_paragraph",
+      "context_text": "En el ámbito latinoamericano, la adopción de soluciones basadas en inteligencia artificial por parte de las PYMES enfrenta barreras de infraestructura, presupuesto y talento especializado. Estas condiciones limitan la transferencia directa de aplicaciones desarrolladas en organizaciones con mayores capacidades tecnológicas (Poveda-Valverde & Fierro Barragán, 2026).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Poveda-Valverde & Fierro Barragán, 2026)",
+          "content": "Poveda-Valverde & Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 401,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Asimismo, la literatura señala que la carencia de capital humano especializado y de capacidades analíticas internas reduce significativamente la posibilidad de integrar soluciones basadas en datos en los procesos estratégicos empresariales (Mikalef et al., 2019). Esta limitación se vincula directamente con la baja capacidad de absorción tecnológica característica de las empresas de menor tamaño.",
+      "container": "body_paragraph",
+      "context_text": "Asimismo, la literatura señala que la carencia de capital humano especializado y de capacidades analíticas internas reduce significativamente la posibilidad de integrar soluciones basadas en datos en los procesos estratégicos empresariales (Mikalef et al., 2019). Esta limitación se vincula directamente con la baja capacidad de absorción tecnológica característica de las empresas de menor tamaño.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Mikalef et al., 2019)",
+          "content": "Mikalef et al., 2019"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 402,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La incorporación de analítica avanzada e inteligencia artificial se relaciona con capacidades organizacionales y orientación estratégica hacia la innovación (Dubey et al., 2021). En las PYMES latinoamericanas también intervienen restricciones de infraestructura, presupuesto y talento especializado (Poveda-Valverde & Fierro Barragán, 2026). Estas condiciones deben considerarse al valorar la adopción tecnológica en una microempresa.",
+      "container": "body_paragraph",
+      "context_text": "La incorporación de analítica avanzada e inteligencia artificial se relaciona con capacidades organizacionales y orientación estratégica hacia la innovación (Dubey et al., 2021). En las PYMES latinoamericanas también intervienen restricciones de infraestructura, presupuesto y talento especializado (Poveda-Valverde & Fierro Barragán, 2026). Estas condiciones deben considerarse al valorar la adopción tecnológica en una microempresa.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Dubey et al., 2021)",
+          "content": "Dubey et al., 2021"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Poveda-Valverde & Fierro Barragán, 2026)",
+          "content": "Poveda-Valverde & Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 403,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Consideradas conjuntamente, las fuentes muestran que las capacidades analíticas influyen en el aprovechamiento de los datos y que las PYMES latinoamericanas enfrentan barreras de adopción (Mikalef et al., 2019; Poveda-Valverde & Fierro Barragán, 2026). Esta síntesis justifica evaluar la aplicabilidad de las herramientas en empresas de menor escala, sin presentarla como un resultado textual de una sola publicación ni anticipar efectos antes de la evaluación empírica.",
+      "container": "body_paragraph",
+      "context_text": "Consideradas conjuntamente, las fuentes muestran que las capacidades analíticas influyen en el aprovechamiento de los datos y que las PYMES latinoamericanas enfrentan barreras de adopción (Mikalef et al., 2019; Poveda-Valverde & Fierro Barragán, 2026). Esta síntesis justifica evaluar la aplicabilidad de las herramientas en empresas de menor escala, sin presentarla como un resultado textual de una sola publicación ni anticipar efectos antes de la evaluación empírica.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Mikalef et al., 2019; Poveda-Valverde & Fierro Barragán, 2026)",
+          "content": "Mikalef et al., 2019; Poveda-Valverde & Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 423,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Poveda-Valverde y Fierro Barragán (2026) documentan restricciones de infraestructura, presupuesto y talento especializado que pueden dificultar la adopción de soluciones basadas en datos en PYMES latinoamericanas. A partir de ese contexto, esta investigación evaluó herramientas de pronóstico semanal con la información disponible en una microempresa y valoró su pertinencia de acuerdo con sus capacidades operativas. Esta última decisión corresponde al diseño del estudio.",
+      "container": "body_paragraph",
+      "context_text": "Poveda-Valverde y Fierro Barragán (2026) documentan restricciones de infraestructura, presupuesto y talento especializado que pueden dificultar la adopción de soluciones basadas en datos en PYMES latinoamericanas. A partir de ese contexto, esta investigación evaluó herramientas de pronóstico semanal con la información disponible en una microempresa y valoró su pertinencia de acuerdo con sus capacidades operativas. Esta última decisión corresponde al diseño del estudio.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Poveda-Valverde y Fierro Barragán (2026)",
+          "content": "Poveda-Valverde y Fierro Barragán, 2026"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 427,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Se comparó la precisión del modelo híbrido con la de modelos de referencia mediante validación temporal de ventana deslizante. Este contraste permitió determinar si la integración de métodos estadísticos y aprendizaje automático aporta mejoras en el pronóstico frente a alternativas más sencillas, sin presuponer la superioridad de una mayor complejidad algorítmica (Makridakis et al., 2018; Spiliotis et al., 2022).",
+      "container": "body_paragraph",
+      "context_text": "Se comparó la precisión del modelo híbrido con la de modelos de referencia mediante validación temporal de ventana deslizante. Este contraste permitió determinar si la integración de métodos estadísticos y aprendizaje automático aporta mejoras en el pronóstico frente a alternativas más sencillas, sin presuponer la superioridad de una mayor complejidad algorítmica (Makridakis et al., 2018; Spiliotis et al., 2022).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Makridakis et al., 2018; Spiliotis et al., 2022)",
+          "content": "Makridakis et al., 2018; Spiliotis et al., 2022"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 429,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El valor teórico esperado de la investigación consiste en aportar evidencia sobre el desempeño de métodos de pronóstico semanal en un contexto de datos limitados e intermitencia de las compras. La literatura señala que la precisión de los modelos depende de la cantidad y calidad de los datos, la granularidad temporal, las variables disponibles y el protocolo de evaluación; por tanto, su superioridad requiere contrastación empírica (Hewamalage et al., 2021; Giannopoulos et al., 2025).",
+      "container": "body_paragraph",
+      "context_text": "El valor teórico esperado de la investigación consiste en aportar evidencia sobre el desempeño de métodos de pronóstico semanal en un contexto de datos limitados e intermitencia de las compras. La literatura señala que la precisión de los modelos depende de la cantidad y calidad de los datos, la granularidad temporal, las variables disponibles y el protocolo de evaluación; por tanto, su superioridad requiere contrastación empírica (Hewamalage et al., 2021; Giannopoulos et al., 2025).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hewamalage et al., 2021; Giannopoulos et al., 2025)",
+          "content": "Hewamalage et al., 2021; Giannopoulos et al., 2025"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 443,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Las empresas pequeñas presentan condiciones heterogéneas de digitalización (OCDE, 2021). La disponibilidad de registros, las competencias del personal y los recursos para integrar herramientas condicionan el uso de analítica. Estas restricciones justifican procedimientos proporcionales a la información disponible, pero no permiten asumir que toda microempresa carece de registros o que una solución tecnológica tendrá beneficios automáticos. En Cup&Cake, la pertinencia del procedimiento se evaluará respecto de la necesidad de anticipar el presupuesto de compras.",
+      "container": "body_paragraph",
+      "context_text": "Las empresas pequeñas presentan condiciones heterogéneas de digitalización (OCDE, 2021). La disponibilidad de registros, las competencias del personal y los recursos para integrar herramientas condicionan el uso de analítica. Estas restricciones justifican procedimientos proporcionales a la información disponible, pero no permiten asumir que toda microempresa carece de registros o que una solución tecnológica tendrá beneficios automáticos. En Cup&Cake, la pertinencia del procedimiento se evaluará respecto de la necesidad de anticipar el presupuesto de compras.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(OCDE, 2021)",
+          "content": "OCDE, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 446,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Un pronóstico puntual resume una distribución de resultados posibles. Bajo pérdida cuadrática, el valor que minimiza el error esperado es la media condicional. La ecuación (1) adapta esta propiedad al importe de compras: la estimación depende de la información existente en el origen del pronóstico, sin utilizar datos posteriores (Hastie et al., 2009).",
+      "container": "body_paragraph",
+      "context_text": "Un pronóstico puntual resume una distribución de resultados posibles. Bajo pérdida cuadrática, el valor que minimiza el error esperado es la media condicional. La ecuación (1) adapta esta propiedad al importe de compras: la estimación depende de la información existente en el origen del pronóstico, sin utilizar datos posteriores (Hastie et al., 2009).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hastie et al., 2009)",
+          "content": "Hastie et al., 2009"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 450,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "En esta notación, y representa el importe semanal observado, t es la última semana conocida, h es el horizonte e I representa la información disponible. El sombrero distingue el pronóstico del valor observado y la barra vertical separa el periodo pronosticado del origen de información. Una estimación puntual ayuda a formular expectativas, pero no determina por sí sola la decisión presupuestaria del responsable (Hastie et al., 2009; Power, 2002).",
+      "container": "body_paragraph",
+      "context_text": "En esta notación, y representa el importe semanal observado, t es la última semana conocida, h es el horizonte e I representa la información disponible. El sombrero distingue el pronóstico del valor observado y la barra vertical separa el periodo pronosticado del origen de información. Una estimación puntual ayuda a formular expectativas, pero no determina por sí sola la decisión presupuestaria del responsable (Hastie et al., 2009; Power, 2002).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hastie et al., 2009; Power, 2002)",
+          "content": "Hastie et al., 2009; Power, 2002"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 451,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La planeación del presupuesto utilizará esa estimación como un insumo para revisar recursos destinados al abastecimiento. Un sistema de soporte a la decisión organiza datos y modelos para facilitar la valoración de alternativas; la decisión final también puede incorporar restricciones que el modelo no observa. Por ello, el estudio evaluará precisión predictiva y no supondrá que un menor error produce necesariamente un retorno financiero positivo (Power, 2002).",
+      "container": "body_paragraph",
+      "context_text": "La planeación del presupuesto utilizará esa estimación como un insumo para revisar recursos destinados al abastecimiento. Un sistema de soporte a la decisión organiza datos y modelos para facilitar la valoración de alternativas; la decisión final también puede incorporar restricciones que el modelo no observa. Por ello, el estudio evaluará precisión predictiva y no supondrá que un menor error produce necesariamente un retorno financiero positivo (Power, 2002).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Power, 2002)",
+          "content": "Power, 2002"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 454,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Pronosticar requiere definir con precisión qué se observa, con qué frecuencia y para qué horizonte. En esta investigación, la respuesta principal será el importe total semanal registrado de compras. Las ventas, el consumo de ingredientes y las existencias son magnitudes diferentes: pueden aportar contexto, pero no sustituyen la variable definida. La comparación entre modelos deberá mantener la misma respuesta y las mismas unidades monetarias (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Pronosticar requiere definir con precisión qué se observa, con qué frecuencia y para qué horizonte. En esta investigación, la respuesta principal será el importe total semanal registrado de compras. Las ventas, el consumo de ingredientes y las existencias son magnitudes diferentes: pueden aportar contexto, pero no sustituyen la variable definida. La comparación entre modelos deberá mantener la misma respuesta y las mismas unidades monetarias (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 455,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El importe de una adquisición puede variar por cantidad, precio y composición de insumos. Además, la fecha de compra puede diferir de la fecha de consumo o pago. Por tanto, la interpretación prevista será presupuestaria: se intentará anticipar el registro monetario de compras, sin identificarlo con una cantidad óptima de abastecimiento. Esta delimitación mantiene separado el objetivo de predicción de las inferencias explicativas o causales (Shmueli, 2010).",
+      "container": "body_paragraph",
+      "context_text": "El importe de una adquisición puede variar por cantidad, precio y composición de insumos. Además, la fecha de compra puede diferir de la fecha de consumo o pago. Por tanto, la interpretación prevista será presupuestaria: se intentará anticipar el registro monetario de compras, sin identificarlo con una cantidad óptima de abastecimiento. Esta delimitación mantiene separado el objetivo de predicción de las inferencias explicativas o causales (Shmueli, 2010).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Shmueli, 2010)",
+          "content": "Shmueli, 2010"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 457,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los pronósticos jerárquicos representan series relacionadas mediante sumas. Adaptada al caso, la identidad de agregación expresa el importe semanal total como suma de los importes de las categorías de insumos. La ecuación (2) es una aplicación de esa estructura aditiva, no un modelo causal de costos (Hyndman et al., 2011).",
+      "container": "body_paragraph",
+      "context_text": "Los pronósticos jerárquicos representan series relacionadas mediante sumas. Adaptada al caso, la identidad de agregación expresa el importe semanal total como suma de los importes de las categorías de insumos. La ecuación (2) es una aplicación de esa estructura aditiva, no un modelo causal de costos (Hyndman et al., 2011).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman et al., 2011)",
+          "content": "Hyndman et al., 2011"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 461,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Aquí, b es el importe del insumo o categoría j y J es el número de categorías mutuamente excluyentes que cubren el total. Si solo se presentan los principales insumos, será necesario conservar una categoría residual para las demás compras o declarar que se trabaja con un subtotal. La suma evita que las asignaciones se interpreten como un total cuando omiten parte de sus componentes (Hyndman et al., 2011).",
+      "container": "body_paragraph",
+      "context_text": "Aquí, b es el importe del insumo o categoría j y J es el número de categorías mutuamente excluyentes que cubren el total. Si solo se presentan los principales insumos, será necesario conservar una categoría residual para las demás compras o declarar que se trabaja con un subtotal. La suma evita que las asignaciones se interpreten como un total cuando omiten parte de sus componentes (Hyndman et al., 2011).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman et al., 2011)",
+          "content": "Hyndman et al., 2011"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 462,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La frecuencia y el nivel de agregación deben responder a la decisión analizada (Hyndman & Athanasopoulos, 2021). En el caso propuesto, la escala semanal se utilizará para revisar el presupuesto de abastecimiento. Esta delimitación no equivale a planificar inventarios físicos: traducir importes a unidades requeriría precios, recetas, existencias y condiciones de suministro que quedan fuera del pronóstico monetario.",
+      "container": "body_paragraph",
+      "context_text": "La frecuencia y el nivel de agregación deben responder a la decisión analizada (Hyndman & Athanasopoulos, 2021). En el caso propuesto, la escala semanal se utilizará para revisar el presupuesto de abastecimiento. Esta delimitación no equivale a planificar inventarios físicos: traducir importes a unidades requeriría precios, recetas, existencias y condiciones de suministro que quedan fuera del pronóstico monetario.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 465,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Una serie temporal es una secuencia ordenada de observaciones registradas con un índice temporal definido (Hyndman & Athanasopoulos, 2021). Para depurar los datos del caso, la agregación semanal conservará un calendario consistente y distinguirá una semana sin compras de una semana sin registro. Los huecos no se rellenarán automáticamente con cero, porque esa sustitución cambiaría el significado del objetivo; esta es una regla de calidad de datos del estudio.",
+      "container": "body_paragraph",
+      "context_text": "Una serie temporal es una secuencia ordenada de observaciones registradas con un índice temporal definido (Hyndman & Athanasopoulos, 2021). Para depurar los datos del caso, la agregación semanal conservará un calendario consistente y distinguirá una semana sin compras de una semana sin registro. Los huecos no se rellenarán automáticamente con cero, porque esa sustitución cambiaría el significado del objetivo; esta es una regla de calidad de datos del estudio.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 467,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La descomposición aditiva representa una serie mediante tendencia-ciclo, estacionalidad y residuo. Es útil cuando las oscilaciones estacionales se interpretan en la escala original; si aumentan proporcionalmente al nivel, pueden considerarse transformaciones u otras representaciones. La ecuación (3) presenta la descomposición con notación adaptada al importe semanal (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "La descomposición aditiva representa una serie mediante tendencia-ciclo, estacionalidad y residuo. Es útil cuando las oscilaciones estacionales se interpretan en la escala original; si aumentan proporcionalmente al nivel, pueden considerarse transformaciones u otras representaciones. La ecuación (3) presenta la descomposición con notación adaptada al importe semanal (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 471,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "T representa el componente de tendencia-ciclo, S el patrón estacional y R la variación restante. El residuo no debe interpretarse automáticamente como error de captura: puede contener acontecimientos legítimos o estructura no representada. La descomposición sirve para explorar el comportamiento de la serie, sin demostrar que los componentes conservarán la misma forma en periodos futuros (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "T representa el componente de tendencia-ciclo, S el patrón estacional y R la variación restante. El residuo no debe interpretarse automáticamente como error de captura: puede contener acontecimientos legítimos o estructura no representada. La descomposición sirve para explorar el comportamiento de la serie, sin demostrar que los componentes conservarán la misma forma en periodos futuros (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 472,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La estacionalidad implica repetición asociada al calendario. Para compras semanales, un patrón anual debe examinarse con la cobertura disponible y con atención a festividades móviles. Contar con un ciclo no permite observar su repetición entre años. La incorporación de componentes estacionales dependerá de evidencia histórica y de su utilidad predictiva, no solo de la existencia de fechas comerciales relevantes (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "La estacionalidad implica repetición asociada al calendario. Para compras semanales, un patrón anual debe examinarse con la cobertura disponible y con atención a festividades móviles. Contar con un ciclo no permite observar su repetición entre años. La incorporación de componentes estacionales dependerá de evidencia histórica y de su utilidad predictiva, no solo de la existencia de fechas comerciales relevantes (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 474,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La diferenciación transforma la serie mediante cambios entre observaciones sucesivas, como muestra la ecuación (4). Puede ayudar a tratar variaciones persistentes de nivel; la estabilización de varianza, en cambio, puede requerir transformaciones de escala. ADF y KPSS examinan hipótesis distintas sobre estacionariedad, y su interpretación debe considerar el tamaño de muestra y los componentes incluidos en la prueba (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "La diferenciación transforma la serie mediante cambios entre observaciones sucesivas, como muestra la ecuación (4). Puede ayudar a tratar variaciones persistentes de nivel; la estabilización de varianza, en cambio, puede requerir transformaciones de escala. ADF y KPSS examinan hipótesis distintas sobre estacionariedad, y su interpretación debe considerar el tamaño de muestra y los componentes incluidos en la prueba (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 478,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La autocorrelación describe asociación lineal entre observaciones separadas por un rezago. En la ecuación (5), k identifica la separación temporal, N el número de semanas y la barra el promedio de la serie. La función ayuda a explorar memoria temporal, sin constituir por sí sola una regla de selección del modelo (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "La autocorrelación describe asociación lineal entre observaciones separadas por un rezago. En la ecuación (5), k identifica la separación temporal, N el número de semanas y la barra el promedio de la serie. La función ayuda a explorar memoria temporal, sin constituir por sí sola una regla de selección del modelo (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 482,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La autocorrelación parcial y las pruebas de dependencia conjunta pueden complementar el diagnóstico (Hyndman & Athanasopoulos, 2021). La selección de características y la validación deben respetar el orden temporal; utilizar toda la serie para definir variables antes de evaluar un bloque reservado puede introducir información posterior en el procedimiento (Bergmeir & Benítez, 2012). En este estudio, cualquier diagnóstico que determine ajustes se calculará únicamente con el historial disponible en cada origen.",
+      "container": "body_paragraph",
+      "context_text": "La autocorrelación parcial y las pruebas de dependencia conjunta pueden complementar el diagnóstico (Hyndman & Athanasopoulos, 2021). La selección de características y la validación deben respetar el orden temporal; utilizar toda la serie para definir variables antes de evaluar un bloque reservado puede introducir información posterior en el procedimiento (Bergmeir & Benítez, 2012). En este estudio, cualquier diagnóstico que determine ajustes se calculará únicamente con el historial disponible en cada origen.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Bergmeir & Benítez, 2012)",
+          "content": "Bergmeir & Benítez, 2012"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 484,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Cuando existen periodos con valor cero, resulta útil distinguir tamaño de los eventos positivos y tiempo entre eventos. El método de Croston mantiene estimaciones suavizadas de ambas cantidades y obtiene una tasa por periodo mediante su cociente, representado en la ecuación (6). Su traslado de demanda a compras monetarias deberá justificarse por el patrón observado (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Cuando existen periodos con valor cero, resulta útil distinguir tamaño de los eventos positivos y tiempo entre eventos. El método de Croston mantiene estimaciones suavizadas de ambas cantidades y obtiene una tasa por periodo mediante su cociente, representado en la ecuación (6). Su traslado de demanda a compras monetarias deberá justificarse por el patrón observado (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 488,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Las estimaciones z y a corresponden, respectivamente, al tamaño de los eventos positivos y al intervalo entre ellos. El procedimiento constituye una referencia para demanda intermitente, no una garantía de superioridad (Hyndman & Athanasopoulos, 2021). Como procedimiento de auditoría del caso, los picos se contrastarán con la fuente para distinguir posibles errores de registro de compras extraordinarias; no se eliminarán únicamente por su magnitud (Kuhn & Johnson, 2013).",
+      "container": "body_paragraph",
+      "context_text": "Las estimaciones z y a corresponden, respectivamente, al tamaño de los eventos positivos y al intervalo entre ellos. El procedimiento constituye una referencia para demanda intermitente, no una garantía de superioridad (Hyndman & Athanasopoulos, 2021). Como procedimiento de auditoría del caso, los picos se contrastarán con la fuente para distinguir posibles errores de registro de compras extraordinarias; no se eliminarán únicamente por su magnitud (Kuhn & Johnson, 2013).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Kuhn & Johnson, 2013)",
+          "content": "Kuhn & Johnson, 2013"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 491,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Una referencia establece qué precisión puede obtenerse con una regla reproducible. El método ingenuo conserva el último valor conocido para los horizontes futuros, como muestra la ecuación (7). Una referencia estacional utiliza el periodo comparable de un ciclo anterior cuando existe historial suficiente. Ninguna de estas reglas representa por sí misma el juicio del propietario (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Una referencia establece qué precisión puede obtenerse con una regla reproducible. El método ingenuo conserva el último valor conocido para los horizontes futuros, como muestra la ecuación (7). Una referencia estacional utiliza el periodo comparable de un ciclo anterior cuando existe historial suficiente. Ninguna de estas reglas representa por sí misma el juicio del propietario (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 495,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La utilidad de estas referencias es contextualizar el error: una arquitectura compleja puede reducir el error de entrenamiento sin mejorar el de semanas futuras. El estudio deberá comparar al híbrido con referencias previamente definidas para el importe y para la composición, de modo que la mejora se mida respecto de alternativas pertinentes (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "La utilidad de estas referencias es contextualizar el error: una arquitectura compleja puede reducir el error de entrenamiento sin mejorar el de semanas futuras. El estudio deberá comparar al híbrido con referencias previamente definidas para el importe y para la composición, de modo que la mejora se mida respecto de alternativas pertinentes (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 497,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El suavizamiento exponencial simple actualiza una estimación del nivel mediante una combinación de la observación reciente y el nivel previo. En la ecuación (8), alfa controla el peso de la información reciente y toma valores entre cero y uno. Su pronóstico no incorpora por sí mismo tendencia o estacionalidad, por lo que funciona como una representación básica (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "El suavizamiento exponencial simple actualiza una estimación del nivel mediante una combinación de la observación reciente y el nivel previo. En la ecuación (8), alfa controla el peso de la información reciente y toma valores entre cero y uno. Su pronóstico no incorpora por sí mismo tendencia o estacionalidad, por lo que funciona como una representación básica (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 501,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los modelos de suavizamiento con tendencia y estacionalidad amplían esta representación. Su pertinencia dependerá de la estructura temporal y de la cantidad de observaciones. No será suficiente seleccionar una variante más compleja: deberá verificarse si sus componentes ayudan a estimar las semanas reservadas para evaluación (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Los modelos de suavizamiento con tendencia y estacionalidad amplían esta representación. Su pertinencia dependerá de la estructura temporal y de la cantidad de observaciones. No será suficiente seleccionar una variante más compleja: deberá verificarse si sus componentes ayudan a estimar las semanas reservadas para evaluación (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 502,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Un ARIMA combina términos autorregresivos, diferenciación y medias móviles de innovaciones. La ecuación (9) usa el operador de rezago B, de modo que B aplicado a y en t devuelve el valor anterior. Los polinomios phi () y theta () representan los órdenes autorregresivos y de medias móviles; d es el orden de diferenciación y épsilon () la innovación (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Un ARIMA combina términos autorregresivos, diferenciación y medias móviles de innovaciones. La ecuación (9) usa el operador de rezago B, de modo que B aplicado a y en t devuelve el valor anterior. Los polinomios phi () y theta () representan los órdenes autorregresivos y de medias móviles; d es el orden de diferenciación y épsilon () la innovación (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 506,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El componente de medias móviles de ARIMA opera sobre innovaciones y no equivale a promediar observaciones anteriores. Las variantes estacionales añaden operadores asociados a una periodicidad definida, y la selección debe considerar la longitud del historial y el diagnóstico de residuos (Hyndman & Athanasopoulos, 2021). Para esta investigación, el tamaño de la empresa no se utilizará por sí solo como criterio para excluir una familia estadística.",
+      "container": "body_paragraph",
+      "context_text": "El componente de medias móviles de ARIMA opera sobre innovaciones y no equivale a promediar observaciones anteriores. Las variantes estacionales añaden operadores asociados a una periodicidad definida, y la selección debe considerar la longitud del historial y el diagnóstico de residuos (Hyndman & Athanasopoulos, 2021). Para esta investigación, el tamaño de la empresa no se utilizará por sí solo como criterio para excluir una familia estadística.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 508,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Random Forest combina árboles construidos con aleatoriedad en muestras y predictores. En regresión, la salida es el promedio de las predicciones, representado en la ecuación (10). B es el número de árboles, T identifica cada árbol y x reúne los predictores disponibles. La agregación busca reducir variabilidad respecto de un árbol individual (Breiman, 2001).",
+      "container": "body_paragraph",
+      "context_text": "Random Forest combina árboles construidos con aleatoriedad en muestras y predictores. En regresión, la salida es el promedio de las predicciones, representado en la ecuación (10). B es el número de árboles, T identifica cada árbol y x reúne los predictores disponibles. La agregación busca reducir variabilidad respecto de un árbol individual (Breiman, 2001).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Breiman, 2001)",
+          "content": "Breiman, 2001"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 512,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los árboles y los bosques aleatorios permiten representar interacciones y relaciones no lineales (Breiman, 2001). En pronóstico de series temporales, las entradas deben construirse con información disponible en el origen, como rezagos y variables de calendario (Bontempi et al., 2013). La profundidad, el tamaño mínimo de los nodos y la diversidad de árboles se tratarán como decisiones de diseño; el modelo no se considerará inmune a errores de captura o datos faltantes.",
+      "container": "body_paragraph",
+      "context_text": "Los árboles y los bosques aleatorios permiten representar interacciones y relaciones no lineales (Breiman, 2001). En pronóstico de series temporales, las entradas deben construirse con información disponible en el origen, como rezagos y variables de calendario (Bontempi et al., 2013). La profundidad, el tamaño mínimo de los nodos y la diversidad de árboles se tratarán como decisiones de diseño; el modelo no se considerará inmune a errores de captura o datos faltantes.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Breiman, 2001)",
+          "content": "Breiman, 2001"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Bontempi et al., 2013)",
+          "content": "Bontempi et al., 2013"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 513,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La potenciación de gradiente construye una función de manera aditiva. La ecuación (11) expresa una actualización con un aprendiz base g, un coeficiente rho y una tasa de aprendizaje nu. La dirección de actualización depende del gradiente negativo de la pérdida; con pérdida cuadrática se relaciona con los residuales (Friedman, 2001).",
+      "container": "body_paragraph",
+      "context_text": "La potenciación de gradiente construye una función de manera aditiva. La ecuación (11) expresa una actualización con un aprendiz base g, un coeficiente rho y una tasa de aprendizaje nu. La dirección de actualización depende del gradiente negativo de la pérdida; con pérdida cuadrática se relaciona con los residuales (Friedman, 2001).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Friedman, 2001)",
+          "content": "Friedman, 2001"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 517,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La tasa de aprendizaje y el número de etapas controlan la magnitud de la adaptación en gradient boosting (Friedman, 2001). Estas técnicas pueden aprovechar interacciones entre calendario e historial, pero su configuración debe realizarse antes de la evaluación final. Ajustar el número de etapas con el mismo bloque utilizado para reportar precisión produciría una comparación optimista (Tashman, 2000).",
+      "container": "body_paragraph",
+      "context_text": "La tasa de aprendizaje y el número de etapas controlan la magnitud de la adaptación en gradient boosting (Friedman, 2001). Estas técnicas pueden aprovechar interacciones entre calendario e historial, pero su configuración debe realizarse antes de la evaluación final. Ajustar el número de etapas con el mismo bloque utilizado para reportar precisión produciría una comparación optimista (Tashman, 2000).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Friedman, 2001)",
+          "content": "Friedman, 2001"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Tashman, 2000)",
+          "content": "Tashman, 2000"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 519,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Una red autorregresiva aproxima mediante una función no lineal la relación entre rezagos de una serie (Hyndman & Athanasopoulos, 2021). Las redes neuronales recurrentes incorporan estados internos y mecanismos de memoria, además de parámetros y decisiones de ajuste; su desempeño depende del tamaño y las características de los datos (Hewamalage et al., 2021). En esta tesis, la presencia de una red recurrente no se utilizará como condición para definir un modelo como híbrido.",
+      "container": "body_paragraph",
+      "context_text": "Una red autorregresiva aproxima mediante una función no lineal la relación entre rezagos de una serie (Hyndman & Athanasopoulos, 2021). Las redes neuronales recurrentes incorporan estados internos y mecanismos de memoria, además de parámetros y decisiones de ajuste; su desempeño depende del tamaño y las características de los datos (Hewamalage et al., 2021). En esta tesis, la presencia de una red recurrente no se utilizará como condición para definir un modelo como híbrido.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Hewamalage et al., 2021)",
+          "content": "Hewamalage et al., 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 520,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Como criterio de diseño, cada familia candidata deberá responder una pregunta pertinente sobre el objetivo, por ejemplo, si aportan valor la no linealidad o la memoria temporal. La selección y el ajuste se realizarán con información anterior a las semanas de evaluación, de acuerdo con el principio de separar entrenamiento, validación y prueba (Kuhn & Johnson, 2013).",
+      "container": "body_paragraph",
+      "context_text": "Como criterio de diseño, cada familia candidata deberá responder una pregunta pertinente sobre el objetivo, por ejemplo, si aportan valor la no linealidad o la memoria temporal. La selección y el ajuste se realizarán con información anterior a las semanas de evaluación, de acuerdo con el principio de separar entrenamiento, validación y prueba (Kuhn & Johnson, 2013).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Kuhn & Johnson, 2013)",
+          "content": "Kuhn & Johnson, 2013"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 523,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La combinación de pronósticos parte de que métodos distintos pueden contener información complementaria. Para dos modelos, la ecuación (12) pondera un pronóstico estadístico y uno de aprendizaje automático. La notación adapta el principio de combinación al caso; el peso w determina la contribución del primero. Restringirlo entre cero y uno produce una combinación convexa (Bates & Granger, 1969).",
+      "container": "body_paragraph",
+      "context_text": "La combinación de pronósticos parte de que métodos distintos pueden contener información complementaria. Para dos modelos, la ecuación (12) pondera un pronóstico estadístico y uno de aprendizaje automático. La notación adapta el principio de combinación al caso; el peso w determina la contribución del primero. Restringirlo entre cero y uno produce una combinación convexa (Bates & Granger, 1969).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Bates & Granger, 1969)",
+          "content": "Bates & Granger, 1969"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 527,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los superíndices H, E y A identifican híbrido, estadístico y aprendizaje automático. Bajo errores insesgados con varianzas finitas, la varianza del error combinado depende de las varianzas individuales y de su covarianza. La ecuación (13) explica por qué el grado de dependencia entre errores importa para la combinación (Bates & Granger, 1969). La evidencia de M4 ilustra empíricamente que las combinaciones pueden ser competitivas en conjuntos amplios, aunque su resultado no se traslada automáticamente a otra población, frecuencia u horizonte (Makridakis et al., 2018, 2020).",
+      "container": "body_paragraph",
+      "context_text": "Los superíndices H, E y A identifican híbrido, estadístico y aprendizaje automático. Bajo errores insesgados con varianzas finitas, la varianza del error combinado depende de las varianzas individuales y de su covarianza. La ecuación (13) explica por qué el grado de dependencia entre errores importa para la combinación (Bates & Granger, 1969). La evidencia de M4 ilustra empíricamente que las combinaciones pueden ser competitivas en conjuntos amplios, aunque su resultado no se traslada automáticamente a otra población, frecuencia u horizonte (Makridakis et al., 2018, 2020).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Bates & Granger, 1969)",
+          "content": "Bates & Granger, 1969"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Makridakis et al., 2018, 2020)",
+          "content": "Makridakis et al., 2018, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 531,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Cuando los errores se parecen mucho, combinar puede aportar poco. Si el denominador es positivo, el peso que minimiza esa varianza sin imponer la restricción convexa se expresa en la ecuación (14). Su uso exige estimar varianzas y covarianza sin información futura; la estimación puede ser inestable con pocos errores disponibles (Bates & Granger, 1969).",
+      "container": "body_paragraph",
+      "context_text": "Cuando los errores se parecen mucho, combinar puede aportar poco. Si el denominador es positivo, el peso que minimiza esa varianza sin imponer la restricción convexa se expresa en la ecuación (14). Su uso exige estimar varianzas y covarianza sin información futura; la estimación puede ser inestable con pocos errores disponibles (Bates & Granger, 1969).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Bates & Granger, 1969)",
+          "content": "Bates & Granger, 1969"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 535,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La combinación simple también debe considerarse como referencia, pues estimar pesos no garantiza mejorar un promedio. En el estudio propuesto, el interés será contrastar si integrar representaciones distintas produce menores errores. La evaluación deberá distinguir esa combinación de la mera selección del algoritmo ganador (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "La combinación simple también debe considerarse como referencia, pues estimar pesos no garantiza mejorar un promedio. En el estudio propuesto, el interés será contrastar si integrar representaciones distintas produce menores errores. La evaluación deberá distinguir esa combinación de la mera selección del algoritmo ganador (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 537,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Otra estrategia híbrida representa la serie como suma de componentes lineal y no lineal. Zhang (2003) propuso modelar con ARIMA la estructura lineal y con una red neuronal la estructura no lineal de los residuales, y reportó potencial de mejora en sus experimentos; el hallazgo no implica una ventaja universal. La ecuación (15) resume esa formulación: sus componentes no son observables independientes, sino representaciones estimadas mediante un procedimiento de modelado. La implementación de esta tesis es una adaptación y deberá juzgarse con su propia evaluación temporal.",
+      "container": "body_paragraph",
+      "context_text": "Otra estrategia híbrida representa la serie como suma de componentes lineal y no lineal. Zhang (2003) propuso modelar con ARIMA la estructura lineal y con una red neuronal la estructura no lineal de los residuales, y reportó potencial de mejora en sus experimentos; el hallazgo no implica una ventaja universal. La ecuación (15) resume esa formulación: sus componentes no son observables independientes, sino representaciones estimadas mediante un procedimiento de modelado. La implementación de esta tesis es una adaptación y deberá juzgarse con su propia evaluación temporal.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Zhang (2003)",
+          "content": "Zhang, 2003"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 541,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los modelos híbridos pueden combinar componentes lineales y no lineales, y los errores de ajuste del primer componente no deben confundirse con errores predictivos genuinos (Hyndman & Athanasopoulos, 2021; Zhang, 2003). Como adaptación metodológica para Cup&Cake, los errores usados por el segundo componente se generarán respetando el orden temporal y la suma se evaluará en semanas no utilizadas para configurar el procedimiento.",
+      "container": "body_paragraph",
+      "context_text": "Los modelos híbridos pueden combinar componentes lineales y no lineales, y los errores de ajuste del primer componente no deben confundirse con errores predictivos genuinos (Hyndman & Athanasopoulos, 2021; Zhang, 2003). Como adaptación metodológica para Cup&Cake, los errores usados por el segundo componente se generarán respetando el orden temporal y la suma se evaluará en semanas no utilizadas para configurar el procedimiento.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021; Zhang, 2003)",
+          "content": "Hyndman & Athanasopoulos, 2021; Zhang, 2003"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 542,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Estas alternativas ofrecen mecanismos plausibles para H1, sin anticipar cuál resultará más preciso. Una combinación puede fallar si los componentes comparten errores, si los pesos se estiman con poca información o si la estructura cambia. La selección de una arquitectura concreta requerirá especificar qué componentes se integran y cómo se contrastará el conjunto (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Estas alternativas ofrecen mecanismos plausibles para H1, sin anticipar cuál resultará más preciso. Una combinación puede fallar si los componentes comparten errores, si los pesos se estiman con poca información o si la estructura cambia. La selección de una arquitectura concreta requerirá especificar qué componentes se integran y cómo se contrastará el conjunto (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 545,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Las participaciones describen partes de un total y están sujetas a una restricción de suma. Por ello, no se interpretan como variables completamente independientes: aumentar una participación requiere disminuir alguna otra. La ecuación (16) adapta la representación composicional a importes no negativos de compras, incluyendo la condición de total positivo (Aitchison, 1982).",
+      "container": "body_paragraph",
+      "context_text": "Las participaciones describen partes de un total y están sujetas a una restricción de suma. Por ello, no se interpretan como variables completamente independientes: aumentar una participación requiere disminuir alguna otra. La ecuación (16) adapta la representación composicional a importes no negativos de compras, incluyendo la condición de total positivo (Aitchison, 1982).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Aitchison, 1982)",
+          "content": "Aitchison, 1982"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 549,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Las proporciones se expresan entre cero y uno; su multiplicación por cien produce porcentajes. Si el total observado es cero, las participaciones no quedan definidas por el cociente. Una regla de tratamiento deberá distinguir ese caso de una participación cero dentro de una semana con compras. Las transformaciones logarítmicas requieren además componentes estrictamente positivos (Aitchison, 1982).",
+      "container": "body_paragraph",
+      "context_text": "Las proporciones se expresan entre cero y uno; su multiplicación por cien produce porcentajes. Si el total observado es cero, las participaciones no quedan definidas por el cociente. Una regla de tratamiento deberá distinguir ese caso de una participación cero dentro de una semana con compras. Las transformaciones logarítmicas requieren además componentes estrictamente positivos (Aitchison, 1982).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Aitchison, 1982)",
+          "content": "Aitchison, 1982"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 551,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El enfoque descendente pronostica un agregado y lo distribuye mediante proporciones. La ecuación (17) adapta esa relación a importes por insumo: cada asignación es el producto del total pronosticado y la participación estimada para el mismo horizonte. Las proporciones deben cumplir las restricciones de suma y no negatividad (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "El enfoque descendente pronostica un agregado y lo distribuye mediante proporciones. La ecuación (17) adapta esa relación a importes por insumo: cada asignación es el producto del total pronosticado y la participación estimada para el mismo horizonte. Las proporciones deben cumplir las restricciones de suma y no negatividad (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 555,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El procedimiento preserva la suma cuando todas las categorías están representadas. Esa coherencia es aritmética y no demuestra precisión: un total correcto puede repartirse incorrectamente. Por esa razón, la evaluación deberá revisar tanto el importe agregado como las participaciones y, cuando resulte pertinente, las asignaciones monetarias resultantes (Hyndman et al., 2011).",
+      "container": "body_paragraph",
+      "context_text": "El procedimiento preserva la suma cuando todas las categorías están representadas. Esa coherencia es aritmética y no demuestra precisión: un total correcto puede repartirse incorrectamente. Por esa razón, la evaluación deberá revisar tanto el importe agregado como las participaciones y, cuando resulte pertinente, las asignaciones monetarias resultantes (Hyndman et al., 2011).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman et al., 2011)",
+          "content": "Hyndman et al., 2011"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 556,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Como referencia, el promedio de proporciones históricas asigna a cada categoría su participación media en las semanas de entrenamiento con total positivo. La ecuación (18) adapta el promedio histórico de proporciones a ese conjunto válido V, cuyo tamaño es n. No es equivalente al cociente de sumas, que otorga más peso a las semanas de mayor importe (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Como referencia, el promedio de proporciones históricas asigna a cada categoría su participación media en las semanas de entrenamiento con total positivo. La ecuación (18) adapta el promedio histórico de proporciones a ese conjunto válido V, cuyo tamaño es n. No es equivalente al cociente de sumas, que otorga más peso a las semanas de mayor importe (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 560,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Una distribución histórica fija puede ser insuficiente si la mezcla cambia. Las proporciones pronosticadas ofrecen una alternativa, aunque requieren información y evaluación propias. Debe mantenerse el mismo conjunto de categorías a lo largo del contraste o documentar sus cambios. Este principio permite diferenciar la mejora de la composición de la mejora del total (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Una distribución histórica fija puede ser insuficiente si la mezcla cambia. Las proporciones pronosticadas ofrecen una alternativa, aunque requieren información y evaluación propias. Debe mantenerse el mismo conjunto de categorías a lo largo del contraste o documentar sus cambios. Este principio permite diferenciar la mejora de la composición de la mejora del total (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 562,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El análisis composicional utiliza cocientes para representar información relativa. La transformación logarítmica de una participación respecto de una categoría de referencia aparece en la ecuación (19). Su utilidad es mostrar que la información relevante puede expresarse como relación entre partes, en lugar de tratar porcentajes como respuestas independientes sin restricciones (Aitchison, 1982).",
+      "container": "body_paragraph",
+      "context_text": "El análisis composicional utiliza cocientes para representar información relativa. La transformación logarítmica de una participación respecto de una categoría de referencia aparece en la ecuación (19). Su utilidad es mostrar que la información relevante puede expresarse como relación entre partes, en lugar de tratar porcentajes como respuestas independientes sin restricciones (Aitchison, 1982).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Aitchison, 1982)",
+          "content": "Aitchison, 1982"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 566,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Esta transformación es una alternativa teórica y no obliga a seleccionarla para el estudio. Los ceros requieren un tratamiento explícito que no distorsione la composición; no deberán sustituirse de manera arbitraria solo para permitir un logaritmo. Una estrategia más simple también podrá ser pertinente si conserva coherencia y obtiene precisión comparable fuera de muestra (Aitchison, 1982).",
+      "container": "body_paragraph",
+      "context_text": "Esta transformación es una alternativa teórica y no obliga a seleccionarla para el estudio. Los ceros requieren un tratamiento explícito que no distorsione la composición; no deberán sustituirse de manera arbitraria solo para permitir un logaritmo. Una estrategia más simple también podrá ser pertinente si conserva coherencia y obtiene precisión comparable fuera de muestra (Aitchison, 1982).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Aitchison, 1982)",
+          "content": "Aitchison, 1982"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 569,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La cantidad de observaciones debe valorarse en relación con la complejidad del modelo y la dependencia de los datos. Para pérdida cuadrática, la descomposición sesgo–varianza expresa el error esperado como suma de sesgo al cuadrado, varianza del estimador y ruido irreducible. La ecuación (20) resume esa relación para una entrada x (Hastie et al., 2009).",
+      "container": "body_paragraph",
+      "context_text": "La cantidad de observaciones debe valorarse en relación con la complejidad del modelo y la dependencia de los datos. Para pérdida cuadrática, la descomposición sesgo–varianza expresa el error esperado como suma de sesgo al cuadrado, varianza del estimador y ruido irreducible. La ecuación (20) resume esa relación para una entrada x (Hastie et al., 2009).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hastie et al., 2009)",
+          "content": "Hastie et al., 2009"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 573,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Un ajuste flexible puede reducir error de entrenamiento y ser sensible a cambios de muestra. Regularizar busca controlar esa sensibilidad, aunque no elimina toda incertidumbre. La estabilidad deberá examinarse con datos posteriores, especialmente cuando la agregación semanal reduzca el número de observaciones disponibles para estimar parámetros (Hastie et al., 2009).",
+      "container": "body_paragraph",
+      "context_text": "Un ajuste flexible puede reducir error de entrenamiento y ser sensible a cambios de muestra. Regularizar busca controlar esa sensibilidad, aunque no elimina toda incertidumbre. La estabilidad deberá examinarse con datos posteriores, especialmente cuando la agregación semanal reduzca el número de observaciones disponibles para estimar parámetros (Hastie et al., 2009).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hastie et al., 2009)",
+          "content": "Hastie et al., 2009"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 575,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Ridge añade una penalización cuadrática sobre coeficientes y Lasso una penalización absoluta. Las ecuaciones (21) y (22) presentan sus objetivos en notación común: SSE es la suma de errores cuadrados y beta reúne los coeficientes, excluyendo el intercepto de la penalización. Lambda controla la intensidad de contracción (Hastie et al., 2009; Tibshirani, 1996).",
+      "container": "body_paragraph",
+      "context_text": "Ridge añade una penalización cuadrática sobre coeficientes y Lasso una penalización absoluta. Las ecuaciones (21) y (22) presentan sus objetivos en notación común: SSE es la suma de errores cuadrados y beta reúne los coeficientes, excluyendo el intercepto de la penalización. Lambda controla la intensidad de contracción (Hastie et al., 2009; Tibshirani, 1996).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hastie et al., 2009; Tibshirani, 1996)",
+          "content": "Hastie et al., 2009; Tibshirani, 1996"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 582,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Lasso puede llevar coeficientes a cero y producir una representación más reducida. Eso no demuestra que una variable carezca de importancia económica; su selección depende de los datos, la penalización y los demás predictores. La comparación deberá ajustar lambda dentro de entrenamiento y considerar el escalado, pues las unidades de las variables influyen en la penalización (Tibshirani, 1996).",
+      "container": "body_paragraph",
+      "context_text": "Lasso puede llevar coeficientes a cero y producir una representación más reducida. Eso no demuestra que una variable carezca de importancia económica; su selección depende de los datos, la penalización y los demás predictores. La comparación deberá ajustar lambda dentro de entrenamiento y considerar el escalado, pues las unidades de las variables influyen en la penalización (Tibshirani, 1996).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Tibshirani, 1996)",
+          "content": "Tibshirani, 1996"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 584,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los rezagos y resúmenes móviles expresan información histórica en una forma utilizable por algoritmos de regresión. Deben construirse únicamente con observaciones conocidas en cada origen. Imputación, escalado y selección de variables forman parte del procedimiento de entrenamiento y no deben estimarse con las semanas finales de evaluación (Kuhn & Johnson, 2013).",
+      "container": "body_paragraph",
+      "context_text": "Los rezagos y resúmenes móviles expresan información histórica en una forma utilizable por algoritmos de regresión. Deben construirse únicamente con observaciones conocidas en cada origen. Imputación, escalado y selección de variables forman parte del procedimiento de entrenamiento y no deben estimarse con las semanas finales de evaluación (Kuhn & Johnson, 2013).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Kuhn & Johnson, 2013)",
+          "content": "Kuhn & Johnson, 2013"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 585,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Las bases armónicas representan ciclos mediante funciones seno y coseno. La ecuación 23) presenta un par de términos con periodicidad m y armónico k. La codificación permite representar continuidad entre el final y el inicio de un ciclo, sin asignar una distancia artificialmente grande a posiciones próximas (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Las bases armónicas representan ciclos mediante funciones seno y coseno. La ecuación 23) presenta un par de términos con periodicidad m y armónico k. La codificación permite representar continuidad entre el final y el inicio de un ciclo, sin asignar una distancia artificialmente grande a posiciones próximas (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 589,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La periodicidad debe corresponder al índice temporal y puede representarse mediante términos de Fourier cuando la estacionalidad lo justifique (Hyndman & Athanasopoulos, 2021). Para este estudio, los eventos diarios se convertirán en indicadores semanales de presencia o proximidad. El número de armónicos y de interacciones se limitará de acuerdo con el historial disponible; ambas son decisiones de diseño del caso.",
+      "container": "body_paragraph",
+      "context_text": "La periodicidad debe corresponder al índice temporal y puede representarse mediante términos de Fourier cuando la estacionalidad lo justifique (Hyndman & Athanasopoulos, 2021). Para este estudio, los eventos diarios se convertirán en indicadores semanales de presencia o proximidad. El número de armónicos y de interacciones se limitará de acuerdo con el historial disponible; ambas son decisiones de diseño del caso.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 591,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Las variables de calendario pueden conocerse anticipadamente, mientras que clima observado, ventas futuras o indicadores publicados con retraso pueden ser desconocidos al pronosticar. Un modelo con regresores necesita sus valores futuros o un procedimiento explícito para estimarlos. Utilizar realizaciones futuras como si estuvieran disponibles produciría una evaluación que no representa el uso previsto (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Las variables de calendario pueden conocerse anticipadamente, mientras que clima observado, ventas futuras o indicadores publicados con retraso pueden ser desconocidos al pronosticar. Un modelo con regresores necesita sus valores futuros o un procedimiento explícito para estimarlos. Utilizar realizaciones futuras como si estuvieran disponibles produciría una evaluación que no representa el uso previsto (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 592,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "En horizontes de varias semanas, tampoco puede incorporarse como rezago una compra futura todavía no observada. La metodología deberá indicar si se generan pronósticos directos por horizonte o se utilizan predicciones recursivas. El análisis de variables exógenas podrá complementar el contraste principal, sin constituir una segunda hipótesis independiente (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "En horizontes de varias semanas, tampoco puede incorporarse como rezago una compra futura todavía no observada. La metodología deberá indicar si se generan pronósticos directos por horizonte o se utilizan predicciones recursivas. El análisis de variables exógenas podrá complementar el contraste principal, sin constituir una segunda hipótesis independiente (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 595,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La evaluación fuera de muestra compara pronósticos con observaciones que no participaron en su ajuste. Una ventana deslizante mantiene un historial de tamaño fijo y actualiza su posición; una ventana expansiva conserva el historial previo y añade observaciones. La elección afecta recencia, tamaño de muestra y cantidad de evaluaciones posibles (Tashman, 2000).",
+      "container": "body_paragraph",
+      "context_text": "La evaluación fuera de muestra compara pronósticos con observaciones que no participaron en su ajuste. Una ventana deslizante mantiene un historial de tamaño fijo y actualiza su posición; una ventana expansiva conserva el historial previo y añade observaciones. La elección afecta recencia, tamaño de muestra y cantidad de evaluaciones posibles (Tashman, 2000).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Tashman, 2000)",
+          "content": "Tashman, 2000"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 596,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La comparación requiere suficientes orígenes y resultados por horizonte, evitando que un único periodo determine la conclusión. Los modelos deberán enfrentar las mismas semanas y condiciones de información. El error de la ecuación (24) distingue el valor observado en t+h del pronóstico emitido en t (Hyndman & Athanasopoulos, 2021; Tashman, 2000).",
+      "container": "body_paragraph",
+      "context_text": "La comparación requiere suficientes orígenes y resultados por horizonte, evitando que un único periodo determine la conclusión. Los modelos deberán enfrentar las mismas semanas y condiciones de información. El error de la ecuación (24) distingue el valor observado en t+h del pronóstico emitido en t (Hyndman & Athanasopoulos, 2021; Tashman, 2000).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021; Tashman, 2000)",
+          "content": "Hyndman & Athanasopoulos, 2021; Tashman, 2000"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 600,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El ajuste de configuraciones deberá separarse de su evaluación final. Si los pesos híbridos, las variables o el modelo se eligen observando los resultados finales, esos resultados dejan de ser una estimación independiente de la selección. El protocolo temporal permitirá comparar alternativas sin dar por comprobada la hipótesis antes de obtener evidencia (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "El ajuste de configuraciones deberá separarse de su evaluación final. Si los pesos híbridos, las variables o el modelo se eligen observando los resultados finales, esos resultados dejan de ser una estimación independiente de la selección. El protocolo temporal permitirá comparar alternativas sin dar por comprobada la hipótesis antes de obtener evidencia (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 602,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "MAE y RMSE resumen el error en las unidades de la respuesta. MAE promedia magnitudes absolutas; RMSE extrae la raíz del promedio de cuadrados y es más sensible a errores grandes. Las ecuaciones (25) y (26) se expresan para un horizonte h y un conjunto O de n orígenes evaluados (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "MAE y RMSE resumen el error en las unidades de la respuesta. MAE promedia magnitudes absolutas; RMSE extrae la raíz del promedio de cuadrados y es más sensible a errores grandes. Las ecuaciones (25) y (26) se expresan para un horizonte h y un conjunto O de n orígenes evaluados (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 609,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "RMSE y MAE resumen el error en las mismas unidades del objetivo y deben interpretarse por horizonte (Hyndman & Athanasopoulos, 2021). Un RMSE menor representa una menor media de errores cuadrados, pero no implica necesariamente menos errores extremos. Como regla previa del protocolo, H1 tendrá un criterio principal de comparación fijado antes del análisis final y las demás métricas se informarán como evidencia complementaria.",
+      "container": "body_paragraph",
+      "context_text": "RMSE y MAE resumen el error en las mismas unidades del objetivo y deben interpretarse por horizonte (Hyndman & Athanasopoulos, 2021). Un RMSE menor representa una menor media de errores cuadrados, pero no implica necesariamente menos errores extremos. Como regla previa del protocolo, H1 tendrá un criterio principal de comparación fijado antes del análisis final y las demás métricas se informarán como evidencia complementaria.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 611,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "MASE divide el error absoluto por una escala obtenida de diferencias históricas de entrenamiento. La ecuación (27) muestra su forma para una partición con N observaciones de entrenamiento, n de prueba y rezago de referencia m. Permite comparar escalas sin dividir cada error por la compra observada de su semana (Hyndman & Koehler, 2006).",
+      "container": "body_paragraph",
+      "context_text": "MASE divide el error absoluto por una escala obtenida de diferencias históricas de entrenamiento. La ecuación (27) muestra su forma para una partición con N observaciones de entrenamiento, n de prueba y rezago de referencia m. Permite comparar escalas sin dividir cada error por la compra observada de su semana (Hyndman & Koehler, 2006).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Koehler, 2006)",
+          "content": "Hyndman & Koehler, 2006"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 615,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "El denominador debe ser positivo y calcularse sin datos de prueba. Al desplazar la ventana, la regla de escalamiento deberá mantenerse explícita; un historial constante puede hacer indefinida la medida. MASE complementa el contraste directo con referencias y no reemplaza la interpretación de pesos monetarios (Hyndman & Koehler, 2006).",
+      "container": "body_paragraph",
+      "context_text": "El denominador debe ser positivo y calcularse sin datos de prueba. Al desplazar la ventana, la regla de escalamiento deberá mantenerse explícita; un historial constante puede hacer indefinida la medida. MASE complementa el contraste directo con referencias y no reemplaza la interpretación de pesos monetarios (Hyndman & Koehler, 2006).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Koehler, 2006)",
+          "content": "Hyndman & Koehler, 2006"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 616,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "MAPE divide cada error por el valor observado. Aunque produce porcentajes, resulta indefinido con ceros e inestable con importes pequeños. Por ello, no se utilizará como criterio central de contraste de una serie con esas condiciones. Su eventual reporte deberá identificar los casos válidos sin ocultar las semanas excluidas (Hyndman & Koehler, 2006).",
+      "container": "body_paragraph",
+      "context_text": "MAPE divide cada error por el valor observado. Aunque produce porcentajes, resulta indefinido con ceros e inestable con importes pequeños. Por ello, no se utilizará como criterio central de contraste de una serie con esas condiciones. Su eventual reporte deberá identificar los casos válidos sin ocultar las semanas excluidas (Hyndman & Koehler, 2006).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Koehler, 2006)",
+          "content": "Hyndman & Koehler, 2006"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 618,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La precisión de la composición debe medirse separadamente. La ecuación (28) adapta MAE a participaciones entre cero y uno y multiplica por cien para expresar el error en puntos porcentuales. O con subíndice positivo representa los orígenes cuyo total observado en el horizonte es positivo y n con el mismo subíndice es su cantidad. Esta adaptación no se presenta como una métrica composicional nueva atribuida a los autores (Aitchison, 1982; Hyndman & Koehler, 2006).",
+      "container": "body_paragraph",
+      "context_text": "La precisión de la composición debe medirse separadamente. La ecuación (28) adapta MAE a participaciones entre cero y uno y multiplica por cien para expresar el error en puntos porcentuales. O con subíndice positivo representa los orígenes cuyo total observado en el horizonte es positivo y n con el mismo subíndice es su cantidad. Esta adaptación no se presenta como una métrica composicional nueva atribuida a los autores (Aitchison, 1982; Hyndman & Koehler, 2006).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Aitchison, 1982; Hyndman & Koehler, 2006)",
+          "content": "Aitchison, 1982; Hyndman & Koehler, 2006"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 623,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La evaluación fuera de muestra debe mantenerse separada del ajuste y de la explicación causal (Shmueli, 2010; Tashman, 2000). Como definición previa de esta investigación, el contraste de H1 considerará la precisión del importe total y de su distribución; mejorar solo uno se describirá como evidencia favorable para ese componente. No se escogerá retrospectivamente el horizonte más conveniente ni se interpretará una diferencia de error como efecto financiero.",
+      "container": "body_paragraph",
+      "context_text": "La evaluación fuera de muestra debe mantenerse separada del ajuste y de la explicación causal (Shmueli, 2010; Tashman, 2000). Como definición previa de esta investigación, el contraste de H1 considerará la precisión del importe total y de su distribución; mejorar solo uno se describirá como evidencia favorable para ese componente. No se escogerá retrospectivamente el horizonte más conveniente ni se interpretará una diferencia de error como efecto financiero.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Shmueli, 2010; Tashman, 2000)",
+          "content": "Shmueli, 2010; Tashman, 2000"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 626,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Un tablero puede reunir el total esperado, las participaciones y las asignaciones monetarias para que el responsable revise el presupuesto. La presentación deberá identificar origen, horizonte, unidades y referencia comparativa. Esta función corresponde al soporte de decisiones; no transforma automáticamente una asignación monetaria en una orden de compra (Power, 2002).",
+      "container": "body_paragraph",
+      "context_text": "Un tablero puede reunir el total esperado, las participaciones y las asignaciones monetarias para que el responsable revise el presupuesto. La presentación deberá identificar origen, horizonte, unidades y referencia comparativa. Esta función corresponde al soporte de decisiones; no transforma automáticamente una asignación monetaria en una orden de compra (Power, 2002).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Power, 2002)",
+          "content": "Power, 2002"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 627,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los intervalos de predicción comunican incertidumbre adicional al valor puntual. Bajo una aproximación normal de los errores, la ecuación (29) utiliza un cuantil z y una estimación de la desviación del error correspondiente al horizonte. Esa aproximación depende de supuestos que deberán verificarse antes de su uso (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Los intervalos de predicción comunican incertidumbre adicional al valor puntual. Bajo una aproximación normal de los errores, la ecuación (29) utiliza un cuantil z y una estimación de la desviación del error correspondiente al horizonte. Esa aproximación depende de supuestos que deberán verificarse antes de su uso (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 631,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Alfa expresa la probabilidad nominal fuera del intervalo y sigma la escala de incertidumbre predictiva. No debe confundirse este intervalo con uno de confianza para una media estimada ni calcularse su amplitud sumando errores sin considerar el horizonte. En series asimétricas o con ceros, otras aproximaciones podrían resultar más pertinentes (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Alfa expresa la probabilidad nominal fuera del intervalo y sigma la escala de incertidumbre predictiva. No debe confundirse este intervalo con uno de confianza para una media estimada ni calcularse su amplitud sumando errores sin considerar el horizonte. En series asimétricas o con ceros, otras aproximaciones podrían resultar más pertinentes (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 633,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La viabilidad de una herramienta depende también de integración, mantenimiento, competencias y recursos. La digitalización de empresas pequeñas enfrenta barreras diversas, por lo que una solución debe adecuarse a sus capacidades y no justificarse únicamente por sofisticación. El tablero propuesto buscará facilitar interpretación y trazabilidad; no se asumirá que su disponibilidad demuestra adopción efectiva (OECD, 2021).",
+      "container": "body_paragraph",
+      "context_text": "La viabilidad de una herramienta depende también de integración, mantenimiento, competencias y recursos. La digitalización de empresas pequeñas enfrenta barreras diversas, por lo que una solución debe adecuarse a sus capacidades y no justificarse únicamente por sofisticación. El tablero propuesto buscará facilitar interpretación y trazabilidad; no se asumirá que su disponibilidad demuestra adopción efectiva (OECD, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(OECD, 2021)",
+          "content": "OECD, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 634,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "La precisión predictiva, los costos de implementación y los beneficios organizacionales corresponden a dimensiones distintas. En esta investigación, una reducción de MAE o RMSE no se denominará retorno de inversión, y los resultados se presentarán como información para apoyar la decisión, no como sustituto de la información operativa del responsable. Esta separación constituye una delimitación económica del estudio; Power (2002) sustenta el papel complementario de los sistemas de apoyo a decisiones.",
+      "container": "body_paragraph",
+      "context_text": "La precisión predictiva, los costos de implementación y los beneficios organizacionales corresponden a dimensiones distintas. En esta investigación, una reducción de MAE o RMSE no se denominará retorno de inversión, y los resultados se presentarán como información para apoyar la decisión, no como sustituto de la información operativa del responsable. Esta separación constituye una delimitación económica del estudio; Power (2002) sustenta el papel complementario de los sistemas de apoyo a decisiones.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Power (2002)",
+          "content": "Power, 2002"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 636,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los fundamentos revisados permiten plantear una integración de métodos que representen señales diferentes y una desagregación que conserve la relación entre total e insumos. La combinación ofrece una razón teórica para esperar mejoras, mientras que la estimación de pesos y la dependencia entre errores explican por qué esa mejora no está asegurada (Hyndman & Athanasopoulos, 2021).",
+      "container": "body_paragraph",
+      "context_text": "Los fundamentos revisados permiten plantear una integración de métodos que representen señales diferentes y una desagregación que conserve la relación entre total e insumos. La combinación ofrece una razón teórica para esperar mejoras, mientras que la estimación de pesos y la dependencia entre errores explican por qué esa mejora no está asegurada (Hyndman & Athanasopoulos, 2021).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021)",
+          "content": "Hyndman & Athanasopoulos, 2021"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 637,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Los datos composicionales requieren conservar proporciones válidas dentro de un total (Aitchison, 1982). Por ello, el procedimiento evaluará por separado el importe y las participaciones frente a sus respectivas referencias. La coherencia de suma corresponde a la representación jerárquica, mientras que la precisión exige evidencia fuera de muestra (Hyndman & Athanasopoulos, 2021; Hyndman et al., 2011).",
+      "container": "body_paragraph",
+      "context_text": "Los datos composicionales requieren conservar proporciones válidas dentro de un total (Aitchison, 1982). Por ello, el procedimiento evaluará por separado el importe y las participaciones frente a sus respectivas referencias. La coherencia de suma corresponde a la representación jerárquica, mientras que la precisión exige evidencia fuera de muestra (Hyndman & Athanasopoulos, 2021; Hyndman et al., 2011).",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Aitchison, 1982)",
+          "content": "Aitchison, 1982"
+        },
+        {
+          "type": "parenthetical",
+          "raw": "(Hyndman & Athanasopoulos, 2021; Hyndman et al., 2011)",
+          "content": "Hyndman & Athanasopoulos, 2021; Hyndman et al., 2011"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 638,
+      "style": "",
+      "section": "412 PYMES industriales y de servicios del noroeste de México",
+      "text": "Shmueli (2010) distingue los objetivos explicativos de los predictivos. Con base en esa distinción, esta investigación se define como una evaluación predictiva del presupuesto semanal de abastecimiento. Como regla previa del estudio, H1 requería evidencia favorable en el importe total y en las participaciones; una mejora aislada se informará como resultado de ese componente y no como confirmación de la hipótesis conjunta.",
+      "container": "body_paragraph",
+      "context_text": "Shmueli (2010) distingue los objetivos explicativos de los predictivos. Con base en esa distinción, esta investigación se define como una evaluación predictiva del presupuesto semanal de abastecimiento. Como regla previa del estudio, H1 requería evidencia favorable en el importe total y en las participaciones; una mejora aislada se informará como resultado de ese componente y no como confirmación de la hipótesis conjunta.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Shmueli (2010)",
+          "content": "Shmueli, 2010"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 1005,
+      "style": "",
+      "section": "4 semanas",
+      "text": "Este patrón es compatible con la evidencia amplia de M4: las combinaciones pueden lograr resultados competitivos, pero ese resultado agregado no garantiza que una combinación determinada mejore en cada serie o contexto (Makridakis et al., 2018b, 2020). La M4 cubre numerosas series de dominios y frecuencias diversos, mientras que este estudio aborda importes semanales de una microempresa con huecos de captura. La comparación local debe interpretarse con sus propias condiciones y no como confirmación ni refutación directa de aquella competencia.",
+      "container": "body_paragraph",
+      "context_text": "Este patrón es compatible con la evidencia amplia de M4: las combinaciones pueden lograr resultados competitivos, pero ese resultado agregado no garantiza que una combinación determinada mejore en cada serie o contexto (Makridakis et al., 2018b, 2020). La M4 cubre numerosas series de dominios y frecuencias diversos, mientras que este estudio aborda importes semanales de una microempresa con huecos de captura. La comparación local debe interpretarse con sus propias condiciones y no como confirmación ni refutación directa de aquella competencia.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Makridakis et al., 2018b, 2020)",
+          "content": "Makridakis et al., 2018b, 2020"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 1006,
+      "style": "",
+      "section": "4 semanas",
+      "text": "La variación entre horizontes también concuerda con el fundamento de combinar pronósticos: la ganancia potencial depende de que los componentes aporten información complementaria y de la relación entre sus errores (Bates & Granger, 1969). En esta corrida, el híbrido fue competitivo en el horizonte de tres semanas, pero no lideró el RMSE en los otros tres. La red neuronal residual tuvo menor MAE en ese mismo horizonte, aunque no menor RMSE. La divergencia entre métricas indica que la elección del criterio de precisión importa; con seis orígenes, sin embargo, no hay base suficiente para elegir un ganador robusto.",
+      "container": "body_paragraph",
+      "context_text": "La variación entre horizontes también concuerda con el fundamento de combinar pronósticos: la ganancia potencial depende de que los componentes aporten información complementaria y de la relación entre sus errores (Bates & Granger, 1969). En esta corrida, el híbrido fue competitivo en el horizonte de tres semanas, pero no lideró el RMSE en los otros tres. La red neuronal residual tuvo menor MAE en ese mismo horizonte, aunque no menor RMSE. La divergencia entre métricas indica que la elección del criterio de precisión importa; con seis orígenes, sin embargo, no hay base suficiente para elegir un ganador robusto.",
+      "citations": [
+        {
+          "type": "parenthetical",
+          "raw": "(Bates & Granger, 1969)",
+          "content": "Bates & Granger, 1969"
+        }
+      ]
+    },
+    {
+      "paragraph_index": 1007,
+      "style": "",
+      "section": "4 semanas",
+      "text": "El resultado no contradice la motivación de Zhang (2003), quien planteó que ARIMA y una red neuronal pueden representar componentes lineales y no lineales complementarios. Sí precisa el alcance de esa motivación: la arquitectura es una hipótesis de modelado que debe validarse en los datos y horizontes concretos. En la presente evaluación no se observó una mejora consistente que permita atribuir al componente neuronal un beneficio general.",
+      "container": "body_paragraph",
+      "context_text": "El resultado no contradice la motivación de Zhang (2003), quien planteó que ARIMA y una red neuronal pueden representar componentes lineales y no lineales complementarios. Sí precisa el alcance de esa motivación: la arquitectura es una hipótesis de modelado que debe validarse en los datos y horizontes concretos. En la presente evaluación no se observó una mejora consistente que permita atribuir al componente neuronal un beneficio general.",
+      "citations": [
+        {
+          "type": "narrative",
+          "raw": "Zhang (2003)",
+          "content": "Zhang, 2003"
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "paragraph_index": 1039,
+      "text": "Abrar, M., Shahriar, M. A., & Amin, A. (2024). MCDFN: Supply chain demand forecasting via an explainable multi-channel data fusion network model. arXiv preprint arXiv:2405.15598. https://doi.org/10.48550/arXiv.2405.15598"
+    },
+    {
+      "paragraph_index": 1040,
+      "text": "Aitchison, J. (1982). The statistical analysis of compositional data. Journal of the Royal Statistical Society: Series B (Methodological), 44(2), 139–160. https://doi.org/10.1111/j.2517-6161.1982.tb01195.x"
+    },
+    {
+      "paragraph_index": 1041,
+      "text": "Bates, J. M., & Granger, C. W. J. (1969). The combination of forecasts. Operational Research Quarterly, 20(4), 451–468. https://doi.org/10.2307/3008764"
+    },
+    {
+      "paragraph_index": 1042,
+      "text": "Ben Abdallah, H., Ayadi, M., & Boujelbene, Y. (2022). The main determinants and effects of product innovation: An exploratory study on the pastry companies of the region of Sfax (in Tunisia). Technological Forecasting and Social Change, 185, Article 122065. https://doi.org/10.1016/j.techfore.2022.122065"
+    },
+    {
+      "paragraph_index": 1043,
+      "text": "Bergmeir, C., & Benítez, J. M. (2012). On the use of cross-validation for time series predictor evaluation. Information Sciences, 191, 192-213. https://doi.org/10.1016/j.ins.2011.12.028"
+    },
+    {
+      "paragraph_index": 1044,
+      "text": "Bontempi, G., Ben Taieb, S., & Le Borgne, Y.-A. (2013). Machine learning strategies for time series forecasting. En M. Aufaure & E. Zimányi (Eds.), Business intelligence (pp. 62–77). Springer. https://doi.org/10.1007/978-3-642-36318-4_3"
+    },
+    {
+      "paragraph_index": 1045,
+      "text": "Borsato, M. (2023). “Edible Aesthetics”: Blurring Boundaries between Pastry and Art. Humanities, 12(5), 126. https://doi.org/10.3390/h12050126"
+    },
+    {
+      "paragraph_index": 1046,
+      "text": "Breiman, L. (2001). Random forests. Machine Learning, 45(1), 5–32. https://doi.org/10.1023/A:1010933404324"
+    },
+    {
+      "paragraph_index": 1047,
+      "text": "Cuevas-Vargas, H., Estrada, S., & Larios-Gómez, E. (2016). The effects of ICTs as innovation facilitators for a greater business performance. Evidence from Mexico. Procedia Computer Science, 91, 47–56. https://doi.org/10.1016/j.procs.2016.07.040"
+    },
+    {
+      "paragraph_index": 1048,
+      "text": "Dubey, R., Bryde, D., Blome, C., Roubaud, D., & Giannakis, M. (2021). Facilitating artificial intelligence powered supply chain analytics through alliance management during the pandemic crises in the B2B context. Industrial Marketing Management, 96, 135–146."
+    },
+    {
+      "paragraph_index": 1049,
+      "text": "Dubey, R., Gunasekaran, A., Childe, S. J., Bryde, D. J., Giannakis, M., & Foropon, C. (2021). Big data analytics and artificial intelligence pathway to operational performance under the effects of entrepreneurial orientation and environmental dynamism: A study of manufacturing organisations. International Journal of Production Economics, 226, 107599. https://doi.org/10.1016/j.ijpe.2019.107599"
+    },
+    {
+      "paragraph_index": 1050,
+      "text": "Friedman, J. H. (2001). Greedy function approximation: A gradient boosting machine. The Annals of Statistics, 29(5), 1189–1232. https://doi.org/10.1214/aos/1013203451"
+    },
+    {
+      "paragraph_index": 1051,
+      "text": "Giannopoulos, P. G., Dasaklis, T. K., Tsantilis, I., & Patsakis, C. (2025). Machine learning algorithms in intermittent demand forecasting: A review. International Journal of Production Research, 1–43. https://doi.org/10.1080/00207543.2025.2578701"
+    },
+    {
+      "paragraph_index": 1052,
+      "text": "Global Entrepreneurship Monitor. (2024). Global Entrepreneurship Monitor 2023/2024 global report: 25 years and growing. https://www.gemconsortium.org/report/51377"
+    },
+    {
+      "paragraph_index": 1053,
+      "text": "Góngora Chonillo, J. T. (2023). Evaluación del riesgo financiero en microempresas a través de inteligencia artificial. Revista Pulso Científico, 1(2), 34–49. https://doi.org/10.70577/rps.v1i2.10"
+    },
+    {
+      "paragraph_index": 1054,
+      "text": "Hastie, T., Tibshirani, R., & Friedman, J. (2009). The elements of statistical learning: Data mining, inference, and prediction (2nd ed.). Springer. https://doi.org/10.1007/978-0-387-84858-7"
+    },
+    {
+      "paragraph_index": 1055,
+      "text": "Hewamalage, H., Bergmeir, C., & Bandara, K. (2021). Recurrent neural networks for time series forecasting: Current status and future directions. International Journal of Forecasting, 37(1), 388–427. https://doi.org/10.1016/j.ijforecast.2020.06.008"
+    },
+    {
+      "paragraph_index": 1056,
+      "text": "Huber, J., & Stuckenschmidt, H. (2020). Daily retail demand forecasting using machine learning with emphasis on calendric special days. International Journal of Forecasting, 36(4), 1420–1438. https://doi.org/10.1016/j.ijforecast.2020.02.005"
+    },
+    {
+      "paragraph_index": 1057,
+      "text": "Hyndman, R. J., & Athanasopoulos, G. (2021). Forecasting: Principles and practice (3rd ed.). OTexts. https://otexts.com/fpp3/"
+    },
+    {
+      "paragraph_index": 1058,
+      "text": "Hyndman, R. J., & Koehler, A. B. (2006). Another look at measures of forecast accuracy. International Journal of Forecasting, 22(4), 679–688. https://doi.org/10.1016/j.ijforecast.2006.03.001"
+    },
+    {
+      "paragraph_index": 1059,
+      "text": "Hyndman, R. J., Ahmed, R. A., Athanasopoulos, G., & Shang, H. L. (2011). Optimal combination forecasts for hierarchical time series. Computational Statistics & Data Analysis, 55(9), 2579–2589. https://doi.org/10.1016/j.csda.2011.03.006"
+    },
+    {
+      "paragraph_index": 1060,
+      "text": "Hübner, N., Caspers, J., Coroamă, V. C., & Finkbeiner, M. (2024). Machine-learning-based demand forecasting against food waste: Life cycle environmental impacts and benefits of a bakery case study. Journal of Industrial Ecology, 28, 1117–1131. https://doi.org/10.1111/jiec.13528"
+    },
+    {
+      "paragraph_index": 1061,
+      "text": "Instituto Nacional de Estadística y Geografía (INEGI). (2025, 25 de junio). Estadísticas a propósito del Día de las Micro, Pequeñas y Medianas Empresas (mipymes) [Comunicado de prensa 71/25]. https://www.inegi.org.mx/contenidos/saladeprensa/aproposito/2025/EAP_MIPYMES_25.pdf"
+    },
+    {
+      "paragraph_index": 1062,
+      "text": "Kantis, H., Federico, J., & García, S. (2020). Índice de condiciones sistémicas para el emprendimiento dinámico. Prodem."
+    },
+    {
+      "paragraph_index": 1063,
+      "text": "Kuhn, M., & Johnson, K. (2013). Applied predictive modeling. Springer. https://doi.org/10.1007/978-1-4614-6849-3"
+    },
+    {
+      "paragraph_index": 1064,
+      "text": "Lee, K.-S., Blum, D., Miao, L., & Tomas, S. R. (2020). The creative minds of extraordinary pastry chefs: An integrated theory of aesthetic expressions—A portraiture study. International Journal of Contemporary Hospitality Management, 32(9), 3015–3034. https://doi.org/10.1108/IJCHM-04-2020-0329"
+    },
+    {
+      "paragraph_index": 1065,
+      "text": "Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2018a). Statistical and machine learning forecasting methods: Concerns and ways forward. PLOS ONE, 13(3), e0194889. https://doi.org/10.1371/journal.pone.0194889"
+    },
+    {
+      "paragraph_index": 1066,
+      "text": "Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2018b). The M4 competition: Results, findings, conclusion and way forward. International Journal of Forecasting, 34(4), 802–808. https://doi.org/10.1016/j.ijforecast.2018.06.001"
+    },
+    {
+      "paragraph_index": 1067,
+      "text": "Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2020). The M4 competition: 100,000 time series and 61 forecasting methods. International Journal of Forecasting, 36(1), 54–74. https://doi.org/10.1016/j.ijforecast.2019.04.014"
+    },
+    {
+      "paragraph_index": 1068,
+      "text": "Makridakis, S., Spiliotis, E., & Assimakopoulos, V. (2022). M5 accuracy competition: Results, findings, and conclusions. International Journal of Forecasting, 38(4), 1346–1364. https://doi.org/10.1016/j.ijforecast.2021.11.013"
+    },
+    {
+      "paragraph_index": 1069,
+      "text": "Maldonado-Guzmán, G., & Garza-Reyes, J. A. (2020). Eco-innovation practices’ adoption in the automotive industry. International Journal of Innovation Science, 12(1), 80–98. https://doi.org/10.1108/IJIS-10-2019-0094"
+    },
+    {
+      "paragraph_index": 1070,
+      "text": "Melesse, T. Y., & Orrù, P. F. (2025). The digital revolution in the bakery sector: Innovations, challenges, and opportunities from Industry 4.0. Foods, 14(3), Article 526. https://doi.org/10.3390/foods14030526"
+    },
+    {
+      "paragraph_index": 1071,
+      "text": "Mikalef, P., Boura, M., Lekakos, G., & Krogstie, J. (2019). Big data analytics capabilities and innovation: The mediating role of dynamic capabilities and moderating effect of the environment. British Journal of Management, 30(2), 272–298. https://doi.org/10.1111/1467-8551.12343"
+    },
+    {
+      "paragraph_index": 1072,
+      "text": "Minniti, M., & Bygrave, W. (2001). A dynamic model of entrepreneurial learning. Entrepreneurship Theory and Practice, 25(3), 5–16. https://doi.org/10.1177/104225870102500301"
+    },
+    {
+      "paragraph_index": 1073,
+      "text": "OECD. (2021). The digital transformation of SMEs. OECD Publishing. https://doi.org/10.1787/bdb9256a-en"
+    },
+    {
+      "paragraph_index": 1074,
+      "text": "Poveda-Valverde, F., & Fierro Barragán, S. E. (2026). AI applications that can support sustainable practices in small and medium-sized enterprises in Latin America: A systematic review. Sustainability, 18(7), Article 3603. https://doi.org/10.3390/su18073603"
+    },
+    {
+      "paragraph_index": 1075,
+      "text": "Power, D. J. (2002). Decision support systems: Concepts and resources for managers. Quorum Books."
+    },
+    {
+      "paragraph_index": 1076,
+      "text": "Ries, E. (2017). El método Lean Startup: Cómo crear empresas de éxito utilizando la innovación continua. Deusto."
+    },
+    {
+      "paragraph_index": 1077,
+      "text": "Romero-Hidalgo, J. A., Isiordia-Lachica, P. C., Valenzuela, A., & Rodríguez-Carvajal, R. A. (2021). Knowledge and innovation management model in the organizational environment. Information (Switzerland), 12(6), 225. https://doi.org/10.3390/info12060225"
+    },
+    {
+      "paragraph_index": 1078,
+      "text": "Saavedra-García, M., & Tapia-Sánchez, B. (2020). The role of information technologies in Mexican SMEs. Contaduría y Administración, 65(2). https://doi.org/10.22201/fca.24488410e.2020.2215"
+    },
+    {
+      "paragraph_index": 1079,
+      "text": "Shmueli, G. (2010). To explain or to predict? Statistical Science, 25(3), 289–310. https://doi.org/10.1214/10-STS330"
+    },
+    {
+      "paragraph_index": 1080,
+      "text": "Spiliotis, E., Makridakis, S., & Assimakopoulos, V. (2025). Continuous business forecasting in modern organizations. Forecasting, 7(1), 12–29. https://doi.org/10.3390/forecast7010012"
+    },
+    {
+      "paragraph_index": 1081,
+      "text": "Spiliotis, E., Makridakis, S., Semenoglou, A. A., & Assimakopoulos, V. (2022). Comparison of statistical and machine learning methods for daily SKU demand forecasting. Operational Research, 22(3), 3037–3061. https://doi.org/10.1007/s12351-020-00605-2"
+    },
+    {
+      "paragraph_index": 1082,
+      "text": "Syntetos, A. A., & Boylan, J. E. (2005). The accuracy of intermittent demand estimates. International Journal of Forecasting, 21(2), 303–314. https://doi.org/10.1016/j.ijforecast.2004.10.001"
+    },
+    {
+      "paragraph_index": 1083,
+      "text": "Syntetos, A. A., Boylan, J. E., & Croston, J. D. (2005). On the categorization of demand patterns. Journal of the Operational Research Society, 56(5), 495–503. https://doi.org/10.1057/palgrave.jors.2601841"
+    },
+    {
+      "paragraph_index": 1084,
+      "text": "Tashman, L. J. (2000). Out-of-sample tests of forecasting accuracy: An analysis and review. International Journal of Forecasting, 16(4), 437–450. https://doi.org/10.1016/S0169-2070(00)00065-0"
+    },
+    {
+      "paragraph_index": 1085,
+      "text": "Teunter, R. H., Syntetos, A. A., & Babai, M. Z. (2011). Intermittent demand: Linking forecasting to inventory obsolescence. European Journal of Operational Research, 214(3), 606–615. https://doi.org/10.1016/j.ejor.2011.05.018"
+    },
+    {
+      "paragraph_index": 1086,
+      "text": "Tibshirani, R. (1996). Regression shrinkage and selection via the lasso. Journal of the Royal Statistical Society: Series B (Methodological), 58(1), 267–288. https://doi.org/10.1111/j.2517-6161.1996.tb02080.x"
+    },
+    {
+      "paragraph_index": 1087,
+      "text": "Valdez-Juárez, L. E., García-Pérez-de-Lema, D., & Maldonado-Guzmán, G. (2018). ICT and KM, drivers of innovation and profitability in SMEs. Journal of Information & Knowledge Management, 17(1), 1850007. https://doi.org/10.1142/S0219649218500077"
+    },
+    {
+      "paragraph_index": 1088,
+      "text": "Zhang, G. P. (2003). Time series forecasting using a hybrid ARIMA and neural network model. Neurocomputing, 50, 159–175. https://doi.org/10.1016/S0925-2312(01)00702-0"
+    }
+  ],
+  "raw_citation_counts": [
+    [
+      "(Hyndman & Athanasopoulos, 2021)",
+      36
+    ],
+    [
+      "Poveda-Valverde y Fierro Barragán (2026)",
+      5
+    ],
+    [
+      "(Aitchison, 1982)",
+      5
+    ],
+    [
+      "(Bates & Granger, 1969)",
+      4
+    ],
+    [
+      "(OCDE, 2021)",
+      3
+    ],
+    [
+      "Hübner et al. (2024)",
+      3
+    ],
+    [
+      "Huber y Stuckenschmidt (2020)",
+      3
+    ],
+    [
+      "Abrar et al. (2024)",
+      3
+    ],
+    [
+      "Mikalef et al. (2019)",
+      3
+    ],
+    [
+      "Dubey et al. (2021)",
+      3
+    ],
+    [
+      "(Hastie et al., 2009)",
+      3
+    ],
+    [
+      "(Hyndman et al., 2011)",
+      3
+    ],
+    [
+      "(Kuhn & Johnson, 2013)",
+      3
+    ],
+    [
+      "(Hyndman & Koehler, 2006)",
+      3
+    ],
+    [
+      "(Makridakis et al., 2018; Spiliotis et al., 2022)",
+      2
+    ],
+    [
+      "Hewamalage et al. (2021)",
+      2
+    ],
+    [
+      "Giannopoulos et al. (2025)",
+      2
+    ],
+    [
+      "(Bergmeir & Benítez, 2012)",
+      2
+    ],
+    [
+      "Borsato (2023)",
+      2
+    ],
+    [
+      "Melesse y Orrù (2025)",
+      2
+    ],
+    [
+      "Maldonado-Guzmán y Garza-Reyes (2020)",
+      2
+    ],
+    [
+      "Spiliotis et al. (2022)",
+      2
+    ],
+    [
+      "(Poveda-Valverde & Fierro Barragán, 2026)",
+      2
+    ],
+    [
+      "(Power, 2002)",
+      2
+    ],
+    [
+      "(Breiman, 2001)",
+      2
+    ],
+    [
+      "(Friedman, 2001)",
+      2
+    ],
+    [
+      "(Tashman, 2000)",
+      2
+    ],
+    [
+      "Zhang (2003)",
+      2
+    ],
+    [
+      "(Global Entrepreneurship Monitor, 2024)",
+      1
+    ],
+    [
+      "Minniti y Bygrave (2001)",
+      1
+    ],
+    [
+      "Ries (2017)",
+      1
+    ],
+    [
+      "Federico y García (2020)",
+      1
+    ],
+    [
+      "(Minniti y Bygrave, 2001)",
+      1
+    ],
+    [
+      "(INEGI, 2025)",
+      1
+    ],
+    [
+      "(Hübner et al., 2024)",
+      1
+    ],
+    [
+      "(Makridakis et al., 2018a; Spiliotis et al., 2025)",
+      1
+    ],
+    [
+      "(Spiliotis et al., 2022)",
+      1
+    ],
+    [
+      "(Makridakis et al., 2020)",
+      1
+    ],
+    [
+      "(Makridakis et al., 2018b)",
+      1
+    ],
+    [
+      "(Syntetos et al., 2005)",
+      1
+    ],
+    [
+      "(Syntetos & Boylan, 2005)",
+      1
+    ],
+    [
+      "(Teunter et al., 2011)",
+      1
+    ],
+    [
+      "(Lee et al., 2020)",
+      1
+    ],
+    [
+      "(Ben Abdallah et al., 2022)",
+      1
+    ],
+    [
+      "(Melesse & Orrù, 2025)",
+      1
+    ],
+    [
+      "García-Pérez-de-Lema y Maldonado-Guzmán (2018)",
+      1
+    ],
+    [
+      "Estrada y Larios Gómez (2016)",
+      1
+    ],
+    [
+      "Saavedra García y Tapia Sánchez (2020)",
+      1
+    ],
+    [
+      "Romero Hidalgo et al. (2021)",
+      1
+    ],
+    [
+      "Makridakis et al. (2018)",
+      1
+    ],
+    [
+      "Lee et al. (2020)",
+      1
+    ],
+    [
+      "Ben Abdallah et al. (2022)",
+      1
+    ],
+    [
+      "Valdez-Juárez et al. (2018)",
+      1
+    ],
+    [
+      "Cuevas-Vargas et al. (2016)",
+      1
+    ],
+    [
+      "Saavedra-García y Tapia-Sánchez (2020)",
+      1
+    ],
+    [
+      "Romero-Hidalgo et al. (2021)",
+      1
+    ],
+    [
+      "Hyndman y Athanasopoulos (2021)",
+      1
+    ],
+    [
+      "Syntetos y Boylan (2005)",
+      1
+    ],
+    [
+      "(2018b)",
+      1
+    ],
+    [
+      "Makridakis et al. (2018b)",
+      1
+    ],
+    [
+      "Poveda Valverde y Fierro Barragán (2026)",
+      1
+    ],
+    [
+      "Góngora Chonillo (2023)",
+      1
+    ],
+    [
+      "(Mikalef et al., 2019)",
+      1
+    ],
+    [
+      "(Dubey et al., 2021)",
+      1
+    ],
+    [
+      "(Mikalef et al., 2019; Poveda-Valverde & Fierro Barragán, 2026)",
+      1
+    ],
+    [
+      "(Hewamalage et al., 2021; Giannopoulos et al., 2025)",
+      1
+    ],
+    [
+      "(Hastie et al., 2009; Power, 2002)",
+      1
+    ],
+    [
+      "(Shmueli, 2010)",
+      1
+    ],
+    [
+      "(Bontempi et al., 2013)",
+      1
+    ],
+    [
+      "(Hewamalage et al., 2021)",
+      1
+    ],
+    [
+      "(Makridakis et al., 2018, 2020)",
+      1
+    ],
+    [
+      "(Hyndman & Athanasopoulos, 2021; Zhang, 2003)",
+      1
+    ],
+    [
+      "(Hastie et al., 2009; Tibshirani, 1996)",
+      1
+    ],
+    [
+      "(Tibshirani, 1996)",
+      1
+    ],
+    [
+      "(Hyndman & Athanasopoulos, 2021; Tashman, 2000)",
+      1
+    ],
+    [
+      "(Aitchison, 1982; Hyndman & Koehler, 2006)",
+      1
+    ],
+    [
+      "(Shmueli, 2010; Tashman, 2000)",
+      1
+    ],
+    [
+      "(OECD, 2021)",
+      1
+    ],
+    [
+      "Power (2002)",
+      1
+    ],
+    [
+      "(Hyndman & Athanasopoulos, 2021; Hyndman et al., 2011)",
+      1
+    ],
+    [
+      "Shmueli (2010)",
+      1
+    ],
+    [
+      "(Makridakis et al., 2018b, 2020)",
+      1
+    ]
+  ]
+}
