@@ -38,6 +38,25 @@ def _category_column(frame):
     return column
 
 
+def _analytic_category_overrides(catalog):
+    """Validar y devolver reclasificaciones analíticas aprobadas por descripción."""
+    if catalog is None or 'clasificacion_analitica' not in catalog:
+        return None
+    required={'descripcion_normalizada','clasificacion_analitica','aprobado'}
+    if not required.issubset(catalog.columns):
+        raise ValueError('Catálogo analítico incompleto.')
+    mapping=catalog.copy()
+    mapping['descripcion_normalizada']=mapping.descripcion_normalizada.map(clean_upper)
+    mapping['clasificacion_analitica']=mapping.clasificacion_analitica.map(clean_upper)
+    if mapping.descripcion_normalizada.isna().any() or mapping.clasificacion_analitica.isna().any():
+        raise ValueError('Catálogo analítico contiene descripciones o categorías vacías.')
+    if mapping.descripcion_normalizada.duplicated().any():
+        raise ValueError('Catálogo analítico contiene descripciones duplicadas.')
+    if not mapping.aprobado.astype(bool).all():
+        raise ValueError('Catálogo analítico contiene clasificaciones no aprobadas.')
+    return mapping.set_index('descripcion_normalizada').clasificacion_analitica
+
+
 def excluded_purchase_summary(purchases, start, end, excluded_categories):
     """Auditar importes excluidos del objetivo monetario por semana y categoría."""
     frame=purchases.loc[purchases.semana_inicio.between(start,end)].copy()
@@ -104,6 +123,14 @@ Las semanas sin evidencia suficiente permanecen enteramente ausentes.
         class_col='categoria_presupuestaria'
     else:
         selected['categoria_presupuestaria'] = selected[class_col].map(clean_upper)
+        # El catálogo revisado puede reclasificar artículos concretos sin
+        # reescribir la fuente transaccional. Para descripciones todavía no
+        # catalogadas se conserva la clasificación original de Compras.xlsx.
+        overrides=_analytic_category_overrides(catalog)
+        if overrides is not None:
+            keys=selected.descripcion_normalizada.map(clean_upper)
+            revised=keys.map(overrides)
+            selected.loc[revised.notna(),'categoria_presupuestaria']=revised[revised.notna()]
     if selected.categoria_presupuestaria.isna().any():
         raise ValueError('Compra incluida sin categoria_presupuestaria.')
     # Exclusiones de alcance ya acordadas para el modelo de abastecimiento:

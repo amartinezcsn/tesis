@@ -83,6 +83,13 @@ class GapIngestionTests(unittest.TestCase):
         self.cov=pd.DataFrame({'semana_inicio':self.d,'estado':['registrada','desconocida','registrada','cero_confirmado'],'evidencia':['revisado','','revisado','confirmado'],'fecha_revision':['2026-09-14','','2026-09-14','2026-09-14']})
         self.cat=pd.DataFrame({'descripcion_normalizada':['HARINA'],'insumo_id':['harina'],'aprobado':[True],'decision':['incluir'],'evidencia':['ingrediente']})
     def build(self):return build_gap_panel(self.p,self.cov,self.cat,self.d[0],self.d[-1])
+
+    def test_clasificacion_analitica_del_catalogo_prevalece(self):
+        self.p['CLASIFICACION']='ORIGINAL'
+        self.cat['clasificacion_analitica']='REVISADA'
+        panel,_=self.build()
+        self.assertIn('REVISADA',panel.columns)
+        self.assertNotIn('ORIGINAL',panel.columns)
     def test_unknown_and_true_zero_differ(self):
         p,c=self.build();self.assertTrue(p.iloc[1].isna().all());self.assertEqual(p.total.iloc[3],0);self.assertEqual(len(p),4)
     def test_zero_targets_rejected_when_policy_disallows_them(self):
@@ -140,6 +147,12 @@ class GapIntegrationTests(unittest.TestCase):
             self.assertEqual(main.n.nunique(),1)
             self.assertFalse(r['hypothesis']['respaldo_confirmatorio'])
             self.assertEqual(r['hypothesis']['importe']['n'],int(main.n.iloc[0]))
+            self.assertEqual(
+                r['hypothesis']['definicion_diferencia']['composicion'],
+                'mae_pp_participacion_historica - mae_pp_participacion_ewm',
+            )
+            self.assertIn('negativo favorece a la referencia histórica',
+                r['hypothesis']['interpretacion_signo'])
             export_results(temp,r,cfg,demo=True)
             payload=json.loads((Path(temp)/'dss_hibrido.json').read_text(encoding='utf-8'))
             self.assertIn('cobertura_evaluacion',payload)

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "P01_proceso_validacion",
+    "titulo": "Proceso analítico y separación temporal de la evaluación",
+    "capitulo_sugerido": "Metodología",
+    "fuentes": [
+      "particiones.csv"
+    ],
+    "sha256_png": "fdbfde533ded3e08cdd1f7c5dcf736a3ef78d0ef0c29aeaea625b71c5028682e",
+    "sha256_svg": "1017eaefc68f8789d861410e0a2ce5821f18b076fb64e9aed0d5d77ecdeac14a"
+  },
+  {
+    "id": "P02_cobertura_serie",
+    "titulo": "Cobertura y evolución del gasto semanal elegible",
+    "capitulo_sugerido": "Desarrollo",
+    "fuentes": [
+      "panel_semanal.csv",
+      "cobertura.csv"
+    ],
+    "sha256_png": "604f7d108208eb0840a2c85d9782bb379808ba2fe3f9d1ed1137bf5f4828d19d",
+    "sha256_svg": "a6e3ecde31f22519d7035a8da1edd9decc3067b1a81cc1a5b45320cdc62ac516"
+  },
+  {
+    "id": "P03_pareto_composicion",
+    "titulo": "Selección de categorías y variación de la composición",
+    "capitulo_sugerido": "Desarrollo",
+    "fuentes": [
+      "panel_semanal.csv",
+      "seleccion.json"
+    ],
+    "sha256_png": "c4b5542bd22b4693601948961d47563f48008ee377ab81cf89eda03731ea60a0",
+    "sha256_svg": "d541cb671f5cfa89ca0ce3a52f1be750c0f1a7d5e8ccbe3560b99a43ce32fce4"
+  },
+  {
+    "id": "P04_observado_pronosticado",
+    "titulo": "Importe observado y pronósticos fuera de muestra",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": [
+      "predicciones.csv"
+    ],
+    "sha256_png": "57668dac467cc7157d22b9dca8deb6a5bc96eedb6f99f999bc665d6131e4624d",
+    "sha256_svg": "4a1c2adce8f1f121cced6113ecf511a9a0f34a57ad8821ee474ae76a7539c988"
+  },
+  {
+    "id": "P05_metricas_monetarias",
+    "titulo": "Errores monetarios en la evaluación final",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": [
+      "metricas.csv"
+    ],
+    "sha256_png": "4bda558d5f4475e3582b494b206af52da28ac420a12f9ede0d1db1217b6db361",
+    "sha256_svg": "fad2b752398397916c003c23686e9e9ccebcc8f0ec0aa18edb68a9170c9131f8"
+  },
+  {
+    "id": "P06_error_composicion",
+    "titulo": "Error de la distribución porcentual del presupuesto",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": [
+      "metricas_composicion.csv"
+    ],
+    "sha256_png": "a8f1a963f013cdf6859da5e499993102fa61b4c564a05aed8506573a2b954645",
+    "sha256_svg": "d6c25ca40d7cd62c7d1d505afcafd24ad1d964c5c037b782a6fdf4b5c47aa0c4"
+  },
+  {
+    "id": "P07_contraste_H1",
+    "titulo": "Diferencias de pérdida para el contraste H1",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": [
+      "predicciones.csv",
+      "composicion.csv",
+      "hipotesis.json"
+    ],
+    "sha256_png": "b63a60479a790cbaf63703b39305447e3d0f2b1b9fc270a7a79356de16616488",
+    "sha256_svg": "c21378bff4af05f32a05cd53a40c3c2c34d2f93715760100acd79e5c3d938941"
+  },
+  {
+    "id": "P08_ablaciones",
+    "titulo": "Ablación de ventas y variables de calendario",
+    "capitulo_sugerido": "Discusión",
+    "fuentes": [
+      "run_20261013T194927Z_fe8b96/metricas.csv",
+      "run_20261013T195442Z_5fed8f/metricas.csv",
+      "run_20261013T195837Z_713fcd/metricas.csv",
+      "run_20261013T194232Z_d0a239/metricas.csv"
+    ],
+    "sha256_png": "463413027e0c2b0717703d643975ccfa8a3a64de7695b3054d83ce5ce1fcdde0",
+    "sha256_svg": "d181987c44d7a69cbb635dafab246773f019762e604e7f59e2288e6380604511"
+  },
+  {
+    "id": "P09_presupuesto",
+    "titulo": "Emisión histórica del presupuesto y reconciliación por categoría",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": [
+      "pronostico_futuro.csv",
+      "pronostico_4_semanas.csv"
+    ],
+    "sha256_png": "daabd019b1cd3d17f659eb5ac6c6bdd912b57b4416e3a9408615b48226b1539d",
+    "sha256_svg": "6c6b4f9ad41e32116e9b7c0009ab2d44bd3709bff91dd4f0bd68be1640b57ec1"
+  }
+]

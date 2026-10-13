@@ -81,5 +81,9 @@ def hypothesis(predictions,composition,cfg,demo=False):
         'evidencia_favorable_ambos_componentes':favorable,
         'respaldo_confirmatorio':bool(favorable and confirmatory),
         'alcance':'demostracion_sintetica' if demo else ('confirmatorio_condicionado_al_protocolo' if confirmatory else 'retrospectivo_exploratorio'),
+        'definicion_diferencia':{
+            'importe':'error_cuadratico_ultimo_valor - error_cuadratico_hibrido',
+            'composicion':'mae_pp_participacion_historica - mae_pp_participacion_ewm'},
+        'interpretacion_signo':'Un valor positivo favorece al método propuesto; un valor negativo favorece a la referencia histórica.',
         'metodo':'Bootstrap circular pareado por semanas; bloques fijados en configuración; intervalos simultáneos Bonferroni para dos componentes de H1.',
         'advertencia':'No garantiza validez inferencial con muestras pequeñas. No reusar test explorado como confirmación independiente.'}
