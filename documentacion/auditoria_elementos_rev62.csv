@@ -1,0 +1,75 @@
+﻿parrafo,estilo,imagen,pie,objetos_matematicos,referencias_cruzadas,texto
+0,Normal,True,False,0,0,
+223,Caption,False,True,0,0,"Tabla 1. Investigaciones relevantes sobre inteligencia artificial, analítica de datos y adopción tecnológica en la gestión empresarial"
+280,Normal,False,False,0,0,"Un pronóstico puntual resume una distribución de resultados posibles. Bajo pérdida cuadrática, el valor que minimiza el error esperado es la media condicional. La ecuación (1) adapta esta propiedad al importe de compras: la estimación depende de la información existente en el origen del pronóstico, "
+288,Normal,False,False,0,0,"Los pronósticos jerárquicos representan series relacionadas mediante sumas. Adaptada al caso, la identidad de agregación expresa el importe semanal total como suma de los importes de las categorías de insumos. La ecuación (2) es una aplicación de esa estructura aditiva, no un modelo causal de costos"
+295,Normal,False,False,0,0,"La descomposición aditiva representa una serie mediante tendencia-ciclo, estacionalidad y residuo. Es útil cuando las oscilaciones estacionales se interpretan en la escala original; si aumentan proporcionalmente al nivel, pueden considerarse transformaciones u otras representaciones. La ecuación (3)"
+299,Normal,False,False,0,0,"La diferenciación transforma la serie mediante cambios entre observaciones sucesivas, como muestra la ecuación (4). Puede ayudar a tratar variaciones persistentes de nivel; la estabilización de varianza, en cambio, puede requerir transformaciones de escala. ADF y KPSS examinan hipótesis distintas so"
+300,Normal,False,False,0,0,"La autocorrelación describe asociación lineal entre observaciones separadas por un rezago. En la ecuación (5), k identifica la separación temporal, N el número de semanas y la barra el promedio de la serie. La función ayuda a explorar memoria temporal, sin constituir por sí sola una regla de selecci"
+303,Normal,False,False,0,0,"Cuando existen periodos con valor cero, resulta útil distinguir tamaño de los eventos positivos y tiempo entre eventos. El método de Croston mantiene estimaciones suavizadas de ambas cantidades y obtiene una tasa por periodo mediante su cociente, representado en la ecuación (6). Su traslado de deman"
+307,Normal,False,False,0,0,"Una referencia establece qué precisión puede obtenerse con una regla reproducible. El método ingenuo conserva el último valor conocido para los horizontes futuros, como muestra la ecuación (7). Una referencia estacional utiliza el periodo comparable de un ciclo anterior cuando existe historial sufic"
+310,Normal,False,False,0,0,"El suavizamiento exponencial simple actualiza una estimación del nivel mediante una combinación de la observación reciente y el nivel previo. En la ecuación (8), alfa controla el peso de la información reciente y toma valores entre cero y uno. Su pronóstico no incorpora por sí mismo tendencia o esta"
+312,Normal,False,False,3,0,"Un ARIMA combina términos autorregresivos, diferenciación y medias móviles de innovaciones. La ecuación (9) usa el operador de rezago B, de modo que B aplicado a y en t devuelve el valor anterior. Los polinomios phi () y theta () representan los órdenes autorregresivos y de medias móviles; d es el o"
+315,Normal,False,False,0,0,"Random Forest combina árboles construidos con aleatoriedad en muestras y predictores. En regresión, la salida es el promedio de las predicciones, representado en la ecuación (10). B es el número de árboles, T identifica cada árbol y x reúne los predictores disponibles. La agregación busca reducir va"
+317,Normal,False,False,0,0,"La potenciación de gradiente construye una función de manera aditiva. La ecuación (11) expresa una actualización con un aprendiz base g, un coeficiente rho y una tasa de aprendizaje nu. La dirección de actualización depende del gradiente negativo de la pérdida; con pérdida cuadrática se relaciona co"
+324,Normal,False,False,0,0,"La combinación de pronósticos parte de que métodos distintos pueden contener información complementaria. Para dos modelos, la ecuación (12) pondera un pronóstico estadístico y uno de aprendizaje automático. La notación adapta el principio de combinación al caso; el peso w determina la contribución d"
+325,Normal,False,False,0,0,"Los superíndices H, E y A identifican híbrido, estadístico y aprendizaje automático. Bajo errores insesgados con varianzas finitas, la varianza del error combinado depende de las varianzas individuales y de su covarianza. La ecuación (13) explica por qué el grado de dependencia entre errores importa"
+326,Normal,False,False,0,0,"Cuando los errores se parecen mucho, combinar puede aportar poco. Si el denominador es positivo, el peso que minimiza esa varianza sin imponer la restricción convexa se expresa en la ecuación (14). Su uso exige estimar varianzas y covarianza sin información futura; la estimación puede ser inestable "
+329,Normal,False,False,0,0,"Otra estrategia híbrida representa la serie como suma de componentes lineal y no lineal. Zhang (2003) propuso modelar con ARIMA la estructura lineal y con una red neuronal la estructura no lineal de los residuales, y reportó potencial de mejora en sus experimentos; el hallazgo no implica una ventaja"
+334,Normal,False,False,0,0,"Las participaciones describen partes de un total y están sujetas a una restricción de suma. Por ello, no se interpretan como variables completamente independientes: aumentar una participación requiere disminuir alguna otra. La ecuación (16) adapta la representación composicional a importes no negati"
+337,Normal,False,False,0,0,El enfoque descendente pronostica un agregado y lo distribuye mediante proporciones. La ecuación (17) adapta esa relación a importes por insumo: cada asignación es el producto del total pronosticado y la participación estimada para el mismo horizonte. Las proporciones deben cumplir las restricciones
+339,Normal,False,False,0,0,"Como referencia, el promedio de proporciones históricas asigna a cada categoría su participación media en las semanas de entrenamiento con total positivo. La ecuación (18) adapta el promedio histórico de proporciones a ese conjunto válido V, cuyo tamaño es n. No es equivalente al cociente de sumas, "
+342,Normal,False,False,0,0,"El análisis composicional utiliza cocientes para representar información relativa. La transformación logarítmica de una participación respecto de una categoría de referencia aparece en la ecuación (19). Su utilidad es mostrar que la información relevante puede expresarse como relación entre partes, "
+346,Normal,False,False,0,0,"La cantidad de observaciones debe valorarse en relación con la complejidad del modelo y la dependencia de los datos. Para pérdida cuadrática, la descomposición sesgo–varianza expresa el error esperado como suma de sesgo al cuadrado, varianza del estimador y ruido irreducible. La ecuación (20) resume"
+363,Normal,False,False,0,0,"La comparación requiere suficientes orígenes y resultados por horizonte, evitando que un único periodo determine la conclusión. Los modelos deberán enfrentar las mismas semanas y condiciones de información. El error de la ecuación (24) distingue el valor observado en t+h del pronóstico emitido en t "
+371,Normal,False,False,0,0,"MASE divide el error absoluto por una escala obtenida de diferencias históricas de entrenamiento. La ecuación (27) muestra su forma para una partición con N observaciones de entrenamiento, n de prueba y rezago de referencia m. Permite comparar escalas sin dividir cada error por la compra observada d"
+375,Normal,False,False,0,0,La precisión de la composición debe medirse separadamente. La ecuación (28) adapta MAE a participaciones entre cero y uno y multiplica por cien para expresar el error en puntos porcentuales. O con subíndice positivo representa los orígenes cuyo total observado en el horizonte es positivo y n con el 
+381,Normal,False,False,0,0,"Los intervalos de predicción comunican incertidumbre adicional al valor puntual. Bajo una aproximación normal de los errores, la ecuación (29) utiliza un cuantil z y una estimación de la desviación del error correspondiente al horizonte. Esa aproximación depende de supuestos que deberán verificarse "
+479,Normal,True,False,0,0,
+480,Caption,False,True,0,0,Figura . Cobertura semanal de las fuentes integradas en el panel analítico. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+484,Normal,True,False,0,0,
+485,Caption,False,True,0,0,Figura . Flujo metodológico desde la integración de fuentes hasta la asignación presupuestaria y la validación. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+490,Normal,True,False,0,0,
+491,Caption,False,True,0,0,Figura . Serie semanal del importe elegible y delimitación de los periodos de evaluación. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+495,Normal,True,False,0,0,
+496,Caption,False,True,0,0,Figura . Evolución local del importe semanal mediante media y mediana móviles de trece semanas. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+502,Normal,True,False,0,0,
+503,Caption,False,True,0,0,Figura . Distribución de los importes semanales positivos. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+506,Normal,True,False,0,0,
+507,Caption,False,True,0,0,Figura . Dispersión y valores extremos del importe semanal positivo. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+510,Normal,True,False,0,0,
+511,Caption,False,True,0,0,Figura . Relación entre importes de semanas consecutivas. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+514,Normal,True,False,0,0,
+515,Caption,False,True,0,0,Figura . Autocorrelación del importe semanal hasta veintiséis rezagos. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+520,Normal,False,False,0,0,La participación presupuestaria y el remanente de categorías elegibles se definen en las ecuaciones (34) y (35). El promedio ponderado por antigüedad que utiliza la corrida se muestra en la ecuación (36).
+526,Normal,True,False,0,0,
+527,Caption,False,True,0,0,Figura . Composición porcentual observada por categoría analítica. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+530,Normal,True,False,0,0,
+531,Caption,False,True,0,0,Figura . Concentración acumulada del gasto por categoría analítica. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+542,Normal,True,False,0,0,
+543,Caption,False,True,0,0,Figura . Esquema de validación temporal con orígenes sucesivos y horizonte de cuatro semanas. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+546,Normal,True,False,0,0,
+547,Caption,False,True,0,0,Figura . Análisis de ablación de las fuentes y componentes del modelo. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+550,Caption,False,True,0,0,Tabla 2. Etapas previas de trabajo y su uso en la corrida vigente.
+551,Caption,False,True,0,0,Tabla 3. Configuración seleccionada y error del híbrido en la evaluación final.
+560,Normal,True,False,0,0,
+561,Caption,False,True,0,0,Figura . Asignación agregada del presupuesto pronosticado por categoría analítica. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+563,Caption,False,True,0,0,Tabla 4. Pronóstico agregado de cuatro semanas por categoría elegible.
+566,Caption,False,True,0,0,Tabla . Controles de coherencia de la corrida validada. Fuente: elaboración propia con base en controles.csv de la corrida run_20261013T193604Z_157556.
+579,Caption,False,True,0,0,Tabla 5. Sensibilidad de las métricas monetarias a la configuración de imputación.
+588,Normal,True,False,0,0,
+589,Caption,False,True,0,0,Figura . RMSE por modelo y horizonte de pronóstico. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+595,Normal,True,False,0,0,
+596,Caption,False,True,0,0,Figura . Error absoluto de participación por categoría analítica. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+600,Normal,True,False,0,0,
+601,Caption,False,True,0,0,Figura . Valores observados y pronosticados del importe semanal en los horizontes evaluados. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+607,Normal,True,False,0,0,
+608,Caption,False,True,0,0,Figura . Diferencias pareadas de pérdida monetaria entre el modelo propuesto y la línea base. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+610,Normal,True,False,0,0,
+611,Caption,False,True,0,0,Figura . Diferencias pareadas de pérdida composicional entre el modelo propuesto y la línea base. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+720,Normal,True,False,0,0,
+721,Caption,False,True,0,0,Figura . MAE por modelo y horizonte de pronóstico. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+724,Normal,True,False,0,0,
+725,Caption,False,True,0,0,Figura . Error composicional agregado por macrogrupo. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.
+728,Normal,True,False,0,0,
+729,Caption,False,True,0,0,Figura . Asignación semanal detallada del presupuesto pronosticado. Fuente: elaboración propia con resultados de la corrida run_20261013T193604Z_157556.

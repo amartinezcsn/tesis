@@ -1,0 +1,9 @@
+horizonte,modelo,insumo_id,mae_pp,n,excluidas
+1,participacion_ewm,PROMEDIO_MACRO,9.863402427420557,9,8
+1,participacion_historica,PROMEDIO_MACRO,10.032229773351853,9,8
+2,participacion_ewm,PROMEDIO_MACRO,10.065530105283926,10,7
+2,participacion_historica,PROMEDIO_MACRO,9.621232949898864,10,7
+3,participacion_ewm,PROMEDIO_MACRO,10.66201050157569,11,6
+3,participacion_historica,PROMEDIO_MACRO,10.025623001356092,11,6
+4,participacion_ewm,PROMEDIO_MACRO,10.45766475151128,12,5
+4,participacion_historica,PROMEDIO_MACRO,9.884907405683572,12,5

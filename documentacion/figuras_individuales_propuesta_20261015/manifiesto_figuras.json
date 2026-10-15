@@ -1,0 +1,146 @@
+[
+  {
+    "id": "I01_flujo_proceso",
+    "titulo": "Flujo reproducible del sistema híbrido",
+    "capitulo_sugerido": "Metodología",
+    "fuentes": "configuración y manifiesto de la corrida",
+    "nota": "Diagrama metodológico; no representa magnitudes.",
+    "sha256_png": "60f316f04cb69cc382455697165ed59792c8fcff8c2fe91a8f687c8d325b8e82",
+    "sha256_svg": "d9aa26bade74f1f3c69581af0800065a641e086900312e2e46a9b304bd838f9e"
+  },
+  {
+    "id": "I02_validacion_temporal",
+    "titulo": "Evaluación rolling-origin con paso semanal y 17 orígenes",
+    "capitulo_sugerido": "Metodología",
+    "fuentes": "particiones.csv",
+    "nota": "",
+    "sha256_png": "1ad311511d326c1a6ae4a531288ae8e2503a14a47efe5b408e14bce9d1062748",
+    "sha256_svg": "558563f82cc20284a934b0c99427c92ee938c8bcec7014d9755ec2d295c34433"
+  },
+  {
+    "id": "I03_cobertura_semanal",
+    "titulo": "Estado documentado de la cobertura semanal",
+    "capitulo_sugerido": "Desarrollo",
+    "fuentes": "cobertura.csv",
+    "nota": "",
+    "sha256_png": "001829ec907db36155c24962ee99fbb1255388db378d75b5703d6305c08daa3c",
+    "sha256_svg": "bf1d9a58005c1d59ebfe5168a146c728cc12cdca9363584292779af15a12dda5"
+  },
+  {
+    "id": "I04_serie_semanal",
+    "titulo": "Serie semanal del gasto elegible conservando huecos de captura",
+    "capitulo_sugerido": "Desarrollo",
+    "fuentes": "panel_semanal.csv",
+    "nota": "",
+    "sha256_png": "0beea5b6dd005d8249cb75c3f866e9087b2774d3284018cda20641cd469ac9a5",
+    "sha256_svg": "679a4c20aafe371d5a0d1a7be167542f40d89f1fbac450cc1ed918646c21a2d7"
+  },
+  {
+    "id": "I05_pareto_categorias",
+    "titulo": "Pareto de categorías calculado en el conjunto de desarrollo",
+    "capitulo_sugerido": "Desarrollo",
+    "fuentes": "panel_semanal.csv; seleccion.json",
+    "nota": "",
+    "sha256_png": "4e350cf5cc2ef43a38288ba647f4dd35f9ea7b4a1252cb8aeba0912beca7b740",
+    "sha256_svg": "9195e676547554eaf1fe7416b8dc7fd764f9548d8bf804fb4d2ee7298ef70de1"
+  },
+  {
+    "id": "I06_mapa_composicion",
+    "titulo": "Participación observada en las últimas 60 semanas con total positivo",
+    "capitulo_sugerido": "Desarrollo",
+    "fuentes": "panel_semanal.csv; seleccion.json",
+    "nota": "",
+    "sha256_png": "acfd10398645ec2ec13cfba536aab6119ffcaffbf1c400a3183fa0f304fb18a6",
+    "sha256_svg": "b9e4bfe1439a2db0ab0e584c80c3875f899ee6834f54836c4d73183ab5d2b474"
+  },
+  {
+    "id": "I07_observado_pronosticado",
+    "titulo": "Pronóstico fuera de muestra en el horizonte principal",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "predicciones.csv",
+    "nota": "",
+    "sha256_png": "a48f31726639985aedcec5b862fe86ac76221d11184ac0b738ed4112dd191757",
+    "sha256_svg": "a846b2f28bebab27ffaabef2a980580da76af67067910325b825228f170f993b"
+  },
+  {
+    "id": "I08_rmse",
+    "titulo": "RMSE por modelo y horizonte",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "metricas.csv",
+    "nota": "",
+    "sha256_png": "dabcf62677c39ba0734128c2bbb395499aa2a5166e6cc80174bd2a22405c32db",
+    "sha256_svg": "76e00811b16c8049fe7b9d3e8a96b10e2e15d24e0c110558cfe1edf691c393c7"
+  },
+  {
+    "id": "I09_mae",
+    "titulo": "MAE por modelo y horizonte",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "metricas.csv",
+    "nota": "",
+    "sha256_png": "15802b2c49b6e05fe8ace336b9cfd81daf1536a2fb4b03636cb9c8c133fe206f",
+    "sha256_svg": "c36c4251894039a36fa768c245ee130a5d273e5a0b0340a42ee69eb8d1d50dd9"
+  },
+  {
+    "id": "I10_error_composicion_categoria",
+    "titulo": "Error de composición por categoría en H1",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "metricas_composicion.csv",
+    "nota": "",
+    "sha256_png": "f93ce21de95d30e513d7b03e39f8c50ee50f61839eb0eef9c5ab8aea406ef72d",
+    "sha256_svg": "478ad7dcba01d5f2bef99e4de9e5d52486a3c422463a048f57443223057d7bbd"
+  },
+  {
+    "id": "I11_error_composicion_macro",
+    "titulo": "Error macro de composición por horizonte",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "metricas_composicion.csv",
+    "nota": "",
+    "sha256_png": "8bf0cd877e55cff34a0a7f1f690d3c3cfae4f3c86a4efcd478cf63231f805603",
+    "sha256_svg": "95043b348d87d3f8222ef0e9e91dcd086e5b65d679fc4349caceed3936d19e9a"
+  },
+  {
+    "id": "I12_H1_monetario",
+    "titulo": "Contraste H1 del componente monetario",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "predicciones.csv; hipotesis.json",
+    "nota": "",
+    "sha256_png": "b3299ae4f1897a04b682a5352918124cd75ce9b22085c856ad700b895aa9cb2f",
+    "sha256_svg": "f1caf4d0b98351410902abd93ddb35ecb03e36152a9a69c89de537adde4b4d41"
+  },
+  {
+    "id": "I13_H1_composicion",
+    "titulo": "Contraste H1 del componente de composición",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "composicion.csv; hipotesis.json",
+    "nota": "",
+    "sha256_png": "f6f887ffb0aeff8c6c9eb0a977f4baaa6ab98551c3bfd1ea027a53cd58ebb487",
+    "sha256_svg": "699480184b221940adf4f26d437226c998e83a2276201404c1f48ac0cfc6bd97"
+  },
+  {
+    "id": "I14_ablaciones",
+    "titulo": "Ablación de ventas y variables de calendario",
+    "capitulo_sugerido": "Discusión",
+    "fuentes": "run_20261013T194927Z_fe8b96/metricas.csv; run_20261013T195442Z_5fed8f/metricas.csv; run_20261013T195837Z_713fcd/metricas.csv; run_20261013T194232Z_d0a239/metricas.csv",
+    "nota": "",
+    "sha256_png": "8ac407b7fdcf1d3f27c617a6f15e9e979e829ae8e41ed879930e7605478485a9",
+    "sha256_svg": "05ebac330fb872ff3052741fecf5292b6e47fb66506b762f066324ba4962c917"
+  },
+  {
+    "id": "I15_presupuesto_semanal",
+    "titulo": "Asignación presupuestaria por semana futura",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "pronostico_futuro.csv",
+    "nota": "",
+    "sha256_png": "bd128f87dd8c2e3de94f5b071dfea109d9362fe8e50de7a99fcb6dc6c5e6f268",
+    "sha256_svg": "48ffba20ffaa96b172e442c28845e3e0521f5eaf4c588bbbb5dd25bc32dc554e"
+  },
+  {
+    "id": "I16_presupuesto_agregado",
+    "titulo": "Presupuesto agregado de cuatro semanas por categoría",
+    "capitulo_sugerido": "Resultados",
+    "fuentes": "pronostico_4_semanas.csv",
+    "nota": "",
+    "sha256_png": "dc37339f66a12c347dfd5be6799ceeb68c6a86fae356e44ae1b6fa50a49185fc",
+    "sha256_svg": "43f597b7c064179c80521c742ca082d6840053331cb0f4c2af0104578b2d59a7"
+  }
+]
