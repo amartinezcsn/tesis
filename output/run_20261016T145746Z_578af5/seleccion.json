@@ -1,0 +1,55 @@
+{
+  "modelos": {
+    "1": {
+      "horizonte": 1,
+      "stat": "holt_damped",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 80.84849298272616,
+      "n": 5
+    },
+    "2": {
+      "horizonte": 2,
+      "stat": "holt_damped",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 145.14741286171574,
+      "n": 5
+    },
+    "3": {
+      "horizonte": 3,
+      "stat": "holt_damped",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 243.11600511137718,
+      "n": 5
+    },
+    "4": {
+      "horizonte": 4,
+      "stat": "ses",
+      "ml": "rf",
+      "peso": 0.75,
+      "mse": 548.612397819983,
+      "n": 5
+    }
+  },
+  "alpha": 0.1,
+  "categorias": [
+    "HARINA",
+    "CHOCOLATE",
+    "FONDANT",
+    "EMPAQUE",
+    "CHANTILLY",
+    "RELLENO",
+    "DECORACION",
+    "AMBIANTE",
+    "HUEVO",
+    "CAPACILLOS"
+  ],
+  "variables": [
+    "es_fecha_pago_semana",
+    "es_festivo_semana"
+  ],
+  "corte_desarrollo": "2025-03-17 00:00:00",
+  "criterio": "validacion temporal interna, no ranking de evaluación"
+}
