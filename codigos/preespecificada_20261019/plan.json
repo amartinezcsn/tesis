@@ -1,0 +1,94 @@
+[
+  {
+    "scenario": "P01_w25_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P01_w25_direct.json",
+    "changes": {
+      "weights": [
+        0.25
+      ],
+      "rolling_step_weeks": 3
+    },
+    "model_mode": "directo_por_horizonte"
+  },
+  {
+    "scenario": "P02_w50_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P02_w50_direct.json",
+    "changes": {
+      "weights": [
+        0.5
+      ],
+      "rolling_step_weeks": 3
+    },
+    "model_mode": "directo_por_horizonte"
+  },
+  {
+    "scenario": "P03_w75_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P03_w75_direct.json",
+    "changes": {
+      "weights": [
+        0.75
+      ],
+      "rolling_step_weeks": 3
+    },
+    "model_mode": "directo_por_horizonte"
+  },
+  {
+    "scenario": "P04_w50_step1_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P04_w50_step1_direct.json",
+    "changes": {
+      "weights": [
+        0.5
+      ],
+      "rolling_step_weeks": 1
+    },
+    "model_mode": "directo_por_horizonte"
+  },
+  {
+    "scenario": "P05_w50_step2_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P05_w50_step2_direct.json",
+    "changes": {
+      "weights": [
+        0.5
+      ],
+      "rolling_step_weeks": 2
+    },
+    "model_mode": "directo_por_horizonte"
+  },
+  {
+    "scenario": "P06_w50_no_residual_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P06_w50_no_residual_direct.json",
+    "changes": {
+      "weights": [
+        0.5
+      ],
+      "use_residual_hybrid": false,
+      "rolling_step_weeks": 3
+    },
+    "model_mode": "directo_por_horizonte"
+  },
+  {
+    "scenario": "P07_w50_no_arima_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P07_w50_no_arima_direct.json",
+    "changes": {
+      "weights": [
+        0.5
+      ],
+      "use_arima": false,
+      "use_residual_hybrid": false,
+      "rolling_step_weeks": 3
+    },
+    "model_mode": "directo_por_horizonte"
+  },
+  {
+    "scenario": "P08_w50_seed123_direct",
+    "config": "C:\\Python\\tesis\\codigos\\preespecificada_20261019\\P08_w50_seed123_direct.json",
+    "changes": {
+      "weights": [
+        0.5
+      ],
+      "seed": 123,
+      "rolling_step_weeks": 3
+    },
+    "model_mode": "directo_por_horizonte"
+  }
+]

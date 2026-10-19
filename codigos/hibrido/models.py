@@ -57,6 +57,26 @@ class DampedHoltFit:
         return np.asarray([self.level+self.trend*sum(self.phi**i for i in range(1,h+1))
                            for h in range(1,steps+1)])
 
+@dataclass
+class IntermittentFit:
+    demand: float
+    interval: float
+    method: str
+    probability: float = 1.0
+    def forecast(self, steps=1):
+        if self.method == 'tsb':
+            return np.repeat(max(0., self.demand * self.probability), steps)
+        return np.repeat(max(0., self.demand / max(self.interval, 1e-9)), steps)
+
+@dataclass
+class ThetaFit:
+    level: float
+    slope: float
+    alpha: float
+    def forecast(self, steps=1):
+        # Theta simplificado: nivel SES + tendencia lineal amortiguada.
+        return np.asarray([max(0., self.level + self.slope * h) for h in range(1, steps+1)])
+
 
 def _fit_ses(y):
     values=np.asarray(y,dtype=float);observed=np.flatnonzero(np.isfinite(values))
@@ -95,12 +115,37 @@ def _fit_damped_holt(y):
     if not np.isfinite(fit.fun):raise ValueError('No fue posible ajustar Holt amortiguado.')
     return DampedHoltFit(*filter_state(fit.x,return_state=True))
 
+def _fit_theta(y):
+    values=np.asarray(y,dtype=float); values=values[np.isfinite(values)]
+    if len(values)<3: raise ValueError('Theta requiere al menos tres observaciones.')
+    x=np.arange(len(values),dtype=float)
+    slope=float(np.polyfit(x,values,1)[0])
+    ses=_fit_ses(values)
+    return ThetaFit(float(ses.level), slope, float(ses.alpha))
+
+def _fit_intermittent(y, method):
+    values=np.asarray(y,dtype=float); values=values[np.isfinite(values)]
+    if len(values)<3: raise ValueError(f'{method} requiere al menos tres observaciones.')
+    positive=values[values>0]
+    if len(positive)==0: return IntermittentFit(0.,1.,method,0.)
+    intervals=np.diff(np.flatnonzero(values>0))
+    interval=float(np.mean(intervals)) if len(intervals) else float(len(values))
+    demand=float(np.mean(positive))
+    if method=='tsb':
+        probability=float(len(positive)/len(values))
+        return IntermittentFit(demand,interval,method,probability)
+    # Croston y SBA usan demanda media / intervalo; SBA corrige sesgo.
+    if method=='sba': demand*=0.95
+    return IntermittentFit(demand,interval,method)
+
 
 def stat_fit(y, name):
     """Ajustar familias estadísticas sin convertir semanas ausentes en ceros."""
     if name=='seasonal_52s':return SeasonalNaiveFit(np.asarray(y,dtype=float))
     if name=='ses':return _fit_ses(y)
     if name=='holt_damped':return _fit_damped_holt(y)
+    if name=='theta':return _fit_theta(y)
+    if name in ('croston','sba','tsb'):return _fit_intermittent(y,name)
     if name not in ('ss_ar1', 'ss_arima111'):
         raise ValueError(f'Componente estadístico no soportado: {name}')
     with warnings.catch_warnings(record=True) as caught:
@@ -141,7 +186,7 @@ def candidates(cfg):
     """Enumerar candidatos actuales y ampliados antes de la validación interna."""
     stats=['ss_ar1']+(['ss_arima111'] if cfg.use_arima else [])
     mls=['hgb']+(['rf'] if cfg.use_rf else [])
-    if cfg.use_extended_statistical:stats+=['ses','holt_damped','seasonal_52s']
+    if cfg.use_extended_statistical:stats+=['ses','holt_damped','seasonal_52s','theta','croston','sba','tsb']
     if cfg.use_ridge:mls+=['ridge']
     if cfg.use_neural_network:mls+=['mlp']
     if cfg.use_residual_hybrid and cfg.use_arima:

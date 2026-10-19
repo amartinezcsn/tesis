@@ -223,6 +223,8 @@ def complete_purchase_panel_simple_mean(panel, start, end):
 
 def complete_sales_simple_mean(sales, start, end):
     """Completar las semanas de ventas faltantes dentro del periodo autorizado."""
+    if sales is None:
+        return None, pd.DataFrame(columns=['fuente','semana_inicio','serie','importe_observado','importe_estimado','estado','metodo'])
     result=sales.copy();scope=result.index.to_series().between(pd.Timestamp(start),pd.Timestamp(end))
     observed=scope & result.importe_nominal.notna();missing=scope & result.importe_nominal.isna()
     if not observed.any():raise ValueError('Sin semanas observadas para calcular promedio de ventas.')

@@ -148,6 +148,8 @@ def execute(command,config_path=None):
                 panel,cfg.imputation_start,cfg.imputation_end)
             sales_completed,sales_imputations=complete_sales_simple_mean(
                 sales,cfg.imputation_start,cfg.imputation_end)
+            if sales_completed is None:
+                sales_completed = sales
             panel_completed.to_csv(output/'panel_semanal_completado_promedio_simple.csv')
             sales_completed.to_csv(output/'ventas_semanales_completadas_promedio_simple.csv')
             pd.concat([purchase_imputations,sales_imputations],ignore_index=True).to_csv(
