@@ -1,0 +1,1436 @@
+[
+  {
+    "index": 1,
+    "rows": [
+      [
+        "Autor(es) y año",
+        "País de origen",
+        "Palabras clave",
+        "Contexto y datos",
+        "Metodología",
+        "Hallazgo relevante",
+        "Limitación o brecha",
+        "Relación con la investigación"
+      ],
+      [
+        "Hübner et al. (2024)",
+        "Alemania",
+        "panadería; ML; pronóstico; desperdicio",
+        "Panaderías; ventas, producción y desperdicio",
+        "Caso cuantitativo con ML",
+        "El pronóstico de demanda puede apoyar la reducción de desperdicio.",
+        "Caso con infraestructura superior a la microempresa.",
+        "Aporta el antecedente sectorial; justifica evaluar una solución acotada a registros internos."
+      ],
+      [
+        "Huber y Stuckenschmidt (2020)",
+        "Alemania",
+        "retail; ML; calendario; demanda diaria",
+        "Retail diario; ventas y calendario",
+        "Comparación de ML con variables calendáricas",
+        "Las variables de calendario mejoran pronósticos en eventos.",
+        "Contexto minorista de mayor escala.",
+        "Sustenta incluir calendario y eventos disponibles en el dataset."
+      ],
+      [
+        "Abrar et al. (2024)",
+        "Internacional",
+        "cadena de suministro; CNN; LSTM; XAI",
+        "Cadena de suministro; demanda multifuente",
+        "Preprint arXiv; modelo híbrido CNN-LSTM con XAI",
+        "Los modelos híbridos pueden integrar señales complejas.",
+        "Arquitectura compleja evaluada con mayor disponibilidad de datos; evidencia aún como preprint.",
+        "Sirve como contraste: la tesis evalúa alternativas parsimoniosas en small data."
+      ],
+      [
+        "Spiliotis et al. (2022)",
+        "Grecia",
+        "SKU; demanda diaria; ML; métodos estadísticos",
+        "SKU diarios; series irregulares e intermitentes",
+        "Comparación de métodos estadísticos y ML",
+        "La superioridad de ML depende del objetivo y debe verificarse empíricamente.",
+        "Datos minoristas con múltiples SKU.",
+        "Fundamenta comparar Random Forest, ARIMA y línea base empírica."
+      ],
+      [
+        "Makridakis et al. (2018)",
+        "Internacional",
+        "M4; forecasting; ML; métodos híbridos",
+        "Competencia M4; múltiples series y horizontes",
+        "Benchmark de métodos estadísticos, híbridos y ML",
+        "Los modelos complejos no dominan de forma universal.",
+        "No estudia microempresas ni compras.",
+        "Sustenta una hipótesis condicional y la evaluación comparativa."
+      ],
+      [
+        "Hewamalage et al. (2021)",
+        "Australia",
+        "RNN; series temporales; ARIMA; ETS",
+        "Series temporales con RNN",
+        "Estudio empírico frente a ETS y ARIMA",
+        "Las RNN son competitivas, pero no son soluciones universales.",
+        "No se centra en presupuesto de compras de microempresas.",
+        "Justifica reportar RNN/LSTM sin asumir superioridad frente a modelos simples."
+      ],
+      [
+        "Giannopoulos et al. (2025)",
+        "Grecia",
+        "demanda intermitente; ML; evaluación",
+        "Demanda intermitente en distintas industrias",
+        "Revisión de ML y protocolos de evaluación",
+        "La intermitencia exige atención a partición temporal, ajuste y métricas.",
+        "Predomina evidencia de SKU y refacciones.",
+        "Sustenta la validación rolling-origin y el uso cauteloso de métricas; small data corresponde a la condición de esta tesis."
+      ],
+      [
+        "Borsato (2023)",
+        "Italia",
+        "repostería; estética; personalización",
+        "Repostería creativa y valor estético",
+        "Estudio sectorial cualitativo",
+        "La personalización distingue a la repostería creativa.",
+        "No evalúa pronósticos ni IA.",
+        "Delimita el contexto de negocio del caso Cup&Cake."
+      ],
+      [
+        "Lee et al. (2020)",
+        "Malasia",
+        "pastelería; creatividad; experiencia",
+        "Pastelería; creatividad y experiencia",
+        "Estudio de retrato/teoría integrada",
+        "La creatividad y personalización influyen en la oferta del sector.",
+        "No modela demanda.",
+        "Apoya la explicación de la variabilidad comercial del caso."
+      ],
+      [
+        "Ben Abdallah et al. (2022)",
+        "Túnez",
+        "innovación; pastelería; competitividad",
+        "Empresas pasteleras; innovación de producto",
+        "Estudio exploratorio",
+        "La innovación favorece desempeño y posicionamiento competitivo.",
+        "No analiza pronóstico ni ML.",
+        "Complementa la caracterización del sector de repostería."
+      ],
+      [
+        "Mikalef et al. (2019)",
+        "Noruega",
+        "big data; capacidades analíticas; innovación",
+        "Organizaciones orientadas a datos",
+        "Modelo de capacidades analíticas",
+        "Las capacidades analíticas se relacionan con innovación.",
+        "No se limita a microempresas ni pronóstico.",
+        "Sustenta la adopción de datos como capacidad organizacional."
+      ],
+      [
+        "Dubey et al. (2021)",
+        "Reino Unido / India",
+        "IA; big data; desempeño operativo",
+        "Manufactura; analítica, IA y desempeño",
+        "Modelo empírico de desempeño operativo",
+        "El valor de IA depende de capacidades y contexto.",
+        "Contexto industrial.",
+        "Refuerza que el DSS es apoyo y no garantía automática de desempeño."
+      ],
+      [
+        "Melesse y Orrù (2025)",
+        "Rumania",
+        "panadería; Industria 4.0; digitalización",
+        "Sector panadero e Industria 4.0",
+        "Revisión sistemática",
+        "La digitalización integra datos y automatización en panadería.",
+        "Evidencia sectorial heterogénea.",
+        "Apoya la pertinencia de digitalizar ventas y compras del caso."
+      ],
+      [
+        "Valdez-Juárez et al. (2018)",
+        "México",
+        "TIC; gestión del conocimiento; innovación; rentabilidad",
+        "412 PYMES industriales y de servicios del noroeste de México",
+        "Encuesta y modelado PLS-SEM",
+        "Las TIC se relacionan con la gestión del conocimiento, la innovación y la rentabilidad.",
+        "No evalúa IA ni pronósticos.",
+        "Aporta contexto nacional sobre capacidades digitales y desempeño empresarial."
+      ],
+      [
+        "Cuevas-Vargas et al. (2016)",
+        "México",
+        "TIC; PYMES; innovación",
+        "PYMES mexicanas; TIC y desempeño",
+        "Estudio cuantitativo",
+        "Las TIC favorecen la innovación y el desempeño organizacional.",
+        "No incorpora ML.",
+        "Sustenta el antecedente mexicano de digitalización."
+      ],
+      [
+        "Maldonado-Guzmán y Garza-Reyes (2020)",
+        "México",
+        "ecoinnovación; adopción; industria automotriz",
+        "Empresas del sector automotriz",
+        "Estudio empírico de adopción de prácticas de ecoinnovación",
+        "Analiza la adopción de innovaciones tecnológicas y organizacionales en un contexto industrial.",
+        "No estudia transformación digital, IA ni pronósticos en microempresas.",
+        "Aporta un antecedente mexicano sobre adopción de innovación, con alcance sectorial delimitado."
+      ],
+      [
+        "Saavedra-García y Tapia-Sánchez (2020)",
+        "México",
+        "TIC; PYMES; competitividad",
+        "PYMES mexicanas; adopción de TIC",
+        "Análisis de adopción tecnológica",
+        "Las restricciones financieras y de talento limitan la adopción.",
+        "Enfoque descriptivo.",
+        "Respalda la pertinencia de una solución reproducible y accesible."
+      ],
+      [
+        "Romero-Hidalgo et al. (2021)",
+        "México",
+        "gestión del conocimiento; innovación; datos",
+        "Pequeñas empresas; conocimiento e innovación",
+        "Modelo de gestión del conocimiento",
+        "El uso de datos favorece la innovación organizacional.",
+        "No evalúa precisión predictiva.",
+        "Complementa el valor de formalizar registros dispersos."
+      ],
+      [
+        "Poveda-Valverde y Fierro Barragán (2026)",
+        "Ecuador / América Latina",
+        "IA; PYMES; adopción; barreras",
+        "PYMES latinoamericanas; adopción de IA",
+        "Revisión sistemática",
+        "Persisten barreras de infraestructura, presupuesto y talento; las aplicaciones revisadas abarcan distintas actividades empresariales.",
+        "No se centra en microempresas de repostería.",
+        "Refuerza el vacío regional identificado por esta revisión y la necesidad de evidencia aplicada en microempresas."
+      ],
+      [
+        "Hyndman y Athanasopoulos (2021)",
+        "Australia",
+        "series temporales; diagnóstico; pronóstico; validación.",
+        "Ejemplos de series reales de distintos sectores",
+        "Libro metodológico con aplicaciones en R",
+        "El diagnóstico precede al modelado; la evaluación requiere datos fuera de muestra.",
+        "No estudia compras de microempresas.",
+        "Sustenta el diagnóstico temporal y la evaluación fuera de muestra."
+      ],
+      [
+        "Syntetos y Boylan (2005)",
+        "Reino Unido",
+        "demanda intermitente; Croston; SBA; precisión",
+        "Industria automotriz; 3,000 series intermitentes",
+        "Comparación de cuatro métodos y simulación",
+        "La modificación de Croston mejora la precisión en las series evaluadas.",
+        "No compara ML ni estudia microempresas alimentarias.",
+        "Fundamenta incluir Croston-SBA y métricas compatibles con ceros.."
+      ]
+    ]
+  },
+  {
+    "index": 2,
+    "rows": [
+      [
+        "",
+        "",
+        "(1)"
+      ]
+    ]
+  },
+  {
+    "index": 3,
+    "rows": [
+      [
+        "",
+        "",
+        "(2)"
+      ]
+    ]
+  },
+  {
+    "index": 4,
+    "rows": [
+      [
+        "",
+        "",
+        "(3)"
+      ]
+    ]
+  },
+  {
+    "index": 5,
+    "rows": [
+      [
+        "",
+        "",
+        "(4)"
+      ]
+    ]
+  },
+  {
+    "index": 6,
+    "rows": [
+      [
+        "",
+        "",
+        "(5)"
+      ]
+    ]
+  },
+  {
+    "index": 7,
+    "rows": [
+      [
+        "",
+        "",
+        "(6)"
+      ]
+    ]
+  },
+  {
+    "index": 8,
+    "rows": [
+      [
+        "",
+        "",
+        "(7)"
+      ]
+    ]
+  },
+  {
+    "index": 9,
+    "rows": [
+      [
+        "",
+        "",
+        "(8)"
+      ]
+    ]
+  },
+  {
+    "index": 10,
+    "rows": [
+      [
+        "",
+        "",
+        "(9)"
+      ]
+    ]
+  },
+  {
+    "index": 11,
+    "rows": [
+      [
+        "",
+        "",
+        "(10)"
+      ]
+    ]
+  },
+  {
+    "index": 12,
+    "rows": [
+      [
+        "",
+        "",
+        "(11)"
+      ]
+    ]
+  },
+  {
+    "index": 13,
+    "rows": [
+      [
+        "",
+        "",
+        "(12)"
+      ]
+    ]
+  },
+  {
+    "index": 14,
+    "rows": [
+      [
+        "",
+        "",
+        "(13)"
+      ]
+    ]
+  },
+  {
+    "index": 15,
+    "rows": [
+      [
+        "",
+        "",
+        "(14)"
+      ]
+    ]
+  },
+  {
+    "index": 16,
+    "rows": [
+      [
+        "",
+        "",
+        "(16)"
+      ]
+    ]
+  },
+  {
+    "index": 17,
+    "rows": [
+      [
+        "",
+        "",
+        "(17)"
+      ]
+    ]
+  },
+  {
+    "index": 18,
+    "rows": [
+      [
+        "",
+        "",
+        "(18)"
+      ]
+    ]
+  },
+  {
+    "index": 19,
+    "rows": [
+      [
+        "",
+        "",
+        "(19)"
+      ]
+    ]
+  },
+  {
+    "index": 20,
+    "rows": [
+      [
+        "",
+        "",
+        "(20)"
+      ]
+    ]
+  },
+  {
+    "index": 21,
+    "rows": [
+      [
+        "",
+        "",
+        "(21)"
+      ]
+    ]
+  },
+  {
+    "index": 22,
+    "rows": [
+      [
+        "",
+        "",
+        "(22)"
+      ]
+    ]
+  },
+  {
+    "index": 23,
+    "rows": [
+      [
+        "",
+        "",
+        "(23)"
+      ]
+    ]
+  },
+  {
+    "index": 24,
+    "rows": [
+      [
+        "",
+        "",
+        "(24)"
+      ]
+    ]
+  },
+  {
+    "index": 25,
+    "rows": [
+      [
+        "",
+        "",
+        "(25)"
+      ]
+    ]
+  },
+  {
+    "index": 26,
+    "rows": [
+      [
+        "",
+        "",
+        "(26)"
+      ]
+    ]
+  },
+  {
+    "index": 27,
+    "rows": [
+      [
+        "",
+        "",
+        "(27)"
+      ]
+    ]
+  },
+  {
+    "index": 28,
+    "rows": [
+      [
+        "",
+        "",
+        "(28)"
+      ]
+    ]
+  },
+  {
+    "index": 29,
+    "rows": [
+      [
+        "",
+        "",
+        "(29)"
+      ]
+    ]
+  },
+  {
+    "index": 30,
+    "rows": [
+      [
+        "",
+        "",
+        "(30)"
+      ]
+    ]
+  },
+  {
+    "index": 31,
+    "rows": [
+      [
+        "",
+        "Yₜ = ∑ᵢ∈C Xᵢ,ₜ",
+        "(31)"
+      ]
+    ]
+  },
+  {
+    "index": 32,
+    "rows": [
+      [
+        "",
+        "X̂ᵢ,ₜ = (1/|Oᵢ|) ∑ₛ∈Oᵢ Xᵢ,ₛ, t ∈ M",
+        "(32)"
+      ]
+    ]
+  },
+  {
+    "index": 33,
+    "rows": [
+      [
+        "",
+        "V̂ₜ = (1/|Oᵥ|) ∑ₛ∈Oᵥ Vₛ, t ∈ Mᵥ",
+        "(33)"
+      ]
+    ]
+  },
+  {
+    "index": 34,
+    "rows": [
+      [
+        "",
+        "pᵢ,ₜ = Xᵢ,ₜ / Yₜ, si Yₜ > 0",
+        "(34)"
+      ]
+    ]
+  },
+  {
+    "index": 35,
+    "rows": [
+      [
+        "",
+        "pᴿ,ₜ = max(0, 1 − ∑ᵢ∈K pᵢ,ₜ)",
+        "(35)"
+      ]
+    ]
+  },
+  {
+    "index": 36,
+    "rows": [
+      [
+        "",
+        "p̂ᵢ(T) = [∑ₜ∈𝒱_T (1−α)^(T−t) pᵢ,ₜ] / [∑ₜ∈𝒱_T (1−α)^(T−t)]",
+        "(36)"
+      ]
+    ]
+  },
+  {
+    "index": 37,
+    "rows": [
+      [
+        "",
+        "ŷᴴₜ₊ₕ = wₕ ŷˢₜₐₜₜ₊ₕ + (1−wₕ) ŷᴹᴸₜ₊ₕ",
+        "(37)"
+      ]
+    ]
+  },
+  {
+    "index": 38,
+    "rows": [
+      [
+        "",
+        "ŷᴿₜ₊ₕ = max(0, ŷᴬᴿᴵᴹᴬₜ₊ₕ + fᴹᴸᴾ(xₜ)), eₜ₊ₕ = Yₜ₊ₕ − ŷᴬᴿᴵᴹᴬₜ₊ₕ",
+        "(38)"
+      ]
+    ]
+  },
+  {
+    "index": 39,
+    "rows": [
+      [
+        "",
+        "oₖ = o₀ + 3k; Tₒ = {t : o−52 ≤ t < o}; objetivo = Yₒ₊ₕ₋₁",
+        "(39)"
+      ]
+    ]
+  },
+  {
+    "index": 40,
+    "rows": [
+      [
+        "Etapa previa",
+        "Qué se realizó",
+        "Aplicación vigente"
+      ],
+      [
+        "Exploración de fuentes y cobertura",
+        "Se revisaron fuentes de compras, ventas y contexto y se ubicaron discontinuidades.",
+        "Se aplicó auditoría semanal explícita, diferenciando ceros y datos ausentes."
+      ],
+      [
+        "Preparación e imputación exploratoria",
+        "Se evaluaron criterios para completar huecos; se autorizó promedio simple solo en el tramo indicado.",
+        "Se preservan originales y se identifican los valores estimados en archivos derivados."
+      ],
+      [
+        "Variables candidatas",
+        "Se examinaron ventas, peso comercial, eventos, pedidos y clima.",
+        "La última corrida usa ventas históricas y calendarios disponibles ex ante; no implica selección universal de variables."
+      ],
+      [
+        "Alternativas de modelado",
+        "Se revisaron métodos estadísticos, de aprendizaje automático y estructuras híbridas.",
+        "Se comparan los candidatos en los mismos orígenes, incluida ARIMA+MLP."
+      ],
+      [
+        "Pruebas y demos",
+        "Se verificaron el flujo, la interfaz y salidas con ejercicios anteriores.",
+        "Las demos no se presentan como evidencia; la suite automatizada valida el código y no el desempeño predictivo."
+      ]
+    ]
+  },
+  {
+    "index": 41,
+    "rows": [
+      [
+        "Horizonte",
+        "Combinación seleccionada internamente",
+        "Folds",
+        "MAE",
+        "RMSE"
+      ],
+      [
+        "h=1",
+        "ses + rf (peso estadístico 0.75)",
+        "6",
+        "$386.43",
+        "$521.60"
+      ],
+      [
+        "h=2",
+        "ses + hgb (peso estadístico 0.75)",
+        "6",
+        "$439.26",
+        "$695.41"
+      ],
+      [
+        "h=3",
+        "ss_arima111 + nn_residual__ss_arima111 (peso estadístico 0.75)",
+        "6",
+        "$458.80",
+        "$801.62"
+      ],
+      [
+        "h=4",
+        "ss_arima111 + rf_residual__ss_arima111 (peso estadístico 0.75)",
+        "6",
+        "$572.54",
+        "$700.88"
+      ]
+    ]
+  },
+  {
+    "index": 42,
+    "rows": [
+      [
+        "",
+        "RMSEₕ = √[(1/|Oₕ|) ∑ₒ∈Oₕ (Yₒ₊ₕ₋₁ − Ŷₒ,ₕ)²]; MAEₕ = (1/|Oₕ|) ∑ₒ∈Oₕ |Yₒ₊ₕ₋₁ − Ŷₒ,ₕ|",
+        "(40)"
+      ]
+    ]
+  },
+  {
+    "index": 43,
+    "rows": [
+      [
+        "",
+        "MASEₕ = MAEₕ / [(1/|Dₒ|) ∑ₜ∈Dₒ |Yₜ − Yₜ₋₁|]",
+        "(41)"
+      ]
+    ]
+  },
+  {
+    "index": 44,
+    "rows": [
+      [
+        "",
+        "B₄ = ∑ₕ₌₁⁴ Ŷₕ; pᵢ,₄ = (∑ₕ₌₁⁴ Aᵢ,ₕ) / B₄",
+        "(42)"
+      ]
+    ]
+  },
+  {
+    "index": 45,
+    "rows": [
+      [
+        "Categoría / agrupación",
+        "Importe estimado (MXN)",
+        "Participación"
+      ],
+      [
+        "HARINA",
+        "$468.33",
+        "25.24%"
+      ],
+      [
+        "BASES",
+        "$354.84",
+        "19.12%"
+      ],
+      [
+        "RESTO_ELEGIBLE",
+        "$249.75",
+        "13.46%"
+      ],
+      [
+        "EMPAQUE",
+        "$212.07",
+        "11.43%"
+      ],
+      [
+        "HUEVO",
+        "$108.38",
+        "5.84%"
+      ],
+      [
+        "AMBIANTE",
+        "$103.75",
+        "5.59%"
+      ],
+      [
+        "CHANTILLY",
+        "$96.81",
+        "5.22%"
+      ],
+      [
+        "CHOCOLATE",
+        "$87.08",
+        "4.69%"
+      ],
+      [
+        "FONDANT",
+        "$87.07",
+        "4.69%"
+      ],
+      [
+        "DECORACION",
+        "$56.74",
+        "3.06%"
+      ],
+      [
+        "CAPACILLOS",
+        "$24.28",
+        "1.31%"
+      ],
+      [
+        "RELLENO",
+        "$6.51",
+        "0.35%"
+      ]
+    ]
+  },
+  {
+    "index": 46,
+    "rows": [
+      [
+        "Control",
+        "Resultado",
+        "Detalle"
+      ],
+      [
+        "Reconciliación de panel observado y conservación de huecos",
+        "Aprobado",
+        "Sin observaciones"
+      ],
+      [
+        "Asignaciones suman total",
+        "Aprobado",
+        "Sin observaciones"
+      ],
+      [
+        "Participaciones suman 100%",
+        "Aprobado",
+        "Sin observaciones"
+      ],
+      [
+        "Importes no negativos",
+        "Aprobado",
+        "Sin observaciones"
+      ],
+      [
+        "Recarga reproduce emisión",
+        "Aprobado",
+        "Sin observaciones"
+      ],
+      [
+        "Cuatro horizontes futuros",
+        "Aprobado",
+        "Sin observaciones"
+      ],
+      [
+        "Categorías fuera de alcance excluidas del objetivo monetario",
+        "Aprobado",
+        "Sin observaciones"
+      ]
+    ]
+  },
+  {
+    "index": 47,
+    "rows": [
+      [
+        "Horizonte",
+        "RMSE principal",
+        "RMSE sin imputación",
+        "MAE principal",
+        "MAE sin imputación",
+        "Diferencia"
+      ],
+      [
+        "h=1",
+        "521.60",
+        "521.60",
+        "386.43",
+        "386.43",
+        "0.00"
+      ],
+      [
+        "h=2",
+        "695.41",
+        "695.41",
+        "439.26",
+        "439.26",
+        "0.00"
+      ],
+      [
+        "h=3",
+        "801.62",
+        "801.62",
+        "458.80",
+        "458.80",
+        "0.00"
+      ],
+      [
+        "h=4",
+        "700.88",
+        "700.88",
+        "572.54",
+        "572.54",
+        "0.00"
+      ]
+    ]
+  },
+  {
+    "index": 48,
+    "rows": [
+      [
+        "Horizonte",
+        "Híbrido RMSE (MXN)",
+        "Híbrido MAE (MXN)",
+        "Menor RMSE comparador principal",
+        "RMSE (MXN)"
+      ],
+      [
+        "1 semana",
+        "521.60",
+        "386.43",
+        "Random Forest",
+        "446.21"
+      ],
+      [
+        "2 semanas",
+        "695.41",
+        "439.26",
+        "HistGradientBoosting",
+        "596.17"
+      ],
+      [
+        "3 semanas",
+        "801.62",
+        "458.80",
+        "Híbrido",
+        "801.62"
+      ],
+      [
+        "4 semanas",
+        "700.88",
+        "572.54",
+        "RF residual + ARIMA estacional",
+        "578.95"
+      ]
+    ]
+  },
+  {
+    "index": 49,
+    "rows": [
+      [
+        "Horizonte",
+        "Participación histórica (MAE pp)",
+        "Promedio temporal ponderado (MAE pp)",
+        "Menor error"
+      ],
+      [
+        "1",
+        "10.34",
+        "11.73",
+        "Histórica"
+      ],
+      [
+        "2",
+        "7.14",
+        "6.93",
+        "Temporal ponderada"
+      ],
+      [
+        "3",
+        "10.77",
+        "10.37",
+        "Temporal ponderada"
+      ],
+      [
+        "4",
+        "11.80",
+        "12.23",
+        "Histórica"
+      ]
+    ]
+  },
+  {
+    "index": 50,
+    "rows": [
+      [
+        "Campo exacto",
+        "Tipo esperado",
+        "Definición",
+        "Uso y validación"
+      ],
+      [
+        "Number",
+        "Texto",
+        "Identificador registrado de la transacción.",
+        "Control; comprobar unicidad, no usar como predictor."
+      ],
+      [
+        "Status",
+        "Categoría",
+        "Estado registrado de la venta.",
+        "Validar categorías y criterio de inclusión; no asumir que todos los estados son ventas concluidas."
+      ],
+      [
+        "Fecha/Hora",
+        "Fecha y hora",
+        "Marca temporal del registro.",
+        "Convertir y contrastar con Fecha; no equivale necesariamente a fecha de disponibilidad."
+      ],
+      [
+        "Cantidad",
+        "Número",
+        "Cantidad consignada en la venta.",
+        "Unidad y diferencia respecto de Total de ítems pendientes de verificación."
+      ],
+      [
+        "Total de ítems",
+        "Número",
+        "Total de ítems consignado.",
+        "Verificar si cuenta unidades o líneas del pedido; no asumir equivalencia con Cantidad."
+      ],
+      [
+        "Descri. Items",
+        "Texto",
+        "Descripción de los productos de la transacción.",
+        "Descripción auxiliar; no se modela texto libre en la versión inicial."
+      ],
+      [
+        "Subtotal",
+        "Número monetario",
+        "Subtotal registrado antes de ajustes.",
+        "MXN por confirmar en origen; revisar conciliación, no sumar al Importe."
+      ],
+      [
+        "Descuento",
+        "Número",
+        "Descuento registrado.",
+        "Confirmar si expresa MXN o porcentaje antes de operar con él."
+      ],
+      [
+        "Tasa",
+        "Número",
+        "Campo de tasa del reporte.",
+        "Definición y unidad pendientes; no asumir importe de impuesto."
+      ],
+      [
+        "Envío",
+        "Número monetario",
+        "Cargo de envío registrado.",
+        "Confirmar inclusión en Importe; no duplicar cargos."
+      ],
+      [
+        "Importe",
+        "Número monetario",
+        "Importe registrado de la venta.",
+        "Candidato para agregado nominal semanal; validar concepto, moneda, ceros y estados."
+      ],
+      [
+        "Ganancia",
+        "Número",
+        "Campo de ganancia registrado.",
+        "Cálculo pendiente de verificación; no equivale a utilidad neta demostrada ni es objetivo del estudio."
+      ],
+      [
+        "Nombre",
+        "Texto",
+        "Nombre asociado al registro.",
+        "Rol pendiente de confirmar; dato potencialmente personal, excluido de predictores."
+      ],
+      [
+        "Vendedor",
+        "Texto o categoría",
+        "Responsable o canal consignado.",
+        "Dato administrativo; excluir identificadores personales del modelado."
+      ],
+      [
+        "Observación",
+        "Texto",
+        "Notas de la transacción.",
+        "Puede contener datos personales; no publicar valores ni usar como predictor inicial."
+      ],
+      [
+        "Fecha",
+        "Fecha",
+        "Fecha consignada sin hora.",
+        "Normalizar y contrastar con Fecha/Hora; definir fecha válida para agregación."
+      ],
+      [
+        "Año",
+        "Entero",
+        "Año consignado.",
+        "Contrastar con la fecha validada; preferir derivación consistente."
+      ],
+      [
+        "Mes",
+        "Entero",
+        "Mes consignado.",
+        "Valores esperados 1 a 12; contrastar con la fecha."
+      ],
+      [
+        "Día",
+        "Entero",
+        "Día del mes consignado.",
+        "Validar según mes y año."
+      ],
+      [
+        "Pastel",
+        "Indicador",
+        "Indicador de categoría pastel.",
+        "Se observaron 0, 1 y texto null; verificar codificación. No convertir null en 0."
+      ],
+      [
+        "Galletas",
+        "Indicador",
+        "Indicador de categoría galletas.",
+        "Se observaron 0, 1 y texto null; no prueba cantidades vendidas."
+      ],
+      [
+        "Otros",
+        "Indicador",
+        "Indicador de otros productos de venta.",
+        "No confundir con otros de la composición de compras; revisar null."
+      ],
+      [
+        "Cupcakes",
+        "Indicador",
+        "Indicador de categoría cupcakes.",
+        "Se observaron 0, 1 y texto null; verificar codificación."
+      ],
+      [
+        "Pedido",
+        "Texto",
+        "Referencia interna del pedido.",
+        "Contiene tipos mixtos; conservar como identificador y verificar relación con Number."
+      ],
+      [
+        "NumPedido",
+        "Texto",
+        "Número o referencia del pedido.",
+        "Comprobar relación con Pedido y Number; la unicidad no está garantizada."
+      ]
+    ]
+  },
+  {
+    "index": 51,
+    "rows": [
+      [
+        "Campo exacto",
+        "Tipo esperado",
+        "Definición",
+        "Uso y validación"
+      ],
+      [
+        "PROVEEDOR",
+        "Texto",
+        "Proveedor consignado en la compra.",
+        "Control administrativo; no es predictor inicial."
+      ],
+      [
+        "FECHA",
+        "Fecha",
+        "Fecha registrada de adquisición.",
+        "Se homologa a fecha; fecha inválida genera incidencia."
+      ],
+      [
+        "NUMERO",
+        "Texto",
+        "Número consignado en el registro.",
+        "Significado y unicidad pendientes; no se presume clave única."
+      ],
+      [
+        "CANT",
+        "Número",
+        "Cantidad registrada de adquisición.",
+        "Interpretar junto con U#MEDIDA; no es variable objetivo."
+      ],
+      [
+        "U#MEDIDA",
+        "Texto o categoría",
+        "Unidad de medida registrada.",
+        "Homologación pendiente; no sumar cantidades de unidades diferentes."
+      ],
+      [
+        "DESCRIPCION",
+        "Texto",
+        "Descripción de lo adquirido.",
+        "Se homologa a descripcion y descripcion_normalizada; requiere catálogo aprobado."
+      ],
+      [
+        "MONTO",
+        "Número monetario",
+        "Importe registrado de la adquisición.",
+        "Se homologa a importe_nominal en MXN; verificar ceros, moneda y alcance. No asumir CANT por P#UNITARIO sin conciliación."
+      ],
+      [
+        "P#UNITARIO",
+        "Número monetario",
+        "Precio unitario registrado.",
+        "MXN por unidad consignada; definición y consistencia pendientes de revisión."
+      ],
+      [
+        "CLASIFICACION",
+        "Categoría",
+        "Clasificación de origen.",
+        "No sustituye automáticamente al insumo_id aprobado."
+      ],
+      [
+        "SUBCLASIFICACION",
+        "Categoría",
+        "Subclasificación de origen.",
+        "Homologar significado; uso auxiliar para revisar el catálogo."
+      ]
+    ]
+  },
+  {
+    "index": 52,
+    "rows": [
+      [
+        "Campo o familia",
+        "Tipo y unidad",
+        "Origen o regla",
+        "Uso y disponibilidad"
+      ],
+      [
+        "fecha",
+        "Fecha",
+        "FECHA de compras normalizada al día.",
+        "Clave temporal; solo registros previos al origen alimentan características."
+      ],
+      [
+        "importe_nominal",
+        "Número en MXN",
+        "MONTO homologado en compras; importe semanal en contrato de ventas.",
+        "Objetivo monetario o predictor según tabla; inválidos no se sustituyen por cero."
+      ],
+      [
+        "descripcion",
+        "Texto",
+        "DESCRIPCION homologada.",
+        "Base del catálogo, no una categoría aprobada por sí misma."
+      ],
+      [
+        "descripcion_normalizada",
+        "Texto",
+        "Descripción normalizada mediante clean_upper.",
+        "Clave de enlace con catálogo; descripción vacía genera incidencia."
+      ],
+      [
+        "registro_id",
+        "Entero",
+        "Número de fila de origen contado desde 2.",
+        "Trazabilidad dentro del archivo y su hash; no identificador universal."
+      ],
+      [
+        "motivo",
+        "Texto",
+        "Resultado de revisión del registro.",
+        "Vacío significa sin incidencia detectada; no prueba cobertura completa."
+      ],
+      [
+        "semana_inicio",
+        "Fecha",
+        "Lunes de la semana de lunes a domingo.",
+        "Clave semanal; agregación después de aprobar cobertura."
+      ],
+      [
+        "insumo_id",
+        "Texto",
+        "Identificador asignado por catálogo aprobado.",
+        "No admite vacío ni nombres reservados total u otros."
+      ],
+      [
+        "aprobado",
+        "Booleano",
+        "Aprobación de la correspondencia de catálogo.",
+        "El código admite true o 1; requiere decisión documentada."
+      ],
+      [
+        "estado",
+        "Categoría",
+        "Condición de cobertura semanal.",
+        "observada o cero_confirmado para datos reales; desconocida o incompleta bloquean el intervalo. Ver nota de procedencia."
+      ],
+      [
+        "evidencia",
+        "Texto",
+        "Sustento de la revisión de cobertura.",
+        "Obligatorio; debe justificar la clasificación semanal."
+      ],
+      [
+        "fecha_revision",
+        "Fecha",
+        "Fecha de revisión de cobertura.",
+        "Obligatoria; no equivale a available_at de un predictor."
+      ],
+      [
+        "registros_detectados",
+        "Entero",
+        "Conteo de filas por semana en plantilla.",
+        "Cero no confirma ausencia de compras; no establece cobertura."
+      ],
+      [
+        "total",
+        "Número en MXN",
+        "Suma de importes semanales por insumo.",
+        "Objetivo monetario nominal; cero solo interpretable con cobertura validada."
+      ],
+      [
+        "<insumo_id>",
+        "Número en MXN",
+        "Columnas dinámicas del panel, una por insumo.",
+        "Importe semanal agregado; nombres determinados por catálogo, no columnas literales fijas."
+      ],
+      [
+        "otros",
+        "MXN o proporción",
+        "Residual de insumos no seleccionados, según matriz.",
+        "No confundir con Otros de ventas; distinguir matriz de importes de matriz de participaciones."
+      ],
+      [
+        "Participación por insumo",
+        "Proporción de 0 a 1",
+        "Importe del insumo dividido entre total positivo.",
+        "Matriz con columnas por insumo; total cero implica no definido. Multiplicar por 100 solo para porcentaje."
+      ],
+      [
+        "lag_1, lag_2, lag_4, lag_8, lag_12",
+        "Número en MXN",
+        "Totales de semanas previas al origen.",
+        "Predictores; sufijo indica distancia semanal. No usar valores objetivo futuros."
+      ],
+      [
+        "media_4, media_8, media_12",
+        "Número en MXN",
+        "Media de las últimas semanas cerradas.",
+        "Ventana indicada por sufijo; requiere historia anterior al origen."
+      ],
+      [
+        "desv_4, desv_8, desv_12",
+        "Número en MXN",
+        "Desviación estándar muestral de las semanas previas.",
+        "Mismas ventanas que las medias; un solo dato no define dispersión muestral."
+      ],
+      [
+        "cal_sin, cal_cos",
+        "Número de −1 a 1",
+        "Codificación cíclica de semana objetivo.",
+        "Calendario conocido; periodo del código 52.1775 semanas."
+      ],
+      [
+        "ventas_lag_1, ventas_lag_4",
+        "Número en MXN",
+        "Importe semanal de ventas rezagado.",
+        "Opcional; solo si available_at no es posterior al origen; de otro modo faltante."
+      ],
+      [
+        "available_at",
+        "Fecha y hora",
+        "Momento de disponibilidad de ventas o exógenas.",
+        "Debe ser anterior o igual al origen. Ventas semanales: no antes del cierre."
+      ],
+      [
+        "variable",
+        "Texto",
+        "Nombre de variable exógena.",
+        "Obligatorio en contrato opcional; no implica fuente incorporada."
+      ],
+      [
+        "fecha_referencia",
+        "Fecha",
+        "Periodo al que corresponde una exógena.",
+        "No confundir con fecha de publicación o disponibilidad."
+      ],
+      [
+        "valor",
+        "Número",
+        "Valor de variable exógena.",
+        "Finito; unidad específica a documentar por variable antes de incorporarla."
+      ],
+      [
+        "fuente, version",
+        "Texto",
+        "Procedencia y versión de la exógena.",
+        "Obligatorias; permiten controlar revisiones de datos."
+      ],
+      [
+        "tipo",
+        "Categoría",
+        "observada, pronostico o calendario.",
+        "Una observación futura no se etiqueta como disponible; pronósticos requieren archivo previo."
+      ],
+      [
+        "exog_<variable>",
+        "Número",
+        "Valor exógeno admisible en el origen.",
+        "Pronóstico o calendario para la fecha objetivo; en su defecto última observación previa; ausente queda faltante."
+      ],
+      [
+        "es_sintetico",
+        "Booleano",
+        "Indicador de procedencia sintética.",
+        "Control, nunca resultado real; la existencia del campo no autoriza usar esos datos."
+      ],
+      [
+        "metodo_sintesis",
+        "Texto",
+        "Método declarado de generación sintética.",
+        "Metadato condicional del código; exige aprobación separada y no acredita observación real."
+      ]
+    ]
+  },
+  {
+    "index": 53,
+    "rows": [
+      [
+        "Componente",
+        "Ruta relativa",
+        "Función"
+      ],
+      [
+        "Entrada del pipeline",
+        "codigos/00_pipeline_hibrido.py",
+        "Punto de ejecución reproducible"
+      ],
+      [
+        "Dependencias",
+        "codigos/requirements_hibrido.txt",
+        "Versiones requeridas"
+      ],
+      [
+        "Configuración principal",
+        "codigos/02_config_hibrido.json",
+        "Parámetros de la corrida evaluada"
+      ],
+      [
+        "Configuración de sensibilidad",
+        "codigos/02_config_hibrido_sensibilidad_sin_imputacion_rev59.json",
+        "Mismos parámetros, sin imputación"
+      ],
+      [
+        "Manifiesto principal",
+        "output/run_20261013T193604Z_157556/manifiesto.json",
+        "Huellas, entorno y parámetros"
+      ],
+      [
+        "Manifiesto de sensibilidad",
+        "output/run_20260928T014913Z_38994f/manifiesto.json",
+        "Trazabilidad de la repetición"
+      ],
+      [
+        "Métricas y selección",
+        "output/run_20261013T193604Z_157556/metricas.csv; seleccion_interna.csv",
+        "Resultados monetarios y elección interna"
+      ],
+      [
+        "Composición",
+        "output/run_20261013T193604Z_157556/metricas_composicion.csv; seleccion_composicion.csv",
+        "Resultados de participaciones"
+      ],
+      [
+        "Predicciones y particiones",
+        "output/run_20261013T193604Z_157556/predicciones.csv; particiones.csv",
+        "Observaciones, pronósticos y cortes"
+      ],
+      [
+        "Contraste de H1",
+        "output/run_20261013T193604Z_157556/hipotesis.json",
+        "Resultado del contraste exploratorio"
+      ]
+    ]
+  }
+]

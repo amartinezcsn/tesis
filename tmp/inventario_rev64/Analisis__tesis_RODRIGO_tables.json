@@ -1,0 +1,107 @@
+[
+  {
+    "index": 1,
+    "rows": [
+      [
+        "Objetivo definido",
+        "Actividades y productos documentados",
+        "Páginas y valoración"
+      ],
+      [
+        "Objetivo 1. Analizar los registros históricos de ventas y compras mediante depuración, agregación semanal y caracterización temporal del importe total y de la participación de los principales insumos.",
+        "Se homologaron fechas, importes y categorías; se integraron compras y ventas por semana; y se distinguieron ceros de ausencia de captura. Se caracterizaron importes y participaciones mediante gráficas. La auditoría del tramo autorizado identificó 128 semanas observadas de compras y 29 estimadas, conservadas solo en archivos derivados. La prueba de sensibilidad reportó que estas últimas no intervinieron en el modelado.",
+        "Evidencia: pp. 62–68, Figuras 1–7; pp. 74–75, Tabla 5. Valoración: atendido en el nivel descriptivo y de preparación. Persiste la falta de certificación de cobertura completa (p. 83)."
+      ],
+      [
+        "Objetivo 2. Desarrollar la estructura del modelo híbrido mediante la integración de componentes estadísticos y de aprendizaje automático, con variables históricas y exógenas disponibles al momento del pronóstico.",
+        "Se implementaron componentes estadísticos y de aprendizaje automático, combinaciones ponderadas y correcciones residuales. Se incorporaron ventas históricas e indicadores de semana festiva y de pago. Cinco orígenes de validación interna permitieron seleccionar una combinación por horizonte; las configuraciones finales integraron SES o ARIMA con Random Forest, HistGradientBoosting o MLP.",
+        "Evidencia: p. 65; pp. 68–71, ecuaciones 37–39, Figuras 8–9 y Tabla 3. Valoración: desarrollo documentado. No se ejecutaron RNN ni LSTM (p. 68)."
+      ]
+    ]
+  },
+  {
+    "index": 2,
+    "rows": [
+      [
+        "Objetivo definido",
+        "Actividades y productos documentados",
+        "Páginas y valoración"
+      ],
+      [
+        "Objetivo 3. Determinar la distribución porcentual del importe semanal pronosticado entre los principales insumos, a partir de su composición histórica y variación temporal.",
+        "Se calcularon participaciones sobre el total elegible; se conservaron las categorías restantes en RESTO_ELEGIBLE y se estimó una distribución histórica ponderada exponencialmente. Las participaciones se multiplicaron por el total pronosticado y se conciliaron los importes. La emisión histórica de cuatro semanas distribuyó $1,855.61 MXN; por ejemplo, HARINA recibió 25.24 % ($468.33).",
+        "Evidencia: pp. 66–67, ecuaciones 34–36; pp. 71–73, Tabla 4 y Figuras 10–11; p. 78. Valoración: distribución implementada. Sumar 100 % acredita coherencia aritmética, no mayor precisión."
+      ],
+      [
+        "Objetivo 4. Contrastar la precisión del modelo híbrido y del procedimiento de distribución porcentual frente a modelos de referencia, mediante evaluación temporal y métricas de error monetario y de participación.",
+        "Se aplicó una ventana deslizante de 52 semanas, avance de tres semanas y horizontes de una a cuatro semanas. Se obtuvieron seis orígenes monetarios por horizonte y entre tres y cinco observaciones composicionales válidas. Se compararon RMSE, MAE, MASE y errores de participación. También se repitió la corrida sin parámetros de imputación y se examinó H1.",
+        "Evidencia: pp. 74–80, Tabla 5 y Figuras 12–15; pp. 83–85. Valoración: contraste efectuado con alcance exploratorio; no se acreditó superioridad conjunta ni estable."
+      ]
+    ]
+  },
+  {
+    "index": 3,
+    "rows": [
+      [
+        "Horizonte",
+        "RMSE del híbrido (MXN)",
+        "Método con menor RMSE y valor (MXN)",
+        "MAE histórico (pp)",
+        "MAE ponderado (pp)"
+      ],
+      [
+        "1 semana",
+        "521.60",
+        "Random Forest 446.21",
+        "10.34",
+        "11.73"
+      ],
+      [
+        "2 semanas",
+        "695.41",
+        "HistGradientBoosting 596.17",
+        "7.14",
+        "6.93"
+      ],
+      [
+        "3 semanas",
+        "801.62",
+        "Híbrido 801.62",
+        "10.77",
+        "10.37"
+      ],
+      [
+        "4 semanas",
+        "700.88",
+        "RF residual + ARIMA estacional 578.95",
+        "11.80",
+        "12.23"
+      ]
+    ]
+  },
+  {
+    "index": 4,
+    "rows": [
+      [
+        "Componente",
+        "Resultado documentado",
+        "Interpretación de la revisión"
+      ],
+      [
+        "Importe",
+        "Seis pares. Diferencia media de errores cuadrados: último valor menos híbrido = 161,798.64 MXN².",
+        "La diferencia positiva favorece descriptivamente al híbrido frente al último valor; no se generó intervalo inferencial (p. 79)."
+      ],
+      [
+        "Composición",
+        "Tres pares. Diferencia media de errores de participación: histórico menos ponderado = −1.39 pp.",
+        "El signo negativo favorece al histórico, no al ponderado. El componente composicional no respalda H1 en el horizonte principal (pp. 77 y 79)."
+      ],
+      [
+        "Inferencia conjunta",
+        "El tamaño observado no alcanzó el mínimo inferencial configurado; no se obtuvieron los intervalos previstos.",
+        "No hay base confirmatoria para la mejora conjunta. Tampoco se demuestra equivalencia ni un rechazo definitivo (pp. 79–80 y 83–85)."
+      ]
+    ]
+  }
+]

@@ -1,0 +1,1403 @@
+[
+  {
+    "path": "C:\\Python\\tesis\\documentacion\\TESIS_SEP2026_Rev62_(ZUJ)_Final.docx",
+    "size": 8341449,
+    "paragraphs_python_docx": 732,
+    "paragraphs_xml_nonempty": 1407,
+    "tables": 53,
+    "inline_shapes": 22,
+    "sections": 5,
+    "headings": [
+      {
+        "style": "Heading 2",
+        "text": "RESUMEN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "ABSTRACT"
+      },
+      {
+        "style": "Heading 1",
+        "text": "INTRODUCCIÓN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Estado del Arte"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Aplicaciones de la inteligencia artificial en la cadena de suministro"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Modelos de aprendizaje automático para el pronóstico de demanda"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Demanda intermitente, small data y comparación de modelos"
+      },
+      {
+        "style": "Heading 4",
+        "text": "Análisis de series temporales para demanda errática y small data"
+      },
+      {
+        "style": "Heading 3",
+        "text": "La repostería creativa como sector económico especializado"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Innovación y transformación digital en la industria pastelera"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Adopción de inteligencia artificial en microempresas"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Investigaciones en México y América Latina"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Síntesis del estado del arte y vacío de investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "El planteamiento del problema"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Contexto del caso de estudio"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Pregunta de Investigación"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Objetivo"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Justificación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Hipótesis"
+      },
+      {
+        "style": "Heading 1",
+        "text": "MARCO TEÓRICO"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Microempresa y planeación del presupuesto de abastecimiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Recursos de información y conocimiento del negocio"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Pronóstico como información para decidir"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Compras monetarias y contexto de la repostería"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Delimitación de la variable objetivo"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Agregación del importe y niveles de análisis"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Series temporales semanales y calidad de los registros"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Frecuencia y continuidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Nivel tendencia y estacionalidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Estacionariedad y dependencia temporal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Intermitencia y valores extremos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Métodos estadísticos y de aprendizaje automático"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Referencias simples"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Suavizamiento exponencial y ARIMA"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Bosques aleatorios y potenciación de gradiente"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Redes neuronales y alcance de los comparadores"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Fundamentos de integración del modelo híbrido"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Combinación de pronósticos"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Integración mediante componentes"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Distribución porcentual y coherencia de las asignaciones"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Participaciones como datos composicionales"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Desagregación del pronóstico total"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Representación relativa de las participaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Datos limitados e ingeniería de características"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Complejidad y capacidad de generalización"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Penalizaciones y selección de variables"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Predictores temporales y calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Disponibilidad de variables exógenas"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Evaluación temporal y métricas de precisión"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Origen del pronóstico y ventana de entrenamiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Error monetario del importe total"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Escalamiento y límites de errores porcentuales"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Error de participaciones y evaluación conjunta"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Inteligencia de negocios y comunicación del pronóstico"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Presentación del presupuesto y su incertidumbre"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Adopción y límites operativos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Síntesis de fundamentos y relación con la hipótesis"
+      },
+      {
+        "style": "Heading 1",
+        "text": "METODOLOGÍA"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Tipo de investigación según el objetivo de esta"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Según el alcance evaluativo del estudio"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Según el tipo de datos empleados"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Según el grado de manipulación de las variables"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Diseño evaluativo y comparación contra la línea base"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Según el tipo de inferencia"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Temporalidad de la investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Procedimiento metodológico"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Recolección y estructuración de los conjuntos de datos (Datasets)"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Auditoría de cobertura y construcción del panel semanal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Predictores de compras, ventas y calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Modelos de referencia y arquitectura híbrida"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Validación temporal rolling window"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Métricas y criterios de comparación"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Comunicación del pronóstico para la planeación presupuestaria"
+      },
+      {
+        "style": "Heading 3",
+        "text": "Consideraciones éticas y tratamiento de datos"
+      },
+      {
+        "style": "Heading 1",
+        "text": "DESARROLLO"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Contexto de los registros y objetivo operativo"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Preparación de fuentes y cobertura semanal"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Construcción del panel y caracterización exploratoria"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Integración de ventas y variables calendario"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Definición de categorías y distribución presupuestaria"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Modelos y validación temporal"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Asignación del presupuesto y controles de calidad"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Alcance y trazabilidad de la corrida"
+      },
+      {
+        "style": "Heading 1",
+        "text": "RESULTADOS"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Calidad, cobertura e integración de datos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Análisis de sensibilidad de la imputación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Diseño efectivo de evaluación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Rendimiento comparativo del importe semanal"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Distribución porcentual por insumo"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Contraste de hipótesis"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Alcance de los resultados"
+      },
+      {
+        "style": "Heading 1",
+        "text": "DISCUSIÓN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Interpretación de los hallazgos y contraste con antecedentes"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Demanda intermitente y selección de métricas"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Implicaciones operativas y financieras"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Validez y limitaciones"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CONCLUSIONES"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Recomendaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "Trabajo futuro"
+      },
+      {
+        "style": "Heading 1",
+        "text": "GLOSARIO"
+      },
+      {
+        "style": "Heading 1",
+        "text": "REFERENCIAS"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo A Diccionario de datos"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo B Paquete de reproducibilidad"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo C Diagnósticos complementarios y sensibilidad"
+      }
+    ],
+    "insertions": 0,
+    "deletions": 0,
+    "comments_anchors": 0
+  },
+  {
+    "path": "C:\\Python\\tesis\\documentacion\\TESIS_OCT2026_Rev63_(ZUJ)_Revision_Comite.docx",
+    "size": 6641252,
+    "paragraphs_python_docx": 687,
+    "paragraphs_xml_nonempty": 1409,
+    "tables": 44,
+    "inline_shapes": 16,
+    "sections": 5,
+    "headings": [
+      {
+        "style": "Heading 2",
+        "text": "RESUMEN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "ABSTRACT"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO I INTRODUCCIÓN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.1 Antecedentes"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.2 Planteamiento del problema"
+      },
+      {
+        "style": "Heading 3",
+        "text": "1.2.1 Contexto del caso de estudio"
+      },
+      {
+        "style": "Heading 3",
+        "text": "1.2.2 Pregunta de investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.3 Hipótesis y criterio de evaluación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.4 Objetivos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.5 Justificación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.6 Alcance"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.7 Limitaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.8 Definiciones operativas"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO II MARCO TEÓRICO"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.1 Revisión de evidencia empírica y estado del arte"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.1 Aplicaciones de la inteligencia artificial en la cadena de suministro"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.2 Modelos de aprendizaje automático para el pronóstico de demanda"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.3 Demanda intermitente, small data y comparación de modelos"
+      },
+      {
+        "style": "Heading 4",
+        "text": "2.1.3.1 Análisis de series temporales para demanda errática y small data"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.4 La repostería creativa como sector económico especializado"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.5 Innovación y transformación digital en la industria pastelera"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.6 Adopción de inteligencia artificial en microempresas"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.7 Investigaciones en México y América Latina"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.8 Síntesis del estado del arte y vacío de investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.2 Microempresa y planeación del presupuesto de abastecimiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.2.1 Recursos de información y conocimiento del negocio"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.2.2 Pronóstico como información para decidir"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.3 Compras monetarias y contexto de la repostería"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.3.1 Delimitación de la variable objetivo"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.3.2 Agregación del importe y niveles de análisis"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.4 Series temporales semanales y calidad de los registros"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.1 Frecuencia y continuidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.2 Nivel tendencia y estacionalidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.3 Estacionariedad y dependencia temporal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.4 Intermitencia y valores extremos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.5 Métodos estadísticos y de aprendizaje automático"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.1 Referencias simples"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.2 Suavizamiento exponencial y ARIMA"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.3 Bosques aleatorios y potenciación de gradiente"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.4 Redes neuronales y alcance de los comparadores"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.6 Fundamentos de integración del modelo híbrido"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.6.1 Combinación de pronósticos"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.6.2 Integración mediante componentes"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.7 Distribución porcentual y coherencia de las asignaciones"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.7.1 Participaciones como datos composicionales"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.7.2 Desagregación del pronóstico total"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.7.3 Representación relativa de las participaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.8 Datos limitados e ingeniería de características"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.1 Complejidad y capacidad de generalización"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.2 Penalizaciones y selección de variables"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.3 Predictores temporales y calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.4 Disponibilidad de variables exógenas"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.9 Evaluación temporal y métricas de precisión"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.1 Origen del pronóstico y ventana de entrenamiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.2 Error monetario del importe total"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.3 Escalamiento y límites de errores porcentuales"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.4 Error de participaciones y evaluación conjunta"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.10 Inteligencia de negocios y comunicación del pronóstico"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.10.1 Presentación del presupuesto y su incertidumbre"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.10.2 Adopción y límites operativos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.11 Síntesis de fundamentos y relación con la hipótesis"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO III METODOLOGÍA"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.1 Tipo de investigación según el objetivo de esta"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.2 Según el alcance evaluativo del estudio"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.3 Según el tipo de datos empleados"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.4 Según el grado de manipulación de las variables"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.5 Diseño evaluativo y comparación contra la línea base"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.6 Según el tipo de inferencia"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.7 Temporalidad de la investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.8 Procedimiento metodológico"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.1 Recolección y estructuración de los conjuntos de datos (Datasets)"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.2 Auditoría de cobertura y construcción del panel semanal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.3 Predictores de compras, ventas y calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.4 Modelos de referencia y arquitectura híbrida"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.5 Validación temporal rolling window"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.6 Métricas y criterios de comparación"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.7 Comunicación del pronóstico para la planeación presupuestaria"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.8 Consideraciones éticas y tratamiento de datos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.9 Implementación y desarrollo del procedimiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.1 Contexto de los registros y objetivo operativo"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.2 Preparación de fuentes y cobertura semanal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.3 Construcción del panel y caracterización exploratoria"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.4 Integración de ventas y variables calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.5 Definición de categorías y distribución presupuestaria"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.6 Modelos y validación temporal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.7 Asignación del presupuesto y controles de calidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.8 Alcance y trazabilidad de la corrida"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO IV RESULTADOS Y DISCUSIÓN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.1 Calidad, cobertura e integración de datos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.2 Análisis de sensibilidad de la imputación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.3 Diseño efectivo de evaluación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.4 Rendimiento comparativo del importe semanal"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.5 Distribución porcentual por insumo"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.6 Evaluación exploratoria de la hipótesis"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.7 Alcance de los resultados"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.8 Discusión de resultados"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.1 Interpretación de los hallazgos y contraste con antecedentes"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.2 Demanda intermitente y selección de métricas"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.3 Implicaciones operativas y financieras"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.4 Validez y limitaciones"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO V CONCLUSIONES Y RECOMENDACIONES"
+      },
+      {
+        "style": "Heading 2",
+        "text": "5.1 Conclusiones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "5.2 Recomendaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "5.3 Trabajo futuro"
+      },
+      {
+        "style": "Heading 1",
+        "text": "GLOSARIO"
+      },
+      {
+        "style": "Heading 1",
+        "text": "REFERENCIAS"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo A Diccionario de datos"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo B Paquete de reproducibilidad"
+      }
+    ],
+    "insertions": 0,
+    "deletions": 0,
+    "comments_anchors": 0
+  },
+  {
+    "path": "C:\\Python\\tesis\\documentacion\\OBSERVACIONES 1 y 2.docx",
+    "size": 15214,
+    "paragraphs_python_docx": 29,
+    "paragraphs_xml_nonempty": 27,
+    "tables": 0,
+    "inline_shapes": 0,
+    "sections": 1,
+    "headings": [],
+    "insertions": 0,
+    "deletions": 0,
+    "comments_anchors": 0
+  },
+  {
+    "path": "C:\\Python\\tesis\\documentacion\\Analisis__tesis_RODRIGO.docx",
+    "size": 45641,
+    "paragraphs_python_docx": 36,
+    "paragraphs_xml_nonempty": 99,
+    "tables": 4,
+    "inline_shapes": 0,
+    "sections": 1,
+    "headings": [
+      {
+        "style": "Heading 1",
+        "text": "1. Objetivo general: cumplimiento y alcance"
+      },
+      {
+        "style": "Heading 1",
+        "text": "2. Objetivos específicos: acciones y respaldo documental"
+      },
+      {
+        "style": "Heading 1",
+        "text": "2. Objetivos específicos: acciones y respaldo documental"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Precisiones que delimitan el cumplimiento"
+      },
+      {
+        "style": "Heading 1",
+        "text": "3. Hipótesis: qué exige y qué muestran los resultados"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Lectura de los dos componentes"
+      },
+      {
+        "style": "Heading 1",
+        "text": "4. Dictamen sobre H1 y observaciones decisivas"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Corrección necesaria en la interpretación del signo"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Qué limita una conclusión más fuerte"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Balance final"
+      }
+    ],
+    "insertions": 0,
+    "deletions": 0,
+    "comments_anchors": 0
+  },
+  {
+    "path": "C:\\Python\\tesis\\documentacion\\TESIS_OCT2026_Rev64_(ZUJ)_Correcciones_Director.docx",
+    "size": 8340435,
+    "paragraphs_python_docx": 750,
+    "paragraphs_xml_nonempty": 1492,
+    "tables": 56,
+    "inline_shapes": 22,
+    "sections": 5,
+    "headings": [
+      {
+        "style": "Heading 2",
+        "text": "RESUMEN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "ABSTRACT"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO I INTRODUCCIÓN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.1 Antecedentes"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.2 Planteamiento del problema"
+      },
+      {
+        "style": "Heading 3",
+        "text": "1.2.1 Contexto del caso de estudio"
+      },
+      {
+        "style": "Heading 3",
+        "text": "1.2.2 Pregunta de investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.3 Hipótesis y criterio de evaluación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.4 Objetivos"
+      },
+      {
+        "style": "Heading 3",
+        "text": "1.4.1 Objetivo general"
+      },
+      {
+        "style": "Heading 3",
+        "text": "1.4.2 Objetivos específicos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.5 Justificación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.6 Alcance"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.7 Limitaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "1.8 Definiciones operativas"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO II MARCO TEÓRICO"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.1 Revisión de evidencia empírica y estado del arte"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.1 Aplicaciones de la inteligencia artificial en la cadena de suministro"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.2 Modelos de aprendizaje automático para el pronóstico de demanda"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.3 Demanda intermitente, small data y comparación de modelos"
+      },
+      {
+        "style": "Heading 4",
+        "text": "2.1.3.1 Análisis de series temporales para demanda errática y small data"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.4 La repostería creativa como sector económico especializado"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.5 Innovación y transformación digital en la industria pastelera"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.6 Adopción de inteligencia artificial en microempresas"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.7 Investigaciones en México y América Latina"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.1.8 Síntesis del estado del arte y vacío de investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.2 Microempresa y planeación del presupuesto de abastecimiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.2.1 Recursos de información y conocimiento del negocio"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.2.2 Pronóstico como información para decidir"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.3 Compras monetarias y contexto de la repostería"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.3.1 Delimitación de la variable objetivo"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.3.2 Agregación del importe y niveles de análisis"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.4 Series temporales semanales y calidad de los registros"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.1 Frecuencia y continuidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.2 Nivel tendencia y estacionalidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.3 Estacionariedad y dependencia temporal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.4.4 Intermitencia y valores extremos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.5 Métodos estadísticos y de aprendizaje automático"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.1 Referencias simples"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.2 Suavizamiento exponencial y ARIMA"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.3 Bosques aleatorios y potenciación de gradiente"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.5.4 Redes neuronales y alcance de los comparadores"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.6 Fundamentos de integración del modelo híbrido"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.6.1 Combinación de pronósticos"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.6.2 Integración mediante componentes"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.7 Distribución porcentual y coherencia de las asignaciones"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.7.1 Participaciones como datos composicionales"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.7.2 Desagregación del pronóstico total"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.7.3 Representación relativa de las participaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.8 Datos limitados e ingeniería de características"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.1 Complejidad y capacidad de generalización"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.2 Penalizaciones y selección de variables"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.3 Predictores temporales y calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.8.4 Disponibilidad de variables exógenas"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.9 Evaluación temporal y métricas de precisión"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.1 Origen del pronóstico y ventana de entrenamiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.2 Error monetario del importe total"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.3 Escalamiento y límites de errores porcentuales"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.9.4 Error de participaciones y evaluación conjunta"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.10 Inteligencia de negocios y comunicación del pronóstico"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.10.1 Presentación del presupuesto y su incertidumbre"
+      },
+      {
+        "style": "Heading 3",
+        "text": "2.10.2 Adopción y límites operativos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "2.11 Síntesis de fundamentos y relación con la hipótesis"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO III METODOLOGÍA"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.1 Tipo y propósito de la investigación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.2 Alcance evaluativo del estudio"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.3 Datos y unidad de análisis"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.4 Diseño no experimental"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.5 Diseño evaluativo y líneas base"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.6 Tipo de inferencia"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.7 Delimitación temporal"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.8 Procedimiento metodológico"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.1 Recolección y estructuración de los conjuntos de datos (Datasets)"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.2 Auditoría de cobertura y construcción del panel semanal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.3 Predictores de compras, ventas y calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.4 Modelos de referencia y arquitectura híbrida"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.5 Validación temporal rolling window"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.6 Métricas y criterios de comparación"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.7 Comunicación del pronóstico para la planeación presupuestaria"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.8.8 Consideraciones éticas y tratamiento de datos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "3.9 Implementación y desarrollo del procedimiento"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.1 Contexto de los registros y objetivo operativo"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.2 Preparación de fuentes y cobertura semanal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.3 Construcción del panel y caracterización exploratoria"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.4 Integración de ventas y variables calendario"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.5 Definición de categorías y distribución presupuestaria"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.6 Modelos y validación temporal"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.7 Asignación del presupuesto y controles de calidad"
+      },
+      {
+        "style": "Heading 3",
+        "text": "3.9.8 Alcance y trazabilidad de la corrida"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO IV RESULTADOS Y DISCUSIÓN"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.1 Calidad, cobertura e integración de datos"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.2 Análisis de sensibilidad de la imputación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.3 Diseño efectivo de evaluación"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.4 Rendimiento comparativo del importe semanal"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.5 Distribución porcentual por insumo"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.6 Evaluación exploratoria de la hipótesis"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.7 Alcance de los resultados"
+      },
+      {
+        "style": "Heading 2",
+        "text": "4.8 Discusión de resultados"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.1 Interpretación de los hallazgos y contraste con antecedentes"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.2 Demanda intermitente y selección de métricas"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.3 Implicaciones operativas y financieras"
+      },
+      {
+        "style": "Heading 3",
+        "text": "4.8.4 Validez y limitaciones"
+      },
+      {
+        "style": "Heading 1",
+        "text": "CAPÍTULO V CONCLUSIONES Y RECOMENDACIONES"
+      },
+      {
+        "style": "Heading 2",
+        "text": "5.1 Conclusiones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "5.2 Recomendaciones"
+      },
+      {
+        "style": "Heading 2",
+        "text": "5.3 Trabajo futuro"
+      },
+      {
+        "style": "Heading 1",
+        "text": "GLOSARIO"
+      },
+      {
+        "style": "Heading 1",
+        "text": "REFERENCIAS"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo A Diccionario de datos"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo B Paquete de reproducibilidad"
+      },
+      {
+        "style": "Heading 1",
+        "text": "Anexo C Diagnósticos complementarios y sensibilidad"
+      }
+    ],
+    "insertions": 0,
+    "deletions": 0,
+    "comments_anchors": 0
+  }
+]

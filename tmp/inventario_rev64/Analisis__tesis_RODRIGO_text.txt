@@ -1,0 +1,99 @@
+OBJETIVOS, ACTIVIDADES E HIPÓTESIS
+Análisis de la tesis de Rodrigo Adrián Martínez Flores · Caso Cup&Cake
+Fuente y paginación. Se examina exclusivamente la tesis adjunta, versión Rev61. Todas las referencias corresponden al número impreso al pie de sus páginas, no al índice: por ejemplo, la p. 29 es la hoja 30 del archivo, contando la portada. La revisión valora la evidencia presentada; no reproduce las ejecuciones computacionales.
+1. Objetivo general: cumplimiento y alcance
+El objetivo consiste en determinar la precisión del modelo híbrido frente a referencias, mediante validación temporal, para estimar el importe semanal de compras y su distribución porcentual en Cup&Cake. Delimita los datos al 5 de diciembre de 2016–11 de mayo de 2026 y la evaluación final al 24 de marzo–28 de julio de 2025 (p. 29; síntesis del enunciado).
+Se atendió en su alcance evaluativo exploratorio. Se construyó el procedimiento, se seleccionaron configuraciones por horizonte y se midieron errores monetarios y de participación. Las acciones constan en las pp. 68–71; los resultados comparativos, en las pp. 75–80; y el balance, en las pp. 82 y 85. Determinar la precisión no exige demostrar superioridad: encontrar límites o resultados desfavorables también responde a este objetivo.
+2. Objetivos específicos: acciones y respaldo documental
+La Tabla 1 conserva los cuatro enunciados de la p. 29 y los vincula con actividades y resultados, no solo con lo anunciado en la metodología.
+Tabla 1. Correspondencia entre objetivos, actividades y evidencia (primera parte).
+Objetivo definido
+Actividades y productos documentados
+Páginas y valoración
+Objetivo 1. Analizar los registros históricos de ventas y compras mediante depuración, agregación semanal y caracterización temporal del importe total y de la participación de los principales insumos.
+Se homologaron fechas, importes y categorías; se integraron compras y ventas por semana; y se distinguieron ceros de ausencia de captura. Se caracterizaron importes y participaciones mediante gráficas. La auditoría del tramo autorizado identificó 128 semanas observadas de compras y 29 estimadas, conservadas solo en archivos derivados. La prueba de sensibilidad reportó que estas últimas no intervinieron en el modelado.
+Evidencia: pp. 62–68, Figuras 1–7; pp. 74–75, Tabla 5.
+Valoración: atendido en el nivel descriptivo y de preparación. Persiste la falta de certificación de cobertura completa (p. 83).
+Objetivo 2. Desarrollar la estructura del modelo híbrido mediante la integración de componentes estadísticos y de aprendizaje automático, con variables históricas y exógenas disponibles al momento del pronóstico.
+Se implementaron componentes estadísticos y de aprendizaje automático, combinaciones ponderadas y correcciones residuales. Se incorporaron ventas históricas e indicadores de semana festiva y de pago. Cinco orígenes de validación interna permitieron seleccionar una combinación por horizonte; las configuraciones finales integraron SES o ARIMA con Random Forest, HistGradientBoosting o MLP.
+Evidencia: p. 65; pp. 68–71, ecuaciones 37–39, Figuras 8–9 y Tabla 3.
+Valoración: desarrollo documentado. No se ejecutaron RNN ni LSTM (p. 68).
+2. Objetivos específicos: acciones y respaldo documental
+Tabla 1. Correspondencia entre objetivos, actividades y evidencia (continuación).
+Objetivo definido
+Actividades y productos documentados
+Páginas y valoración
+Objetivo 3. Determinar la distribución porcentual del importe semanal pronosticado entre los principales insumos, a partir de su composición histórica y variación temporal.
+Se calcularon participaciones sobre el total elegible; se conservaron las categorías restantes en RESTO_ELEGIBLE y se estimó una distribución histórica ponderada exponencialmente. Las participaciones se multiplicaron por el total pronosticado y se conciliaron los importes. La emisión histórica de cuatro semanas distribuyó $1,855.61 MXN; por ejemplo, HARINA recibió 25.24 % ($468.33).
+Evidencia: pp. 66–67, ecuaciones 34–36; pp. 71–73, Tabla 4 y Figuras 10–11; p. 78.
+Valoración: distribución implementada. Sumar 100 % acredita coherencia aritmética, no mayor precisión.
+Objetivo 4. Contrastar la precisión del modelo híbrido y del procedimiento de distribución porcentual frente a modelos de referencia, mediante evaluación temporal y métricas de error monetario y de participación.
+Se aplicó una ventana deslizante de 52 semanas, avance de tres semanas y horizontes de una a cuatro semanas. Se obtuvieron seis orígenes monetarios por horizonte y entre tres y cinco observaciones composicionales válidas. Se compararon RMSE, MAE, MASE y errores de participación. También se repitió la corrida sin parámetros de imputación y se examinó H1.
+Evidencia: pp. 74–80, Tabla 5 y Figuras 12–15; pp. 83–85.
+Valoración: contraste efectuado con alcance exploratorio; no se acreditó superioridad conjunta ni estable.
+Precisiones que delimitan el cumplimiento
+El total modelado no equivale a todas las compras del negocio. Se excluyeron COMBUSTIBLE, MUEBLES, HERRAMIENTA, IMPUTADO, IMPUTADOS y OTROS; por ello, la evidencia corresponde al importe registrado de categorías elegibles, no al gasto íntegro certificado (pp. 64 y 74). Esta delimitación debería quedar igualmente visible al formular el objetivo general y al interpretar sus resultados.
+La selección de insumos necesita una explicación de enlace. La Figura 7 presenta 15 categorías principales (p. 68), mientras que los resultados declaran 11 insumos y RESTO_ELEGIBLE (p. 74). Conviene aclarar cómo se pasó del conjunto mostrado en desarrollo al conjunto final. La diferencia no prueba un error del algoritmo, pero dificulta reconstruir el cumplimiento del tercer objetivo.
+Incorporar predictores no demuestra cuánto aportan. Las ventas y el calendario se integraron, pero no se aisló su contribución mediante una comparación controlada con y sin ellos (pp. 82 y 85). Esto no invalida el desarrollo requerido por el objetivo 2; sí impide atribuirles una reducción específica del error.
+Lo pendiente no debe contarse como realizado. Actualizar los registros, estimar intervalos predictivos futuros y validar el uso del tablero se plantean como trabajo posterior (pp. 86–87). El pronóstico exhibido parte del 4 de agosto de 2025 y no constituye un presupuesto vigente (pp. 73 y 78).
+3. Hipótesis: qué exige y qué muestran los resultados
+La hipótesis de investigación se formula en la p. 32:
+«H1. El modelo híbrido que integre métodos estadísticos y aprendizaje automático, junto con el procedimiento de distribución porcentual entre los principales insumos, presentará menores errores de pronóstico fuera de muestra que los respectivos modelos de referencia para estimar el importe total semanal de compras y su composición porcentual en Cup&Cake, utilizando información disponible al momento del pronóstico y los mismos periodos y horizontes de evaluación».
+H1 exige una mejora en ambos componentes, no únicamente en el importe. El propio estudio fija esta condición en las pp. 49 y 54, y establece una semana como horizonte principal (p. 53). La Tabla 2 permite ver por qué los resultados favorables aislados no bastan para confirmar esa afirmación conjunta.
+Tabla 2. Resultados fuera de muestra reportados en la tesis.
+Horizonte
+RMSE del híbrido (MXN)
+Método con menor RMSE y valor (MXN)
+MAE histórico (pp)
+MAE ponderado (pp)
+1 semana
+521.60
+Random Forest
+446.21
+10.34
+11.73
+2 semanas
+695.41
+HistGradientBoosting
+596.17
+7.14
+6.93
+3 semanas
+801.62
+Híbrido
+801.62
+10.77
+10.37
+4 semanas
+700.88
+RF residual + ARIMA estacional
+578.95
+11.80
+12.23
+Fuente: pp. 76–78, cuadro comparativo monetario, cuadro de composición y Figuras 12–13. RMSE: raíz del error cuadrático medio; MAE: error absoluto medio; pp: puntos porcentuales. Los dos últimos indicadores corresponden a las participaciones; un valor menor es mejor.
+Lectura de los dos componentes
+Importe monetario. El híbrido consiguió el menor RMSE entre los comparadores principales solo a tres semanas; no lideró a una, dos ni cuatro semanas. Incluso a tres semanas, la red neuronal residual tuvo menor MAE: 421.00 frente a 458.80 MXN, aunque su RMSE fue mayor (p. 76). La ventaja observada depende, por tanto, del horizonte y de la métrica.
+Distribución porcentual. La referencia histórica obtuvo menor error a una y cuatro semanas; la ponderación temporal, a dos y tres semanas (pp. 77–78). En el horizonte principal, 11.73 puntos porcentuales del procedimiento ponderado superan los 10.34 de la referencia: la distribución propuesta fue menos precisa en esa comparación.
+No son la misma pregunta el liderazgo y el contraste principal. Para el importe, la referencia primaria fue el último valor observado (p. 52). Que Random Forest tenga menor RMSE a una semana no sustituye ese contraste. La comparación pareada con la referencia predefinida y sus limitaciones se presentan a continuación. Tampoco procede elegir retrospectivamente las tres semanas solo porque allí los dos componentes resultan favorables: la tesis excluye esa práctica (pp. 47–48).
+4. Dictamen sobre H1 y observaciones decisivas
+La hipótesis no queda confirmada. No hay páginas que acrediten el cumplimiento conjunto de H1. Las pp. 79–80 presentan el contraste no confirmatorio; las pp. 83–85 explican sus límites y mantienen esa conclusión. No se trata de afirmar que la hipótesis sea imposible, sino de reconocer que esta evaluación no aporta el respaldo exigido.
+Tabla 3. Evidencia del contraste principal a una semana.
+Componente
+Resultado documentado
+Interpretación de la revisión
+Importe
+Seis pares. Diferencia media de errores cuadrados: último valor menos híbrido = 161,798.64 MXN².
+La diferencia positiva favorece descriptivamente al híbrido frente al último valor; no se generó intervalo inferencial (p. 79).
+Composición
+Tres pares. Diferencia media de errores de participación: histórico menos ponderado = −1.39 pp.
+El signo negativo favorece al histórico, no al ponderado. El componente composicional no respalda H1 en el horizonte principal (pp. 77 y 79).
+Inferencia conjunta
+El tamaño observado no alcanzó el mínimo inferencial configurado; no se obtuvieron los intervalos previstos.
+No hay base confirmatoria para la mejora conjunta. Tampoco se demuestra equivalencia ni un rechazo definitivo (pp. 79–80 y 83–85).
+Corrección necesaria en la interpretación del signo
+En la p. 79 se afirma que la diferencia negativa favorece al promedio temporal ponderado. Esa lectura contradice la resta definida y el cuadro de la p. 77: 10.34 menos 11.73 es −1.39. Como el error histórico es menor, el resultado favorece a la referencia histórica. Debe corregirse esa explicación; no los valores reportados. La corrección mantiene el dictamen no confirmatorio y evita atribuir al procedimiento propuesto una ventaja que no obtuvo.
+Qué limita una conclusión más fuerte
+La evaluación dispone de seis orígenes monetarios por horizonte y solo tres a cinco observaciones composicionales; además, la cobertura no certifica la totalidad de las compras (pp. 75 y 83). Las siete verificaciones de software aprobadas acreditan consistencia computacional, no precisión ni confirmación de H1 (pp. 72–74). El propio texto también reconoce la ausencia de intervalos predictivos futuros (p. 80).
+Para hacer verificable el contraste conviene explicitar, junto al resultado, el mínimo inferencial configurado, el nivel de confianza, la regla de decisión y el tratamiento de comparaciones múltiples anunciado en la p. 54. Las pp. 79–80 y 83 no bastan para reconstruir todos esos parámetros, y el Anexo B, pp. 99–100, remite a archivos no incluidos en la tesis. Ampliar y certificar los registros permitiría una nueva evaluación independiente, sin garantizar de antemano un resultado favorable.
+Balance final
+Los objetivos tienen respaldo documental dentro de un estudio exploratorio; H1 no tiene respaldo confirmatorio. Se realizó el trabajo de preparación, desarrollo, distribución y comparación, como sintetizan las pp. 82 y 85. La aportación defendible es haber construido y evaluado el procedimiento y haber identificado sus límites. No sería correcto convertir ese cumplimiento metodológico en una afirmación de superioridad predictiva o de beneficio operativo demostrado.

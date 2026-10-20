@@ -1,0 +1,27 @@
+OBSERVACIONES 1:
+Mis observaciones:
+Considero que debe de tener más referentes de acuerdo a su tema de investigación, tiene apenas 20.
+No explica con exactitud cual es el modelo que utilizó y porque?
+No explica una comparación y decisión del porqué eligió ese modelo de entrenamiento
+No explica cuáles fueron los datos de entrenamiento
+Se realizaron otras pruebas con otro modelo para corroborar otros datos diferentes a los obtenidos?
+Según sus resultados la hipótesis no es la H1, realizó otra corrida con otro modelo?
+Saludos.
+OBSERVACIONES 2
+Esperando se encuentre bien le envío un cordial saludo, así mismo , a través de este medio le hago llegar las observaciones de la tesis del alumno Rodrigo Adrián M. Flores, las observaciones son las siguientes:
+-La tesis presenta una estructura capitular lógica, pero no sigue exactamente la organización institucional: separa Desarrollo, Resultados y Discusión, mientras la guía propone cinco capítulos.
+-Agregar la palabra capítulo al nombre de cada capítulo.
+-Terminar la sección de agradecimientos.
+-La numeración de capítulos es romanda.
+-Los temas y subtemas de los capítulos deberán ir de la siguiente manera: Si me encuentro en el capítulo I, los temas iniciarán 1.1, 1.2, 1.3, 1.4, etc.
+-El título del índice de figuras deberá llamarse: "índice de Figuras".
+-Todas las secciones antes del iniciar el capítulo I, excepto la portada, deberán ir numeradas con romanos minúsculas.
+-A partir del capítulo I, la numeración es arábiga.
+-En el capítulo de metodología, agregar un diagrama metodológico donde se visualice el proceso, etapas o fases que te llevaron al desarrollo de la investigación.
+-Las figuras deberán llevar pie de figura y centrado, no encabezados como las tablas.
+-Los encabezados de las tablas deberán ir centrados.
+-En toda la tesis hay secciones dentro de los capítulos que no tienen numeración de temas o subtemas.
+-La pregunta de investigación es congruente con el objetivo general, aunque resulta demasiado extensa; se recomienda simplificarla sin perder las variables, el caso y el criterio de evaluación.
+-Se incorporan métodos estadísticos y de aprendizaje automático; falta destacar con mayor claridad cuál es la aportación técnica original, más allá de integrar componentes existentes.
+-La metodología describe los componentes híbridos y sus ecuaciones; se recomienda precisar las reglas de selección de hiperparámetros y los criterios para elegir cada configuración por método.
+-En general, hay que realizar los ajustes en cuanto a la estructura con base en los lineamientos para el desarrollo de la tesis de maestría en la UPMH.

@@ -1,0 +1,378 @@
+{
+  "rev62": {
+    "file": "C:\\Python\\tesis\\documentacion\\TESIS_SEP2026_Rev62_(ZUJ)_Final.docx",
+    "paragraphs": 732,
+    "tables": 53,
+    "inline_shapes": 22,
+    "heading1": [
+      {
+        "index": 176,
+        "style": "Heading 1",
+        "text": "INTRODUCCIÓN",
+        "numbering_property": true
+      },
+      {
+        "index": 274,
+        "style": "Heading 1",
+        "text": "MARCO TEÓRICO",
+        "numbering_property": true
+      },
+      {
+        "index": 391,
+        "style": "Heading 1",
+        "text": "METODOLOGÍA",
+        "numbering_property": true
+      },
+      {
+        "index": 467,
+        "style": "Heading 1",
+        "text": "DESARROLLO",
+        "numbering_property": true
+      },
+      {
+        "index": 572,
+        "style": "Heading 1",
+        "text": "RESULTADOS",
+        "numbering_property": true
+      },
+      {
+        "index": 617,
+        "style": "Heading 1",
+        "text": "DISCUSIÓN",
+        "numbering_property": true
+      },
+      {
+        "index": 636,
+        "style": "Heading 1",
+        "text": "CONCLUSIONES",
+        "numbering_property": true
+      },
+      {
+        "index": 647,
+        "style": "Heading 1",
+        "text": "GLOSARIO",
+        "numbering_property": false
+      },
+      {
+        "index": 653,
+        "style": "Heading 1",
+        "text": "REFERENCIAS",
+        "numbering_property": false
+      },
+      {
+        "index": 702,
+        "style": "Heading 1",
+        "text": "Anexo A Diccionario de datos",
+        "numbering_property": false
+      },
+      {
+        "index": 713,
+        "style": "Heading 1",
+        "text": "Anexo B Paquete de reproducibilidad",
+        "numbering_property": false
+      },
+      {
+        "index": 719,
+        "style": "Heading 1",
+        "text": "Anexo C Diagnósticos complementarios y sensibilidad",
+        "numbering_property": false
+      }
+    ],
+    "numbered_headings": 73,
+    "headings_total": 105,
+    "acknowledgements_following": [
+      "A la Universidad Politécnica Metropolitana de Hidalgo",
+      "ÍNDICE",
+      "RESUMEN 11",
+      "ABSTRACT 12",
+      "1. INTRODUCCIÓN 13",
+      "1.1 Estado del Arte 15",
+      "1.1.1 Aplicaciones de la inteligencia artificial en la cadena de suministro 15"
+    ],
+    "reference_paragraph_count": 48,
+    "reference_preview": [
+      "Abrar, M., Shahriar, M. A., & Amin, A. (2024). MCDFN: Supply chain demand forecasting via an explainable multi-channel data fusion network model. arXiv preprint arXiv:2405.15598. https://doi.org/10.48550/arXiv.2405.15598",
+      "Aitchison, J. (1982). The statistical analysis of compositional data. Journal of the Royal Statistical Society: Series B (Methodological), 44(2), 139–160. https://doi.org/10.1111/j.2517-6161.1982.tb01195.x",
+      "Bates, J. M., & Granger, C. W. J. (1969). The combination of forecasts. Operational Research Quarterly, 20(4), 451–468. https://doi.org/10.2307/3008764"
+    ],
+    "figure_caption_count": 42,
+    "figure_captions_centered": 21,
+    "table_caption_count": 12,
+    "table_captions_centered": 1,
+    "caption_examples": [
+      {
+        "index": 137,
+        "text": "Tabla 1. Investigaciones relevantes sobre inteligencia artificial, analítica de datos y adopción tecnológica en la gestión empresarial 22",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 138,
+        "text": "Tabla 2. Etapas previas de trabajo y su uso en la corrida vigente. 70",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 139,
+        "text": "Tabla 3. Configuración seleccionada y error del híbrido en la evaluación final. 70",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 140,
+        "text": "Tabla 4. Pronóstico agregado de cuatro semanas por categoría elegible. 72",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 141,
+        "text": "Tabla 5. Sensibilidad de las métricas monetarias a la configuración de imputación. 75",
+        "alignment": "None",
+        "centered": false
+      }
+    ]
+  },
+  "rev63": {
+    "file": "C:\\Python\\tesis\\documentacion\\TESIS_OCT2026_Rev63_(ZUJ)_Revision_Comite.docx",
+    "paragraphs": 687,
+    "tables": 44,
+    "inline_shapes": 16,
+    "heading1": [
+      {
+        "index": 174,
+        "style": "Heading 1",
+        "text": "",
+        "numbering_property": false
+      },
+      {
+        "index": 175,
+        "style": "Heading 1",
+        "text": "CAPÍTULO I INTRODUCCIÓN",
+        "numbering_property": false
+      },
+      {
+        "index": 235,
+        "style": "Heading 1",
+        "text": "CAPÍTULO II MARCO TEÓRICO",
+        "numbering_property": false
+      },
+      {
+        "index": 396,
+        "style": "Heading 1",
+        "text": "CAPÍTULO III METODOLOGÍA",
+        "numbering_property": false
+      },
+      {
+        "index": 539,
+        "style": "Heading 1",
+        "text": "CAPÍTULO IV RESULTADOS Y DISCUSIÓN",
+        "numbering_property": false
+      },
+      {
+        "index": 592,
+        "style": "Heading 1",
+        "text": "CAPÍTULO V CONCLUSIONES Y RECOMENDACIONES",
+        "numbering_property": false
+      },
+      {
+        "index": 606,
+        "style": "Heading 1",
+        "text": "GLOSARIO",
+        "numbering_property": false
+      },
+      {
+        "index": 620,
+        "style": "Heading 1",
+        "text": "REFERENCIAS",
+        "numbering_property": false
+      },
+      {
+        "index": 671,
+        "style": "Heading 1",
+        "text": "Anexo A Diccionario de datos",
+        "numbering_property": false
+      },
+      {
+        "index": 682,
+        "style": "Heading 1",
+        "text": "Anexo B Paquete de reproducibilidad",
+        "numbering_property": false
+      }
+    ],
+    "numbered_headings": 0,
+    "headings_total": 109,
+    "acknowledgements_following": [
+      "A la Universidad Politécnica Metropolitana de Hidalgo",
+      "ÍNDICE",
+      "RESUMEN xv",
+      "ABSTRACT xv",
+      "CAPÍTULO I INTRODUCCIÓN 1",
+      "1.1 Antecedentes 1",
+      "1.2 Planteamiento del problema 3"
+    ],
+    "reference_paragraph_count": 50,
+    "reference_preview": [
+      "Abrar, M., Shahriar, M. A., & Amin, A. (2024). MCDFN: Supply chain demand forecasting via an explainable multi-channel data fusion network model. arXiv preprint arXiv:2405.15598. https://doi.org/10.48550/arXiv.2405.15598",
+      "Aitchison, J. (1982). The statistical analysis of compositional data. Journal of the Royal Statistical Society: Series B (Methodological), 44(2), 139–160. https://doi.org/10.1111/j.2517-6161.1982.tb01195.x",
+      "Bates, J. M., & Granger, C. W. J. (1969). The combination of forecasts. Operational Research Quarterly, 20(4), 451–468. https://doi.org/10.2307/3008764"
+    ],
+    "figure_caption_count": 30,
+    "figure_captions_centered": 0,
+    "table_caption_count": 14,
+    "table_captions_centered": 0,
+    "caption_examples": [
+      {
+        "index": 141,
+        "text": "Tabla 1. Investigaciones relevantes sobre inteligencia artificial, analítica de datos y adopción tecnológica en la gestión empresarial 17",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 142,
+        "text": "Tabla 2. Orígenes finales, cobertura observada y escala MASE de la corrida canónica. 48",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 143,
+        "text": "Tabla 3. Familias de métodos, función y estado en la corrida canónica. 58",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 144,
+        "text": "Tabla 4. Etapas previas de trabajo y su uso en la corrida vigente. 61",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 145,
+        "text": "Tabla 5. Configuración seleccionada y error del híbrido en la evaluación final. 61",
+        "alignment": "None",
+        "centered": false
+      }
+    ]
+  },
+  "rev64": {
+    "file": "C:\\Python\\tesis\\documentacion\\TESIS_OCT2026_Rev64_(ZUJ)_Correcciones_Director.docx",
+    "paragraphs": 750,
+    "tables": 56,
+    "inline_shapes": 22,
+    "heading1": [
+      {
+        "index": 176,
+        "style": "Heading 1",
+        "text": "CAPÍTULO I INTRODUCCIÓN",
+        "numbering_property": false
+      },
+      {
+        "index": 235,
+        "style": "Heading 1",
+        "text": "CAPÍTULO II MARCO TEÓRICO",
+        "numbering_property": false
+      },
+      {
+        "index": 398,
+        "style": "Heading 1",
+        "text": "CAPÍTULO III METODOLOGÍA",
+        "numbering_property": false
+      },
+      {
+        "index": 589,
+        "style": "Heading 1",
+        "text": "CAPÍTULO IV RESULTADOS Y DISCUSIÓN",
+        "numbering_property": false
+      },
+      {
+        "index": 653,
+        "style": "Heading 1",
+        "text": "CAPÍTULO V CONCLUSIONES Y RECOMENDACIONES",
+        "numbering_property": false
+      },
+      {
+        "index": 665,
+        "style": "Heading 1",
+        "text": "GLOSARIO",
+        "numbering_property": false
+      },
+      {
+        "index": 671,
+        "style": "Heading 1",
+        "text": "REFERENCIAS",
+        "numbering_property": false
+      },
+      {
+        "index": 720,
+        "style": "Heading 1",
+        "text": "Anexo A Diccionario de datos",
+        "numbering_property": false
+      },
+      {
+        "index": 731,
+        "style": "Heading 1",
+        "text": "Anexo B Paquete de reproducibilidad",
+        "numbering_property": false
+      },
+      {
+        "index": 737,
+        "style": "Heading 1",
+        "text": "Anexo C Diagnósticos complementarios y sensibilidad",
+        "numbering_property": false
+      }
+    ],
+    "numbered_headings": 0,
+    "headings_total": 112,
+    "acknowledgements_following": [
+      "A la Universidad Politécnica Metropolitana de Hidalgo, por brindar el espacio académico para desarrollar esta investigación. A la dirección y al comité de tesis, por sus observaciones metodológicas y editoriales. A Cup&Cake, por autorizar el uso académico de sus registros y facilitar la comprensión del contexto operativo. Finalmente, a mi familia y a las personas que acompañaron este proceso, por su apoyo durante la elaboración del trabajo.",
+      "A la Universidad Politécnica Metropolitana de Hidalgo",
+      "ÍNDICE",
+      "RESUMEN 11",
+      "ABSTRACT 12",
+      "1. INTRODUCCIÓN 13",
+      "1.1 Estado del Arte 15",
+      "1.1.1 Aplicaciones de la inteligencia artificial en la cadena de suministro 15"
+    ],
+    "reference_paragraph_count": 48,
+    "reference_preview": [
+      "Abrar, M., Shahriar, M. A., & Amin, A. (2024). MCDFN: Supply chain demand forecasting via an explainable multi-channel data fusion network model. arXiv preprint arXiv:2405.15598. https://doi.org/10.48550/arXiv.2405.15598",
+      "Aitchison, J. (1982). The statistical analysis of compositional data. Journal of the Royal Statistical Society: Series B (Methodological), 44(2), 139–160. https://doi.org/10.1111/j.2517-6161.1982.tb01195.x",
+      "Bates, J. M., & Granger, C. W. J. (1969). The combination of forecasts. Operational Research Quarterly, 20(4), 451–468. https://doi.org/10.2307/3008764"
+    ],
+    "figure_caption_count": 42,
+    "figure_captions_centered": 21,
+    "table_caption_count": 15,
+    "table_captions_centered": 9,
+    "caption_examples": [
+      {
+        "index": 137,
+        "text": "Tabla 1. Investigaciones relevantes sobre inteligencia artificial, analítica de datos y adopción tecnológica en la gestión empresarial 22",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 138,
+        "text": "Tabla 2. Etapas previas de trabajo y su uso en la corrida vigente. 70",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 139,
+        "text": "Tabla 3. Configuración seleccionada y error del híbrido en la evaluación final. 70",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 140,
+        "text": "Tabla 4. Pronóstico agregado de cuatro semanas por categoría elegible. 72",
+        "alignment": "None",
+        "centered": false
+      },
+      {
+        "index": 141,
+        "text": "Tabla 5. Sensibilidad de las métricas monetarias a la configuración de imputación. 75",
+        "alignment": "None",
+        "centered": false
+      }
+    ]
+  }
+}
