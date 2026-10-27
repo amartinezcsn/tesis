@@ -136,12 +136,42 @@ def generate_figures(output,purchases,rejected,coverage,panel=None,results=None,
             fig,axes=plt.subplots(3,1,figsize=(10,7))
             for ax,col in zip(axes,tab.columns[1:]):ax.plot(tab.fecha,tab[col]);ax.set_ylabel(col)
             save(8,fig,tab)
-        folds=results['particiones'];fig,ax=plt.subplots(figsize=(11,5))
-        subset=folds[folds.horizonte==4]
-        for i,r in enumerate(subset.itertuples()):
-            ax.plot([r.entrenamiento_inicio,r.ultima_etiqueta_entrenamiento],[i,i],color='#346d96',linewidth=3)
-            ax.scatter(r.fecha_objetivo,i,color='#b44828' if r.etapa=='evaluacion' else '#379166',s=15)
-        ax.set_ylabel('Origen (h=4)');ax.set_xlabel('Fecha; azul: entrenamiento, punto: objetivo');save(9,fig,folds)
+        # F09 demuestra explícitamente el protocolo rolling window: cada barra
+        # conserva la misma amplitud calendario y se desplaza según la
+        # configuración. Los cuatro objetivos se muestran por separado; el
+        # origen sólo identifica el límite derecho de cada ventana.
+        folds=results['particiones'].copy()
+        for col in ('origen','fecha_objetivo','entrenamiento_inicio','ultima_etiqueta_entrenamiento'):
+            folds[col]=pd.to_datetime(folds[col])
+        origins=(folds.groupby(['etapa','origen'],as_index=False)
+                 .agg(entrenamiento_inicio=('entrenamiento_inicio','first'))
+                 .sort_values('origen'))
+        fig,(ax,ax_timeline)=plt.subplots(2,1,figsize=(11,7),
+            gridspec_kw={'height_ratios':[3.2,1]},constrained_layout=True)
+        counters={'validacion_interna':0,'evaluacion':0};labels=[]
+        colors={1:'#d1495b',2:'#edae49',3:'#66a182',4:'#2e6f9e'}
+        for i,row in enumerate(origins.itertuples()):
+            counters[row.etapa]+=1
+            prefix='V' if row.etapa=='validacion_interna' else 'E'
+            labels.append(f'{prefix}{counters[row.etapa]}')
+            ax.plot([row.entrenamiento_inicio,row.origen],[i,i],color='#346d96',linewidth=5,solid_capstyle='butt')
+            ax.scatter(row.origen,i,marker='|',color='black',s=80,zorder=4)
+            targets=folds[(folds.etapa==row.etapa)&(folds.origen==row.origen)]
+            for target in targets.itertuples():
+                ax.scatter(target.fecha_objetivo,i,color=colors[int(target.horizonte)],s=22,zorder=3)
+        ax.set_yticks(range(len(labels)),labels,fontsize=7)
+        ax.set_ylabel('Ventana')
+        ax.set_xlabel('Fecha; barra azul: 52 semanas de entrenamiento; puntos: h=1, 2, 3 y 4')
+        ax.set_title('Rolling window con ventana fija y desplazamiento semanal',fontsize=11)
+        ax.grid(axis='x',alpha=.2)
+        for h,color in colors.items():ax.scatter([],[],color=color,label=f'h={h}')
+        ax.legend(ncol=4,fontsize=8,loc='upper left')
+        for stage,color,label in [('validacion_interna','#379166','Validación interna'),('evaluacion','#b44828','Evaluación final')]:
+            dates=origins.loc[origins.etapa.eq(stage),'origen']
+            ax_timeline.scatter(dates,[0]*len(dates),color=color,s=28,label=f'{label}: {len(dates)} ventanas')
+        ax_timeline.set_yticks([]);ax_timeline.set_xlabel('Orígenes semanales de las ventanas')
+        ax_timeline.grid(axis='x',alpha=.2);ax_timeline.legend(ncol=2,fontsize=8,loc='upper center')
+        save(9,fig,folds)
         score=results['seleccion_interna'];fig,axes=plt.subplots(1,2,figsize=(10,4))
         if {'horizonte','mse'}.issubset(score.columns):
             for h,g in score.groupby('horizonte'):
