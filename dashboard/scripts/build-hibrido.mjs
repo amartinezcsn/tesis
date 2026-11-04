@@ -23,6 +23,17 @@ export async function build(runDirectory, outputDirectory) {
   }
   const html = await readFile(resolve(run, 'tablero.html'), 'utf8');
   if (payload.demostracion && !html.includes('DEMOSTRACIÓN SINTÉTICA')) throw new Error('Demostración sin advertencia.');
+  const dashboardContract = [
+    'id="horizon"',
+    'id="downloadCsv"',
+    'Distribución presupuestaria',
+    'Trazabilidad de la emisión',
+    'calcula cantidades físicas',
+  ];
+  const missing = dashboardContract.filter((marker) => !html.includes(marker));
+  if (missing.length) {
+    throw new Error(`Tablero no cumple el contrato interactivo: ${missing.join(', ')}`);
+  }
   const out = resolve(outputDirectory);
   await mkdir(out, {recursive:true});
   await writeFile(resolve(out, 'index.js'), makeWorker(html), 'utf8');

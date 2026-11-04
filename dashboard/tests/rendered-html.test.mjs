@@ -9,26 +9,25 @@ async function render() {
   return worker.fetch(new Request("http://localhost/"));
 }
 
-test("server-renders the weekly purchasing dashboard", async () => {
+test("server-renders the interactive purchasing dashboard", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /Cupcake Dashboard Resultados/);
-  assert.match(html, /Compras · importe semanal/);
-  assert.match(html, /Promedio móvil de 4 semanas/);
-  assert.match(html, /H=4 · consolidación mensual/);
-  assert.match(html, /DSS semanal reproducible/);
-  assert.match(html, /H=1 · 16 orígenes de evaluación/);
-  assert.match(html, /ajuste Holm/);
-  assert.doesNotMatch(html, /H=1 · 0 orígenes de evaluación|reducción mínima de 20%/);
-  assert.doesNotMatch(html, /Ventas · importe real|Promedio móvil de 7 días/);
-  assert.doesNotMatch(html, /__DSS_DATA__/);
+  assert.match(html, /Dashboard de abastecimiento Cup&amp;Cake/);
+  assert.match(html, /id="horizon"/);
+  assert.match(html, /Distribución presupuestaria/);
+  assert.match(html, /Trazabilidad de la emisión/);
+  assert.match(html, /28 días; no equivale necesariamente a un mes calendario/);
+  assert.match(html, /calcula cantidades físicas/);
+  assert.match(html, /run_20261019T162504Z_f60a2f/);
+  assert.doesNotMatch(html, /__DASHBOARD_DATA__/);
 });
 
-test("static build is sourced from the generated DSS artifact", async () => {
+test("static build is sourced from the synchronized hybrid dashboard", async () => {
   const source = await readFile(new URL("../scripts/build-static.mjs", import.meta.url), "utf8");
-  assert.match(source, /04_dss_semanal\.json/);
-  assert.match(source, /JSON\.stringify\(dashboardData\)/);
+  assert.match(source, /public.*index\.html/s);
+  assert.match(source, /makeWorker\(html\)/);
+  assert.doesNotMatch(source, /04_dss_semanal\.json/);
 });

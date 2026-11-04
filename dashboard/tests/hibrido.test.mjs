@@ -28,7 +28,15 @@ test('Demo build requires the synthetic warning and preserves it',async()=>{
   await writeFile(join(dir,'manifiesto.json'),JSON.stringify({estado:'completado_demo'}));
   await writeFile(join(dir,'tablero.html'),'<h1>Presupuesto</h1>');
   await assert.rejects(build(dir,join(dir,'out')),/sin advertencia/);
-  await writeFile(join(dir,'tablero.html'),'<h1>DEMOSTRACIÓN SINTÉTICA</h1>');
+  await writeFile(join(dir,'tablero.html'),'<h1>DEMOSTRACIÓN SINTÉTICA</h1><select id="horizon"></select><button id="downloadCsv"></button><h2>Distribución presupuestaria</h2><h2>Trazabilidad de la emisión</h2><p>no calcula cantidades físicas</p>');
   const result=await build(dir,join(dir,'out'));
   assert.ok((await readFile(result,'utf8')).includes('content-security-policy'));
+});
+
+test('Build rejects a stale dashboard without interaction and traceability',async()=>{
+  const dir=await mkdtemp(join(tmpdir(),'tesis-hibrido-'));
+  await writeFile(join(dir,'dss_hibrido.json'),JSON.stringify({schema_version:1,demostracion:false,run_id:'stale-test'}));
+  await writeFile(join(dir,'manifiesto.json'),JSON.stringify({estado:'completado'}));
+  await writeFile(join(dir,'tablero.html'),'<h1>Presupuesto semanal</h1>');
+  await assert.rejects(build(dir,join(dir,'out')),/contrato interactivo/);
 });

@@ -108,7 +108,9 @@ npm run build:hibrido -- ..\output\<run_id>
 node --test tests/hibrido.test.mjs
 ```
 
-Produce un Worker estático local en `dashboard/dist/hibrido/`; no lo despliega. También puede abrirse directamente el `tablero.html` de la ejecución. El build solo acepta corridas completadas y preserva las advertencias de demostración.
+Produce un Worker estático local en `dashboard/dist/hibrido/`; no lo despliega. También puede abrirse directamente el `tablero.html` de la ejecución. El tablero generado es autocontenido y permite seleccionar el horizonte, filtrar insumos, revisar la distribución presupuestaria, consultar métricas y trazabilidad, y descargar la vista como CSV. El build solo acepta corridas completadas cuyo tablero cumpla este contrato interactivo y preserva las advertencias de demostración.
+
+El consolidado corresponde siempre a cuatro horizontes semanales directos (28 días), no necesariamente a un mes calendario. La interfaz declara que los importes son presupuestarios: no genera órdenes de compra ni cantidades físicas por insumo.
 
 ## Legado y alcance de la migración
 
