@@ -1,0 +1,922 @@
+{
+  "schema": "openai.presentation.layout/v5",
+  "unit": "px",
+  "slide": {
+    "id": "sl/14bup87q",
+    "index": 17,
+    "layout": {
+      "id": "ly/bqdgbyxk",
+      "name": "THREE COLUMNS 2 "
+    },
+    "masterLayoutId": "ly/atofqts7",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "position": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ly/bqdgbyxk",
+      "name": "THREE COLUMNS 2 ",
+      "parentLayoutId": "ly/atofqts7",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/d0vid0bm",
+          "editable": false,
+          "name": "Google Shape;64;p31",
+          "position": {
+            "left": 542.42,
+            "top": 493.22,
+            "width": 195.15,
+            "height": 70.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/czmhkvu1",
+          "editable": false,
+          "name": "Google Shape;65;p31",
+          "position": {
+            "left": 845.79,
+            "top": 446.84,
+            "width": 195.15,
+            "height": 70.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/ryd0bqtg",
+          "editable": false,
+          "name": "Google Shape;66;p31",
+          "position": {
+            "left": 239.06,
+            "top": 544.68,
+            "width": 195.15,
+            "height": 70.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/qx4zilcv",
+          "editable": false,
+          "name": "Google Shape;67;p31",
+          "position": {
+            "left": 494.7,
+            "top": 479.05,
+            "width": 290.61,
+            "height": 27.46
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/pwvy9gba",
+          "editable": false,
+          "name": "Google Shape;68;p31",
+          "position": {
+            "left": 798.06,
+            "top": 433.45,
+            "width": 290.61,
+            "height": 27.46
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 6,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/4vmhgvup",
+          "editable": false,
+          "name": "Google Shape;69;p31",
+          "position": {
+            "left": 191.33,
+            "top": 530.48,
+            "width": 290.61,
+            "height": 27.46
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 7,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/u10fqhsn",
+          "editable": false,
+          "name": "Google Shape;70;p31",
+          "position": {
+            "left": 43.63,
+            "top": 90.23,
+            "width": 1192.72,
+            "height": 84.91
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "ly/atofqts7",
+      "type": "master",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/v6lcrixk",
+          "editable": false,
+          "name": "Google Shape;10;p23",
+          "position": {
+            "left": 88,
+            "top": 38.33,
+            "width": 1104,
+            "height": 139.18
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/u5svidgz",
+          "editable": false,
+          "name": "Google Shape;11;p23",
+          "position": {
+            "left": 88,
+            "top": 191.67,
+            "width": 1104,
+            "height": 456.82
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/h83ut8fq",
+          "editable": false,
+          "name": "Google Shape;12;p23",
+          "position": {
+            "left": 88,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/w7udkny5",
+          "editable": false,
+          "name": "Google Shape;13;p23",
+          "position": {
+            "left": 424,
+            "top": 667.33,
+            "width": 432,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 5,
+          "kind": "textbox",
+          "scope": "master",
+          "id": "sh/7i1cnyxo",
+          "editable": false,
+          "name": "Google Shape;14;p23",
+          "position": {
+            "left": 904,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "text": "18",
+          "style": {
+            "anchor": 2,
+            "alignment": "right",
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "18",
+              "style": {
+                "alignment": "right"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "18",
+                  "anchor": 2,
+                  "alignment": "right",
+                  "verticalAlignment": "middle",
+                  "wrap": "square",
+                  "autoFit": "none",
+                  "insets": {
+                    "top": 4.8,
+                    "right": 9.6,
+                    "bottom": 4.8,
+                    "left": 9.6
+                  },
+                  "useParagraphSpacing": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/cvu9kbe1",
+      "editable": true,
+      "name": "Google Shape;613;g3f725532742_0_7778",
+      "position": {
+        "left": 967.33,
+        "top": 12.47,
+        "width": 152,
+        "height": 71.54
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0.18366,
+        "right": 0,
+        "bottom": 0.14285
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/36l8n6dk",
+      "editable": true,
+      "name": "Google Shape;614;g3f725532742_0_7778",
+      "position": {
+        "left": 794.58,
+        "top": 7.9,
+        "width": 151.37,
+        "height": 80.97
+      },
+      "contentType": "image/jpeg",
+      "crop": {
+        "left": 0,
+        "top": 0.21186,
+        "right": 0,
+        "bottom": 0.21553
+      },
+      "asset": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      },
+      "fillImage": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      }
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/25cre1wz",
+      "editable": true,
+      "name": "Google Shape;615;g3f725532742_0_7778",
+      "position": {
+        "left": 1144.56,
+        "top": 8.36,
+        "width": 58.45,
+        "height": 71
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      }
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/p83qpwva",
+      "editable": true,
+      "name": "Google Shape;616;g3f725532742_0_7778",
+      "position": {
+        "left": 629.25,
+        "top": 30.11,
+        "width": 150.75,
+        "height": 48.55
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      }
+    },
+    {
+      "order": 5,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/hw3ml4rm",
+      "editable": true,
+      "name": "slide-title",
+      "position": {
+        "left": 88,
+        "top": 112,
+        "width": 1104,
+        "height": 62
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Resultados y hallazgos",
+      "style": {
+        "anchor": 2,
+        "fontSize": 36,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Resultados y hallazgos",
+          "style": {
+            "fontSize": 36,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Resultados y hallazgos",
+              "anchor": 2,
+              "fontSize": 36,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/ax83y5sr",
+      "editable": true,
+      "name": "slide-subtitle",
+      "position": {
+        "left": 90,
+        "top": 158,
+        "width": 1098,
+        "height": 28
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Error del modelo híbrido por horizonte",
+      "style": {
+        "anchor": 2,
+        "fontSize": 18,
+        "typeface": "Arial",
+        "color": "#5B6573",
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Error del modelo híbrido por horizonte",
+          "style": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#5B6573"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Error del modelo híbrido por horizonte",
+              "anchor": 2,
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#5B6573",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/vyh47a9c",
+      "editable": true,
+      "position": {
+        "left": 88,
+        "top": 202,
+        "width": 1104,
+        "height": 3
+      },
+      "geometry": "rect",
+      "fillColor": "#701C7F",
+      "lineColor": "#701C7F",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "chart",
+      "scope": "slide",
+      "id": "ch/rm58bit0",
+      "editable": true,
+      "name": "Chart",
+      "position": {
+        "left": 90,
+        "top": 230,
+        "width": 790,
+        "height": 360
+      },
+      "chartType": "bar"
+    },
+    {
+      "order": 9,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/epkbqxkn",
+      "editable": true,
+      "position": {
+        "left": 930,
+        "top": 280,
+        "width": 240,
+        "height": 70
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "$801.62",
+      "style": {
+        "anchor": 2,
+        "fontSize": 42,
+        "typeface": "Arial",
+        "color": "#701C7F",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "$801.62",
+          "style": {
+            "fontSize": 42,
+            "typeface": "Arial",
+            "color": "#701C7F",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "$801.62",
+              "anchor": 2,
+              "fontSize": 42,
+              "typeface": "Arial",
+              "color": "#701C7F",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/1svalc3y",
+      "editable": true,
+      "position": {
+        "left": 930,
+        "top": 350,
+        "width": 240,
+        "height": 70
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Mayor RMSE del híbrido\nen h=3",
+      "style": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "Arial",
+        "color": "#5B6573",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Mayor RMSE del híbrido",
+          "style": {
+            "fontSize": 20,
+            "typeface": "Arial",
+            "color": "#5B6573",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Mayor RMSE del híbrido",
+              "anchor": 2,
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#5B6573",
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        },
+        {
+          "index": 2,
+          "text": "en h=3",
+          "style": {
+            "fontSize": 20,
+            "typeface": "Arial",
+            "color": "#5B6573",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "en h=3",
+              "anchor": 2,
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#5B6573",
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/0r2ts72d",
+      "editable": true,
+      "position": {
+        "left": 900,
+        "top": 465,
+        "width": 300,
+        "height": 110
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "El valor absoluto no determina por sí mismo si el híbrido supera al comparador del mismo horizonte.",
+      "style": {
+        "anchor": 2,
+        "fontSize": 20,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "El valor absoluto no determina por sí mismo si el híbrido supera al comparador del mismo horizonte.",
+          "style": {
+            "fontSize": 20,
+            "typeface": "Arial",
+            "color": "#111111",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "El valor absoluto no determina por sí mismo si el híbrido supera al comparador del mismo horizonte.",
+              "anchor": 2,
+              "fontSize": 20,
+              "typeface": "Arial",
+              "color": "#111111",
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    }
+  ]
+}

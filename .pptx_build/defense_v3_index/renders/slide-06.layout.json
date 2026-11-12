@@ -1,0 +1,603 @@
+{
+  "schema": "openai.presentation.layout/v5",
+  "unit": "px",
+  "slide": {
+    "id": "sl/gnmp4jqx",
+    "index": 5,
+    "layout": {
+      "id": "ly/3yt8jipk",
+      "name": "TITLE + TEXT + IMAGE"
+    },
+    "masterLayoutId": "ly/atofqts7",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "position": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ly/3yt8jipk",
+      "name": "TITLE + TEXT + IMAGE",
+      "parentLayoutId": "ly/atofqts7",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/jut47a9w",
+          "editable": false,
+          "name": "Google Shape;48;p27",
+          "position": {
+            "left": 685.03,
+            "top": 243.22,
+            "width": 494.2,
+            "height": 84.91
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/itknypsb",
+          "editable": false,
+          "name": "Google Shape;49;p27",
+          "position": {
+            "left": 685.03,
+            "top": 384.44,
+            "width": 484,
+            "height": 198.83
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "ly/atofqts7",
+      "type": "master",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/v6lcrixk",
+          "editable": false,
+          "name": "Google Shape;10;p23",
+          "position": {
+            "left": 88,
+            "top": 38.33,
+            "width": 1104,
+            "height": 139.18
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/u5svidgz",
+          "editable": false,
+          "name": "Google Shape;11;p23",
+          "position": {
+            "left": 88,
+            "top": 191.67,
+            "width": 1104,
+            "height": 456.82
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/h83ut8fq",
+          "editable": false,
+          "name": "Google Shape;12;p23",
+          "position": {
+            "left": 88,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/w7udkny5",
+          "editable": false,
+          "name": "Google Shape;13;p23",
+          "position": {
+            "left": 424,
+            "top": 667.33,
+            "width": 432,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 5,
+          "kind": "textbox",
+          "scope": "master",
+          "id": "sh/7i1cnyxo",
+          "editable": false,
+          "name": "Google Shape;14;p23",
+          "position": {
+            "left": 904,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "text": "6",
+          "style": {
+            "anchor": 2,
+            "alignment": "right",
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "6",
+              "style": {
+                "alignment": "right"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "6",
+                  "anchor": 2,
+                  "alignment": "right",
+                  "verticalAlignment": "middle",
+                  "wrap": "square",
+                  "autoFit": "none",
+                  "insets": {
+                    "top": 4.8,
+                    "right": 9.6,
+                    "bottom": 4.8,
+                    "left": 9.6
+                  },
+                  "useParagraphSpacing": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/vy9kfu5g",
+      "editable": true,
+      "name": "Google Shape;365;p5",
+      "position": {
+        "left": 967.33,
+        "top": 12.47,
+        "width": 152,
+        "height": 71.54
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0.18367,
+        "right": 0,
+        "bottom": 0.14286
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/wziloz61",
+      "editable": true,
+      "name": "Google Shape;366;p5",
+      "position": {
+        "left": 794.58,
+        "top": 7.9,
+        "width": 151.37,
+        "height": 80.97
+      },
+      "contentType": "image/jpeg",
+      "crop": {
+        "left": 0,
+        "top": 0.21186,
+        "right": 0,
+        "bottom": 0.21552
+      },
+      "asset": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      },
+      "fillImage": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      }
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/x0rmh4nm",
+      "editable": true,
+      "name": "Google Shape;367;p5",
+      "position": {
+        "left": 1144.56,
+        "top": 8.36,
+        "width": 58.45,
+        "height": 71
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      }
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/m903ipoz",
+      "editable": true,
+      "name": "Google Shape;368;p5",
+      "position": {
+        "left": 629.25,
+        "top": 30.11,
+        "width": 150.75,
+        "height": 48.55
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      }
+    },
+    {
+      "order": 5,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/m9cvap43",
+      "editable": true,
+      "name": "slide-title",
+      "position": {
+        "left": 88,
+        "top": 112,
+        "width": 1104,
+        "height": 62
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Objetivo general",
+      "style": {
+        "anchor": 2,
+        "fontSize": 36,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Objetivo general",
+          "style": {
+            "fontSize": 36,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Objetivo general",
+              "anchor": 2,
+              "fontSize": 36,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/kzet0z2h",
+      "editable": true,
+      "position": {
+        "left": 88,
+        "top": 182,
+        "width": 1104,
+        "height": 3
+      },
+      "geometry": "rect",
+      "fillColor": "#701C7F",
+      "lineColor": "#701C7F",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/50nut432",
+      "editable": true,
+      "position": {
+        "left": 170,
+        "top": 245,
+        "width": 940,
+        "height": 235
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Determinar en qué medida un modelo híbrido de métodos estadísticos y aprendizaje automático reduce, frente a modelos de referencia y mediante validación temporal, el error fuera de muestra del importe semanal de compras elegibles y de su distribución porcentual por insumo.",
+      "style": {
+        "anchor": 2,
+        "fontSize": 31,
+        "typeface": "Arial",
+        "color": "#701C7F",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Determinar en qué medida un modelo híbrido de métodos estadísticos y aprendizaje automático reduce, frente a modelos de referencia y mediante validación temporal, el error fuera de muestra del importe semanal de compras elegibles y de su distribución porcentual por insumo.",
+          "style": {
+            "fontSize": 31,
+            "typeface": "Arial",
+            "color": "#701C7F",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Determinar en qué medida un modelo híbrido de métodos estadísticos y aprendizaje automático reduce, frente a modelos de referencia y mediante validación temporal, el error fuera de muestra del importe semanal de compras elegibles y de su distribución porcentual por insumo.",
+              "anchor": 2,
+              "fontSize": 31,
+              "typeface": "Arial",
+              "color": "#701C7F",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/ixwbypkb",
+      "editable": true,
+      "position": {
+        "left": 245,
+        "top": 515,
+        "width": 790,
+        "height": 60
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Caso Cup&Cake · horizontes de una a cuatro semanas · evaluación temporal",
+      "style": {
+        "anchor": 2,
+        "fontSize": 21,
+        "typeface": "Arial",
+        "color": "#5B6573",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Caso Cup&Cake · horizontes de una a cuatro semanas · evaluación temporal",
+          "style": {
+            "fontSize": 21,
+            "typeface": "Arial",
+            "color": "#5B6573",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Caso Cup&Cake · horizontes de una a cuatro semanas · evaluación temporal",
+              "anchor": 2,
+              "fontSize": 21,
+              "typeface": "Arial",
+              "color": "#5B6573",
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    }
+  ]
+}

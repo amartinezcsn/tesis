@@ -1,0 +1,901 @@
+{
+  "schema": "openai.presentation.layout/v5",
+  "unit": "px",
+  "slide": {
+    "id": "sl/y90nupkv",
+    "index": 0,
+    "layout": {
+      "id": "ly/ux4ruhcv",
+      "name": "BLANK"
+    },
+    "masterLayoutId": "ly/atofqts7",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "position": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ly/ux4ruhcv",
+      "name": "BLANK",
+      "type": "blank",
+      "parentLayoutId": "ly/atofqts7",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/pcfypoji",
+          "editable": false,
+          "name": "Google Shape;16;p24",
+          "position": {
+            "left": 88,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/or6hgjix",
+          "editable": false,
+          "name": "Google Shape;17;p24",
+          "position": {
+            "left": 424,
+            "top": 667.33,
+            "width": 432,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 3,
+          "kind": "textbox",
+          "scope": "layout",
+          "id": "sh/bexgre18",
+          "editable": false,
+          "name": "Google Shape;18;p24",
+          "position": {
+            "left": 904,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "text": "1",
+          "style": {
+            "anchor": 2,
+            "alignment": "right",
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1",
+              "style": {
+                "alignment": "right"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1",
+                  "anchor": 2,
+                  "alignment": "right",
+                  "verticalAlignment": "middle",
+                  "wrap": "square",
+                  "autoFit": "none",
+                  "insets": {
+                    "top": 4.8,
+                    "right": 9.6,
+                    "bottom": 4.8,
+                    "left": 9.6
+                  },
+                  "useParagraphSpacing": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "ly/atofqts7",
+      "type": "master",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/v6lcrixk",
+          "editable": false,
+          "name": "Google Shape;10;p23",
+          "position": {
+            "left": 88,
+            "top": 38.33,
+            "width": 1104,
+            "height": 139.18
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/u5svidgz",
+          "editable": false,
+          "name": "Google Shape;11;p23",
+          "position": {
+            "left": 88,
+            "top": 191.67,
+            "width": 1104,
+            "height": 456.82
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/h83ut8fq",
+          "editable": false,
+          "name": "Google Shape;12;p23",
+          "position": {
+            "left": 88,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/w7udkny5",
+          "editable": false,
+          "name": "Google Shape;13;p23",
+          "position": {
+            "left": 424,
+            "top": 667.33,
+            "width": 432,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 5,
+          "kind": "textbox",
+          "scope": "master",
+          "id": "sh/7i1cnyxo",
+          "editable": false,
+          "name": "Google Shape;14;p23",
+          "position": {
+            "left": 904,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "text": "1",
+          "style": {
+            "anchor": 2,
+            "alignment": "right",
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1",
+              "style": {
+                "alignment": "right"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1",
+                  "anchor": 2,
+                  "alignment": "right",
+                  "verticalAlignment": "middle",
+                  "wrap": "square",
+                  "autoFit": "none",
+                  "insets": {
+                    "top": 4.8,
+                    "right": 9.6,
+                    "bottom": 4.8,
+                    "left": 9.6
+                  },
+                  "useParagraphSpacing": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/9onixc7a",
+      "editable": true,
+      "name": "Google Shape;155;p1",
+      "position": {
+        "left": 967.33,
+        "top": 12.47,
+        "width": 152,
+        "height": 71.54
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0.18367,
+        "right": 0,
+        "bottom": 0.14286
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/mlcz2x8j",
+      "editable": true,
+      "name": "Google Shape;156;p1",
+      "position": {
+        "left": 794.58,
+        "top": 7.9,
+        "width": 151.37,
+        "height": 80.97
+      },
+      "contentType": "image/jpeg",
+      "crop": {
+        "left": 0,
+        "top": 0.21186,
+        "right": 0,
+        "bottom": 0.21552
+      },
+      "asset": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      },
+      "fillImage": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      }
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/7m50v2p4",
+      "editable": true,
+      "name": "Google Shape;157;p1",
+      "position": {
+        "left": 1144.56,
+        "top": 8.36,
+        "width": 58.45,
+        "height": 71
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      }
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/orahs3ql",
+      "editable": true,
+      "name": "Google Shape;158;p1",
+      "position": {
+        "left": 629.25,
+        "top": 30.11,
+        "width": 150.75,
+        "height": 48.55
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      }
+    },
+    {
+      "order": 5,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/cnmlcza9",
+      "editable": true,
+      "position": {
+        "left": 150,
+        "top": 112,
+        "width": 980,
+        "height": 40
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "UNIVERSIDAD POLITÉCNICA METROPOLITANA DE HIDALGO",
+      "style": {
+        "fontSize": 26,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "UNIVERSIDAD POLITÉCNICA METROPOLITANA DE HIDALGO",
+          "style": {
+            "fontSize": 26,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "UNIVERSIDAD POLITÉCNICA METROPOLITANA DE HIDALGO",
+              "fontSize": 26,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/w3edon2h",
+      "editable": true,
+      "position": {
+        "left": 193,
+        "top": 164,
+        "width": 894,
+        "height": 4
+      },
+      "geometry": "rect",
+      "fillColor": "#701C7F",
+      "lineColor": "#701C7F",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/x4nexs32",
+      "editable": true,
+      "position": {
+        "left": 170,
+        "top": 190,
+        "width": 940,
+        "height": 168
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "MODELO HÍBRIDO ESTADÍSTICO Y DE APRENDIZAJE AUTOMÁTICO PARA EL PRONÓSTICO Y LA DISTRIBUCIÓN DEL PRESUPUESTO SEMANAL DE ABASTECIMIENTO",
+      "style": {
+        "anchor": 2,
+        "fontSize": 31,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "MODELO HÍBRIDO ESTADÍSTICO Y DE APRENDIZAJE AUTOMÁTICO PARA EL PRONÓSTICO Y LA DISTRIBUCIÓN DEL PRESUPUESTO SEMANAL DE ABASTECIMIENTO",
+          "style": {
+            "fontSize": 31,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MODELO HÍBRIDO ESTADÍSTICO Y DE APRENDIZAJE AUTOMÁTICO PARA EL PRONÓSTICO Y LA DISTRIBUCIÓN DEL PRESUPUESTO SEMANAL DE ABASTECIMIENTO",
+              "anchor": 2,
+              "fontSize": 31,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/a1wvmx4r",
+      "editable": true,
+      "position": {
+        "left": 235,
+        "top": 368,
+        "width": 810,
+        "height": 66
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Estudio de caso en una microempresa de repostería creativa en Tizayuca, Hidalgo",
+      "style": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "Arial",
+        "color": "#701C7F",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Estudio de caso en una microempresa de repostería creativa en Tizayuca, Hidalgo",
+          "style": {
+            "fontSize": 22,
+            "typeface": "Arial",
+            "color": "#701C7F",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Estudio de caso en una microempresa de repostería creativa en Tizayuca, Hidalgo",
+              "anchor": 2,
+              "fontSize": 22,
+              "typeface": "Arial",
+              "color": "#701C7F",
+              "alignment": "center",
+              "verticalAlignment": "middle",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/v25wv2lc",
+      "editable": true,
+      "position": {
+        "left": 240,
+        "top": 448,
+        "width": 800,
+        "height": 50
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Defensa de tesis para obtener el grado de Maestro en Inteligencia Artificial",
+      "style": {
+        "fontSize": 19,
+        "typeface": "Arial",
+        "color": "#5B6573",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Defensa de tesis para obtener el grado de Maestro en Inteligencia Artificial",
+          "style": {
+            "fontSize": 19,
+            "typeface": "Arial",
+            "color": "#5B6573",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Defensa de tesis para obtener el grado de Maestro en Inteligencia Artificial",
+              "fontSize": 19,
+              "typeface": "Arial",
+              "color": "#5B6573",
+              "alignment": "center",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/8zudknml",
+      "editable": true,
+      "position": {
+        "left": 105,
+        "top": 548,
+        "width": 520,
+        "height": 40
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Rodrigo Adrián Martínez Flores",
+      "style": {
+        "fontSize": 23,
+        "typeface": "Arial",
+        "color": "#111111",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Rodrigo Adrián Martínez Flores",
+          "style": {
+            "fontSize": 23,
+            "typeface": "Arial",
+            "color": "#111111",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Rodrigo Adrián Martínez Flores",
+              "fontSize": 23,
+              "typeface": "Arial",
+              "color": "#111111",
+              "bold": true,
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/90nuts36",
+      "editable": true,
+      "position": {
+        "left": 105,
+        "top": 590,
+        "width": 650,
+        "height": 34
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Director de tesis: Luis Eduardo Urban Rivero",
+      "style": {
+        "fontSize": 18,
+        "typeface": "Arial",
+        "color": "#5B6573",
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Director de tesis: Luis Eduardo Urban Rivero",
+          "style": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#5B6573"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Director de tesis: Luis Eduardo Urban Rivero",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#5B6573",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/mdcvid4f",
+      "editable": true,
+      "position": {
+        "left": 880,
+        "top": 584,
+        "width": 295,
+        "height": 40
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Tolcayuca, Hidalgo · 2026",
+      "style": {
+        "fontSize": 18,
+        "typeface": "Arial",
+        "color": "#5B6573",
+        "bold": false,
+        "italic": false,
+        "alignment": "right",
+        "textTransform": "none",
+        "insets": {
+          "top": 4,
+          "right": 6,
+          "bottom": 4,
+          "left": 6
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Tolcayuca, Hidalgo · 2026",
+          "style": {
+            "fontSize": 18,
+            "typeface": "Arial",
+            "color": "#5B6573",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Tolcayuca, Hidalgo · 2026",
+              "fontSize": 18,
+              "typeface": "Arial",
+              "color": "#5B6573",
+              "alignment": "right",
+              "insets": {
+                "top": 4,
+                "right": 6,
+                "bottom": 4,
+                "left": 6
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "lineSpacingPercent": 100000
+        }
+      ]
+    }
+  ]
+}
