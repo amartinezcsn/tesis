@@ -1,0 +1,1488 @@
+{
+  "schema": "openai.presentation.layout/v5",
+  "unit": "px",
+  "slide": {
+    "id": "sl/y5wne50z",
+    "index": 17,
+    "layout": {
+      "id": "ly/bqdgbyxk",
+      "name": "THREE COLUMNS 2 "
+    },
+    "masterLayoutId": "ly/atofqts7",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "position": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ly/bqdgbyxk",
+      "name": "THREE COLUMNS 2 ",
+      "parentLayoutId": "ly/atofqts7",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/d0vid0bm",
+          "editable": false,
+          "name": "Google Shape;64;p31",
+          "position": {
+            "left": 542.42,
+            "top": 493.22,
+            "width": 195.15,
+            "height": 70.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/czmhkvu1",
+          "editable": false,
+          "name": "Google Shape;65;p31",
+          "position": {
+            "left": 845.79,
+            "top": 446.84,
+            "width": 195.15,
+            "height": 70.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/ryd0bqtg",
+          "editable": false,
+          "name": "Google Shape;66;p31",
+          "position": {
+            "left": 239.06,
+            "top": 544.68,
+            "width": 195.15,
+            "height": 70.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/qx4zilcv",
+          "editable": false,
+          "name": "Google Shape;67;p31",
+          "position": {
+            "left": 494.7,
+            "top": 479.05,
+            "width": 290.61,
+            "height": 27.46
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 5,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/pwvy9gba",
+          "editable": false,
+          "name": "Google Shape;68;p31",
+          "position": {
+            "left": 798.06,
+            "top": 433.45,
+            "width": 290.61,
+            "height": 27.46
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 6,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/4vmhgvup",
+          "editable": false,
+          "name": "Google Shape;69;p31",
+          "position": {
+            "left": 191.33,
+            "top": 530.48,
+            "width": 290.61,
+            "height": 27.46
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 7,
+          "kind": "shape",
+          "scope": "layout",
+          "id": "sh/u10fqhsn",
+          "editable": false,
+          "name": "Google Shape;70;p31",
+          "position": {
+            "left": 43.63,
+            "top": 90.23,
+            "width": 1192.72,
+            "height": 84.91
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 3,
+            "verticalAlignment": "bottom",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 9.6,
+              "right": 9.6,
+              "bottom": 9.6,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        }
+      ]
+    },
+    {
+      "scope": "master",
+      "id": "ly/atofqts7",
+      "type": "master",
+      "backgroundColor": "lt1",
+      "elements": [
+        {
+          "order": 1,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/v6lcrixk",
+          "editable": false,
+          "name": "Google Shape;10;p23",
+          "position": {
+            "left": 88,
+            "top": 38.33,
+            "width": 1104,
+            "height": 139.18
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 2,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/u5svidgz",
+          "editable": false,
+          "name": "Google Shape;11;p23",
+          "position": {
+            "left": 88,
+            "top": 191.67,
+            "width": 1104,
+            "height": 456.82
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 1,
+            "verticalAlignment": "top",
+            "wrap": "square",
+            "autoFit": "shrinkText",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 3,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/h83ut8fq",
+          "editable": false,
+          "name": "Google Shape;12;p23",
+          "position": {
+            "left": 88,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 4,
+          "kind": "shape",
+          "scope": "master",
+          "id": "sh/w7udkny5",
+          "editable": false,
+          "name": "Google Shape;13;p23",
+          "position": {
+            "left": 424,
+            "top": 667.33,
+            "width": 432,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "style": {
+            "anchor": 2,
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          }
+        },
+        {
+          "order": 5,
+          "kind": "textbox",
+          "scope": "master",
+          "id": "sh/7i1cnyxo",
+          "editable": false,
+          "name": "Google Shape;14;p23",
+          "position": {
+            "left": 904,
+            "top": 667.33,
+            "width": 288,
+            "height": 38.33
+          },
+          "geometry": "rect",
+          "lineWidth": 0,
+          "text": "18",
+          "style": {
+            "anchor": 2,
+            "alignment": "right",
+            "verticalAlignment": "middle",
+            "wrap": "square",
+            "autoFit": "none",
+            "insets": {
+              "top": 4.8,
+              "right": 9.6,
+              "bottom": 4.8,
+              "left": 9.6
+            },
+            "useParagraphSpacing": true
+          },
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "18",
+              "style": {
+                "alignment": "right"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "18",
+                  "anchor": 2,
+                  "alignment": "right",
+                  "verticalAlignment": "middle",
+                  "wrap": "square",
+                  "autoFit": "none",
+                  "insets": {
+                    "top": 4.8,
+                    "right": 9.6,
+                    "bottom": 4.8,
+                    "left": 9.6
+                  },
+                  "useParagraphSpacing": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/pwbm9kfi",
+      "editable": true,
+      "name": "Google Shape;641;p16",
+      "position": {
+        "left": 43.63,
+        "top": 90.23,
+        "width": 1157.48,
+        "height": 84.91
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Metodología de la Investigación",
+      "style": {
+        "anchor": 3,
+        "fontSize": 49.33,
+        "typeface": "Roboto Black",
+        "color": "#000000",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "bottom",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 12.8,
+          "right": 12.8,
+          "bottom": 12.8,
+          "left": 12.8
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Metodología de la Investigación",
+          "lineSpacingPercent": 90000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Metodología de la Investigación",
+              "anchor": 3,
+              "fontSize": 49.33,
+              "color": "#000000",
+              "alignment": "center",
+              "verticalAlignment": "bottom",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 12.8,
+                "right": 12.8,
+                "bottom": 12.8,
+                "left": 12.8
+              },
+              "useParagraphSpacing": true
+            }
+          ],
+          "bulletCharacter": ""
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/2tknepwr",
+      "editable": true,
+      "name": "Google Shape;642;p16",
+      "position": {
+        "left": 43.63,
+        "top": 166.82,
+        "width": 1192.73,
+        "height": 0
+      },
+      "geometry": "straightConnector1",
+      "lineColor": "#4472C4",
+      "lineWidth": 1
+    },
+    {
+      "order": 3,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/6hs7qh0n",
+      "editable": true,
+      "name": "Google Shape;643;p16",
+      "position": {
+        "left": 967.33,
+        "top": 12.47,
+        "width": 152,
+        "height": 71.54
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0.18367,
+        "right": 0,
+        "bottom": 0.14286
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 6187
+      }
+    },
+    {
+      "order": 4,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/1o3q5gja",
+      "editable": true,
+      "name": "Google Shape;644;p16",
+      "position": {
+        "left": 794.58,
+        "top": 7.9,
+        "width": 151.37,
+        "height": 80.97
+      },
+      "contentType": "image/jpeg",
+      "crop": {
+        "left": 0,
+        "top": 0.21186,
+        "right": 0,
+        "bottom": 0.21552
+      },
+      "asset": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      },
+      "fillImage": {
+        "contentType": "image/jpeg",
+        "byteLength": 67244
+      }
+    },
+    {
+      "order": 5,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/gnapwbip",
+      "editable": true,
+      "name": "Google Shape;645;p16",
+      "position": {
+        "left": 1144.56,
+        "top": 8.36,
+        "width": 58.45,
+        "height": 71
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 1625543
+      }
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/fm183614",
+      "editable": true,
+      "name": "Google Shape;646;p16",
+      "position": {
+        "left": 629.25,
+        "top": 30.11,
+        "width": 150.75,
+        "height": 48.55
+      },
+      "contentType": "image/png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 14946
+      }
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/byt4buxo",
+      "editable": true,
+      "name": "Google Shape;647;p16",
+      "position": {
+        "left": 371.99,
+        "top": 327.29,
+        "width": 108.88,
+        "height": 6.77
+      },
+      "geometry": "roundRect",
+      "fillColor": "#701C7F",
+      "lineWidth": 0,
+      "style": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/lovmh4fq",
+      "editable": true,
+      "name": "Google Shape;649;p16",
+      "position": {
+        "left": 186.34,
+        "top": 273.95,
+        "width": 108.9,
+        "height": 108.9
+      },
+      "rotation": 0,
+      "geometry": "ellipse",
+      "lineColor": "#701C7F",
+      "lineWidth": 6.98,
+      "style": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      }
+    },
+    {
+      "order": 9,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/vix87yhs",
+      "editable": true,
+      "name": "Google Shape;650;p16",
+      "position": {
+        "left": 200.77,
+        "top": 303.49,
+        "width": 80.04,
+        "height": 58.82
+      },
+      "rotation": 0,
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "A",
+      "style": {
+        "anchor": 1,
+        "fontSize": 19.2,
+        "typeface": "Roboto",
+        "color": "#701C7F",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/uho7edg7",
+      "editable": true,
+      "name": "Google Shape;651;p16",
+      "position": {
+        "left": 84.21,
+        "top": 402.91,
+        "width": 313.16,
+        "height": 81.8
+      },
+      "rotation": 0,
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Pre test",
+      "style": {
+        "anchor": 3,
+        "fontSize": 22.69,
+        "typeface": "Roboto",
+        "color": "#701C7F",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "bottom",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Pre test",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Pre test",
+              "anchor": 3,
+              "fontSize": 22.69,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "bottom",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/hkzq98zy",
+      "editable": true,
+      "name": "Google Shape;652;p16",
+      "position": {
+        "left": 80,
+        "top": 486.61,
+        "width": 321.58,
+        "height": 135.12
+      },
+      "rotation": 0,
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Antes de iniciar la intervención\nAplicación de una evaluación diagnóstica para determinar el nivel inicial de conocimiento de la LSM",
+      "style": {
+        "anchor": 1,
+        "fontSize": 19.2,
+        "typeface": "Roboto",
+        "color": "#701C7F",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Antes de iniciar la intervención",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Antes de iniciar la intervención",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "text": "Aplicación de una evaluación diagnóstica para determinar el nivel inicial de conocimiento de la LSM",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Aplicación de una evaluación diagnóstica para determinar el nivel inicial de conocimiento de la LSM",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/7ux83yhw",
+      "editable": true,
+      "name": "Google Shape;654;p16",
+      "position": {
+        "left": 572.04,
+        "top": 273.95,
+        "width": 108.9,
+        "height": 108.9
+      },
+      "rotation": 0,
+      "geometry": "ellipse",
+      "lineColor": "#701C7F",
+      "lineWidth": 6.98,
+      "style": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      }
+    },
+    {
+      "order": 13,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/mto7atgb",
+      "editable": true,
+      "name": "Google Shape;655;p16",
+      "position": {
+        "left": 469.9,
+        "top": 402.91,
+        "width": 313.16,
+        "height": 81.8
+      },
+      "rotation": 0,
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Intervención experimental",
+      "style": {
+        "anchor": 3,
+        "fontSize": 22.69,
+        "typeface": "Roboto",
+        "color": "#701C7F",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "bottom",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Intervención experimental",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Intervención experimental",
+              "anchor": 3,
+              "fontSize": 22.69,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "bottom",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/9gfq58zm",
+      "editable": true,
+      "name": "Google Shape;656;p16",
+      "position": {
+        "left": 469.9,
+        "top": 486.61,
+        "width": 313.16,
+        "height": 135.12
+      },
+      "rotation": 0,
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Participantes del grupo experimental utilizarán la plataforma \nParticipantes del grupo de control no utilizarán la plataforma\n",
+      "style": {
+        "anchor": 1,
+        "fontSize": 19.2,
+        "typeface": "Roboto",
+        "color": "#701C7F",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Participantes del grupo experimental utilizarán la plataforma ",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Participantes del grupo experimental utilizarán la plataforma ",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "text": "Participantes del grupo de control no utilizarán la plataforma",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Participantes del grupo de control no utilizarán la plataforma",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/8f6pc3yh",
+      "editable": true,
+      "name": "Google Shape;657;p16",
+      "position": {
+        "left": 586.46,
+        "top": 303.49,
+        "width": 80.04,
+        "height": 58.82
+      },
+      "rotation": 0,
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "B",
+      "style": {
+        "anchor": 1,
+        "fontSize": 19.2,
+        "typeface": "Roboto",
+        "color": "#701C7F",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "B",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "B",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#701C7F",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/rah8f2h0",
+      "editable": true,
+      "name": "Google Shape;658;p16",
+      "position": {
+        "left": 953.54,
+        "top": 273.96,
+        "width": 108.91,
+        "height": 108.91
+      },
+      "geometry": "ellipse",
+      "lineColor": "#771E86",
+      "lineWidth": 6.98,
+      "style": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      }
+    },
+    {
+      "order": 17,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/6p87mxgf",
+      "editable": true,
+      "name": "Google Shape;659;p16",
+      "position": {
+        "left": 851.41,
+        "top": 402.92,
+        "width": 313.17,
+        "height": 81.8
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Post test",
+      "style": {
+        "anchor": 3,
+        "fontSize": 22.69,
+        "typeface": "Roboto",
+        "color": "#771E86",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "bottom",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Post test",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Post test",
+              "anchor": 3,
+              "fontSize": 22.69,
+              "typeface": "Roboto",
+              "color": "#771E86",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "bottom",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/25cbe10n",
+      "editable": true,
+      "name": "Google Shape;660;p16",
+      "position": {
+        "left": 851.41,
+        "top": 486.62,
+        "width": 313.17,
+        "height": 135.12
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Aplicación de una evaluación a ambos grupos (experimental y control) para determinar el alcance después de la intervención",
+      "style": {
+        "anchor": 1,
+        "fontSize": 19.2,
+        "typeface": "Roboto",
+        "color": "#771E86",
+        "bold": false,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Aplicación de una evaluación a ambos grupos (experimental y control) para determinar el alcance después de la intervención",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Aplicación de una evaluación a ambos grupos (experimental y control) para determinar el alcance después de la intervención",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#771E86",
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/n6lsnm18",
+      "editable": true,
+      "name": "Google Shape;661;p16",
+      "position": {
+        "left": 967.97,
+        "top": 303.49,
+        "width": 80.03,
+        "height": 58.83
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "C",
+      "style": {
+        "anchor": 1,
+        "fontSize": 19.2,
+        "typeface": "Roboto",
+        "color": "#771E86",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "C",
+          "lineSpacingPercent": 115000,
+          "style": {
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "C",
+              "anchor": 1,
+              "fontSize": 19.2,
+              "typeface": "Roboto",
+              "color": "#771E86",
+              "bold": true,
+              "alignment": "center",
+              "verticalAlignment": "top",
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 16.75,
+                "right": 16.75,
+                "bottom": 16.75,
+                "left": 16.75
+              },
+              "useParagraphSpacing": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/o7utgrit",
+      "editable": true,
+      "name": "Google Shape;662;p16",
+      "position": {
+        "left": 770.03,
+        "top": 327.29,
+        "width": 108.88,
+        "height": 6.77
+      },
+      "geometry": "roundRect",
+      "fillColor": "#701C7F",
+      "lineWidth": 0,
+      "style": {
+        "anchor": 2,
+        "fontSize": 18.67,
+        "typeface": "Arial",
+        "color": "#000000",
+        "bold": false,
+        "italic": false,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "textTransform": "none",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 16.75,
+          "right": 16.75,
+          "bottom": 16.75,
+          "left": 16.75
+        },
+        "useParagraphSpacing": true
+      }
+    }
+  ]
+}
